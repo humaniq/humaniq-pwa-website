@@ -1,7 +1,7 @@
 {
-  "name": "MVP-blog",
+  "name": "buttercms-blog",
   "version": "0.0.1",
-  "description": "MVP: blog with butter-cms",
+  "description": "MVP: blog on butter-cms",
   "main": "index.html",
   "private": true,
   "engines": {
