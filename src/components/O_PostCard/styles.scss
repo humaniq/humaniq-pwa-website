@@ -1,0 +1,23 @@
+@import "common/utils";
+
+.o-post-card{
+  @include card(1);
+  background-color: snow;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 300px;
+  box-sizing: border-box;
+  position: relative;
+  &__author{
+    position: absolute;
+    bottom: 0;
+    left: .5em;
+  }
+  &__published{
+    position: absolute;
+    top: 0;
+    left: .5em;
+  }
+}

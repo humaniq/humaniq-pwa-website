@@ -1,0 +1,14 @@
+/* BEGIN Medium */
+@font-face {
+	font-family: Roboto;
+	@include fontdef-woff($FontPath, $FontName, $FontVersion, "Medium");
+	font-weight: 700;
+	font-style: normal;
+}
+@font-face {
+	font-family: Roboto;
+	@include fontdef-woff($FontPath, $FontName, $FontVersion, "Medium");
+	font-weight: bold;
+	font-style: normal;
+}
+/* END Medium */

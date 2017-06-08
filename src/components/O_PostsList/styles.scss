@@ -1,0 +1,47 @@
+@import "common/utils";
+
+.o-posts-list{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+
+  &__item, &__empty{
+    flex: 1 0 25em;
+    display: flex;
+    padding: .4rem;
+  }
+
+  &__item{
+    margin: 0;
+  }
+  &__empty{
+    margin: .1em;
+    margin-top: 0;
+    margin-bottom: 0;
+    height: auto;
+  }
+  &__navigation{
+    @include card(1);
+    &:hover{
+      cursor: pointer;
+    }
+    width: 100%;
+    background-color: snow;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 15em;
+    height: 100%;
+    p{
+      text-align: center;
+      &:not(:last-child){
+        margin-bottom: 1em;
+      }
+    }
+    &_page-number{
+      font-size: 3em;
+      color: grey;
+    }
+  }
+}

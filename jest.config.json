@@ -1,0 +1,15 @@
+{
+  "moduleFileExtensions": ["js"],
+  "setupFiles": ["<rootDir>/testUtils/before_test.js"],
+  "modulePaths": [
+    "./",
+    "<rootDir>/src",
+    "<rootDir>/src/components"
+  ],
+  "unmockedModulePathPatterns": [
+    "<rootDir>/node_modules/"
+  ],
+  "moduleNameMapper": {
+    "\\.(css|scss)$": "<rootDir>/testUtils/styleMock.js"
+  }
+}

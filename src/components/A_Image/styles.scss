@@ -1,0 +1,21 @@
+@import "common/settings/brand";
+
+.a-image{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  &_on-click_true:hover{
+    cursor: pointer;
+  }
+  &__loader{
+    height: 100%;
+    background-color: $primary-extra;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &_object-fit_contain{
+    object-fit:contain
+  }
+}

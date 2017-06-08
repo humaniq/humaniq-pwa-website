@@ -1,0 +1,11 @@
+$primary: #08D9D6;
+$default: #252A34;
+$accent: #FF2E63;
+$background: #EAEAEA;
+$disabled: #EAEAEA;
+
+
+$primary-extra: darken($primary, 10%);
+$default-extra: lighten($default, 50%);
+$accent-extra: darken($accent, 10%);
+$background-extra: darken($background, 10%);
