@@ -1,6 +1,6 @@
 import React from 'react';
-import PropTypes from "prop-types";
-import styles from './styles.scss';
+import * as T from "prop-types";
+import './styles.scss';
 import {cssClassName} from 'utils'
 const cn = cssClassName('SE_MainLayout')
 import A_Link from 'A_Link'
@@ -25,14 +25,14 @@ const SE_MainLayout = ({children, mainTagline, mainEmail}) => (
 )
 
 SE_MainLayout.propTypes = {
-  children: PropTypes.any.isRequired,
-  mainEmail: PropTypes.string,
+  children: T.any.isRequired,
+  mainEmail: T.string,
 };
 
 SE_MainLayout.propTypes = {
-  children: PropTypes.any.isRequired,
-  mainEmail: PropTypes.string,
-  mainTagline: PropTypes.string
+  children: T.any.isRequired,
+  mainEmail: T.string,
+  mainTagline: T.string
 };
 
 SE_MainLayout.defaultProps = {

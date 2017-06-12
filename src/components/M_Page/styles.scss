@@ -1,0 +1,15 @@
+@import "common/utils";
+
+.m-page {
+  @include card(1);
+  background-color: white;
+  &__header-img{
+    display: flex;
+    align-items: center;
+    height: 400px;
+  }
+  &__item{
+    padding: 2em;
+    padding-bottom: 1em;
+  }
+}

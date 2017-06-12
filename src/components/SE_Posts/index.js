@@ -1,5 +1,5 @@
 import React, {Component}  from 'react';
-import PropTypes from "prop-types";
+import * as T from "prop-types";
 import {Helmet} from "react-helmet";
 import O_PostsList from 'O_PostsList'
 
@@ -25,9 +25,9 @@ class SE_Posts extends Component {
 }
 
 SE_Posts.propTypes = {
-  show: PropTypes.bool.isRequired,
-  indexPageTitle: PropTypes.string,
-  posts: PropTypes.array,
+  show: T.bool.isRequired,
+  indexPageTitle: T.string,
+  posts: T.array,
 };
 
 SE_Posts.defaultProps = {

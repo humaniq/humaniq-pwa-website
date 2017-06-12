@@ -1,9 +1,12 @@
 import path from 'path'
 import webpack from 'webpack'
+import ProgressBarPlugin from 'progress-bar-webpack-plugin'
+
 process.noDeprecation = true
 
 export default {
   plugins: [
+    new ProgressBarPlugin(),
     new webpack.DefinePlugin({
       __SERVER__: false,
       __CLIENT__: true,
@@ -11,7 +14,7 @@ export default {
     }),
     new webpack.HotModuleReplacementPlugin(),
   ],
-  devtool: 'eval',
+  devtool: 'cheap-module-eval-source-map',
   entry:  [
     'babel-polyfill',
     'react-hot-loader/patch',

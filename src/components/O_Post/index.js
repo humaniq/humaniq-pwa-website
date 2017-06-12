@@ -1,6 +1,6 @@
 import React from 'react';
-import PropTypes from "prop-types";
-import styles from './styles.scss';
+import * as T from "prop-types";
+import './styles.scss';
 import {cssClassName} from 'utils'
 const cn = cssClassName('O_Post')
 import M_AuthorBlock from 'M_AuthorBlock'
@@ -19,7 +19,7 @@ const O_Post = ({body, title, published, author}) =>(
 )
 
 O_Post.propTypes = {
-  body: PropTypes.string.isRequired
+  body: T.string.isRequired
 };
 
 export default O_Post

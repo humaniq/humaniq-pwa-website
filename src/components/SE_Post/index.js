@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import PropTypes from "prop-types";
+import * as T from "prop-types";
 import {Helmet} from "react-helmet";
 import O_Post from 'O_Post'
 
@@ -19,8 +19,8 @@ class SE_Post extends Component {
 }
 
 SE_Post.propTypes = {
-  show: PropTypes.bool.isRequired,
-  seoTitle: PropTypes.string,
+  show: T.bool.isRequired,
+  seoTitle: T.string,
 };
 
 SE_Post.defaultProps = {

@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import PropTypes from "prop-types";
-import styles from './styles.scss';
+import * as T from "prop-types";
+import './styles.scss';
 import {cssClassName} from 'utils'
 import O_PostCard from 'O_PostCard'
 const cn = cssClassName('O_PostsList')
@@ -36,7 +36,7 @@ class O_PostsList extends Component {
 }
 
 O_PostsList.propTypes = {
-  posts: PropTypes.array.isRequired,
+  posts: T.array.isRequired,
 };
 
 

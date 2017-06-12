@@ -3,6 +3,7 @@ import React from 'react'
 import App from './App'
 import Posts from './Posts'
 import Post from './Post'
+import Error from './Error'
 import {postPath} from 'utils/routesHelpers'
 import {closePost} from 'AC/post'
 
@@ -23,6 +24,10 @@ const getRoutes = ({dispatch}) => {
              component={Post}
              prepareData={Post.prepareData}
              onLeave={() => dispatch(closePost())}
+      />
+      <Route
+        path="/error/:err"
+        component={Error}
       />
     </Route >
   )

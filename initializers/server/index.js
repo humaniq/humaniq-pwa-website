@@ -32,9 +32,6 @@ application.use(
 )
 
 application.use(webpackHot(compiler))
-// application.use('/service-worker.js', express.static(path.join(__dirname, '../..', 'static/service-worker.js')))
-
-
 application.get('*', require('./render').default)
 
 application.listen(port, (err) => {

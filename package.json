@@ -8,8 +8,7 @@
     "node": "5.10.1"
   },
   "scripts": {
-    "build": "webpack -p",
-    "start": "node server.js",
+    "start": "npm run dev",
     "dev": "nodemon --watch initializers --watch webpack.config.js ./initializers/server/index.js",
     "test": "jest --config jest.config.json"
   },

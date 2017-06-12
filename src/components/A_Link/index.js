@@ -1,7 +1,7 @@
 import React from 'react';
-import PropTypes from "prop-types";
+import * as T from "prop-types";
 import {Link} from 'react-router'
-import styles from './styles.scss';
+import './styles.scss';
 import {cssClassName} from 'utils'
 const cn = cssClassName('A_Link')
 
@@ -13,7 +13,7 @@ const A_Link = ({children, block, mod, disabled, ...props}) => {
 }
 
 A_Link.propTypes = {
-  children: PropTypes.any.isRequired
+  children: T.any.isRequired
 };
 
 export default A_Link

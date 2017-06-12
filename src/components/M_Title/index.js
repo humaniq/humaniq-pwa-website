@@ -1,5 +1,6 @@
-import React, { PropTypes } from 'react';
-import styles from './styles.scss';
+import React from 'react';
+import * as T from "prop-types";
+import './styles.scss';
 import {cssClassName} from 'utils'
 const cn = cssClassName('M_Title')
 
@@ -8,6 +9,7 @@ const M_Title = ({children}) =>(
 )
 
 M_Title.propTypes = {
+  children: T.any.isRequired
 };
 
 M_Title.defaultProps = {

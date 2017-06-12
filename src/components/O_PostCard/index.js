@@ -1,6 +1,6 @@
 import React from 'react';
-import PropTypes from "prop-types";
-import styles from './styles.scss';
+import * as T from "prop-types";
+import './styles.scss';
 import {cssClassName} from 'utils'
 const cn = cssClassName('O_PostCard')
 import A_Image from 'A_Image'
@@ -26,11 +26,11 @@ const O_PostCard = ({featuredImage, author, url, published}) => {
 }
 
 O_PostCard.propTypes = {
-  featuredImage: PropTypes.string,
-  url: PropTypes.string,
-  onLike: PropTypes.func,
-  published: PropTypes.string.isRequired,
-  likes: PropTypes.number,
+  featuredImage: T.string,
+  url: T.string,
+  onLike: T.func,
+  published: T.string.isRequired,
+  likes: T.number,
 };
 
 O_PostCard.defaultProps = {

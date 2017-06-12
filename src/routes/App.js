@@ -1,10 +1,13 @@
 import React, {Component} from 'react';
-import PropTypes from "prop-types";
+import * as T from "prop-types";
 import MainLayoutContainer from 'containers/MainLayoutContainer'
 import {fetchStaticData} from "AC/content";
+import initialLoad from 'utils/initialLoad'
+
 class AppRoute extends Component {
 
   static prepareData({dispatch}) {
+    if(initialLoad()) return;
     return dispatch(fetchStaticData())
   }
 
@@ -18,7 +21,7 @@ class AppRoute extends Component {
 }
 
 AppRoute.propTypes = {
-  children: PropTypes.any.isRequired
+  children: T.any.isRequired
 };
 
 export default AppRoute;

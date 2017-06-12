@@ -1,10 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <%- head.title.toString() %>
     <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="shortcut icon" href="">
 </head>
 <body>
-<div id="container"></div>
+
+<div id="container"><%- content %></div>
+<script >window.__INITIAL_STATE__ = <%- initialState %></script>
 <script src="/static/bundle.js"></script>
 </body>
 </html>

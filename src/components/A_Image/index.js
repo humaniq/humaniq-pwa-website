@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import PropTypes from "prop-types";
-import styles from './styles.scss';
+import * as T from "prop-types";
+import './styles.scss';
 import {cssClassName} from 'utils'
 const cn = cssClassName('A_Image')
 import isInitialLoad from 'utils/initialLoad'
@@ -48,11 +48,11 @@ class A_Image extends Component {
 }
 
 A_Image.propTypes = {
-  src: PropTypes.string.isRequired,
-  width: PropTypes.number,
-  height: PropTypes.number,
-  alt: PropTypes.string,
-  onClick: PropTypes.func,
+  src: T.string.isRequired,
+  width: T.number,
+  height: T.number,
+  alt: T.string,
+  onClick: T.func,
 }
 
 A_Image.defaultProps = {

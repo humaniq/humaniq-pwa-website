@@ -1,6 +1,6 @@
 import React from 'react';
-import PropTypes from "prop-types";
-import styles from './styles.scss';
+import * as T from "prop-types";
+import './styles.scss';
 import {cssClassName} from 'utils'
 const cn = cssClassName('M_AuthorBlock')
 
@@ -17,9 +17,9 @@ const M_AuthorBlock = ({firstName, lastName, profileImage}) => {
 }
 
 M_AuthorBlock.propTypes = {
-  firstName: PropTypes.string.isRequired,
-  lastName: PropTypes.string.isRequired,
-  profileImage: PropTypes.string,
+  firstName: T.string.isRequired,
+  lastName: T.string.isRequired,
+  profileImage: T.string,
 };
 
 M_AuthorBlock.defaultProps = {
