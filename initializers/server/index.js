@@ -4,7 +4,7 @@ require('babel-core/register');
 ['.css', '.less', '.sass', '.ttf', '.woff', '.woff2', '.scss'].forEach((ext) => require.extensions[ext] = () => {
 });
 
-const port = 8080;
+const port = process.env.PORT || 8080;
 
 const express = require('express')
 const application = express()
