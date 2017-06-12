@@ -9,7 +9,6 @@
   },
   "scripts": {
     "start": "npm run dev",
-    "postinstall": "npm i",
     "dev": "nodemon --watch initializers --watch webpack.config.js ./initializers/server/index.js",
     "test": "jest --config jest.config.json"
   },
