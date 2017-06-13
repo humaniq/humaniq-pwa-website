@@ -7,6 +7,7 @@ import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 
 const root = path.join(process.cwd());
+process.noDeprecation = true
 
 export default {
   devtool: 'source-map',

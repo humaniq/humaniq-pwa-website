@@ -24,7 +24,7 @@ export default {
   output: {
     path: path.join(process.cwd(), 'static', 'assets'),
     filename: 'bundle.js',
-    publicPath: '/static/assets'
+    publicPath: '/assets/'
   },
   module: {
     rules: [
