@@ -11,6 +11,7 @@
     "build": "NODE_ENV=production node ./initializers/webpack/build.js",
     "start": "NODE_ENV=production node ./initializers/server/index.js",
     "dev": "NODE_ENV=development nodemon --watch initializers --watch webpack.config.js ./initializers/server/index.js",
+    "dev2": "nodemon --watch initializers --watch webpack.noSSR.config.js ./initializers/server/noSSR.js",
     "test": "jest --config jest.config.json"
   },
   "dependencies": {
