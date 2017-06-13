@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import * as T from "prop-types";
 import PostsContainer from 'containers/PostsContainer'
 import {fetchPosts} from 'AC/posts'
 import initialLoad from 'utils/initialLoad'
@@ -20,8 +19,7 @@ class PostsRoute extends Component {
   }
 }
 
-PostsRoute.propTypes = {
-};
+
 
 export default PostsRoute;
 

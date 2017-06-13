@@ -1,6 +1,8 @@
 node_modules
 .idea
 #static/
+static/assets
 .DS_Store
 npm-debug.log
 /fonts
+webpack-manifest.json

@@ -22,9 +22,9 @@ export default {
     './src/index.js'
   ],
   output: {
-    path: path.join(__dirname, 'static'),
+    path: path.join(process.cwd(), 'static', 'assets'),
     filename: 'bundle.js',
-    publicPath: '/static/'
+    publicPath: '/static/assets'
   },
   module: {
     rules: [

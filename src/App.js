@@ -1,7 +1,7 @@
 import React from 'react';
 import {Router, match} from 'react-router'
 
-import 'common/style.scss'
+import './common/style.scss'
 import getRoutes from './routes'
 import {Provider} from 'react-redux';
 import history from 'history'

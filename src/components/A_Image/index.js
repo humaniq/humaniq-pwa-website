@@ -27,21 +27,21 @@ class A_Image extends Component {
 
   render() {
     const {onClick, objectFit, ...props} = this.props
-    const complete = !!this.node && this.node.complete
-    const imgReady = complete || this.state.imgReady
+    // const complete = !!this.node && this.node.complete
+    // const imgReady = complete || this.state.imgReady
     return (
       <div className={cn()} >
         <img
           ref={ node => this.node = node }
           className={cn({onClick: !!onClick, objectFit})}
           onLoad = {this.handleLoad}
-          style={imgReady ? {} : {display: 'none'}}
+          // style={imgReady ? {} : {display: 'none'}}
           onClick={onClick}
           {...props}
         />
-        <div style={imgReady ? {display: 'none'} : {}} className={cn('loader')} >
-          loading
-        </div>
+        {/*<div style={imgReady ? {display: 'none'} : {}} className={cn('loader')} >*/}
+          {/*loading*/}
+        {/*</div>*/}
       </div>
     )
   }

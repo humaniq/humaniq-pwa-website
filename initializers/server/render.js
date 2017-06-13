@@ -6,6 +6,7 @@ import createStore from 'store'
 import getRoutes from 'routes'
 import prepareData from 'utils/prepareData'
 import {compact} from 'lodash/array'
+import webpackAssets from './webpackAssets';
 import {createLocation} from 'history/lib/LocationUtils';
 import Helmet from 'react-helmet'
 import {stringify} from 'qs'
@@ -50,7 +51,7 @@ export default function(req, res){
         res.status(status);
         res.render(
           'index',
-          {initialState, content, head});
+          {initialState, content, head, webpackAssets});
 
       })
       .catch(error => {
