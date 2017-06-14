@@ -43,9 +43,10 @@ export default {
         exclude: /node_modules/,
         loader: 'url-loader'
       },
-      {test: /\.js$/,
-        include: path.join(__dirname, 'src'),
-        loaders: ['babel-loader']
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader'
       },
       {
         test: /\.scss$/,
@@ -56,7 +57,7 @@ export default {
         }, {
           loader: "sass-loader",
           options: {
-            includePaths: path.resolve(__dirname, "./src"),
+            includePaths: path.resolve(process.cwd(), "./src"),
           }
         }]
       },
@@ -65,7 +66,10 @@ export default {
         use: [{
           loader: "style-loader"
         }, {
-          loader: "css-loader"
+          loader: "css-loader",
+          options: {
+            includePaths: path.resolve(__dirname, "./src"),
+          }
         }]
       }
     ]

@@ -2,13 +2,12 @@
 
 import path from 'path';
 import webpack from 'webpack';
-
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
-
+const ProgressBarPlugin = require('progress-bar-webpack-plugin')
 const root = path.join(process.cwd());
-process.noDeprecation = true
 
+process.noDeprecation = true
 export default {
   devtool: 'source-map',
   entry: {
@@ -16,10 +15,8 @@ export default {
   },
   output: {
     path: path.join(process.cwd(), 'static', 'assets'),
-    filename: '[name].[chunkhash].js',
-    publicPath: '/static/'
+    filename: '[name].[chunkhash].js'
   },
-
   module: {
     loaders: [
       {
@@ -36,7 +33,19 @@ export default {
           }, {
             loader: "sass-loader",
             options: {
-              includePaths: path.resolve(__dirname, "./src"),
+              includePaths: path.resolve(root, "src"),
+            }
+          }]
+        })
+      },
+      {
+        test: /\.css$/,
+        use: ExtractTextPlugin.extract({
+          fallback: "style-loader",
+          use: [{
+            loader: "css-loader",
+            options: {
+              includePaths: path.resolve(root, "src"),
             }
           }]
         })
@@ -47,12 +56,13 @@ export default {
 
   resolve: {
     modules: [
-      path.join(process.cwd(), 'src'),
+      path.resolve(process.cwd(), 'src'),
       'node_modules'
     ]
   },
 
   plugins: [
+    new ProgressBarPlugin(),
     new webpack.DefinePlugin({
       __SERVER__: false,
       __CLIENT__: true,
