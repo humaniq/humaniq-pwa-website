@@ -37,7 +37,11 @@ if (__DEVELOPMENT__) {
   application.use(webpackHot(compiler))
 }
 
-application.get('*', require('./render').default)
+if(process.env.NO_SSR){
+  application.get('*', require('./noSSR').default)
+}else{
+  application.get('*', require('./render').default)
+}
 
 application.listen(port, (err) => {
   if (err) console.log(err);

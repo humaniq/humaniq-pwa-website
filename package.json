@@ -10,8 +10,9 @@
   "scripts": {
     "build": "NODE_ENV=production node ./initializers/webpack/build.js",
     "start": "NODE_ENV=production node ./initializers/server/index.js",
+    "postinstall": "npm run build",
     "dev": "NODE_ENV=development nodemon --watch initializers --watch webpack.config.js ./initializers/server/index.js",
-    "dev2": "nodemon --watch initializers --watch webpack.noSSR.config.js ./initializers/server/noSSR.js",
+    "dev2": "NODE_ENV=development NO_SSR=true nodemon --watch ./initializers --watch ./development.js ./initializers/server/index.js",
     "test": "jest --config jest.config.json"
   },
   "dependencies": {
