@@ -8,6 +8,28 @@ import history from 'history'
 import createStore from 'store';
 import prepareData from 'utils/prepareData'
 
+const OfflinePlugin = require('offline-plugin/runtime');
+OfflinePlugin.install({
+  onInstalled: function() {},
+  onUpdating: function() {},
+  onUpdateReady: function() {
+    OfflinePlugin.applyUpdate();
+  },
+  onUpdated: function() {
+    window.location.reload();
+  }
+});
+
+(function() {
+  //TODO: here we can detect network status and update content
+  window.addEventListener('offline', function() {
+    window.console.log('offline');
+  });
+  window.addEventListener('online', function() {
+    window.console.log('online')
+  })
+})();
+
 const store = createStore(window.__INITIAL_STATE__)
 
 const App = () => (
@@ -16,7 +38,7 @@ const App = () => (
       {getRoutes(store)}
     </Router>
   </Provider>
-)
+);
 
 function historyCb(location) {
   match({location, routes: getRoutes(store)}, (error, redirectLocation, renderProps) => {

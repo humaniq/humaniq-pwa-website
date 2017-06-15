@@ -1,6 +1,7 @@
 import path from 'path'
 import webpack from 'webpack'
 import ProgressBarPlugin from 'progress-bar-webpack-plugin'
+import OfflinePlugin from  'offline-plugin'
 
 process.noDeprecation = true
 
@@ -13,6 +14,15 @@ export default {
       __DEVELOPMENT__: true
     }),
     new webpack.HotModuleReplacementPlugin(),
+    new OfflinePlugin({
+      caches: 'all',
+      ServiceWorker: {
+        events: true
+      },
+      AppCache: {
+        events: true
+      }
+    })
   ],
   devtool: 'cheap-module-eval-source-map',
   entry:  [
