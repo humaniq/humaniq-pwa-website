@@ -4,7 +4,9 @@ import path from 'path';
 import webpack from 'webpack';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
-const ProgressBarPlugin = require('progress-bar-webpack-plugin')
+import ProgressBarPlugin from 'progress-bar-webpack-plugin'
+import OfflinePlugin from  'offline-plugin'
+
 const root = path.join(process.cwd());
 
 process.noDeprecation = true
@@ -68,6 +70,15 @@ export default {
       __CLIENT__: true,
       __DEVELOPMENT__: false,
       'process.env.NODE_ENV': JSON.stringify('production')
+    }),
+    new OfflinePlugin({
+      caches: 'all',
+      ServiceWorker: {
+        events: true
+      },
+      AppCache: {
+        events: true
+      }
     }),
     new ExtractTextPlugin('[name].[chunkhash].css'),
     new webpack.ContextReplacementPlugin(/moment[\\\/]locale$/, /^\.\/(en)$/),
