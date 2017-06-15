@@ -10,8 +10,6 @@ import offlinePluginStart from 'utils/offlinePlugin'
 
 const store = createStore(window.__INITIAL_STATE__)
 
-offlinePluginStart()
-
 const App = () => (
   <Provider store={store}>
     <Router history={history} key={Math.random()}>
@@ -30,5 +28,7 @@ function historyCb(location) {
 
 history.listen(historyCb)
 historyCb(window.location)
+offlinePluginStart()
+
 
 export default App
