@@ -1,36 +1,16 @@
 import React from 'react';
 import {Router, match} from 'react-router'
-
 import './common/style.scss'
 import getRoutes from './routes'
 import {Provider} from 'react-redux';
 import history from 'history'
 import createStore from 'store';
 import prepareData from 'utils/prepareData'
-
-const OfflinePlugin = require('offline-plugin/runtime');
-OfflinePlugin.install({
-  onInstalled: function() {},
-  onUpdating: function() {},
-  onUpdateReady: function() {
-    OfflinePlugin.applyUpdate();
-  },
-  onUpdated: function() {
-    window.location.reload();
-  }
-});
-
-(function() {
-  //TODO: here we can detect network status and update content
-  window.addEventListener('offline', function() {
-    window.console.log('offline');
-  });
-  window.addEventListener('online', function() {
-    window.console.log('online')
-  })
-})();
+import offlinePluginStart from 'utils/offlinePlugin'
 
 const store = createStore(window.__INITIAL_STATE__)
+
+offlinePluginStart()
 
 const App = () => (
   <Provider store={store}>

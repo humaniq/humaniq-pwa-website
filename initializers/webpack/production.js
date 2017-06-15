@@ -5,7 +5,7 @@ import webpack from 'webpack';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import ProgressBarPlugin from 'progress-bar-webpack-plugin'
-import OfflinePlugin from  'offline-plugin'
+import OfflinePlugin from 'offline-plugin'
 
 const root = path.join(process.cwd());
 
@@ -71,15 +71,6 @@ export default {
       __DEVELOPMENT__: false,
       'process.env.NODE_ENV': JSON.stringify('production')
     }),
-    new OfflinePlugin({
-      caches: 'all',
-      ServiceWorker: {
-        events: true
-      },
-      AppCache: {
-        events: true
-      }
-    }),
     new ExtractTextPlugin('[name].[chunkhash].css'),
     new webpack.ContextReplacementPlugin(/moment[\\\/]locale$/, /^\.\/(en)$/),
     new webpack.optimize.CommonsChunkPlugin({
@@ -93,6 +84,16 @@ export default {
     }),
     new BundleAnalyzerPlugin({
       analyzerMode: 'static'
+    }),
+    new OfflinePlugin({
+      publicPath: '/assets/',
+      caches: 'all',
+      ServiceWorker: {
+        events: true
+      },
+      AppCache: {
+        events: true
+      }
     })
   ]
 };
