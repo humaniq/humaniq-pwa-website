@@ -57,6 +57,7 @@
     "moment": "^2.17.1",
     "nightmare": "^2.10.0",
     "node-sass": "^3.10.0",
+    "offline-plugin": "^4.8.1",
     "qs": "^6.4.0",
     "react-hot-loader": "^3.0.0-beta.6",
     "react-redux-form": "^1.11.1",
