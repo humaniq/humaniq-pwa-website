@@ -5,37 +5,16 @@
   min-height: 100vh;
   flex-direction: column;
 
-  &__mainTagline{
-    flex: 1 1 10em;
-    text-align: center;
-  }
-
-  &__header, &__footer{
-    padding: .5em .75rem;
-    display: flex;
-  }
-  &__header{
-    @include card(1);
-    background-color: white;
-    align-items: center;
-  }
-  &__logo{
-    flex: 1 0 1em;
-    display: inline-block;
-    padding: .4em;
-    border: 2px solid $primary;
-    font-weight: 700;
-    font-family: Andale Mono;
-    cursor: default;
-    user-select: none;
-  }
   &__main{
     flex: 1;
     padding: .5em .5rem 0;
   }
   &__footer{
+    padding: .5em .75rem;
+    display: flex;
     font-size: 10px;
-    background-color: $background;
+    color: $default;
+    background-color: $optional;
     span{
       padding-right: 1em;
     }

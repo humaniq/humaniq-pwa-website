@@ -1,0 +1,27 @@
+@import 'common/settings/brand';
+
+.m-menu-list{
+  &__link{
+    display: block;
+    width: 100%;
+    height: 100%;
+    font-size: 0.875rem;
+  }
+
+  &__item{
+    height: 3rem;
+    line-height: 3rem;
+    width: 100%;
+    border-bottom: 1px solid $primary;
+    &_mod_short{
+      border: none;
+      display: block;
+      width: 100%;
+      height: 2.25rem;
+      text-align: center;
+      line-height: 2.25rem;
+      font-size: 0.875rem;
+      color: #8f8f8f;
+    }
+  }
+}

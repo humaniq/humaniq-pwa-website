@@ -1,0 +1,46 @@
+@import 'common/settings/brand';
+
+.o-footer{
+  &__root{
+    width: 100%;
+    background-color: $default;
+    padding-top: 1px;
+    color: #8f8f8f;
+    text-align: center;
+  }
+
+  &__info, &__menu, &__copiright, &__social{
+    border-bottom: 1px solid $optional;
+  }
+
+  &__menu{
+    width: 100%;
+    display: block;
+    padding-top: 14px;
+    padding-bottom: 17px;
+  }
+
+  &__info{
+    width: 100%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    text-align: center;
+    padding: 1.75rem 2.813rem;
+    box-sizing: border-box;
+  }
+
+  &__info-text{
+    font-size: 0.75rem;
+    margin-top: 0.815px;
+    margin-bottom: 1.625px;
+  }
+  &__copiright{
+    padding-top: 1.375rem;
+    padding-bottom: 1.75rem;
+    font-size: 0.75rem;
+
+  }
+
+  &__social {
+    padding: 1.25rem 0;
+  }
+}

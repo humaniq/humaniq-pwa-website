@@ -4,6 +4,8 @@
   display: flex;
   flex-wrap: wrap;
   align-items: stretch;
+  max-width: 1000px;
+  margin: 0 auto;
 
   &__item, &__empty{
     flex: 1 0 25em;

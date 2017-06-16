@@ -1,27 +1,22 @@
 import React, {Component} from 'react';
-import PostsContainer from 'containers/PostsContainer'
-import {fetchPosts} from 'AC/posts'
+import HomeContainer from 'containers/HomeContainer'
 import initialLoad from 'utils/initialLoad'
 import {setPage} from 'AC/navigation'
 
-class PostsRoute extends Component {
+class HomeRoute extends Component {
 
   static prepareData({dispatch}) {
     if(initialLoad()) return;
-    dispatch(setPage('blog'))
-    return dispatch(fetchPosts())
+    dispatch(setPage('home'))
   }
 
   render() {
     return (
       <div>
-        <PostsContainer />
+        <HomeContainer />
       </div>
     )
   }
 }
 
-
-
-export default PostsRoute;
-
+export default HomeRoute;

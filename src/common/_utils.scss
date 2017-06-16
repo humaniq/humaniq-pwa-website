@@ -30,6 +30,16 @@
   }
 }
 
+@mixin level($depth) {
+  @if $depth < 1 {
+    box-shadow: none;
+  } @else if $depth > 5 {
+    @warn "Invalid $depth `#{$depth}` for mixin `depth`.";
+  } @else {
+    box-shadow: bottom-shadow($depth), top-shadow($depth);
+  }
+}
+
 // Add percentage of white to a color
 @function tint($color, $percent){
   @return mix(white, $color, $percent);
