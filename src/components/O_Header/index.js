@@ -5,7 +5,7 @@ import {cssClassName} from 'utils'
 const cn = cssClassName('O_Header')
 import A_Link from 'A_Link'
 import A_Button from 'A_Button'
-import A_logo from 'A_logo'
+import A_logo from 'A_Logo'
 
 const O_Header = ({navMenu}) => {
   const menu = navMenu.map( ({name, url, use, open}) => (
