@@ -3,25 +3,36 @@ import * as T from "prop-types";
 import './styles.scss';
 import {cssClassName} from 'utils'
 const cn = cssClassName('SE_MainLayout')
-import O_Footer from 'O_Footer'
-import O_Header from 'O_Header'
+import A_Link from 'A_Link'
 
-const SE_MainLayout = ({children, mainEmail, navMenu}) => (
+const SE_MainLayout = ({children, mainTagline, mainEmail}) => (
   <div className={cn()}>
-    <div className={cn('header')}>
-      <O_Header {...{navMenu}}/>
-    </div>
+    <header className={cn('header')}>
+      <div className={cn('logo-block')}>
+        <A_Link to={'/'} >
+          <p className={cn('logo')}>Logo IQ</p>
+        </A_Link>
+      </div>
+      <p className={cn('mainTagline')}>{mainTagline}</p>
+    </header>
     <main className={cn('main')}>
       {children}
     </main>
-    <O_Footer mainEmail={mainEmail}/>
+    
+    <footer className={cn('footer')}>
+      <span>Company Name</span><a href={"mailto:" + mainEmail} target="_blank">{mainEmail}</a></footer>
   </div>
 )
 
 SE_MainLayout.propTypes = {
   children: T.any.isRequired,
   mainEmail: T.string,
-  navMenu: T.array.isRequired
+};
+
+SE_MainLayout.propTypes = {
+  children: T.any.isRequired,
+  mainEmail: T.string,
+  mainTagline: T.string
 };
 
 SE_MainLayout.defaultProps = {

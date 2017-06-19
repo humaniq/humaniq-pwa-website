@@ -1,8 +1,6 @@
 export const REQUEST = 'REQUEST_'
 export const CLOSE = 'CLOSE_'
-export const SET = 'SET_'
 
-export const OPEN_PAGE = 'OPEN_PAGE'
 export const POST = 'POST'
 export const POSTS = 'POSTS'
 export const ERROR = 'ERROR'

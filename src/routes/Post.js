@@ -2,14 +2,12 @@ import React, {Component} from 'react';
 import PostContainer from 'containers/PostContainer'
 import {fetchPost} from 'AC/post'
 import initialLoad from 'utils/initialLoad'
-import {setPage} from 'AC/navigation'
 
 class PostRoute extends Component {
 
-  static prepareData({dispatch}, query, {id}) {
+  static prepareData(store, query, {id}) {
     if(initialLoad()) return;
-    dispatch(setPage('blog'))
-    return dispatch(fetchPost(id))
+    return store.dispatch(fetchPost(id))
   }
 
   render() {

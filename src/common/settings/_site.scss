@@ -2,11 +2,9 @@
 
 body {
   font-size: 16px;
-  font-family: 'Noto', sans-serif;
+  font-family: "Roboto", sans-serif;
   overflow: auto;
-  background-color: #ffffff;
-  color: $default;
-
+  background-color: $background-extra;
 }
 
 video {
@@ -16,8 +14,6 @@ video {
 
 body > div {
   overflow: hidden;
-  -webkit-overflow-scrolling: touch;
-
 }
 
 div {

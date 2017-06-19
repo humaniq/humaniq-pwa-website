@@ -9,9 +9,4 @@
   &* {
     cursor: pointer;
   }
-  &_disabled_true{
-    pointer-events: none !important;
-    cursor: default;
-    color:$non-critical;
-  }
 }

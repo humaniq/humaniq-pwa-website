@@ -2,8 +2,6 @@
 
 .o-post{
   @include card(1);
-  max-width: 1000px;
-  margin: 0 auto;
   background-color: snow;
   display: flex;
   flex-direction: column;
@@ -12,9 +10,7 @@
   min-height: 300px;
   box-sizing: border-box;
   position: relative;
-  p{
-    margin: 1em;
-  }
+  padding: 1em;
   &__body{
     h1, h2, h3, h4, h5 {
       font-weight: 600;
