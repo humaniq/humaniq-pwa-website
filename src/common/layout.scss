@@ -1,0 +1,17 @@
+@import "common/utils";
+
+section {}
+
+.l-container-wide {
+  margin: 0 auto;
+  @include media($desktop) {
+    width: $w-desktop-wide;
+  }
+}
+
+.l-container {
+  margin: 0 auto;
+  @include media($desktop) {
+    width: $w-desktop;
+  }
+}

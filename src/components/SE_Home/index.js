@@ -1,14 +1,16 @@
 import React from 'react';
-import * as T from "prop-types";
+// import * as T from "prop-types";
 import './styles.scss';
-import {cssClassName} from 'utils'
-const cn = cssClassName('SE_Home')
+// import {cssClassName} from 'utils'
+// const cn = cssClassName('SE_Home')
 
 
 const SE_Home = () => (
-  <div className={cn()}>
-    тут будет главная
-  </div>
+  <section>
+    <div className="l-container">
+      .
+    </div>
+  </section>
 )
 
 SE_Home.propTypes = {

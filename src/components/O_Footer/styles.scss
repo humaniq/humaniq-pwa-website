@@ -1,7 +1,10 @@
+@import "common/settings/variables";
 @import "common/utils";
 
 .o-footer{
-  &__root{
-    color: red
+  &__inner {
+    padding: $identation * 2.5 0; // clarify
+    display: flex;
+
   }
 }

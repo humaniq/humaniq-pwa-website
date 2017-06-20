@@ -1,6 +1,8 @@
 @import "./settings/brand";
+@import "./settings/variables";
 @import "./settings/reset";
 
 @import "./settings/normalize";
-@import "./settings/site";
+@import "settings/initial";
+@import "./layout";
 //@import "./settings/fonts";

@@ -1,6 +1,11 @@
 @import "common/utils";
 
 .a-logo {
-  display: inline-block;
-  margin-top: 0;
+  display: block;
+
+  &__img {
+    display: block;
+    width: 129px;
+    height: 30px;
+  }
 }

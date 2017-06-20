@@ -1,0 +1,35 @@
+@import 'brand';
+
+body {
+  font-size: 16px;
+  font-family: 'Open Sans', sans-serif;
+  overflow: auto;
+}
+
+video {
+  width: 100%    !important;
+  height: auto   !important;
+}
+
+body > div {
+  overflow: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  object-fit: cover;
+}
+
+p {
+  font-size: 17px;
+  line-height: 1.65em;
+  color: #565759; // clarify
+
+  &.p_center { text-align: center; }
+  + p { margin-top: 1.5em; }
+  >  a { color: $blue-1; }
+}

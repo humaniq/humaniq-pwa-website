@@ -3,8 +3,8 @@ import catnip from 'catnip';
 import styles from './styles.scss';
 const cn = catnip('a-button')
 
-const A_Button = ({children}) =>
-  <button className={cn()} type="button">
+const A_Button = ({children, size}) =>
+  <button className={cn({size})} type="button">
     {children}
   </button>
 

@@ -39,3 +39,18 @@
 @function shade($color, $percent){
   @return mix(black, $color, $percent);
 }
+
+// Temporary media mixin
+@mixin media($query) {
+  @media #{"screen and (#{$query})"} {
+    @content;
+  }
+}
+
+@mixin ellipsis {
+  display: inline-block;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

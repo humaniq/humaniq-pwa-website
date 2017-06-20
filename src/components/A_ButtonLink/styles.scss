@@ -1,0 +1,21 @@
+@import "common/settings/variables";
+
+.a-button-link {
+  box-sizing: border-box;
+  &_size_xs {
+    height: 40px;
+    padding: 8px 15px;
+    border-radius: 4px;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.2em;
+  }
+  &__primary {
+    color: $c-brand-invert;
+    background-color: $c-control-primary;
+  }
+  &_color_transparent_black {
+    color: $black-2;
+    border: 2px $black-2 solid;
+  }
+}

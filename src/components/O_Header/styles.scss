@@ -1,55 +1,31 @@
+@import "common/settings/variables";
 @import "common/utils";
 
 .o-header {
-  &__root {
-    width: 100%;
+  height: $header-height;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  background: $gray-1;
+
+  &__inner {
+    padding: $identation * .75 $identation;
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    height: 5rem;
-    max-width: 77.5rem;
-    margin: 0 auto;
-    padding-bottom: 3px;
   }
+}
 
-  &__logo-block, &__subscribe {
-    flex: 0 0 10em;
-  }
-  &__bar {
-    position: relative;
-    align-items: center;
-    color: white;
-    z-index: 2;
-    padding: 0 .75rem;
-    display: flex;
-  }
-  &__nav {
-    flex: 1 1 4em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: $menu;
+//TODO: вынести M_HeaderNav
 
-    ul {
-      flex-grow: 10;
-      width: 100%;
-      display: flex;
-      list-style-type: none;
-      align-content: center;
-      justify-content: center;
-    }
-
-    li {
-      flex: 0 0 6em;
-      text-align: center;
-      align-content: center;
-      box-sizing: border-box;
-      height: 21px;
-      padding-bottom: 3px;
-    }
-  }
-
-  &_open_true {
-    border-bottom: 2px solid $menu;
-    font-weight: 600;
+.m-header-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  .a-link {
+    font-size: 15px; //?
+    font-weight: 600; //?
+    padding: 0 15px;
+    + .a-button-link { margin-left: 15px; }
   }
 }

@@ -40,7 +40,7 @@ module.exports = {
     "react/prop-types": 0,
     "no-irregular-whitespace": 0,
     "no-debugger": 0,
-    "no-console": 1,
+    "no-console": 0,
     "linebreak-style": [
       "error",
       "unix"
