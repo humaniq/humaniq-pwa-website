@@ -5,6 +5,54 @@
   &__inner {
     padding: $identation * 2.5 0; // clarify
     display: flex;
+  }
 
+  &__nav {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+
+    &-section {
+      width: 25%;
+      padding-right: $identation;
+
+      &__title {
+        margin-bottom: 5px;
+        font-size: 11px;
+        line-height: 2.18;
+        text-transform: uppercase;
+        color: #4a4a4a; // clarify
+      }
+    }
+
+    &-list__item {
+      font-size: 13px;
+      line-height: 2.15;
+      color: #9e9ea6; // clarify
+    }
+  }
+
+  &__aux {
+    width: 20%;
+  }
+
+  &__lang {
+    height: 40px;
+    padding: 6px 40px 6px 12px;
+    font-size: 16px;
+    line-height: 1.75;
+    color: #89898b; // clarify
+    border-radius: 4px;
+    border: solid 1px #e3e3e3;
+  }
+
+  &__soc {
+    margin-top: $identation;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &-item { font-size: 0; }
   }
 }
