@@ -5,6 +5,7 @@ import {cssClassName} from 'utils'
 const cn = cssClassName('M_Subscribe')
 import A_Button from 'A_Button'
 import {validateEmail} from 'utils/validateHelpers'
+import M_Tooltip from 'M_Tooltip'
 
 class M_Subscribe extends Component {
 
@@ -44,12 +45,20 @@ class M_Subscribe extends Component {
 
     const error = validated && !valid
     return (
-      <form onSubmit={this.onSubmit} className={cn('form', {device: 'desktop', submitted})}>
-        <input className={cn('input', {error})} type="text" name="name" value={email}
-               onChange={(e) => this.onChange(e, error)}/>
-        <span className={cn('submit')}>
-          <A_Button type="submit">Subscribe</A_Button>
-        </span>
+      <form onSubmit={this.onSubmit} className={cn('form')}>
+        <div className={cn('input', {error, device: 'desktop', submitted})}>
+          { error &&
+            <M_Tooltip>Ooops! That looks like an invalid email address!</M_Tooltip>
+          }
+          <input
+            type="text"
+            value={email}
+            onChange={(e) => this.onChange(e, error)}
+          />
+          <span className={cn('submit')}>
+            <A_Button type="submit">Subscribe</A_Button>
+          </span>
+        </div>
       </form>
     )
   }
