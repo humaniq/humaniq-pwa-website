@@ -1,15 +1,6 @@
-body{
-  background-color: lightgray;
-}
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-/* Demo of the tool-tip CSS */
-
 .m-tooltip {
   position: absolute;
+  display: block;
   z-index: 1;
   padding: .9rem 1rem;
   color: #FFA940;
@@ -17,7 +8,7 @@ body{
   box-shadow: 0px 0px 5px 0px rgba(112, 111, 111, 1);
   background-color: transparent;
   border-radius: 4px;
-  margin-top: -3rem;
+  top:calc(-100% + 5px);
   &__text {
     position: relative;
     z-index: 1;
