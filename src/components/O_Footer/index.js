@@ -3,7 +3,6 @@ import {Link} from 'react-router'
 // import * as T from "prop-types";
 import './styles.scss';
 import {cssClassName} from 'utils'
-import A_Image from "../A_Image/index";
 const cn = cssClassName('O_Footer')
 const links = [
   { section: 'product', links: [{ name: 'Features', url: '#' }, { name: 'Open source', url: '#' }, { name: 'Humaniq wiki', url: '#' }] },

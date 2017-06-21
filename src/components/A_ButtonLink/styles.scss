@@ -2,10 +2,18 @@
 
 .a-button-link {
   box-sizing: border-box;
+  display: inline-block;
+  border-radius: 4px;
   &_size_xs {
     height: 40px;
     padding: 8px 15px;
-    border-radius: 4px;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.2em;
+  }
+  &_size_m {
+    height: 40px;
+    padding: 8px 15px;
     font-size: 15px;
     font-weight: 600;
     line-height: 1.2em;
@@ -17,5 +25,9 @@
   &_color_transparent_black {
     color: $black-2;
     border: 2px $black-2 solid;
+  }
+  &_color_transparent_white {
+    color: $c-brand-invert;
+    border: 2px $c-brand-invert solid;
   }
 }

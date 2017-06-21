@@ -17,8 +17,6 @@ const O_SimpleSlider = () => {
                 <a className="a-h4__link" href="#">From Here To Where? Bitcoin And The Future Of Cryptocurrency.</a>
               </h4>
               <p className={cn('description')}>Smart and powerful payments. We believe in transparency, and that is why Humaniq has designed the payment system using Blockchain technologies and bringing them into your pocket.</p>
-              {/*<p className={cn('texts-item')}>Biometrics: our Passport to Inclusive Banking. We believe that your identity is the strongest password. Avoiding long passwords which can be lost or hacked. </p>*/}
-              {/*<p className={cn('texts-item')}>Digital Identity. Humaniq creates virtual profiles which evolve with people as they age. Therefore, the only thing you need to safely manage your financial assets is You, literally.</p>*/}
             </div>
           </div>
         </div>

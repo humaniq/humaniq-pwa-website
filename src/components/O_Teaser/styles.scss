@@ -5,7 +5,12 @@
   background: $gray-1;
 
   &__inner {
-    padding: $header-height + 110px 400px 70px 0;
+    @include media($desktop) {
+      padding: $header-height + 110px 40% 70px 0;
+    }
+    @include media($tablet) {
+      padding: 20% 10% 70px 0;
+    }
   }
 
   &__title {

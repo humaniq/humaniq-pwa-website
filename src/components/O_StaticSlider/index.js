@@ -15,7 +15,7 @@ const O_StaticSlider = () => {
             <p className={cn('texts-item')}>Biometrics: our Passport to Inclusive Banking. We believe that your identity is the strongest password. Avoiding long passwords which can be lost or hacked. </p>
             <p className={cn('texts-item')}>Digital Identity. Humaniq creates virtual profiles which evolve with people as they age. Therefore, the only thing you need to safely manage your financial assets is You, literally.</p>
           </div>
-          <img className={cn('image')} src="/img/placeholder.svg" width="450" height="375"/>
+          <img className={cn('image')} src="/img/placeholder.svg"/>
         </div>
       </div>
     </section>

@@ -13,13 +13,14 @@ const O_RecentNews = () => {
         <div className={cn('inner')}>
           <A_H2>Recent news</A_H2>
           {/*TODO: slice*/}
-          <div className="o-news-item-h">
+          <div className="m-news-item-h">
             <div className="m-author">
               <img className="a-avatar" src="/img/placeholder.svg" width="35" height="35"/>
               <Link className="a-username" to="#">Humaniq Team</Link>
+              <br/>
               <span className="a-date">Thursday, June 15, 2017</span>
             </div>
-            <div className="m-news-item-content">
+            <div className="m-news-item-h__content">
               <h4 className="a-h4">
                 <a className="a-h4__link" href="#">From Here To Where? Bitcoin And The Future Of Cryptocurrency.</a>
               </h4>
