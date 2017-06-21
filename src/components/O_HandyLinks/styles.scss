@@ -4,6 +4,7 @@
 .o-handy-links {
   &__inner {
     padding: $identation * 3.5 0 $identation * 2.5; // clarify
+    @include media($mobile) { padding: $identation * 2 0; } // clarify
   }
 
   &__list {
@@ -12,18 +13,32 @@
     padding-top: $identation * 2.5; // clarify;
     justify-content: center;
     align-items: stretch;
+    @include media($mobile) {
+      padding-top: $identation * 1.5;
+      height: auto;
+      flex-flow: column;
+    }
 
     &-item {
       display: flex;
       margin: 0 $identation / 2;
+      flex-basis: 33%;
+      max-width: 207px;
+      @include media($mobile) {
+        flex-basis: 100%;
+        max-width: none;
+        & + & { margin-top: 20px; }
+      }
     }
   }
 
   &__link {
     display: flex;
-    width: 205px;
+    width: 100%;
+    padding: $identation 0;
     justify-content: center;
     align-items: center;
+    text-align: center;
     font-size: 16px;
     font-weight: 600;
     color: $gray-3;

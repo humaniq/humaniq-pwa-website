@@ -5,7 +5,11 @@
   background: $gray-1;
 
   &__inner {
-    padding: $header-height + 110px 400px 70px 0;
+    display: flex;
+    flex-direction: column;
+    @include media($desktop) { padding: $header-height + 110px 40% 70px 0; }
+    @include media($tablet) { padding: $header-height * 2 10% $header-height 0; }
+    @include media($mobile) { padding: $header-height * 2 0 0; }
   }
 
   &__title {
@@ -20,9 +24,19 @@
     font-size: 18px;
     line-height: 1.56em;
     color: #253039; // clarify
+    @include media($mobile) {
+      order: 1;
+      margin: 0 (-$identation);
+      padding: ($identation * 3) $identation ($identation * 2);
+      background: $c-brand;
+      color: $c-brand-invert;
+    }
   }
 
   &__subscribe {
     margin-top: $identation;
+    @include media($mobile) {
+      margin: $header-height 0;
+    }
   }
 }

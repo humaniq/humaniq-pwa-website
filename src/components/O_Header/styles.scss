@@ -2,11 +2,13 @@
 @import "common/utils";
 
 .o-header {
-  height: $header-height;
   position: fixed;
   top: 0;
   z-index: 1;
   background: $gray-1;
+  @include media($desktop) {
+    height: $header-height;
+  }
 
   &__inner {
     padding: $identation * .75 $identation;
@@ -16,12 +18,13 @@
   }
 }
 
-//TODO: вынести M_HeaderNav
-
-.m-header-nav {
+.m-header__nav {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
+  @include media($mobile) {
+    display: none;
+  }
   .a-link {
     font-size: 15px; //?
     font-weight: 600; //?

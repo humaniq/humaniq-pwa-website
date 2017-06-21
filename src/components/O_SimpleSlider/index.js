@@ -4,6 +4,7 @@ import styles from './styles.scss';
 import {cssClassName} from 'utils'
 const cn = cssClassName('O_SimpleSlider')
 import O_Carousel from 'O_Carousel';
+import A_H from 'A_H'
 
 const slides = [
   {
@@ -33,9 +34,7 @@ class O_SimpleSlider extends Component {
             <div className={cn('slide')} >
               <img className={cn('image')} src={slide.img} width="220" height="220"/>
               <div className={cn('text')}>
-                <h4 className="a-h4">
-                  <a className="a-h4__link" href="#">{slide.title}</a>
-                </h4>
+                <A_H type="h4" href="#">From Here To Where? Bitcoin And The Future Of Cryptocurrency.</A_H>
                 <p className={cn('description')}>{slide.text}</p>
               </div>
             </div>

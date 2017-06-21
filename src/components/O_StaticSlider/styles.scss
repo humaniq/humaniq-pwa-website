@@ -5,11 +5,16 @@
   &__inner {
     display: flex;
     margin: $identation * 2.5 0 $identation * 2.5; // clarify
-    padding: $identation * 2.5 $identation * 2; // clarify
     justify-content: space-between;
     align-items: center;
-    border: 2px $gray-2 solid;
-    border-radius: 4px; // 6? clarify
+    @include media($desktop) {
+      padding: $identation * 2.5 $identation * 2; // clarify
+      border: 2px $gray-2 solid;
+      border-radius: 4px; // 6? clarify
+    }
+    @include media($tablet) {
+
+    }
   }
 
   &__texts {
@@ -17,20 +22,42 @@
     width: 360px;
     flex-direction: column;
     justify-content: space-between;
+    @include media($tablet) {
+      width: 50%;
+      padding-right: $identation;
+    }
 
     &-item {
       cursor: pointer;
-      padding-left: $identation * 2;
-      font-size: 16px;
-      line-height: 1.75em;
       color: #4a4a4a; // clarify
       opacity: 0.5;
+      @include media($desktop) {
+        padding-left: $identation * 2;
+        font-size: 16px;
+        line-height: 1.75em;
+      }
+      @include media($tablet) {
+        padding-left: $identation;
+        font-size: 14px;
+        line-height: 1.5em;
+      }
       &.active {
         opacity: 1;
-        border-left: 4px $c-control-primary solid;
         padding-left: $identation * 2 - 4;
+        border-left: 4px $c-control-primary solid;
       }
-      & + & { padding-top: $identation * 2; }
+      //& + & { padding-top: $identation * 2; }
+    }
+  }
+
+  &__image {
+    @include media($desktop) {
+      width: 450px;
+      height: 375px;
+    }
+    @include media($tablet) {
+      width: 50%;
+      height: auto;
     }
   }
 }

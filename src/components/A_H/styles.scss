@@ -1,12 +1,22 @@
 @import "common/settings/variables";
+@import "common/utils";
 
 .a-h{
   margin-bottom: $identation * 2;
   font-size: 30px;
+  &:first-child { margin-top: 0; }
+  @include media($tablet) {
+    margin-bottom: $identation;
+    margin-top: $identation * 1.5;
+  }
   &_type_h2{
     line-height: 1.33em;
     font-weight: 700;
     text-align: center;
+    @include media($mobile) {
+      font-size: 24px;
+      line-height: 1.67;
+    }
   }
   &_type_h3{
     line-height: 1.2em;
@@ -17,5 +27,12 @@
       font-weight: 700;
       color: $gray-3;
     }
+  }
+  &_type_h4{
+    font-size: 22px;
+    line-height: 1.23em;
+    font-weight: 400;
+    &,
+    & > a { color: $gray-3; }
   }
 }

@@ -3,7 +3,7 @@ import {Link} from 'react-router'
 // import * as T from "prop-types";
 import './styles.scss';
 import {cssClassName} from 'utils'
-import A_H2 from 'A_H2'
+import A_H from 'A_H'
 const cn = cssClassName('O_HandyLinks')
 
 const links = [
@@ -34,8 +34,7 @@ const O_HandyLinks = () => {
     <section className={cn()}>
       <div className="l-container">
         <div className={cn('inner')}>
-          <A_H2>Looking for more?</A_H2>
-          {/*TODO: slice*/}
+          <A_H type="h2">Looking for more?</A_H>
           <p className="p_center">These handy links will help you get on your way.</p>
           <ul className={cn('list')}>
             {linksList()}
