@@ -1,0 +1,21 @@
+@import "common/settings/variables";
+
+.a-h{
+  margin-bottom: $identation * 2;
+  font-size: 30px;
+  &_type_h2{
+    line-height: 1.33em;
+    font-weight: 700;
+    text-align: center;
+  }
+  &_type_h3{
+    line-height: 1.2em;
+    font-weight: 400;
+    color: #4a4a4a; // clarify
+    &.accent,
+    &.flip {
+      font-weight: 700;
+      color: $gray-3;
+    }
+  }
+}

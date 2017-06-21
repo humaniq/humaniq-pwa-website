@@ -1,18 +1,8 @@
 import React from 'react';
-import * as T from "prop-types";
-import './styles.scss';
-import {cssClassName} from 'utils'
-const cn = cssClassName('A_H3')
+import A_H from 'A_H'
 
-const A_H3 = ({children, className}) =>(
-  <h3 className={cn([className])}>{children}</h3>
-);
-
-A_H3.propTypes = {
-  children: T.any.isRequired
-};
-
-A_H3.defaultProps = {
-};
+const A_H3 = ({children}) =>(
+  <A_H type="h2">{children}</A_H>
+)
 
 export default A_H3
