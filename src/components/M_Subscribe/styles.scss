@@ -1,0 +1,46 @@
+@import "common/settings/variables";
+
+.m-subscribe{
+  &__submit{
+    padding-left: 19px;
+  }
+  &__input{
+    box-sizing: border-box;
+    width: 250px;
+    height: 53px;
+    border-radius: 4px;
+    background-color: white;
+    padding-left: 1em;
+    box-shadow: inset 0 1px 3px 0 rgba(0, 0, 0, 0.3);
+    border: solid 1px $gray-5;
+    &_error_true{
+      color: $c-error;
+    }
+  }
+  &__form{
+    display: inline-block;
+    position: relative;
+
+    &_device_desktop{
+      min-width: 396px;
+    }
+    &_submitted_true{
+      button{
+        visibility: hidden;
+      }
+      &::after{
+        left: 0;
+        width: 100%;
+        content: url('/img/notify-checkmark.svg');
+        text-align:center;
+        line-height: 53px;
+        height: 100%;
+        position: absolute;
+        z-index: 1;
+        border-radius: 4px;
+        background-color: $c-success
+        //border: 3px solid green;
+      }
+    }
+  }
+}

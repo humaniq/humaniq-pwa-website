@@ -19,6 +19,7 @@
     justify-content: space-between;
 
     &-item {
+      cursor: pointer;
       padding-left: $identation * 2;
       font-size: 16px;
       line-height: 1.75em;
@@ -27,6 +28,7 @@
       &.active {
         opacity: 1;
         border-left: 4px $c-control-primary solid;
+        padding-left: $identation * 2 - 4;
       }
       & + & { padding-top: $identation * 2; }
     }
