@@ -28,7 +28,7 @@ function mapStateToProps(state) {
   const {navigation:{page}, staticContent:{mainTagline, mainEmail}} = state
 
   const _navMenu = navMenu.map(({name, url, disabled}) => {
-    console.log(name.toLowerCase(), page)
+    // console.log(name.toLowerCase(), page)
     return {
       name,
       url,

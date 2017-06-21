@@ -56,12 +56,3 @@
   color: $gray-4;
   @include ellipsis;
 }
-
-.a-h4 {
-  margin-bottom: 6px; //?
-  font-size: 22px;
-  line-height: 1.23em;
-
-  &,
-  & > a { color: $gray-3; }
-}

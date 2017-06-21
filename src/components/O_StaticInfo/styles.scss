@@ -8,6 +8,7 @@
     justify-content: space-between;
     align-items: stretch;
     @include media($tablet) { flex-flow: column-reverse; }
+    @include media($mobile) { padding: $identation * 2 0; }
   }
 
   &__text {
@@ -15,7 +16,10 @@
     flex-direction: column;
     justify-content: center;
     @include media($desktop) { width: 450px; }
-    @include media($tablet) { width: 100%; }
+    @include media($tablet) {
+      width: 100%;
+      margin-top: $identation * 1.5;
+    }
 
     .a-button-link {
       display: table;
@@ -36,6 +40,18 @@
 
   &.accent {
     background: $c-brand;
+    .o-static-info__inner {
+      @include media($mobile) {
+        flex-flow: column;
+        padding-bottom: $identation * 3.5;
+      }
+    }
+    .o-static-info__text {
+      @include media($mobile) { margin-bottom: $identation * 2.5; }
+    }
+    .a-button-link {
+      @include media($mobile) { display: block; }
+    }
     &, h3, p { color: $c-brand-invert; }
     h3 { font-weight: 700; }
   }
@@ -46,6 +62,7 @@
       margin-top: $identation * 4;
       border-top: 1px #d6d6d6 solid;
       @include media($desktop) { flex-direction: row-reverse; }
+      @include media($mobile) { padding: $identation * 2 0; }
     }
     h3 { font-weight: 700; }
   }
