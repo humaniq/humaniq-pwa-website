@@ -12,7 +12,7 @@ class M_Subscribe extends Component {
   state = {
     email: '',
     valid: false,
-    validated: true,
+    validated: false,
     submitted: false
   }
 
