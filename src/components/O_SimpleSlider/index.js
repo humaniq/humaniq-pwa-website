@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import * as T from "prop-types";
-import styles from './styles.scss';
+// import * as T from "prop-types";
+import './styles.scss';
 import {cssClassName} from 'utils'
 const cn = cssClassName('O_SimpleSlider')
 import O_Carousel from 'O_Carousel';
@@ -9,17 +9,17 @@ import A_H from 'A_H'
 const slides = [
   {
     title: 'From Here To Where? Bitcoin And The Future Of Cryptocurrency.',
-    text: "Smart and powerful payments. We believe in transparency, and that is why Humaniq has designed the payment system using Blockchain technologies and bringing them into your pocket.",
+    html: "<p><strong>Smart and powerful payments.</strong> We believe in transparency, and that is why Humaniq has designed the payment system using Blockchain technologies and bringing them into your pocket.</p>",
     img: '/img/placeholder.svg'
   },
   {
     title: 'Title 2',
-    text: "Biometrics: our Passport to Inclusive Banking. We believe that your identity is the strongest password. Avoiding long passwords which can be lost or hacked. ",
+    html: "<p><strong>Biometrics: our Passport to Inclusive Banking.</strong>We believe that your identity is the strongest password. Avoiding long passwords which can be lost or hacked. </p>",
     img: '/img/placeholder.svg'
   },
   {
     title: 'Title 3',
-    text: "Digital Identity. Humaniq creates virtual profiles which evolve with people as they age. Therefore, the only thing you need to safely manage your financial assets is You, literally.",
+    html: "<p>Digital Identity. Humaniq creates virtual profiles which evolve with people as they age. Therefore, the only thing you need to safely manage your financial assets is You, literally.</p>",
     img: '/img/placeholder.svg'
   }
 ]
@@ -35,7 +35,7 @@ class O_SimpleSlider extends Component {
               <img className={cn('image')} src={slide.img} width="220" height="220"/>
               <div className={cn('text')}>
                 <A_H type="h4" href="#">From Here To Where? Bitcoin And The Future Of Cryptocurrency.</A_H>
-                <p className={cn('description')}>{slide.text}</p>
+                <div className={cn('description')} dangerouslySetInnerHTML={{ __html: slide.html}}/>
               </div>
             </div>
           </div>

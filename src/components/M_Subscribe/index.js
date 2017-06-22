@@ -11,23 +11,35 @@ class M_Subscribe extends Component {
 
   state = {
     email: '',
-    valid: false,
+    valid: true,
     validated: false,
-    submitted: false
+    submitted: false,
+    error: ''
+  }
+
+  componentDidMount(){
+    this.node.focus();
+
   }
 
   onSubmit = (e) => {
     e.preventDefault()
     const email = this.state.email
-    if (this.validate(email)){
+    if (this.validate(email)) {
       this.props.onSubmit(email)
       this.setState({submitted: true})
     }
   }
 
   validate = (value) => {
-    const valid = validateEmail(value)
-    this.setState({validated: true, valid})
+    let error
+    if (!value) {
+      error = 'Please fill out our email form'
+    } else if (!validateEmail(value)) {
+      error = 'Looks like an invalid email address'
+    }
+    const valid = !error
+    this.setState({validated: true, valid, error})
     return valid
   }
 
@@ -41,23 +53,26 @@ class M_Subscribe extends Component {
   }
 
   render() {
-    const {email, valid, validated, submitted} = this.state
+    const {email, valid, validated, error, submitted} = this.state
 
-    const error = validated && !valid
     return (
-      <form onSubmit={this.onSubmit} className={cn('form')}>
-        <div className={cn('input', {error, device: 'desktop', submitted})}>
-          { error &&
-            <M_Tooltip>Ooops! That looks like an invalid email address!</M_Tooltip>
-          }
-          <input
-            type="text"
-            value={email}
-            onChange={(e) => this.onChange(e, error)}
-          />
+      <form onSubmit={this.onSubmit} className={cn('form', {submitted})}>
+        <div className={cn('wrapper', {submitted})}>
+          <M_Tooltip message={error} hide={!validated && !valid}>
+            <input
+              ref={node => this.node = node}
+              placeholder="Enter your email"
+              type="text"
+              value={email}
+              onChange={(e) => this.onChange(e, error)}
+            />
+          </M_Tooltip>
           <span className={cn('submit')}>
             <A_Button type="submit">Subscribe</A_Button>
           </span>
+          <div className={cn('done', {submitted})}>
+            <img src="/img/notify-checkmark.svg"/>
+          </div>
         </div>
       </form>
     )

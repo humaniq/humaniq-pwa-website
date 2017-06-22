@@ -1,20 +1,23 @@
 import React, { Component } from 'react';
-import * as T from "prop-types";
-import styles from './styles.scss';
+// import * as T from "prop-types";
+import './styles.scss';
 import {cssClassName} from 'utils'
 const cn = cssClassName('O_StaticSlider')
 
 const slides = [
   {
-    text: "Smart and powerful payments. We believe in transparency, and that is why Humaniq has designed the payment system using Blockchain technologies and bringing them into your pocket.",
+    text: "<p><strong>Biometrics: our Passport to Inclusive Banking.</strong>We believe that your identity is the strongest password. Avoiding long passwords which can be lost or hacked. </p>",
+    html: "<p><strong>Smart and powerful payments.</strong> We believe in transparency, and that is why Humaniq has designed the payment system using Blockchain technologies and bringing them into your pocket.</p>",
     img: '/img/placeholder.svg'
   },
   {
-    text: "Biometrics: our Passport to Inclusive Banking. We believe that your identity is the strongest password. Avoiding long passwords which can be lost or hacked. ",
+    text: "<p><strong>Biometrics: our Passport to Inclusive Banking.</strong>We believe that your identity is the strongest password. Avoiding long passwords which can be lost or hacked. </p>",
+    html: "<p><strong>Biometrics: our Passport to Inclusive Banking.</strong>We believe that your identity is the strongest password. Avoiding long passwords which can be lost or hacked. </p>",
     img: '/img/placeholder.svg'
   },
   {
-    text: "Digital Identity. Humaniq creates virtual profiles which evolve with people as they age. Therefore, the only thing you need to safely manage your financial assets is You, literally.",
+    text: "<p><strong>Biometrics: our Passport to Inclusive Banking.</strong>We believe that your identity is the strongest password. Avoiding long passwords which can be lost or hacked. </p>",
+    html: "<p>Digital Identity. Humaniq creates virtual profiles which evolve with people as they age. Therefore, the only thing you need to safely manage your financial assets is You, literally.</p>",
     img: '/img/placeholder.svg'
   }
 ]
@@ -28,7 +31,8 @@ class O_StaticSlider extends Component {
       slides.map((slide, i) =>{
         const active = i === this.state.active ? 'active' : null
         return(
-          <p key={'key_' + i} className={cn('texts-item', [active])} onClick={() => this.onClick(i)}>{slide.text}</p>
+          <p key={'key_' + i} className={cn('texts-item', [active])} onClick={() => this.onClick(i)} dangerouslySetInnerHTML={{ __html: slide.html}}/>
+      //    <p key={'key_' + i} className={cn('texts-item', [active])} onClick={() => this.onClick(i)}>{slide.text}</p>
         )
       }
       )

@@ -1,13 +1,19 @@
 @import "common/settings/variables";
+@import "common/utils";
 
 .m-subscribe{
-
   &__submit{
     padding-left: 19px;
+    @include media($mobile) {
+      padding-left: 0;
+    }
   }
-  &__input{
+  &__wrapper{
     display: inline-block;
     position: relative;
+    @include media($mobile) {
+      width: 100%
+    }
     input{
       box-sizing: border-box;
       width: 250px;
@@ -17,29 +23,36 @@
       padding-left: 1em;
       box-shadow: inset 0 1px 3px 0 rgba(0, 0, 0, 0.3);
       border: solid 1px $gray-5;
-      &_error_true{
-        color: $c-error;
+      @include media($mobile) {
+        width: 100%;
+        margin-bottom: 15px;
       }
-    }
-    &_device_desktop{
-      min-width: 396px;
+      ::placeholder {
+        color: $c-placeholder;
+      }
     }
     &_submitted_true{
       button, input{
         visibility: hidden;
       }
-      &::after{
-        left: 0;
-        width: 100%;
-        content: url('/img/notify-checkmark.svg');
-        text-align:center;
-        line-height: 53px;
-        height: 100%;
+    }
+  }
+  &__done{
+    display: none;
+    &_submitted_true{
+      display: block;
+      top: 0;
+      position: absolute;
+      width: 100%;
+      text-align:center;
+      line-height: 53px;
+      height: 100%;
+      border-radius: 4px;
+      background-color: $c-success;
+      img{
         position: absolute;
-        z-index: 1;
-        border-radius: 4px;
-        background-color: $c-success
-        //border: 3px solid green;
+        top: 50%;
+        transform: translateY(-50%);
       }
     }
   }

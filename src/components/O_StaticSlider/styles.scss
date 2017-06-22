@@ -33,7 +33,17 @@
       opacity: 0.5;
       &.active {
         opacity: 1;
-        border-left: 4px $c-control-primary solid;
+        position: relative;
+        &:before {
+          content: '';
+          left: 0;
+          top: 0;
+          bottom: 0;
+          width: 4px;
+          position: absolute;
+          border-radius: 2px;
+          background-color: #439FE0;
+        }
       }
 
       @include media($desktop) {
@@ -41,7 +51,7 @@
         font-size: 16px;
         line-height: 1.75em;
         &.active{
-          padding-left: $identation * 2 - 4;
+          padding-left: $identation * 2;
         }
       }
       @include media($tablet) {
@@ -49,11 +59,9 @@
         font-size: 14px;
         line-height: 1.5em;
         &.active{
-          padding-left: $identation - 4;
+          padding-left: $identation;
         }
       }
-
-      //& + & { padding-top: $identation * 2; }
     }
   }
 
