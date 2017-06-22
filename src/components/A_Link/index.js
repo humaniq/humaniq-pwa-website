@@ -5,10 +5,10 @@ import './styles.scss';
 import {cssClassName} from 'utils'
 const cn = cssClassName('A_Link')
 
-const A_Link = ({children, block, mod, disabled, ...props}) => {
+const A_Link = ({children, block, mod, disabled, addClassName, ...props}) => {
   mod = disabled || mod
   return (
-    <Link className={cn({block, mod, disabled})} {...props}>{children}</Link>
+    <Link className={cn({block, mod, disabled}, [addClassName])} {...props}>{children}</Link>
   )
 }
 

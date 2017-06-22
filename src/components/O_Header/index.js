@@ -8,8 +8,8 @@ import A_ButtonLink from 'A_ButtonLink'
 import A_logo from 'A_Logo'
 
 const O_Header = ({navMenu}) => {
-  const M_HeaderNav = navMenu.map( ({name, url, disabled, open}) => (
-    <A_Link to={url} key={'key=' + name} disabled={disabled} open={open}>{name}</A_Link>
+  const M_HeaderNav = navMenu.map( ({name, url, addClass, open}) => (
+    <A_Link to={url} key={'key=' + name} open={open} addClassName={addClass}>{name}</A_Link>
   ))
 
   return (
