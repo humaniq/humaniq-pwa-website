@@ -4,34 +4,32 @@ import SE_MainLayout from 'SE_MainLayout'
 const navMenu = [
   {
     name: 'Features',
-    url: '/',
-    disabled: false
+    url: '/'
   },
   {
     name: 'Use cases',
-    url: '/cases',
-    disabled: false
+    url: '/cases'
   },
   {
     name: 'Partners',
-    url: '/partners',
-    disabled: false
+    url: '/partners'
   },
   {
     name: 'Download',
     url: '/download',
-    disabled: true
+    addClass: 'mobile-show'
   }
 ]
 
 function mapStateToProps(state) {
   const {navigation:{page}, staticContent:{mainTagline, mainEmail}} = state
 
-  const _navMenu = navMenu.map(({name, url, disabled}) => {
+  const _navMenu = navMenu.map(({name, url, addClass}) => {
+    // console.log(name.toLowerCase(), page)
     return {
       name,
       url,
-      disabled,
+      addClass,
       open: page === name.toLowerCase()
     }
   })
