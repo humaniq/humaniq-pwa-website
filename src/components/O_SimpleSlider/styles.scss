@@ -2,34 +2,61 @@
 @import "common/utils";
 
 $slider-padding: $identation * 2.5;
+$slider-button-size: 100px;
 $image-size: 220px;
 
 .o-simple-slider {
   background: $lightblue;
-  &__inner {
-    padding: $slider-padding 0; // clarify
-    &:before,
-    &:after {
-      $size: 22px;
-      display: block;
-      content: '';
-      width: $size;
-      height: $size;
-      border: $c-control-primary solid;
-      border-width: 0 0 2.5px 2.5px;
-      position: absolute;
-      top: 50%;
-      margin-top: -$size;
-      @include media($mobile) { top: $slider-padding + $image-size / 2; }
+  .extandme {
+    content: '';
+    $size: 22px;
+    display: block;
+    width: $size;
+    height: $size;
+    border: $c-control-primary solid;
+    border-width: 0 0 2.5px 2.5px;
+    margin: auto;
+    margin-top: -$size;
+    position: absolute;
+    top: 66%;
+    z-index: 1;
+
+  }
+
+  &__next, &__prev {
+    width: $slider-button-size;
+    height: $slider-button-size;
+    cursor: pointer;
+    position: absolute;
+    top: 33%;
+    @include media($mobile) {
+      top: $slider-padding + $image-size / 2 - $slider-button-size/2;
     }
     &:before {
-      left: 0;
-      transform: rotate(45deg);
+      @extend .extandme;
     }
-    &:after {
-      right: 0;
+  }
+
+  &__next {
+    margin-right: -40px;
+    right: 0;
+    &:before {
       transform: rotate(-135deg);
+      right: 50%;
     }
+  }
+
+  &__prev {
+    margin-left: -40px;
+    left: 0;
+    &:before {
+      transform: rotate(45deg);
+      left: 50%;
+    }
+  }
+  &__inner {
+    padding: $slider-padding 0; // clarify
+    //padding: $identation * 2.5 0; // clarify
   }
 
   &__slide {

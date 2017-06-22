@@ -34,11 +34,9 @@
   }
 
   &__subscribe {
-    max-width: 400px; // remove after getting form
-    height: 85px; // remove after getting form
     margin-top: $identation;
-    background: $gray-2;
-    @include media($mobile) { margin: $header-height 0; }
-
+    @include media($mobile) {
+      margin: $header-height 0;
+    }
   }
 }
