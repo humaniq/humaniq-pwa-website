@@ -3,8 +3,10 @@
 
 .o-handy-links {
   &__inner {
-    padding: $identation * 3.5 0 $identation * 2.5; // clarify
+    padding: $identation * 5 0 $identation * 2.5; // clarify
     @include media($mobile) { padding: $identation * 2 0; } // clarify
+
+    .a-h { margin-bottom: 10px; }
   }
 
   &__list {
@@ -35,14 +37,31 @@
   &__link {
     display: flex;
     width: 100%;
-    padding: $identation 0;
+    padding: 1px;
     justify-content: center;
     align-items: center;
     text-align: center;
+    position: relative;
     font-size: 16px;
     font-weight: 600;
     color: $gray-3;
-    border: 1px #979797 solid;
+    border: 1px solid transparent;
     border-radius: 6px;
+    background: $c-bg;
+    background-clip: padding-box;
+    &:after {
+      content: '';
+      position: absolute;
+      top: -1px;
+      right: -1px;
+      bottom: -1px;
+      left: -1px;
+      z-index: -1;
+      border-radius: 6px;
+      background: #979797;
+    }
+    &:hover:after {
+      background: linear-gradient(to bottom, #e32072 0%, #4B6BC6 100%);
+    }
   }
 }

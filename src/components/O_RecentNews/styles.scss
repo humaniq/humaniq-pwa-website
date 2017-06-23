@@ -3,13 +3,18 @@
 
 .o-recent-news {
   &__inner {
-    padding: $identation * 2 0;
+    padding: $identation * 2 0 0;
     border-bottom: 1px $c-border solid;
   }
 }
 
 .m-news-item-h {
   display: flex;
+  padding: $identation * 2;
+  &:hover {
+    background: #f1f1f1; // clarify
+    &:hover .a-readmore:after { opacity: 1; }
+  }
   @include media($tablet) {
     flex-direction: column;
     flex-flow: column-reverse;
@@ -24,6 +29,8 @@
     @include media($desktop) { flex-basis: 75%; }
   }
 }
+
+// предположительно, можено вынести
 
 .m-author {
   max-width: 100%;
@@ -55,4 +62,13 @@
   font-size: 14px;
   color: $gray-4;
   @include ellipsis;
+}
+
+.a-readmore {
+  white-space: nowrap;
+  &:after {
+    transition: all .3s ease-out 0s;
+    opacity: 0;
+    content: '\2192';
+  }
 }

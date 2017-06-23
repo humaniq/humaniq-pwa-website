@@ -41,6 +41,7 @@
   &.accent {
     background: $c-brand;
     .o-static-info__inner {
+      padding: $identation * 6 0;
       @include media($mobile) {
         flex-flow: column;
         padding-bottom: $identation * 3.5;
@@ -52,7 +53,7 @@
     .a-button-link {
       @include media($mobile) { display: block; }
     }
-    &, h3, p { color: $c-brand-invert; }
+    &, h3, p { color: rgba(255, 255, 255, .8); } // clarify
     h3 { font-weight: 700; }
   }
 

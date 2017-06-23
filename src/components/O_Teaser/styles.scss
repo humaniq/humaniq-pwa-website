@@ -34,7 +34,7 @@
   }
 
   &__subscribe {
-    margin-top: $identation;
+    margin-top: $identation * 2;
     @include media($mobile) {
       margin: $header-height 0;
     }

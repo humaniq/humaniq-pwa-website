@@ -59,6 +59,7 @@ class M_Subscribe extends Component {
             <A_Button type="submit">Subscribe</A_Button>
           </span>
         </div>
+        <p className={cn('tip')}>Want to be informed? Subscribe to our Newsletter.</p>
       </form>
     )
   }

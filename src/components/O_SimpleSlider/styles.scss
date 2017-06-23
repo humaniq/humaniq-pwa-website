@@ -1,13 +1,13 @@
 @import "common/settings/variables";
 @import "common/utils";
 
-$slider-padding: $identation * 2.5;
+$slider-padding: $identation * 4;
 $slider-button-size: 100px;
 $image-size: 220px;
 
 .o-simple-slider {
   background: $lightblue;
-  .extandme {
+  .nav-button {
     content: '';
     $size: 22px;
     display: block;
@@ -18,23 +18,29 @@ $image-size: 220px;
     margin: auto;
     margin-top: -$size;
     position: absolute;
-    top: 66%;
+    top: 50%;
     z-index: 1;
 
   }
 
-  &__next, &__prev {
+  &__next,
+  &__prev {
     width: $slider-button-size;
-    height: $slider-button-size;
+    height: 100%;
     cursor: pointer;
     position: absolute;
-    top: 33%;
+    top: 0;
+    bottom: 0;
+    opacity: .8;
+    z-index: 1;
     @include media($mobile) {
-      top: $slider-padding + $image-size / 2 - $slider-button-size/2;
+      bottom: auto;
+      height: $slider-padding * 2 + $image-size;
     }
     &:before {
-      @extend .extandme;
+      @extend .nav-button;
     }
+    &:hover { opacity: 1; }
   }
 
   &__next {
