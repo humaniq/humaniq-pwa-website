@@ -47,6 +47,12 @@ class O_StaticSlider extends Component {
       <section>
         <div className="l-container">
           <div className={cn('inner')}>
+            <Motion
+              defaultStyle={{x: 0}}
+              style={{x: spring(10)}
+            }>
+              {value => <div>{value.x}</div>}
+            </Motion>
             <div className={cn('texts')}>
               {this.getText()}
             </div>

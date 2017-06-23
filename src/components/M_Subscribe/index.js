@@ -74,6 +74,7 @@ class M_Subscribe extends Component {
             <img src="/img/notify-checkmark.svg"/>
           </div>
         </div>
+        <p className={cn('tip')}>Want to be informed? Subscribe to our Newsletter.</p>
       </form>
     )
   }
