@@ -5,10 +5,10 @@ section {}
 .l-container-wide {
   margin: 0 auto;
   @include media($desktop) {
-    width: $w-desktop-wide;
+    max-width: $w-desktop-wide;
   }
   @include media($tablet) {
-    width: 100%;
+    max-width: 100%;
   }
 
 }

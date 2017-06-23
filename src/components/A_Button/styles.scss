@@ -3,6 +3,9 @@
 @import "common/utils";
 
 .a-button {
+  cursor: default;
+  user-select: none;
+
   color: white;
   width: 104px;
   height: 40px;
@@ -17,5 +20,13 @@
     @include media($mobile) {
       width: 100%
     }
+  }
+  &_type_img{
+    padding: 0;
+    width: 18px;
+    display: inline;
+    border: none;
+    box-shadow: none;
+    background: none;
   }
 }

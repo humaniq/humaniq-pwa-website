@@ -4,6 +4,7 @@ import './styles.scss';
 import {cssClassName} from 'utils'
 import M_DotIndicator from 'M_DotIndicator'
 const cn = cssClassName('O_StaticSlider')
+import {Motion, spring} from 'react-motion';
 
 const slides = [
   {

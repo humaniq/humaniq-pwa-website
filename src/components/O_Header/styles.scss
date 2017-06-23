@@ -2,12 +2,27 @@
 @import "common/utils";
 
 .o-header {
+  cursor: default;
+  user-select: none;
   position: fixed;
   top: 0;
   z-index: 1;
   background: $gray-1;
   @include media($desktop) {
     height: $header-height;
+  }
+  &_desktop-menu-open_true{
+    background: $c-bg;
+    position: relative;
+    &:after{
+      content: '';
+      margin: 0 auto;
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%,0);
+      width: 1120px;
+      border-bottom: solid 1px #d6d6d6;
+    }
   }
 
   &__inner {
@@ -16,9 +31,14 @@
     justify-content: space-between;
     align-items: center;
   }
+  &__connerBtn{
+    display: block;
+    flex: 1 1 15px;
+    margin-left: 30px;
+  }
 }
 
-.m-header__nav {
+.o-header__nav {
   display: flex;
   justify-content: space-between;
   align-items: stretch;
