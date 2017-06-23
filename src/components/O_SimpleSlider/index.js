@@ -21,6 +21,16 @@ const slides = [
     title: 'Title 3',
     html: "<p>Digital Identity. Humaniq creates virtual profiles which evolve with people as they age. Therefore, the only thing you need to safely manage your financial assets is You, literally.</p>",
     img: '/img/placeholder.svg'
+  },
+  {
+    title: 'Title 4',
+    html: "<p><strong>Biometrics: our Passport to Inclusive Banking.</strong>We believe that your identity is the strongest password. Avoiding long passwords which can be lost or hacked. </p>",
+    img: '/img/placeholder.svg'
+  },
+  {
+    title: 'Title 5',
+    html: "<p>Digital Identity. Humaniq creates virtual profiles which evolve with people as they age. Therefore, the only thing you need to safely manage your financial assets is You, literally.</p>",
+    img: '/img/placeholder.svg'
   }
 ]
 
@@ -45,11 +55,12 @@ class O_SimpleSlider extends Component {
   }
 
   next = () => {
-    this.refs.reactSwipe.next();
+    this.refs.slide.next();
+    // this.refs.slid.slide(0, 2000);
   }
 
   prev = () => {
-    this.refs.reactSwipe.prev();
+    this.refs.slide.prev();
   }
 
   render() {
@@ -65,7 +76,7 @@ class O_SimpleSlider extends Component {
         <div className="l-container">
           <div className={cn('inner')}>
             <div className={cn('prev')} onClick={this.prev}>{'  '}</div>
-            <O_Carousel ref="reactSwipe" {...{swipeOptions}}>
+            <O_Carousel ref="slide" {...{swipeOptions}}>
               {this.getSlides()}
             </O_Carousel>
             <div className={cn('next')} onClick={this.next}>{'  '}</div>
