@@ -1,4 +1,6 @@
 @import "common/settings/brand";
+@import "common/settings/variables";
+@import "common/utils";
 
 .a-button {
   color: white;
@@ -11,6 +13,17 @@
     width: 124px;
     height: 53px;
     border-radius: 6px;
-    box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.2)
+    box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.2);
+    @include media($mobile) {
+      width: 100%
+    }
+  }
+  &_type_img{
+    padding: 0;
+    width: 18px;
+    display: inline;
+    border: none;
+    box-shadow: none;
+    background: none;
   }
 }

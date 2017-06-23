@@ -3,6 +3,7 @@
 $white: #ffffff;
 $black-1: #000000;
 $black-2: #253039;
+$black-3: #555459;
 $blue-1: #3aa3e3;
 $blue-2: #439fe0;
 $lightblue: #f1f8fd;
@@ -11,6 +12,7 @@ $gray-2: #d6d6d6;
 $gray-3: #2c2d30;
 $gray-4: #a0a0a2;
 $gray-5: #b2b2b3;
+$gray-6: #989a9f;
 $green-1: #36a64f;
 $red-1: red;
 
@@ -24,11 +26,11 @@ $c-control-primary: $blue-2;
 $c-control-disabled: $gray-2;
 $c-success: $green-1;
 $c-error: $red-1;
-
+$c-placeholder: $gray-6;
 // DIMENSIONS
 
 $w-desktop: 980px;
-$w-desktop-wide: 1280px;
+$w-desktop-wide: 1160px;
 $w-tablet: 768px;
 $w-mobile: 360px;
 

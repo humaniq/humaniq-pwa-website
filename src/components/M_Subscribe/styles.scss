@@ -1,45 +1,74 @@
 @import "common/settings/variables";
+@import "common/utils";
 
 .m-subscribe{
-
   &__submit{
     padding-left: 19px;
+    @include media($mobile) {
+      padding-left: 0;
+    }
   }
-  &__input{
+  &__wrapper{
     display: inline-block;
     position: relative;
+    @include media($mobile) {
+      width: 100%
+    }
     input{
+      color: $black-3;
       box-sizing: border-box;
       width: 250px;
       height: 53px;
+      font-size: 17px;
+      opacity: 1;
       border-radius: 4px;
       background-color: white;
-      padding-left: 1em;
+      padding: 14px 13px;
+      min-width: 250px;
       box-shadow: inset 0 1px 3px 0 rgba(0, 0, 0, 0.3);
       border: solid 1px $gray-5;
-      &_error_true{
-        color: $c-error;
+      &::placeholder {
+        color: $c-placeholder;
       }
-    }
-    &_device_desktop{
-      min-width: 396px;
+      &:focus{
+        outline: 0;
+        background-color: #fff;
+        box-shadow: 0 0 7px rgba(0,0,0,.2)
+      }
+      @include media($mobile) {
+        width: 100%;
+        margin-bottom: 15px;
+      }
+
+
     }
     &_submitted_true{
       button, input{
         visibility: hidden;
       }
-      &::after{
-        left: 0;
-        width: 100%;
-        content: url('/img/notify-checkmark.svg');
-        text-align:center;
-        line-height: 53px;
-        height: 100%;
+      @include media($mobile) {
+        input{
+          visibility: visible;
+        }
+      }
+    }
+  }
+  &__done{
+    display: none;
+    &_submitted_true{
+      display: block;
+      height: 53px;
+      bottom: 0;
+      position: absolute;
+      width: 100%;
+      text-align:center;
+      line-height: 53px;
+      border-radius: 4px;
+      background-color: $c-success;
+      img{
         position: absolute;
-        z-index: 1;
-        border-radius: 4px;
-        background-color: $c-success
-        //border: 3px solid green;
+        top: 50%;
+        transform: translateY(-50%);
       }
     }
   }

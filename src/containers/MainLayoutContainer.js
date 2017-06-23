@@ -3,16 +3,8 @@ import SE_MainLayout from 'SE_MainLayout'
 
 const navMenu = [
   {
-    name: 'Features',
-    url: '/'
-  },
-  {
-    name: 'Use cases',
-    url: '/cases'
-  },
-  {
-    name: 'Partners',
-    url: '/partners'
+    name: 'Contact Us',
+    url: '/contacts'
   },
   {
     name: 'Download',

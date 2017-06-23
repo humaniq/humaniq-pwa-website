@@ -2,19 +2,21 @@ import React, { Component } from 'react';
 // import * as T from "prop-types";
 import './styles.scss';
 import {cssClassName} from 'utils'
+import M_DotIndicator from 'M_DotIndicator'
 const cn = cssClassName('O_StaticSlider')
+import {Motion, spring} from 'react-motion';
 
 const slides = [
   {
-    text: "Smart and powerful payments. We believe in transparency, and that is why Humaniq has designed the payment system using Blockchain technologies and bringing them into your pocket.",
+    html: "<span><strong>Smart and powerful payments.</strong> We believe in transparency, and that is why Humaniq has designed the payment system using Blockchain technologies and bringing them into your pocket.</span>",
     img: '/img/placeholder.svg'
   },
   {
-    text: "Biometrics: our Passport to Inclusive Banking. We believe that your identity is the strongest password. Avoiding long passwords which can be lost or hacked. ",
+    html: "<span><strong>Biometrics: our Passport to Inclusive Banking.</strong>We believe that your identity is the strongest password. Avoiding long passwords which can be lost or hacked. </span>",
     img: '/img/placeholder.svg'
   },
   {
-    text: "Digital Identity. Humaniq creates virtual profiles which evolve with people as they age. Therefore, the only thing you need to safely manage your financial assets is You, literally.",
+    html: "<span>Digital Identity. Humaniq creates virtual profiles which evolve with people as they age. Therefore, the only thing you need to safely manage your financial assets is You, literally.</span>",
     img: '/img/placeholder.svg'
   }
 ]
@@ -28,7 +30,7 @@ class O_StaticSlider extends Component {
       slides.map((slide, i) =>{
         const active = i === this.state.active ? 'active' : null
         return(
-          <p key={'key_' + i} className={cn('texts-item', [active])} onClick={() => this.onClick(i)}>{slide.text}</p>
+          <p key={'key_' + i} className={cn('texts-item', [active])} onClick={() => this.onClick(i)} dangerouslySetInnerHTML={{ __html: slide.html}}/>
         )
       }
       )
@@ -40,12 +42,22 @@ class O_StaticSlider extends Component {
   }
 
   render() {
+    const {active} = this.state
     return (
-      <section className={cn()}>
+      <section>
         <div className="l-container">
           <div className={cn('inner')}>
+            <Motion
+              defaultStyle={{x: 0}}
+              style={{x: spring(10)}
+            }>
+              {value => <div>{value.x}</div>}
+            </Motion>
             <div className={cn('texts')}>
               {this.getText()}
+            </div>
+            <div className={cn('indicator')}>
+              <M_DotIndicator count={slides.length} active={active} onClick={this.onClick} />
             </div>
             <img className={cn('image')} src="/img/placeholder.svg" width="450" height="375"/>
           </div>
