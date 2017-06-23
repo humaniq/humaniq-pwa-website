@@ -5,15 +5,18 @@
   &__inner {
     display: flex;
     margin: $identation * 2.5 0 $identation * 2.5; // clarify
-    justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
     @include media($desktop) {
       padding: $identation * 2.5 $identation * 2; // clarify
       border: 2px $gray-2 solid;
       border-radius: 4px; // 6? clarify
     }
     @include media($tablet) {
-
+      justify-content: space-around;
+      border-radius: 4px;
+      border: 2px solid $c-border;
+      padding: 30px;
     }
   }
 
@@ -23,8 +26,9 @@
     flex-direction: column;
     justify-content: space-between;
     @include media($tablet) {
-      width: 50%;
+      width: 100%;
       padding-right: $identation;
+      padding-bottom: 32px;
     }
 
     &-item {
@@ -55,16 +59,29 @@
         }
       }
       @include media($tablet) {
-        padding-left: $identation;
+        padding-left: 0;
         font-size: 14px;
         line-height: 1.5em;
+        display: none;
         &.active{
-          padding-left: $identation;
+          margin-top: 0;
+          display: block;
+          &:before {
+            content: none;
+          }
         }
       }
     }
   }
 
+  &__indicator{
+    width: 100%;
+    display: none;
+    @include media($tablet) {
+      display: block;
+      margin-bottom: 40px;
+    }
+  }
   &__image {
     @include media($desktop) {
       width: 450px;
@@ -72,6 +89,10 @@
     }
     @include media($tablet) {
       width: 50%;
+      height: auto;
+    }
+    @include media($mobile) {
+      width: 100%;
       height: auto;
     }
   }

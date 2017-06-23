@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 // import * as T from "prop-types";
 import './styles.scss';
 import {cssClassName} from 'utils'
+import M_DotIndicator from 'M_DotIndicator'
 const cn = cssClassName('O_StaticSlider')
 
 const slides = [
@@ -32,7 +33,6 @@ class O_StaticSlider extends Component {
         const active = i === this.state.active ? 'active' : null
         return(
           <p key={'key_' + i} className={cn('texts-item', [active])} onClick={() => this.onClick(i)} dangerouslySetInnerHTML={{ __html: slide.html}}/>
-      //    <p key={'key_' + i} className={cn('texts-item', [active])} onClick={() => this.onClick(i)}>{slide.text}</p>
         )
       }
       )
@@ -44,12 +44,16 @@ class O_StaticSlider extends Component {
   }
 
   render() {
+    const {active} = this.state
     return (
-      <section className={cn()}>
+      <section>
         <div className="l-container">
           <div className={cn('inner')}>
             <div className={cn('texts')}>
               {this.getText()}
+            </div>
+            <div className={cn('indicator')}>
+              <M_DotIndicator count={slides.length} active={active} onClick={this.onClick} />
             </div>
             <img className={cn('image')} src="/img/placeholder.svg" width="450" height="375"/>
           </div>

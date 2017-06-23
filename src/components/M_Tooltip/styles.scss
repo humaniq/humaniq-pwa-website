@@ -35,9 +35,11 @@
   }
 
   &__text {
+    cursor: default;
     position: relative;
     z-index: 1;
     font-size: 1rem;
+    user-select: none;
   }
   &::before {
     position: absolute;
