@@ -38,6 +38,7 @@
         margin-bottom: 5px;
         font-size: 11px;
         line-height: 2.18;
+        font-weight: 600;
         text-transform: uppercase;
         color: #4a4a4a; // clarify
         @include media($mobile) {

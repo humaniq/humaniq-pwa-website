@@ -7,20 +7,29 @@
   &__inner {
     display: flex;
     flex-direction: column;
-    @include media($desktop) { padding: $header-height + 110px 40% 70px 0; }
+    @include media($desktop) { padding: $header-height + 85px 468px 144px 0; }
     @include media($tablet) { padding: $header-height * 2 10% $header-height 0; }
     @include media($mobile) { padding: $header-height * 2 0 0; }
   }
 
   &__title {
-    font-size: 50px;
-    line-height: 1.2em;
+    line-height: 1.15em;
     font-weight: 700;
-    color: #253039; // clarify
+    color: #253039;
+    @include media($desktop) {
+      margin: 0 -7px;
+      font-size: 87px;
+    }
+    @include media($tablet) { font-size: 50px; }
+    @include media($mobile) {
+      font-size: 46px;
+      font-size: 14vw;
+    }
+
   }
 
   &__lead {
-    margin-top: $identation;
+    margin-top: $identation * 1.5;
     font-size: 18px;
     line-height: 1.56em;
     color: #253039; // clarify
@@ -36,7 +45,7 @@
   &__subscribe {
     margin-top: $identation * 2;
     @include media($mobile) {
-      margin: $header-height 0;
+      margin-bottom: 115px;
     }
   }
 }

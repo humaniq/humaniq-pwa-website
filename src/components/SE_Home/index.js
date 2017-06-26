@@ -19,7 +19,7 @@ const SE_Home = () => (
     <O_Teaser/>
     <O_RecentNews/>
     <O_HandyLinks/>
-    <O_StaticInfo {...{text: text_1}}/>
+    <O_StaticInfo {...{modificator: 'normal', text: text_1}}/>
     <O_StaticSlider/>
     <O_StaticInfo {...{modificator: 'flip', text: text_2}}/>
     <O_SimpleSlider/>
