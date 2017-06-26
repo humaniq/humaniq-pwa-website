@@ -7,6 +7,7 @@ import A_Link from 'A_Link'
 import A_ButtonLink from 'A_ButtonLink'
 import A_logo from 'A_Logo'
 import A_Button from 'A_Button'
+import ConnerBtn from './btn'
 import {Motion, spring} from 'react-motion';
 
 class O_Header extends Component {
@@ -17,18 +18,8 @@ class O_Header extends Component {
     ))
   }
 
-  getConnerBtn(onClick, menuOpen){
-    return (
-      <A_Button onClick={onClick} type="img">
-        <img src={menuOpen ? "/img/close.svg" : "/img/menuBtn.svg"} alt="menu"/>
-      </A_Button>
-    )
-  }
-
   render() {
     const {navMenu, onClick, menuOpen} = this.props
-
-    const connerBtn = this.getConnerBtn(onClick, menuOpen)
     const headerNav = this.renderHeaderNav(navMenu)
     const slide = (this.navExtraNode && this.navExtraNode.clientWidth || 120) + 30
     const max = 100;
@@ -65,8 +56,8 @@ class O_Header extends Component {
                   >
                   <A_ButtonLink size="xs" color="transparent_black" to="/#">Subscribe</A_ButtonLink>
                 </span>
-                  <span className={cn('connerBtn')}>
-                  {connerBtn}
+                <span className={cn('connerBtn')}>
+                  <ConnerBtn {...{onClick, menuOpen, x, max}}/>
                 </span>
                 </nav>
               </div>
