@@ -2,6 +2,10 @@
 @import "common/utils";
 
 .o-footer{
+
+  &_menu_open_true{
+    background-color: red;
+  }
   &__inner {
     padding: $identation * 2.5 0; // clarify
     display: flex;

@@ -4,6 +4,8 @@ import {Link} from 'react-router'
 import './styles.scss';
 import {cssClassName} from 'utils'
 const cn = cssClassName('O_Footer')
+import {Motion, spring} from 'react-motion';
+
 const links = [
   { section: 'product', links: [{ name: 'Features', url: '#' }, { name: 'Open source', url: '#' }, { name: 'Humaniq wiki', url: '#' }] },
   { section: 'company', links: [{ name: 'Blog', url: '#' }, { name: 'News', url: '#' }, { name: 'Use cases', url: '#' }, { name: 'Partners', url: '#' }, { name: 'Events', url: '#' }]},
@@ -41,20 +43,32 @@ function socialsList() {
   ))
 }
 
-const O_Footer = () => {
+const O_Footer = ({menuOpen}) => {
+  const max = 100;
   return (
     <footer className={cn()}>
-      <div className="l-container">
-        <div className={cn('inner')}>
-          <nav className={cn('nav')}>{linksList()}</nav>
-          <div className={cn('aux')}>
-            <div className={cn('lang')}>🇬🇧 English (UK)</div>
-            <div className={cn('soc')}>
-              {socialsList()}
+      <Motion
+        defaultStyle={{x: 0}}
+        style={{x: spring(menuOpen ? max : 0) }}
+      >
+        {({x}) =>
+          <div className="l-container" style={{
+            transform: `translate3d(0, -${x}px, 0)`,
+            opacity: `${x === 0 ? 1 : x/max}`,
+            marginTop: `${x === 0 ? 0 : max}px`
+          }}>
+            <div className={cn('inner')}>
+              <nav className={cn('nav')}>{linksList()}</nav>
+              <div className={cn('aux')}>
+                <div className={cn('lang')}>🇬🇧 English (UK)</div>
+                <div className={cn('soc')}>
+                  {socialsList()}
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
+        }
+      </Motion>
     </footer>
   )
 }

@@ -5,6 +5,8 @@ import Posts from './Posts'
 import Post from './Post'
 import Error from './Error'
 import Home from './Home'
+import Wiki from './Wiki'
+import Subscribe from './Subscribe'
 import {postPath} from 'utils/routesHelpers'
 import {closePost} from 'AC/post'
 
@@ -22,6 +24,12 @@ const getRoutes = ({dispatch}) => {
       <Route path="posts"
              component={Posts}
              prepareData={Posts.prepareData}
+      />
+      <Route path="wiki"
+             component={Wiki}
+      />
+      <Route path="subscribe"
+             component={Subscribe}
       />
       <Route path={postPath()}
              component={Post}

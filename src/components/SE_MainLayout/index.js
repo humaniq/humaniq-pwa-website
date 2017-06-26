@@ -6,29 +6,36 @@ import O_Header from 'O_Header'
 import {cssClassName} from 'utils'
 const cn = cssClassName('SE_MainLayout')
 
+
+
 class SE_MainLayout extends Component {
 
   state ={
-    desktopMenuOpen: false
+    menuOpen: false
   }
 
-  desktopMenuToggle = () => {
-    const {desktopMenuOpen} = this.state
-    this.setState({desktopMenuOpen: !desktopMenuOpen})
+  toggleMenu = () => {
+    const {menuOpen} = this.state
+    this.setState({menuOpen: !menuOpen})
   }
 
   render() {
     const {navMenu, children} = this.props
-    const {desktopMenuOpen} = this.state
+    const {menuOpen} = this.state
     return (
       <div className={cn()}>
-        <O_Header
-          {...{navMenu, desktopMenuOpen, onDesktopMenuOpen:this.desktopMenuToggle}}
-        />
-        {desktopMenuOpen ||
+        <div className={cn('main')}>
+          <O_Header
+            {...{navMenu, menuOpen, onClick:this.toggleMenu}}
+          />
+          {menuOpen ||
           children
-        }
-        <O_Footer />
+          }
+        </div>
+
+        <div className={cn('footer')}>
+          <O_Footer menuOpen={menuOpen}/>
+        </div>
       </div>
     )
   }

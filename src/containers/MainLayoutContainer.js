@@ -14,10 +14,9 @@ const navMenu = [
 ]
 
 function mapStateToProps(state) {
-  const {navigation:{page}, staticContent:{mainTagline, mainEmail}} = state
+  const {navigation:{page}} = state
 
   const _navMenu = navMenu.map(({name, url, addClass}) => {
-    // console.log(name.toLowerCase(), page)
     return {
       name,
       url,
@@ -26,7 +25,7 @@ function mapStateToProps(state) {
     }
   })
 
-  return {mainTagline, mainEmail, page, navMenu:_navMenu};
+  return {page, navMenu:_navMenu};
 }
 
 export default connect(mapStateToProps)(SE_MainLayout);

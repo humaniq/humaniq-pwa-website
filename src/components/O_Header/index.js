@@ -1,5 +1,5 @@
-import React from 'react';
-// import * as T from "prop-types";
+import React, { Component } from 'react';
+import * as T from "prop-types";
 import './styles.scss';
 import {cssClassName} from 'utils'
 const cn = cssClassName('O_Header')
@@ -7,43 +7,81 @@ import A_Link from 'A_Link'
 import A_ButtonLink from 'A_ButtonLink'
 import A_logo from 'A_Logo'
 import A_Button from 'A_Button'
+import {Motion, spring} from 'react-motion';
 
-const O_Header = ({navMenu, onDesktopMenuOpen, desktopMenuOpen}) => {
-  const M_HeaderNav = navMenu.map( ({name, url, addClass, open}) => (
-    <A_Link to={url} key={'key=' + name} open={open} addClassName={addClass}>{name}</A_Link>
-  ))
+class O_Header extends Component {
 
-  const connerBtn = (
-    <A_Button onClick={onDesktopMenuOpen} type="img">
-      <img src={desktopMenuOpen ? "/img/close.svg" : "/img/menuBtn.svg"} alt="menu"/>
-    </A_Button>
-  )
+  renderHeaderNav(navMenu){
+    return navMenu.map( ({name, url, addClass, open}) => (
+      <A_Link to={url} key={'key=' + name} open={open} addClassName={addClass}>{name}</A_Link>
+    ))
+  }
 
+  getConnerBtn(onClick, menuOpen){
+    return (
+      <A_Button onClick={onClick} type="img">
+        <img src={menuOpen ? "/img/close.svg" : "/img/menuBtn.svg"} alt="menu"/>
+      </A_Button>
+    )
+  }
 
-  return (
-    <header className={cn({desktopMenuOpen})}>
-      <div className="l-container-wide">
-        <div className={cn('inner', {desktopMenuOpen})}>
-          <A_logo />
-          <nav className={cn('nav')}>
-            {M_HeaderNav}
-            <A_ButtonLink size="xs" color="transparent_black" to="/#" >Subscribe</A_ButtonLink>
-            <span className={cn('connerBtn')}>
-              {connerBtn}
-            </span>
-          </nav>
-        </div>
-      </div>
+  render() {
+    const {navMenu, onClick, menuOpen} = this.props
 
-    </header>
-  )
+    const connerBtn = this.getConnerBtn(onClick, menuOpen)
+    const headerNav = this.renderHeaderNav(navMenu)
+    const slide = (this.navExtraNode && this.navExtraNode.clientWidth || 120) + 30
+    const max = 100;
+
+    return (
+      <header className={cn({menuOpen})}>
+        <Motion
+          defaultStyle={{x: 0}}
+          style={{
+            x: spring(menuOpen ? max : 0),
+          }}
+        >
+          {({x}) =>
+            <div className="l-container-wide">
+              <div className={cn('inner', {menuOpen})}>
+                <A_logo />
+                <nav className={cn('nav')}>
+
+                <span
+                  className={cn('nav-main')}
+                  style={{
+                    transform: `translate(${(slide/100 * x)}px,0)`
+                  }}
+                >
+                  {headerNav}
+                </span>
+
+                  <span
+                    className={cn('nav-extra')}
+                    style={{
+                      opacity: x===0 ? 1 : (x===max ? 0 : 1/x)
+                    }}
+                    ref = { node => this.navExtraNode = node}
+                  >
+                  <A_ButtonLink size="xs" color="transparent_black" to="/#">Subscribe</A_ButtonLink>
+                </span>
+                  <span className={cn('connerBtn')}>
+                  {connerBtn}
+                </span>
+                </nav>
+              </div>
+            </div>
+          }
+        </Motion>
+      </header>
+    )
+  }
 }
 
 O_Header.propTypes = {
 };
 
 O_Header.defaultProps = {
-
-};
+}
 
 export default O_Header
