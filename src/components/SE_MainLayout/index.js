@@ -23,7 +23,7 @@ class SE_MainLayout extends Component {
     const {navMenu, children} = this.props
     const {menuOpen} = this.state
     return (
-      <div className={cn()}>
+      <div className={cn({menuOpen})}>
         <div className={cn('main')}>
           <O_Header
             {...{navMenu, menuOpen, onClick:this.toggleMenu}}
