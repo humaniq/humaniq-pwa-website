@@ -7,6 +7,8 @@ import Error from './Error'
 import Home from './Home'
 import Wiki from './Wiki'
 import Subscribe from './Subscribe'
+import Partners from './Partners'
+import Cases from './Cases'
 import {postPath} from 'utils/routesHelpers'
 import {closePost} from 'AC/post'
 
@@ -30,6 +32,12 @@ const getRoutes = ({dispatch}) => {
       />
       <Route path="subscribe"
              component={Subscribe}
+      />
+      <Route path="use-cases"
+             component={Cases}
+      />
+      <Route path="Partners"
+             component={Partners}
       />
       <Route path={postPath()}
              component={Post}
