@@ -6,16 +6,8 @@ const cn = cssClassName('M_Select')
 import onClickOutside from 'react-onclickoutside'
 
 const checkMark = (
-  <svg width="21px" height="18px" viewBox="0 0 21 18" version="1.1">
-    <g id="UI-Kit" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
-      <g id="UI" transform="translate(-1199.000000, -1003.000000)" fillRule="nonzero" fill="#2D9EE0">
-        <g id="Footer/Mobile/Language" transform="translate(880.000000, 908.000000)">
-          <g id="notify-checkmark-copy" transform="translate(319.000000, 95.000000)">
-            <path d="M18.7589418,0.438830362 L6.8062166,11.7461563 L2.85678419,7.28143172 C1.55057833,6.15155508 -0.503742812,7.47316835 0.430973314,9.1679833 L4.94020822,16.2690868 C5.50001074,17.0223378 6.8062166,17.7755889 8.1141344,16.2690868 C8.67564884,15.5158357 20.2517485,2.13535724 20.2517485,2.13535724 C21.5596663,0.628855068 19.8785468,-0.689334334 18.7589418,0.440542297 L18.7589418,0.438830362 Z" id="Shape" />
-          </g>
-        </g>
-      </g>
-    </g>
+  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="10" viewBox="0 0 12 10">
+    <path fill="#2D9EE0" fillRule="nonzero" d="M10.778.24l-6.52 6.167-2.154-2.435C1.39 3.355.27 4.076.78 5l2.46 3.873c.304.41 1.017.822 1.73 0 .307-.41 6.62-7.71 6.62-7.71.714-.821-.203-1.54-.813-.924z"/>
   </svg>
 )
 

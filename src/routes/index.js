@@ -35,6 +35,7 @@ const getRoutes = ({dispatch}) => {
       />
       <Route path="use-cases"
              component={Cases}
+             prepareData={Cases.prepareData}
       />
       <Route path="Partners"
              component={Partners}

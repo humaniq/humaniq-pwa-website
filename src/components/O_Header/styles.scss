@@ -41,18 +41,24 @@
     display: flex;
     justify-content: space-between;
     align-items: stretch;
-    @include media($mobile) { display: none; }
 
     &-extra{
       margin-left: 15px;
       box-sizing: border-box;
-
+      &-mobile{
+        display: none;
+        @include media($mobile) { display: block; }
+      }
+      &-desktop{
+        @include media($mobile) { display: none; }
+      }
     }
 
     &-main{
       display: flex;
       z-index: 1;
       margin: -15px 0;
+      @include media($mobile) { display: none; }
     }
 
     .a-link {

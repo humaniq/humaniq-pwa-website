@@ -46,18 +46,20 @@ class O_Header extends Component {
                 >
                   {headerNav}
                 </span>
-
                   <span
-                    className={cn('nav-extra')}
+                    className={cn('nav-extra-desktop')}
                     style={{
                       opacity: x===0 ? 1 : (x===max ? 0 : 1/x)
                     }}
                     ref = { node => this.navExtraNode = node}
                   >
-                  <A_ButtonLink size="xs" color="transparent_black" to="/#">Subscribe</A_ButtonLink>
-                </span>
+                    <A_ButtonLink size="xs" color="transparent_black" to="/#">Subscribe</A_ButtonLink>
+                  </span>
+                  <span className={cn('nav-extra-mobile')}>
+                    <A_ButtonLink size="xs" color="transparent_black" to="/#">Subscribe</A_ButtonLink>
+                  </span>
                 <span className={cn('connerBtn')}>
-                  <ConnerBtn {...{onClick, menuOpen, x, max}}/>
+                  <ConnerBtn {...{onClick, x, max}}/>
                 </span>
                 </nav>
               </div>
