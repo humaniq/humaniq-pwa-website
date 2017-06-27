@@ -84,7 +84,7 @@
   &__check-mark{
     position: absolute;
     top: 50%;
-    transform: translate(0,-30%);
+    transform: translate(0,-50%) scale(0.55);
     right: 10px;
   }
 }
