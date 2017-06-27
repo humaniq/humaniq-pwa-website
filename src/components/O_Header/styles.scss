@@ -6,7 +6,7 @@
   user-select: none;
   position: fixed;
   top: 0;
-  z-index: 1;
+  z-index: 2;
   background: $gray-1;
   @include media($desktop) {
     height: $header-height;
@@ -51,16 +51,19 @@
 
     &-main{
       display: flex;
+      z-index: 1;
+      margin: -15px 0;
     }
 
     .a-link {
+      box-sizing: border-box;
       display: flex;
       padding: 0 15px 1px; // 1px - lh compensation
       align-items: center;
-      font-size: 15px; //?
-      font-weight: 600; //?
-      border-radius: 5px;
+      font-size: 15px;
+      font-weight: 600;
       opacity: .8;
+      border-top: 3px solid transparent;
 
       &.mobile-show {
         display: none;
@@ -69,7 +72,7 @@
 
       &:hover{
         opacity: 1;
-        background: rgba(0,0,0,.1);
+        border-top-color: $black-1;
       }
 
       //+ .a-button-link { margin-left: 15px; }

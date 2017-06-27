@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import * as T from "prop-types";
+// import * as T from "prop-types";
 import './styles.scss';
 import {cssClassName} from 'utils'
 const cn = cssClassName('O_Header')
 import A_Link from 'A_Link'
 import A_ButtonLink from 'A_ButtonLink'
 import A_logo from 'A_Logo'
-import A_Button from 'A_Button'
+// import A_Button from 'A_Button'
 import ConnerBtn from './btn'
 import {Motion, spring} from 'react-motion';
 

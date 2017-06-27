@@ -11,7 +11,7 @@
     flex: 1;
   }
   &__footer{
-    padding: .5em .75rem;
     display: flex;
+    z-index: 100;
   }
 }
