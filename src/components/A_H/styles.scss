@@ -2,7 +2,7 @@
 @import "common/utils";
 
 .a-h{
-  margin-bottom: $identation * 2;
+  margin-bottom: $identation;
   font-size: 30px;
   &:first-child { margin-top: 0; }
   @include media($tablet) {

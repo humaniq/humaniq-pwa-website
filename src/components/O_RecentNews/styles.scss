@@ -19,6 +19,10 @@
     flex-direction: column;
     flex-flow: column-reverse;
   }
+  @include media($mobile) {
+    padding: 0 0 $identation;
+    &:hover { background-color: transparent; }
+  }
 
   > .m-author {
     @include media($desktop) { flex-basis: 25%; }
@@ -66,9 +70,7 @@
 
 .a-readmore {
   white-space: nowrap;
-  &:after {
-    transition: all .3s ease-out 0s;
-    opacity: 0;
-    content: '\2192';
-  }
+  color: $c-brand;
+
+  @at-root .m-news-item-h:hover & { text-decoration: underline; }
 }

@@ -100,7 +100,7 @@ class M_Select extends Component {
     const {value, isOpen} = this.state
     const { label } = options.find( option => option.value === value)
     return (
-      <div className={cn('root')} onClick={this.handleClick}>
+      <div className={cn('root', {isOpen})} onClick={this.handleClick}>
         <select name={name} id={id}>
         </select>
         <div className={cn('label')}>{label}</div>

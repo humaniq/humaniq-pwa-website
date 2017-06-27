@@ -5,6 +5,7 @@ import './styles.scss';
 import {cssClassName} from 'utils'
 const cn = cssClassName('O_Footer')
 import {Motion, spring} from 'react-motion';
+import M_Select from 'M_Select';
 
 const links = [
   {
@@ -76,7 +77,16 @@ const O_Footer = ({menuOpen}) => {
             <div className={cn('inner')}>
               <nav className={cn('nav')}>{linksList()}</nav>
               <div className={cn('aux')}>
-                <div className={cn('lang')}>🇬🇧 English (UK)</div>
+                <M_Select
+                  options={[
+                    {value: 'en', label: <span><span style={{top: 1, marginRight: 13, position:'relative'}}>🇬🇧</span>English (UK)</span>},
+                    {value: 'ch', label: <span><span style={{top: 1, marginRight: 13, position:'relative'}}>🇨🇳</span>中文</span>},
+                    {value: 'es', label: <span><span style={{top: 1, marginRight: 13, position:'relative'}}>🇪🇸</span>Español</span>},
+                    {value: 'de', label: <span><span style={{top: 1, marginRight: 13, position:'relative'}}>🇩🇪</span>Deutsch</span>}
+                  ]}
+                  value = {'en'}
+                  onChange={val => alert(val)}
+                />
                 <div className={cn('soc')}>
                   {socialsList()}
                 </div>

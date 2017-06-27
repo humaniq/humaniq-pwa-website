@@ -3,15 +3,17 @@
 @import "common/utils";
 
 .a-button {
-  cursor: default;
   user-select: none;
-
   color: white;
   width: 104px;
   height: 40px;
   border-radius: 4px;
   background-color: $primary;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.24), 0 0 2px 0 rgba(0, 0, 0, 0.12);
+  opacity: .8;
+  cursor: pointer;
+
+  &:hover { opacity: 1; }
   &_type_submit{
     width: 124px;
     height: 53px;

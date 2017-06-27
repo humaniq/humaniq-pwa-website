@@ -1,3 +1,5 @@
+@import "common/settings/variables";
+
 .m-select{
   &__root{
     padding-left: 10px;
@@ -7,11 +9,14 @@
     width: 200px;
     height: 40px;
     border-radius: 4px;
-    background-color: #ffffff;
-    border: solid 1px #e3e3e3;
+    background-color: $c-bg;
+    border: solid 1px $c-control-default;
     position: relative;
     select{
       display: none;
+    }
+    &_is-open_true{
+      border: none;
     }
   }
   &__label{
@@ -21,7 +26,7 @@
       margin-right: 13px;
     }
     &:hover{
-      color: #2d9ee0;
+      color: $blue-3;
     }
   }
   &__list-options{
@@ -32,8 +37,8 @@
     width: 100%;
     height: 160px;
     border-radius: 4px;
-    background-color: #ffffff;
-    border: solid 1px #e3e3e3;
+    background-color: $c-bg;
+    border: solid 1px $c-control-default;
     &_closed_true{
       display: none;
     }
@@ -44,11 +49,11 @@
     height: 40px;
     line-height: 40px;
     &_selected_true{
-      color: #2d9ee0;
+      color: $blue-3;
     }
     &:hover{
       color: #2d9ee0;
-      background-color: #ebf6fd;
+      background-color: $lightblue-1;
     }
   }
   &__triangle{
