@@ -1,1 +1,9 @@
 @import "common/utils";
+
+.a-link{
+  &.block{
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+}
