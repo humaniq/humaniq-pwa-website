@@ -8,6 +8,7 @@ import O_RecentNews from 'O_RecentNews'
 import O_HandyLinks from 'O_HandyLinks'
 import O_StaticInfo from 'O_StaticInfo'
 import O_Slider from 'O_Slider'
+import M_TeaserMainContent from 'M_TeaserMainContent'
 
 const text_1 = { title: 'The Power of Blockchain.', description: ['Humaniq harnesses the power of Blockchain and AI technologies to break down barriers to earning, spending, and accessing finance. We put you in total control of all your transactions. Payments are entirely transparent and accessible at all times, and with our Blockchain-based app you can track all your funds.'] }
 const text_2 = { title: 'Join our Community', description: ['Join the Humaniq Forum — a public discussion board for entrepreneurs around the world. Connect with other entrepreneurs, find beta users, learn from experienced founders, and get advice on how to overcome early challenges.', <br key="br_1"/>, <br key="br_2"/>, 'The Humaniq community brings together over one billion investors, accelerators, and companies into one global network. Connect with them and join our community.'] }
@@ -33,7 +34,9 @@ const mockSlides = [
 
 const SE_Home = () => (
   <div className={cn()}>
-    <O_Teaser/>
+    <O_Teaser theme='light'>
+      <M_TeaserMainContent/>
+    </O_Teaser>
     <O_RecentNews/>
     <O_HandyLinks/>
     <O_StaticInfo {...{modificator: 'normal', text: text_1}}/>

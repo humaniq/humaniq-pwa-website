@@ -8,7 +8,7 @@
   top: 0;
   z-index: 2;
   @include media($desktop) { height: $header-height; }
-  &_dark-theme_true { background: $c-control-primary; }
+  &_dark-theme_true {}
   &_dark-theme_false {}
   &_menu-open_true{
     background: $c-bg;

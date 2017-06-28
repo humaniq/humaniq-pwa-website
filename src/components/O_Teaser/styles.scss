@@ -2,50 +2,17 @@
 @import "common/utils";
 
 .o-teaser {
-  background: $gray-1;
+  &_theme_light { background: $gray-1; }
+  &_theme_dark {
+    background: $blue-2;
+    color: $c-brand-invert;
+  }
 
   &__inner {
     display: flex;
-    flex-direction: column;
-    @include media($desktop) { padding: $header-height + 85px 468px 144px 0; }
-    @include media($tablet) { padding: $header-height * 2 10% $header-height 0; }
+    //flex-direction: column;
+    @include media($desktop) { padding: $header-height + 85px 0 144px 0; }
+    @include media($tablet) { padding: $header-height * 2 0 $header-height 0; }
     @include media($mobile) { padding: $header-height * 2 0 0; }
-  }
-
-  &__title {
-    line-height: 1.15em;
-    font-weight: 700;
-    color: #253039;
-    @include media($desktop) {
-      margin: 0 -7px;
-      font-size: 87px;
-    }
-    @include media($tablet) { font-size: 50px; }
-    @include media($mobile) {
-      font-size: 46px;
-      font-size: 14vw;
-    }
-
-  }
-
-  &__lead {
-    margin-top: $identation * 1.5;
-    font-size: 18px;
-    line-height: 1.56em;
-    color: #253039; // clarify
-    @include media($mobile) {
-      order: 1;
-      margin: 0 (-$identation);
-      padding: ($identation * 3) $identation ($identation * 2);
-      background: $c-brand;
-      color: $c-brand-invert;
-    }
-  }
-
-  &__subscribe {
-    margin-top: $identation * 2;
-    @include media($mobile) {
-      margin-bottom: 115px;
-    }
   }
 }

@@ -6,6 +6,7 @@ body {
   font-size: 16px;
   font-family: 'Open Sans', sans-serif;
   overflow: auto;
+  color: $c-brand-dark;
 }
 
 video {
@@ -29,7 +30,7 @@ img {
 p {
   font-size: 17px;
   line-height: 1.65em;
-  color: #565759; // clarify
+  color: $black-3; // clarify
 
   &.p_center { text-align: center; }
   + p { margin-top: 2.5em; }
