@@ -2,11 +2,11 @@ import React, { PropTypes } from 'react';
 import * as T from "prop-types";
 import {Link} from 'react-router'
 import catnip from 'catnip';
-import styles from './styles.scss';
+import './styles.scss';
 const cn = catnip('a-button-link')
 
 // size - button size (xs, s, m, l, xl)
-// color - button color (primary, secondary, disabled, transparent_black, transparent_white)
+// color - button color (primary_dark / primary_dark_theme_false, secondary_dark, disabled, primary_light / primary_dark_theme_true , secondary_light)
 
 const A_ButtonLink = ({children, to, size, color}) =>
   <Link className={cn({size, color})} to={to}>

@@ -1,6 +1,6 @@
 import React from 'react';
-import * as T from "prop-types";
-import styles from './styles.scss';
+// import * as T from "prop-types";
+import './styles.scss';
 import {cssClassName} from 'utils'
 const cn = cssClassName('M_DotIndicator')
 

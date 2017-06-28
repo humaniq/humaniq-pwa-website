@@ -1,4 +1,5 @@
 @import "common/utils";
+@import "common/settings/variables";
 
 .a-logo {
   display: block;
@@ -7,5 +8,12 @@
     display: block;
     width: 129px;
     height: 30px;
+
+    &_dark-theme_true path {
+      fill: $c-brand-invert;
+      stroke: $c-brand-invert;
+    }
+
+    &_dark-theme_false {}
   }
 }

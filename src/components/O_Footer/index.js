@@ -14,7 +14,7 @@ const links = [
   },
   {
     section: 'company',
-    links: [{name: 'Blog', url: '#'}, {name: 'News', url: '#'}, {name: 'Use cases', url: '#'}, {
+    links: [{name: 'Blog', url: '#'}, {name: 'News', url: '#'}, {name: 'Use cases', url: '/use-cases'}, {
       name: 'Partners',
       url: '#'
     }, {name: 'Events', url: '#'}]

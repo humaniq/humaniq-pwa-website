@@ -7,10 +7,9 @@
   position: fixed;
   top: 0;
   z-index: 2;
-  background: $gray-1;
-  @include media($desktop) {
-    height: $header-height;
-  }
+  @include media($desktop) { height: $header-height; }
+  &_dark-theme_true { background: $c-control-primary; }
+  &_dark-theme_false {}
   &_menu-open_true{
     background: $c-bg;
     position: relative;
@@ -30,6 +29,19 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    &_menu-open_true {
+      .o-header__nav_dark-theme_true .a-link {
+        color: $c-brand-dark;
+        &:hover { border-top-color: $c-brand-dark; }
+      }
+      .a-logo__img_dark-theme_true path {
+        fill: $c-brand-dark;
+        stroke: $c-brand-dark;
+      }
+      .a-svg_dark-theme_true path { fill: $c-brand-dark; }
+    }
+
   }
   &__connerBtn{
     display: block;
@@ -41,6 +53,15 @@
     display: flex;
     justify-content: space-between;
     align-items: stretch;
+
+    &_dark-theme_true .a-link {
+      color: $c-brand-invert;
+      &:hover { border-top-color: $c-brand-invert; }
+    }
+    &_dark-theme_false .a-link {
+      color: $c-brand-dark;
+      &:hover { border-top-color: $c-brand-dark; }
+    }
 
     &-extra{
       margin-left: 15px;
@@ -70,18 +91,14 @@
       font-weight: 600;
       opacity: .8;
       border-top: 3px solid transparent;
+      border-bottom: 3px solid transparent;
 
       &.mobile-show {
         display: none;
         @include media($mobile) { display: flex; }
       }
 
-      &:hover{
-        opacity: 1;
-        border-top-color: $black-1;
-      }
-
-      //+ .a-button-link { margin-left: 15px; }
+      &:hover { opacity: 1; }
     }
   }
 }
