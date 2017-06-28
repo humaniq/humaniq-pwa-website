@@ -2,18 +2,17 @@
 @import "common/settings/variables";
 
 .a-logo {
-  display: block;
-
   &__img {
     display: block;
     width: 129px;
     height: 30px;
-
-    &_dark-theme_true path {
+    svg path {
+      fill: #253039;
+      stroke: #253039;
+    }
+    &_dark-theme_true svg path{
       fill: $c-brand-invert;
       stroke: $c-brand-invert;
     }
-
-    &_dark-theme_false {}
   }
 }

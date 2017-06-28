@@ -51,8 +51,9 @@ class O_SliderWide extends Component {
     return (
       <section className={cn()}>
         <div className="l-container">
+          <M_Swipe onSwipedLeft={() => this.handleSwipe('prev')} onSwipedRight={() => this.handleSwipe('next')}>
+
           <div className={cn('inner')}>
-            <M_Swipe onSwipedLeft={() => this.handleSwipe('prev')} onSwipedRight={() => this.handleSwipe('next')}>
               <div className={cn('prev')} onClick={() => this.handleSwipe('prev')}>{'  '}</div>
               <Motion
                 defaultStyle={{x: -1}}
@@ -63,14 +64,18 @@ class O_SliderWide extends Component {
                 ({x}) => {
                   const zeroM = Math.abs((past - x) / ((past - present) === 0 ? 1 : past - present))
                   let forward;
-                  if(present === past){
-                    forward = true
-                  } else if (present === (slides.length - 1)) {
-                    forward = past === slides.length - 2
-                  } else if (present === 0) {
-                    forward = past === slides.length - 1
-                  } else {
-                    forward = present - past === 1
+                  switch(present){
+                    case past:
+                      forward = true
+                      break
+                    case slides.length - 1:
+                      forward = past === slides.length - 2
+                      break
+                    case 0:
+                      forward = past === slides.length - 1
+                      break
+                    default:
+                      forward = present - past === 1
                   }
                   return (
                     this.getSlide(slides[present], zeroM, forward)
@@ -79,8 +84,8 @@ class O_SliderWide extends Component {
               }
               </Motion>
               <div className={cn('next')} onClick={() => this.handleSwipe('next')}>{'  '}</div>
-            </M_Swipe>
           </div>
+          </M_Swipe>
         </div>
       </section>
     )
