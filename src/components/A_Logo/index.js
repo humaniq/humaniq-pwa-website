@@ -1,14 +1,16 @@
 import React, { PropTypes } from 'react';
 import catnip from 'catnip';
-import styles from './styles.scss';
+import './styles.scss';
 const cn = catnip('a-logo');
-// import A_Link	from 'A_Link'
+import Logo from '-!babel-loader!svg-react-loader!./humaniq-logo.svg?name=Logo';
 
-const A_Logo = () =>(
-  <a className={cn()} href="/">
-    <img className={cn('img')} src="/img/humaniq-logo.svg" alt="humaniq.co"/>
-  </a>
-)
+const A_Logo = ({darkTheme}) => {
+  return (
+    <a className={cn()} href="/">
+      <Logo className={cn('img', {darkTheme: darkTheme})} />
+    </a>
+  )
+}
 
 A_Logo.propTypes = {
 };

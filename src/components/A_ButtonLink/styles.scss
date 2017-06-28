@@ -29,9 +29,9 @@
 
   &_color_primary_dark, // TRANSPARENT button with BLACK lines
   &_color_primary_dark_theme_false {
-    color: $black-2;
+    color: $c-brand-dark;
     background-color: transparent;
-    border: 2px $black-2 solid;
+    border: 2px $c-brand-dark solid;
   }
 
   &_color_primary_light,  // TRANSPARENT button with WHITE lines

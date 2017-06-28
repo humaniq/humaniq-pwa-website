@@ -1,0 +1,5 @@
+@import "common/settings/variables";
+
+.a-svg {
+  &_dark-theme_true path { fill: $c-brand-invert; }
+}

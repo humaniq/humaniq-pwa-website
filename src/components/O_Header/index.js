@@ -41,7 +41,7 @@ class O_Header extends Component {
           {({x}) =>
             <div className="l-container-wide">
               <div className={cn('inner', {menuOpen})}>
-                <A_logo theme={darkTheme}/>
+                <A_logo darkTheme={darkTheme}/>
                 <nav className={cn('nav', {darkTheme})}>
 
                   <span
@@ -63,7 +63,7 @@ class O_Header extends Component {
                     <A_ButtonLink size="xs" color={"primary_dark_theme_" + darkTheme} to="/#">Subscribe</A_ButtonLink>
                   </span>
                   <span className={cn('connerBtn')}>
-                    <ConnerBtn {...{onClick, menuOpen, x, max}}/>
+                    <ConnerBtn {...{onClick, menuOpen, x, max, darkTheme}}/>
                   </span>
                 </nav>
               </div>
