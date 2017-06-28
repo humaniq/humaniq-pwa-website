@@ -105,11 +105,7 @@ class M_Select extends Component {
         <select name={name} id={id}>
         </select>
         <div className={cn('label')}>{label}</div>
-        <div className={cn('triangle')}>
-          <svg xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6">
-            <path fill="#89898B" stroke="#89898B" d="M5 0l4 5H1z"/>
-          </svg>
-        </div>
+        <div className={cn('triangle')} />
         {this.getListOptions(options, isOpen, value)}
       </div>
     )

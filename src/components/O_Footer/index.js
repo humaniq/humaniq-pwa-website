@@ -65,7 +65,6 @@ const O_Footer = ({menuOpen}) => {
         style={{
           x: spring(menuOpen ? max : 0),
           y: menuOpen ? spring(max) : 0
-
         }}
       >
         {({x, y}) =>

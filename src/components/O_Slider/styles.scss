@@ -1,0 +1,210 @@
+@import "common/settings/variables";
+@import "common/utils";
+
+$slider-padding: $identation * 4;
+$slider-button-size: 100px;
+$image-size: 220px;
+
+.o-slider{
+  &-framed {
+    &__inner {
+      display: flex;
+      margin: $identation * 2.5 0 $identation * 2.5; // clarify
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      @include media($desktop) {
+        padding: $identation * 2.5 $identation * 2; // clarify
+        border: 2px $gray-2 solid;
+        border-radius: 4px; // 6? clarify
+      }
+      @include media($tablet) {
+        justify-content: space-around;
+        border-radius: 4px;
+        border: 2px solid $c-border;
+        padding: 30px;
+      }
+      @include media($mobile) {
+        margin-top: 5px;
+        margin-bottom: $identation * 2;
+      }
+    }
+
+    &__texts {
+      display: flex;
+      width: 360px;
+      flex-direction: column;
+      justify-content: space-between;
+      @include media($tablet) {
+        min-height: 100px;
+        width: 100%;
+        padding-right: $identation;
+        padding-bottom: 32px;
+      }
+      @include media($mobile) {
+        min-height: 100px;
+        padding-right: 0;
+        padding-bottom: $identation;
+      }
+
+      &-item {
+        cursor: pointer;
+        color: $black-4; // clarify
+        opacity: 0.5;
+        &.active {
+          opacity: 1;
+          position: relative;
+          &:before {
+            content: '';
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            position: absolute;
+            border-radius: 2px;
+            background-color: #439FE0;
+          }
+        }
+
+        @include media($desktop) {
+          padding-left: $identation * 2;
+          font-size: 16px;
+          line-height: 1.75em;
+          &.active {
+            padding-left: $identation * 2;
+          }
+        }
+        @include media($tablet) {
+          padding-left: 0;
+          font-size: 16px;
+          line-height: 1.5em;
+          display: none;
+          &.active {
+            margin-top: 0;
+            display: block;
+            &:before {
+              content: none;
+            }
+          }
+        }
+      }
+    }
+
+    &__indicator {
+      width: 100%;
+      display: none;
+      @include media($tablet) {
+        display: block;
+        margin-bottom: 40px;
+      }
+      @include media($mobile) {
+        margin-bottom: $identation;
+      }
+    }
+    &__image {
+      @include media($desktop) {
+        width: 450px;
+        height: 375px;
+      }
+      @include media($tablet) {
+        width: 50%;
+        height: auto;
+      }
+      @include media($mobile) {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+  &-wide {
+    background: $lightblue;
+    .nav-button {
+      content: '';
+      $size: 22px;
+      display: block;
+      width: $size;
+      height: $size;
+      border: $c-control-primary solid;
+      border-width: 0 0 2.5px 2.5px;
+      margin: auto;
+      margin-top: -$size;
+      position: absolute;
+      top: 50%;
+      z-index: 1;
+
+    }
+
+    &__next,
+    &__prev {
+      width: $slider-button-size;
+      height: 100%;
+      cursor: pointer;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      opacity: .8;
+      z-index: 1;
+      @include media($mobile) {
+        bottom: auto;
+        height: $slider-padding * 2 + $image-size;
+      }
+      &:before {
+        @extend .nav-button;
+      }
+      &:hover {
+        opacity: 1;
+      }
+    }
+
+    &__next {
+      margin-right: -40px;
+      right: 0;
+      &:before {
+        transform: rotate(-135deg);
+        right: 50%;
+      }
+    }
+
+    &__prev {
+      margin-left: -40px;
+      left: 0;
+      &:before {
+        transform: rotate(45deg);
+        left: 50%;
+      }
+    }
+    &__inner {
+      padding: $slider-padding 0; // clarify
+      //padding: $identation * 2.5 0; // clarify
+    }
+
+    &__slide {
+      display: flex;
+      width: 650px;
+      margin: 0 auto;
+      justify-content: space-between;
+      @include media($mobile) {
+        width: 100%;
+        flex-flow: column;
+      }
+    }
+
+    &__image {
+      width: $image-size;
+      height: $image-size;
+      @include media($mobile) {
+        align-self: center;
+      }
+    }
+    &__text {
+      display: flex;
+      width: 375px;
+      flex-direction: column;
+      justify-content: center;
+      @include media($mobile) {
+        width: 100%;
+        margin-top: 35px;
+      }
+    }
+  }
+}

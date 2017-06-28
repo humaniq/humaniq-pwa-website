@@ -12,3 +12,9 @@ $ npm start - to start node.js server
 
 $ npm run dev - quick start dev server with ssr   
 $ npm run dev2 - quick start dev server without ssr
+
+
+**storybook mode**
+--
+
+$ npm run st - dev mode with hot-reload

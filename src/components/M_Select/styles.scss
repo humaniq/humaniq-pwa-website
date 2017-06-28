@@ -77,9 +77,11 @@
   }
   &__triangle{
     position: absolute;
-    top:50%;
-    right: 12px;
-    transform: translate(0,-60%);
+    top: 17px;
+    right: 10px;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 6px solid $black-4;
   }
   &__check-mark{
     position: absolute;
