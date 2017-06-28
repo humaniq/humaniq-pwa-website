@@ -15,6 +15,7 @@ const navMenu = [
 
 function mapStateToProps(state) {
   const {navigation:{page}} = state
+  // console.log(state)
 
   const _navMenu = navMenu.map(({name, url, addClass}) => {
     return {

@@ -6,7 +6,7 @@ import styles from './styles.scss';
 const cn = catnip('a-button-link')
 
 // size - button size (xs, s, m, l, xl)
-// color - button color (primary, secondary, disabled, transparent_black, transparent_white)
+// color - button color (primary_dark, secondary_dark, disabled, primary_light, secondary_light)
 
 const A_ButtonLink = ({children, to, size, color}) =>
   <Link className={cn({size, color})} to={to}>

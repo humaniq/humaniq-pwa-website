@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import * as T from "prop-types";
+// import * as T from "prop-types";
 import './styles.scss';
-import {cssClassName} from 'utils'
-const cn = cssClassName('O_HeaderBtn')
+// import {cssClassName} from 'utils'
+// const cn = cssClassName('O_HeaderBtn')
 import A_Button from 'A_Button'
 
 class O_HeaderBtn extends Component {

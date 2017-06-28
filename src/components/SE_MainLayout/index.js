@@ -6,8 +6,6 @@ import O_Header from 'O_Header'
 import {cssClassName} from 'utils'
 const cn = cssClassName('SE_MainLayout')
 
-
-
 class SE_MainLayout extends Component {
 
   state ={
@@ -20,13 +18,13 @@ class SE_MainLayout extends Component {
   }
 
   render() {
-    const {navMenu, children} = this.props
+    const {navMenu, children, page} = this.props
     const {menuOpen} = this.state
     return (
       <div className={cn({menuOpen})}>
         <div className={cn('main')}>
           <O_Header
-            {...{navMenu, menuOpen, onClick:this.toggleMenu}}
+            {...{navMenu, menuOpen, page, onClick:this.toggleMenu}}
           />
           {menuOpen ||
           children

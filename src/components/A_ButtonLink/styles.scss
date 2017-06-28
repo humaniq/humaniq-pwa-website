@@ -2,7 +2,8 @@
 
 .a-button-link {
   box-sizing: border-box;
-  display: inline-block;
+  display: flex;
+  align-items: center;
   border-radius: 4px;
   text-align: center;
   user-select: none;
@@ -13,10 +14,9 @@
 
   &_size_xs {
     height: 40px;
-    padding: 8px 15px;
+    padding: 0 15px;
     font-size: 15px;
     font-weight: 600;
-    line-height: 1.2em;
   }
 
   &_size_m {
@@ -27,18 +27,29 @@
     line-height: 1.2em;
   }
 
-  &__primary {
+  &_color_primary_dark, // TRANSPARENT button with BLACK lines
+  &_color_primary_dark_theme_false {
+    color: $black-2;
+    background-color: transparent;
+    border: 2px $black-2 solid;
+  }
+
+  &_color_primary_light,  // TRANSPARENT button with WHITE lines
+  &_color_primary_dark_theme_true {
+    color: $c-brand-invert;
+    background-color: transparent;
+    border: 2px $c-brand-invert solid;
+  }
+
+  &_color_secondary_dark { // BLUE button with WHITE text
     color: $c-brand-invert;
     background-color: $c-control-primary;
   }
 
-  &_color_transparent_black {
-    color: $black-2;
-    border: 2px $black-2 solid;
+
+  &_color_secondary_light { // WHITE button with BLUE text
+    color: $c-control-primary;
+    background-color: $c-brand-invert;
   }
 
-  &_color_transparent_white {
-    color: $c-brand-invert;
-    border: 2px $c-brand-invert solid;
-  }
 }
