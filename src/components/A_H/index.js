@@ -4,11 +4,15 @@ import './styles.scss';
 import {cssClassName} from 'utils'
 const cn = cssClassName('A_H')
 
-const A_H = ({type, addClass, children}) =>(
+const A_H = ({type, icon, addClass, children}) =>(
   React.createElement(
     type,
     {className: cn({type}, [addClass])},
-    children
+    (icon ?
+      <span className={'iconed a-h_icon_' + icon}>{children}</span>
+    :
+      children
+    )
   )
 )
 

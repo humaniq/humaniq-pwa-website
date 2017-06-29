@@ -13,7 +13,7 @@ const O_StaticCase = ({caseItem, modificator}) => {
     <section className={cn([modificator])}>
       <div className="l-container">
         <div className={cn('inner')}>
-          <A_H type="h2" addClass={cn('title')}>{caseItem.title}</A_H>
+          <A_H type="h2" icon={caseItem.icon} addClass={cn('title')}>{caseItem.title}</A_H>
           <div className={cn('block1')}>
             <A_H type="h3">{caseItem.block1.title}</A_H>
             <p>{caseItem.block1.text}</p>
