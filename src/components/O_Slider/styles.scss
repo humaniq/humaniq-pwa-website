@@ -102,6 +102,7 @@ $image-size: 220px;
       }
     }
     &__image {
+      user-select: none;
       @include media($desktop) {
         width: 450px;
         height: 375px;
@@ -190,6 +191,7 @@ $image-size: 220px;
     }
 
     &__image {
+      user-select: none;
       width: $image-size;
       height: $image-size;
       @include media($mobile) {

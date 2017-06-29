@@ -8,27 +8,15 @@ const cn = cssClassName('SE_MainLayout')
 
 class SE_MainLayout extends Component {
 
-  state ={
-    menuOpen: false
-  }
-
-  toggleMenu = () => {
-    const {menuOpen} = this.state
-    this.setState({menuOpen: !menuOpen})
-  }
-
   render() {
-    const {navMenu, children, page} = this.props
-    const {menuOpen} = this.state
+    const {navMenu, children, page, isMenuOpened: menuOpen, toggleMenu} = this.props
     return (
       <div className={cn({menuOpen})}>
         <div className={cn('main')}>
           <O_Header
-            {...{navMenu, menuOpen, page, onClick:this.toggleMenu}}
+            {...{navMenu, menuOpen, page, onClick: toggleMenu}}
           />
-          {menuOpen ||
-          children
-          }
+          {menuOpen || children }
         </div>
 
         <div className={cn('footer')}>

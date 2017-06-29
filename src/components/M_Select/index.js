@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import * as T from "prop-types";
+// import * as T from "prop-types";
 import './styles.scss';
 import {cssClassName} from 'utils'
 const cn = cssClassName('M_Select')
@@ -17,38 +17,8 @@ class M_Select extends Component {
     isOpen: false
   }
 
-  // componentWillUnmount() {
-  //   if (!document.removeEventListener && document.detachEvent) {
-  //     document.detachEvent('ontouchstart', this.handleTouchOutside);
-  //   } else {
-  //     document.removeEventListener('touchstart', this.handleTouchOutside);
-  //   }
-  // }
-  //
-  // toggleTouchOutsideEvent(enabled) {
-  //   if (enabled) {
-  //     if (!document.addEventListener && document.attachEvent) {
-  //       document.attachEvent('ontouchstart', this.handleTouchOutside);
-  //     } else {
-  //       document.addEventListener('touchstart', this.handleTouchOutside);
-  //     }
-  //   } else {
-  //     if (!document.removeEventListener && document.detachEvent) {
-  //       document.detachEvent('ontouchstart', this.handleTouchOutside);
-  //     } else {
-  //       document.removeEventListener('touchstart', this.handleTouchOutside);
-  //     }
-  //   }
-  // }
 
-  // handleTouchOutside(event) {
-  //   // handle touch outside on ios to dismiss menu
-  //   if (this.wrapper && !this.wrapper.contains(event.target)) {
-  //     this.closeMenu();
-  //   }
-  // }
-
-  handleClickOutside = evt => {
+  handleClickOutside = () => {
     this.closeMenu()
   }
 

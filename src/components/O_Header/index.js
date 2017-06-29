@@ -6,7 +6,6 @@ const cn = cssClassName('O_Header')
 import A_Link from 'A_Link'
 import  A_ButtonLink from 'A_ButtonLink'
 import A_logo from 'A_Logo'
-// import A_Button from 'A_Button'
 import ConnerBtn from './btn'
 import {Motion, spring} from 'react-motion';
 
@@ -64,7 +63,7 @@ class O_Header extends Component {
                     <A_ButtonLink size="xs" color={"primary_dark_theme_" + darkTheme} to="/#">Subscribe</A_ButtonLink>
                   </span>
                   <span className={cn('connerBtn')}>
-                    <ConnerBtn {...{onClick, menuOpen, x, max, darkTheme}}/>
+                    <ConnerBtn {...{onClick, x, max, darkTheme}}/>
                   </span>
                 </nav>
               </div>

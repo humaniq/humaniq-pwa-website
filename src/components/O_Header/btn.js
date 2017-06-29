@@ -7,7 +7,7 @@ import A_Button from 'A_Button'
 
 class O_HeaderBtn extends Component {
   render() {
-    const {onClick, menuOpen, x, max, darkTheme} = this.props
+    const {onClick, x, max, darkTheme} = this.props
     return (
       <A_Button onClick={onClick} type="img">
         {x < max/2 ?

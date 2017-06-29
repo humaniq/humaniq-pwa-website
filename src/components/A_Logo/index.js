@@ -9,7 +9,7 @@ import Logo from '-!babel-loader!svg-react-loader!./humaniq-logo.svg?name=Logo';
 const A_Logo = ({darkTheme}) => {
   return (
     <span className={cn({darkTheme})}>
-      <A_Link href="/">
+      <A_Link to="/">
         <Logo />
       </A_Link>
     </span>
