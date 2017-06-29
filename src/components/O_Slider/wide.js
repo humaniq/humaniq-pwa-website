@@ -22,19 +22,18 @@ class O_SliderWide extends Component {
     this.setState({activeHistory: [first, last]})
   }
 
-  getSlide(slide, zeroM, forward) {
+  getSlide(slide, oneM, forward, isInit) {
+    oneM = isInit ? 1 : oneM
     return (
       <div
         className={cn('slide')}
         style={{
-          opacity: 0.5 + (0.5 * (1 - zeroM)),
-          // transform: `translate(${(100 * (forward ? 1 : -1))}px, 0)`,
-          transform: `translate(${(100 * (forward ? 1 : -1)) + ( (1 -zeroM) * 100 * (forward ? -1 : 1))}px, 0)`,
+          opacity: 0.3 + (0.7 * oneM),
+          transform: `translate(${ ( (1 -oneM) * 100 * (forward ? 1 : -1))}px, 0)`,
         }}
       >
         <img className={cn('image')} src={slide.img} width="220" height="220"/>
         <div className={cn('text')}>
-          {forward ? 'вперед' : 'назад'}
           <A_H type="h4" href="#">{slide.title}</A_H>
           <div className={cn('description')} dangerouslySetInnerHTML={{__html: slide.html}}/>
         </div>
@@ -47,22 +46,23 @@ class O_SliderWide extends Component {
     const {activeHistory} = this.state
     const past = activeHistory[0]
     const present = activeHistory.slice(-1)[0]
+    const isInit = past === present
 
     return (
       <section className={cn()}>
         <div className="l-container">
-          <M_Swipe onSwipedLeft={() => this.handleSwipe('prev')} onSwipedRight={() => this.handleSwipe('next')}>
+          <M_Swipe onSwipedLeft={() => this.handleSwipe('next')} onSwipedRight={() => this.handleSwipe('prev')}>
 
           <div className={cn('inner')}>
               <div className={cn('prev')} onClick={() => this.handleSwipe('prev')}>{'  '}</div>
               <Motion
-                defaultStyle={{x: -1}}
+                defaultStyle={{x: 0}}
                 style={{
-                  x: spring(past, {stiffness: 50, damping: 17}),
+                  x: spring(present, {stiffness: 50, damping: 17}),
                 }}
               >{
                 ({x}) => {
-                  const zeroM = Math.abs((past - x) / ((past - present) === 0 ? 1 : past - present))
+                  const oneM = Math.abs((past - x) / ((past - present) === 0 ? 1 : past - present))
                   let forward;
                   switch(present){
                     case past:
@@ -78,7 +78,7 @@ class O_SliderWide extends Component {
                       forward = present - past === 1
                   }
                   return (
-                    this.getSlide(slides[present], zeroM, forward)
+                    this.getSlide(slides[present], oneM, forward, isInit)
                   )
                 }
               }
