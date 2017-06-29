@@ -25,6 +25,7 @@ class O_Header extends Component {
   render() {
     const {navMenu, page, onClick, menuOpen} = this.props
     const darkTheme = this.isDarkTheme(page)
+    const darkThemeLogo = darkTheme && !menuOpen
     const headerNav = this.renderHeaderNav(navMenu)
     const slide = (this.navExtraNode && this.navExtraNode.clientWidth || 120) + 30
     const max = 100;
@@ -40,7 +41,7 @@ class O_Header extends Component {
           {({x}) =>(
             <div className="l-container-wide">
               <div className={cn('inner', {menuOpen})}>
-                <A_logo darkTheme={darkTheme}/>
+                <A_logo darkTheme={darkThemeLogo}/>
                 <nav className={cn('nav', {darkTheme})}>
                   <span
                     className={cn('nav-main')}
