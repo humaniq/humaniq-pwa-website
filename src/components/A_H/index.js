@@ -4,10 +4,10 @@ import './styles.scss';
 import {cssClassName} from 'utils'
 const cn = cssClassName('A_H')
 
-const A_H = ({type, children}) =>(
+const A_H = ({type, addClass, children}) =>(
   React.createElement(
     type,
-    {className: cn({type})},
+    {className: cn({type}, [addClass])},
     children
   )
 )

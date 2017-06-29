@@ -1,0 +1,89 @@
+@import "common/settings/variables";
+@import "common/utils";
+
+.o-static-case {
+  background-color: #f9f9f9;
+  &:nth-child(odd) {
+    .o-static-case__title { order: 0; }
+    .o-static-case__block1 { order: 2; }
+    .o-static-case__block2 { order: 1; }
+  }
+
+  &__inner {
+    display: flex;
+    padding: $identation * 3.5 0;
+    justify-content: space-between;
+    align-items: stretch;
+    flex-wrap: wrap;
+    //@include media($tablet) { flex-flow: column-reverse; }
+    //@include media($mobile) { padding: $identation * 2 0; }
+  }
+
+  &__title {
+    width: 100%;
+    margin-bottom: 45px;
+  }
+
+  &__block1,
+  &__block2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__block1 {
+    @include media($desktop) { width: 370px; }
+    //@include media($tablet) {
+    //  width: 100%;
+    //  margin-top: $identation * 1.5;
+    //}
+
+    //.a-button-link {
+    //  display: table;
+    //  margin-top: $identation;
+    //}
+  }
+
+  &__block2 {
+    background: $white;
+    border-radius: 8px;
+    box-shadow: 0 12px 22px 0 rgba(0, 0, 0, 0.24);
+    .a-h { text-align: left; }
+    @include media($desktop) {
+      width: 560px;
+      padding: $identation * 2;
+    }
+    //@include media($tablet) {
+    //  width: 100%;
+    //  height: auto;
+    //}
+  }
+
+  &.flip {
+    .o-static-info__inner {
+      padding: $identation * 4 0;
+      margin-top: $identation * 4;
+      border-top: 1px #d6d6d6 solid;
+      @include media($desktop) { flex-direction: row-reverse; }
+      @include media($mobile) {
+        padding: $identation * 2 0;
+        margin-top: $identation * 2;
+      }
+    }
+  }
+
+  &.flip,
+  &.accent {
+    h3 {
+      font-weight: 700;
+      @include media($desktop) { margin-bottom: $identation * 2; }
+      @include media($tablet) { margin-bottom: $identation; }
+    }
+    .o-static-info__image {
+      @include media($desktop) {
+        width: 450px;
+        height: 375px;
+      }
+    }
+  }
+}
