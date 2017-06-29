@@ -8,11 +8,5 @@
     color: $c-brand-invert;
   }
 
-  &__inner {
-    display: flex;
-    //flex-direction: column;
-    @include media($desktop) { padding: $header-height + 85px 0 144px 0; }
-    @include media($tablet) { padding: $header-height * 2 0 $header-height 0; }
-    @include media($mobile) { padding: $header-height * 2 0 0; }
-  }
+  &__inner { padding-top: $header-height; }
 }

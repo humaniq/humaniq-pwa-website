@@ -38,15 +38,15 @@ p {
 }
 
 // Общий случай модификаторов для скрытия-показа
-// конкретные реализации — в контексте
+// конкретные реализации (например, display:flex) — в контексте
 
 .mobile-show {
   display: none;
   @include media($mobile) { display: block; }
 }
-//.mobile-hide {
-//  @include media($mobile) { display: none; }
-//}
+.mobile-hide {
+  @include media($mobile) { display: none; }
+}
 
 html {
   overflow: scroll;

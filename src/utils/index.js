@@ -31,14 +31,3 @@ export function isServer() {
     return true
   }
 }
-
-export function htmlEncode( input ) {
-  return input
-  // return {__html: input};
-  // return String(input)
-  //   .replace(/&/g, "&amp;")
-  //   .replace(/"/g, "&quot;")
-  //   .replace(/'/g, "''")
-  //   .replace(/</g, "&lt;")
-  //   .replace(/>/g, "&gt;");
-}

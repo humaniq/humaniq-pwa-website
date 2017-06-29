@@ -1,14 +1,18 @@
 @import "common/settings/variables";
 @import "common/utils";
 
+$icon-size: 48px;
+
 .a-h{
   margin-bottom: $identation;
   font-size: 30px;
-  &:first-child { margin-top: 0; }
   @include media($tablet) {
     margin-bottom: $identation;
     margin-top: $identation * 1.5;
   }
+
+  &:first-child { margin-top: 0; }
+
   &_type_h2{
     line-height: 1.33em;
     font-weight: 700;
@@ -18,6 +22,7 @@
       line-height: 1.67;
     }
   }
+
   &_type_h3{
     line-height: 1.2em;
     font-weight: 400;
@@ -28,6 +33,7 @@
       color: $gray-3;
     }
   }
+
   &_type_h4{
     margin-bottom: $identation;
     font-size: 22px;
@@ -35,5 +41,11 @@
     font-weight: 400;
     &,
     & > a { color: $gray-3; }
+  }
+
+  .iconed { padding-left: $icon-size * 1.5; }
+
+  &_icon_placeholder {
+    background: url('/img/placeholder.svg') left center / $icon-size no-repeat;
   }
 }

@@ -4,9 +4,9 @@
 .m-teaser-main-content {
   display: flex;
   flex-direction: column;
-  @include media($desktop) { padding-right: 468px; }
-  @include media($tablet) { padding-right: 10%; }
-  @include media($mobile) { padding-right: 0; }
+  @include media($desktop) { padding: 85px 468px 144px 0; }
+  @include media($tablet) { padding: $header-height 10% $header-height 0; }
+  @include media($mobile) { padding-right: $header-height 0; }
 
   &__title {
     line-height: 1.15em;
