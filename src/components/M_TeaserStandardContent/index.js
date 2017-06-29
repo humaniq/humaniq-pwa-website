@@ -4,19 +4,18 @@ import './styles.scss';
 import {cssClassName} from 'utils'
 const cn = cssClassName('M_TeaserStandardContent')
 
-const M_TeaserStandardContent = ({title, description, content}) => {
+const M_TeaserStandardContent = ({teaser}) => {
   return (
     <div className={cn()}>
-      <div className={cn('title')}>{title}</div>
-      <div className={cn('description')}>{description}</div>
-      {content && <div className={cn('content')}>{content}</div>}
+      <div className={cn('title')}>{teaser.title}</div>
+      <div className={cn('description')}>{teaser.description}</div>
+      {teaser.content && <div className={cn('content')}>{teaser.content}</div>}
     </div>
   )
 }
 
 M_TeaserStandardContent.propTypes = {
-  title: T.string.isRequired,
-  description: T.string.isRequired
+  teaser: T.object.isRequired
 };
 
 M_TeaserStandardContent.defaultProps = {};

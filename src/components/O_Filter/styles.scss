@@ -1,0 +1,12 @@
+@import "common/settings/variables";
+@import "common/utils";
+
+.o-filter {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  margin-bottom: 66px;
+  //@include media($desktop) {}
+
+  .holder { margin-right: 20px; }
+}

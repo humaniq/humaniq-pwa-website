@@ -39,6 +39,7 @@ const getRoutes = ({dispatch}) => {
       />
       <Route path="Partners"
              component={Partners}
+             prepareData={Partners.prepareData}
       />
       <Route path={postPath()}
              component={Post}

@@ -21,8 +21,8 @@ export const convert = {
     toCamel: str => camelcaseKeys(str, {deep: true}),
   }
 }
-export function isServer() {
 
+export function isServer() {
   try {
     window === void 0;
     return false

@@ -18,7 +18,8 @@ class O_Header extends Component {
   }
 
   isDarkTheme(url) {
-    const darkThemeUrls = ['cases']
+    if (__DEVELOPMENT__ && !url) { console.log('You need to prepareData for this route (routes/index) to set themes for header'); }
+    const darkThemeUrls = ['cases', 'partners']
     return darkThemeUrls.indexOf(url) > -1
   }
 

@@ -1,0 +1,10 @@
+@import "common/settings/variables";
+@import "common/utils";
+
+.o-interactive-image{
+  margin-bottom: 32px;
+  @include media($desktop) {
+    width: 200px;
+    height: 80px;
+  }
+}

@@ -1,0 +1,9 @@
+@import "common/utils";
+
+.o-interactive-images-list{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  .o-interactive-image {}
+}
