@@ -15,6 +15,11 @@ $popup-minheight: 250px;
   @include media($tablet) {}
   @include media($mobile) { width: 47%; }
 
+  &_empty {
+    height: 0;
+    margin-bottom: 0;
+  }
+
   &.invert &__popup {
     left: $image-width / 2 + $triangle-size / 2;
     &:after { left: -$triangle-size / 2; }

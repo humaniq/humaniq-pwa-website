@@ -7,14 +7,16 @@ import M_InputSelect from 'M_InputSelect'
 
 const cn = cssClassName('O_Filter')
 
-const O_Filter = () => (
+const O_Filter = ({handleFilter}) => (
   // планируется принимать {data, params - для создания набора селектов по указанным параметрам}
   <div className={cn()}>
     <M_InputSelect
-      options={['Technical', 'Non technical', 'Others']}
+      options={['technical', 'general', 'others']}
       placeholder='Choose'
+      onChange={handleFilter}
     />
-    <A_ButtonLink size="xs" to="#" color="secondary_dark">Filter</A_ButtonLink>
+    {/*<A_ButtonLink size="xs" to="#" color="secondary_dark" onClick={handleFilter}>Filter</A_ButtonLink>*/}
+    <span className="a-button-link a-button-link_size_xs a-button-link_color_secondary_dark" onClick={handleFilter}>Filter</span>
   </div>
 )
 
