@@ -7,7 +7,8 @@ DOCKER_IMAGE_BASE ?= "${DOCKER_BUILD_PATH}/$(IMAGE_NAME):base"
 DOCKER_IMAGE_SHA ?= "${DOCKER_BUILD_PATH}/$(IMAGE_NAME):${GIT_SHA}"
 
 auth:
-	@curl -L ${GOOGLE_AUTH_URL} > /tmp/googleauth && source /tmp/googleauth
+	@curl -L ${GOOGLE_AUTH_URL} > /tmp/googleauth
+	@. /tmp/googleauth
 
 base:
 	@docker build --rm -t ${DOCKER_IMAGE_BASE} -f Dockerfile.base .
