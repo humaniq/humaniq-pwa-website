@@ -19,4 +19,6 @@ build:
 	@docker build --rm -t ${DOCKER_IMAGE_SHA} .
 
 deploy: pull_base build
+	@echo "--- Begin deploy image: ${DOCKER_IMAGE_SHA}"
 	@gcloud docker -- push ${DOCKER_IMAGE_SHA}
+	@echo "--- Deployed image: ${DOCKER_IMAGE_SHA}"
