@@ -14,5 +14,5 @@ cache:
 
 deploy:
   shell:
-    - make deploy
+    - deploy.sh
   branch: deploy
