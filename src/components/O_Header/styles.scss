@@ -7,6 +7,8 @@
   position: fixed;
   top: 0;
   z-index: 2;
+  //background-color: dodgerblue;
+
   @include media($desktop) { height: $header-height; }
   &_dark-theme_true {}
   &_dark-theme_false {}
@@ -24,6 +26,10 @@
     }
   }
 
+  &_sticky_true{
+    background: $c-bg;
+    box-shadow: 0 0 4px 0 rgba(44, 45, 48, 0.16)
+  }
   &__inner {
     padding: $identation * .75 $identation;
     display: flex;
