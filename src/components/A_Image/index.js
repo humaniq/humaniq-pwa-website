@@ -26,14 +26,14 @@ class A_Image extends Component {
   }
 
   render() {
-    const {onClick, objectFit, ...props} = this.props
+    const {onClick, objectFit, rounded, realSize, ...props} = this.props
     const complete = !!this.node && this.node.complete
     const imgReady = complete || this.state.imgReady
     return (
-      <div className={cn()} >
+      <span className={cn('root', [realSize && 'real-size'])} >
         <img
           ref={ node => this.node = node }
-          className={cn({onClick: !!onClick, objectFit})}
+          className={cn('img', {onClick: !!onClick, objectFit}, [rounded && 'rounded'])}
           onLoad = {this.handleLoad}
           style={imgReady ? {} : {display: 'none'}}
           onClick={onClick}
@@ -42,7 +42,7 @@ class A_Image extends Component {
         <div style={imgReady ? {display: 'none'} : {}} className={cn('loader')} >
           loading
         </div>
-      </div>
+      </span>
     )
   }
 }
@@ -53,11 +53,13 @@ A_Image.propTypes = {
   height: T.number,
   alt: T.string,
   onClick: T.func,
+  objectFit: T.bool,
+  rounded: T.bool,
 }
 
 A_Image.defaultProps = {
   src: 'https://dummyimage.com/100x50/fff7ff/e0557d&title=NoPhoto',
-  alt: 'NoPhoto',
+  alt: '',
 }
 
 export default A_Image

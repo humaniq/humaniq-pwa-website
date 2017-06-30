@@ -1,0 +1,53 @@
+@import "common/settings/variables";
+@import "common/utils";
+
+.o-article-list{
+  &__root{
+    margin: 0 22px;
+    @include media($tablet) {
+      margin: 0 -4px;
+    }
+  }
+  &__title{
+    display: inline-block;
+    margin: 0 29px;
+    font-size: 30px;
+
+    @include media($tablet) {
+      margin: 0 21px;
+    }
+    @include media($mobile) {
+      font-size: 24px;
+    }
+  }
+  &__lists{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    & > *:last-child{
+      padding-right: 0;
+      padding-left: 0;
+    }
+    @include media($tablet) {
+      display: block;
+    }
+  }
+
+  &__list{
+    padding: 0 26px 0 7px;
+    @include media($tablet) {
+      padding: 0;
+    }
+  }
+
+  &__oval{
+    margin-right: 16px;
+  }
+  &__article-item{
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    line-height: 2.7;
+    color: #178ccc
+  }
+}

@@ -1,9 +1,14 @@
 @import "common/utils";
+@import "common/settings/variables";
 
 .a-link{
+  cursor: pointer;
   &.block{
     display: block;
     width: 100%;
     height: 100%;
+  }
+  &_color_primary{
+    color: $blue-5;
   }
 }

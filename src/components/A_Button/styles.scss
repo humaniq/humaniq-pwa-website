@@ -20,7 +20,7 @@
     border-radius: 6px;
     box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.2);
     @include media($mobile) {
-      width: 100%
+      text-align: center;
     }
   }
   &_type_img{

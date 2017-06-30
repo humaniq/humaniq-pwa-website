@@ -46,7 +46,7 @@ class O_SliderFramed extends Component {
     const {activeHistory} = this.state
     const past = activeHistory[0]
     const present = activeHistory.slice(-1)[0]
-
+    const isInit = past === present
     const imgSrc = slides[present].img
     const renderedSlides = this.getSlides(slides, present)
     return (
@@ -59,12 +59,10 @@ class O_SliderFramed extends Component {
             <Motion
               defaultStyle={{x: 0}}
               style={{
-                x: spring(past, {stiffness: 50, damping: 17}),
+                x: spring(present, {stiffness: 50, damping: 17}),
               }}
             >{ ({x}) => {
-              // const forward = present > past
-              const zeroM = Math.abs((past - x) / ((past - present) === 0 ? 1 : past - present))
-              // const one = (1 - zeroM) * (forward ? 1 : -1)
+              const oneM = Math.abs((past - x) / ((past - present) === 0 ? 1 : past - present))
               return (
                 <div className={cn('inner')} >
                   <div className={cn('texts')}>
@@ -79,9 +77,8 @@ class O_SliderFramed extends Component {
                     width="450"
                     height="375"
                     style={{
-                      opacity: 1 - zeroM,
-                      // transform: `translate(${(8*(forward ? 1 : -1)) - (one * 8)}px, 0)`,
-                      transform: `translate(0, ${(zeroM * 8)}px)`,
+                      opacity: isInit ? 1 : oneM,
+                      transform: `translate(0, ${isInit ? 0 : (8 - (oneM * 8))}px)`,
                     }}/>
                 </div>
               )
