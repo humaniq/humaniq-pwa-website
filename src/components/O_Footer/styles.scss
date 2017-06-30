@@ -27,7 +27,6 @@
     }
 
     &-section {
-
       &:first-child {
         @include media($mobile) {
           border: none;
@@ -38,6 +37,7 @@
           border: 1px solid $c-border;
         }
       }
+      border-top: 1px solid $c-border;
       width: 25%;
       padding-right: $identation;
 
@@ -73,10 +73,8 @@
     }
 
     &-list {
-      &_is-open_false {
-        @include media($mobile) {
-          display: none;
-        }
+      &_is-open_false{
+        @include media($mobile) { display: none; }
       }
       &__item {
         font-size: 13px;
