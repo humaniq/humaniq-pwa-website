@@ -7,6 +7,11 @@ install:
 script:
   - npm run test
 
+cache:
+  enabled: true
+  directories:
+  - ./node_modules
+
 deploy:
   shell:
     - make deploy
