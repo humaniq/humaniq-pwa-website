@@ -1,4 +1,5 @@
 @import "common/settings/variables";
+@import "common/utils";
 
 .a-button-link {
   box-sizing: border-box;
@@ -21,6 +22,14 @@
 
   &_size_m {
     height: 40px;
+    padding: 8px 15px;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.2em;
+  }
+
+  &_size_strage {
+    height: 38px;
     padding: 8px 15px;
     font-size: 15px;
     font-weight: 600;
@@ -50,6 +59,14 @@
   &_color_secondary_light { // WHITE button with BLUE text
     color: $c-control-primary;
     background-color: $c-brand-invert;
+  }
+
+  &_color_primary_solid { // BLUE button with WHITE text
+    color: $c-brand-invert;
+    background-color: $c-control-primary;
+    @include media($mobile) {
+      justify-content: center;
+    }
   }
 
 }

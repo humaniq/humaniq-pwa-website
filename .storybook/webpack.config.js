@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack')
 
 module.exports = (storybookBaseConfig, configType) => {
   storybookBaseConfig.module.rules.push({
@@ -14,6 +15,14 @@ module.exports = (storybookBaseConfig, configType) => {
       }
     }]
   });
+
+  storybookBaseConfig.plugins.push(
+    new webpack.DefinePlugin({
+      __SERVER__: false,
+      __CLIENT__: true,
+      __DEVELOPMENT__: true
+    })
+  )
 
   storybookBaseConfig.resolve.modules = [
     path.join(process.cwd(), 'src'),
