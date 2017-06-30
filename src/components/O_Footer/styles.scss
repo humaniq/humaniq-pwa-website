@@ -27,13 +27,17 @@
     }
 
     &-section {
-      border-top: 1px solid $c-border;
+
 
       &:first-child{
-        border: none;
+        @include media($mobile) {
+          border: none;
+        }
       }
       &:last-child {
-        border: 1px solid $c-border;
+        @include media($mobile) {
+          border: 1px solid $c-border;
+        }
       }
       width: 25%;
       padding-right: $identation;
@@ -41,6 +45,8 @@
       @include media($mobile) {
         width: 100%;
         padding-right: 0;
+        border-top: 1px solid $c-border;
+
       }
 
       &__title {
@@ -68,7 +74,9 @@
     }
 
     &-list {
-      padding: 0 31px 20px;
+      @include media($mobile) {
+        padding: 0 31px 20px;
+      }
       &_is-open_false{
         @include media($mobile) { display: none; }
       }
