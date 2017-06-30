@@ -14,12 +14,8 @@ class O_InteractiveImage extends Component {
   };
 
   handleClickOutside = () => {
-    this.closePopup()
-  };
-
-  closePopup() {
     this.setState({isOpened: false})
-  }
+  };
 
   handlePopupOpen = (e) => {
     const element = e.currentTarget;
@@ -29,16 +25,11 @@ class O_InteractiveImage extends Component {
     this.setState({isOpened: true});
   };
 
-  isEdge = () => {
-    ''
-  };
-
   render() {
     const {entity} = this.props;
     const {isOpened} = this.state;
-    const isEdge = this.isEdge()
     return (
-      <div className={cn({isEdge})} onClick={this.handlePopupOpen}>
+      <div className={cn()} onClick={this.handlePopupOpen}>
         <A_Image src={entity.logo}/>
         <div className={cn('popup', {isOpened})}>
           <div className={cn('popup-title')}>{entity.title}</div>

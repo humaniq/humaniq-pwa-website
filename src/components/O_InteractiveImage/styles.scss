@@ -28,7 +28,7 @@ $popup-minheight: 250px;
     position: absolute;
     top: -$popup-minheight / 2 + $image-height / 2;
     left: -$popup-width + $image-width / 2 - $triangle-size / 1.44; // sqrt(2)
-    z-index: 1;
+    z-index: 10;
     background: $c-bg;
     border-radius: 8px;
     box-shadow: 0 12px 22px 0 rgba(0, 0, 0, 0.24);
