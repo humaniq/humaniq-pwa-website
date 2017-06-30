@@ -1,9 +1,9 @@
 @import "common/settings/variables";
 @import "common/utils";
 
-.o-footer{
+.o-footer {
 
-  &_menu_open_true{
+  &_menu_open_true {
     background-color: red;
   }
   &__inner {
@@ -27,25 +27,29 @@
     }
 
     &-section {
-      border-top: 1px solid $c-border;
 
-      &:first-child{
-        border: none;
+      &:first-child {
+        @include media($mobile) {
+          border: none;
+        }
       }
       &:last-child {
-        border: 1px solid $c-border;
+        @include media($mobile) {
+          border: 1px solid $c-border;
+        }
       }
       width: 25%;
       padding-right: $identation;
 
       @include media($mobile) {
+        border-top: 1px solid $c-border;
+
         width: 100%;
         padding-right: 0;
       }
 
       &__title {
         user-select: none;
-        cursor: pointer;
         margin-bottom: 5px;
         font-size: 11px;
         line-height: 2.18;
@@ -53,6 +57,7 @@
         text-transform: uppercase;
         color: #4a4a4a; // clarify
         @include media($mobile) {
+          cursor: pointer;
           height: $identation * 2.5; // ?
           padding: 0 $identation;
           line-height: $identation * 2.5; // ?
@@ -68,23 +73,33 @@
     }
 
     &-list {
-      padding: 0 31px 20px;
-      &_is-open_false{
-        @include media($mobile) { display: none; }
+      &_is-open_false {
+        @include media($mobile) {
+          display: none;
+        }
       }
       &__item {
         font-size: 13px;
         line-height: 2.15;
         color: #9e9ea6; // clarify
-        &:hover { color: #8C8C94; } // clarify
+        &:hover {
+          color: #8C8C94;
+        }
+        // clarify
       }
+      @include media($mobile) {
+        padding: 0 31px 20px;
+      }
+
     }
   }
 
   &__aux {
     width: 20%;
     min-width: 200px;
-    @include media($mobile) { width: 100%; }
+    @include media($mobile) {
+      width: 100%;
+    }
   }
 
   &__lang {
@@ -119,7 +134,9 @@
     &-item {
       font-size: 0;
       @include media($mobile) {
-        & + & { margin-left: $identation; }
+        & + & {
+          margin-left: $identation;
+        }
       }
     }
   }
