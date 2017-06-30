@@ -9,4 +9,6 @@ RUN npm install
 
 # Bundle app source
 ADD . /usr/src/app
-RUN npm run build
+ADD docker-entrypoint.sh /usr/src/app/docker-entrypoint.sh
+
+ENTRYPOINT ["./docker-entrypoint.sh"]
