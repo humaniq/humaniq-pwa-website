@@ -10,6 +10,9 @@ const O_InteractiveImagesList = ({list}) => (
     { list.map((item, index) => {
       return (<O_InteractiveImage entity={item} key={'key_' + index}/>)
     })}
+    <div className="o-interactive-image o-interactive-image_empty"></div>
+    <div className="o-interactive-image o-interactive-image_empty"></div>
+    <div className="o-interactive-image o-interactive-image_empty"></div>
   </div>
 )
 

@@ -7,11 +7,11 @@ import {cssClassName} from 'utils'
 
 const cn = cssClassName('O_PartnersList')
 
-const O_PartnersList = ({partners}) => (
+const O_PartnersList = ({partners, handleFilter}) => (
   <section className={cn()}>
     <div className="l-container">
       <div className={cn('inner')}>
-        <O_Filter/>
+        <O_Filter handleFilter={handleFilter}/>
         <O_InteractiveImagesList list={partners}/>
       </div>
     </div>

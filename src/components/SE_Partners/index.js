@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 // import * as T from "prop-types";
 import './styles.scss';
 import O_Teaser from 'O_Teaser'
@@ -16,29 +16,43 @@ const partners = [
   {logo: '/img/placeholder.svg', url: '/#', title: 'Company name', description: 'Lorem ipsum dolor adipiscing elit', category: 'general'},
   {logo: '/img/placeholder.svg', url: '/#', title: 'Company name', description: 'Lorem ipsum dolor sit amet consectetur adipiscing elit', category: 'general'},
   {logo: '/img/placeholder.svg', url: '/#', title: 'Company name', description: 'Lorem ipsum dolor sit amet consectetur adipiscing elit', category: 'technical'},
-  {logo: '/img/placeholder.svg', url: '/#', title: 'Company name', description: 'Lorem ipsum dolor sit amet consectdolor sit amet consectdolor sit amet consectetur adipiscing elit', category: 'technical'},
+  {logo: '/img/placeholder.svg', url: '/#', title: 'Company name', description: 'Lorem ipsum dolor sit amet consectdolor sit amet consectdolor sit amet consectetur adipiscing elit', category: 'others'},
   {logo: '/img/placeholder.svg', url: '/#', title: 'Company name', description: 'Lorem ipsum dolor sit amet consectetur adipiscing elit', category: 'general'},
-  {logo: '/img/placeholder.svg', url: '/#', title: 'Company name', description: 'Lorem ipsum dolor sit amet consectetur adipiscingm ipsum dolor sit amet consectetur adipiscing elit', category: 'technical'},
+  {logo: '/img/placeholder.svg', url: '/#', title: 'Company name', description: 'Lorem ipsum dolor sit amet consectetur adipiscingm ipsum dolor sit amet consectetur adipiscing elit', category: 'others'},
   {logo: '/img/placeholder.svg', url: '/#', title: 'Company name', description: 'Lorem ipsum dolor sit amet consectetur adipiscing elit', category: 'technical'},
   {logo: '/img/placeholder.svg', url: '/#', title: 'Company name', description: 'Lorem ipsum dolor sit amet consectetur adipiscing elit', category: 'general'},
   {logo: '/img/placeholder.svg', url: '/#', title: 'Company name', description: 'Lorem ipsum dolorpiscing elit', category: 'general'},
   {logo: '/img/placeholder.svg', url: '/#', title: 'Company name', description: 'Lorem ipsum dolor sit amet consectetur adipiscing elit', category: 'technical'},
   {logo: '/img/placeholder.svg', url: '/#', title: 'Company name', description: 'Lorem ipsum dolor sit amet consectetur adipiscing elit', category: 'technical'},
   {logo: '/img/placeholder.svg', url: '/#', title: 'Company name', description: 'Lorem ipsum dolor sit amet consectetur adipiscing elit', category: 'general'},
-  {logo: '/img/placeholder.svg', url: '/#', title: 'Company name', description: 'Lorem ipsum dolor sit amet consectetur adipiscing elit', category: 'technical'},
+  {logo: '/img/placeholder.svg', url: '/#', title: 'Company name', description: 'Lorem ipsum dolor sit amet consectetur adipiscing elit', category: 'others'},
   {logo: '/img/placeholder.svg', url: '/#', title: 'Company name', description: 'Lorem ipsum dolor sit amet consectetur adipiscing elit', category: 'technical'}
 ]
 
-const SE_Partners = () => (
-  <div className={cn()}>
-    <O_Teaser theme='dark'>
-      <M_TeaserStandardContent teaser={teaser}/>
-    </O_Teaser>
-    <M_StandaloneText text={text}/>
-    <O_PartnersList partners={partners}/>
-  </div>
-)
+class SE_Partners extends Component {
+  state = {
+    partners: partners
+  };
 
+  handleFilterClick = (value) => {
+    const new_partners = partners.filter((item)=>{
+      return item.category == value
+    });
+    this.setState({partners: new_partners})
+  };
+
+  render() {
+    return (
+      <div className={cn()}>
+        <O_Teaser theme='dark'>
+          <M_TeaserStandardContent teaser={teaser}/>
+        </O_Teaser>
+        <M_StandaloneText text={text}/>
+        <O_PartnersList partners={this.state.partners} handleFilter={this.handleFilterClick}/>
+      </div>
+    )
+  }
+}
 
 SE_Partners.propTypes = {};
 

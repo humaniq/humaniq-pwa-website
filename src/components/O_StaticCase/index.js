@@ -17,7 +17,7 @@ const O_StaticCase = ({caseItem, modificator}) => {
             <A_H type="h3">{caseItem.block1.title}</A_H>
             <p>{caseItem.block1.text}</p>
             {caseItem.button &&
-              <A_ButtonLink size="xs" to="#" color="transparent_white">{caseItem.button}</A_ButtonLink>
+              <A_ButtonLink size="xs" to="#" color="primary_light">{caseItem.button}</A_ButtonLink>
             }
           </div>
           <div className={cn('block2')}>
