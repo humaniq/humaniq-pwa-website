@@ -3,7 +3,7 @@ node_js: 6.11.0
 
 install:
   - npm i
-  - npm run build
+
 script:
   - npm run test
 
