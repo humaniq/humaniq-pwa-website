@@ -17,22 +17,17 @@ class O_Header extends Component {
     ))
   }
 
-  isDarkTheme(url) {
-    if (__DEVELOPMENT__ && !url) { console.log('You need to prepareData for this route (routes/index) to set themes for header'); }
-    const darkThemeUrls = ['cases', 'partners']
-    return darkThemeUrls.indexOf(url) > -1
-  }
-
   render() {
-    const {navMenu, page, onClick, menuOpen} = this.props
-    const darkTheme = this.isDarkTheme(page)
+    const {navMenu, darkTheme, onClick, menuOpen} = this.props
     const darkThemeLogo = darkTheme && !menuOpen
     const headerNav = this.renderHeaderNav(navMenu)
     const slide = (this.navExtraNode && this.navExtraNode.clientWidth || 120) + 30
     const max = 100;
-
     return (
-      <header className={cn({menuOpen, darkTheme})}>
+      <header
+        className={cn({menuOpen, darkTheme})}
+        ref = {node => this.node = node}
+      >
         <Motion
           defaultStyle={{x: 0}}
           style={{

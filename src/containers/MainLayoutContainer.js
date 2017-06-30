@@ -16,7 +16,7 @@ const navMenu = [
 
 function mapStateToProps(state) {
   const {page, isMenuOpened} = state.navigation
-
+  const darkTheme = checkDarkTheme(page)
   const _navMenu = navMenu.map(({name, url, addClass}) => {
     return {
       name,
@@ -26,12 +26,20 @@ function mapStateToProps(state) {
     }
   })
 
-  return {page, navMenu:_navMenu, isMenuOpened};
+  return {darkTheme, navMenu:_navMenu, isMenuOpened};
 }
 
 function mapDispatchToProps(dispatch) {
   const actions = bindActionCreators({toggleMenu}, dispatch)
   return {...actions};
+}
+
+
+
+function checkDarkTheme(page) {
+  if (__DEVELOPMENT__ && !page) { console.log('You need to prepareData for this route (routes/index) to set themes for header'); }
+  const darkThemeUrls = ['cases', 'partners', 'wiki']
+  return darkThemeUrls.indexOf(page) > -1
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(SE_MainLayout);

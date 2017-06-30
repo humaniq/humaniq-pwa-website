@@ -19,7 +19,8 @@ export function closeMenu() {
   })
 }
 
-export function toggleMenu() {
+export function toggleMenu(){
+  console.log('here!!!')
   return ({
     type: TOGGLE + MENU
   })

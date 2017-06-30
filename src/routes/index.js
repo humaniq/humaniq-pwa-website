@@ -29,6 +29,7 @@ const getRoutes = ({dispatch}) => {
       />
       <Route path="wiki"
              component={Wiki}
+             prepareData={Wiki.prepareData}
       />
       <Route path="subscribe"
              component={Subscribe}

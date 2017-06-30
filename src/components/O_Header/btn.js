@@ -9,7 +9,7 @@ class O_HeaderBtn extends Component {
   render() {
     const {onClick, x, max, darkTheme} = this.props
     return (
-      <A_Button onClick={onClick} type="img">
+      <A_Button onClick={() => onClick()} type="img">
         {x < max/2 ?
           <svg
             width="18px"

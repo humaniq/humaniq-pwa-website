@@ -5,8 +5,13 @@ import {cssClassName} from 'utils'
 import A_Link from 'A_Link'
 const cn = cssClassName('O_ArticleList')
 import A_H from 'A_H'
-import Oval from '-!babel-loader!svg-react-loader!./oval.svg?name=Oval';
+// import Oval from '-!babel-loader!svg-react-loader!./oval.svg?name=Oval';
 
+const Oval = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="6" height="7" viewBox="0 0 6 7">
+    <circle cx="2.5" cy="136.5" r="2.5" fill="#89898B" fillRule="evenodd" stroke="#89898B" transform="translate(.5 -133)"/>
+  </svg>
+)
 const O_ArticleList = ({articles}) =>{
   const getList = (articles, i) => {
     const renderedArticles = articles.map( (article, i) => (

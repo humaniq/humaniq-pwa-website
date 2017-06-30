@@ -9,12 +9,12 @@ const cn = cssClassName('SE_MainLayout')
 class SE_MainLayout extends Component {
 
   render() {
-    const {navMenu, children, page, isMenuOpened: menuOpen, toggleMenu} = this.props
+    const {navMenu, children, darkTheme, isMenuOpened: menuOpen, toggleMenu} = this.props
     return (
       <div className={cn({menuOpen})}>
         <div className={cn('main')}>
           <O_Header
-            {...{navMenu, menuOpen, page, onClick: toggleMenu}}
+            {...{navMenu, menuOpen, darkTheme, onClick: toggleMenu}}
           />
           {menuOpen || children }
         </div>

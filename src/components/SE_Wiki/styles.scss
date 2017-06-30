@@ -1,5 +1,12 @@
+@import "common/settings/variables";
 @import "common/utils";
 
 .se-wiki{
-  padding-top: 100px;
+  &__root{
+    border-bottom: 1px solid $gray-2;
+  }
+  &__tip{
+    margin-bottom: 40px;
+    @include media($mobile) { display: none }
+  }
 }

@@ -10,7 +10,7 @@ import M_Select from 'M_Select';
 const links = [
   {
     section: 'product',
-    links: [{name: 'Features', url: '#'}, {name: 'Open source', url: '#'}, {name: 'Humaniq wiki', url: '#'}]
+    links: [{name: 'Features', url: '#'}, {name: 'Open source', url: '#'}, {name: 'Humaniq wiki', url: '/wiki'}]
   },
   {
     section: 'company',
