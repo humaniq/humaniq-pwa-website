@@ -9,7 +9,7 @@ const cn = catnip('a-button-link')
 // color - button color (primary_dark / primary_dark_theme_false, secondary_dark, disabled, primary_light / primary_dark_theme_true , secondary_light)
 
 const A_ButtonLink = ({children, to, size, color}) =>
-  <A_Link className={cn({size, color})} to={to}>
+  <A_Link addClassName={cn({size, color})} to={to}>
     {children}
   </A_Link>
 
