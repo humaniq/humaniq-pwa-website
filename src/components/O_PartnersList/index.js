@@ -11,7 +11,7 @@ const O_PartnersList = ({partners}) => (
   <section className={cn()}>
     <div className="l-container">
       <div className={cn('inner')}>
-        <O_Filter data={partners} params={['category']}/>
+        <O_Filter/>
         <O_InteractiveImagesList list={partners}/>
       </div>
     </div>

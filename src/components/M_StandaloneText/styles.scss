@@ -1,3 +1,10 @@
+@import "common/settings/variables";
+@import "common/utils";
+
 .m-standalone-text{
-  &__inner { padding: 75px 110px 0; }
+  &__inner {
+    @include media($desktop) { padding: 75px 110px 0; }
+    @include media($tablet) { padding: 40px 20px 0; }
+    @include media($mobile) { padding: 40px 0 0; }
+  }
 }
