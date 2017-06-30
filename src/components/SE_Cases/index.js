@@ -7,8 +7,7 @@ import M_TeaserStandardContent from 'M_TeaserStandardContent'
 import O_StaticCase from 'O_StaticCase'
 
 const cn = cssClassName('SE_Cases')
-const teaserTitle = 'Explore the potential'
-const teaserDescription = 'Whether you’re an investor, a developer or a user waiting to explore full pontential of the Blockchain, Humaniq network works for you.'
+const teaser = {title: 'Explore the potential', description: 'Whether you’re an investor, a developer or a user waiting to explore full pontential of the Blockchain, Humaniq network works for you.'}
 const cases = [
   {title: 'Money transfers', icon: 'placeholder', block1: { title: 'Introduction:', text: 'Traditional money transfer services have always been subject to high fees. The average fee is 10%, a huge expense for millions of people in emerging economies. Due to the fact that bank transactions are operated on archaic settlement and clearance systems, people actually lose money on every transaction under $10. This means that micropayments are mostly unaffordable with traditional banking.'}, block2: {title: [<span className="mobile-hide">Humaniq </span>, 'solution'], text: 'Our project uses Blockchain technology that frees people to make direct payments that bypass go-betweens. To send money, you simply log-in to our app, which uses facial recognition technology to ensure that transactions are secure. You can then replenish your Humaniq balance, and transfer Humaniq tokens to other users anywhere on Earth. With Humaniq’s almost zero-cost transactions, micropayments become easy-to-make and affordable. You also avoid the cost of transferring funds from one currency to another - another reason to take control of your money with Humaniq.'}},
   {title: 'Remote work', icon: 'placeholder', block1: {title: 'Introduction', text: 'How to access labour markets where there are more jobs, without leaving the home and people you love? Millions of people in under-developed regions are working for $2 or less per day. Living there, you have few opportunities for better prospects and a better life. But the alternative of emigrating to a country with more jobs can be a difficult choice, and hard to achieve.'}, block2: {title: [<span className="mobile-hide">Humaniq </span>, 'solution'], text: 'With the Humaniq app, everyone can now work and earn decent amounts of money online. Our app collects simple tasks companies need people to execute from partners such as Amazon Mechanical Turk. After you log-in and your identity is confirmed, you can access these tasks in a special ‘Earn’ tab. They are tasks that require no special skills, and help companies’ research in image and speech recognition technologies. Some people have this way earned up to $30 a day, giving people using our app a new route out of poverty.'}},
@@ -22,9 +21,7 @@ const cases = [
 const SE_Cases = () => (
   <div className={cn()}>
     <O_Teaser theme='dark'>
-      <M_TeaserStandardContent
-        title={teaserTitle}
-        description={teaserDescription}/>
+      <M_TeaserStandardContent teaser={teaser}/>
     </O_Teaser>
     { cases.map((caseItem, index) => {
       return (<O_StaticCase caseItem={caseItem} key={'key_' + index}/>)
