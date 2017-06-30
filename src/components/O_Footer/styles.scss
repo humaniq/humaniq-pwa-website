@@ -27,10 +27,6 @@
     }
 
     &-section {
-<<<<<<< HEAD
-=======
-
->>>>>>> fix
       &:first-child {
         @include media($mobile) {
           border: none;
@@ -41,7 +37,6 @@
           border: 1px solid $c-border;
         }
       }
-      border-top: 1px solid $c-border;
       width: 25%;
       padding-right: $identation;
 
@@ -77,15 +72,14 @@
     }
 
     &-list {
-<<<<<<< HEAD
-      &_is-open_false{
-        @include media($mobile) { display: none; }
-=======
+      &_is-open_false {
+      @include media($mobile) {
+        display: none;
+      }
       &_is-open_false {
         @include media($mobile) {
           display: none;
         }
->>>>>>> fix
       }
       &__item {
         font-size: 13px;
@@ -95,17 +89,16 @@
           color: #8C8C94;
         }
         // clarify
-<<<<<<< HEAD
+
       }
       @include media($mobile) {
         padding: 0 31px 20px;
       }
-=======
+
       }
       @include media($mobile) {
         padding: 0 31px 20px;
       }
->>>>>>> fix
 
     }
   }
