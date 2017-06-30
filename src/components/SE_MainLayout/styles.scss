@@ -1,17 +1,17 @@
 @import "common/utils";
 
 .se-main-layout{
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
-  &_menu-open_true{
-    min-height: 0;
-  }
-  &__main{
-    flex: 1;
-  }
-  &__footer{
-    display: flex;
-    z-index: 100;
-  }
+  //display: flex;
+  //min-height: 100vh;
+  //flex-direction: column;
+  //&_menu-open_true{
+  //  min-height: 0;
+  //}
+  //&__main{
+  //  flex: 1;
+  //}
+  //&__footer{
+  //  display: flex;
+  //  z-index: 100;
+  //}
 }
