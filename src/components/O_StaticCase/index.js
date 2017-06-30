@@ -8,7 +8,6 @@ import {cssClassName} from 'utils'
 const cn = cssClassName('O_StaticCase')
 
 const O_StaticCase = ({caseItem, modificator}) => {
-  console.log(caseItem);
   return (
     <section className={cn([modificator])}>
       <div className="l-container">

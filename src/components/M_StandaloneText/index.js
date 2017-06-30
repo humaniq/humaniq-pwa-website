@@ -1,5 +1,5 @@
 import React from 'react';
-import * as T from "prop-types";
+// import * as T from "prop-types";
 import './styles.scss';
 import A_H from 'A_H'
 import {cssClassName} from 'utils'
