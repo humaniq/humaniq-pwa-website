@@ -7,12 +7,13 @@
   position: fixed;
   top: 0;
   z-index: 2;
+  //background-color: dodgerblue;
+
   @include media($desktop) { height: $header-height; }
   &_dark-theme_true {}
   &_dark-theme_false {}
   &_menu-open_true{
     background: $c-bg;
-    position: relative;
     &:after{
       content: '';
       margin: 0 auto;
@@ -24,10 +25,15 @@
     }
   }
 
+  &_sticky_true{
+    background: $c-bg;
+    box-shadow: 0 0 4px 0 rgba(44, 45, 48, 0.16)
+  }
   &__inner {
     padding: $identation * .75 $identation;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
+
     align-items: center;
 
     &_menu-open_true {
@@ -45,15 +51,25 @@
   }
   &__connerBtn{
     display: block;
-    flex: 1 1 15px;
     margin-left: 30px;
+    @include media($mobile) {
+      flex: 1 1 5px;
+      margin-left: 0px;
+
+    }
   }
 
+  &__logo{
+    flex: 1 .5 50%;
+
+  }
   &__nav {
     display: flex;
-    justify-content: space-between;
     align-items: stretch;
-
+    justify-content: space-between;
+    @include media($mobile) {
+      flex: 0 10 140px;
+    }
     &_dark-theme_true .a-link {
       color: $c-brand-invert;
       &:hover { border-top-color: $c-brand-invert; }
@@ -68,7 +84,11 @@
       box-sizing: border-box;
       &-mobile{
         display: none;
-        @include media($mobile) { display: block; }
+        @include media($mobile) {
+          display: block;
+          flex: 1 1 300px;
+
+        }
       }
       &-desktop{
         @include media($mobile) { display: none; }
@@ -80,25 +100,25 @@
       z-index: 1;
       margin: -15px 0;
       @include media($mobile) { display: none; }
-    }
 
-    .a-link {
-      box-sizing: border-box;
-      display: flex;
-      padding: 0 15px 1px; // 1px - lh compensation
-      align-items: center;
-      font-size: 15px;
-      font-weight: 600;
-      opacity: .8;
-      border-top: 3px solid transparent;
-      border-bottom: 3px solid transparent;
+      .a-link {
+        box-sizing: border-box;
+        display: flex;
+        padding: 0 15px 1px; // 1px - lh compensation
+        align-items: center;
+        font-size: 15px;
+        font-weight: 600;
+        opacity: .8;
+        border-top: 3px solid transparent;
+        border-bottom: 3px solid transparent;
 
-      &.mobile-show {
-        display: none;
-        @include media($mobile) { display: flex; }
+        &.mobile-show {
+          display: none;
+          @include media($mobile) { display: flex; }
+        }
+
+        &:hover { opacity: 1; }
       }
-
-      &:hover { opacity: 1; }
     }
   }
 }

@@ -3,8 +3,12 @@
 
 .o-footer{
 
-  &_menu_open_true{
-    background-color: red;
+  &_menu-open_true{
+    position: fixed;
+    top: 70px;
+    z-index: 1;
+    background-color: $white;
+    height: 100vh;
   }
   &__inner {
     padding: $identation * 2.5 0; // clarify
@@ -27,14 +31,31 @@
     }
 
     &-section {
+
+
+      &:first-child{
+        @include media($mobile) {
+          border: none;
+        }
+      }
+      &:last-child {
+        @include media($mobile) {
+          border: 1px solid $c-border;
+        }
+      }
       width: 25%;
       padding-right: $identation;
+
       @include media($mobile) {
         width: 100%;
         padding-right: 0;
+        border-top: 1px solid $c-border;
+
       }
 
       &__title {
+        user-select: none;
+        cursor: pointer;
         margin-bottom: 5px;
         font-size: 11px;
         line-height: 2.18;
@@ -46,14 +67,23 @@
           padding: 0 $identation;
           line-height: $identation * 2.5; // ?
           margin-bottom: 0;
-          border-bottom: 1px $c-border solid;
           background: url('/img/icons/plus.svg') right 13px center no-repeat;
+        }
+        &_is-open_true {
+          @include media($mobile) {
+            background: url('/img/icons/minus.svg') right 13px center no-repeat;
+          }
         }
       }
     }
 
     &-list {
-      @include media($mobile) { display: none; }
+      @include media($mobile) {
+        padding: 0 31px 20px;
+      }
+      &_is-open_false{
+        @include media($mobile) { display: none; }
+      }
       &__item {
         font-size: 13px;
         line-height: 2.15;

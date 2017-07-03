@@ -17,7 +17,7 @@ const O_StaticInfo = ({modificator, text}) => {
             <p>{text.description}</p>
             {/*<p dangerouslySetInnerHTML={htmlEncode(text.description)}>_</p>*/}
             {text.button &&
-              <A_ButtonLink size="xs" to="#" color="transparent_white">{text.button}</A_ButtonLink>
+              <A_ButtonLink size="xs" to="#" color="primary_light">{text.button}</A_ButtonLink>
             }
           </div>
           <img className={cn('image')} src="/img/placeholder.svg"/>

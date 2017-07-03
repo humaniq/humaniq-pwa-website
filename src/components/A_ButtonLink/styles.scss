@@ -3,19 +3,19 @@
 
 .a-button-link {
   box-sizing: border-box;
-  display: flex;
-  align-items: center;
+  display: inline-block;
   border-radius: 4px;
   text-align: center;
   user-select: none;
   cursor: pointer;
   opacity: .8;
+  border: 2px solid transparent;
 
   &:hover { opacity: 1; }
 
   &_size_xs {
-    height: 40px;
-    padding: 0 15px;
+    height: $control-height;
+    padding: 10px 15px;
     font-size: 15px;
     font-weight: 600;
   }
@@ -40,24 +40,29 @@
   &_color_primary_dark_theme_false {
     color: $c-brand-dark;
     background-color: transparent;
-    border: 2px $c-brand-dark solid;
+    border-color: $c-brand-dark;
+    &:hover{
+      color: rgba(255, 255, 255, 0.8)
+    }
   }
 
   &_color_primary_light,  // TRANSPARENT button with WHITE lines
   &_color_primary_dark_theme_true {
     color: $c-brand-invert;
     background-color: transparent;
-    border: 2px $c-brand-invert solid;
+    border-color: $c-brand-invert;
   }
 
   &_color_secondary_dark { // BLUE button with WHITE text
     color: $c-brand-invert;
     background-color: $c-control-primary;
+    border-color: $c-control-primary;
   }
 
   &_color_secondary_light { // WHITE button with BLUE text
     color: $c-control-primary;
     background-color: $c-brand-invert;
+    border-color: $c-control-primary;
   }
 
   &_color_primary_solid { // BLUE button with WHITE text

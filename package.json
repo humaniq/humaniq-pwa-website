@@ -5,7 +5,7 @@
   "main": "index.html",
   "private": true,
   "engines": {
-    "node": "5.10.1"
+    "node": "6.11.0"
   },
   "scripts": {
     "build": "NODE_ENV=production node ./initializers/webpack/build.js",
@@ -32,6 +32,8 @@
     "webpack-hot-middleware": "^2.18.0"
   },
   "devDependencies": {
+    "@storybook/addon-info": "^3.1.6",
+    "@storybook/addon-knobs": "^3.1.",
     "@storybook/react": "^3.1.5",
     "babel-core": "^6.14.0",
     "babel-eslint": "^7.1.1",
@@ -61,7 +63,9 @@
     "nightmare": "^2.10.0",
     "node-sass": "^3.10.0",
     "offline-plugin": "^4.8.1",
+    "postcss-loader": "^2.0.6",
     "qs": "^6.4.0",
+    "react-datetime": "^2.8.10",
     "react-hot-loader": "^3.0.0-beta.6",
     "react-motion": "^0.5.0",
     "react-onclickoutside": "^6.1.1",

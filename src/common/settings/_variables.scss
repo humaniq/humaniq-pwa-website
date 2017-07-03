@@ -35,6 +35,8 @@ $c-control-disabled: $gray-2;
 $c-success: $green-1;
 $c-error: $red-1;
 $c-placeholder: $gray-6;
+
+
 // DIMENSIONS
 
 $w-desktop: 980px;
@@ -44,6 +46,7 @@ $w-mobile: 360px;
 
 $identation: 20px;
 $header-height: 70px;
+$control-height: 40px;
 
 
 // MEDIA QUERIES
@@ -51,3 +54,4 @@ $header-height: 70px;
 $desktop: "min-width: #{$w-desktop}";
 $tablet: "max-width: #{$w-desktop - 1px}";
 $mobile: "max-width: #{$w-tablet - 1px}";
+$mobile-up: "min-width: #{$w-tablet}";

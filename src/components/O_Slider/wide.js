@@ -22,20 +22,48 @@ class O_SliderWide extends Component {
     this.setState({activeHistory: [first, last]})
   }
 
-  getSlide(slide, oneM, forward, isInit) {
+  getSlide(present, past, oneM, forward, isInit) {
     oneM = isInit ? 1 : oneM
+    // oneM = oneM === 1 ? 0 : oneM
     return (
-      <div
-        className={cn('slide')}
-        style={{
-          opacity: 0.3 + (0.7 * oneM),
-          transform: `translate(${ ( (1 -oneM) * 100 * (forward ? 1 : -1))}px, 0)`,
-        }}
-      >
-        <img className={cn('image')} src={slide.img} width="220" height="220"/>
-        <div className={cn('text')}>
-          <A_H type="h4" href="#">{slide.title}</A_H>
-          <div className={cn('description')} dangerouslySetInnerHTML={{__html: slide.html}}/>
+      <div>
+        <div
+          className={cn('slide', ['present'])}
+          style={{
+            opacity: (oneM),
+            transform: `translate(${
+              forward ?
+                (1 - oneM) * 800
+                : (1 - oneM) * -800
+            }px, 0)`,
+            left: 0,
+            right: 0,
+            marginLeft: 'auto',
+            marginRight: 'auto',
+          }}
+        >
+          <img className={cn('image')} src={present.img} width="220" height="220"/>
+          <div className={cn('text')}>
+            <A_H type="h4" href="#">{present.title}</A_H>
+            <div className={cn('description')} dangerouslySetInnerHTML={{__html: present.html}}/>
+          </div>
+        </div>
+        <div
+          className={cn('slide')}
+          style={{
+            opacity: (1 - oneM ),
+            transform: `translate(${
+              forward ?
+                oneM * -800
+                : oneM * 800
+            }px, 0)`,
+          }}
+        >
+          <img className={cn('image')} src={past.img} width="220" height="220"/>
+          <div className={cn('text')}>
+            <A_H type="h4" href="#">{past.title}</A_H>
+            <div className={cn('description')} dangerouslySetInnerHTML={{__html: past.html}}/>
+          </div>
         </div>
       </div>
     )
@@ -53,7 +81,7 @@ class O_SliderWide extends Component {
         <div className="l-container">
           <M_Swipe onSwipedLeft={() => this.handleSwipe('next')} onSwipedRight={() => this.handleSwipe('prev')}>
 
-          <div className={cn('inner')}>
+            <div className={cn('inner')}>
               <div className={cn('prev')} onClick={() => this.handleSwipe('prev')}>{'  '}</div>
               <Motion
                 defaultStyle={{x: 0}}
@@ -78,13 +106,13 @@ class O_SliderWide extends Component {
                       forward = present - past === 1
                   }
                   return (
-                    this.getSlide(slides[present], oneM, forward, isInit)
+                    this.getSlide(slides[present], slides[past], oneM, forward, isInit)
                   )
                 }
               }
               </Motion>
               <div className={cn('next')} onClick={() => this.handleSwipe('next')}>{'  '}</div>
-          </div>
+            </div>
           </M_Swipe>
         </div>
       </section>

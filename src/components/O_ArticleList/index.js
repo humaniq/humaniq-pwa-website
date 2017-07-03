@@ -12,6 +12,7 @@ const Oval = ({className}) => (
     <circle cx="2.5" cy="136.5" r="2.5" fill="#89898B" fillRule="evenodd" stroke="#89898B" transform="translate(.5 -133)"/>
   </svg>
 )
+
 const O_ArticleList = ({articles}) =>{
   const getList = (articles, i) => {
     const renderedArticles = articles.map( (article, i) => (

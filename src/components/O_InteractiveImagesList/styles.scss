@@ -1,9 +1,12 @@
+@import "common/settings/variables";
 @import "common/utils";
 
 .o-interactive-images-list{
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  padding: 0 20px;
+  @include media($mobile) { padding: 0; }
 
   .o-interactive-image {}
 }

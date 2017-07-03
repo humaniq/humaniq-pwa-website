@@ -11,4 +11,10 @@
   &_color_primary{
     color: $blue-5;
   }
+  &_disabled_true{
+    pointer-events: none;
+  }
+  &:not(&_disabled_true):hover{
+    color: rgba(255, 255, 255, 0.8)
+  }
 }

@@ -71,7 +71,7 @@ class M_Subscribe extends Component {
             <A_Button type="submit">Subscribe</A_Button>
           </span>
           <div className={cn('done', {submitted})}>
-            <img src="/img/notify-checkmark.svg"/>
+            <img src="/img/white-checkmark.svg"/>
           </div>
         </div>
         <p className={cn('tip')}>Want to be informed? Subscribe to our Newsletter.</p>
