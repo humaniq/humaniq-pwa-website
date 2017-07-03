@@ -1,0 +1,18 @@
+language: node_js
+node_js: 6.11.0
+
+install:
+  - npm i
+
+script:
+  - npm run test
+
+cache:
+  enabled: true
+  directories:
+  - ./node_modules
+
+deploy:
+  shell:
+    - "./deploy.sh"
+  branch: master

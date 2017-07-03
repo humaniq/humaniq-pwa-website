@@ -18,6 +18,7 @@ if (__DEVELOPMENT__){
   const path = require('path');
 
   const manifestPath = path.join(process.cwd(), 'webpack-manifest.json');
+  console.log("MANIFEST path: " + manifestPath);
   const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
 
   assetPath = (asset, extension) => (
