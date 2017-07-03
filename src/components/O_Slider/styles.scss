@@ -25,7 +25,6 @@ $image-size: 220px;
         padding: 30px;
       }
       @include media($mobile) {
-        min-height: 100vh;
         margin-top: 5px;
         margin-bottom: $identation * 2;
       }
