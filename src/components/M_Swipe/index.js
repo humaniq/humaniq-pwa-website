@@ -84,7 +84,7 @@ class M_Swipe extends Component {
 }
 
 M_Swipe.defaultProps = {
-  threshold: 10,
+  threshold: 30,
   nodeName: 'div'
 }
 

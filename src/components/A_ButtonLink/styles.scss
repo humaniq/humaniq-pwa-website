@@ -41,6 +41,9 @@
     color: $c-brand-dark;
     background-color: transparent;
     border-color: $c-brand-dark;
+    &:hover{
+      color: rgba(255, 255, 255, 0.8)
+    }
   }
 
   &_color_primary_light,  // TRANSPARENT button with WHITE lines

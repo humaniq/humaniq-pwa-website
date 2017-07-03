@@ -82,7 +82,7 @@ class O_Footer extends Component {
     const renderedSocialList = this.socialsList()
     const renderedLinksList = this.linksList(openedSection)
     return (
-      <footer className={cn()}>
+      <footer className={cn({menuOpen})}>
         <Motion
           defaultStyle={{x: 0}}
           style={{

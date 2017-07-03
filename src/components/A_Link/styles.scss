@@ -15,6 +15,6 @@
     pointer-events: none;
   }
   &:not(&_disabled_true):hover{
-    color: #8C8C94;
+    color: rgba(255, 255, 255, 0.8)
   }
 }

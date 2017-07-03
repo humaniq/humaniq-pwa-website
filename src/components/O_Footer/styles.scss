@@ -3,8 +3,12 @@
 
 .o-footer{
 
-  &_menu_open_true{
-    background-color: red;
+  &_menu-open_true{
+    position: fixed;
+    top: 70px;
+    z-index: 1;
+    background-color: $white;
+    height: 100vh;
   }
   &__inner {
     padding: $identation * 2.5 0; // clarify

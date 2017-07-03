@@ -35,7 +35,10 @@ const O_HandyLinks = () => {
       <div className="l-container">
         <div className={cn('inner')}>
           <A_H type="h2">Looking for more?</A_H>
-          <p className="p_center">These handy links will help you get on your way.</p>
+
+          <div className={cn('subtitle')}>
+            <p className="p_center">These handy links will help you get on your way.</p>
+          </div>
           <ul className={cn('list')}>
             {linksList()}
           </ul>

@@ -65,7 +65,10 @@ class O_Header extends Component {
             >
               <div className="l-container-wide">
                 <div className={cn('inner', {menuOpen})}>
-                  <A_logo darkTheme={darkThemeLogo}/>
+                  <div className={cn('logo')}>
+                    <A_logo darkTheme={darkThemeLogo}/>
+
+                  </div>
                   <nav className={cn('nav', {darkTheme: darkThemeLogo})}>
                   <span
                     className={cn('nav-main')}
@@ -84,7 +87,7 @@ class O_Header extends Component {
                     <A_ButtonLink size="xs" color={"primary_dark_theme_" + darkThemeLogo}
                                   to="/#">Subscribe</A_ButtonLink>
                   </span>
-                    <span className={cn('nav-extra-mobile')}>
+                  <span className={cn('nav-extra-mobile')}>
                     <A_ButtonLink size="xs" color={"primary_dark_theme_" + darkThemeLogo}
                                   to="/#">Subscribe</A_ButtonLink>
                   </span>

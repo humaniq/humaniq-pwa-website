@@ -17,11 +17,15 @@ class O_SliderFramed extends Component {
       slides.map((slide, i) => {
         const isActive = i === active
         return (
-          <p
-            key={'key_' + i}
-            className={cn('texts-item', [isActive && 'active'])}
+          <div
+            className={cn('texts-item-div', [isActive && 'active'])}
             onClick={() => this.onClick(i)}
-            dangerouslySetInnerHTML={{__html: slide.html}}/>
+            key={'key_' + i}
+          >
+            <div
+              dangerouslySetInnerHTML={{__html: slide.html}}/>
+          </div>
+
         )
       })
     )

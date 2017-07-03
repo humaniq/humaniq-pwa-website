@@ -14,7 +14,6 @@
   &_dark-theme_false {}
   &_menu-open_true{
     background: $c-bg;
-    position: relative;
     &:after{
       content: '';
       margin: 0 auto;
@@ -33,7 +32,8 @@
   &__inner {
     padding: $identation * .75 $identation;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
+
     align-items: center;
 
     &_menu-open_true {
@@ -51,15 +51,25 @@
   }
   &__connerBtn{
     display: block;
-    flex: 1 1 15px;
     margin-left: 30px;
+    @include media($mobile) {
+      flex: 1 1 5px;
+      margin-left: 0px;
+
+    }
   }
 
+  &__logo{
+    flex: 1 .5 50%;
+
+  }
   &__nav {
     display: flex;
-    justify-content: space-between;
     align-items: stretch;
-
+    justify-content: space-between;
+    @include media($mobile) {
+      flex: 0 10 140px;
+    }
     &_dark-theme_true .a-link {
       color: $c-brand-invert;
       &:hover { border-top-color: $c-brand-invert; }
@@ -74,7 +84,11 @@
       box-sizing: border-box;
       &-mobile{
         display: none;
-        @include media($mobile) { display: block; }
+        @include media($mobile) {
+          display: block;
+          flex: 1 1 300px;
+
+        }
       }
       &-desktop{
         @include media($mobile) { display: none; }

@@ -7,16 +7,24 @@
     @include media($mobile) { padding: $identation * 2 0 $identation * 1.5; }
 
     .a-h { margin-bottom: 10px; }
+    display: flex;
+    flex-flow: column;
   }
 
+  &__subtitle{
+    flex: 1 1 70px;
+    margin-bottom: 30px;
+  }
   &__list {
+    flex: 1 1 150px;
+
     display: flex;
-    height: 150px;
-    padding-top: $identation * 2.5;
+    //height: 150px;
+    //padding-top: $identation * 2.5;
     justify-content: center;
     align-items: stretch;
     @include media($mobile) {
-      padding-top: $identation * 1.5;
+      //padding-top: $identation * 1.5;
       height: auto;
       flex-flow: column;
     }
@@ -29,6 +37,7 @@
       @include media($mobile) {
         flex-basis: 100%;
         max-width: none;
+        min-height: 60px;
         height: $identation * 3;
         & + & { margin-top: 20px; }
       }

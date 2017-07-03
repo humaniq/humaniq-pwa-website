@@ -25,6 +25,7 @@ $image-size: 220px;
         padding: 30px;
       }
       @include media($mobile) {
+        min-height: 100vh;
         margin-top: 5px;
         margin-bottom: $identation * 2;
       }
@@ -46,44 +47,52 @@ $image-size: 220px;
         padding-right: 0;
         padding-bottom: $identation;
       }
-
       &-item {
-        cursor: pointer;
-        color: $black-4; // clarify
-        opacity: 0.5;
-        &.active {
-          opacity: 1;
-          position: relative;
-          &:before {
-            content: '';
-            left: 0;
-            top: 0;
-            bottom: 0;
-            width: 4px;
-            position: absolute;
-            border-radius: 2px;
-            background-color: #439FE0;
-          }
-        }
+        &-div{
+          cursor: pointer;
+          color: $black-4; // clarify
+          opacity: 0.5;
+          padding-left: 46px;
+          & p {
+            font-size: 16px;
+            line-height: 1.75
 
-        @include media($desktop) {
-          padding-left: $identation * 2;
-          font-size: 16px;
-          line-height: 1.75em;
-          &.active {
-            padding-left: $identation * 2;
           }
-        }
-        @include media($tablet) {
-          padding-left: 0;
-          font-size: 16px;
-          line-height: 1.5em;
-          display: none;
           &.active {
-            margin-top: 0;
-            display: block;
+            opacity: 1;
+            position: relative;
             &:before {
-              content: none;
+              content: '';
+              left: 0;
+              top: 0;
+              bottom: 0;
+              width: 4px;
+              position: absolute;
+              border-radius: 2px;
+              background-color: #439FE0;
+            }
+          }
+          @include media($desktop) {
+            padding-left: $identation * 2;
+            font-size: 16px;
+            line-height: 1.75em;
+            margin-bottom: 56px;
+
+            &.active {
+              padding-left: $identation * 2;
+            }
+          }
+          @include media($tablet) {
+            padding-left: 0;
+            font-size: 16px;
+            line-height: 1.5em;
+            display: none;
+            &.active {
+              margin-top: 0;
+              display: block;
+              &:before {
+                content: none;
+              }
             }
           }
         }
@@ -175,8 +184,11 @@ $image-size: 220px;
       }
     }
     &__inner {
-      padding: $slider-padding 0; // clarify
-      //padding: $identation * 2.5 0; // clarify
+      padding-top: $slider-padding; // clarify
+      min-height: 368px;
+      @include media($mobile) {
+        min-height: 100vh
+      }
     }
 
     &__slide {
@@ -184,6 +196,13 @@ $image-size: 220px;
       width: 650px;
       margin: 0 auto;
       justify-content: space-between;
+      &.present{
+        left: 0;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
+        position: absolute;
+      }
       @include media($mobile) {
         width: 100%;
         flex-flow: column;

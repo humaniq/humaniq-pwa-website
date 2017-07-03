@@ -11,17 +11,12 @@ class SE_MainLayout extends Component {
   render() {
     const {navMenu, children, darkTheme, isMenuOpened: menuOpen, toggleMenu} = this.props
     return (
-      <div className={cn({menuOpen})}>
-        <div className={cn('main')}>
-          <O_Header
-            {...{navMenu, menuOpen, darkTheme, onClick: toggleMenu}}
-          />
-          {menuOpen || children }
-        </div>
-
-        <div className={cn('footer')}>
-          <O_Footer menuOpen={menuOpen}/>
-        </div>
+      <div>
+        <O_Header
+          {...{navMenu, menuOpen, darkTheme, onClick: toggleMenu}}
+        />
+          { children }
+        <O_Footer menuOpen={menuOpen}/>
       </div>
     )
   }
