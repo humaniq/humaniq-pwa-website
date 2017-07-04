@@ -3,9 +3,6 @@ import * as T from "prop-types";
 import './styles.scss';
 import O_Footer from 'O_Footer'
 import O_Header from 'O_Header'
-import {cssClassName} from 'utils'
-const cn = cssClassName('SE_MainLayout')
-
 class SE_MainLayout extends Component {
 
   render() {

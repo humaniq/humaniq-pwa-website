@@ -8,6 +8,7 @@ import A_ButtonLink from 'A_ButtonLink'
 import A_logo from 'A_Logo'
 import ConnerBtn from './btn'
 import {Motion, spring} from 'react-motion';
+import A_Container from 'A_Container'
 
 class O_Header extends Component {
 
@@ -63,7 +64,7 @@ class O_Header extends Component {
                 transform: `translate(0,${z - 50}px)`,
               }}
             >
-              <div className="l-container-wide">
+              <A_Container wide>
                 <div className={cn('inner', {menuOpen})}>
                   <div className={cn('logo')}>
                     <A_logo darkTheme={darkThemeLogo}/>
@@ -96,7 +97,7 @@ class O_Header extends Component {
                   </span>
                   </nav>
                 </div>
-              </div>
+              </A_Container>
             </header>)
         }}
       </Motion>

@@ -1,8 +1,5 @@
 import React from 'react';
 // import * as T from "prop-types";
-import './styles.scss';
-import {cssClassName} from 'utils'
-const cn = cssClassName('SE_Home')
 import O_Teaser from 'O_Teaser'
 import O_RecentNews from 'O_RecentNews'
 import O_HandyLinks from 'O_HandyLinks'
@@ -33,10 +30,13 @@ const mockSlides = [
 ]
 
 const SE_Home = () => (
-  <div className={cn()}>
+  <div>
     <O_Teaser theme='light'>
       <M_TeaserMainContent/>
     </O_Teaser>
+    <div style={{width: '98rem', backgroundColor:'red'}}>s</div>
+    <div style={{width: '76.8rem', backgroundColor:'peru'}}>s</div>
+
     <O_RecentNews/>
     <O_HandyLinks/>
     <O_StaticInfo {...{modificator: 'normal', text: text_1}}/>

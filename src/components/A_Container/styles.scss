@@ -1,0 +1,24 @@
+@import "common/settings/variables";
+@import "common/utils";
+
+.a-container{
+  margin: 0 auto;
+  max-width: $w-desktop + 40px;
+  padding: 0 2rem;
+
+  @include media($tablet) {
+    width: 100%;
+    padding: 0 2rem;
+  }
+  @include media($mobile) {
+    width: 100%;
+    padding: 0 1.6rem;
+  }
+  &_wide_true{
+    padding: 0;
+    max-width: $w-desktop-wide;
+    @include media($tablet) {
+      max-width: 100%;
+    }
+  }
+}

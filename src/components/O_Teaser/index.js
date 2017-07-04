@@ -3,16 +3,17 @@ import React from 'react';
 import './styles.scss';
 import {cssClassName} from 'utils'
 const cn = cssClassName('O_Teaser')
+import A_Container from 'A_Container'
 
 const O_Teaser = ({theme, children}) => {
 
   return (
     <section className={cn({theme})}>
-      <div className="l-container">
+      <A_Container>
         <div className={cn('inner')}>
           {children}
         </div>
-      </div>
+      </A_Container>
     </section>
   )
 }

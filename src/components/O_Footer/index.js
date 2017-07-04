@@ -7,6 +7,7 @@ const cn = cssClassName('O_Footer')
 import {Motion, spring} from 'react-motion';
 import M_Select from 'M_Select';
 import A_Link from 'A_Link'
+import A_Container from 'A_Container'
 
 const links = [
   {
@@ -91,30 +92,32 @@ class O_Footer extends Component {
           }}
         >
           {({x, y}) =>
-            <div className="l-container" style={{
-              transform: `translate3d(0, -${x}px, 0)`,
-              opacity: `${y === 0 ? 1 : y / max}`,
-              marginTop: `${x === 0 ? 0 : max}px`
-            }}>
-              <div className={cn('inner')}>
-                <nav className={cn('nav')}>{renderedLinksList}</nav>
-                <div className={cn('aux')}>
-                  <M_Select
-                    options={[
-                      {value: 'en', label: <span><span style={{top: 1, marginRight: 13, position:'relative'}}>🇬🇧</span>English (UK)</span>},
-                      {value: 'ch', label: <span><span style={{top: 1, marginRight: 13, position:'relative'}}>🇨🇳</span>中文</span>},
-                      {value: 'es', label: <span><span style={{top: 1, marginRight: 13, position:'relative'}}>🇪🇸</span>Español</span>},
-                      {value: 'de', label: <span><span style={{top: 1, marginRight: 13, position:'relative'}}>🇩🇪</span>Deutsch</span>}
-                    ]}
-                    value = {'en'}
-                    onChange={val => alert(val)}
-                  />
-                  <div className={cn('soc')}>
-                    {renderedSocialList}
+            <A_Container>
+              <div style={{
+                transform: `translate3d(0, -${x}px, 0)`,
+                opacity: `${y === 0 ? 1 : y / max}`,
+                marginTop: `${x === 0 ? 0 : max}px`
+              }}>
+                <div className={cn('inner')}>
+                  <nav className={cn('nav')}>{renderedLinksList}</nav>
+                  <div className={cn('aux')}>
+                    <M_Select
+                      options={[
+                        {value: 'en', label: <span><span style={{top: 1, marginRight: 13, position:'relative'}}>🇬🇧</span>English (UK)</span>},
+                        {value: 'ch', label: <span><span style={{top: 1, marginRight: 13, position:'relative'}}>🇨🇳</span>中文</span>},
+                        {value: 'es', label: <span><span style={{top: 1, marginRight: 13, position:'relative'}}>🇪🇸</span>Español</span>},
+                        {value: 'de', label: <span><span style={{top: 1, marginRight: 13, position:'relative'}}>🇩🇪</span>Deutsch</span>}
+                      ]}
+                      value = {'en'}
+                      onChange={val => alert(val)}
+                    />
+                    <div className={cn('soc')}>
+                      {renderedSocialList}
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
+            </A_Container>
           }
         </Motion>
       </footer>
