@@ -1,0 +1,117 @@
+@import "common/settings/variables";
+@import "common/utils";
+
+$slider-padding: $identation * 2.5;
+$slider-button-size: 10rem;
+$image-size: 22rem;
+
+.o-slider-wide {
+  background: $lightblue;
+  .extandme {
+    content: '';
+    $size: 22px;
+    display: block;
+    width: $size;
+    height: $size;
+    border: $c-control-primary solid;
+    border-width: 0 0 2.5px 2.5px;
+    margin: auto;
+    margin-top: -$size;
+    position: absolute;
+    top: 66%;
+    z-index: 1;
+
+  }
+
+  &__next, &__prev {
+    width: $slider-button-size;
+    height: $slider-button-size;
+    cursor: pointer;
+    position: absolute;
+    top: 33%;
+    @include media($mobile) {
+      top: $slider-padding + $image-size / 2 - $slider-button-size/2;
+    }
+    &:before {
+      @extend .extandme;
+    }
+  }
+
+  &__next {
+    margin-right: -40px;
+    right: 0;
+    &:before {
+      transform: rotate(-135deg);
+      right: 50%;
+    }
+  }
+
+  &__prev {
+    margin-left: -40px;
+    left: 0;
+    &:before {
+      transform: rotate(45deg);
+      left: 50%;
+    }
+  }
+  &__inner {
+    padding: $slider-padding 0; // clarify
+    //padding: $identation * 2.5 0; // clarify
+  }
+
+  &__slide {
+    display: flex;
+    width: 650px;
+    margin: 0 auto;
+    justify-content: space-between;
+    &:hover {
+      //background: #f1f1f1; // clarify
+      &:hover .a-readmore:after { opacity: 1; }
+    }
+    @include media($mobile) {
+      width: 100%;
+      flex-flow: column;
+    }
+  }
+
+
+  &__image {
+    box-sizing: border-box;
+    width: $image-size;
+    height: $image-size;
+    object-fit: scale-down;
+    background-color: white;
+    @include media($mobile) { align-self: center; }
+    border-radius: 6px;
+    background-color: #ffffff;
+    border: solid 1px #e8e8e8;
+  }
+  &__text {
+    display: flex;
+    width: 375px;
+    flex-direction: column;
+    justify-content: center;
+    @include media($mobile) {
+      width: 100%;
+      margin-top: $identation * 2;
+    }
+  }
+}
+
+.a-readmore {
+  white-space: nowrap;
+  color: $c-brand;
+}
+
+.o-slider-wide__slide:hover .a-readmore{
+  text-decoration: underline;
+}
+
+.o-slider-wide__slide:hover .o-slider-wide__image{
+  width: $image-size - .2rem;
+  height: $image-size - .2rem;
+  border-radius: 6px;
+  background-color: #ffffff;
+  box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.12);
+  border: solid 1px #e8e8e8;
+}

@@ -1,24 +1,24 @@
-@import "common/utils";
-
-section {}
-
-.l-container-wide {
-  margin: 0 auto;
-  @include media($desktop) {
-    max-width: $w-desktop-wide;
-  }
-  @include media($tablet) {
-    max-width: 100%;
-  }
-}
-
-.l-container {
-  margin: 0 auto;
-  @include media($desktop) {
-    width: $w-desktop;
-  }
-  @include media($tablet) {
-    width: 100%;
-    padding: 0 $identation;
-  }
-}
+//@import "common/utils";
+//
+//section {}
+//
+//.l-container-wide {
+//  margin: 0 auto;
+//  @include media($desktop) {
+//    max-width: $w-desktop-wide;
+//  }
+//  @include media($tablet) {
+//    max-width: 100%;
+//  }
+//}
+//
+//.l-container {
+//  margin: 0 auto;
+//  @include media($desktop) {
+//    width: $w-desktop;
+//  }
+//  @include media($tablet) {
+//    width: 100%;
+//    padding: 0 $identation;
+//  }
+//}

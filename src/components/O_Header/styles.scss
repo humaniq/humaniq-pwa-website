@@ -7,9 +7,8 @@
   position: fixed;
   top: 0;
   z-index: 2;
-  //background-color: dodgerblue;
 
-  @include media($desktop) { height: $header-height; }
+  @include media($desktop) { height: 7rem; }
   &_dark-theme_true {}
   &_dark-theme_false {}
   &_menu-open_true{
@@ -22,6 +21,7 @@
       transform: translate(-50%,0);
       width: 1120px;
       border-bottom: solid 1px #d6d6d6;
+
     }
   }
 
@@ -49,7 +49,7 @@
     }
 
   }
-  &__connerBtn{
+  &__menu-btn{
     display: block;
     margin-left: 30px;
     @include media($mobile) {
@@ -118,6 +118,41 @@
         }
 
         &:hover { opacity: 1; }
+      }
+    }
+  }
+  &-menu-btn{
+    &_dark-theme_true path { fill: $c-brand-invert; }
+  }
+  &-nav-btn{
+    user-select: none;
+    cursor: pointer;
+    box-sizing: border-box;
+    display: inline-block;
+    text-align: center;
+    height: 3.8rem;
+    border-radius: .4rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding: 1rem 1.5rem;
+
+    border: 2px solid rgba(37, 48, 57, 0.8);
+    color: rgba(37, 48, 57, 0.8);
+    &:hover, &:active{
+      color: #253039;
+      border-color: #253039;
+    }
+    &.disabled{
+      color: rgba(37, 48, 57, 0.4);
+      border-color: rgba(37, 48, 57, 0.4);
+      pointer-events: none;
+    }
+    &_dark_true{
+      border: 2px solid rgba(255, 255, 255, 0.8);
+      color: rgba(255, 255, 255, 0.8);
+      &:hover, &:active{
+        color: rgba(255, 255, 255, 1);
+        border-color: rgba(255, 255, 255, 1);
       }
     }
   }

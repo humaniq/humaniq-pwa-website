@@ -3,7 +3,7 @@ import React from 'react';
 import './styles.scss';
 import {cssClassName} from 'utils'
 const cn = cssClassName('O_HeroItem')
-import A_ButtonLink from 'A_ButtonLink'
+import A_Btn from 'A_Btn'
 import A_H from 'A_H'
 import A_Image from 'A_Image'
 
@@ -15,12 +15,10 @@ const O_HeroItem = ({img, title, text, url}) =>(
     <h6 className={cn('title')}>{title}</h6>
     <p className={cn('text')}>{text}</p>
     <div className={cn('button')}>
-      <A_ButtonLink
-        color="primary_solid"
-        size="strage"
-        to={url}
-        block
-      >Browse all articles</A_ButtonLink>
+      <A_Btn
+        type="link"
+        style="button-link"
+      >Browse all articles</A_Btn>
     </div>
   </div>
 )

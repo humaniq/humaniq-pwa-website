@@ -2,25 +2,12 @@ import path from 'path'
 import webpack from 'webpack'
 import ProgressBarPlugin from 'progress-bar-webpack-plugin'
 import OfflinePlugin from  'offline-plugin'
-const autoprefixer = require('autoprefixer');
 
 process.noDeprecation = true
 const sourcePath = path.join(__dirname, './src');
 
 export default {
   plugins: [
-    new webpack.LoaderOptionsPlugin({
-      options: {
-        postcss: [
-          autoprefixer({
-            browsers: [
-              'last 3 version'
-            ],
-          }),
-        ],
-        context: sourcePath,
-      },
-    }),
     new ProgressBarPlugin(),
     new webpack.DefinePlugin({
       __SERVER__: false,
@@ -79,8 +66,6 @@ export default {
         }, {
           loader: "css-loader"
         }, {
-          loader: "postcss-loader"
-        }, {
           loader: "sass-loader",
           options: {
             includePaths: path.resolve(process.cwd(), "./src"),
@@ -96,9 +81,8 @@ export default {
           options: {
             includePaths: path.resolve(__dirname, "./src"),
           }
-        },{
-          loader: "postcss-loader"
-        }]
+        }
+        ]
       }
     ]
   }

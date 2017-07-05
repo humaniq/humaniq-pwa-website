@@ -1,13 +1,15 @@
 import React, {Component} from 'react';
 import * as T from "prop-types";
-import styles from './styles.scss';
+import styles from './subscribe.scss';
 import {cssClassName} from 'utils'
-const cn = cssClassName('M_Subscribe')
+const cn = cssClassName('SE_HomeSubscribe')
 import A_Button from 'A_Button'
+import A_Btn from 'A_Btn'
+
 import {validateEmail} from 'utils/validateHelpers'
 import M_Tooltip from 'M_Tooltip'
 
-class M_Subscribe extends Component {
+class SE_HomeSubscribe extends Component {
 
   state = {
     email: '',
@@ -28,6 +30,7 @@ class M_Subscribe extends Component {
     if (this.validate(email)) {
       this.props.onSubmit(email)
       this.setState({submitted: true})
+      this.node.blur();
     }
   }
 
@@ -68,7 +71,9 @@ class M_Subscribe extends Component {
             />
           </M_Tooltip>
           <span className={cn('submit')}>
-            <A_Button type="submit">Subscribe</A_Button>
+            {/*<A_Button type="submit">Subscribe</A_Button>*/}
+            <button className={cn('button')} type="submit">Subscribe</button>
+
           </span>
           <div className={cn('done', {submitted})}>
             <img src="/img/white-checkmark.svg"/>
@@ -80,10 +85,10 @@ class M_Subscribe extends Component {
   }
 }
 
-M_Subscribe.propTypes = {
+SE_HomeSubscribe.propTypes = {
   onSubmit: T.func.isRequired
 };
 
-M_Subscribe.defaultProps = {}
+SE_HomeSubscribe.defaultProps = {}
 
-export default M_Subscribe
+export default SE_HomeSubscribe

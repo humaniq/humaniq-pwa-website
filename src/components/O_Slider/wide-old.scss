@@ -1,0 +1,109 @@
+@import "common/settings/variables";
+@import "common/utils";
+
+$slider-padding: $identation * 4;
+$slider-button-size: 100px;
+$image-size: 22rem;
+
+.o-slider-wide {
+  background: $lightblue;
+  .nav-button {
+    content: '';
+    $size: 22px;
+    display: block;
+    width: $size;
+    height: $size;
+    border: $c-control-primary solid;
+    border-width: 0 0 2.5px 2.5px;
+    margin: auto;
+    margin-top: -$size;
+    position: absolute;
+    top: 50%;
+    z-index: 1;
+
+  }
+
+  &__next,
+  &__prev {
+    width: $slider-button-size;
+    height: 100%;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    opacity: .8;
+    z-index: 1;
+    @include media($mobile) {
+      bottom: auto;
+      height: $slider-padding * 2 + $image-size;
+    }
+    &:before {
+      @extend .nav-button;
+    }
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  &__next {
+    margin-right: -40px;
+    right: 0;
+    &:before {
+      transform: rotate(-135deg);
+      right: 50%;
+    }
+  }
+
+  &__prev {
+    margin-left: -40px;
+    left: 0;
+    &:before {
+      transform: rotate(45deg);
+      left: 50%;
+    }
+  }
+  &__inner {
+    padding-top: $slider-padding; // clarify
+    min-height: 368px;
+    @include media($mobile) {
+      min-height: 100vh
+    }
+  }
+
+  &__slide {
+    display: flex;
+    width: 650px;
+    margin: 0 auto;
+    justify-content: space-between;
+    &.present{
+      left: 0;
+      right: 0;
+      margin-left: auto;
+      margin-right: auto;
+      position: absolute;
+    }
+    @include media($mobile) {
+      width: 100%;
+      flex-flow: column;
+    }
+  }
+
+  &__image {
+    user-select: none;
+    width: $image-size;
+    height: $image-size;
+    @include media($mobile) {
+      align-self: center;
+    }
+  }
+  &__text {
+    display: flex;
+    width: 375px;
+    flex-direction: column;
+    justify-content: center;
+    @include media($mobile) {
+      width: 100%;
+      margin-top: 35px;
+    }
+  }
+}

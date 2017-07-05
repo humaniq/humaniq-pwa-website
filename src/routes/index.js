@@ -1,16 +1,12 @@
 import {Route, IndexRoute} from 'react-router'
 import React from 'react'
 import App from './App'
-import Posts from './Posts'
-import Post from './Post'
 import Error from './Error'
 import Home from './Home'
 import Wiki from './Wiki'
 import Subscribe from './Subscribe'
 import Partners from './Partners'
 import Cases from './Cases'
-import {postPath} from 'utils/routesHelpers'
-import {closePost} from 'AC/post'
 
 const getRoutes = ({dispatch}) => {
   return (
@@ -22,10 +18,6 @@ const getRoutes = ({dispatch}) => {
       <IndexRoute
         component={Home}
         prepareData={Home.prepareData}
-      />
-      <Route path="posts"
-             component={Posts}
-             prepareData={Posts.prepareData}
       />
       <Route path="wiki"
              component={Wiki}
@@ -41,11 +33,6 @@ const getRoutes = ({dispatch}) => {
       <Route path="Partners"
              component={Partners}
              prepareData={Partners.prepareData}
-      />
-      <Route path={postPath()}
-             component={Post}
-             prepareData={Post.prepareData}
-             onLeave={() => dispatch(closePost())}
       />
       <Route
         path="/error/:err"

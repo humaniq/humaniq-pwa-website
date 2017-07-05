@@ -47,11 +47,11 @@ export default function(req, res){
           </Provider>
         )
 
-        const head = Helmet.rewind()
+        const helmet = Helmet.rewind()
         res.status(status);
         res.render(
           'index',
-          {initialState, content, head, webpackAssets});
+          {initialState, content, helmet, webpackAssets});
 
       })
       .catch(error => {

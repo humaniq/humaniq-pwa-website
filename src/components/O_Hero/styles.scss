@@ -14,11 +14,6 @@
       margin-bottom: 40px;
     }
   }
-  &__container{
-    max-width: 970px;
-    margin: 0 auto;
-    padding: 0 13px;
-  }
   &__inner{
     display: flex;
     position: relative;
@@ -118,8 +113,8 @@
       }
     }
     &__button{
-      display: inline-block;
-      margin: 0 auto;
+      text-align: center;
+
       @include media($mobile) {
         margin: 0;
         text-align: center;

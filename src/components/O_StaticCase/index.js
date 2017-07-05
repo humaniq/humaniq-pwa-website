@@ -6,11 +6,12 @@ import A_H from 'A_H'
 import A_ButtonLink from 'A_ButtonLink'
 import {cssClassName} from 'utils'
 const cn = cssClassName('O_StaticCase')
+import A_Container from 'A_Container'
 
 const O_StaticCase = ({caseItem, modificator}) => {
   return (
     <section className={cn([modificator])}>
-      <div className="l-container">
+      <A_Container>
         <div className={cn('inner')}>
           <A_H type="h2" icon={caseItem.icon} addClass={cn('title')}>{caseItem.title}</A_H>
           <div className={cn('block1')}>
@@ -25,7 +26,7 @@ const O_StaticCase = ({caseItem, modificator}) => {
             <p>{caseItem.block2.text}</p>
           </div>
         </div>
-      </div>
+      </A_Container>
     </section>
   )
 }
