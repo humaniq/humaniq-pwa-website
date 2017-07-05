@@ -1,11 +1,12 @@
 import React, {Component} from 'react';
 import * as T from "prop-types";
-import './styles.scss';
+import './framed.scss';
 import {cssClassName} from 'utils'
 import M_DotIndicator from 'M_DotIndicator'
 import M_Swipe from 'M_Swipe'
 const cn = cssClassName('O_SliderFramed')
 import {Motion, spring} from 'react-motion';
+import A_Container from 'A_Container'
 
 class O_SliderFramed extends Component {
   state = {
@@ -22,8 +23,7 @@ class O_SliderFramed extends Component {
             onClick={() => this.onClick(i)}
             key={'key_' + i}
           >
-            <div
-              dangerouslySetInnerHTML={{__html: slide.html}}/>
+            <div dangerouslySetInnerHTML={{__html: slide.html}}/>
           </div>
 
         )
@@ -59,7 +59,7 @@ class O_SliderFramed extends Component {
           onSwipedRight={() => this.handleSwipe('prev')}
           onSwipedLeft={() => this.handleSwipe('next')}
         >
-          <div className="l-container">
+          <A_Container>
             <Motion
               defaultStyle={{x: 0}}
               style={{
@@ -88,7 +88,7 @@ class O_SliderFramed extends Component {
               )
             }}
             </Motion>
-          </div>
+          </A_Container>
         </M_Swipe>
       </section>
     )

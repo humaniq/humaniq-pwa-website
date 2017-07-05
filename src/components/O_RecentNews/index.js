@@ -4,11 +4,12 @@ import './styles.scss';
 import {cssClassName} from 'utils'
 const cn = cssClassName('O_RecentNews')
 import A_H from 'A_H'
+import A_Container from 'A_Container'
 
 const O_RecentNews = () => {
   return (
     <section className={cn()}>
-      <div className="l-container">
+      <A_Container>
         <div className={cn('inner')}>
           <A_H type="h2">Recent news</A_H>
           <a href="#" className="m-news-item-h">
@@ -26,7 +27,7 @@ const O_RecentNews = () => {
             </div>
           </a>
         </div>
-      </div>
+      </A_Container>
     </section>
   )
 }

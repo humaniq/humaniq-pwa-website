@@ -36,6 +36,7 @@ module.exports = {
   "rules": {
     "indent": ["error", 2, { "SwitchCase": 1 }],
     "no-unused-vars": [1, {varsIgnorePattern: "PropTypes|styles"}],
+    "no-unused-expressions": 0,
     "no-case-declarations": 0,
     "react/prop-types": 0,
     "no-irregular-whitespace": 0,

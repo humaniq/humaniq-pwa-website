@@ -1,0 +1,83 @@
+@import "common/utils";
+
+.a-btn{
+  user-select: none;
+  cursor: pointer;
+  box-sizing: border-box;
+
+
+  &_type_link{
+    display: inline-block;
+    text-align: center;
+  }
+  &_style_common, &_style_light-link, &_style_dark-link, &_style_button-link{
+    height: 3.8rem;
+    border-radius: .4rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  &_style_common{
+    padding: .8rem 1.6rem 1rem;
+    color: white;
+    background-color: #439fe0;
+
+    &:hover, &:active{
+      background-color: #2289d3;
+    }
+    &.disabled{
+      color: rgba(255, 255, 255, 0.5);
+      background-color: rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  &_style_dark-link, &_style_light-link{
+    padding: 1rem 1.5rem;
+    background-color: transparent;
+    &.disabled{
+      pointer-events: none;
+    }
+  }
+
+  &_style_button-link{
+    padding: 1rem 1.5rem;
+    color: white;
+    background-color: #439fe0;
+    &:hover, &:active{
+      background-color: #2289d3;
+    }
+    &.disabled{
+      color: rgba(255, 255, 255, 0.5);
+      background-color: rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  &_style_light-link{
+    border: 2px solid rgba(37, 48, 57, 0.8);
+    color: rgba(37, 48, 57, 0.8);
+    &:hover, &:active{
+      color: #253039;
+      border-color: #253039;
+    }
+    &.disabled{
+      color: rgba(37, 48, 57, 0.4);
+      border-color: rgba(37, 48, 57, 0.4);
+      pointer-events: none;
+    }
+  }
+
+  &_style_dark-link{
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    color: rgba(255, 255, 255, 0.8);
+    &:hover, &:active{
+      color: rgba(255, 255, 255, 1);
+      border-color: rgba(255, 255, 255, 1);
+    }
+    &.disabled{
+      color: rgba(255, 255, 255, 0.4);
+      border-color: rgba(255, 255, 255, 0.4);
+      pointer-events: none;
+    }
+  }
+}

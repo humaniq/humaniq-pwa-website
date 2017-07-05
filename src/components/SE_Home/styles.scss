@@ -1,0 +1,47 @@
+@import "common/settings/variables";
+@import "common/utils";
+
+.se-home {
+  &__teaser{
+    display: flex;
+    flex-direction: column;
+    @include media($desktop) { padding: 85px 468px 144px 0; }
+    @include media($tablet) { padding: $header-height 10% $header-height 0; }
+    @include media($mobile) { padding: $header-height 0 0; }
+
+    &-title {
+      line-height: 10rem;
+      font-weight: 700;
+      @include media($desktop) {
+        margin: 0 -7px;
+        font-size: 87px;
+      }
+      @include media($tablet) { font-size: 50px; }
+      @include media($mobile) {
+        font-size: 46px;
+        //font-size: 14vw;
+      }
+
+    }
+
+    &-description {
+      margin-top: $identation * 1.5;
+      font-size: 18px;
+      line-height: 2.7rem;
+      @include media($mobile) {
+        order: 1;
+        margin: 0 (-$identation);
+        padding: ($identation * 3) $identation ($identation * 2);
+        background: $c-brand;
+        color: $c-brand-invert;
+      }
+    }
+
+    &-subscribe {
+      margin-top: $identation * 2;
+      @include media($mobile) {
+        margin-bottom: 115px;
+      }
+    }
+  }
+}

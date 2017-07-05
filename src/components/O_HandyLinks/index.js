@@ -5,6 +5,7 @@ import './styles.scss';
 import {cssClassName} from 'utils'
 import A_H from 'A_H'
 const cn = cssClassName('O_HandyLinks')
+import A_Container from 'A_Container'
 
 const links = [
   {
@@ -32,7 +33,7 @@ function linksList() {
 const O_HandyLinks = () => {
   return (
     <section className={cn()}>
-      <div className="l-container">
+      <A_Container>
         <div className={cn('inner')}>
           <A_H type="h2">Looking for more?</A_H>
 
@@ -43,7 +44,7 @@ const O_HandyLinks = () => {
             {linksList()}
           </ul>
         </div>
-      </div>
+      </A_Container>
     </section>
   )
 }
