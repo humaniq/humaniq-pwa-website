@@ -18,11 +18,12 @@ import M_Swipe from 'M_Swipe'
 import O_Hero from 'O_Hero'
 import O_QuickTip from 'O_QuickTip'
 import O_ArticleList from 'O_ArticleList'
+import A_Btn from 'A_Btn'
 
 addDecorator(withKnobs)
 const styleDecorator = (storyFn) => (
   <div style={{
-    padding:50,
+    maxWith: 1200,
     width:'100%',
     minHeight: 600,
     display: 'flex',
@@ -33,7 +34,76 @@ const styleDecorator = (storyFn) => (
   </div>
 )
 
+
 addDecorator(styleDecorator)
+
+
+storiesOf('A_Btn', module)
+  .add('Normal', () => (
+    <A_Btn
+      onChange={action('click')}
+    >Normal</A_Btn>
+  ))
+  .add('Disabled', () => (
+    <A_Btn
+      onChange={action('click')}
+      disabled
+    >Disabled</A_Btn>
+  ))
+  .add('Normal Light Link', () => (
+    <A_Btn
+      type="link"
+      onChange={action('click')}
+      style="light-link"
+    >Normal</A_Btn>
+  ))
+  .add('Disabled Light Link', () => (
+    <A_Btn
+      type="link"
+      onChange={action('click')}
+      style="light-link"
+      disabled
+    >Normal</A_Btn>
+  ))
+  .add('Normal Dark Link', () => (
+    <A_Btn
+      type="link"
+      onChange={action('click')}
+      style="dark-link"
+    >Normal</A_Btn>
+  ))
+  .add('Disabled Dark Link', () => (
+    <A_Btn
+      type="link"
+      onChange={action('click')}
+      style="dark-link"
+      disabled
+    >Normal</A_Btn>
+  ))
+  .add('link from wiki + normal link', ()=>(
+    <div>
+      <A_Btn
+        onChange={action('click')}
+      >Normal</A_Btn>
+      <A_Btn
+        type="link"
+        style="button-link"
+      >Normal</A_Btn>
+      <A_Btn
+        type="link"
+        onChange={action('click')}
+        style="light-link"
+      >Normal</A_Btn>
+
+      sdfasdf     <A_Btn
+      type="link"
+      onChange={action('click')}
+      style="light-link"
+    >Normal</A_Btn> ssdfasd
+    </div>
+  ))
+
+
 
 
 

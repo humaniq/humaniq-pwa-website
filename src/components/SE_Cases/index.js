@@ -1,12 +1,10 @@
 import React from 'react';
 // import * as T from "prop-types";
-import './styles.scss';
-import {cssClassName} from 'utils'
 import O_Teaser from 'O_Teaser'
 import M_TeaserStandardContent from 'M_TeaserStandardContent'
 import O_StaticCase from 'O_StaticCase'
+import Meta from './meta'
 
-const cn = cssClassName('SE_Cases')
 const teaser = {title: 'Explore the potential', description: 'Whether you’re an investor, a developer or a user waiting to explore full pontential of the Blockchain, Humaniq network works for you.'}
 const cases = [
   {title: 'Money transfers', icon: 'placeholder', block1: { title: 'Introduction:', text: 'Traditional money transfer services have always been subject to high fees. The average fee is 10%, a huge expense for millions of people in emerging economies. Due to the fact that bank transactions are operated on archaic settlement and clearance systems, people actually lose money on every transaction under $10. This means that micropayments are mostly unaffordable with traditional banking.'}, block2: {title: [<span className="mobile-hide">Humaniq </span>, 'solution'], text: 'Our project uses Blockchain technology that frees people to make direct payments that bypass go-betweens. To send money, you simply log-in to our app, which uses facial recognition technology to ensure that transactions are secure. You can then replenish your Humaniq balance, and transfer Humaniq tokens to other users anywhere on Earth. With Humaniq’s almost zero-cost transactions, micropayments become easy-to-make and affordable. You also avoid the cost of transferring funds from one currency to another - another reason to take control of your money with Humaniq.'}},
@@ -19,7 +17,8 @@ const cases = [
 ]
 
 const SE_Cases = () => (
-  <div className={cn()}>
+  <div>
+    <Meta />
     <O_Teaser theme='dark'>
       <M_TeaserStandardContent teaser={teaser}/>
     </O_Teaser>

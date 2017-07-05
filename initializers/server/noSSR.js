@@ -1,6 +1,9 @@
 import webpackAssets from './webpackAssets';
+import Helmet from 'react-helmet'
 
 export default function(req, res){
   res.status(200);
-  res.render('index', {webpackAssets})
+  const helmet = Helmet.rewind()
+
+  res.render('index', {helmet, webpackAssets})
 }

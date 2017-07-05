@@ -3,10 +3,10 @@ import {bindActionCreators} from 'redux'
 import SE_MainLayout from 'SE_MainLayout'
 import {toggleMenu} from 'AC/navigation'
 const navMenu = [
-  {
-    name: 'Contact Us',
-    url: '/contacts'
-  },
+  // {
+  //   name: 'Contact Us',
+  //   url: '/contacts'
+  // },
   {
     name: 'Download',
     url: '/download',

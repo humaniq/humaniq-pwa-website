@@ -1,8 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" <%- helmet.htmlAttributes.toString()%> >
   <head>
     <% if(typeof head !='undefined'){ %>
-      <%- head.title.toString() %>
+      <%- helmet.title.toString() %>
+      <%- helmet.meta.toString() %>
+      <%- helmet.link.toString() %>
+
     <% }%>
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
     <meta charset="utf-8" />

@@ -1,9 +1,8 @@
-@import 'brand'; //TODO: remove
 @import "common/settings/variables";
 @import "common/utils";
 
 body {
-  font-size: 16px;
+  font-size: 1.6rem;
   font-family: 'Open Sans', sans-serif;
   overflow: auto;
   color: $c-brand-dark;
@@ -51,6 +50,8 @@ p {
 html {
   overflow: scroll;
   overflow-x: hidden;
+  font-size: 62.5%;
+
 }
 ::-webkit-scrollbar {
   width: 0px;  /* remove scrollbar space */
