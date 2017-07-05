@@ -3,6 +3,7 @@ import React from 'react';
 import O_Teaser from 'O_Teaser'
 import M_TeaserStandardContent from 'M_TeaserStandardContent'
 import O_StaticCase from 'O_StaticCase'
+import Meta from './meta'
 
 const teaser = {title: 'Explore the potential', description: 'Whether you’re an investor, a developer or a user waiting to explore full pontential of the Blockchain, Humaniq network works for you.'}
 const cases = [
@@ -17,6 +18,7 @@ const cases = [
 
 const SE_Cases = () => (
   <div>
+    <Meta />
     <O_Teaser theme='dark'>
       <M_TeaserStandardContent teaser={teaser}/>
     </O_Teaser>

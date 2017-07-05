@@ -6,6 +6,8 @@ import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import ProgressBarPlugin from 'progress-bar-webpack-plugin'
 import OfflinePlugin from 'offline-plugin'
+const autoprefixer = require('autoprefixer');
+const sourcePath = path.join(__dirname, './src');
 
 const root = path.join(process.cwd());
 
@@ -33,9 +35,11 @@ export default {
           use: [{
             loader: "css-loader"
           }, {
+            loader: "postcss-loader"
+          }, {
             loader: "sass-loader",
             options: {
-              includePaths: path.resolve(root, "src"),
+              includePaths: path.resolve(process.cwd(), "./src"),
             }
           }]
         })
@@ -64,6 +68,18 @@ export default {
   },
 
   plugins: [
+    new webpack.LoaderOptionsPlugin({
+      options: {
+        postcss: [
+          autoprefixer({
+            browsers: [
+              'last 3 version'
+            ],
+          }),
+        ],
+        context: sourcePath,
+      },
+    }),
     new ProgressBarPlugin(),
     new webpack.DefinePlugin({
       __SERVER__: false,

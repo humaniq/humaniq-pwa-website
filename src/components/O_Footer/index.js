@@ -12,24 +12,43 @@ import A_Container from 'A_Container'
 const links = [
   {
     section: 'product',
-    links: [{name: 'Features', url: '#'}, {name: 'Open source', url: '#'}, {name: 'Humaniq wiki', url: '/wiki'}]
+    links: [
+      // {name: 'Features', url: '#'},
+      // {name: 'Open source', url: '#'},
+      {name: 'Humaniq wiki', url: '/wiki'}]
   },
   {
     section: 'company',
-    links: [{name: 'Blog', url: '#'}, {name: 'News', url: '#'}, {name: 'Use cases', url: '/use-cases'}, {name: 'Partners', url: '/partners'}, {name: 'Events', url: '#'}]
+    links: [
+      // {name: 'Blog', url: '#'},
+      // {name: 'News', url: '#'},
+      {name: 'Use cases', url: '/use-cases'},
+      {name: 'Partners', url: '/partners'},
+      // {name: 'Events', url: '#'}
+    ]
   },
-  {section: 'legal', links: [{name: 'Privacy', url: '#'}, {name: 'Security', url: '#'}, {name: 'Policies', url: '#'}]},
-  {
-    section: 'resources',
-    links: [{name: 'Support', url: '#'}, {name: 'Contact us', url: '#'}, {name: 'Download mobile app', url: '#'}]
-  }
+  // {section: 'legal',
+    // links: [
+    // {name: 'Privacy', url: '#'},
+    // {name: 'Security', url: '#'},
+    // {name: 'Policies', url: '#'}
+    // ]
+  // },
+  // {
+  //   section: 'resources',
+    // links: [
+    //   {name: 'Support', url: '#'},
+    //   {name: 'Contact us', url: '#'},
+    //   {name: 'Download mobile app', url: '#'}
+    // ]
+  // }
 ]
 const socials = [
-  {network: 'facebook', link: '#'},
-  {network: 'twitter', link: '#'},
-  {network: 'github', link: '#'},
-  {network: 'youtube', link: '#'},
-  {network: 'slack', link: '#'}
+  {network: 'facebook', link: 'https://www.facebook.com/humaniq.co'},
+  {network: 'twitter', link: 'https://twitter.com/Humaniq_co'},
+  {network: 'github', link: 'https://github.com/humaniq'},
+  {network: 'youtube', link: 'https://www.youtube.com/channel/UCXatRidLHbngYUtF8JXICPA'},
+  {network: 'slack', link: 'https://humaniq-co.slack.com '}
 ]
 
 class O_Footer extends Component {
@@ -59,7 +78,7 @@ class O_Footer extends Component {
           <ul className={cn('nav-list', {isOpen})}>
             { links.map(({name, url}) => (
               <li className={cn('nav-list__item')} key={'key=' + name}>
-                <A_Link to={url} disabled={url === '#'} >{name}</A_Link>
+                <A_Link to={url} disabled={url === '#'} external >{name}</A_Link>
               </li>
             )) }
           </ul>
@@ -70,9 +89,9 @@ class O_Footer extends Component {
 
   socialsList() {
     return socials.map(({network, link}) => (
-      <Link to={link} className={cn('soc-item')} title={network} key={network}>
+      <A_Link to={link} addClassName={cn('soc-item')} title={network} key={network} external>
         <img src={"/img/social/" + network + ".svg"}/>
-      </Link>
+      </A_Link>
     ))
   }
 
@@ -104,12 +123,12 @@ class O_Footer extends Component {
                     <M_Select
                       options={[
                         {value: 'en', label: <span><span style={{top: 1, marginRight: 13, position:'relative'}}>🇬🇧</span>English (UK)</span>},
-                        {value: 'ch', label: <span><span style={{top: 1, marginRight: 13, position:'relative'}}>🇨🇳</span>中文</span>},
-                        {value: 'es', label: <span><span style={{top: 1, marginRight: 13, position:'relative'}}>🇪🇸</span>Español</span>},
-                        {value: 'de', label: <span><span style={{top: 1, marginRight: 13, position:'relative'}}>🇩🇪</span>Deutsch</span>}
+                        // {value: 'ch', label: <span><span style={{top: 1, marginRight: 13, position:'relative'}}>🇨🇳</span>中文</span>},
+                        // {value: 'es', label: <span><span style={{top: 1, marginRight: 13, position:'relative'}}>🇪🇸</span>Español</span>},
+                        // {value: 'de', label: <span><span style={{top: 1, marginRight: 13, position:'relative'}}>🇩🇪</span>Deutsch</span>}
                       ]}
                       value = {'en'}
-                      onChange={val => alert(val)}
+                      // onChange={}
                     />
                     <div className={cn('soc')}>
                       {renderedSocialList}

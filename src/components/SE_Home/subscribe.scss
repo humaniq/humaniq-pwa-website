@@ -1,8 +1,10 @@
 @import "common/settings/variables";
 @import "common/utils";
 
-.m-subscribe{
+.se-home-subscribe{
   &__submit{
+    top:-2px;
+    position: relative;
     padding-left: 19px;
     @include media($mobile) {
       padding-left: 0;
@@ -46,11 +48,11 @@
       button, input{
         visibility: hidden;
       }
-      @include media($mobile) {
-        input{
-          visibility: visible;
-        }
-      }
+      //@include media($mobile) {
+      //  input{
+      //    visibility: visible;
+      //  }
+      //}
     }
   }
   &__done{
@@ -78,5 +80,24 @@
     font-size: 14px;
     line-height: 1.43;
     color: rgba(37, 48, 57, 0.5);
+  }
+
+  &__button{
+    &:hover { opacity: 1; }
+
+    @include media($mobile) {
+      margin-left: 0;
+      width: 100%
+    }
+    position: relative;
+    user-select: none;
+    color: white;
+    background-color: #439fe0;
+    opacity: .8;
+    cursor: pointer;
+    width: 124px;
+    height: 52px;
+    border-radius: 6px;
+    box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.2);
   }
 }

@@ -1,22 +1,17 @@
 @import "common/utils";
+@import "common/settings/variables";
+@import "common/utils";
 
 .a-btn{
   user-select: none;
   cursor: pointer;
   box-sizing: border-box;
 
+  &.disabled{
+    pointer-events: none;
+  }
 
-  &_type_link{
-    display: inline-block;
-    text-align: center;
-  }
-  &_style_common, &_style_light-link, &_style_dark-link, &_style_button-link{
-    height: 3.8rem;
-    border-radius: .4rem;
-    font-size: 1.5rem;
-    font-weight: 600;
-    text-align: center;
-  }
+
 
   &_style_common{
     padding: .8rem 1.6rem 1rem;
@@ -32,12 +27,50 @@
     }
   }
 
-  &_style_dark-link, &_style_light-link{
-    padding: 1rem 1.5rem;
-    background-color: transparent;
-    &.disabled{
-      pointer-events: none;
+  &_style_light{
+    border: 2px solid rgba(37, 48, 57, 0.8);
+    color: rgba(37, 48, 57, 0.8);
+    &:hover, &:active{
+      color: #253039;
+      border-color: #253039;
     }
+    &.disabled{
+      color: rgba(37, 48, 57, 0.4);
+      border-color: rgba(37, 48, 57, 0.4);
+    }
+  }
+
+  &_type_link{
+    display: table;
+    text-align: center;
+    @include media($mobile) {
+      width: 100%
+    }
+    @include media($tablet) {
+      margin: 0 auto;
+      width: 100%;
+      max-width: $w-mobile
+    }
+  }
+
+  &_subscribe{
+    display: table;
+    text-align: center;
+    @include media($mobile) {
+      width: 100%
+    }
+    @include media($tablet) {
+      margin: 0 auto;
+      width: 100%;
+      max-width: $w-mobile
+    }
+  }
+  &_style_common, &_style_light-link, &_style_dark-link, &_style_button-link{
+    height: 3.8rem;
+    border-radius: .4rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
   }
 
   &_style_button-link{
@@ -53,23 +86,17 @@
     }
   }
 
-  &_style_light-link{
-    border: 2px solid rgba(37, 48, 57, 0.8);
-    color: rgba(37, 48, 57, 0.8);
-    &:hover, &:active{
-      color: #253039;
-      border-color: #253039;
-    }
-    &.disabled{
-      color: rgba(37, 48, 57, 0.4);
-      border-color: rgba(37, 48, 57, 0.4);
-      pointer-events: none;
-    }
+
+  &_style_dark-link, &_style_light-link{
+    padding: 1rem 1.5rem;
+    background-color: transparent;
+
   }
 
-  &_style_dark-link{
-    border: 2px solid rgba(255, 255, 255, 0.8);
-    color: rgba(255, 255, 255, 0.8);
+
+  &_style_light-link{
+    border: solid 2px rgba(255, 255, 255, 0.8);
+
     &:hover, &:active{
       color: rgba(255, 255, 255, 1);
       border-color: rgba(255, 255, 255, 1);
@@ -77,7 +104,22 @@
     &.disabled{
       color: rgba(255, 255, 255, 0.4);
       border-color: rgba(255, 255, 255, 0.4);
-      pointer-events: none;
     }
   }
+
+
+  // uses only in nav menu, but header has his own button
+  //&_style_dark-link{
+  //  border: 2px solid rgba(255, 255, 255, 0.8);
+  //  color: rgba(255, 255, 255, 0.8);
+  //  &:hover, &:active{
+  //    color: rgba(255, 255, 255, 1);
+  //    border-color: rgba(255, 255, 255, 1);
+  //  }
+  //  &.disabled{
+  //    color: rgba(255, 255, 255, 0.4);
+  //    border-color: rgba(255, 255, 255, 0.4);
+  //    pointer-events: none;
+  //  }
+  //}
 }

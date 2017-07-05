@@ -5,6 +5,7 @@ import {cssClassName} from 'utils'
 const cn = cssClassName('O_RecentNews')
 import A_H from 'A_H'
 import A_Container from 'A_Container'
+import A_Link from 'A_Link'
 
 const O_RecentNews = () => {
   return (
@@ -12,20 +13,23 @@ const O_RecentNews = () => {
       <A_Container>
         <div className={cn('inner')}>
           <A_H type="h2">Recent news</A_H>
-          <a href="#" className="m-news-item-h">
+          <div className="m-news-item-h">
             <div className="m-author">
               <img className="a-avatar" src="/img/placeholder.svg" width="35" height="35"/>
-              <span className="a-username" to="#">Humaniq Team</span>
+              <span className="a-username" to="#">The Merkle</span>
               <br/>
-              <span className="a-date">Thursday, June 15, 2017</span>
+              <span className="a-date">April 18, 2017</span>
             </div>
             <div className="m-news-item-h__content">
-              <A_H type="h4">From Here To Where? Bitcoin And The Future Of Cryptocurrency.</A_H>
+              <A_H type="h4">Humaniq Appoints CEO and Global Advisory Board Members, ICO Raises Over 3,775 BTC</A_H>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus finibus et sapien in rutrum.
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. <span className="a-readmore">Read more</span></p>
+                Ever since the Humaniq project launched, cryptocurrency enthusiasts have been keeping a close eye on the project's progress.{' '}
+                <A_Link to="themerkle.com/humaniq-appoints-ceo-and-global-advisory-board-members-ico-raises-over-3775-btc/" external>
+                  <span className="a-readmore">Read more</span>
+                </A_Link>
+              </p>
             </div>
-          </a>
+          </div>
         </div>
       </A_Container>
     </section>
