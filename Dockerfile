@@ -1,4 +1,4 @@
-FROM eu.gcr.io/humaniq-168420/buttercms-blog:base
+FROM eu.gcr.io/humaniq-168420/site:base
 
 # Prepage gloabl env
 ENV NODE_ENV=production
