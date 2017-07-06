@@ -4,11 +4,12 @@ import './styles.scss';
 import {cssClassName} from 'utils'
 import A_Image from "A_Image"
 import A_Link from "A_Link"
+import A_Container from 'A_Container'
 
 const cn = cssClassName('O_QuickTip')
 
 const O_QuickTip = ({imgSrc, question, tip:{text, url}}) =>(
-  <div className="l-container">
+  <A_Container>
     <div className={cn('root')}>
       <span className={cn('image')}>
         <A_Image src={imgSrc} realSize rounded/>
@@ -19,7 +20,7 @@ const O_QuickTip = ({imgSrc, question, tip:{text, url}}) =>(
         <span className={cn('tip')}><A_Link to={url} color="primary" >{text}</A_Link></span>
       </p>
     </div>
-  </div>
+  </A_Container>
 )
 
 O_QuickTip.propTypes = {

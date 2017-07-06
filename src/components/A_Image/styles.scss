@@ -1,4 +1,6 @@
-@import "common/settings/brand";
+@import "common/settings/variables";
+@import "common/utils";
+
 
 .a-image{
   &__root{
@@ -11,7 +13,7 @@
   }
   &__loader{
     height: 100%;
-    background-color: $primary;
+    background-color: $blue-1;
     color: #fff;
     display: flex;
     align-items: center;

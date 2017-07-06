@@ -21,9 +21,8 @@
       margin-top: $identation * 1.5;
     }
 
-    .a-button-link {
-      display: table;
-      margin-top: $identation;
+    &-description {
+      margin-bottom: $identation;
     }
   }
 

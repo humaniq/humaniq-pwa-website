@@ -23,7 +23,7 @@
   &__nav {
     width: 80%;
     display: flex;
-    justify-content: space-between;
+    //justify-content: space-between;
     align-items: stretch;
     @include media($mobile) {
       width: 100%;

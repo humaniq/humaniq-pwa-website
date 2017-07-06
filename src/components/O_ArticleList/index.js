@@ -5,7 +5,7 @@ import {cssClassName} from 'utils'
 import A_Link from 'A_Link'
 const cn = cssClassName('O_ArticleList')
 import A_H from 'A_H'
-// import Oval from '-!babel-loader!svg-react-loader!./oval.svg?name=Oval';
+import A_Container from 'A_Container'
 
 const Oval = ({className}) => (
   <svg className={className} xmlns="http://www.w3.org/2000/svg" width="6" height="7" viewBox="0 0 6 7">
@@ -35,7 +35,7 @@ const O_ArticleList = ({articles}) =>{
     lists.push(list)
   }
   return(
-    <div className="l-container">
+    <A_Container>
       <div className={cn('root')}>
         <div className={cn('title')}>
           <A_H type="h2">Featured Articles</A_H>
@@ -44,7 +44,7 @@ const O_ArticleList = ({articles}) =>{
           {lists}
         </div>
       </div>
-    </div>
+    </A_Container>
   )
 }
 

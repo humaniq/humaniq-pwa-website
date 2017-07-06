@@ -4,10 +4,11 @@ import './styles.scss';
 import {cssClassName} from 'utils'
 const cn = cssClassName('O_Hero')
 import Item from './item.js'
+import A_Container from 'A_Container'
 
 const O_Hero = ({framed, inbuild}) => (
     <div className={cn('root')}>
-      <div className={cn('container')}>
+      <A_Container>
         <div className={cn('inner')}>
           <div className={cn('framed')}>
             <Item {...framed}/>
@@ -16,7 +17,7 @@ const O_Hero = ({framed, inbuild}) => (
             <Item {...inbuild}/>
           </div>
         </div>
-      </div>
+      </A_Container>
 
     </div>
 )

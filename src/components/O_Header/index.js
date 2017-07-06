@@ -4,10 +4,11 @@ import './styles.scss';
 import {cssClassName} from 'utils'
 const cn = cssClassName('O_Header')
 import A_Link from 'A_Link'
-import A_ButtonLink from 'A_ButtonLink'
+import NavBtn from './navBtn'
 import A_logo from 'A_Logo'
-import ConnerBtn from './btn'
+import MenuBtn from './menuBtn'
 import {Motion, spring} from 'react-motion';
+import A_Container from 'A_Container'
 
 class O_Header extends Component {
 
@@ -63,7 +64,7 @@ class O_Header extends Component {
                 transform: `translate(0,${z - 50}px)`,
               }}
             >
-              <div className="l-container-wide">
+              <A_Container wide>
                 <div className={cn('inner', {menuOpen})}>
                   <div className={cn('logo')}>
                     <A_logo darkTheme={darkThemeLogo}/>
@@ -77,26 +78,24 @@ class O_Header extends Component {
                     }}
                   >{headerNav}
                   </span>
-                    <span
-                      className={cn('nav-extra-desktop')}
-                      style={{
-                        opacity: x === 0 ? 1 : (x === max ? 0 : 1 / x)
-                      }}
-                      ref={ node => this.navExtraNode = node}
-                    >
-                    <A_ButtonLink size="xs" color={"primary_dark_theme_" + darkThemeLogo}
-                                  to="/#">Subscribe</A_ButtonLink>
+                  <span
+                    className={cn('nav-extra-desktop')}
+                    style={{
+                      opacity: x === 0 ? 1 : (x === max ? 0 : 1 / x)
+                    }}
+                    ref={ node => this.navExtraNode = node}
+                  >
+                    <NavBtn to="/#" dark={darkThemeLogo}>Subscribe</NavBtn>
                   </span>
                   <span className={cn('nav-extra-mobile')}>
-                    <A_ButtonLink size="xs" color={"primary_dark_theme_" + darkThemeLogo}
-                                  to="/#">Subscribe</A_ButtonLink>
+                    <NavBtn to="/#" dark={darkThemeLogo}>Subscribe</NavBtn>
                   </span>
-                    <span className={cn('connerBtn')}>
-                    <ConnerBtn {...{onClick, x, max, darkTheme: darkThemeLogo}}/>
+                  <span className={cn('menu-btn')}>
+                    <MenuBtn {...{onClick, x, max, darkTheme: darkThemeLogo}}/>
                   </span>
                   </nav>
                 </div>
-              </div>
+              </A_Container>
             </header>)
         }}
       </Motion>
