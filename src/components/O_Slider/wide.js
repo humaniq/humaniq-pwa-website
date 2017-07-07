@@ -10,14 +10,6 @@ import A_Container from 'A_Container'
 
 class O_SliderWide extends Component {
 
-  state = {hover:false}
-
-  componentDidMount(){
-    this.node.on('mouseover', this.setState({hover: true}))
-    this.node.on('mouseout', this.setState({hover: false}))
-
-  }
-
   getSlides(slides, hover) {
     return (
       slides.map((slide, i) => {
@@ -45,9 +37,6 @@ class O_SliderWide extends Component {
   }
 
   render() {
-
-    const{hover} = this.state
-
     const {slides} = this.props
     const swipeOptions = {
       startSlide: 0,
@@ -59,10 +48,10 @@ class O_SliderWide extends Component {
     return (
       <section className={cn()}>
         <A_Container>
-          <div className={cn('inner')} ref={node => this.node = node}>
+          <div className={cn('inner')}>
             <div className={cn('prev')} onClick={this.prev}>{'  '}</div>
             <O_Carousel ref="reactSwipe" {...{swipeOptions}}>
-              {this.getSlides(slides, hover)}
+              {this.getSlides(slides)}
             </O_Carousel>
             <div className={cn('next')} onClick={this.next}>{'  '}</div>
           </div>

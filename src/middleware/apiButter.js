@@ -1,7 +1,7 @@
 import request from 'superagent'
 import {stringify} from 'qs'
 import {API_ROOT, AUTH_TOKEN, ENDPOINTS} from 'constants/api'
-import {REQUEST, CONTENT, POSTS, POST, START, SUCCESS, FAIL, ERROR} from 'constants'
+import {REQUEST, CONTENT, POSTS, WIKI, POST, START, SUCCESS, FAIL, ERROR} from 'constants'
 import {convert} from 'utils'
 
 export const BUTTER_API = 'BUTTER_API'
@@ -24,13 +24,14 @@ export default () => next => action => {
     endpoint = ENDPOINTS[butterType.toLowerCase()],
     query
 
+  console.log(butterType, WIKI)
   switch(butterType) {
+    case WIKI:
     case CONTENT:
       let
         {collection, slugs} = data,
         keys
-
-      if (slugs.length === 0) {
+      if (!slugs || slugs.length === 0) {
         keys = collection.toLowerCase()
       } else {
         keys = slugs
@@ -49,7 +50,11 @@ export default () => next => action => {
 
   promise.then(
     response => (
-      next(nextAction(action, {data: preparation(butterType, response), type: successType}))
+      next(nextAction(action, {
+        data: {...response.data},
+        // data: preparation(butterType, response), //who knows, maybe it could be needed for the blog
+        type: successType
+      }))
     ),
     error => {
       next(nextAction(action, {type: failureType}))
