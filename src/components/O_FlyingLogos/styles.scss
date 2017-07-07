@@ -1,0 +1,24 @@
+.o-flying-logos{
+  &__root{
+    overflow: hidden;
+    position: relative;
+    height:100%;
+  }
+  &__image{
+    //object-fit: scale-down;
+    left:30%;
+    top: 0;
+    transform: translate(-50%, -100%);
+    //transform: translate(-50%, -100%);
+    position: absolute;
+    &.odd{
+      left:70%;
+    }
+
+  }
+}
+
+@keyframes flyup {
+  from {transform: translate(-50%, 400px)}
+  to {transform: translate(-50%, -600px)}
+}

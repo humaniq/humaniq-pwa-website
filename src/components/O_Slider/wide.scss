@@ -64,10 +64,6 @@ $image-size: 22rem;
     width: 650px;
     margin: 0 auto;
     justify-content: space-between;
-    &:hover {
-      //background: #f1f1f1; // clarify
-      &:hover .a-readmore:after { opacity: 1; }
-    }
     @include media($mobile) {
       width: 100%;
       flex-flow: column;
