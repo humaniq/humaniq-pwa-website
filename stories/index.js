@@ -19,6 +19,8 @@ import O_Hero from 'O_Hero'
 import O_QuickTip from 'O_QuickTip'
 import O_ArticleList from 'O_ArticleList'
 import A_Btn from 'A_Btn'
+import O_FlyingLogos from 'O_FlyingLogos'
+
 
 addDecorator(withKnobs)
 const styleDecorator = (storyFn) => (
@@ -207,5 +209,15 @@ storiesOf('O_ArticleList', module)
           {src:'#', title:'Interdum et malesuada fames ac ante '},
         ]}
       />
+    </div>
+  ));
+
+
+storiesOf('O_FlyingLogos', module)
+  .add('', () => (
+    <div style={{
+      backgroundColor: 'white',
+      height: 339, width:440}}>
+      <O_FlyingLogos />
     </div>
   ));

@@ -13,7 +13,9 @@ export const MENU = 'MENU'
 
 export const CONTENT = 'CONTENT'
 export const STATIC_DATA = 'STATIC_DATA'
+export const WIKI = 'WIKI'
 
 export const START = '_START'
 export const SUCCESS = '_SUCCESS'
 export const FAIL = '_FAIL'
+

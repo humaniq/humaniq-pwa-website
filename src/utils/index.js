@@ -16,6 +16,7 @@ export const simpleSnakeCase = (str) => str.split(/(?=[A-Z])/).join('_').toLower
 
 export const convert = {
   toSnake: str => str.split(/(?=[A-Z])/).join('_').toLowerCase(),
+  toKebab: (str) => str.split(/\s+/).join('-').toLowerCase(),
   toCamel: str => str.replace(/_([a-z])/g, g => g[1].toUpperCase()),
   obj:{
     toCamel: str => camelcaseKeys(str, {deep: true}),

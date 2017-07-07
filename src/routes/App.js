@@ -1,14 +1,14 @@
 import React, {Component} from 'react';
 import * as T from "prop-types";
 import MainLayoutContainer from 'containers/MainLayoutContainer'
-// import {fetchStaticData} from "AC/content";
+import {fetchWiki} from "AC/wiki";
 // import initialLoad from 'utils/initialLoad'
 
 class AppRoute extends Component {
 
-  static prepareData() {
+  static prepareData({dispatch}) {
     // if(initialLoad()) return;
-    // return dispatch(fetchStaticData())
+    return dispatch(fetchWiki())
   }
 
   render() {
