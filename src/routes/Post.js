@@ -8,7 +8,6 @@ class PostRoute extends Component {
 
   static prepareData({dispatch}, query, {id}) {
     if(initialLoad()) return;
-    dispatch(setPage('blog'))
     return dispatch(fetchPost(id))
   }
 

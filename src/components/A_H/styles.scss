@@ -1,51 +1,116 @@
 @import "common/settings/variables";
 @import "common/utils";
 
-$icon-size: 48px;
+@function makelongshadow() {
+  //$val: 0px 0px rgba(230, 230, 230, 1);
+  $val: 0px 0px rgba(235, 235, 235, 1);
+
+  @for $i from 1 through 100 {
+    $val: #{$val}, #{-$i}px #{$i}px rgba(235, 235, 235, (round((100 - $i)/ 10) / 10) );
+  }
+  @return $val;
+}
+
+@mixin longshadow() {
+  text-shadow: makelongshadow();
+}
+
+$icon-size: 20rem;
 
 .a-h{
-  margin-bottom: $identation;
-  font-size: 30px;
-  @include media($tablet) {
-    margin-bottom: $identation;
-    margin-top: $identation * 1.5;
-  }
+  margin: 0;
 
-  &:first-child { margin-top: 0; }
-
-  &_type_h2{
-    line-height: 1.33em;
-    font-weight: 700;
-    text-align: center;
-    @include media($mobile) {
-      font-size: 24px;
-      line-height: 1.67;
-    }
-  }
-
-  &_type_h3{
-    line-height: 1.2em;
-    font-weight: 400;
-    color: #4a4a4a; // clarify
-    &.accent,
-    &.flip {
+  &_type {
+    &_home-hero {
+      @include longshadow();
+      z-index: -1;
+      font-size: 87px;
       font-weight: 700;
-      color: $gray-3;
+      line-height: 1.12em;
+      padding-bottom: 2rem;
+      @include media($tablet) {
+        font-size: 10vw;
+      }
+      @include media($mobile) {
+        font-size: 12vw;
+      }
+    }
+    &_bs {
+      padding-bottom: 1rem;
+      font-size: 1.6rem;
+      font-weight: bold;
+      line-height: 2.4rem;
+      color: $brand;
+    }
+
+    &_xs {
+      font-size: 13px;
+      font-weight: bold;
+      line-height: 2rem;
+      padding-bottom: .2rem;
+    }
+
+    &_section {
+      font-size: 2.3rem;
+      font-weight: 600;
+      line-height: 3.2rem;
+      color: $title;
+      padding-bottom: 1rem;
+
+    }
+    &_section-c {
+      font-size: 2.3rem;
+      font-weight: 600;
+      line-height: 3.2rem;
+      color: $title;
+      text-align: center;
+      padding-bottom: 1rem;
+
     }
   }
 
-  &_type_h4{
-    margin-bottom: $identation;
-    font-size: 22px;
-    line-height: 1.23em;
-    font-weight: 400;
-    &,
-    & > a { color: $gray-3; }
+  &__iconed{
+    padding-left: $icon-size + 1.6rem;
+    &_icon_placeholder {
+      background: url('/img/placeholder.svg') left center / $icon-size no-repeat;
+    }
   }
 
-  .iconed { padding-left: $icon-size * 1.5; }
-
-  &_icon_placeholder {
-    background: url('/img/placeholder.svg') left center / $icon-size no-repeat;
+  & + &{
+    padding-top: 0;
   }
 }
+
+// margin-bottom: $identation;
+//font-size: 30px;
+//@include media($tablet) {
+//  margin-bottom: $identation;
+//  margin-top: $identation * 1.5;
+//}
+//
+//&:first-child { margin-top: 0; }
+//
+//&_type_h2{
+//  line-height: 1.33em;
+//  font-weight: 700;
+//  text-align: center;
+//  @include media($mobile) {
+//    font-size: 24px;
+//    line-height: 1.67;
+//  }
+//}
+//
+//&_type_h3{
+//  line-height: 1.2em;
+//  font-weight: 400;
+//  color: #4a4a4a; // clarify
+//}
+//
+//&_type_h4{
+//  margin-bottom: $identation;
+//  font-size: 22px;
+//  line-height: 1.23em;
+//  font-weight: 400;
+//  &,
+//  & > a { color: $grey-1; }
+//}

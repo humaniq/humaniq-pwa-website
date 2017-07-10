@@ -1,13 +1,11 @@
 import React, {Component} from 'react';
 import HomeContainer from 'containers/HomeContainer'
 import initialLoad from 'utils/initialLoad'
-import {setPage} from 'AC/navigation'
 
 class HomeRoute extends Component {
 
-  static prepareData({dispatch}) {
+  static prepareData() {
     if(initialLoad()) return;
-    dispatch(setPage('home'))
   }
 
   render() {

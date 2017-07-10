@@ -1,19 +1,22 @@
 import React, {Component} from 'react';
 import * as T from "prop-types";
 import './styles.scss';
-import O_Footer from 'O_Footer'
-import O_Header from 'O_Header'
+import Footer from './Footer'
+import Header from './Header'
+import {cssClassName} from 'utils'
+const cn = cssClassName('SE_MainLayout')
+
 class SE_MainLayout extends Component {
 
   render() {
-    const {navMenu, children, darkTheme, isMenuOpened: menuOpen, toggleMenu} = this.props
+    const {isMenuOpened, children, toggleMenu, headerTheme} = this.props
     return (
       <div>
-        <O_Header
-          {...{navMenu, menuOpen, darkTheme, onClick: toggleMenu}}
+        <Header
+          {...{isMenuOpened, onClick: toggleMenu, headerTheme}}
         />
-          { children }
-        <O_Footer menuOpen={menuOpen}/>
+          <div className={cn('body', {isMenuOpened})}>{ children }</div>
+        <Footer isMenuOpened={isMenuOpened}/>
       </div>
     )
   }
@@ -21,13 +24,14 @@ class SE_MainLayout extends Component {
 
 
 SE_MainLayout.propTypes = {
+  headerTheme: Header.propTypes.headerTheme,
   children: T.any.isRequired,
-  mainEmail: T.string,
-  navMenu: T.array.isRequired
+  isMenuOpened: T.bool,
+  toggleMenu: T.func.isRequired
 };
 
 SE_MainLayout.defaultProps = {
-  mainEmail: '',
+  isMenuOpened: false,
   mainTagline: '',
 }
 

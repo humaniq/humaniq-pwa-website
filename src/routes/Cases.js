@@ -7,7 +7,6 @@ class CasesRoute extends Component {
 
   static prepareData({dispatch}) {
     if(initialLoad()) return;
-    dispatch(setPage('cases'))
   }
 
   render() {

@@ -1,0 +1,114 @@
+@import "common/settings/variables";
+@import "common/utils";
+
+.se-home-hero {
+
+  &__root{
+    display: flex;
+    justify-content: flex-start;
+    padding: 11.6rem 0 9.6rem;
+    align-items: flex-start;
+    @include media($tablet) {
+      padding-top: 1.7rem;
+      flex-flow: column-reverse;
+    }
+    @include media($mobile) {
+      padding-bottom: 0;
+    }
+  }
+
+  &__welcome{
+    align-self: flex-start;
+    flex: 0 0 60%;
+    &-text{
+      margin-bottom: 2.7rem;
+    }
+    &-subscribe-text{
+
+    }
+  }
+
+  &__explorer{
+    flex: 0 0 40%;
+    @include media($tablet) {
+      margin-bottom: 4rem;
+    }
+    &-info{
+      border-left: $interactive-border-l;
+      padding: 0.4rem 0 0 1.6rem;
+      display: flex;
+      flex-flow: column;
+      @include media($desktop) {
+        margin-left: 10.2rem;
+        margin-bottom: 3.5rem;
+      }
+      &-data{
+        padding: 0;
+        marging: 0;
+        vertical-align: top;
+        font-size: 1.3rem;
+        line-height: 2rem;
+      }
+      &-block{
+        padding-bottom: .4rem;
+        &:last-child{
+          padding-bottom: 0;
+        }
+      }
+    }
+    &-img{
+      width: 28.3rem;
+      height: 9.8rem;
+      @include media($tablet) {
+        display: none;
+      }
+    }
+  }
+  //&__teaser{
+  //  display: flex;
+  //  flex-direction: column;
+  //  @include media($desktop) { padding: 85px 370px 144px 0; }
+  //  //@include media($tablet) { padding: $header-height 10% $header-height 0; }
+  //  @include media($tablet) { padding: $header-height 0 0; }
+  //
+  //  &-title {
+  //    line-height: 1.15em;
+  //    font-weight: 700;
+  //    @include media($desktop) {
+  //      margin: 0 -7px;
+  //      font-size: 50px;
+  //    }
+  //    @include media($tablet) { font-size: 50px; }
+  //    @include media($mobile) {
+  //      //font-size: 46px;
+  //      font-size: 12vw;
+  //    }
+  //
+  //  }
+  //
+  //  &-description {
+  //    margin-top: $identation * 1.5;
+  //    font-size: 18px;
+  //    line-height: 2.7rem;
+  //    @include media($tablet) {
+  //      order: 1;
+  //      margin: 0 (-$identation);
+  //      padding: ($identation * 3) $identation ($identation * 2);
+  //      background: $c-brand;
+  //      color: $c-brand-invert;
+  //    }
+  //  }
+  //
+  //  &-subscribe {
+  //    margin-top: $identation * 2;
+  //    @include media($tablet) {
+  //      margin-bottom: 2.8rem;
+  //    }
+  //    @include media($mobile) {
+  //      margin-bottom: 115px;
+  //    }
+  //  }
+  //}
+}
+
+
