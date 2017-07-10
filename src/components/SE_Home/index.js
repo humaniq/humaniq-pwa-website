@@ -16,6 +16,7 @@ import Info from './Info'
 import InfoAnimation from './InfoAnimation'
 import Gallery from './Gallery'
 import A_P from 'A_P'
+import Magazines from './Magazines'
 
 
 // const text_1 = { title: 'The Power of Blockchain.', description: ['Humaniq harnesses the power of Blockchain and AI technologies to break down barriers to earning, spending, and accessing finance. We put you in total control of all your transactions. Payments are entirely transparent and accessible at all times, and with our Blockchain-based app you can track all your funds.'] }
@@ -179,8 +180,10 @@ const SE_Home = () => (
         src: 'img/placeholder-1.svg',
         alt: 'Learn more about Humaniq Use Cases here'
       }}
-    ><A_P type='third'>Humaniq brings isolated people into modern markets, creating a new source of growth for the world economy by impacting individual livers. Leveraging a widespread ambassador programme, Humaniq reaches even the most isolated regions in emerging countries, helping reduce hunger and poverty, while giving people the opportunity to save, lend and raise money.</A_P>
+    >
+      <A_P type='third'>Humaniq brings isolated people into modern markets, creating a new source of growth for the world economy by impacting individual livers. Leveraging a widespread ambassador programme, Humaniq reaches even the most isolated regions in emerging countries, helping reduce hunger and poverty, while giving people the opportunity to save, lend and raise money.</A_P>
     </Info>
+    <Magazines />
     {/*<O_RecentNews/>*/}
     {/*/!*<O_HandyLinks/>*!/*/}
     {/*<O_StaticInfo {...{modificator: 'normal', text: text_1}}/>*/}

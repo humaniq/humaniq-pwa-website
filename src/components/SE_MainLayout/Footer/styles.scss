@@ -3,6 +3,7 @@
 
 .se-main-layout-footer{
 
+  border-top: $border-line;
   &_is-menu-opened_true{
     position: fixed;
     top: 70px;
