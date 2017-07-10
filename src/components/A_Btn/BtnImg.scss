@@ -1,0 +1,28 @@
+@import "common/settings/variables";
+@import "common/utils";
+
+.btn-img{
+  &__root{
+    max-width: 100%;
+    margin-bottom: $interactive-border-size-1;
+    &:hover{
+      border-bottom: $interactive-border-b;
+      margin-bottom: 0;
+    }
+  }
+  &__img{
+    width: 100%;
+    height: auto;
+    @include media($tablet) {
+      height: auto;
+    }
+  }
+  &__body{
+    padding-top: 2.5rem;
+    padding-bottom: 2.7rem;
+    color: $interactive;
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    font-weight: 600;
+  }
+}

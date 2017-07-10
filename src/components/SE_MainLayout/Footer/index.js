@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
-import {Link} from 'react-router'
-// import * as T from "prop-types";
+import * as T from "prop-types";
 import './styles.scss';
 import {cssClassName} from 'utils'
-const cn = cssClassName('O_Footer')
+const cn = cssClassName('SE_MainLayoutFooter')
 import {Motion, spring} from 'react-motion';
-import M_Select from 'M_Select';
+// import M_Select from 'M_Select';
 import A_Link from 'A_Link'
+import A_Image from 'A_Image'
 import A_Container from 'A_Container'
 
 const links = [
@@ -15,14 +15,14 @@ const links = [
     links: [
       // {name: 'Features', url: '#'},
       // {name: 'Open source', url: '#'},
-      {name: 'Humaniq wiki', url: '/wiki'}]
+      {name: 'Humaniq Wiki', url: '/wiki'}]
   },
   {
     section: 'company',
     links: [
       // {name: 'Blog', url: '#'},
       // {name: 'News', url: '#'},
-      {name: 'Use cases', url: '/use-cases'},
+      {name: 'Use Cases', url: '/use-cases'},
       {name: 'Partners', url: '/partners'},
       // {name: 'Events', url: '#'}
     ]
@@ -51,7 +51,7 @@ const socials = [
   {network: 'slack', link: 'https://humaniq-co.slack.com '}
 ]
 
-class O_Footer extends Component {
+class SE_MainLayoutFooter extends Component {
 
   state = {
     openedSection: null
@@ -72,14 +72,12 @@ class O_Footer extends Component {
       return (
         <div className={cn('nav-section')} key={'key=' + section}>
           <div
-            className={cn('nav-section__title', {isOpen})}
+            className={cn('nav-section-title', {isOpen})}
             onClick={() => this.handleTongleSection(section)}
           >{section}</div>
           <ul className={cn('nav-list', {isOpen})}>
             { links.map(({name, url}) => (
-              <li className={cn('nav-list__item')} key={'key=' + name}>
-                <A_Link to={url} disabled={url === '#'} external >{name}</A_Link>
-              </li>
+              <li className={cn('nav-list__item')} key={'key=' + name}><A_Link to={url} type='primary'>{name}</A_Link></li>
             )) }
           </ul>
         </div>
@@ -89,62 +87,64 @@ class O_Footer extends Component {
 
   socialsList() {
     return socials.map(({network, link}) => (
-      <A_Link to={link} addClassName={cn('soc-item')} title={network} key={network} external>
-        <img src={"/img/social/" + network + ".svg"}/>
-      </A_Link>
+      <span className={cn('soc-item')} key={'key_' + network}>
+        <A_Link to={link} title={network} key={network} external>
+          <A_Image src={"/img/social/" + network + ".svg"} alt={network} link realSize/>
+        </A_Link>
+      </span>
     ))
   }
 
   render(){
-    const {menuOpen} = this.props
+    const {isMenuOpened} = this.props
     const {openedSection} = this.state
     const max = 100;
     const renderedSocialList = this.socialsList()
     const renderedLinksList = this.linksList(openedSection)
     return (
-      <footer className={cn({menuOpen})}>
-        <Motion
-          defaultStyle={{x: 0}}
-          style={{
-            x: spring(menuOpen ? max : 0),
-            y: menuOpen ? spring(max) : 0
-          }}
-        >
-          {({x, y}) =>
-            <A_Container>
+      <footer className={cn({isMenuOpened})}>
+        <A_Container>
+          <Motion
+            defaultStyle={{y: 0}}
+            style={{
+              y: isMenuOpened ? spring(max) : 0
+            }}
+          >
+            {({y}) =>
               <div style={{
-                transform: `translate3d(0, -${x}px, 0)`,
+                transform: `translate3d(0, -${y}px, 0)`,
                 opacity: `${y === 0 ? 1 : y / max}`,
-                marginTop: `${x === 0 ? 0 : max}px`
+                marginTop: `${y === 0 ? 0 : max}px`
               }}>
                 <div className={cn('inner')}>
                   <nav className={cn('nav')}>{renderedLinksList}</nav>
                   <div className={cn('aux')}>
-                    <M_Select
-                      options={[
-                        {value: 'en', label: <span><span style={{top: 1, marginRight: 13, position:'relative'}}>🇬🇧</span>English (UK)</span>},
-                        // {value: 'ch', label: <span><span style={{top: 1, marginRight: 13, position:'relative'}}>🇨🇳</span>中文</span>},
-                        // {value: 'es', label: <span><span style={{top: 1, marginRight: 13, position:'relative'}}>🇪🇸</span>Español</span>},
-                        // {value: 'de', label: <span><span style={{top: 1, marginRight: 13, position:'relative'}}>🇩🇪</span>Deutsch</span>}
-                      ]}
-                      value = {'en'}
-                      // onChange={}
-                    />
+                    <div
+                      className={cn('aux-title')}
+                    >Humaniq</div>
+                    <p className={cn('about')}>
+                      Humaniq is a simple and secure mobile banking app, based on Ethereum Blockchain. Humaniq tool of financial inclusion connects 2 billion unbanked people to the global economy.
+                    </p>
                     <div className={cn('soc')}>
                       {renderedSocialList}
                     </div>
                   </div>
                 </div>
               </div>
-            </A_Container>
-          }
-        </Motion>
+            }
+          </Motion>
+        </A_Container>
       </footer>
     )
   }
 }
 
-O_Footer.propTypes = {};
+SE_MainLayoutFooter.propTypes = {
+  isMenuOpened: T.bool.isRequired
+};
 
+SE_MainLayoutFooter.defaultProps = {
+  isisMenuOpeneded: T.bool.isRequired
+};
 
-export default O_Footer
+export default SE_MainLayoutFooter

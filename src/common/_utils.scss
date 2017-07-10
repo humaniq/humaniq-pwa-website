@@ -52,3 +52,16 @@
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+
+
+@function makelongshadow() {
+  $val: 0px 0px #c3c3c3;
+  @for $i from 1 through 200 {
+    $val: #{$val}, #{-$i}px #{$i}px #c3c3c3;
+  }
+  @return $val;
+}
+
+@mixin longshadow() {
+  text-shadow: makelongshadow();
+}

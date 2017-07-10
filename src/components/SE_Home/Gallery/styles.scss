@@ -1,0 +1,39 @@
+@import "common/settings/variables";
+@import "common/utils";
+
+.se-home-gallery{
+  &__galery{
+    display: flex;
+    justify-content: space-between;
+
+    &_type{
+      &_not-links{
+        flex-flow: wrap;
+      }
+    }
+    @include media($mobile) {
+      flex-flow: wrap;
+    }
+    &-item{
+      flex: 0 1 26rem;
+      margin-top: 2rem;
+      height: 100%;
+      @include media($mobile) {
+        flex-basis: 100%;
+      }
+      &-title{
+        padding-bottom: 0;
+        margin-bottom: 0rem;
+      }
+      &-img{
+        width: 100%;
+        height: auto;
+        margin-bottom: .9rem;
+        @include media($tablet) {
+          height: auto;
+        }
+      }
+    }
+  }
+
+}

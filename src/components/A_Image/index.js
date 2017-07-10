@@ -26,14 +26,19 @@ class A_Image extends Component {
   }
 
   render() {
-    const {onClick, objectFit, rounded, realSize, ...props} = this.props
+    let {rounded, realSize, link, ...preProps} = this.props
+    const {onClick, objectFit, ...props} = preProps
     const complete = !!this.node && this.node.complete
     const imgReady = complete || this.state.imgReady
+    rounded = rounded && 'rounded'
+    link = link && 'link'
+    realSize = realSize && 'real-size'
+
     return (
-      <span className={cn('root', [realSize && 'real-size'])} >
+      <span className={cn('root')} >
         <img
           ref={ node => this.node = node }
-          className={cn('img', {onClick: !!onClick, objectFit}, [rounded && 'rounded'])}
+          className={cn('img', {onClick: !!onClick, objectFit}, [rounded, link, realSize])}
           onLoad = {this.handleLoad}
           style={imgReady ? {} : {display: 'none'}}
           onClick={onClick}
@@ -51,10 +56,15 @@ A_Image.propTypes = {
   src: T.string.isRequired,
   width: T.number,
   height: T.number,
-  alt: T.string,
+  alt: T.string.isRequired,
   onClick: T.func,
-  objectFit: T.bool,
-  rounded: T.bool,
+  objectFit: T.oneOf([
+    'contain', // increases or decreases the size of the image to fill the box whilst preserving its aspect-ratio.
+    'cover-hidden' // height 100% of widht
+  ]),
+  realSize: T.bool, // width and height auto
+  rounded: T.bool, // remove space under the image in links
+  link: T.bool // remove space under the image in links
 }
 
 A_Image.defaultProps = {

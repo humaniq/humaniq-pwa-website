@@ -1,0 +1,32 @@
+@import "common/utils";
+@import "common/settings/variables";
+
+.se-home-info-animation{
+  &__root{
+    display: flex;
+    justify-content: space-between;
+    @include media($mobile) {
+      flex-direction: column-reverse;
+    }
+    @include media($desktop) {
+      margin-top: -4rem;
+    }
+  }
+  &__img{
+    flex: 0 0 40rem;
+    @include media($mobile) {
+      display: none;
+    }
+    margin-bottom: -1.8rem;
+    margin-top: -3.2rem;
+
+  }
+  &__body{
+    flex: 0 1 47rem;
+    padding-right: 2rem;
+    @include media($mobile) {
+      flex-basis: auto;
+    }
+  }
+
+}

@@ -1,0 +1,67 @@
+@import "common/settings/variables";
+@import "common/utils";
+
+.se-main-layout-header {
+  &__root{
+    cursor: default;
+    user-select: none;
+    z-index: 2;
+    &_header-theme_white{
+      border-bottom: $border-line;
+      background-color: $theme-1;
+    }
+    &_header-theme_blue{
+      background-color: $theme-2;
+    }
+  }
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    height: 7rem;
+    align-items: stretch;
+  }
+  &__logo{
+    flex: 1 .5 50%;
+    display: flex;
+    align-items: center;
+  }
+  &__nav{
+    flex: 1 .5 50%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: stretch;
+
+    &-main, &-extra{
+      display: flex;
+      @include media($mobile) {
+        display: none;
+      }
+
+    }
+
+    &-main{
+      z-index: 1;
+    }
+    &-btn{
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      margin-left: 30px;
+      &:hover{
+        border-bottom: $interactive-border-b;
+        padding-top: $interactive-border-size-1; //compensation
+      };
+    }
+  }
+  &__menu-btn{
+    display: flex;
+    align-items: center;
+    margin-left: 30px;
+    flex-flow: 0;
+    @include media($mobile) {
+      margin-left: 0px;
+    }
+  }
+}

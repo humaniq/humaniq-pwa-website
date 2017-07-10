@@ -3,7 +3,7 @@
 
 .a-container{
   margin: 0 auto;
-  max-width: $w-desktop + (2 * 20px);
+  max-width: $w-desktop + 40px; //width size + padding, becouse of border-box
   padding: 0 $p-desktop;
 
   @include media($tablet) {
@@ -14,11 +14,27 @@
     width: 100%;
     padding: 0 $p-mobile;
   }
-  &_wide_true{
-    padding: 0;
-    max-width: $w-desktop-wide;
-    @include media($tablet) {
-      max-width: 100%;
+
+  &_type{
+    &_wide{
+      max-width: $w-desktop-wide + 40px; //width size + padding, becouse of border-box
+    }
+    &_section{
+
+      padding-top: 3.2rem;
+      padding-bottom: 1.8rem;
+      border-bottom: $border-line;
+      @include media($desktop) {
+        margin-bottom: 4rem;
+      }
+    }
+    &_section-interactive{
+      padding-top: 3.2rem;
+      padding-bottom: 4rem;
+      @include media($tablet) {
+        padding-bottom: 0rem;
+
+      }
     }
   }
 }

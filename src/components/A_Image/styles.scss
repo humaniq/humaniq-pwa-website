@@ -24,8 +24,14 @@
     height: 100%;
     object-fit: cover;
     text-align: center;
-    &_object-fit_contain{
-      object-fit:contain
+    &_object-fit{
+      &_contain{
+        object-fit:contain
+      }
+      &_cover-hidden{
+        object-fit: cover;
+        overflow: hidden;
+      }
     }
     &.real-size{
       width: auto;
@@ -34,6 +40,11 @@
     &.rounded{
       border-radius: 50%;
     }
+    &.link{
+      vertical-align: top;
+    }
   }
+
+
 
 }

@@ -1,0 +1,23 @@
+@import "common/utils";
+@import "common/settings/variables";
+
+.a-p{
+  &_type{
+    &_first {
+      font-size: 18px;
+      line-height: 28.0px;
+    }
+    &_second{
+      font-size: 14px;
+    }
+    &_third{
+      font-size: 1.5rem;
+      line-height: 2.6rem;
+      &-center{
+        font-size: 1.5rem;
+        line-height: 2.6rem;
+        text-align: center;
+      }
+    }
+  }
+}

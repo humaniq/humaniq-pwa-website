@@ -1,37 +1,48 @@
 import React, { PropTypes } from 'react';
+import * as T from "prop-types";
 import './styles.scss';
 import {Link} from 'react-router'
+import BtnImg from './BtnImg'
 import {cssClassName} from 'utils'
 const cn = cssClassName('A_Btn')
 
-const A_Btn = ({style, type, children, disabled, ...props}) =>{
+const A_Btn = ({type, children, disabled, ...props}) =>{
 
   disabled = disabled && 'disabled'
 
-  let _btn;
-  if(type === 'link'){
-    _btn = (
-      <Link className={cn({type, style}, [disabled])} disabled={disabled} {...props}>
-        {children}
-      </Link>
-    )
-  } else {
-    _btn = (
-      <button className={cn({type, style}, [disabled])} type={type} {...props}>
-        {children}
-      </button>
-    )
+  switch(type){
+    case 'interactive':
+      return (
+        <BtnImg {...{type, children, disabled, ...props}} />
+      )
+    case 'inline':
+    case 'link-subscribe':
+      return (
+        <Link className={cn('link', {type}, [disabled])} disabled={disabled} {...props}>
+          {children}
+        </Link>
+      )
+    default:
+      return (
+        <button className={cn('button', {type}, [disabled])} type={type} {...props}>
+          {children}
+        </button>
+      )
   }
-
-  return _btn
 }
 A_Btn.propTypes = {
+  type: T.oneOf([
+    'link-subscribe', //big blue button
+    'interactive', //link button with hover bottom border
+    'link', //link without styles display table
+    'inline' //link without styles display inline
+  ]),
+  to: T.string.isRequired,
+  disabled: T.bool
 };
 
 A_Btn.defaultProps = {
-  to: '#',
-  type: 'button',
-  style: 'common'
+  to: '#'
 }
 
 export default A_Btn

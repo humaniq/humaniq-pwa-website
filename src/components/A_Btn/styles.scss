@@ -11,115 +11,133 @@
     pointer-events: none;
   }
 
-
-
-  &_style_common{
-    padding: .8rem 1.6rem 1rem;
-    color: white;
-    background-color: #439fe0;
-
-    &:hover, &:active{
-      background-color: #2289d3;
-    }
-    &.disabled{
-      color: rgba(255, 255, 255, 0.5);
-      background-color: rgba(0, 0, 0, 0.2);
-    }
-  }
-
-  &_style_light{
-    border: 2px solid rgba(37, 48, 57, 0.8);
-    color: rgba(37, 48, 57, 0.8);
-    &:hover, &:active{
-      color: #253039;
-      border-color: #253039;
-    }
-    &.disabled{
-      color: rgba(37, 48, 57, 0.4);
-      border-color: rgba(37, 48, 57, 0.4);
-    }
-  }
-
-  &_type_link{
+  &__link {
     display: table;
     text-align: center;
+    box-sizing: border-box;
+    vertical-align: middle;
     @include media($mobile) {
       width: 100%
     }
     @include media($tablet) {
-      margin: 0 auto;
       width: 100%;
       max-width: $w-mobile
     }
-  }
+    &_type{
+      &_inline{
+        display: inline;
+      }
+      &_link{
+        //кажись тут ничего нет.
+      }
+      &_link-subscribe{
+        padding: .8rem 1.6rem 1rem;
+        color: white;
+        background-color: $interactive;
+        height: 5.3rem;
+        line-height: 3.5rem ;
+        border-radius: 6px;
+        box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.2);
+        font-size: 1.7rem;
+        font-weight: 600;
+        text-align: center;
+        @include media($desktop) {
+          width: 20rem;
+        }
+      }
+      &_interactive{
 
-  &_subscribe{
-    display: table;
-    text-align: center;
-    @include media($mobile) {
-      width: 100%
-    }
-    @include media($tablet) {
-      margin: 0 auto;
-      width: 100%;
-      max-width: $w-mobile
-    }
-  }
-  &_style_common, &_style_light-link, &_style_dark-link, &_style_button-link{
-    height: 3.8rem;
-    border-radius: .4rem;
-    font-size: 1.5rem;
-    font-weight: 600;
-    text-align: center;
-  }
-
-  &_style_button-link{
-    padding: 1rem 1.5rem;
-    color: white;
-    background-color: #439fe0;
-    &:hover, &:active{
-      background-color: #2289d3;
-    }
-    &.disabled{
-      color: rgba(255, 255, 255, 0.5);
-      background-color: rgba(0, 0, 0, 0.2);
+      }
     }
   }
 
 
-  &_style_dark-link, &_style_light-link{
-    padding: 1rem 1.5rem;
-    background-color: transparent;
-
-  }
 
 
-  &_style_light-link{
-    border: solid 2px rgba(255, 255, 255, 0.8);
-
-    &:hover, &:active{
-      color: rgba(255, 255, 255, 1);
-      border-color: rgba(255, 255, 255, 1);
-    }
-    &.disabled{
-      color: rgba(255, 255, 255, 0.4);
-      border-color: rgba(255, 255, 255, 0.4);
-    }
-  }
 
 
-  // uses only in nav menu, but header has his own button
-  //&_style_dark-link{
-  //  border: 2px solid rgba(255, 255, 255, 0.8);
-  //  color: rgba(255, 255, 255, 0.8);
-  //  &:hover, &:active{
-  //    color: rgba(255, 255, 255, 1);
-  //    border-color: rgba(255, 255, 255, 1);
-  //  }
-  //  &.disabled{
-  //    color: rgba(255, 255, 255, 0.4);
-  //    border-color: rgba(255, 255, 255, 0.4);
-  //    pointer-events: none;
-  //  }
-  //}
+
+
 }
+
+
+//&_style_common{
+//  padding: .8rem 1.6rem 1rem;
+//  color: white;
+//  background-color: #439fe0;
+//
+//  &:hover, &:active{
+//    background-color: #2289d3;
+//  }
+//  &.disabled{
+//    color: rgba(255, 255, 255, 0.5);
+//    background-color: rgba(0, 0, 0, 0.2);
+//  }
+//}
+
+//&_style_light{
+//  border: 2px solid rgba(37, 48, 57, 0.8);
+//  color: rgba(37, 48, 57, 0.8);
+//  &:hover, &:active{
+//    color: #253039;
+//    border-color: #253039;
+//  }
+//  &.disabled{
+//    color: rgba(37, 48, 57, 0.4);
+//    border-color: rgba(37, 48, 57, 0.4);
+//  }
+//}
+
+//&_subscribe{
+//  display: table;
+//  text-align: center;
+//  @include media($mobile) {
+//    width: 100%
+//  }
+//  @include media($tablet) {
+//    margin: 0 auto;
+//    width: 100%;
+//    max-width: $w-mobile
+//  }
+//}
+//&_style_common, &_style_light-link, &_style_dark-link, &_style_button-link{
+//  height: 3.8rem;
+//  border-radius: .4rem;
+//  font-size: 1.5rem;
+//  font-weight: 600;
+//  text-align: center;
+//}
+//
+//&_style_button-link{
+//  padding: 1rem 1.5rem;
+//  color: white;
+//  background-color: #439fe0;
+//  &:hover, &:active{
+//    background-color: #2289d3;
+//  }
+//  &.disabled{
+//    color: rgba(255, 255, 255, 0.5);
+//    background-color: rgba(0, 0, 0, 0.2);
+//  }
+//}
+//
+//
+//&_style_dark-link, &_style_light-link{
+//  padding: 1rem 1.5rem;
+//  background-color: transparent;
+//
+//}
+//
+//
+//&_style_light-link{
+//  border: solid 2px rgba(255, 255, 255, 0.8);
+//
+//  &:hover, &:active{
+//    color: rgba(255, 255, 255, 1);
+//    border-color: rgba(255, 255, 255, 1);
+//  }
+//  &.disabled{
+//    color: rgba(255, 255, 255, 0.4);
+//    border-color: rgba(255, 255, 255, 0.4);
+//  }
+//}

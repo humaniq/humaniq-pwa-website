@@ -7,7 +7,6 @@ class WikiRoute extends Component {
 
   static prepareData({dispatch}) {
     if(initialLoad()) return;
-    dispatch(setPage('wiki'))
   }
 
   render() {

@@ -8,7 +8,6 @@ class PostsRoute extends Component {
 
   static prepareData({dispatch}) {
     if(initialLoad()) return;
-    dispatch(setPage('blog'))
     return dispatch(fetchPosts())
   }
 

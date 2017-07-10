@@ -3,15 +3,40 @@
 
 .a-link{
   cursor: pointer;
-  &.block{
-    display: block;
-    width: 100%;
-    height: 100%;
+  font-weight: 600;
+
+  &_type{
+    &_block {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    &_primary{
+      color: $interactive;
+    }
+
+    &_white{
+      color: $white;
+    }
+
+    &_section-link{
+      margin-top: .8rem;
+      display: flex;
+      align-items: center;
+      padding-left: 1.6rem;
+      height: 3.4rem;
+      color: $interactive;
+      border-left: $interactive-border-l;
+      white-space: nowrap;
+      &:after{
+        content: '»';
+        padding-left: .3rem;
+      }
+    }
   }
-  &_color_primary{
-    color: $blue-5;
-  }
-  &_disabled_true{
+
+  &.disabled{
     pointer-events: none;
   }
 }

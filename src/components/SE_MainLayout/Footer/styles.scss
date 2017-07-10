@@ -1,0 +1,139 @@
+@import "common/settings/variables";
+@import "common/utils";
+
+.se-main-layout-footer{
+
+  &_is-menu-opened_true{
+    position: fixed;
+    top: 70px;
+    z-index: 1;
+    height: 100vh;
+  }
+  &__inner {
+    padding: 2rem * 2.5 0; // clarify
+    display: flex;
+    @include media($mobile) {
+      padding: 0;
+      margin: 0 (-2rem);
+      flex-flow: column;
+    }
+  }
+
+  &__nav {
+    width: 68%;
+    display: flex;
+    align-items: stretch;
+    @include media($mobile) {
+      width: 100%;
+      flex-flow: column;
+    }
+
+    &-section {
+
+
+      &:first-child{
+        @include media($mobile) {
+          border: none;
+        }
+      }
+      &:last-child {
+        @include media($mobile) {
+          border: $border-line;
+        }
+      }
+      width: 14.5rem;
+      padding-right: 4rem;
+
+      @include media($mobile) {
+        width: 100%;
+        padding-right: 0;
+        border-top: $border-line;
+
+      }
+
+      &-title {
+        margin-bottom: .8rem;
+        font-size: 1.5rem;
+        line-height: 2.4rem;
+        font-weight: bold;
+        text-transform: capitalize;
+        color: $text;
+        @include media($mobile) {
+          user-select: none;
+          cursor: pointer;
+          height: 5rem;
+          padding: 0 2rem;
+          line-height: 5rem;
+          margin-bottom: 0;
+          background: url('/img/icons/plus.svg') right 20px center no-repeat;
+        }
+        &_is-open_true {
+          @include media($mobile) {
+            background: url('/img/icons/minus.svg') right 20px center no-repeat;
+          }
+        }
+      }
+    }
+
+    &-list {
+      @include media($mobile) {
+        padding: 0 31px 20px;
+      }
+      &_is-open_false{
+        @include media($mobile) { display: none; }
+      }
+      &__item {
+        font-size: 1.5rem;
+        line-height: 2.4rem;
+        font-weight: 600;
+        color: $interactive; // clarify
+      }
+    }
+  }
+
+  &__aux {
+    width: 32%;
+    min-width: 200px;
+    @include media($mobile) {
+      width: 100%;
+    }
+
+    &-title{
+      margin-bottom: .8rem;
+      font-size: 1.5rem;
+      line-height: 2.4rem;
+      font-weight: bold;
+      text-transform: capitalize;
+      color: $text;
+      @include media($mobile) { display: none }
+    }
+  }
+
+  &__about{
+    font-size: 1.4rem;
+    line-height: 2rem;
+    @include media($mobile) { display: none }
+
+  }
+
+  &__soc {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    @include media($mobile) {
+      padding: 0 2rem;
+      height: 2rem * 3;
+      margin: 0 auto;
+      justify-content: space-between;
+      max-width: 25rem;
+    }
+
+    &-item {
+      & + & { margin-left: 2.8rem; }
+      @include media($mobile) {
+        & + & { margin-left: 0; }
+      }
+    }
+  }
+}
