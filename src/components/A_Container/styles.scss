@@ -5,7 +5,6 @@
   margin: 0 auto;
   max-width: $w-desktop + 40px; //width size + padding, becouse of border-box
   padding: 0 $p-desktop;
-
   @include media($tablet) {
     width: 100%;
     padding: 0 $p-tablet;

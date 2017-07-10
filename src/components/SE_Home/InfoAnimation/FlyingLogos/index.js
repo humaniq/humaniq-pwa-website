@@ -74,7 +74,10 @@ const FlyingLogos = () =>{
     )
   })
   return(
-    <div className={cn('root')}>{renderedLogos}</div>
+    <div className={cn('root')}>
+      {renderedLogos}
+      <div className={cn('first')}/>
+    </div>
   )
 }
 

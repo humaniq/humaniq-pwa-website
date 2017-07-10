@@ -38,6 +38,9 @@ const SE_HomeGallery = ({entities, title, type}) =>{
     containerType = 'section'
   }
 
+  for(let i = 0; i<2; i++){
+    rederedItems.push(<div className={cn('galery-item')} key={'key_' + i} />)
+  }
 
   return (
     <A_Container type={containerType}>
