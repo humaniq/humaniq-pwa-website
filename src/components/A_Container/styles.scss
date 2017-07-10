@@ -20,13 +20,16 @@
       max-width: $w-desktop-wide + 40px; //width size + padding, becouse of border-box
     }
     &_section{
-
       padding-top: 3.2rem;
       padding-bottom: 1.8rem;
       border-bottom: $border-line;
       @include media($desktop) {
         margin-bottom: 4rem;
       }
+    }
+    &_equal{
+      padding-top: 3.2rem;
+      padding-bottom: 4rem;
     }
     &_section-interactive{
       padding-top: 3.2rem;

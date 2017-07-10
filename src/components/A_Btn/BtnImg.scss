@@ -5,7 +5,7 @@
   &__root{
     max-width: 100%;
     margin-bottom: $interactive-border-size-1;
-    &:hover{
+    &:hover, &:active{
       border-bottom: $interactive-border-b;
       margin-bottom: 0;
     }

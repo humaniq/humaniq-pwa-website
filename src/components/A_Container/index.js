@@ -13,6 +13,7 @@ A_Container.propTypes = {
     'wide', // wide container
     'section', // container with paddings-top 32, padding-bottom, and border-bottom margint-bottom
     'section-interactive', // container with paddings-top 32, padding-bottom,
+    'equal' // container with paddings-top 32, margin-bottom 40, does't chage on device,
   ]),
   children: T.node.isRequired
 };

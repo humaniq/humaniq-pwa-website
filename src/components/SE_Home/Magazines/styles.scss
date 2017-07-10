@@ -1,0 +1,23 @@
+@import "common/settings/variables";
+@import "common/utils";
+
+.se-home-magazines{
+  &__root {
+    @include media($mobile) {
+      display: none;
+    }
+  }
+  &__magazines{
+    margin-top: 3.4rem;
+
+    display: flex;
+    justify-content: space-around;
+  }
+  &__item{
+    opacity: .5;
+    &:hover, &:active{
+      opacity: 1;
+    }
+  }
+
+}

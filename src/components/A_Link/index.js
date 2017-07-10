@@ -11,7 +11,7 @@ const A_Link = ({children, type, block, disabled, external, to, ...props}) => {
   const className= cn({block, type}, [disabled && 'disabled'])
   if (external) {
     _link =(
-      <a className={className} href={to}>{children}</a>
+      <a className={className} href={to} target="_blank">{children}</a>
     )
   } else {
     _link =(
