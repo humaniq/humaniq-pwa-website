@@ -5,22 +5,16 @@
   &__galery{
     display: flex;
     justify-content: space-between;
+    flex-flow: wrap;
 
-    &_type{
-      &_not-links{
-        flex-flow: wrap;
-      }
-    }
-    @include media($mobile) {
-      flex-flow: wrap;
+    @include media($tablet) {
+      justify-content: center;
     }
     &-item{
       flex: 0 1 26rem;
-      margin-top: 2rem;
       height: 100%;
-      @include media($mobile) {
-        flex-basis: 100%;
-      }
+      margin: 2rem 1rem 0;
+
       &-title{
         padding-bottom: 0;
         margin-bottom: 0rem;
@@ -30,7 +24,9 @@
         height: auto;
         margin-bottom: .9rem;
         @include media($tablet) {
+          width: 20rem;
           height: auto;
+          margin: 0 auto;
         }
       }
     }

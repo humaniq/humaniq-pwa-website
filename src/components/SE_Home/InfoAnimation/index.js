@@ -9,18 +9,19 @@ import A_Container from 'A_Container'
 import FlyingLogos from './FlyingLogos'
 const SE_HomeInfoAnimation = ({children, title, link}) =>{
   return (
-    <A_Container type='section'>
-      <div className={cn('root')}>
-        <div className={cn('body')}>
-        <A_H type="section">{title}</A_H>
-          {children}
-          <A_Link type="section-link" to={link.to}>{link.text}</A_Link>
+      <A_Container type='section'>
+        <div className={cn('root')}>
+          <div className={cn('body')}>
+          <A_H type="section">{title}</A_H>
+            {children}
+            <A_Link type="section-link" to={link.to}>{link.text}</A_Link>
+          </div>
+          <div className={cn('img')}>
+            <FlyingLogos />
+          </div>
         </div>
-        <div className={cn('img')}>
-          <FlyingLogos />
-        </div>
-      </div>
-    </A_Container>
+      </A_Container>
+
   )
 }
 

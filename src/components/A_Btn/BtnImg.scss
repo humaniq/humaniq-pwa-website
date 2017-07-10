@@ -14,7 +14,9 @@
     width: 100%;
     height: auto;
     @include media($tablet) {
+      width: 20rem;
       height: auto;
+      margin: 0 auto;
     }
   }
   &__body{

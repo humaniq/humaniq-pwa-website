@@ -31,7 +31,9 @@ const SE_HomeHero = ({explorerData}) =>{
             <A_P type="first" >Humaniq is a simple and secure mobile banking app, based on Ethereum Blockchain. Humaniq tool of financial inclusion connects 2 billion unbanked people to the global economy. </A_P>
           </div>
           <A_Btn type="link-subscribe">Subscribe</A_Btn>
-          <A_P type="second" >Want to be informed? Subscribe to our Newsletter </A_P>
+          <span className={cn('subscribe-text')}>
+              <A_P type="second" >Want to be informed? Subscribe to our Newsletter </A_P>
+          </span>
         </div>
         {explorerData &&
           <div className={cn('explorer')}>
