@@ -7,16 +7,23 @@ const cn = cssClassName('A_Link')
 
 const A_Link = ({children, type, block, disabled, external, to, ...props}) => {
 
-  let _link
+  let _link, content
   const className= cn({block, type}, [disabled && 'disabled'])
+  if(type == 'section-link'){
+    content = (
+      <span>{children}<span style={{whiteSpace: 'nowrap'}}> here »</span></span>
+    )
+  } else{
+    content = children
+  }
   if (external) {
     _link =(
-      <a className={className} href={to} target="_blank">{children}</a>
+      <a className={className} href={to} target="_blank">{content}</a>
     )
   } else {
     _link =(
       <Link className={className} {...props} to={to}>
-        {children}
+        {content}
       </Link>
     )
   }

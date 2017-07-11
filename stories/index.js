@@ -24,6 +24,8 @@ import {linkTo} from '@storybook/addon-links';
 // import A_Btn from 'A_Btn'
 import FlyingLogos from 'SE_Home/InfoAnimation/FlyingLogos'
 import A_Link from 'A_Link'
+import A_Logo from 'A_Logo'
+
 import Header from 'SE_MainLayout/Header'
 import Footer from 'SE_MainLayout/Footer'
 import SE_MainLayout from 'SE_MainLayout'
@@ -59,6 +61,15 @@ const mobile = (storyFn) => (
 
 addDecorator(styleDecorator)
 
+storiesOf('Logo', module)
+  .addDecorator(storyFN => <div style={{backgroundColor: 'dodgerblue'}}>{storyFN()}</div>)
+  .add('dark', () => (
+    <A_Logo theme="dark"/>
+  ))
+  .add('light', () => (
+    <A_Logo theme="light"/>
+  ));
+
 storiesOf('O_FlyingLogos', module)
   .add('', () => (
     <div style={{
@@ -69,14 +80,15 @@ storiesOf('O_FlyingLogos', module)
   ));
 
 storiesOf('A_Link', module)
-  .add('', () => (
-    <div style={{
-      // backgroundColor: 'white',
-      height: 339, width:1280}}>
-      <A_Link
+  .add('primary', () => (
+      <A_Link type={'primary'}
         to="#"
       >Contact Us</A_Link>
-    </div>
+  ))
+  .add('section-link', () => (
+    <A_Link type={'section-link'}
+            to="#"
+    >Learn more about Humaniq Use Cases</A_Link>
   ));
 
 

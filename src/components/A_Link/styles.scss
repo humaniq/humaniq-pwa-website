@@ -25,14 +25,13 @@
       display: flex;
       align-items: center;
       padding-left: 1.6rem;
-      height: 3.4rem;
+      line-height: 1.5rem;
+      vertical-align: top;
+      min-height: 3.4rem;
       color: $interactive;
       border-left: $interactive-border-l;
-      white-space: nowrap;
-      &:after{
-        content: '»';
-        padding-left: .3rem;
-      }
+      font-weight: bold;
+      position: relative;
       &:hover, &:active{
         text-decoration: underline;
       }
