@@ -144,11 +144,11 @@ const SE_Home = () => (
       title = 'The power of Blockchain'
       link ={{
         to: '#',
-        text: 'Learn more about Humaniq partners here'
+        text: 'Learn more about Humaniq partners'
       }}
       img ={{
         src: 'img/placeholder-1.svg',
-        alt: 'Learn more about Humaniq partners here'
+        alt: 'Learn more about Humaniq partners'
       }}
     ><A_P type='third'>Join the Humaniq Forum — a public discussion board for entrepreneurs around the world. Connect with other entrepreneurs, find beta users, learn from experienced founders, and get advice on how to overcome early challenges.
 
@@ -163,7 +163,7 @@ const SE_Home = () => (
       title = 'Join our Community'
       link ={{
         to: '#',
-        text: 'Learn more about Humaniq partners here'
+        text: 'Learn more about Humaniq partners'
       }}
     ><A_P type='third'>Join the Humaniq Forum — a public discussion board for entrepreneurs around the world. Connect with other entrepreneurs, find beta users, learn from experienced founders, and get advice on how to overcome early challenges.
 
@@ -174,11 +174,11 @@ const SE_Home = () => (
       title = 'Global Access, Local Impact'
       link ={{
         to: '#',
-        text: 'Learn more about Humaniq Use Cases here'
+        text: 'Learn more about Humaniq Use Cases'
       }}
       img ={{
         src: 'img/placeholder-1.svg',
-        alt: 'Learn more about Humaniq Use Cases here'
+        alt: 'Learn more about Humaniq Use Cases'
       }}
     >
       <A_P type='third'>Humaniq brings isolated people into modern markets, creating a new source of growth for the world economy by impacting individual livers. Leveraging a widespread ambassador programme, Humaniq reaches even the most isolated regions in emerging countries, helping reduce hunger and poverty, while giving people the opportunity to save, lend and raise money.</A_P>
