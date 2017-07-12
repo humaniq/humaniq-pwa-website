@@ -38,8 +38,6 @@ SE_HomeInfo.propTypes = {
   type: T.oneOf([
     'moving-title', //title changes place on mobile devices
     'hidding-img', //img is hidding on mobile devices
-    'hidding-img-extra' //special image for global-access block
-
   ]).isRequired,
   children: T.node.isRequired,
   title: T.string,
