@@ -42,7 +42,7 @@ const SE_HomeHero = ({explorerData}) =>{
               {infoBlock}
             </div>
             <div className={cn('explorer-img')}>
-              <A_Image src="/img/placeholder.svg"/>
+              <A_Image src="/img/illustrations/block-0.svg"/>
             </div>
           </div>
         }

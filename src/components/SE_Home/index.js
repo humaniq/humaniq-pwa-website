@@ -82,17 +82,17 @@ const explorerMock = [
 
 const links = [
   {
-    img: '/img/placeholder-squared.svg',
+    img: '/img/illustrations/hmq-explorer.svg',
     title: 'HMQ Explorer',
     url: '#'
   },
   {
-    img: '/img/placeholder-squared.svg',
+    img: '/img/illustrations/humaniq-blog.svg',
     title: 'Humaniq Blog',
     url: '#'
   },
   {
-    img: '/img/placeholder-squared.svg',
+    img: '/img/illustrations/open-source.svg',
     title: 'Open Source',
     url: '#'
   }
@@ -100,32 +100,32 @@ const links = [
 
 const features = [
   {
-    img: '/img/placeholder-squared.svg',
+    img: '/img/illustrations/free-payments.svg',
     title: 'Free Payments',
     subtitle: 'Send, receive and request funds with no transmission comission.'
   },
   {
-    img: '/img/placeholder-squared.svg',
+    img: '/img/illustrations/biometrics-protected.svg',
     title: 'Biometrics Protected',
     subtitle: 'Lock money with your biometrics, avoiding obscure passwords.'
   },
   {
-    img: '/img/placeholder-squared.svg',
+    img: '/img/illustrations/digital-identity.svg',
     title: 'Digital Identity',
     subtitle: 'Create a virtual identity that evolves with you and your funds.'
   },
   {
-    img: '/img/placeholder-squared.svg',
+    img: '/img/illustrations/powerful-platform.svg',
     title: 'Powerful Platform',
     subtitle: 'Entirely transparent, free and accessible at all times.'
   },
   {
-    img: '/img/placeholder-squared.svg',
+    img: '/img/illustrations/open-api.svg',
     title: 'Open API',
     subtitle: 'Create the next generation DApp to solve world’s biggest challenges.'
   },
   {
-    img: '/img/placeholder-squared.svg',
+    img: '/img/illustrations/light-weight.svg',
     title: 'Light Weight',
     subtitle: 'No matter what internet connection you have, Humaniq finds a way.'
   }
@@ -147,7 +147,7 @@ const SE_Home = () => (
         text: 'Learn more about Humaniq partners'
       }}
       img ={{
-        src: 'img/placeholder-1.svg',
+        src: 'img/illustrations/the-power-of-blockchain.svg',
         alt: 'Learn more about Humaniq partners'
       }}
     ><A_P type='third'>Join the Humaniq Forum — a public discussion board for entrepreneurs around the world. Connect with other entrepreneurs, find beta users, learn from experienced founders, and get advice on how to overcome early challenges.
@@ -170,14 +170,14 @@ const SE_Home = () => (
       The Humaniq community brings together over one billion investors, accelerators, and companies into one global network. Connect with them and join our community.</A_P>
     </InfoAnimation>
     <Info
-      type = 'hidding-img'
+      type = 'hidding-img-extra'
       title = 'Global Access, Local Impact'
       link ={{
         to: '#',
         text: 'Learn more about Humaniq Use Cases'
       }}
       img ={{
-        src: 'img/placeholder-1.svg',
+        src: 'img/illustrations/global-access.svg',
         alt: 'Learn more about Humaniq Use Cases'
       }}
     >
