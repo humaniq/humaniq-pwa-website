@@ -6,7 +6,7 @@ import BtnImg from './BtnImg'
 import {cssClassName} from 'utils'
 const cn = cssClassName('A_Btn')
 
-const A_Btn = ({type, children, disabled, ...props}) =>{
+const A_Btn = ({type, children, disabled, btnType, ...props}) =>{
 
   disabled = disabled && 'disabled'
 
@@ -15,6 +15,7 @@ const A_Btn = ({type, children, disabled, ...props}) =>{
       return (
         <BtnImg {...{type, children, disabled, ...props}} />
       )
+    case 'window':
     case 'inline':
     case 'link-subscribe':
       return (
@@ -22,27 +23,37 @@ const A_Btn = ({type, children, disabled, ...props}) =>{
           {children}
         </Link>
       )
+    case 'nav-btn':
     default:
       return (
-        <button className={cn('button', {type}, [disabled])} type={type} {...props}>
+        <button className={cn('button', {type}, [disabled])} type={btnType} {...props}>
           {children}
         </button>
       )
   }
 }
+
 A_Btn.propTypes = {
   type: T.oneOf([
-    'link-subscribe', //big blue button
+    'nav-btn', // small white link style button
+    'link-subscribe', //big blue button used on home page
+    'window', //big wide blue button, used on simple form pages
     'interactive', //link button with hover bottom border
     'link', //link without styles display table
     'inline' //link without styles display inline
+  ]).isRequired,
+  btnType: T.oneOf([ // button tag attribute
+    'button',
+    'submit',
+    'reset'
   ]),
   to: T.string.isRequired,
   disabled: T.bool
 };
 
 A_Btn.defaultProps = {
-  to: '#'
+  to: '#',
+  btnType: 'button'
 }
 
 export default A_Btn

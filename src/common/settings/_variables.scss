@@ -5,7 +5,8 @@ $black-1: #333333;
 $black-2: #2c2d30;
 $blue-1: #0088cc;
 $blue-2: #179cde;
-$grayblue: #5481a4;
+$grayblue-1: #5481a4;
+$grayblue-2: #f4f6f8;
 $gray: #e8e8e8;
 
 $text: $black-1; // - text
@@ -17,7 +18,8 @@ $interactive-border-size-1: 3px;
 $interactive-border-size-2: 5px;
 
 $theme-1: $white;
-$theme-2: $grayblue;
+$theme-2: $grayblue-1;
+$theme-3: $grayblue-2;
 
 $interactive-border-b: solid $interactive-border-size-1 $blue-2;
 $interactive-border-l: solid $interactive-border-size-2 $blue-2;

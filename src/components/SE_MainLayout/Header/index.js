@@ -43,14 +43,7 @@ class SE_MainLayoutHeader extends Component {
     const max = 100;
 
     return (
-      <Motion
-        defaultStyle={{x: 0}}
-        style={{
-          x: spring(menuOpen ? max : 0),
-        }}
-      >
-        {({x}) => {
-          return (
+
             <header
               className={cn('root', {headerTheme})}
             >
@@ -59,31 +52,40 @@ class SE_MainLayoutHeader extends Component {
                   <div className={cn('logo')}>
                     <A_logo {...{theme}} />
                   </div>
-                  <nav className={cn('nav')}>
-                    <span
-                      className={cn('nav-main')}
+                    <Motion
+                      defaultStyle={{x: 0}}
                       style={{
-                        transform: `translate(${(slide / 100 * x)}px,0)`
+                        x: spring(menuOpen ? max : 0),
                       }}
-                    >{mainNav}
-                    </span>
-                    <span
-                      className={cn('nav-extra')}
-                      style={{
-                        opacity: x === 0 ? 1 : (x === max ? 0 : 1 / x)
+                    >
+                      {({x}) => {
+                        return (
+                          <nav className={cn('nav')}>
+                            <span
+                              className={cn('nav-main')}
+                              style={{
+                                transform: `translate(${(slide / 100 * x)}px,0)`
+                              }}
+                            >{mainNav}
+                            </span>
+                            <span
+                              className={cn('nav-extra')}
+                              style={{
+                                opacity: x === 0 ? 1 : (x === max ? 0 : 1 / x)
+                              }}
+                              ref={ node => this.navExtraNode = node}
+                            >{extraNav}
+                            </span>
+                            <span className={cn('menu-btn')} onClick={() => onClick()}>
+                              <MenuBtn {...{x, max, theme}}/>
+                            </span>
+                          </nav>
+                        )
                       }}
-                      ref={ node => this.navExtraNode = node}
-                    >{extraNav}
-                    </span>
-                    <span className={cn('menu-btn')} onClick={() => onClick()}>
-                      <MenuBtn {...{x, max, theme}}/>
-                    </span>
-                  </nav>
+                    </Motion>
                 </div>
               </A_Container>
-            </header>)
-        }}
-      </Motion>
+            </header>
     )
   }
 }

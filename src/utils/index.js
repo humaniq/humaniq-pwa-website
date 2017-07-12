@@ -12,6 +12,9 @@ export function cssClassName(string){
   return catnip(cssDecamelize(string))
 }
 
+export function _isContain(arr, element) {
+  return arr.indexOf(element) > -1
+}
 export const simpleSnakeCase = (str) => str.split(/(?=[A-Z])/).join('_').toLowerCase();
 
 export const convert = {
@@ -38,3 +41,11 @@ export function capitalize(string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
+export function deepValueByString(obj, path){
+  path=path.split('.')
+  const length=path.length
+  for (var i=0; i<length; i++){
+    obj = obj[path[i]]
+  }
+  return obj;
+}

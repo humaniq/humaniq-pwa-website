@@ -1,0 +1,58 @@
+@import "common/utils";
+@import "common/settings/variables";
+
+.se-simple-form{
+  &__background{
+    background-color: $theme-3;
+    height: 100vh;
+    &-blue{
+      height: 31vh;
+      background-color: $grayblue-1;
+      min-width: 14rem;
+      position: relative;
+    }
+  }
+
+  &__root{
+    position: absolute;
+    top: calc(100% - 13.9rem);
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40.4rem;
+    margin: 0 auto;
+    @include media($mobile) {
+      top: 0;
+      width: 100%;
+    }
+  }
+
+  &-header{
+    &__root{
+      position: relative;
+      height: 8.2rem;
+      background-color: $grayblue-1;
+      display: flex;
+      justify-content: space-between;
+      align-items: stretch;
+      padding: 0 1.3rem 0 2rem;
+      @include media($mobile) {
+        height: 4.6rem;
+      }
+    }
+
+    &__nav, &__logo{
+      display: flex;
+      align-items: center;
+    }
+  }
+  &__body{
+    padding: 3.2rem 5.5rem;
+    background-color: $white;
+    border-radius: 2px;
+    box-shadow: 0 1px 1px 0 rgba(97, 127, 152, 0.2), 1px 0 0 0 rgba(97, 127, 152, 0.1), -1px 0 0 0 rgba(97, 127, 152, 0.1);
+
+  }
+  &__text{
+    padding-bottom: 3.2rem;
+  }
+}

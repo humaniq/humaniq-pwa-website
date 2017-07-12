@@ -9,7 +9,9 @@ const cn = cssClassName('SE_MainLayout')
 class SE_MainLayout extends Component {
 
   render() {
-    const {isMenuOpened, children, toggleMenu, headerTheme} = this.props
+    const {isMenuOpened, children, toggleMenu, headerTheme, noLayout} = this.props
+    if(noLayout){return children}
+
     return (
       <div>
         <Header

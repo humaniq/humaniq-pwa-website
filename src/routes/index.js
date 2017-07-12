@@ -4,7 +4,7 @@ import App from './App'
 import Home from './Home'
 // import Error from './Error'
 // import Wiki from './Wiki'
-// import Subscribe from './Subscribe'
+import SimpleForm from './SimpleForm'
 // import Partners from './Partners'
 // import Cases from './Cases'
 
@@ -20,13 +20,21 @@ const getRoutes = () => {
         component={Home}
         prepareData={Home.prepareData}
       />
+      <Route path="form"
+      >
+        <IndexRoute
+          component={SimpleForm}
+        />
+        <Route
+           path="*"
+           component={SimpleForm}
+        />
+      </Route>
       {/*<Route path="wiki"*/}
              {/*component={Wiki}*/}
              {/*prepareData={Wiki.prepareData}*/}
       {/*/>*/}
-      {/*<Route path="subscribe"*/}
-             {/*component={Subscribe}*/}
-      {/*/>*/}
+
       {/*<Route path="use-cases"*/}
              {/*component={Cases}*/}
              {/*prepareData={Cases.prepareData}*/}

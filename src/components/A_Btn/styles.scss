@@ -1,4 +1,3 @@
-@import "common/utils";
 @import "common/settings/variables";
 @import "common/utils";
 
@@ -11,6 +10,23 @@
     pointer-events: none;
   }
 
+  &__button{
+    &_type{
+      &_nav-btn{
+        font-size: 1.4rem;
+        font-weight: 600;
+        line-height: 2.6rem;
+        color: $white;
+        padding: 0;
+        padding-right: 1.8rem;
+        &:hover, &:active{
+          text-decoration: underline;
+        }
+        background: url('/img/arow_right.svg') right center / .9rem no-repeat;
+
+      }
+    }
+  }
   &__link {
     display: table;
     text-align: center;
@@ -29,6 +45,19 @@
       }
       &_link{
         //кажись тут ничего нет.
+      }
+      &_window{
+        padding: .8rem 1.6rem 1rem;
+        color: white;
+        background-color: $interactive;
+        height: 5.3rem;
+        line-height: 3.5rem ;
+        border-radius: 6px;
+        box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.2);
+        font-size: 1.7rem;
+        font-weight: 600;
+        text-align: center;
+        width: 100%
       }
       &_link-subscribe{
         padding: .8rem 1.6rem 1rem;
