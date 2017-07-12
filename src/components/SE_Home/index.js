@@ -170,7 +170,7 @@ const SE_Home = () => (
       The Humaniq community brings together over one billion investors, accelerators, and companies into one global network. Connect with them and join our community.</A_P>
     </InfoAnimation>
     <Info
-      type = 'hidding-img-extra'
+      type = 'hidding-img'
       title = 'Global Access, Local Impact'
       link ={{
         to: '#',
