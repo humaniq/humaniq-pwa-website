@@ -15,30 +15,29 @@ class SE_SimpleFormJoinForm extends Component {
   state = {
     values: {
       email: '',
-      website: '',
-      description: ''
+      companyWebsite: '',
+      businessDescription: ''
     },
     submitted: false,
     errors: {
       email: '',
-      website: '',
-      description: ''
+      companyWebsite: '',
+      businessDescription: ''
     }
   }
 
 
   onSubmit = (handleSubmit) => (e) => {
     e.preventDefault()
-    const {email, website, description} = this.state.values
-    if (this.validate({email}) && this.validate({website}) && this.validate({description})) {
-      handleSubmit({email, website, description})
+    const {email, companyWebsite, businessDescription} = this.state.values
+    if (this.validate({email}) && this.validate({companyWebsite}) && this.validate({businessDescription})) {
+      handleSubmit({email, companyWebsite, businessDescription})
       this.setState({submitted: true})
     }
   }
 
   validate = (obj) => {
     const [name, value] = Object.entries(obj)[0]
-    console.log(name, value)
     let error
     switch(name){
       case 'email':
@@ -48,14 +47,14 @@ class SE_SimpleFormJoinForm extends Component {
           error = 'Looks like an invalid email address'
         }
         break;
-      case 'website':
+      case 'companyWebsite':
         if (!value) {
           error = 'Please fill website name field'
         } else if (!validateWebsiteName(value)) {
           error = 'Looks like an invalid url address'
         }
         break;
-      case 'description':
+      case 'businessDescription':
         !value && (error = 'Please fill description field')
         break;
     }
@@ -75,7 +74,7 @@ class SE_SimpleFormJoinForm extends Component {
   render() {
     const {handleSubmit} = this.props
     const {
-      values: {email, website, description},
+      values: {email, companyWebsite, businessDescription},
       errors,
       submitted,
     } = this.state
@@ -112,18 +111,18 @@ class SE_SimpleFormJoinForm extends Component {
               handleChange={text => this.onChange('email', text, errors.email)}
             />
             <A_InputText
-              value={website}
+              value={companyWebsite}
               onChange
-              placeholder="yourwebsite.com"
-              error={errors.website}
-              handleChange={text => this.onChange('website', text, errors.website)}
+              placeholder="yourcompanyWebsite.com"
+              error={errors.companyWebsite}
+              handleChange={text => this.onChange('companyWebsite', text, errors.companyWebsite)}
             />
             <A_InputText
-              value={description}
+              value={businessDescription}
               onChange
               placeholder="What are you building?"
-              error={errors.description}
-              handleChange={text => this.onChange('description', text, errors.description)}
+              error={errors.businessDescription}
+              handleChange={text => this.onChange('businessDescription', text, errors.businessDescription)}
             />
           </div>
         )}

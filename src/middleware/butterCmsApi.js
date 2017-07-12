@@ -1,27 +1,27 @@
 import request from 'superagent'
 import {stringify} from 'qs'
-import {API_ROOT, AUTH_TOKEN, ENDPOINTS} from 'constants/api'
+import {BUTTER_CMS_API_URL, BUTTER_CMS_API_AUTH_TOKEN, BUTTER_CMS_API_ENDPOINTS} from 'constants/api'
 import {REQUEST, CONTENT, WIKI, POST, START, SUCCESS, FAIL, ERROR} from 'constants'
 // import {convert} from 'utils'
 
-export const BUTTER_API = 'BUTTER_API'
+export const BUTTER_CMS_CALL = 'BUTTER_CMS_CALL'
 
 const nextAction = (action, data) => (
-  {...action, ...data, [BUTTER_API]: undefined}
+  {...action, ...data, [BUTTER_CMS_CALL]: undefined}
 )
 
 export default () => next => action => {
-  if (!action[BUTTER_API]) return next(action)
+  if (!action[BUTTER_CMS_CALL]) return next(action)
 
   const
-    {data, butter: butterType} = action[BUTTER_API],
+    {data, butter: butterType} = action[BUTTER_CMS_CALL],
     actionType = butterType === CONTENT ? data.collection.toUpperCase() : butterType,
     requestType = REQUEST + actionType + START,
     successType = REQUEST + actionType + SUCCESS,
     failureType = REQUEST + actionType + FAIL
 
   let
-    endpoint = ENDPOINTS[butterType.toLowerCase()],
+    endpoint = BUTTER_CMS_API_ENDPOINTS[butterType.toLowerCase()],
     query
 
   switch(butterType) {
@@ -66,8 +66,8 @@ export default () => next => action => {
 function APICall({endpoint, query}) {
   return new Promise((resolve, reject) => {
     let
-      r = request.get(`${API_ROOT + endpoint}`),
-      authToken = {auth_token: AUTH_TOKEN}
+      r = request.get(`${BUTTER_CMS_API_URL + endpoint}`),
+      authToken = {auth_token: BUTTER_CMS_API_AUTH_TOKEN}
 
     r.query(stringify(authToken))
 

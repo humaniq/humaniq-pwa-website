@@ -9,6 +9,7 @@ class AppRoute extends Component {
 
   static prepareData(store, query, params, location) {
     if(initialLoad()) return;
+    // store.dispatch(fetchWiki())
     return store.dispatch(setRoute(location.pathname))
   }
 

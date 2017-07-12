@@ -1,6 +1,6 @@
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux'
-import {submit} from 'AC/SimpleForms'
+import {submit} from 'AC/simpleForms'
 import SE_SimpleForm from 'SE_SimpleForm'
 
 function mapStateToProps(state) {

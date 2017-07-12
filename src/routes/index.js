@@ -22,12 +22,13 @@ const getRoutes = () => {
       />
       <Route path="form"
       >
-        <IndexRoute
-          component={SimpleForm}
+        <Route
+           path="join"
+           component={SimpleForm}
         />
         <Route
-           path="*"
-           component={SimpleForm}
+          path="subscribe"
+          component={SimpleForm}
         />
       </Route>
       {/*<Route path="wiki"*/}

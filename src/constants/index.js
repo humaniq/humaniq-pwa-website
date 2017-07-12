@@ -14,6 +14,8 @@ export const MENU = 'MENU'
 export const CONTENT = 'CONTENT'
 export const STATIC_DATA = 'STATIC_DATA'
 export const WIKI = 'WIKI'
+export const JOIN_FORM = 'JOIN_FORM'
+export const SUBSCRIBE_FORM = 'SUBSCRIBE_FORM'
 
 export const START = '_START'
 export const SUCCESS = '_SUCCESS'
