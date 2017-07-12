@@ -10,6 +10,7 @@ const A_P = ({children, type}) =>(
 
 A_P.propTypes = {
   type: T.oneOf([
+    'hero', // 15/26 + blue border on left side
     'first', // 	18/28
     'second', // 14
     'third', // 15/26

@@ -5,7 +5,7 @@ import Home from './Home'
 // import Error from './Error'
 // import Wiki from './Wiki'
 import SimpleForm from './SimpleForm'
-// import Partners from './Partners'
+import Partners from './Partners'
 // import Cases from './Cases'
 
 // you are reciving store in function
@@ -40,10 +40,10 @@ const getRoutes = () => {
              {/*component={Cases}*/}
              {/*prepareData={Cases.prepareData}*/}
       {/*/>*/}
-      {/*<Route path="Partners"*/}
-             {/*component={Partners}*/}
-             {/*prepareData={Partners.prepareData}*/}
-      {/*/>*/}
+      <Route path="Partners"
+             component={Partners}
+             // prepareData={Partners.prepareData}
+      />
       {/*<Route*/}
         {/*path="/error/:err"*/}
         {/*component={Error}*/}
