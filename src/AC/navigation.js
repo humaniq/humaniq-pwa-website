@@ -1,8 +1,9 @@
-import {SET, MENU, OPEN, CLOSE, TOGGLE, OPEN_PAGE} from 'constants'
+import {SET, MENU, OPEN, CLOSE, TOGGLE, OPEN_ROUTE} from 'constants'
 
-export function setPage(data) {
+export function setRoute(str) {
+  const data = str.split('/').filter(entry => entry.trim() != '')
   return ({
-    type: SET + OPEN_PAGE,
+    type: SET + OPEN_ROUTE,
     data
   })
 }

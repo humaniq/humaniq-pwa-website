@@ -3,13 +3,13 @@ import * as T from "prop-types";
 import MainLayoutContainer from 'containers/MainLayoutContainer'
 // import {fetchWiki} from "AC/wiki";
 import initialLoad from 'utils/initialLoad'
-import {setPage} from 'AC/navigation'
+import {setRoute} from 'AC/navigation'
 
 class AppRoute extends Component {
 
   static prepareData(store, query, params, location) {
     if(initialLoad()) return;
-    return store.dispatch(setPage(location.pathname))
+    return store.dispatch(setRoute(location.pathname))
   }
 
   render() {

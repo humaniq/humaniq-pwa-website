@@ -1,0 +1,25 @@
+@import "common/settings/variables";
+@import "common/utils";
+
+.a-input-text{
+  &__root{
+    input{
+      width: 100%;
+      border: none;
+      border-bottom: 1px solid #e6e6e6;
+      padding-bottom: .8rem;
+      font-size: 1.4rem;
+      color: $text;
+      &::placeholder {
+        color: #a2a2a2;
+      }
+    }
+    & + &{
+      padding-top: 3rem // todo: change after final ui-kit, used on simple form join
+    }
+
+  }
+  &__error{
+    color: red
+  }
+}

@@ -33,7 +33,7 @@ A_Link.propTypes = {
   type: T.oneOf([
     'primary', // brand blue link
     'white', // white links
-    'section-link' //blue links in info blocks
+    'section-link' //blue links in info blocks automatically add ` here »`
   ]),
   disabled: T.bool,
   children: T.node.isRequired

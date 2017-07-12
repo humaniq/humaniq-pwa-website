@@ -43,7 +43,8 @@ A_H.propTypes = {
   type: T.oneOf([
     'home-hero', //home page hero title
     'bs', // blue title uses at hero home page, 16/24
-    'xs', // black title uses at hero home page, 16/24
+    'window', // black bold title 16/24 uses on subscribe/personal/join pages
+    'xs', // black title uses at hero home page, 13/20 bold
     'section', //black title used for sections 23/32 padding-bottom 10
     'section-c', //black title used for sections 23/32 padding-bottom 30, always text-align center
   ]),

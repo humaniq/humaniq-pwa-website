@@ -32,7 +32,7 @@ $icon-size: 20rem;
         font-size: 10vw;
       }
       @include media($mobile) {
-        font-size: 12vw;
+        font-size: 15vw;
       }
     }
     &_bs {
@@ -43,6 +43,13 @@ $icon-size: 20rem;
       color: $brand;
     }
 
+    &_window{
+      padding-bottom: 1.6rem;
+      font-size: 1.6rem;
+      font-weight: bold;
+      line-height: 2.4rem;
+      color: $title;
+    }
     &_xs {
       font-size: 13px;
       font-weight: bold;
