@@ -45,7 +45,7 @@ class A_Image extends Component {
           {...props}
         />
         <div style={imgReady ? {display: 'none'} : {}} className={cn('loader')} >
-          loading
+          {/*loading*/}
         </div>
       </span>
     )
