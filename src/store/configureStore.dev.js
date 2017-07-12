@@ -2,12 +2,15 @@ import {createStore, applyMiddleware} from 'redux';
 import {composeWithDevTools} from 'redux-devtools-extension';
 import reducer from 'reducer';
 import error from 'middleware/error';
-import apiButter from 'middleware/apiButter'
+import humaniqBackendApi from 'middleware/humaniqBackendApi'
+import butterCmsApi from 'middleware/butterCmsApi'
+
 // import createLogger from 'redux-logger';
 
 const enhancer = composeWithDevTools(
   applyMiddleware(
-    apiButter,
+    humaniqBackendApi,
+    butterCmsApi,
     error),
 );
 

@@ -8,6 +8,7 @@
     "node": "6.11.0"
   },
   "scripts": {
+    "api": "cd simple-api && nodemon server.js",
     "build": "NODE_ENV=production node ./initializers/webpack/build.js",
     "start": "NODE_ENV=production node ./initializers/server/index.js",
     "postinstall": "npm run build",

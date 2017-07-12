@@ -1,0 +1,15 @@
+{
+  "name": "testing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "cors": "^2.8.1",
+    "express": "^4.14.0",
+    "node-uuid": "^1.4.7",
+    "nodemon": "^1.11.0"
+  }
+}

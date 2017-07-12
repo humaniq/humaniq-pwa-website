@@ -1,9 +1,9 @@
-import {BUTTER_API} from 'middleware/apiButter'
+import {BUTTER_CMS_CALL} from 'middleware/butterCmsApi'
 import {CLOSE, POST} from 'constants'
 
 export function fetchPost(id) {
   return ({
-    [BUTTER_API]: {
+    [BUTTER_CMS_CALL]: {
       butter: POST,
       data:{id}
     }

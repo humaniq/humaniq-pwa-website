@@ -1,4 +1,4 @@
-import {BUTTER_API} from 'middleware/apiButter'
+import {BUTTER_CMS_CALL} from 'middleware/butterCmsApi'
 import {CONTENT, STATIC_DATA} from 'constants'
 import {convert} from 'utils'
 
@@ -6,7 +6,7 @@ export function fetchContent(collection, ...slugs) {
   slugs = slugs.map( str => convert.toSnake(str))
 
   return ({
-    [BUTTER_API]: {
+    [BUTTER_CMS_CALL]: {
       butter: CONTENT,
       data:{
         collection,

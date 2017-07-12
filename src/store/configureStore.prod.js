@@ -1,9 +1,10 @@
 import {createStore, applyMiddleware} from 'redux';
 import reducer from 'reducer';
 import error from 'middleware/error';
-import apiButter from 'middleware/apiButter'
+import humaniqBackendApi from 'middleware/humaniqBackendApi'
+import butterCmsApi from 'middleware/butterCmsApi'
 
-const enhancer = applyMiddleware(apiButter, error)
+const enhancer = applyMiddleware(humaniqBackendApi, butterCmsApi, error)
 
 const store = (initialState = {}) => createStore(
   reducer,
