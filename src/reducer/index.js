@@ -3,7 +3,9 @@ import {combineReducers} from 'redux'
 // import post from './post'
 // import staticContent from './staticContent'
 import navigation from './navigation'
+import partners from './partners'
 
 export default combineReducers({
-  navigation
+  navigation,
+  partners
 });

@@ -8,6 +8,7 @@ const A_H = ({type, icon, children, center}) =>{
 
   let tagType
   switch(type){
+    case 'hero':
     case 'home-hero':
       tagType = 'h1'
       break;
@@ -41,6 +42,7 @@ const A_H = ({type, icon, children, center}) =>{
 
 A_H.propTypes = {
   type: T.oneOf([
+    'hero', //black bold 25
     'home-hero', //home page hero title
     'bs', // blue title uses at hero home page, 16/24
     'window', // black bold title 16/24 uses on subscribe/personal/join pages
