@@ -11,7 +11,8 @@ import A_P from 'A_P'
 import A_Image from 'A_Image'
 import A_Btn from 'A_Btn'
 import M_Dropdown from 'M_Dropdown'
-
+import Tooltip from './Tooltip'
+import A_Link from 'A_Link'
 
 class SE_Partners extends Component {
   state = {
@@ -27,9 +28,17 @@ class SE_Partners extends Component {
     }
 
     return (
-      filtered.map( partner =>
+      filtered.map( (partner, i) =>
         <div className={cn('partner-list-item')} key={partner.title}>
           <A_Image src={partner.logoLink} alt={partner.title}/>
+          <span className={cn('tooltip')}>
+            <Tooltip>
+              {partner.title}{' '}
+              {partner.type}{' '}
+              {partner.description}<br />
+              <A_Link to={partner.link} external>More info » </A_Link>
+            </Tooltip>
+          </span>
         </div>
       )
     )
