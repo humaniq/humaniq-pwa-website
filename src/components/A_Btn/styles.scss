@@ -2,15 +2,14 @@
 @import "common/utils";
 
 .a-btn{
-  user-select: none;
-  cursor: pointer;
-  box-sizing: border-box;
-
   &.disabled{
     pointer-events: none;
   }
 
   &__button{
+    user-select: none;
+    cursor: pointer;
+    box-sizing: border-box;
     &_type{
       &_nav-btn{
         font-size: 1.4rem;
@@ -23,11 +22,25 @@
           text-decoration: underline;
         }
         background: url('/img/arow_right.svg') right center / .9rem no-repeat;
-
+      }
+      &_standart-form{
+        user-select: none;
+        border-radius: $form-radius;
+        background-color: $interactive;
+        color: $white;
+        padding-left: 2.2rem;
+        padding-right: 2.2rem;
+        font-size: 1.7rem;
+        vertical-align: top;
+        height: 5.3rem;
+        box-shadow: $form-shadow;
       }
     }
   }
   &__link {
+    user-select: none;
+    cursor: pointer;
+    box-sizing: border-box;
     display: table;
     text-align: center;
     box-sizing: border-box;
@@ -45,6 +58,22 @@
       }
       &_link{
         //кажись тут ничего нет.
+      }
+      &_link-standart-form{
+        font-family: OpenSans;
+
+        display: inline-flex;
+        align-items: center;
+        user-select: none;
+        border-radius: $form-radius;
+        background-color: $interactive;
+        color: $white;
+        padding-left: 2.2rem;
+        padding-right: 2.2rem;
+        font-size: 1.7rem;
+        height: 5.3rem;
+        box-shadow: $form-shadow;
+        vertical-align: top;
       }
       &_window{
         padding: .8rem 1.6rem 1rem;
@@ -79,14 +108,6 @@
       }
     }
   }
-
-
-
-
-
-
-
-
 }
 
 

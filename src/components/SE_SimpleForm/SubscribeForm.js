@@ -20,7 +20,6 @@ class SE_SimpleFormSubscribeForm extends Component {
     error: ''
   }
 
-
   onSubmit = (handleSubmit) => (e) => {
     e.preventDefault()
     const {email} = this.state.values
