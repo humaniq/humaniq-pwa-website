@@ -14,7 +14,7 @@ const checkMark = (
 class M_Select extends Component {
   state = {
     value: this.props.value || this.props.options[0].value,
-    isOpen: false
+    isOpened: false
   }
 
 
@@ -23,7 +23,7 @@ class M_Select extends Component {
   }
 
   closeMenu(){
-    this.setState({isOpen:false})
+    this.setState({isOpened:false})
   }
 
   handleChange = (value) => {
@@ -33,11 +33,11 @@ class M_Select extends Component {
   }
 
   handleClick = () =>{
-    if(!this.state.isOpen)
-      this.setState({isOpen: true})
+    if(!this.state.isOpened)
+      this.setState({isOpened: true})
   }
 
-  getListOptions(options, isOpen, value) {
+  getListOptions(options, isOpened, value) {
     const renderOptions = options.map(opt => {
       const selected = value === opt.value
       return (
@@ -58,7 +58,7 @@ class M_Select extends Component {
     })
 
     return (
-      <ul className={cn('list-options', {closed: !isOpen})}>
+      <ul className={cn('list-options', {closed: !isOpened})}>
         {renderOptions}
       </ul>
     )
@@ -68,17 +68,16 @@ class M_Select extends Component {
     const {options} = this.props
     const name = this.props.name || ''
     const id = this.props.id || name
-    const {value, isOpen} = this.state
+    const {value, isOpened} = this.state
     const { label } = options.find( option => option.value === value)
     return (
-      <div className={cn('root', {isOpen})}
+      <div className={cn('root', {isOpened})}
            onClick={this.handleClick}
       >
-        <select name={name} id={id}>
-        </select>
+        <select name={name} id={id} />
         <div className={cn('label')}>{label}</div>
         <div className={cn('triangle')} />
-        {this.getListOptions(options, isOpen, value)}
+        {this.getListOptions(options, isOpened, value)}
       </div>
     )
   }

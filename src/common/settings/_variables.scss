@@ -7,15 +7,28 @@ $blue-1: #0088cc;
 $blue-2: #179cde;
 $grayblue-1: #5481a4;
 $grayblue-2: #f4f6f8;
-$gray: #e8e8e8;
+$gray-1: #e8e8e8;
+$gray-2: #c5c5c5;
+$gray-3: #b3b3b3;
+$red-1: #ff1744;
 
 $text: $black-1; // - text
 $title: $black-2; // - title
+$brand: $blue-1; //- brand text
+$interactive: $blue-2; // itneractive text (links, buttons, ...etc)
 
-$brand: #0088cc; //- brand text
-$interactive: #179cde; // itneractive text (links, buttons, ...etc)
-$interactive-border-size-1: 3px;
-$interactive-border-size-2: 5px;
+
+//forms
+$form-border-color: $gray-2;
+$form-error-color: $red-1;
+$form-disabled-color: $gray-3;
+$form-placeholder-color: $gray-3;
+$form-mark-color: $black-1;
+$form-radius: .6rem;
+$form-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.2);
+
+$interactive-border-size-1: .3rem;
+$interactive-border-size-2: .3rem;
 
 $theme-1: $white;
 $theme-2: $grayblue-1;
@@ -24,7 +37,7 @@ $theme-3: $grayblue-2;
 $interactive-border-b: solid $interactive-border-size-1 $blue-2;
 $interactive-border-l: solid $interactive-border-size-2 $blue-2;
 
-$border-line: solid 1px $gray;
+$border-line: solid 1px $gray-1;
 
 
 

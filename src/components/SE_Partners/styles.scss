@@ -1,4 +1,24 @@
 @import "common/utils";
 
 .se-partners{
+  &__partner-list{
+    display: flex;
+    flex-flow: wrap;
+    &-item{
+      flex: 0 0 24.5rem;
+      height: 12rem;
+      align-items: center;
+      border: 1px solid grey;
+    }
+  }
+
+  &__form{
+    padding-top: 4rem;
+    text-align: center;
+    margin-bottom: 4rem;
+    &-select{
+      margin-right: 3rem;
+    }
+  }
+
 }

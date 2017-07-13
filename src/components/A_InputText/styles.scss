@@ -6,12 +6,12 @@
     input{
       width: 100%;
       border: none;
-      border-bottom: 1px solid #e6e6e6;
+      border-bottom: 1px solid $form-border-color;
       padding-bottom: .8rem;
       font-size: 1.4rem;
       color: $text;
       &::placeholder {
-        color: #a2a2a2;
+        color: $form-placeholder-color;
       }
     }
     & + &{
@@ -20,6 +20,6 @@
 
   }
   &__error{
-    color: red
+    color: $form-error-color
   }
 }

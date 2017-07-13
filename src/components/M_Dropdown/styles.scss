@@ -1,0 +1,78 @@
+@import "common/settings/variables";
+@import "common/utils";
+
+.m-dropdown{
+  &__root{
+    position: relative;
+
+  }
+  &__select{
+    user-select: none;
+    cursor: pointer;
+    display: inline-flex;
+    border-radius: $form-radius;
+    background-color: $white;
+    border: solid 1px $form-border-color;
+    min-width: 13.3rem;
+    align-items: center;
+    color: $interactive;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-size: 16px;
+    line-height: 22px;
+    height: 5.3rem;
+    box-shadow: $form-shadow;
+
+    &-text{
+      font-size: 1.7rem;
+      font-weight: 600;
+      margin: 0 auto;
+      padding-right: 2.7rem;
+      &:after{
+        content: '';
+        position: absolute;
+        top: 50%;
+        transform: translate(0,-50%);
+        right: 0;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-top: 6px solid $interactive;
+      }
+    }
+
+  }
+
+  &__list-options{
+    z-index: 1;
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0 auto;
+    display: block;
+    background-color: $white;
+    border: 1px solid $form-border-color;
+    &-item{
+      user-select: none;
+      cursor: pointer;
+      &:hover{
+        background-color: $form-disabled-color;
+      }
+    }
+    @include media($mobile) {
+      width: 100%;
+      border-radius: 0;
+    }
+  }
+  &__list-wrapper{
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0 .5rem;
+    width: 100%;
+
+  }
+}
+
+.a-select__select:hover .a-select__select-text:after{
+  border-top: 6px solid $interactive;
+}
