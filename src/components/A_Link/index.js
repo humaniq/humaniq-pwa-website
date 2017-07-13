@@ -35,6 +35,7 @@ A_Link.propTypes = {
     'white', // white links
     'section-link' //blue links in info blocks automatically add ` here »`
   ]),
+  external: T.bool, // for external links
   disabled: T.bool,
   children: T.node.isRequired
 };
