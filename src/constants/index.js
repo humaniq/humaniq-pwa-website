@@ -1,6 +1,8 @@
 export const REQUEST = 'REQUEST_'
 export const OPEN = 'OPEN_'
 export const TOGGLE = 'TOGGLE_'
+export const FETCH = 'FETCH'
+
 
 export const CLOSE = 'CLOSE_'
 export const SET = 'SET_'
@@ -10,6 +12,8 @@ export const POST = 'POST'
 export const POSTS = 'POSTS'
 export const ERROR = 'ERROR'
 export const MENU = 'MENU'
+export const PARTNERS = 'PARTNERS'
+
 
 export const CONTENT = 'CONTENT'
 export const STATIC_DATA = 'STATIC_DATA'
