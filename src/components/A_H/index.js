@@ -11,6 +11,12 @@ const A_H = ({type, icon, children, center}) =>{
     case 'hero':
       tagType = 'h1'
       break;
+    case 'section':
+      tagType = 'h3'
+      break;
+    case 'section-sub':
+      tagType = 'h4'
+      break;
     case 'bs':
     case 'tooltip':
     case 's':
@@ -21,7 +27,6 @@ const A_H = ({type, icon, children, center}) =>{
     case 'xs':
       tagType = 'h6'
       break;
-    case 'section':
     default:
       tagType = 'h3'
   }
@@ -50,6 +55,8 @@ A_H.propTypes = {
     'tooltip-sub', //blue subtitle 15/26 used on tooltip marign bottom 8px
     'xs', // black title uses at hero home page, 13/20 bold
     'section', //black title used for sections 23/32 padding-bottom 10
+    'section-sub', //black title used for sections 23/32 padding-bottom 10
+
     'section-c', //black title used for sections 23/32 padding-bottom 30, always text-align center
   ]),
   icon: T.oneOf([
