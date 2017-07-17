@@ -4,23 +4,26 @@ import './styles.scss';
 import {cssClassName} from 'utils'
 const cn = cssClassName('M_Tooltip')
 
-const M_Tooltip = ({message, children, hide = false}) =>{
-  hide = (hide || !message) ? 'hide' : ''
+const M_Tooltip = ({children, type}) =>{
   return(
-    <span className={cn('wrapper')}>
-      {children}
-      <div className={cn('root', [hide])}>
-        <div className={cn('text')}>{message}</div>
-        <div className={cn('arrow')}/>
+      <div className={cn('wrapper')}>
+        <div className={cn('root', {type})}>
+          {children}
+        </div>
       </div>
-    </span>
   )
 }
 
 M_Tooltip.propTypes = {
-  children: T.any.isRequired
+  type: T.oneOf([
+    'left',
+    'right',
+    'top',
+    'bottom',
+  ]),
 };
 
 M_Tooltip.defaultProps = {
+  type: 'right'
 }
 export default M_Tooltip

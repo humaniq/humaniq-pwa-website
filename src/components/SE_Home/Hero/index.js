@@ -8,7 +8,7 @@ import A_Image from 'A_Image'
 import A_H from 'A_H'
 import A_P from 'A_P'
 import A_Btn from 'A_Btn'
-
+import Title from './title'
 
 const SE_HomeHero = ({explorerData}) =>{
 
@@ -26,7 +26,7 @@ const SE_HomeHero = ({explorerData}) =>{
     <A_Container>
       <div className={cn('root')}>
         <div className={cn('welcome')}>
-          <A_H type="home-hero"><span style={{marginLeft: -6, whiteSpace: 'nowrap'}}>Banking the</span><br/><span>Unbanked</span></A_H>
+          <Title />
           <div className={cn('welcome-text')}>
             <A_P type="first" >Humaniq is a simple and secure mobile banking app, based on Ethereum Blockchain. Humaniq tool of financial inclusion connects 2 billion unbanked people to the global economy. </A_P>
           </div>

@@ -3,16 +3,17 @@
 
 .btn-img{
   &__root{
-    max-width: 100%;
+    width: 100%;
     margin-bottom: $interactive-border-size-1;
+    display: flex;
+    flex-flow: column;
     &:hover, &:active{
       border-bottom: $interactive-border-b;
       margin-bottom: 0;
     }
   }
   &__img{
-    width: 100%;
-    height: auto;
+
     @include media($tablet) {
       width: 20rem;
       height: auto;

@@ -44,13 +44,11 @@ const SE_HomeGallery = ({entities, title, type}) =>{
 
   return (
     <A_Container type={containerType}>
-      <div>
 
         <A_H type="section-c" center >{title}</A_H>
         <div className={cn('galery', {type})}>
           {rederedItems}
         </div>
-      </div>
     </A_Container>
   )
 }

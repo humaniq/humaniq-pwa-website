@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import * as T from "prop-types";
-import M_Title from 'M_Title'
+
 
 class SE_Error extends Component {
 
@@ -15,9 +15,9 @@ class SE_Error extends Component {
 
     return (
       <div>
+        url: {url}
+        error: {error}
         <M_Title center>{message}</M_Title>
-        {url && <p>The requested resource "{url}" is not found.</p>}
-        {error && <p>Error: {error}</p>}
       </div>
     )
   }

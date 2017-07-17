@@ -12,7 +12,7 @@
     }
     &-item{
       flex: 0 1 26rem;
-      height: 100%;
+      height: auto;
       margin: 2rem 1rem 0;
 
       &-title{
@@ -20,8 +20,8 @@
         margin-bottom: 0rem;
       }
       &-img{
-        width: 100%;
-        height: auto;
+        width: 26rem;
+        height: 26rem;
         margin-bottom: .9rem;
         @include media($tablet) {
           width: 20rem;

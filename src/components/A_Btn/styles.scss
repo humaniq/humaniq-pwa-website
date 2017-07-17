@@ -1,6 +1,8 @@
 @import "common/settings/variables";
 @import "common/utils";
 
+$form-btn-border-radius: 30px;
+
 .a-btn{
   &.disabled{
     pointer-events: none;
@@ -46,15 +48,13 @@
     box-sizing: border-box;
     vertical-align: middle;
     @include media($mobile) {
-      margin: 0 auto;
-    }
-    @include media($tablet) {
       width: 100%;
-      max-width: $w-mobile
+      margin: 0 auto;
     }
     &_type{
       &_inline{
-        display: inline;
+        display: inline-block;
+        text-align: center;
       }
       &_link{
         //кажись тут ничего нет.
@@ -65,14 +65,15 @@
         display: inline-flex;
         align-items: center;
         user-select: none;
-        border-radius: $form-radius;
+        border-radius: $form-btn-border-radius;
+        //border-radius: $form-radius;
         background-color: $interactive;
         color: $white;
         padding-left: 2.2rem;
         padding-right: 2.2rem;
         font-size: 1.7rem;
         height: 5.3rem;
-        box-shadow: $form-shadow;
+        //box-shadow: $form-shadow;
         vertical-align: top;
       }
       &_window{
@@ -94,13 +95,14 @@
         background-color: $interactive;
         height: 5.3rem;
         line-height: 3.5rem ;
-        border-radius: 6px;
-        box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.2);
+        border-radius: $form-btn-border-radius;
         font-size: 1.7rem;
         font-weight: 600;
         text-align: center;
-        @include media($desktop) {
-          width: 20rem;
+        width: 20rem;
+
+        @include media($mobile) {
+          width: 100%;
         }
       }
       &_interactive{

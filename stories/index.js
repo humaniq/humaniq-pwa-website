@@ -8,7 +8,6 @@ import {
 import {action} from '@storybook/addon-actions';
 import {linkTo} from '@storybook/addon-links';
 
-
 // import { withKnobs,
 //   text,
 //   // boolean,
@@ -22,6 +21,7 @@ import {linkTo} from '@storybook/addon-links';
 // import O_QuickTip from 'O_QuickTip'
 // import O_ArticleList from 'O_ArticleList'
 // import A_Btn from 'A_Btn'
+import M_Tooltip from 'M_Tooltip'
 import FlyingLogos from 'SE_Home/InfoAnimation/FlyingLogos'
 import A_Link from 'A_Link'
 import A_Logo from 'A_Logo'
@@ -29,6 +29,8 @@ import A_Logo from 'A_Logo'
 import Header from 'SE_MainLayout/Header'
 import Footer from 'SE_MainLayout/Footer'
 import SE_MainLayout from 'SE_MainLayout'
+import HomePageHero from 'SE_Home/Hero/index.js';
+import Title from 'SE_Home/Hero/title.js';
 
 
 const styleDecorator = (storyFn) => (
@@ -60,6 +62,31 @@ const mobile = (storyFn) => (
 
 
 addDecorator(styleDecorator)
+
+storiesOf('tooltip ', module)
+  .addDecorator(storyFN => <div style={{padding: 30, margin: 300, widht: 800, height: 800,
+    backgroundColor: 'dodgerblue'
+  }}>{storyFN()}</div>)
+  .add('right', () => (
+    <M_Tooltip type="right">тесты<br/>тесты<br/>тесты<br/>тесты<br/>тесты<br/></M_Tooltip>
+  ))
+  .add('left', () => (
+    <M_Tooltip type="left">тесты<br/>тесты<br/>тесты<br/>тесты<br/>тесты<br/></M_Tooltip>
+  ))
+  .add('top', () => (
+    <M_Tooltip type="top">тесты<br/>тесты<br/>тесты<br/>тесты<br/>тесты<br/></M_Tooltip>
+  ))
+  .add('bottom', () => (
+    <M_Tooltip type="bottom">тесты<br/>тесты<br/>тесты<br/>тесты<br/>тесты<br/></M_Tooltip>
+  ));
+
+
+storiesOf('the shadow of the title', module)
+  .addDecorator(storyFN => <div style={{margin: 300, widht: 800, height: 800}}>{storyFN()}</div>)
+  .add('', () => (
+    <Title />
+  ));
+
 
 storiesOf('Logo', module)
   .addDecorator(storyFN => <div style={{backgroundColor: 'dodgerblue'}}>{storyFN()}</div>)

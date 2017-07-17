@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="18px" viewBox="0 0 18 18" version="1.1">
+  <!-- Generator: Sketch 45.2 (43514) - http://www.bohemiancoding.com/sketch -->
+  <title>linkedin</title>
+  <desc>Created with Sketch.</desc>
+  <defs/>
+  <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g id="Footer-/-Desktop" transform="translate(-1032.000000, -184.000000)" fill-rule="nonzero" fill="#179CDE">
+      <g id="Trailer" transform="translate(0.000000, -1.000000)">
+        <g id="Group-25" transform="translate(814.000000, 185.000000)">
+          <g id="Group-23">
+            <g id="linkedin" transform="translate(218.000000, 0.000000)">
+              <path d="M14.25,0 L3.75,0 C1.67925,0 0,1.67925 0,3.75 L0,14.25 C0,16.32075 1.67925,18 3.75,18 L14.25,18 C16.3215,18 18,16.32075 18,14.25 L18,3.75 C18,1.67925 16.3215,0 14.25,0 Z M6,14.25 L3.75,14.25 L3.75,6 L6,6 L6,14.25 Z M4.875,5.049 C4.1505,5.049 3.5625,4.4565 3.5625,3.726 C3.5625,2.9955 4.1505,2.403 4.875,2.403 C5.5995,2.403 6.1875,2.9955 6.1875,3.726 C6.1875,4.4565 5.60025,5.049 4.875,5.049 Z M15,14.25 L12.75,14.25 L12.75,10.047 C12.75,7.521 9.75,7.71225 9.75,10.047 L9.75,14.25 L7.5,14.25 L7.5,6 L9.75,6 L9.75,7.32375 C10.797,5.38425 15,5.241 15,9.18075 L15,14.25 Z" id="Shape"/>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

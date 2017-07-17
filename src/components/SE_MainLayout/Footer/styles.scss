@@ -23,6 +23,7 @@
   &__nav {
     width: 68%;
     display: flex;
+    flex-shrink: 1;
     align-items: stretch;
     @include media($mobile) {
       width: 100%;
@@ -93,8 +94,8 @@
   }
 
   &__aux {
-    width: 32%;
-    min-width: 200px;
+    flex: 0 0 32%;
+    min-width: 30.5rem;
     @include media($mobile) {
       width: 100%;
     }

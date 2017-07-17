@@ -9,12 +9,17 @@ import A_Image from 'A_Image'
 const BtnImg = ({type, children, to, img}) =>(
   <div className={cn('root', {type})}>
     <A_Btn type="inline" to={to}>
-      <div>
-        <div className={cn('img')}>
-          <A_Image src={img.src} alt={img.alt} link/>
-        </div>
-        <div className={cn('body')}>{children}</div>
+      <div className={cn('img')}>
+        <img
+          src={img.src}
+          alt={img.alt}
+          width={211}
+          height={231}
+
+        />
       </div>
+
+      <div className={cn('body')}>{children}</div>
     </A_Btn>
   </div>
 )
