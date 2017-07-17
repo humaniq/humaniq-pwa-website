@@ -10,5 +10,9 @@ export const BUTTER_CMS_API_ENDPOINTS = {
 }
 
 export const HUMANIQ_BACKEND_API_URL = 'http://localhost:3001'
-export const ENDPOINT_JOIN_FORM = `/subscriptions/partners`
-export const ENDPOINT_SUBSCRIBE_FORM = `/subscriptions/newsletters`
+
+export const ENDPOINT_JOIN_FORM = `${HUMANIQ_BACKEND_API_URL}/subscriptions/partners`
+export const ENDPOINT_SUBSCRIBE_FORM = `${HUMANIQ_BACKEND_API_URL}/subscriptions/newsletters`
+
+
+export const ENDPOINT_PARTNERS_LIST = `https://s3-eu-west-1.amazonaws.com/humaniq-web-backend-public/partners/partners.json`

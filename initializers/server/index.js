@@ -1,6 +1,7 @@
 const path = require('path');
 require('app-module-path').addPath(path.join(process.cwd(), 'src'));
 require('./globals')
+const cors = require('cors');
 
 require('babel-core/register');
 ['.css', '.less', '.sass', '.ttf', '.woff', '.woff2', '.scss'].forEach((ext) => require.extensions[ext] = () => {
@@ -10,6 +11,13 @@ const port = process.env.PORT || 8080;
 
 const express = require('express')
 const application = express()
+
+var corsOptions = {
+  origin: 'https://s3-eu-west-1.amazonaws.com/',
+  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+}
+
+application.use(cors(corsOptions));
 
 application.use(express.static('static'));
 

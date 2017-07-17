@@ -9,13 +9,13 @@ const initPartners = {
     "title": "Blockchain Community",
     "type": "Business Partners",
     "description": "Blockchain.community is a voluntary borderless community of entrepreneurs, services, experts and blockchain enthusiasts.",
-    "link": "http://blockchain.community/",
+    "link": "blockchain.community/",
     "logoLink": "https://s3-eu-west-1.amazonaws.com/humaniq-web-backend-public/partners/logos/blockchaincommunity.png"
   }, {
     "title": "Deep Knowledge Ventures",
     "type": "Business Partners",
     "description": "Deep Knowledge Ventures is a venture capital firm based in Hong Kong with an office in London. The fund primarily invests in healthcare and artificial intelligence.",
-    "link": "http://www.deepknowledgeventures.com/",
+    "link": "www.deepknowledgeventures.com/",
     "logoLink": "https://s3-eu-west-1.amazonaws.com/humaniq-web-backend-public/partners/logos/deepknowledgeventures.png"
   }, {
     "title": "Deloitte",
@@ -27,13 +27,13 @@ const initPartners = {
     "title": "Future Fintech",
     "type": "Business Partners",
     "description": "Future Fintech - the international community of experts in the area of financial and blokchain technology projects as well as the selection of the program and the acceleration fintech startups from Russia, CIS countries and Europe.",
-    "link": "http://www.futurefintech.org/",
+    "link": "www.futurefintech.org/",
     "logoLink": "https://s3-eu-west-1.amazonaws.com/humaniq-web-backend-public/partners/logos/futurefintech.png"
   }, {
     "title": "Level39",
     "type": "Business Partners",
     "description": "Level39 is the world's most connected community for finance, cybersecurity, retail and smart-city technology businesses.",
-    "link": "http://www.level39.co/",
+    "link": "www.level39.co/",
     "logoLink": "https://s3-eu-west-1.amazonaws.com/humaniq-web-backend-public/partners/logos/level39.png"
   }, {
     "title": "Qugla ",
@@ -51,19 +51,19 @@ const initPartners = {
     "title": "Hedge Think",
     "type": "Media Partners",
     "description": "Digital meeting place for fund managers and investors.",
-    "link": "https://http://www.hedgethink.com/",
+    "link": "https://www.hedgethink.com/",
     "logoLink": "https://s3-eu-west-1.amazonaws.com/humaniq-web-backend-public/partners/logos/hedgethink.png"
   }, {
     "title": "Intelligent HQ",
     "type": "Media Partners",
     "description": "The definitive authority for social businesses a digital network for growth, education, change and innovation.",
-    "link": "https://http://www.intelligenthq.com/",
+    "link": "https://www.intelligenthq.com/",
     "logoLink": "https://s3-eu-west-1.amazonaws.com/humaniq-web-backend-public/partners/logos/intelligenthq.png"
   }, {
     "title": "Open Business Council",
     "type": "Media Partners",
     "description": "Open Business Council - SME Startups resources, Trade Finance, Invoice Finance, Asset Finance, Business Intelligence, software.",
-    "link": "https://http://www.openbusinesscouncil.org/",
+    "link": "https://www.openbusinesscouncil.org/",
     "logoLink": "https://s3-eu-west-1.amazonaws.com/humaniq-web-backend-public/partners/logos/openbusinesscouncil.png"
   }, {
     "title": "Richtopia",
@@ -75,7 +75,7 @@ const initPartners = {
     "title": "TradersDNA",
     "type": "Media Partners",
     "description": "TradersDNA offers premiere resources for trading and investing education and digital resources for personal finance.",
-    "link": "https://http://www.tradersdna.com/",
+    "link": "https://www.tradersdna.com/",
     "logoLink": "https://s3-eu-west-1.amazonaws.com/humaniq-web-backend-public/partners/logos/tradersdna.png"
   }, {
     "title": "Bitaps",
@@ -93,13 +93,13 @@ const initPartners = {
     "title": "Kairos",
     "type": "Technical Partners",
     "description": "Kairos is a facial recognition company. Our face analysis algorithms recognize & understand how people feel in video, photos & the real-world.",
-    "link": "https://http://www.kairos.com/",
+    "link": "https://www.kairos.com/",
     "logoLink": "https://s3-eu-west-1.amazonaws.com/humaniq-web-backend-public/partners/logos/kairos.png"
   }, {
     "title": "NTechLab",
     "type": "Technical Partners",
     "description": "NTechLab develops and implements artificial intelligence algorithms. We are a team of experts in machine and deep learning.",
-    "link": "http://ntechlab.com/",
+    "link": "ntechlab.com/",
     "logoLink": "https://s3-eu-west-1.amazonaws.com/humaniq-web-backend-public/partners/logos/ntechlab.png"
   }, {
     "title": "The Invaders",
@@ -117,7 +117,7 @@ const initPartners = {
     "title": "VisionLabs",
     "type": "Technical Partners",
     "description": "VisionLabs is one of the world-leading computer vision companies. We develop software and solutions for finance and retail sectors.",
-    "link": "http://www.visionlabs.ru/ru/",
+    "link": "www.visionlabs.ru/ru/",
     "logoLink": "https://s3-eu-west-1.amazonaws.com/humaniq-web-backend-public/partners/logos/visionlabs.png"
   }]
 }
