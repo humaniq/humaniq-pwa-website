@@ -48,7 +48,9 @@ const socials = [
   {network: 'twitter', link: 'https://twitter.com/Humaniq_co'},
   {network: 'github', link: 'https://github.com/humaniq'},
   {network: 'youtube', link: 'https://www.youtube.com/channel/UCXatRidLHbngYUtF8JXICPA'},
-  {network: 'slack', link: 'https://humaniq-co.slack.com '}
+  {network: 'slack', link: 'https://humaniq-co.slack.com'},
+  {network: 'linkedin', link: 'https://www.linkedin.com/company/humaniq'},
+  {network: 'instagram', link: 'https://www.instagram.com/humaniq.co/'}
 ]
 
 class SE_MainLayoutFooter extends Component {

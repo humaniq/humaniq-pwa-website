@@ -4,30 +4,12 @@ import './styles.scss';
 import {cssClassName} from 'utils'
 const cn = cssClassName('SE_Wiki')
 const teaser = {title: 'Welcome to Humaniq Wiki', description: 'Here you’ll find any useful information you need.'}
-import O_Teaser from 'O_Teaser'
-import M_TeaserStandardContent from 'M_TeaserStandardContent'
 import O_Hero from 'O_Hero'
 import O_QuickTip from 'O_QuickTip'
 import O_ArticleList from 'O_ArticleList'
 const SE_Wiki = () => (
   <div className={cn('root')}>
-    <O_Teaser theme='dark'>
-      <M_TeaserStandardContent teaser={teaser}/>
-    </O_Teaser>
-    <O_Hero
-      inbuild={{
-        img: 'img/mock/holder_120x120.png',
-        title: 'Technical Mecca',
-        text: 'Maecenas quis condimentum libero. Phasellus lorem lacus, laoreet sed consectetur in, sagittis non nunc.',
-        url: '/#'
-      }}
-      framed={{
-        img: 'img/mock/holder_128x128.png',
-        title: 'About Humaniq',
-        text: 'Donec fermentum sapien eu posuere pulvinar. Sed dapibus massa ut dapibus faucibus. Aenean facilisis odio.',
-        url: '/#'
-      }}
-    />
+
     <div className={cn('tip')}>
       <O_QuickTip
         imgSrc='img/mock/holder_25x25.png'

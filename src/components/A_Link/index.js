@@ -33,7 +33,9 @@ A_Link.propTypes = {
   type: T.oneOf([
     'primary', // brand blue link
     'white', // white links
-    'section-link' //blue links in info blocks automatically add ` here »`
+    'section-link', //blue links in info blocks automatically add ` here »`
+    'section-link-clean' //blue links in info blocks automatically without 'here »'
+
   ]),
   external: T.bool, // for external links
   disabled: T.bool,

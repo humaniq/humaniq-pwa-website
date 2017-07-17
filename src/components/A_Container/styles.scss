@@ -23,7 +23,7 @@
       padding-bottom: 1.8rem;
       border-bottom: $border-line;
       @include media($desktop) {
-        margin-bottom: 4rem;
+        margin-bottom: 8rem;
       }
     }
     &_equal{
@@ -32,7 +32,7 @@
     }
     &_section-interactive{
       padding-top: 3.2rem;
-      padding-bottom: 4rem;
+      padding-bottom: 8rem;
       @include media($tablet) {
         padding-bottom: 0rem;
 

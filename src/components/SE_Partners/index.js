@@ -11,12 +11,19 @@ import A_P from 'A_P'
 import A_Image from 'A_Image'
 import A_Btn from 'A_Btn'
 import M_Dropdown from 'M_Dropdown'
-import Tooltip from './Tooltip'
+import M_Tooltip from 'M_Tooltip'
 import A_Link from 'A_Link'
 
 class SE_Partners extends Component {
+
   state = {
-    filter: 'All'
+    filter: 'All',
+  }
+
+  nodes = []
+
+  componentDidMount(){
+    this.forceUpdate()
   }
 
   getPartners(entities, filter){
@@ -28,19 +35,42 @@ class SE_Partners extends Component {
     }
 
     return (
-      filtered.map( (partner, i) =>
-        <div className={cn('partner-list-item')} key={partner.title}>
-          <A_Image src={partner.logoLink} alt={partner.title}/>
-          <span className={cn('tooltip')}>
-            <Tooltip>
-              {partner.title}{' '}
-              {partner.type}{' '}
-              {partner.description}<br />
-              <A_Link to={partner.link} external>More info » </A_Link>
-            </Tooltip>
-          </span>
-        </div>
-      )
+      filtered.map( (partner, i) =>{
+        let tooltipPlace;
+        if(
+          this.nodes[0]
+          && this.nodes[i+1]
+          && (this.nodes[0].offsetLeft + this.nodes[i+1].offsetLeft > 160)
+        ){
+          tooltipPlace = 'left'
+        } else{
+          tooltipPlace = 'right'
+        }
+
+        return(
+          <div
+            className={cn('partner-list-item')}
+            key={partner.title}
+            ref = { node => this.nodes[i+1] = node}
+          >
+            <A_Image
+              src={'img/mock/partners.svg'}
+              alt={partner.title}
+            />
+            <span className={cn('tooltip', {type:tooltipPlace})} >
+              <M_Tooltip type = {tooltipPlace}>
+                <A_H type='tooltip'>{partner.title}</A_H>
+                <span onClick={() => this.setState({filter: partner.type})} style={{cursor: 'pointer'}}>
+                  <A_H type='tooltip-sub'>{partner.type}</A_H>
+                </span>
+                {partner.type}{' '}
+                {partner.description}<br />
+                <A_Link to={partner.link} external type='section-link-clean'>More info » </A_Link>
+              </M_Tooltip>
+            </span>
+          </div>
+        )
+      })
     )
   }
 
@@ -49,7 +79,6 @@ class SE_Partners extends Component {
     const options =['All', ...types]
 
     const {filter} = this.state
-    console.log(filter, 'filter')
     return (
       <div>
         <Meta />
@@ -73,7 +102,10 @@ class SE_Partners extends Component {
               to='/form/join'
             >Join Humaniq Network</A_Btn>
           </div>
-          <div className={cn('partner-list')}>
+          <div
+            className={cn('partner-list')}
+            ref = { node => this.nodes[0] = node}
+          >
             {this.getPartners(entities, filter)}
           </div>
         </A_Container>

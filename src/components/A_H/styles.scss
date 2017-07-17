@@ -1,20 +1,6 @@
 @import "common/settings/variables";
 @import "common/utils";
 
-@function makelongshadow() {
-  //$val: 0px 0px rgba(230, 230, 230, 1);
-  $val: 0px 0px rgba(235, 235, 235, 1);
-
-  @for $i from 1 through 100 {
-    $val: #{$val}, #{-$i}px #{$i}px rgba(235, 235, 235, (round((100 - $i)/ 10) / 10) );
-  }
-  @return $val;
-}
-
-@mixin longshadow() {
-  text-shadow: makelongshadow();
-}
-
 $icon-size: 20rem;
 
 .a-h{
@@ -27,26 +13,28 @@ $icon-size: 20rem;
       margin-bottom: 1.4rem;
     }
 
-    &_home-hero {
-      @include longshadow();
-      z-index: -1;
-      font-size: 87px;
-      font-weight: 700;
-      line-height: 1.12em;
-      padding-bottom: 2rem;
-      @include media($tablet) {
-        font-size: 10vw;
-      }
-      @include media($mobile) {
-        font-size: 15vw;
-      }
-    }
     &_bs {
       padding-bottom: 1rem;
       font-size: 1.6rem;
       font-weight: bold;
       line-height: 2.4rem;
       color: $brand;
+    }
+
+    &_tooltip-sub{
+      font-size: 1.5rem;
+      line-height: 2.6rem;
+      color: $interactive;
+      padding-bottom: .8rem;
+
+    }
+
+    &_tooltip{
+      padding-bottom: .2rem;
+      font-size: 1.6rem;
+      font-weight: bold;
+      line-height: 2.4rem;
+      color: $title;
     }
 
     &_window{

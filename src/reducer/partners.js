@@ -21,7 +21,7 @@ const initPartners = {
     "title": "Deloitte",
     "type": "Business Partners",
     "description": "Deloitte provides industry-leading audit, consulting, tax, and advisory services to many of the world's most admired brands, including 80 percent of the Fortune 500.",
-    "link": "https://http://www2.deloitte.com/us/en.htm",
+    "link": "https://www2.deloitte.com/us/en.htm",
     "logoLink": "https://s3-eu-west-1.amazonaws.com/humaniq-web-backend-public/partners/logos/deloitte.png"
   }, {
     "title": "Future Fintech",

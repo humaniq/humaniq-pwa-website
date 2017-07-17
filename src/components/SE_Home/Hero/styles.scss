@@ -5,7 +5,7 @@
 
   &__root{
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     padding: 11.6rem 0 9.6rem;
     align-items: flex-start;
     @include media($tablet) {
@@ -19,16 +19,35 @@
 
   &__welcome{
     align-self: flex-start;
-    flex: 0 0 60%;
+    flex: 0 0 53.2rem;
+    padding-left: .9rem;
+
+    @include media($tablet) {
+      flex-basis: 50rem;
+      width: 53.2rem;
+      padding-left: .3rem;
+
+    }
+    @include media($mobile) {
+      flex-basis: 100%;
+      width: auto;
+    }
+
     &-text{
-      margin-bottom: 2.7rem;
+      margin-bottom: 3.1rem;
     }
   }
 
   &__explorer{
-    flex: 0 0 40%;
+    flex: 0 0 35.5rem;
     @include media($tablet) {
-      margin-bottom: 4rem;
+      flex-basis: 26.3rem;
+      width: 53.2rem;
+    }
+
+
+    @include media($desktop) {
+      padding-top: 1.5rem;
     }
     &-info{
       border-left: $interactive-border-l;
@@ -40,8 +59,6 @@
         margin-bottom: 3.5rem;
       }
       &-data{
-        padding: 0;
-        marging: 0;
         vertical-align: top;
         font-size: 1.3rem;
         line-height: 2rem;
@@ -53,6 +70,9 @@
         }
       }
     }
+
+
+
     &-img{
       width: 28.3rem;
       height: 9.8rem;
@@ -62,6 +82,9 @@
     }
   }
   &__subscribe-text{
+    display:inline-block;
+    margin-top: 1.6rem;
+
     @include media($mobile) {
       text-align: center;
     }

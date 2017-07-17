@@ -6,7 +6,6 @@ const A_Logo = ({theme, size}) => {
   const color = theme === 'dark' ? '#253039' : '#fff'
   const style = {
     width: size === 'small' ? 103 : 131,
-    // height: size === 'small' ? 24 : 32,
   }
   return (
       <A_Link to="/" >

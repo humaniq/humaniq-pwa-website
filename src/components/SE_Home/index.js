@@ -83,7 +83,7 @@ const SE_Home = () => (
     <Gallery
       entities={links}
       type='links'
-      title="Banking with HMQ"
+      title="Financial inclusion with Humaniq"
     />
     <Info
       type = 'moving-title'
