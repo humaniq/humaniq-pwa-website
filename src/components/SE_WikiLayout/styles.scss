@@ -1,0 +1,14 @@
+@import "common/settings/variables";
+@import "common/utils";
+
+.se-wiki-layout{
+  &__search{
+    background-color: $theme-2;
+    height: 23rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+    color: $white;
+  }
+}

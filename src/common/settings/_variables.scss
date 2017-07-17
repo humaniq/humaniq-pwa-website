@@ -5,6 +5,7 @@ $black-1: #333333;
 $black-2: #2c2d30;
 $blue-1: #0088cc;
 $blue-2: #179cde;
+$blue-3: #ecf3fa;
 $grayblue-1: #5481a4;
 $grayblue-2: #f4f6f8;
 $gray-1: #e8e8e8;
@@ -35,6 +36,9 @@ $theme-2: $grayblue-1;
 $theme-3: $grayblue-2;
 
 $interactive-border-b: solid $interactive-border-size-1 $blue-2;
+$interactive-border-b-white: solid $interactive-border-size-1 $white;
+
+
 $interactive-border-l: solid $interactive-border-size-2 $blue-2;
 
 $border-line: solid 1px $gray-1;

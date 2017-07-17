@@ -27,7 +27,7 @@ class SE_MainLayoutHeader extends Component {
 
   getNavLink({name, url}, theme) {
     return (
-      <span className={cn('nav-btn')} key={'key=' + name} >
+      <span className={cn('nav-btn', {theme})} key={'key=' + name} >
         <A_Link to={url} {...{type: (theme === 'dark' ? 'primary' : 'white')}}>{name}</A_Link>
       </span>
     )

@@ -49,3 +49,18 @@ export function deepValueByString(obj, path){
   }
   return obj;
 }
+
+export function getArticleLinks(arr, section){
+  return(
+    arr.map( article => {
+      const categoryUrl = convert.toKebab(article.category)
+      const articleUrl = convert.toKebab(article.title)
+      return({
+        title: article.title,
+        url: `/wiki/${section}/${articleUrl}`,
+        section: section,
+        category: categoryUrl
+      })
+    })
+  )
+}

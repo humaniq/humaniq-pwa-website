@@ -1,21 +1,17 @@
 import React, {Component} from 'react';
-import WikiContainer from 'containers/WikiContainer'
-import initialLoad from 'utils/initialLoad'
-import {setPage} from 'AC/navigation'
+import WikiLayoutContainer from 'containers/WikiLayoutContainer'
 
-class WikiRoute extends Component {
-
-  static prepareData({dispatch}) {
-    if(initialLoad()) return;
-  }
+class WikiLayoutRoute extends Component {
 
   render() {
     return (
       <div>
-        <WikiContainer />
+        <WikiLayoutContainer >
+          {this.props.children}
+        </WikiLayoutContainer>
       </div>
     )
   }
 }
 
-export default WikiRoute;
+export default WikiLayoutRoute;

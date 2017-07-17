@@ -53,6 +53,11 @@
         border-bottom: $interactive-border-b;
         padding-top: $interactive-border-size-1; //compensation
       };
+      &_theme_light{
+        &:hover{
+          border-bottom: $interactive-border-b-white;
+        };
+      }
     }
   }
   &__menu-btn{
