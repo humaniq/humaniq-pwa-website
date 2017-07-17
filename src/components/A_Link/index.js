@@ -34,7 +34,8 @@ A_Link.propTypes = {
     'primary', // brand blue link
     'white', // white links
     'section-link', //blue links in info blocks automatically add ` here »`
-    'section-link-clean' //blue links in info blocks automatically without 'here »'
+    'section-link-clean', //blue links in info blocks automatically without 'here »'
+    'block' // display block link
 
   ]),
   external: T.bool, // for external links

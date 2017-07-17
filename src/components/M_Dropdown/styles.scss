@@ -4,6 +4,9 @@
 .m-dropdown{
   &__root{
     position: relative;
+    @include media($mobile) {
+      width: 100%;
+    }
 
   }
   &__select{
@@ -22,7 +25,9 @@
     line-height: 22px;
     height: 5.3rem;
     box-shadow: $form-shadow;
-
+    @include media($mobile) {
+      width: 100%;
+    }
     &-text{
       font-size: 1.7rem;
       font-weight: 600;
