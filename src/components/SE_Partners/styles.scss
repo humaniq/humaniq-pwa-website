@@ -1,14 +1,26 @@
+@import "common/settings/variables";
 @import "common/utils";
 
 .se-partners{
   &__partner-list{
     display: flex;
     flex-flow: wrap;
+    margin: 0 auto;
+    justify-content: center;
     &-item{
-      flex: 0 0 24.5rem;
-      height: 12rem;
+      flex-basis: 24.5rem;
+      height: auto;
       align-items: center;
-      border: 1px solid grey;
+      &-empty{
+        flex-basis: 24.5rem;
+      }
+      @include media($mobile) {
+        flex-basis: 14.4rem;
+        height: auto;
+        &-empty{
+          flex-basis: 14.4rem;
+        }
+      }
     }
   }
 
@@ -18,6 +30,12 @@
     margin-bottom: 4rem;
     &-select{
       margin-right: 3rem;
+      display: inline-block;
+      @include media($mobile) {
+        width: 100%;
+        margin: 0;
+        margin-bottom: 1.6rem;
+      }
     }
   }
   &__tooltip{
@@ -35,8 +53,25 @@
       }
     }
   }
+  &__link{
+    display: none;
+    position: absolute;
+    left:0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
 }
 
 .se-partners__partner-list-item:hover .se-partners__tooltip{
   display: block;
+  @include media($tablet) {
+    display: none;
+  }
+}
+
+.se-partners__partner-list-item:hover .se-partners__link{
+  @include media($tablet) {
+    display: block;
+  }
 }

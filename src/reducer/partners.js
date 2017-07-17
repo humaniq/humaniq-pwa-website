@@ -9,13 +9,13 @@ const initPartners = {
     "title": "Blockchain Community",
     "type": "Business Partners",
     "description": "Blockchain.community is a voluntary borderless community of entrepreneurs, services, experts and blockchain enthusiasts.",
-    "link": "blockchain.community/",
+    "link": "http://blockchain.community/",
     "logoLink": "https://s3-eu-west-1.amazonaws.com/humaniq-web-backend-public/partners/logos/blockchaincommunity.png"
   }, {
     "title": "Deep Knowledge Ventures",
     "type": "Business Partners",
     "description": "Deep Knowledge Ventures is a venture capital firm based in Hong Kong with an office in London. The fund primarily invests in healthcare and artificial intelligence.",
-    "link": "www.deepknowledgeventures.com/",
+    "link": "http://www.deepknowledgeventures.com/",
     "logoLink": "https://s3-eu-west-1.amazonaws.com/humaniq-web-backend-public/partners/logos/deepknowledgeventures.png"
   }, {
     "title": "Deloitte",
@@ -27,13 +27,13 @@ const initPartners = {
     "title": "Future Fintech",
     "type": "Business Partners",
     "description": "Future Fintech - the international community of experts in the area of financial and blokchain technology projects as well as the selection of the program and the acceleration fintech startups from Russia, CIS countries and Europe.",
-    "link": "www.futurefintech.org/",
+    "link": "http://www.futurefintech.org/",
     "logoLink": "https://s3-eu-west-1.amazonaws.com/humaniq-web-backend-public/partners/logos/futurefintech.png"
   }, {
     "title": "Level39",
     "type": "Business Partners",
     "description": "Level39 is the world's most connected community for finance, cybersecurity, retail and smart-city technology businesses.",
-    "link": "www.level39.co/",
+    "link": "http://www.level39.co/",
     "logoLink": "https://s3-eu-west-1.amazonaws.com/humaniq-web-backend-public/partners/logos/level39.png"
   }, {
     "title": "Qugla ",
@@ -99,7 +99,7 @@ const initPartners = {
     "title": "NTechLab",
     "type": "Technical Partners",
     "description": "NTechLab develops and implements artificial intelligence algorithms. We are a team of experts in machine and deep learning.",
-    "link": "ntechlab.com/",
+    "link": "http://ntechlab.com/",
     "logoLink": "https://s3-eu-west-1.amazonaws.com/humaniq-web-backend-public/partners/logos/ntechlab.png"
   }, {
     "title": "The Invaders",
@@ -117,7 +117,7 @@ const initPartners = {
     "title": "VisionLabs",
     "type": "Technical Partners",
     "description": "VisionLabs is one of the world-leading computer vision companies. We develop software and solutions for finance and retail sectors.",
-    "link": "www.visionlabs.ru/ru/",
+    "link": "http://www.visionlabs.ru/ru/",
     "logoLink": "https://s3-eu-west-1.amazonaws.com/humaniq-web-backend-public/partners/logos/visionlabs.png"
   }]
 }
