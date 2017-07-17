@@ -1,0 +1,10 @@
+@import "common/settings/variables";
+@import "common/utils";
+
+
+.o-crumbs{
+  &__root{
+    background-color: $blue-3;
+    padding: .9rem 1.6rem
+  }
+}

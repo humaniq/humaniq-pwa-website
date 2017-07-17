@@ -4,8 +4,11 @@ import {combineReducers} from 'redux'
 // import staticContent from './staticContent'
 import navigation from './navigation'
 import partners from './partners'
+import wiki from './wiki'
+
 
 export default combineReducers({
   navigation,
-  partners
+  partners,
+  wiki
 });

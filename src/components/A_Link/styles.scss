@@ -16,6 +16,13 @@
       color: $interactive;
     }
 
+    &_crumbs{
+      color: $interactive;
+      font-size: 1.2rem;
+      font-weight: 600;
+      vertical-align: top;
+    }
+
     &_hero-list-links{
       font-size: 1.5rem;
       line-height: 2.6rem;

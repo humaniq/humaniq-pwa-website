@@ -4,7 +4,7 @@ import SE_MainLayout from 'SE_MainLayout'
 import {toggleMenu} from 'AC/navigation'
 import {_isContain} from 'utils'
 
-const blueMainLayoutPages = [] // pages with normal layout + dark theme
+const blueMainLayoutPages = ['wiki'] // pages with normal layout + dark theme
 const noMainLayoutPages = ['form'] // pages with their own layout
 
 function mapStateToProps(state) {
