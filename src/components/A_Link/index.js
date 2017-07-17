@@ -32,6 +32,7 @@ const A_Link = ({children, type, block, disabled, external, to, ...props}) => {
 A_Link.propTypes = {
   type: T.oneOf([
     'primary', // brand blue link
+    'hero-list-links', // brand blue link 15/26
     'white', // white links
     'section-link', //blue links in info blocks automatically add ` here »`
     'section-link-clean', //blue links in info blocks automatically without 'here »'

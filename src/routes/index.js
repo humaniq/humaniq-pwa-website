@@ -6,7 +6,7 @@ import Home from './Home'
 // import Wiki from './Wiki'
 import SimpleForm from './SimpleForm'
 import Partners from './Partners'
-// import Cases from './Cases'
+import Cases from './Cases'
 
 // you are reciving store in function
 const getRoutes = () => {
@@ -36,10 +36,9 @@ const getRoutes = () => {
              {/*prepareData={Wiki.prepareData}*/}
       {/*/>*/}
 
-      {/*<Route path="use-cases"*/}
-             {/*component={Cases}*/}
-             {/*prepareData={Cases.prepareData}*/}
-      {/*/>*/}
+      <Route path="use-cases"
+             component={Cases}
+      />
       <Route path="Partners"
              component={Partners}
              // prepareData={Partners.prepareData}

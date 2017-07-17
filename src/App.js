@@ -11,6 +11,17 @@ import {closeMenu} from 'AC/navigation'
 
 const store = createStore(window.__INITIAL_STATE__)
 
+function hashLinkScroll() {
+  const { hash } = window.location;
+  if (hash !== '') {
+    setTimeout(() => {
+      const id = hash.replace('#', '');
+      const element = document.getElementById(id);
+      if (element) element.scrollIntoView();
+    }, 0);
+  }
+}
+
 const App = () => (
   <Provider store={store}>
     <Router
@@ -20,6 +31,7 @@ const App = () => (
         window.scrollTo(0, 0)
         const state = store.getState()
         state.navigation.isMenuOpened && store.dispatch(closeMenu())
+        hashLinkScroll()
       }}
     >
       {getRoutes(store)}
