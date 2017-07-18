@@ -1,0 +1,82 @@
+@import "common/settings/variables";
+@import "common/utils";
+
+/* Search Section
+/* ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## */
+
+.search {
+  width: 900px;
+  margin: 0 auto;
+  position: relative;
+  @include media($tablet) {
+    width: 700px;
+  }
+  @include media($mobile) {
+    width: 280px;
+  }
+  .search__input {
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 2;
+    border-radius: 4px;
+    color: rgba(255,255,255,.7);
+    background: rgba(255,255,255,.2);
+    padding: 1.2rem 3rem 1.2rem 2rem;
+    font-family: 'Open Sans', sans-serif;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.03);
+    box-sizing: border-box;
+    transition: all .5s ease;
+    &::-webkit-input-placeholder {
+      color: rgba(255,255,255,0.7);
+    }
+    &:hover {
+      background: rgba(255,255,255,0.27);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.03);
+      font-weight: 400;
+    }
+    &:focus {
+      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+      color: rgba(44,45,48,.4);
+      background: white;
+      color: #3a3c4c;
+      font-weight: 400;
+      &::-webkit-input-placeholder {
+        color: rgba(44,45,48,.4);
+      }
+    }
+  }
+  &.search__input--focused {
+    .search-icon__path {
+      stroke: #35424C!important;
+    }
+    .search-icon__circle {
+      stroke: #35424C!important;
+    }
+  }
+  .search__submit {
+    background: transparent;
+    width: 5rem;
+    height: 5rem;
+    border: none;
+    outline: none;
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    margin-top: -2.7rem;
+    cursor: pointer;
+  }
+  .search-icon {
+    width: 22px;
+    height: 22px;
+    .search-icon__path {
+      stroke: #fff;
+      fill: #fff;
+    }
+    .search-icon__circle {
+      stroke: #fff;
+    }
+  }
+}
