@@ -5,28 +5,28 @@
 /* ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## */
 
 .search {
-  width: 900px;
+  width: 90rem;
   margin: 0 auto;
   position: relative;
   @include media($tablet) {
-    width: 700px;
+    width: 70rem;
   }
   @include media($mobile) {
-    width: 280px;
+    width: 28rem;
   }
   .search__input {
     width: 100%;
     border: none;
     outline: none;
-    font-size: 18px;
+    font-size: 1.8rem;
     font-weight: 400;
     line-height: 2;
-    border-radius: 4px;
+    border-radius: .4rem;
     color: rgba(255,255,255,.7);
     background: rgba(255,255,255,.2);
     padding: 1.2rem 3rem 1.2rem 2rem;
     font-family: 'Open Sans', sans-serif;
-    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.03);
+    box-shadow: 0 .1rem .2rem 0 rgba(0,0,0,0.03);
     box-sizing: border-box;
     transition: all .5s ease;
     &::-webkit-input-placeholder {
@@ -34,11 +34,11 @@
     }
     &:hover {
       background: rgba(255,255,255,0.27);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.03);
+      box-shadow: 0 1rem 2rem rgba(0,0,0,0.03);
       font-weight: 400;
     }
     &:focus {
-      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+      box-shadow: 0 1rem 2rem rgba(0,0,0,0.15);
       color: rgba(44,45,48,.4);
       background: white;
       color: #3a3c4c;
@@ -69,8 +69,8 @@
     cursor: pointer;
   }
   .search-icon {
-    width: 22px;
-    height: 22px;
+    width: 2.2rem;
+    height: 2.2rem;
     .search-icon__path {
       stroke: #fff;
       fill: #fff;
