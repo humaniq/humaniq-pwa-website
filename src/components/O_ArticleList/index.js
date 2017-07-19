@@ -15,7 +15,6 @@ const Oval = ({className}) => (
 
 const O_ArticleList = ({articles, title}) =>{
   const getList = (articles, i) => {
-    console.log({articles})
     const renderedArticles = articles.map( (article, i) => (
       <li key={"key_" + i} className={cn('article-item')}>
         <Oval className={cn('oval')} />
