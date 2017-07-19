@@ -1,0 +1,16 @@
+@import "common/settings/variables";
+@import "common/utils";
+
+.o-menu{
+  float: right;
+  &__nav-links-item{
+    &_active_true{
+      color: #179cde;
+    }
+    &_active_false{
+      .a-link {
+        color: #000;
+      }
+    }
+  }
+}
