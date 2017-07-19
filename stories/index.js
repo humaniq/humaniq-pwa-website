@@ -1,5 +1,6 @@
 import React from 'react';
 import 'common/style.scss'
+import './storyStyles.scss'
 
 import {
   storiesOf,
@@ -25,6 +26,8 @@ import M_Tooltip from 'M_Tooltip'
 import FlyingLogos from 'SE_Home/InfoAnimation/FlyingLogos'
 import A_Link from 'A_Link'
 import A_Logo from 'A_Logo'
+import M_Ripple from 'M_Ripple'
+import SE_SimpleForm from 'SE_SimpleForm'
 
 import Header from 'SE_MainLayout/Header'
 import Footer from 'SE_MainLayout/Footer'
@@ -63,6 +66,32 @@ const mobile = (storyFn) => (
 
 addDecorator(styleDecorator)
 
+storiesOf('M_Ripple', module)
+  .addDecorator(storyFN => <div style={{margin: 300, widht: 800, height: 800}}>{storyFN()}</div>)
+  .add('', () => (
+      <M_Ripple className="st-ripple">
+        <button onClick={action('click')}
+        > click</button>
+      </M_Ripple>
+  ));
+
+storiesOf('SE_SimpleForm', module)
+  .addDecorator(storyFN => <div style={{margin: 300, widht: 800, height: 800}}>{storyFN()}</div>)
+  .add('join', () => (
+    <SE_SimpleForm
+      handleSubmit = {action('submit')}
+      page="join"
+    />
+  ))
+  .add('subscribe', () => (
+    <SE_SimpleForm
+      handleSubmit = {action('submit')}
+      page="subscribe"
+    />
+  ))
+;
+
+
 storiesOf('tooltip ', module)
   .addDecorator(storyFN => <div style={{padding: 30, margin: 300, widht: 800, height: 800,
     backgroundColor: 'dodgerblue'
@@ -86,6 +115,8 @@ storiesOf('the shadow of the title', module)
   .add('', () => (
     <Title />
   ));
+
+
 
 
 storiesOf('Logo', module)
