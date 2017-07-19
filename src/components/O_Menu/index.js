@@ -7,7 +7,7 @@ import A_Link from 'A_Link';
 import A_P from 'A_P';
 
 
-const O_Menu = ({ options, activeLink, handleNavigation }) => {
+const O_Menu = ({ options, activeLink, handleNavigation, rootLink }) => {
   const renderedLinks = options.map(({ anchor, text }) => {
     const isActive = activeLink === anchor;
     return (
@@ -15,7 +15,7 @@ const O_Menu = ({ options, activeLink, handleNavigation }) => {
         {
           isActive
             ? <A_P type="hero">{text}</A_P>
-            : <A_Link to={anchor} type="primary" name={anchor} onClick={handleNavigation}>{text}</A_Link>
+            : <A_Link to={rootLink + anchor} type="primary" name={anchor} onClick={handleNavigation}>{text}</A_Link>
         }
       </li>
     )
