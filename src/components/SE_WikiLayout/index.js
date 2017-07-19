@@ -3,6 +3,7 @@ import * as T from "prop-types";
 import './styles.scss';
 import {cssClassName} from 'utils';
 import O_Search from 'O_Search';
+import O_Transaction from 'O_Transaction';
 const cn = cssClassName('SE_WikiLayout');
 
 class SE_WikiLayout extends Component {
@@ -15,7 +16,7 @@ class SE_WikiLayout extends Component {
           <div className={cn('search')}>
             <O_Search />
           </div>
-
+          <O_Transaction />
           {children}
         </div>
       </div>
