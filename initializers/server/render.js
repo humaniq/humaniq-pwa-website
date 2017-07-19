@@ -21,12 +21,13 @@ export default function(req, res){
 
     if (redirectLocation) {
       return res.redirect(302, redirectLocation.pathname + redirectLocation.search);
-    } else if (error) {
-      return res.redirect(302, '/error/500?error=' + stringify(error));
-    } else if (!renderProps) {
-      const url = location.pathname + location.search
-      return res.redirect(302, '/error/404?url=' + url);
     }
+    // else if (error) {
+    //   return res.redirect(302, '/error/500?error=' + stringify(error));
+    // } else if (!renderProps) {
+    //   const url = location.pathname + location.search
+    //   return res.redirect(302, '/error/404?url=' + url);
+    // }
 
     let status
     const regEx = /(\/error\/(?=(404|500)))/
