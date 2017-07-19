@@ -21,9 +21,7 @@ class A_InputText extends Component {
           <hr />
           <label className={cn('label', {'non-empty': nonEmpty, error: !!error})}>{label}</label>
         </div>
-        {error &&
-          <div className={cn('error')}>{error}</div>
-        }
+        <div className={cn('error')}>{error}</div>
       </fieldset>
     )
   }

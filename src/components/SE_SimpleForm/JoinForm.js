@@ -71,7 +71,7 @@ class SE_SimpleFormJoinForm extends Component {
     }
 
     this.setState({errors: {...this.state.errors, ...errors}})
-    const valid = Object.keys(errors).length === 0
+    const valid = Object.keys(errors).every(key => errors[key] === '')
     return valid
   }
 
@@ -90,7 +90,7 @@ class SE_SimpleFormJoinForm extends Component {
       submitted,
     } = this.state
 
-    console.log(errors)
+    console.log(submitted)
     return (
       <form onSubmit={this.onSubmit(handleSubmit)} className={cn('form')}>
         <Header>
