@@ -65,7 +65,7 @@
       font-size: 1.4rem;
       transform-origin: 0 -150%;
       color: $form-inactive-color;
-      transition: transform 300ms ease ,color 300ms linear;
+      transition: transform 300ms ease, color 300ms linear;
       pointer-events: none;
     }
     input:focus ~ label{
@@ -91,16 +91,3 @@
     color: $form-error-color;
   }
 }
-
-
-//$form-active-color
-
-//width: 100%;
-//          border: none;
-//border-bottom: 1px solid $form-border-color;
-//padding-bottom: .8rem;
-//font-size: 1.4rem;
-//color: $text;
-//&::placeholder {
-//  color: $form-placeholder-color;
-//}

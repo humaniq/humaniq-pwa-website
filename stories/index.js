@@ -15,7 +15,7 @@ import {linkTo} from '@storybook/addon-links';
 //   // number
 // } from '@storybook/addon-knobs';
 
-// import M_Select from 'M_Select';
+import O_ScrollUp from 'O_ScrollUp';
 // import M_InputSelect from 'M_InputSelect'
 // import M_Swipe from 'M_Swipe'
 // import O_Hero from 'O_Hero'
@@ -65,6 +65,13 @@ const mobile = (storyFn) => (
 
 
 addDecorator(styleDecorator)
+
+
+storiesOf('O_ScrollUp', module)
+  .addDecorator(storyFN => <div style={{margin: 300, width: 800, height: 3000, border: '1px solid tomato'}}>{storyFN()}</div>)
+  .add('', () => (
+    <O_ScrollUp />
+  ));
 
 storiesOf('M_Ripple', module)
   .addDecorator(storyFN => <div style={{margin: 300, widht: 800, height: 800}}>{storyFN()}</div>)

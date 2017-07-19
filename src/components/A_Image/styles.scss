@@ -24,6 +24,8 @@
     height: 100%;
     object-fit: cover;
     text-align: center;
+    vertical-align: top;
+
     &_object-fit{
       &_contain{
         object-fit:contain
