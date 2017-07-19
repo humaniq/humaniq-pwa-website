@@ -2,10 +2,13 @@
 @import "common/utils";
 
 .o-menu{
-  float: right;
+  min-width: 30rem;
   &__nav-links-item{
     &_active_true{
       color: #179cde;
+      p{
+        margin-bottom: 0;
+      }
     }
     &_active_false{
       .a-link {
