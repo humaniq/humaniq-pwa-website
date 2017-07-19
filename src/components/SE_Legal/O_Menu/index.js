@@ -36,7 +36,7 @@ O_Menu.propTypes = {
     anchor: T.string,
     text: T.string.isRequired,
   })),
-  activeLink: T.bool,
+  activeLink: T.string,
   handleNavigation: T.func,
 };
 
