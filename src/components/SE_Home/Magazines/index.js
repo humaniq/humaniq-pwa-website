@@ -71,8 +71,6 @@ const SE_HomeMagazines = () =>{
           </div>
       </A_Container>
     </div>
-
-
   )
 }
 

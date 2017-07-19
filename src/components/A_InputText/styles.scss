@@ -3,23 +3,104 @@
 
 .a-input-text{
   &__root{
-    input{
+    margin: 0;
+    padding: 0;
+  }
+  &__inner{
+    position: relative;
+    padding: 0;
+    margin: 0;
+    margin-top: 2rem;
+    border: none;
+    overflow: visible;
+
+    input {
+      box-sizing: border-box;
       width: 100%;
+      padding: 12px 0 8px;
       border: none;
-      border-bottom: 1px solid $form-border-color;
-      padding-bottom: .8rem;
+      border-radius: 0;
+      box-shadow: none;
+      border-bottom: 1px solid $form-inactive-color;
       font-size: 1.4rem;
-      color: $text;
+      outline: none;
+      cursor: text;
       &::placeholder {
-        color: $form-placeholder-color;
+        color: $form-inactive-color;
+        transition: color 300ms ease;
+      }
+      &:not(:focus)::placeholder {
+        color: transparent;
       }
     }
+
+    hr {
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: .2rem;
+      border: none;
+      background: $form-active-color;
+      font-size: 1px;
+      will-change: transform, visibility;
+      transition: all 200ms ease-out;
+      transform: scaleX(0);
+      visibility: hidden;
+      z-index: 10;
+    }
+    input:focus ~ hr {
+      transform: scaleX(1);
+      visibility: visible;
+    }
+
+    label {
+      position: absolute;
+      top: 10px;
+      left: 0;
+      font-size: 1.4rem;
+      transform-origin: 0 -150%;
+      color: $form-inactive-color;
+      transition: transform 300ms ease ,color 300ms linear;
+      pointer-events: none;
+    }
+    input:focus ~ label{
+      transform: scale(0.9) translateY(-20px);
+      color: $form-active-color;
+    }
+
     & + &{
-      padding-top: 3rem // todo: change after final ui-kit, used on simple form join
+      margin-top: 3rem // todo: change after final ui-kit, used on simple form join
     }
 
   }
   &__error{
+    font-size: 1.2rem;
     color: $form-error-color
   }
+  &__root &__label_non-empty_true{
+    transform: scale(0.9) translateY(-20px);
+    color: $form-active-color;
+  }
+  &__root &__label_error_true{
+    transform: scale(0.9) translateY(-20px);
+    color: $form-error-color;
+  }
 }
+
+
+//$form-active-color
+
+//width: 100%;
+//          border: none;
+//border-bottom: 1px solid $form-border-color;
+//padding-bottom: .8rem;
+//font-size: 1.4rem;
+//color: $text;
+//&::placeholder {
+//  color: $form-placeholder-color;
+//}

@@ -29,38 +29,49 @@ class SE_SimpleFormJoinForm extends Component {
 
   onSubmit = (handleSubmit) => (e) => {
     e.preventDefault()
-    const {email, companyWebsite, businessDescription} = this.state.values
-    if (this.validate({email}) && this.validate({companyWebsite}) && this.validate({businessDescription})) {
-      handleSubmit({email, companyWebsite, businessDescription})
+    const {values} = this.state
+    if (this.validate(values)){
+      handleSubmit(values)
       this.setState({submitted: true})
     }
   }
 
-  validate = (obj) => {
-    const [name, value] = Object.entries(obj)[0]
-    let error
-    switch(name){
-      case 'email':
-        if (!value) {
-          error = 'Please fill out our email form'
-        } else if (!validateEmail(value)) {
-          error = 'Looks like an invalid email address'
-        }
-        break;
-      case 'companyWebsite':
-        if (!value) {
-          error = 'Please fill website name field'
-        } else if (!validateWebsiteName(value)) {
-          error = 'Looks like an invalid url address'
-        }
-        break;
-      case 'businessDescription':
-        !value && (error = 'Please fill description field')
-        break;
+  validate(values){
+    let errors = {};
+
+    for (let valueName in values) {
+      const value = values[valueName]
+      switch(valueName){
+        case 'email':
+          if (!value) {
+            errors[valueName] = 'Please fill out our email form'
+          } else if (!validateEmail(value)) {
+            errors[valueName] = 'Looks like an invalid email address'
+          } else {
+            errors[valueName] = ''
+          }
+          break;
+        case 'companyWebsite':
+          if (!value) {
+            errors[valueName] = 'Please fill website name field'
+          } else if (!validateWebsiteName(value)) {
+            errors[valueName] = 'Looks like an invalid url address'
+          } else {
+            errors[valueName] = ''
+          }
+          break;
+        case 'businessDescription':
+          if(!value){
+            errors[valueName] = 'Please fill description field'
+          } else {
+            errors[valueName] = ''
+          }
+          break;
+      }
     }
 
-    this.setState({errors: {...this.state.errors, [name]:error}})
-    const valid = !error
+    this.setState({errors: {...this.state.errors, ...errors}})
+    const valid = Object.keys(errors).length === 0
     return valid
   }
 
@@ -79,6 +90,7 @@ class SE_SimpleFormJoinForm extends Component {
       submitted,
     } = this.state
 
+    console.log(errors)
     return (
       <form onSubmit={this.onSubmit(handleSubmit)} className={cn('form')}>
         <Header>
@@ -106,6 +118,7 @@ class SE_SimpleFormJoinForm extends Component {
             <A_InputText
               value={email}
               onChange
+              label="Email"
               placeholder="your@email.com"
               error={errors.email}
               handleChange={text => this.onChange('email', text, errors.email)}
@@ -113,13 +126,15 @@ class SE_SimpleFormJoinForm extends Component {
             <A_InputText
               value={companyWebsite}
               onChange
-              placeholder="yourcompanyWebsite.com"
+              label="Website"
+              placeholder="your-company-website.com"
               error={errors.companyWebsite}
               handleChange={text => this.onChange('companyWebsite', text, errors.companyWebsite)}
             />
             <A_InputText
               value={businessDescription}
               onChange
+              label="Business description"
               placeholder="What are you building?"
               error={errors.businessDescription}
               handleChange={text => this.onChange('businessDescription', text, errors.businessDescription)}
