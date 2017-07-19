@@ -10,6 +10,7 @@ import Wiki from './Wiki'
 import Wiki0 from './Wiki0'
 import Wiki1 from './Wiki1'
 import Wiki2 from './Wiki2'
+import Legal from './Legal'
 
 const getRoutes = () => {
   return (
@@ -57,7 +58,10 @@ const getRoutes = () => {
       />
       <Route path="Partners"
              component={Partners}
-             // prepareData={Partners.prepareData}
+          // prepareData={Partners.prepareData}
+      />
+      <Route path="Legal"
+             component={Legal}
       />
       {/*<Route*/}
         {/*path="/error/:err"*/}
