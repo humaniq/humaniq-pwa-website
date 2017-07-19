@@ -127,7 +127,20 @@ function mapStateToProps(state) {
               'Our main priority is your data security here at Humaniq. As transparency is one of the principles on which our company is built, we aim to be as clear and open as we can about the way we handle security.',
               'If you have additional questions regarding security, we are happy to answer them. Please write to feedback@humaniq.com and we will respond as quickly as we can.',
             ],
-          }
+          },
+          {
+            header: 'Confidentiality',
+            paragraphs: [
+              'We place strict controls over our employees’ access to the data and code you make available via the Humaniq services, as more specifically defined in your agreement with Humaniq covering the use of the Humaniq services ("Customer Data"), and are committed to ensuring that Customer Data is not seen by anyone who should not have access to it. The operation of the Humaniq services requires that some employees have access to the systems which store and process Customer Data. For example, in order to diagnose a problem you are having with the Humaniq services, we may need to access your Customer Data. These employees are prohibited from using these permissions to view Customer Data unless it is necessary to do so. We have technical controls and audit policies in place to ensure that any access to Customer Data is logged.',
+              'All of our employees and contract personnel are bound to our policies regarding Customer Data and we treat these issues as matters of the highest importance within our company.',
+            ],
+          },
+          {
+            header: 'Personnel Practices',
+            paragraphs: [
+              'Humaniq conducts background checks on all employees before employment, and employees receive security training during onboarding as well as on an ongoing basis. All employees are required to read and sign our comprehensive information security policy covering the security, availability, and confidentiality of the Humaniq services.',
+            ],
+          },
         ]
       },
     ]
