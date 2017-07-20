@@ -6,9 +6,16 @@
 
 .o-transaction {
   &__asset-stats {
-    width: 100%;
+    width: 94rem;
+    margin: 0 auto;
     text-align: left;
     border-collapse: separate;
+    @include media($tablet) {
+      width: 69rem;
+    }
+    @include media($mobile) {
+      width: 90%;
+    }
     tbody {
       display: table;
       table-layout: fixed;
@@ -25,49 +32,59 @@
       }
     }
     &__td {
-      padding: 1rem 2rem;
+      padding: .5rem 0;
       &:nth-child(1) {
-        width: 6%;
+        width: 8%;
+        padding-left: 2rem;
         @include media($tablet) {
           display: none;
         }
         @include media($mobile) {
           display: table-cell;
-          width: 19%;
+          width: 30%;
         }
       }
       &:nth-child(2) {
-        width: 25%;
+        width: 21%;
+        padding-right: 3.5rem;
         @include media($tablet) {
           display: none;
         }
         @include media($mobile) {
+          width: 30%;
+          padding-right: 2rem;
           display: table-cell;
-          width: 45%;
         }
       }
       &:nth-child(3) {
-        width: 5%;
+        width: 7%;
+        padding-left: .5rem;
+        @include media($tablet) {
+          padding-left: 2rem;
+          border-top-left-radius: .4rem;
+          border-bottom-left-radius: .4rem;
+        }
         @include media($mobile) {
           display: none;
         }
       }
       &:nth-child(4) {
-        width: 30%;
+        width: 33%;
         @include media($mobile) {
           display: none;
         }
       }
       &:nth-child(5) {
         width: 20%;
+        padding-left: .7rem;
         @include media($mobile) {
           display: none;
         }
       }
       &:nth-child(6) {
-        width: 15%;
+        width: 11%;
         @include media($mobile) {
-          width: 35%;
+          width: 40%;
         }
       }
       &:first-child {
@@ -99,7 +116,7 @@
           background: red;
           position: absolute;
           top: .3rem;
-          right: 1rem;
+          right: 0;
         }
       }
       &.o-asset-stats__icon--success {
@@ -110,7 +127,7 @@
           background: $blue-1;
           position: absolute;
           top: .3rem;
-          right: 1rem;
+          right: 0;
         }
       }
     }

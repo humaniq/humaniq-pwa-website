@@ -27,8 +27,8 @@ class O_Transaction extends Component {
                   <span className={cn('asset-stats__to')}>To:</span>
                 </td>
                 <td className={cn('asset-stats__td')}>
-                  <a href="javascript:void(0);" className={cn('asset-stats__from-link')}>ajhRd87S0fd76fsdkjhsdkjDhsG56dfdf</a>
-                  <a href="javascript:void(0);" className={cn('asset-stats__to-link')}>ajhRd87S0fd76fsdkjhsdkjDhsG56dfdf</a>
+                  <a href="javascript:void(0);" className={cn('asset-stats__from-link')}>ajhRd87S0fd76fsdkjhsdkjDhsG56dfdfDhsG56dfdf</a>
+                  <a href="javascript:void(0);" className={cn('asset-stats__to-link')}>ajhRd87S0fd76fsdkjhsdkjDhsG56dfdfDhsG56dfdf</a>
                 </td>
                 <td className={cn('asset-stats__td')}>
                   <span className={cn('asset-stats__price-hmq')}>5,999.00 HMQ</span>
@@ -37,7 +37,7 @@ class O_Transaction extends Component {
                 <td className={cn('asset-stats__td')}>
                   <small className={cn('asset-stats__time asset-stats__time--success')}>
                     <i className={cn('asset-stats__icon o-asset-stats__icon--success')}></i>
-                    just now
+                    17 sec ago
                   </small>
                 </td>
               </tr>
