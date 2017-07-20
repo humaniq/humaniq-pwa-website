@@ -1,10 +1,38 @@
 @import "common/settings/variables";
 @import "common/utils";
 
+@mixin menu() {
+  position: relative;
+  margin: 0;
+  width: 100%;
+  .m-dropdown__select{
+    width: 200%;
+    background-color: $interactive;
+    color: $white;
+    position: relative;
+    left: -3rem;
+    &-text{
+      position: absolute;
+      padding:0 2rem;
+      font-weight:400;
+      width: 50%;
+      &:after{
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-top: 6px solid $white;
+      }
+    }
+  }
+}
+
 .se-legal{
   &__top{
     height: 14rem;
-    margin: 4rem 0
+    margin: 4rem 0;
+    @include media ($tablet) {
+      margin: 4rem 0 0;
+      height: auto;
+    }
   }
   &__wrapper{
     display: flex;
@@ -12,16 +40,19 @@
     @include media ($tablet) {
       flex-direction: column;
     }
+    @include media ($mobile) {
+      flex-direction: column;
+    }
   }
   &__fixed{
     position: fixed;
     margin-left: 10rem;
     @include media ($tablet) {
-      position: relative;
+      @include menu
     }
   }
   &__sidebar{
-    flex: 1 1 30rem;
+    flex: 1 1 7rem;
     min-width: 30rem;
     display: flex;
     @include media ($tablet) {
