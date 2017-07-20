@@ -26,8 +26,8 @@ const O_Menu = ({ options, selected, onClick, rootLink }) => {
   });
 
 
-  const selectedDropdownOption = options.find(option => option.anchor === selected);
-  const text = selectedDropdownOption ? selectedDropdownOption.text : '';
+  const selectedDropdownOption = options.find(option => option.anchor === selected) || options[0];
+  const dropdownValue = selectedDropdownOption.text;
   return (
     <nav>
       <ul className={cn('wider-screens')}>
@@ -40,6 +40,7 @@ const O_Menu = ({ options, selected, onClick, rootLink }) => {
             browserHistory.push(rootLink + convert.toKebab(text));
             return text;
           }}
+          selected={dropdownValue}
         />
       </div>
     </nav>
