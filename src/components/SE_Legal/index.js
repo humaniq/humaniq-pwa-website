@@ -1,19 +1,80 @@
 import React, {Component} from 'react';
 import T from "prop-types";
 import './styles.scss';
-import {cssClassName} from 'utils'
-import {convert} from 'utils'
-const cn = cssClassName('SE_Legal')
-import Meta from './meta'
-import O_Menu from './O_Menu/index'
+import { cssClassName, convert } from 'utils'
 import A_Container from 'A_Container'
 import A_H from 'A_H'
 import A_P from 'A_P'
+import Meta from './meta'
 import LegalSection from './O_LegalSection/index'
+import O_Menu from '../O_Menu/index'
+
+const cn = cssClassName('SE_Legal');
 
 class SE_Legal extends Component {
   state = {
     activeLink: null,
+  };
+
+  componentDidMount() {
+    document.addEventListener('scroll', this.onScroll);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('scroll', this.onScroll);
+  }
+
+  onScroll = () => {
+    this.checkVisibillity();
+    this.setMenuOffset();
+  };
+
+  setMenuOffset = () => requestAnimationFrame(() => {
+    const elementInitialOffset = 291;
+    const elementMinOffset = 100;
+    const scrolltop = window.pageYOffset; // get number of pixels document has scrolled vertically
+    let nextOffset = elementInitialOffset + -scrolltop * .3;
+
+    if (nextOffset < elementMinOffset) {
+      nextOffset = elementMinOffset;
+    }
+    if (nextOffset >= elementMinOffset) {
+      this.sidebar.style.top = nextOffset + 'px';
+    }
+  });
+
+  checkVisibillity = () => {
+    const anchors = this.props.articles.map(a => convert.toKebab(a.title));
+    let firstSectionPosition;
+    let minimalNegativeOffset = 0;
+    let visibleSection;
+
+    anchors.forEach(anchor => {
+      const distanceScrolled = document.body.scrollTop;
+      const elemRect = this[anchor].node.getBoundingClientRect();
+      const elemViewportOffset = elemRect.top;
+      const totalOffset = distanceScrolled + elemViewportOffset;
+
+      if (!firstSectionPosition) {
+        firstSectionPosition = totalOffset;
+      }
+      if (!minimalNegativeOffset) {
+        minimalNegativeOffset = elemViewportOffset;
+      }
+
+      if (distanceScrolled < firstSectionPosition) {
+        visibleSection = null;
+      } else {
+        if (elemViewportOffset <= 1 && elemViewportOffset >= minimalNegativeOffset) {
+          minimalNegativeOffset = elemViewportOffset;
+          visibleSection = anchor;
+        }
+      }
+    });
+
+    if (this.state.activeLink !== visibleSection) {
+      this.setState({ activeLink: visibleSection });
+    }
   };
 
   handleNavigation = (e) => {
@@ -23,7 +84,10 @@ class SE_Legal extends Component {
   renderSections(articles) {
     return articles.map(props =>
       <LegalSection
+        ref={node => this[convert.toKebab(props.title)] = node}
         key={props.title}
+        checkVisibillity={this.checkVisibillity}
+        id={convert.toKebab(props.title)}
         {...props}
       />
     );
@@ -31,7 +95,7 @@ class SE_Legal extends Component {
 
   getMenuOptions(articles) {
     return articles.map(a => ({
-      anchor: `/legal/#${convert.toKebab(a.title)}`,
+      anchor: convert.toKebab(a.title),
       text: a.title,
     }))
   }
@@ -45,24 +109,28 @@ class SE_Legal extends Component {
       <div className={cn()}>
         <Meta />
         <A_Container type="wide">
+
           <div className={cn('top')}>
-            <A_Container type="equal">
+            <div type="equal">
               <A_H type="hero">Legal Section</A_H>
               <A_P type="hero">Humaniq is proud of its wide partnership network which includes everybody from fintech companies and Blockchain communities to publishing media and app developers.</A_P>
-            </A_Container>
+            </div>
           </div>
+
           <div className={cn('wrapper')}>
             <div className={cn('sidebar')}>
-              <O_Menu
-                options={menuOptions}
-                handleNavigation={this.handleNavigation}
-                activeLink={activeLink}
-              />
+              <div className={cn('fixed')} ref={ node => this.sidebar = node }>
+                <O_Menu
+                  options={menuOptions}
+                  handleNavigation={this.handleNavigation}
+                  activeLink={activeLink}
+                  rootLink="/legal/#"
+                />
+              </div>
             </div>
-            <div className={cn('sections')}>
-              <A_Container type="wide">
-                { this.renderSections(articles) }
-              </A_Container>
+
+            <div className={cn('sections')} >
+              { this.renderSections(articles) }
             </div>
           </div>
         </A_Container>
@@ -83,6 +151,7 @@ SE_Legal.propTypes = {
 };
 
 SE_Legal.defaultProps = {
+  articles: [],
 };
 
 export default SE_Legal
