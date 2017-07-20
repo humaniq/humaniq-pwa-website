@@ -28,26 +28,34 @@ class O_ScrollUp extends Component {
   }
 
   render() {
-    const initTop = this.props.initTop || 70
+    const {initTop, children} = this.props
     const {hide} = this.state
 
     return(
-      <div className={cn('root', {hide})} onClick={() => window.scrollTo(0, 0)}
-           style={{top: 0, paddingTop: initTop}}
-      >
-        <span className={cn('icon')}><A_Image src="/img/icons/download-3@2x.png" alt='go up'/></span>
-        <span className={cn('text')}>Go up</span>
+      <div className={cn('wrapper')}>
+        <div className={cn('root', {hide})} onClick={() => window.scrollTo(0, 0)}
+        ><div className={cn('h-height')}>.</div>
+          <div style={{top: initTop}} className={cn('button')}>
+            <span className={cn('button-icon')}><A_Image src="/img/icons/download-3@2x.png" alt='go up'/></span>
+            <span className={cn('button-text')}>Go up</span>
+          </div>
+        </div>
+        <div className={cn('children')}>
+          {children}
+        </div>
+        <div className={cn('h-width', {hide})}>.</div>
       </div>
     );
   }
 }
 
 O_ScrollUp.propTypes = {
-  initTop: T.string, // x position of button
+  initTop: T.number, // x position of button
   children: T.node.isRequired
 };
 
 O_ScrollUp.defaultProps = {
+  initTop: 0
 }
 
 export default O_ScrollUp

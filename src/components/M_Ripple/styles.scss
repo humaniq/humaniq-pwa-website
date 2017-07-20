@@ -1,6 +1,8 @@
 .m-ripple{
   &__parent{
     overflow: hidden;
+    height: 100%;
+    width: 100%;
   }
   &-ripple{
     position: absolute;
