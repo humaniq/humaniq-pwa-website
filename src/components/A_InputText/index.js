@@ -7,19 +7,22 @@ const cn = cssClassName('A_InputText')
 class A_InputText extends Component {
 
   render(){
-    const {value, handleChange, placeholder, error} = this.props
+    const {value, handleChange, placeholder, error, label} = this.props
+    const nonEmpty = !!value
     return (
-      <div className={cn('root')}>
-        <input
-          placeholder={placeholder}
-          type="text"
-          value={value}
-          onChange={e => handleChange(e.target.value)}
-        />
-        {error &&
-          <div className={cn('error')}>{error}</div>
-        }
-      </div>
+      <fieldset className={cn('root')}>
+        <div className={cn('inner')}>
+          <input
+            placeholder={placeholder}
+            type="text"
+            value={value}
+            onChange={e => handleChange(e.target.value)}
+          />
+          <hr />
+          <label className={cn('label', {'non-empty': nonEmpty, error: !!error})}>{label}</label>
+        </div>
+        <div className={cn('error')}>{error}</div>
+      </fieldset>
     )
   }
 }
