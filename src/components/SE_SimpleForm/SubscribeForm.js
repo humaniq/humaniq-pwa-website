@@ -9,6 +9,7 @@ import A_P from 'A_P'
 import A_InputText from 'A_InputText'
 import Header from './Header'
 import A_Btn from 'A_Btn'
+import M_Ripple from 'M_Ripple'
 
 class SE_SimpleFormSubscribeForm extends Component {
 
@@ -54,12 +55,15 @@ class SE_SimpleFormSubscribeForm extends Component {
 
     return (
       <form onSubmit={this.onSubmit(handleSubmit)} className={cn('form')}>
+
         <Header>
           {submitted ||
-          <A_Btn
-            type='nav-btn'
-            btnType="submit"
-          >Subscribe me</A_Btn>
+          <M_Ripple>
+            <A_Btn
+              type='nav-btn'
+              btnType="submit"
+            >Subscribe me</A_Btn>
+          </M_Ripple>
           }
         </Header>
         {submitted ? (
@@ -69,7 +73,9 @@ class SE_SimpleFormSubscribeForm extends Component {
               <A_P type='third'>You were added to our newsletter list. You should now expect a welcoming email,
                 confirming the subscription. Stay tuned, interesting news are on the way.</A_P>
             </div>
-            <A_Btn type="window" to="/">Go back to Humaniq</A_Btn>
+            <div className={cn('final-btn')}>
+              <A_Btn type="window" to="/">Go back to Humaniq</A_Btn>
+            </div>
           </div>
         ) : (
           <div className={cn('body')}>

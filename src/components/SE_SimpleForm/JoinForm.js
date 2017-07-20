@@ -9,6 +9,7 @@ import A_P from 'A_P'
 import A_InputText from 'A_InputText'
 import Header from './Header'
 import A_Btn from 'A_Btn'
+import M_Ripple from 'M_Ripple'
 
 class SE_SimpleFormJoinForm extends Component {
 
@@ -90,15 +91,16 @@ class SE_SimpleFormJoinForm extends Component {
       submitted,
     } = this.state
 
-    console.log(submitted)
     return (
       <form onSubmit={this.onSubmit(handleSubmit)} className={cn('form')}>
         <Header>
           {submitted ||
-          <A_Btn
-            type='nav-btn'
-            btnType="submit"
-          >Send</A_Btn>
+            <M_Ripple>
+              <A_Btn
+                type='nav-btn'
+                btnType="submit"
+              >Send</A_Btn>
+            </M_Ripple>
           }
         </Header>
         {submitted ? (
@@ -107,7 +109,9 @@ class SE_SimpleFormJoinForm extends Component {
             <div className={cn('text')}>
               <A_P type='third'>Your application has been received. We will carefully review your website, and will contact you within the few days. Thank you for your application!</A_P>
             </div>
-            <A_Btn type="window" to="/">Go back to Humaniq</A_Btn>
+            <div className={cn('final-btn')}>
+              <A_Btn type="window" to="/">Go back to Humaniq</A_Btn>
+            </div>
           </div>
         ) : (
           <div className={cn('body')}>

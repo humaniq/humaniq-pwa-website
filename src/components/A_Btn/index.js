@@ -37,7 +37,7 @@ const A_Btn = ({type, children, disabled, btnType, ...props}) =>{
 
 A_Btn.propTypes = {
   type: T.oneOf([
-    'nav-btn', // small white link style button
+    'nav-btn', // small white link style button 100%/100%, padding: 0 1.3rem
     'link-subscribe', //big blue button used on home page
     'standart-form', // normal blue button with white text
     'link-standart-form', // link looks like standart form  blue button with white text
