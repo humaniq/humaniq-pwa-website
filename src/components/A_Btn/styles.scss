@@ -14,16 +14,21 @@ $form-btn-border-radius: 30px;
     box-sizing: border-box;
     &_type{
       &_nav-btn{
+        width: 100%;
+        height: 100%;
+        text-align: right;
+        display: inline-block;
+        display: block;
         font-size: 1.4rem;
         font-weight: 600;
         line-height: 2.6rem;
         color: $white;
         padding: 0;
-        padding-right: 1.8rem;
+        padding-right: 3.1rem;
         &:hover, &:active{
           text-decoration: underline;
         }
-        background: url('/img/arow_right.svg') right center / .9rem no-repeat;
+        background: url('/img/arow_right.svg') right 13px center / .9rem no-repeat;
       }
       &_standart-form{
         user-select: none;

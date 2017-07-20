@@ -2,12 +2,12 @@ import React from 'react';
 import * as T from "prop-types";
 import './styles.scss';
 import {cssClassName} from 'utils'
-const cn = cssClassName('SE_HomeInfo')
+const cn = cssClassName('SE_WikiInfo')
 import A_Link from 'A_Link'
 import A_Image from 'A_Image'
 import A_H from 'A_H'
 
-const SE_HomeInfo = ({children, type, img, title, link}) =>{
+const SE_WikiInfo = ({children, type, img, title, link}) =>{
   const moving = type == 'moving-title'
   return (
       <div className={cn('root')}>
@@ -33,7 +33,7 @@ const SE_HomeInfo = ({children, type, img, title, link}) =>{
 }
 
 
-SE_HomeInfo.propTypes = {
+SE_WikiInfo.propTypes = {
   type: T.oneOf([
     'moving-title', //title changes place on mobile devices
     'hidding-img', //img is hidding on mobile devices
@@ -50,6 +50,6 @@ SE_HomeInfo.propTypes = {
   })
 };
 
-SE_HomeInfo.defaultProps = {
+SE_WikiInfo.defaultProps = {
 }
-export default SE_HomeInfo
+export default SE_WikiInfo

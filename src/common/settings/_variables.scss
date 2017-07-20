@@ -6,11 +6,13 @@ $black-2: #2c2d30;
 $blue-1: #0088cc;
 $blue-2: #179cde;
 $blue-3: #ecf3fa;
+$blue-4: #6bace1;
 $grayblue-1: #5481a4;
 $grayblue-2: #f4f6f8;
 $gray-1: #e8e8e8;
 $gray-2: #c5c5c5;
 $gray-3: #b3b3b3;
+$gray-4: #e6e6e6;
 $red-1: #ff1744;
 
 $text: $black-1; // - text
@@ -21,6 +23,10 @@ $interactive: $blue-2; // itneractive text (links, buttons, ...etc)
 
 //forms
 $form-border-color: $gray-2;
+$form-active-color: $blue-4;
+$form-inactive-color: $gray-3;
+//$form-inactive-color: $gray-4;
+
 $form-error-color: $red-1;
 $form-disabled-color: $gray-3;
 $form-placeholder-color: $gray-3;

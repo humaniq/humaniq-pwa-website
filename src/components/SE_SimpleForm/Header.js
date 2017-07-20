@@ -6,12 +6,12 @@ const cn = cssClassName('SE_SimpleFormHeader')
 import A_Logo from 'A_Logo'
 
 const SE_SimpleFormHeader = ({children}) =>(
-  <div className={cn('root')}>
-    <div className={cn('logo')} size="small">
-      <A_Logo theme={'light'} size='small'/>
+    <div className={cn('root')}>
+      <div className={cn('logo')}>
+        <A_Logo theme={'light'} size='small'/>
+      </div>
+      <div className={cn('nav')}>{children}</div>
     </div>
-    <div className={cn('nav')}>{children}</div>
-  </div>
 )
 
 SE_SimpleFormHeader.propTypes = {

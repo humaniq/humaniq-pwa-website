@@ -34,7 +34,6 @@
       display: flex;
       justify-content: space-between;
       align-items: stretch;
-      padding: 0 1.3rem 0 2rem;
       @include media($mobile) {
         height: 4.6rem;
       }
@@ -44,6 +43,18 @@
       display: flex;
       align-items: center;
     }
+    &__logo{
+      width: 14rem;
+      height: 100%;
+      padding: 0;
+    }
+    &__nav{
+      padding: 0;
+      width: 140px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+    }
   }
   &__body{
     padding: 3.2rem 5.5rem;
@@ -52,7 +63,7 @@
     box-shadow: 0 1px 1px 0 rgba(97, 127, 152, 0.2), 1px 0 0 0 rgba(97, 127, 152, 0.1), -1px 0 0 0 rgba(97, 127, 152, 0.1);
 
   }
-  &__text{
-    padding-bottom: 3.2rem;
+  &__final-btn{
+    margin-top: 3.2rem;
   }
 }
