@@ -81,6 +81,7 @@ class SE_SimpleFormSubscribeForm extends Component {
             <A_InputText
               value={email}
               onChange
+              label="Email"
               placeholder="your@email.com"
               error={error}
               handleChange={text => this.onChange(text, error)}

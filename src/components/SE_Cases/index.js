@@ -10,6 +10,7 @@ import A_Link from 'A_Link'
 import {convert} from 'utils'
 import './styles.scss';
 import {cssClassName} from 'utils'
+import O_ScrollUp from "O_ScrollUp";
 const cn = cssClassName('SE_Cases')
 
 const cases = [
@@ -72,6 +73,7 @@ const SE_Cases = () => {
   return (
     <div>
       <Meta />
+      <O_ScrollUp />
       <A_Container type="section-clean">
         <O_Hero img={{src: "/img/placeholder-squared.svg", alt: "Humaniq’s Global Mission"}}>
           <A_H type="hero">Humaniq’s Global Mission</A_H>
