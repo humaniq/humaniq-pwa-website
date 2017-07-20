@@ -15,14 +15,15 @@
   }
   &__fixed{
     position: fixed;
-    margin-left: 20rem;
+    margin-left: 10rem;
     @include media ($tablet) {
-      position: inherit;
+      position: relative;
     }
   }
   &__sidebar{
     flex: 1 1 30rem;
     min-width: 30rem;
+    display: flex;
     @include media ($tablet) {
     }
   }
