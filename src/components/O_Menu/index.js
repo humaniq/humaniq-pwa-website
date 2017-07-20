@@ -1,31 +1,47 @@
 import React from 'react';
 import * as T from "prop-types";
+import { browserHistory } from 'react-router';
 import './styles.scss';
-import {cssClassName} from 'utils'
+import { cssClassName, convert } from 'utils'
 const cn = cssClassName('O_Menu');
 import A_Link from 'A_Link';
 import A_P from 'A_P';
+import M_Dropdown from 'M_Dropdown';
 
 
-const O_Menu = ({ options, activeLink, handleNavigation, rootLink }) => {
+const O_Menu = ({ options, selected, onClick, rootLink }) => {
   const renderedLinks = options.map(({ anchor, text }) => {
-    const isActive = activeLink === anchor;
+    const isSelected = selected === anchor;
     return (
-      <li key={'menu-item-' + anchor} className={cn('nav-links-item', { active: isActive })}>
+      <li key={'menu-item-' + anchor} className={cn('nav-links-item', { active: isSelected })}>
         {
-          isActive
+          isSelected
             ? <A_P type="hero">{text}</A_P>
-            : <A_Link to={rootLink + anchor} type="primary" name={anchor} onClick={handleNavigation}>{text}</A_Link>
+            : <A_Link to={rootLink + anchor} type="primary" onClick={() => onClick(anchor)}>
+                {text}
+              </A_Link>
         }
       </li>
     )
   });
 
+
+  const selectedDropdownOption = options.find(option => option.anchor === selected);
+  const text = selectedDropdownOption ? selectedDropdownOption.text : '';
   return (
     <nav>
-      <ul className={cn()}>
+      <ul className={cn('wider-screens')}>
         { renderedLinks }
       </ul>
+      <div className={cn('smaller-screens')}>
+        <M_Dropdown
+          options={options.map(option => option.text)}
+          onChange={(text) => {
+            browserHistory.push(rootLink + convert.toKebab(text));
+            return text;
+          }}
+        />
+      </div>
     </nav>
   )
 };
@@ -36,13 +52,13 @@ O_Menu.propTypes = {
     anchor: T.string,
     text: T.string.isRequired,
   })),
-  activeLink: T.string,
+  selected: T.string,
   handleNavigation: T.func,
 };
 
 O_Menu.defaultProps = {
   options: [],
-  activeLink: false,
+  selected: false,
 };
 
 export default O_Menu
