@@ -15,7 +15,7 @@ const SE_HomeGallery = ({entities, title, type}) =>{
 
   if(type === 'links'){
     rederedItems = entities.map(({img, title, url})=>(
-      <div className={cn('galery-item')} key={'key_' + title}>
+      <div className={cn('galery-item', )} key={'key_' + title}>
         <A_Btn type={'interactive'} img={{src: img, alt: title}} to={url} >
           {title}
         </A_Btn>
@@ -38,13 +38,14 @@ const SE_HomeGallery = ({entities, title, type}) =>{
     containerType = 'section'
   }
 
-  for(let i = 0; i<2; i++){
-    rederedItems.push(<div className={cn('galery-item')} key={'key_' + i} />)
+  if(type === 'not-links'){
+    for(let i = 0; i<2; i++){
+      rederedItems.push(<div className={cn('galery-item')} key={'key_' + i} />)
+    }
   }
 
   return (
     <A_Container type={containerType}>
-
         <A_H type="section-c" center >{title}</A_H>
         <div className={cn('galery', {type})}>
           {rederedItems}

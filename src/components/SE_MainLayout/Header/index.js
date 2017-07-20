@@ -8,6 +8,8 @@ import A_logo from 'A_Logo'
 import MenuBtn from './menuBtn'
 import {Motion, spring} from 'react-motion';
 import A_Container from 'A_Container'
+import M_Ripple from 'M_Ripple'
+import history from 'history'
 
 const main = [{
   url: '/contacts',
@@ -21,14 +23,23 @@ const extra = {
 
 class SE_MainLayoutHeader extends Component {
 
+  //todo: create new type of btn with dellay
+  handleLink = (url) => {
+    setTimeout(() => history.push(url), 300)
+  }
+
+
   getMainNav(mainNav, theme) {
     return mainNav.map(menuItem => this.getNavLink(menuItem, theme))
   }
 
   getNavLink({name, url}, theme) {
+    //todo: fix bad styles
     return (
-      <span className={cn('nav-btn', {theme})} key={'key=' + name} >
-        <A_Link to={url} {...{type: (theme === 'dark' ? 'primary' : 'white')}}>{name}</A_Link>
+      <span className={cn('nav-btn', {theme})} key={'key=' + name} onClick={() => this.handleLink(url)}>
+        <M_Ripple>
+          <div className={cn('nav-text')}>{name}</div>
+        </M_Ripple>
       </span>
     )
   }

@@ -7,24 +7,40 @@
     justify-content: space-between;
     flex-flow: wrap;
 
+    &_type_links{
+      flex-flow: nowrap;
+      @include media($mobile) {
+        flex-flow: wrap;
+      }
+    }
+
     @include media($tablet) {
       justify-content: center;
     }
+
+
     &-item{
-      flex: 0 1 26rem;
+      flex: 1 1 26rem;
       height: auto;
       margin: 2rem 1rem 0;
-
+      @include media($mobile) {
+        flex: 1 0 100%;
+      }
       &-title{
         padding-bottom: 0;
         margin-bottom: 0rem;
       }
       &-img{
-        width: 26rem;
-        height: 26rem;
+        width: 100%;
+        height: auto;
         margin-bottom: .9rem;
         @include media($tablet) {
-          width: 20rem;
+          width: 100%;
+          height: auto;
+          margin: 0 auto;
+        }
+        @include media($tablet) {
+          width: 100%;
           height: auto;
           margin: 0 auto;
         }

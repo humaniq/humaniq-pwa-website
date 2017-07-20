@@ -41,7 +41,9 @@
       }
 
     }
-
+    &-text{
+      padding: 0 15px;
+    }
     &-main{
       z-index: 1;
     }
@@ -49,22 +51,29 @@
       box-sizing: border-box;
       display: flex;
       align-items: center;
-      margin-left: 30px;
-      &:hover{
-        border-bottom: $interactive-border-b;
-        padding-top: $interactive-border-size-1; //compensation
-      };
+      cursor: pointer;
+      font-weight: 600;
+      justify-content: center;
+
+      div{
+        display: flex;
+        align-items: center;
+      }
       &_theme_light{
-        &:hover{
-          border-bottom: $interactive-border-b-white;
-        };
+        div{
+          color: white;
+        }
+      }
+      &_theme_dark{
+        div{
+          color: $interactive;
+        }
       }
     }
   }
   &__menu-btn{
     display: flex;
     align-items: center;
-    margin-left: 30px;
     flex-flow: 0;
     @include media($mobile) {
       margin-left: 0px;

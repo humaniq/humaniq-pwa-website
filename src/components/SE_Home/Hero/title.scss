@@ -6,10 +6,17 @@
   $val: 0px 0px #CFD1D3;
 
   @for $i from 1 through 175 {
-    $val: #{$val}, #{-$i * $angle}px #{$i}px #D8D8D8;
+    $val: #{$val}, #{-$i * $angle}px #{$i}px rgba(
+                              (216 + round($i /25)),
+                              (216 + round($i /25)),
+                              (216 + round($i /25)),
+                            1);
   }
   @return $val;
 }
+
+//$val: #{$val}, #{-$i}px #{$i}px rgba(235, 235, 235, (round((100 - $i)/ 10) / 10) );
+
 
 @mixin longshadow() {
   text-shadow: makelongshadow(0.76);
@@ -17,7 +24,7 @@
     text-shadow: makelongshadow(0.77);
   }
   &:after {
-    background-image: linear-gradient(180deg, #D8D8D8,#fff);
+    background-image: linear-gradient(180deg, #dcdcdc, #fff);
 
     content: "";
     display: block;
@@ -51,7 +58,6 @@
   &__title{
     margin: 0;
     padding: 0;
-    @include longshadow();
     z-index: -10;
     font-size: 8.7rem;
     font-weight: 700;
@@ -64,6 +70,10 @@
     @include media($mobile) {
       font-size: 15vw;
     }
+  }
+  &__shadow{
+    @include longshadow();
+
   }
 
 }

@@ -6,7 +6,7 @@ const cn = cssClassName('SE_HomeHeroTitle')
 
 const SE_HomeHeroTitle = () =>(
   <div className={cn('root')} >
-    <h1 className={cn('title')}>Banking the<br/> Unbanked</h1>
+    <h1 className={cn('title')}><span className={cn('shadow')}>Banking the</span><br/> Unbanked</h1>
   </div>
 )
 
