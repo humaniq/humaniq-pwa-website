@@ -15,7 +15,6 @@ class SE_WikiLayout extends Component {
           <div className={cn('search')}>
             <O_Search />
           </div>
-
           {children}
         </div>
       </div>
