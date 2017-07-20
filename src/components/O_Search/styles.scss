@@ -13,7 +13,7 @@
       width: 70rem;
     }
     @include media($mobile) {
-      width: 28rem;
+      width: 100%;
     }
   }
   &__input {
@@ -75,6 +75,7 @@
   &__input--focused {
     .o-search__icon-path {
       stroke: #35424C;
+      fill: #35424C;
     }
     .o-search__icon-circle {
       stroke: #35424C;
