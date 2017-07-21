@@ -21,8 +21,7 @@ class SE_SimpleFormSubscribeForm extends Component {
     error: ''
   }
 
-  onSubmit = (handleSubmit) => (e) => {
-    e.preventDefault()
+  onSubmit = (handleSubmit) => () => {
     const {email} = this.state.values
     if (this.validate(email)) {
       handleSubmit({email})
@@ -54,16 +53,13 @@ class SE_SimpleFormSubscribeForm extends Component {
     const {values: {email}, error, submitted} = this.state
 
     return (
-      <form onSubmit={this.onSubmit(handleSubmit)} className={cn('form')}>
-
+      <form  className={cn('form')}>
         <Header>
           {submitted ||
-          <M_Ripple>
             <A_Btn
               type='nav-btn'
-              btnType="submit"
+              onClick={this.onSubmit(handleSubmit)}
             >Subscribe me</A_Btn>
-          </M_Ripple>
           }
         </Header>
         {submitted ? (
