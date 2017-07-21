@@ -5,12 +5,8 @@
 @function makelongshadow($angle) {
   $val: 0px 0px #CFD1D3;
 
-  @for $i from 1 through 175 {
-    $val: #{$val}, #{-$i * $angle}px #{$i}px rgba(
-                              (216 + round($i /25)),
-                              (216 + round($i /25)),
-                              (216 + round($i /25)),
-                            1);
+  @for $i from 1 through 70 {
+    $val: #{$val}, #{-$i * $angle}px #{$i}px #CFD1D3;
   }
   @return $val;
 }
@@ -23,26 +19,7 @@
   @include media($mobile) {
     text-shadow: makelongshadow(0.77);
   }
-  &:after {
-    background-image: linear-gradient(180deg, #dcdcdc, #fff);
 
-    content: "";
-    display: block;
-    position: absolute;
-    transform: skew(143deg);
-    height: 5.5em;
-    width: 6.36em;
-    @include media($mobile) {
-      width: 6.35em;
-    }
-    top: 2.2em;
-    left: -3.46em;
-
-    @include media($tablet) {
-      left: -3.47em;
-    }
-    z-index: 0;
-  }
 }
 
 .se-home-hero-title{
@@ -51,11 +28,10 @@
     padding: 0;
     postion: relative;
     left: .9rem;
-
     z-index: -1;
-
   }
-  &__title{
+
+  &__title-1, &__title-2{
     margin: 0;
     padding: 0;
     z-index: -10;
@@ -71,7 +47,35 @@
       font-size: 15vw;
     }
   }
-  &__shadow{
+  &__title-1{
+    color: transparent;
+
+  }
+  &__title-2{
+    position: absolute;
+    top: 0;
+    z-index: 10;
+    &:after {
+      background-image: linear-gradient(180deg, #cfd1d3, #fff);
+      content: "";
+      display: block;
+      position: absolute;
+      transform: skew(143deg);
+      height: 5.5em;
+      width: 6.38em;
+      top: 1em;
+      left: -2.56em;
+      z-index: -1;
+      @include media($tablet) {
+        left: -2.55em;
+        width: 6.37em;
+
+      }
+    }
+  }
+  &__shadow-text{
+    z-index: -10;
+
     @include longshadow();
 
   }

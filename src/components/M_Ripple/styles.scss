@@ -1,13 +1,11 @@
 .m-ripple{
   &__parent{
+    display: inline-block;
     overflow: hidden;
-    height: 100%;
-    width: 100%;
   }
   &-ripple{
     position: absolute;
     background: rgba(0, 0, 0, 0.2);
-    //background: rgba(23, 156, 222, 0.2); brand color
     border-radius: 50%;
     opacity: 1;
     transform: scale(0);

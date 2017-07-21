@@ -9,10 +9,9 @@ export const BUTTER_CMS_API_ENDPOINTS = {
   wiki: `/content/`
 }
 
-export const HUMANIQ_BACKEND_API_URL = 'http://localhost:3001'
-
-export const ENDPOINT_JOIN_FORM = `${HUMANIQ_BACKEND_API_URL}/subscriptions/partners`
-export const ENDPOINT_SUBSCRIBE_FORM = `${HUMANIQ_BACKEND_API_URL}/subscriptions/newsletters`
+export const HUMANIQ_BACKEND_API_URL = 'https://f03pn9k2v8.execute-api.eu-west-1.amazonaws.com'
+export const ENDPOINT_JOIN_FORM = `${HUMANIQ_BACKEND_API_URL}/dev/subscriptions/partners`
+export const ENDPOINT_SUBSCRIBE_FORM = `${HUMANIQ_BACKEND_API_URL}/dev/subscriptions/newsletters`
 
 
 export const ENDPOINT_PARTNERS_LIST = `https://s3-eu-west-1.amazonaws.com/humaniq-web-backend-public/partners/partners.json`
