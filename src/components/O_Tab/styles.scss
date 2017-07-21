@@ -1,0 +1,59 @@
+@import "common/settings/variables";
+@import "common/utils";
+
+/* Search Section
+/* ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## */
+
+.o-tab {
+  &__tab {
+    background-color: $grayblue-1;
+    box-shadow: 0 .1rem .4rem 0 rgba(0,0,0,.2);
+    display: flex;
+  }
+  &__underline-nav {
+    width: 95rem;
+    @include media($tablet) {
+      width: 100%;
+    }
+  }
+  &__underline-nav__list {
+    list-style: none;
+  }
+  &__underline-nav__li {
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    &:nth-child(3) {
+      @include media($mobile) {
+        display: none;
+      }
+    }
+  }
+  &__underline-nav__a {
+    display: block;
+    width: 15rem;
+    padding: 2.5rem 0;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 1.13;
+    color: rgba(255,255,255,.5);
+    transition: color .5s ease;
+    &:hover {
+      color: rgba(255,255,255,.6);
+    }
+    &_active_true {
+      color: $white;
+      border-bottom: .2rem solid #fff;
+      &:hover {
+        color: $white;
+      }
+    }
+    @include media($mobile) {
+      width: 14rem;
+    }
+  }
+}
+
+
+

@@ -15,7 +15,7 @@ class O_Search extends Component {
     return (
       <div>
         <A_Container type='wide'>
-          <A_H type='section wiki-title'>Welcome to Humaniq wiki</A_H>
+          <A_H type='search wiki-title'>Welcome to Humaniq wiki</A_H>
           <form action="" className={cn(`search ${ active ? 'o-search__input--focused': '' }`)}>
             <input
               type="text"
