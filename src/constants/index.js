@@ -1,9 +1,7 @@
 export const REQUEST = 'REQUEST_'
 export const OPEN = 'OPEN_'
 export const TOGGLE = 'TOGGLE_'
-export const FETCH = 'FETCH'
-
-
+export const FETCH = 'FETCH_'
 export const CLOSE = 'CLOSE_'
 export const SET = 'SET_'
 
