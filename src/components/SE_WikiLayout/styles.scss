@@ -3,7 +3,7 @@
 
 .se-wiki-layout{
   &__search{
-    background-color: $theme-2;
+    background-color: #598fba;
     height: 23rem;
     display: flex;
     align-items: center;
@@ -15,4 +15,11 @@
       padding-top: 6rem;
     }
   }
+}
+
+.wiki-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: $white;
+  margin-bottom: 1rem;
 }

@@ -49,6 +49,7 @@ const A_H = ({type, icon, children, center}) =>{
 A_H.propTypes = {
   type: T.oneOf([
     'hero', //black bold 25
+    'search', // white bold 25 used on wiki search
     'bs', // blue title uses at hero home page, 16/24
     'window', // black bold title 16/24 used on subscribe/personal/join/partners tooltip pages
     'tooltip', // black bold title 16/24 used on tooltip marign bottom 2px
