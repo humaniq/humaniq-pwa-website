@@ -8,16 +8,29 @@ $form-btn-border-radius: 30px;
     pointer-events: none;
   }
 
+  &-material-hover{
+    &:hover, &:active{
+      &:after{
+        content: '';
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.1);
+      }
+    }
+  }
+
   &__button{
     user-select: none;
     cursor: pointer;
     box-sizing: border-box;
     &_type{
       &_nav-btn{
-        width: 100%;
-        height: 100%;
+        width: 14rem;
+        height: 8.2rem;
         text-align: right;
-        display: inline-block;
         display: block;
         font-size: 1.4rem;
         font-weight: 600;
@@ -25,6 +38,7 @@ $form-btn-border-radius: 30px;
         color: $white;
         padding: 0;
         padding-right: 3.1rem;
+
         &:hover, &:active{
           text-decoration: underline;
         }
@@ -44,6 +58,15 @@ $form-btn-border-radius: 30px;
       }
     }
   }
+
+  &__ripple{
+
+    @include media($mobile) {
+      width: 100%;
+      margin: 0 auto;
+    }
+  }
+
   &__link {
     user-select: none;
     cursor: pointer;
@@ -70,7 +93,7 @@ $form-btn-border-radius: 30px;
         display: inline-flex;
         align-items: center;
         user-select: none;
-        border-radius: $form-btn-border-radius;
+        //border-radius: $form-btn-border-radius;
         //border-radius: $form-radius;
         background-color: $interactive;
         color: $white;
@@ -80,6 +103,8 @@ $form-btn-border-radius: 30px;
         height: 5.3rem;
         //box-shadow: $form-shadow;
         vertical-align: top;
+        @extend .a-btn-material-hover;
+
       }
       &_window{
         padding: .8rem 1.6rem 1rem;
@@ -100,11 +125,12 @@ $form-btn-border-radius: 30px;
         background-color: $interactive;
         height: 5.3rem;
         line-height: 3.5rem ;
-        border-radius: $form-btn-border-radius;
+        //border-radius: $form-btn-border-radius;
         font-size: 1.7rem;
         font-weight: 600;
         text-align: center;
         width: 20rem;
+        @extend .a-btn-material-hover;
 
         @include media($mobile) {
           width: 100%;
@@ -116,85 +142,3 @@ $form-btn-border-radius: 30px;
     }
   }
 }
-
-
-//&_style_common{
-//  padding: .8rem 1.6rem 1rem;
-//  color: white;
-//  background-color: #439fe0;
-//
-//  &:hover, &:active{
-//    background-color: #2289d3;
-//  }
-//  &.disabled{
-//    color: rgba(255, 255, 255, 0.5);
-//    background-color: rgba(0, 0, 0, 0.2);
-//  }
-//}
-
-//&_style_light{
-//  border: 2px solid rgba(37, 48, 57, 0.8);
-//  color: rgba(37, 48, 57, 0.8);
-//  &:hover, &:active{
-//    color: #253039;
-//    border-color: #253039;
-//  }
-//  &.disabled{
-//    color: rgba(37, 48, 57, 0.4);
-//    border-color: rgba(37, 48, 57, 0.4);
-//  }
-//}
-
-//&_subscribe{
-//  display: table;
-//  text-align: center;
-//  @include media($mobile) {
-//    width: 100%
-//  }
-//  @include media($tablet) {
-//    margin: 0 auto;
-//    width: 100%;
-//    max-width: $w-mobile
-//  }
-//}
-//&_style_common, &_style_light-link, &_style_dark-link, &_style_button-link{
-//  height: 3.8rem;
-//  border-radius: .4rem;
-//  font-size: 1.5rem;
-//  font-weight: 600;
-//  text-align: center;
-//}
-//
-//&_style_button-link{
-//  padding: 1rem 1.5rem;
-//  color: white;
-//  background-color: #439fe0;
-//  &:hover, &:active{
-//    background-color: #2289d3;
-//  }
-//  &.disabled{
-//    color: rgba(255, 255, 255, 0.5);
-//    background-color: rgba(0, 0, 0, 0.2);
-//  }
-//}
-//
-//
-//&_style_dark-link, &_style_light-link{
-//  padding: 1rem 1.5rem;
-//  background-color: transparent;
-//
-//}
-//
-//
-//&_style_light-link{
-//  border: solid 2px rgba(255, 255, 255, 0.8);
-//
-//  &:hover, &:active{
-//    color: rgba(255, 255, 255, 1);
-//    border-color: rgba(255, 255, 255, 1);
-//  }
-//  &.disabled{
-//    color: rgba(255, 255, 255, 0.4);
-//    border-color: rgba(255, 255, 255, 0.4);
-//  }
-//}

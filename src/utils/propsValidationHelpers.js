@@ -1,4 +1,5 @@
 import {_isDateValid} from './dateHelpers.js'
+import React from 'react';
 
 export const dateString = (function (){
   function validation(props, propName){
@@ -18,5 +19,21 @@ export const dateString = (function (){
   return validation
 })();
 
+export const oneChild = (function (){
+  function validation(props, propName){
+    const testValue = props[propName]
+    if(!testValue) return null;
+    if (React.Children.count(testValue) !== 1) {
+      return new Error(`Should be only one child`);
+    }
+    return null
+  }
 
+  validation.isRequired = function(props, propName, componentName){
+    const testValue = props[propName]
+    if (!testValue) return new Error(`props ${propName} is required`);
+    return validation(props, propName, componentName)
+  }
+  return validation
+})();
 

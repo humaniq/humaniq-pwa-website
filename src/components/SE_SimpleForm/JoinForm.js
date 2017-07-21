@@ -28,8 +28,7 @@ class SE_SimpleFormJoinForm extends Component {
   }
 
 
-  onSubmit = (handleSubmit) => (e) => {
-    e.preventDefault()
+  onSubmit = (handleSubmit) => () => {
     const {values} = this.state
     if (this.validate(values)){
       handleSubmit(values)
@@ -92,15 +91,13 @@ class SE_SimpleFormJoinForm extends Component {
     } = this.state
 
     return (
-      <form onSubmit={this.onSubmit(handleSubmit)} className={cn('form')}>
+      <form className={cn('form')}>
         <Header>
           {submitted ||
-            <M_Ripple>
-              <A_Btn
-                type='nav-btn'
-                btnType="submit"
-              >Send</A_Btn>
-            </M_Ripple>
+            <A_Btn
+              onClick={this.onSubmit(handleSubmit)}
+              type='nav-btn'
+            >Send</A_Btn>
           }
         </Header>
         {submitted ? (
