@@ -70,17 +70,41 @@ addDecorator(styleDecorator)
 storiesOf('O_ScrollUp', module)
   .addDecorator(storyFN => <div style={{margin: 300, width: 800, height: 3000, border: '1px solid tomato'}}>{storyFN()}</div>)
   .add('', () => (
-    <O_ScrollUp />
+    <O_ScrollUp >текст</O_ScrollUp>
   ));
 
 storiesOf('M_Ripple', module)
-  .addDecorator(storyFN => <div style={{margin: 300, widht: 800, height: 800}}>{storyFN()}</div>)
-  .add('', () => (
-      <M_Ripple className="st-ripple">
-        <button onClick={action('click')}
-        > click</button>
-      </M_Ripple>
+  .addDecorator(storyFN => <div style={{padding: 30, width: 200, height: 200, border: '1px solid tomato'}}>{storyFN()}</div>)
+  .add('custom delay(1s)', () => (
+    <M_Ripple
+      className="st"
+      onClick={action('click')}
+      delay={1000}
+    >
+      <button style={{
+        backgroundColor:'dodgerBlue',
+        padding: 30,
+        width: 100,
+        height: 100
+      }}>Push me</button>
+    </M_Ripple>
+  ))
+  .add('default delay', () => (
+    <M_Ripple
+      className="st"
+      onClick={action('click')}
+    >
+      <button >Push me</button>
+    </M_Ripple>
+    ))
+  .add('without delay', () => (
+    <M_Ripple
+      className="st"
+    >
+      <button onClick={action('click')}>Push me</button>
+    </M_Ripple>
   ));
+
 
 storiesOf('SE_SimpleForm', module)
   .addDecorator(storyFN => <div style={{margin: 300, widht: 800, height: 800}}>{storyFN()}</div>)
