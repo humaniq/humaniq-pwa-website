@@ -16,7 +16,7 @@ const SE_WikiInfo = ({children, type, img, title, link, external}) =>{
             <A_H type="section">{title}</A_H>
           </span>
           {children}
-          <A_Link type="section-link" to={link.to} external>{link.text}</A_Link>
+          <A_Link type="section-link" to={link.to} external={external}>{link.text}</A_Link>
         </div>
         <div className={cn('img-side', {type})}>
           {moving &&

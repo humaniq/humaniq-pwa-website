@@ -40,13 +40,13 @@ const getRoutes = () => {
           component={Wiki0}
         />
         <Route
-          path=":section"
+          path=":level0"
         >
           <IndexRoute
             component={Wiki1}
           />
           <Route
-            path=":article"
+            path=":id"
             component={Wiki2}
           />
         </Route>

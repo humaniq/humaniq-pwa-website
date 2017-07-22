@@ -6,13 +6,7 @@ import A_Link from 'A_Link'
 const cn = cssClassName('O_ArticleList')
 import A_H from 'A_H'
 import A_Container from 'A_Container'
-import A_Image from 'A_Image'
 
-const Oval = ({className}) => (
-  <svg className={className} xmlns="http://www.w3.org/2000/svg" width="6" height="7" viewBox="0 0 6 7">
-    <circle cx="2.5" cy="136.5" r="2.5" fill="#179cde" fillRule="evenodd" stroke="#179cde" transform="translate(.5 -133)"/>
-  </svg>
-)
 
 const O_ArticleList = ({articles, title}) =>{
   const getList = (articles, i) => {
@@ -47,7 +41,10 @@ const O_ArticleList = ({articles, title}) =>{
 }
 
 O_ArticleList.propTypes = {
-  articles: T.arrayOf(T.object).isRequired,
+  articles: T.arrayOf(T.shape({
+    url: T.string.isRequired,
+    title: T.string.isRequired
+  })).isRequired,
   title: T.string.isRequired
 };
 

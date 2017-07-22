@@ -1,26 +1,20 @@
 import {connect} from 'react-redux';
 import SE_Wiki2 from 'SE_Wiki2'
-import {convert} from 'utils'
 
 function mapStateToProps(state, ownProps) {
-  const {loaded, loading} = state.wiki
+  const {loaded, descriptions} = state.wiki
 
-  const {section, article:ArticleName} = ownProps
+  const {level0, id} = ownProps
+  const {entities, level0Title} = state.wiki[level0]
+  const article = entities[id]
 
-  let articles, sectionName
-  switch(section){
-    case 'technical-mecca':
-      articles = state.wiki.technical
-      sectionName = 'Technical Mecca'
-      break;
-    case 'about-humaniq':
-      articles = state.wiki.about
-      sectionName = 'About Humaniq'
+  const descriptionObj = article && descriptions.find( description => (
+    description.level0 === level0 && description.level1 === article.level1
+  ))
 
-  }
+  const description = descriptionObj && descriptionObj.description
 
-  const article = articles.filter(item => convert.toKebab(item.title) === ArticleName)[0]
-  return {loaded, loading, article, section, sectionName};
+  return {loaded, article, level0Title, level0, description};
 }
 
 export default connect(mapStateToProps)(SE_Wiki2);

@@ -2,36 +2,35 @@ import {connect} from 'react-redux';
 import SE_Wiki1 from 'SE_Wiki1'
 import {getArticleLinks} from 'utils'
 
+
 function mapStateToProps(state, ownProps) {
-  const {loaded, loading} = state.wiki
+  const {level0} = ownProps
+  const { descriptions } = state.wiki
+  const {ids, entities, level0Title} = state.wiki[level0]
+  const urls = getArticleLinks(ids, entities)
 
-  const {section} = ownProps
+  const descriptionObj = descriptions.find( description => (
+    description.level0 === level0 && description.level1 === 'root'
+  ))
 
-  let articles
-  switch(section){
-    case 'technical-mecca':
-      articles = state.wiki.technical
-      break;
-    case 'about-humaniq':
-      articles = state.wiki.about
-  }
+  const description = descriptionObj.description
 
-  let articleTitles = getArticleLinks(articles, section)
-
-  let categories =
-    articles
-      .map(v => v.category)
+  const
+    _level1Categories = ids
+      .map(id => entities[id].level1)
       .filter((v, i, a) => a.indexOf(v) === i)
 
-  categories = categories.map( category => {
-    const _articles = articles.filter( article => article.category == category)
-    const urls = getArticleLinks(_articles, section)
+  const articlesByLevel1 = _level1Categories.map( level1Category => {
+    const level1Urls = urls.filter( url => url.level1 === level1Category)
+
     return ({
-      name: category,
-      articles: urls
+      level1Category,
+      articleUrls: level1Urls
     })
   })
-  return {loaded, loading, articles, articleTitles, section, categories};
+  return {
+    level0, articlesByLevel1, description, level0Title
+  };
 }
 
 export default connect(mapStateToProps)(SE_Wiki1);
