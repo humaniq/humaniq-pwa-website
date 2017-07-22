@@ -40,8 +40,9 @@ class SE_Wiki0 extends Component {
           <Info
             type='moving-title'
             title='Humaniq Roadmap'
+            external
             link={{
-              to: '#',
+              to: 'https://trello.com/b/xax1RSN8/humaniq-roadmap',
               text: 'Find out more about the plans'
             }}
             img={{
@@ -59,7 +60,9 @@ class SE_Wiki0 extends Component {
   }
 }
 
-SE_Wiki0.propTypes = {};
+SE_Wiki0.propTypes = {
+  articleTitles: T.array.isRequired
+};
 
 SE_Wiki0.defaultProps = {}
 

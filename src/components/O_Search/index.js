@@ -1,4 +1,5 @@
 import React , { Component } from 'react';
+import * as T from "prop-types";
 import './styles.scss';
 import {cssClassName} from 'utils';
 const cn = cssClassName('O_Search');
@@ -12,6 +13,7 @@ class O_Search extends Component {
   }
   render() {
     const { active } = this.state;
+    const {placeholder} = this.props
     return (
       <div>
         <A_Container type='wide'>
@@ -20,7 +22,7 @@ class O_Search extends Component {
             <input
               type="text"
               className={cn('input')}
-              placeholder="Search any transaction"
+              placeholder={placeholder}
               onFocus={() => this.setState({ active: true })}
               onBlur={() => this.setState({ active: false })}
             />
@@ -41,6 +43,8 @@ class O_Search extends Component {
 }
 
 
-O_Search.propTypes = {};
+O_Search.propTypes = {
+  placeholder: T.string.isRequired
+};
 
 export default O_Search

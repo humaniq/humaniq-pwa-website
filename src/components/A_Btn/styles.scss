@@ -38,10 +38,6 @@ $form-btn-border-radius: 30px;
         color: $white;
         padding: 0;
         padding-right: 3.1rem;
-
-        &:hover, &:active{
-          text-decoration: underline;
-        }
         background: url('/img/arow_right.svg') right 13px center / .9rem no-repeat;
       }
       &_standart-form{

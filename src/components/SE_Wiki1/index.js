@@ -1,12 +1,9 @@
 import React, {Component} from 'react';
-// import * as T from "prop-types";
+import * as T from "prop-types";
 import './styles.scss';
 import {cssClassName} from 'utils'
 const cn = cssClassName('SE_Wiki1')
 import A_Container from 'A_Container'
-// import A_Image from 'A_Image'
-// import A_Link from 'A_Link'
-// import Info from './Info'
 import A_P from 'A_P'
 import A_H from 'A_H'
 import O_Сrumbs from 'O_Сrumbs'
@@ -17,8 +14,7 @@ import O_Hero from 'O_Hero'
 class SE_Wiki1 extends Component {
 
   render() {
-    const {loaded, loading, articles, articleTitles, section, categories} = this.props
-    // const {articleTitles} = this.props
+    const {section, categories} = this.props
     let title, text;
     switch(section){
       case 'technical-mecca':
@@ -57,7 +53,10 @@ class SE_Wiki1 extends Component {
   }
 }
 
-SE_Wiki1.propTypes = {};
+SE_Wiki1.propTypes = {
+  section:T.string.isRequired,
+  categories: T.array.isRequired
+};
 
 SE_Wiki1.defaultProps = {}
 

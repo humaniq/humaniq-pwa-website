@@ -1,24 +1,20 @@
 import React, {Component} from 'react';
-// import * as T from "prop-types";
-import './styles.scss';
-import {cssClassName} from 'utils'
-const cn = cssClassName('SE_Wiki1')
+import * as T from "prop-types";
+// import './styles.scss';
+// import {cssClassName} from 'utils'
+// const cn = cssClassName('SE_Wiki1')
 import A_Container from 'A_Container'
-// import A_Image from 'A_Image'
-// import A_Link from 'A_Link'
-// import Info from './Info'
+
 import A_P from 'A_P'
 import A_H from 'A_H'
 import O_Сrumbs from 'O_Сrumbs'
-import O_ArticleList from 'O_ArticleList'
-import O_Hero from 'O_Hero'
 import {convert} from 'utils'
 
 
 class SE_Wiki2 extends Component {
 
   render() {
-    const {loaded, loading, article, section, sectionName} = this.props
+    const {loaded, article, section, sectionName} = this.props
     if(!loaded){
       return null;
     }
@@ -44,7 +40,15 @@ class SE_Wiki2 extends Component {
   }
 }
 
-SE_Wiki2.propTypes = {};
+SE_Wiki2.propTypes = {
+  loaded: T.bool.isRequired,
+  article:  T.shape({
+    title: T.string.isRequired,
+    article: T.string.isRequired
+  }).isRequired,
+  section: T.string,
+  sectionName: T.string
+};
 
 SE_Wiki2.defaultProps = {}
 

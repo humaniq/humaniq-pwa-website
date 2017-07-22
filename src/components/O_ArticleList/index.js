@@ -6,6 +6,7 @@ import A_Link from 'A_Link'
 const cn = cssClassName('O_ArticleList')
 import A_H from 'A_H'
 import A_Container from 'A_Container'
+import A_Image from 'A_Image'
 
 const Oval = ({className}) => (
   <svg className={className} xmlns="http://www.w3.org/2000/svg" width="6" height="7" viewBox="0 0 6 7">
@@ -17,8 +18,7 @@ const O_ArticleList = ({articles, title}) =>{
   const getList = (articles, i) => {
     const renderedArticles = articles.map( (article, i) => (
       <li key={"key_" + i} className={cn('article-item')}>
-        <Oval className={cn('oval')} />
-        <A_Link to={article.url} >{article.title}</A_Link>
+        <A_Link to={article.url} type="article">{article.title}</A_Link>
       </li>
     ))
     return(
@@ -37,7 +37,7 @@ const O_ArticleList = ({articles, title}) =>{
   return(
     <A_Container>
       <div className={cn('root')}>
-          <A_H type="section">{title}</A_H>
+        <A_H type="section">{title}</A_H>
         <div className={cn('lists')}>
           {lists}
         </div>
