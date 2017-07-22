@@ -1,5 +1,4 @@
 import React from 'react';
-import * as T from "prop-types";
 import './title.scss';
 import {cssClassName} from 'utils'
 const cn = cssClassName('SE_HomeHeroTitle')

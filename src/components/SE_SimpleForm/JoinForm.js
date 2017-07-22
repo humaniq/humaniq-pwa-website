@@ -9,7 +9,6 @@ import A_P from 'A_P'
 import A_InputText from 'A_InputText'
 import Header from './Header'
 import A_Btn from 'A_Btn'
-import M_Ripple from 'M_Ripple'
 
 class SE_SimpleFormJoinForm extends Component {
 

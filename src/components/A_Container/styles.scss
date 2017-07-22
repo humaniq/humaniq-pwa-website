@@ -26,8 +26,12 @@
         margin-bottom: 8rem;
       }
     }
-    &_section-clean{
+    &_section-long-text{
       padding-top: 3.2rem;
+      &:last{
+        margin-bottom: 8rem;
+
+      }
     }
     &_equal{
       padding-top: 3.2rem;

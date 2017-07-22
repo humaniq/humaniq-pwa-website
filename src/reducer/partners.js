@@ -1,4 +1,4 @@
-import {START, SUCCESS, FAIL, FETCH, PARTNERS} from 'constants'
+import {SUCCESS, FETCH, PARTNERS} from 'constants'
 
 const initPartners = {
   entities:[]

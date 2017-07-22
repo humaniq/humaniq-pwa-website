@@ -10,13 +10,11 @@ class SE_WikiLayout extends Component {
     const {children} = this.props;
 
     return (
-      <div>
-        <div className={cn('root')}>
-          <div className={cn('search')}>
-            <O_Search />
-          </div>
-          {children}
+      <div className={cn('root')}>
+        <div className={cn('search')}>
+          <O_Search placeholder="Search anything"/>
         </div>
+        {children}
       </div>
     )
   }

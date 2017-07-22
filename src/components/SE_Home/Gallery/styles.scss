@@ -9,7 +9,6 @@
 
     &_type_links{
       flex-flow: nowrap;
-
     }
 
     @include media($mobile) {
@@ -18,40 +17,98 @@
     @include media($tablet) {
       justify-content: center;
     }
+  }
 
+  &__item{
+    flex: 1 1 26rem;
+    height: auto;
+    margin: 2rem 1rem 0;
+    max-width: 26rem;
 
-    &-item{
+    &-interactive{
       flex: 1 1 26rem;
       height: auto;
       margin: 2rem 1rem 0;
       max-width: 26rem;
-
+      &:hover, &:active{
+        //border-bottom: $interactive-border-b;
+        //margin-bottom: 0;
+      }
       @include media($mobile) {
-        flex: 1 0 100%;
         margin: 2rem auto 0;
 
       }
-      &-title{
-        padding-bottom: 0;
-        margin-bottom: 0rem;
-      }
-      &-img{
-        width: 100%;
-        height: auto;
-        margin-bottom: .9rem;
-        @include media($tablet) {
-          width: 100%;
 
-          height: auto;
-          margin: 0 auto;
-        }
-        @include media($mobile) {
-          width: 100%;
-          height: auto;
-          margin: 0 auto;
-        }
+      &-body{
+        padding-bottom: .3rem;
+        color: $interactive;
+        font-size: 1.5rem;
+        line-height: 6.9rem;
+        font-weight: 600;
+      }
+    }
+
+    @include media($mobile) {
+      flex: 1 0 100%;
+      margin: 2rem auto 0;
+
+    }
+    &-title{
+      padding-bottom: 0;
+      margin-bottom: 0rem;
+    }
+    &-img{
+      width: 100%;
+      height: auto;
+      margin-bottom: .9rem;
+      @include media($tablet) {
+        width: 100%;
+
+        height: auto;
+        margin: 0 auto;
+      }
+      @include media($mobile) {
+        width: 100%;
+        max-width: 26rem;
+        height: auto;
+        margin: 0 auto;
       }
     }
   }
 
+  //&__btn-img{
+  //  &-root{
+  //    width: 100%;
+  //    margin-bottom: $interactive-border-size-1;
+  //    display: flex;
+  //    flex-flow: column;
+  //    &:hover, &:active{
+  //      border-bottom: $interactive-border-b;
+  //      margin-bottom: 0;
+  //    }
+  //  }
+  //  &-img{
+  //
+  //    @include media($tablet) {
+  //      width: 20rem;
+  //      height: auto;
+  //      margin: 0 auto;
+  //    }
+  //    @include media($mobile) {
+  //      width: 100%;
+  //
+  //    }
+  //  }
+  //
+  //}
+}
+
+.se-home-gallery__item-interactive:hover .se-home-gallery__item-interactive-body{
+  border-bottom: $interactive-border-b;
+  padding: 0
+}
+
+.se-home-gallery__item-interactive:active .se-home-gallery__item-interactive-body{
+  border-bottom: $interactive-border-b;
+  padding: 0
 }
