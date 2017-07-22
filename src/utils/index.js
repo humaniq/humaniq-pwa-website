@@ -19,8 +19,18 @@ export const simpleSnakeCase = (str) => str.split(/(?=[A-Z])/).join('_').toLower
 
 export const convert = {
   toSnake: str => str.split(/(?=[A-Z])/).join('_').toLowerCase(),
-  toKebab: (str) => str.split(/\s+/).join('-').toLowerCase(),
-  toCamel: str => str.replace(/_([a-z])/g, g => g[1].toUpperCase()),
+  toKebab: str => {
+    let newString = str.replace(/(\w(?=[A-Z]))/g, '$1+').replace(/[_-]/g, '+')
+    return (newString.split('+').join('-').toLowerCase())
+  },
+  toCleanKebab: str => str.replace(/[^\w\s_]/g, '').split(/\s+/).join('-').toLowerCase(),
+  toCamel: str => str.replace(/[_-]([a-z])/g, g => g[1].toUpperCase()),
+  toTitleCase: str => {
+    let newString = str.replace(/[_-]/, ' ')
+    return (
+      newString
+        .replace(/\w\S*/g, txt => txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase())
+    )},
   obj:{
     toCamel: str => camelcaseKeys(str, {deep: true}),
   }
@@ -50,16 +60,16 @@ export function deepValueByString(obj, path){
   return obj;
 }
 
-export function getArticleLinks(arr, section){
+export function getArticleLinks(ids, entities){
   return(
-    arr.map( article => {
-      const categoryUrl = convert.toKebab(article.category)
-      const articleUrl = convert.toKebab(article.title)
+    ids.map( id => {
+      const entitie = entities[id]
+
       return({
-        title: article.title,
-        url: `/wiki/${section}/${articleUrl}`,
-        section: section,
-        category: categoryUrl
+        title: entitie.title,
+        url: `/wiki/${entitie.level0}/${id}`,
+        level1: entitie.level1,
+        level0: entitie.level0
       })
     })
   )

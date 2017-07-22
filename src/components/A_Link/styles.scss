@@ -26,6 +26,12 @@
       font-size: 1.2rem;
       font-weight: 600;
       vertical-align: top;
+      padding: 0;
+      padding-right: 2.1rem;
+      &-notlast{
+        @extend .a-link_type_crumbs;
+        background: url('/img/icons/breadcrumb-divider@2x.png') right 7px center / .5rem no-repeat;
+      }
     }
 
     &_hero-list-links{

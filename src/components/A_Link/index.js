@@ -34,6 +34,7 @@ A_Link.propTypes = {
     'article', // wiki articles not bold text
     'primary', // brand blue link
     'crumbs', // brand  blue link 12, weight 600
+    'crumbs-notlast', // brand  blue link 12, weight 600 + icon
     'hero-list-links', // brand blue link 15/26
     'white', // white links
     'section-link', //blue links in info blocks automatically add ` here »`

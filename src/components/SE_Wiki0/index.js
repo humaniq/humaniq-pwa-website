@@ -13,7 +13,7 @@ import O_ArticleList from 'O_ArticleList'
 class SE_Wiki0 extends Component {
 
   render() {
-    const {articleTitles} = this.props
+    const {articles} = this.props
     return (
       <div>
         <A_Container type='section-wiki'>
@@ -54,14 +54,14 @@ class SE_Wiki0 extends Component {
             to be as transparant as possible. That is why our technical roadmap is available to general public.</A_P>
           </Info>
         </A_Container>
-        <O_ArticleList articles={articleTitles} title="Featured Articles"/>
+        <O_ArticleList articles={articles} title="Featured Articles"/>
       </div>
     )
   }
 }
 
 SE_Wiki0.propTypes = {
-  articleTitles: T.array.isRequired
+  articles: T.array.isRequired
 };
 
 SE_Wiki0.defaultProps = {}
