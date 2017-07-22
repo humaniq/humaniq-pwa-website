@@ -56,7 +56,7 @@ class SE_Partners extends Component {
           ref={ node => this.nodes[i + 1] = node}
         >
           <A_Image
-            src={partner.logoLink}
+            src={partner.logoLink2x}
             alt={partner.title}
           />
           <span className={cn('tooltip', {type: tooltipPlace})}>
