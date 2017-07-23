@@ -5,8 +5,8 @@ import {getArticleLinks} from 'utils'
 
 function mapStateToProps(state, ownProps) {
   const {level0} = ownProps
-  const { descriptions } = state.wiki
-  const {ids, entities, level0Title} = state.wiki[level0]
+  const { descriptions } = state.wikiArticles
+  const {ids, entities, level0Title} = state.wikiArticles[level0]
   const urls = getArticleLinks(ids, entities)
 
   const descriptionObj = descriptions.find( description => (

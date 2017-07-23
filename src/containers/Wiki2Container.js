@@ -2,10 +2,10 @@ import {connect} from 'react-redux';
 import SE_Wiki2 from 'SE_Wiki2'
 
 function mapStateToProps(state, ownProps) {
-  const {loaded, descriptions} = state.wiki
+  const {loaded, descriptions} = state.wikiArticles
 
   const {level0, id} = ownProps
-  const {entities, level0Title} = state.wiki[level0]
+  const {entities, level0Title} = state.wikiArticles[level0]
   const article = entities[id]
 
   const descriptionObj = article && descriptions.find( description => (

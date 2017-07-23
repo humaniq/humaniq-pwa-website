@@ -12,7 +12,6 @@ const A_Btn = ({type, children, disabled, btnType, to, onClick, ...props}) =>{
   disabled = disabled && 'disabled'
 
   switch(type){
-    case 'window':
     case 'inline':
 
       return (
@@ -29,6 +28,7 @@ const A_Btn = ({type, children, disabled, btnType, to, onClick, ...props}) =>{
           </button>
         </M_Ripple>
       )
+    case 'window':
     case 'link-standart-form':
     case 'link-subscribe':
       return (

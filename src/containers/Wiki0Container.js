@@ -3,14 +3,13 @@ import SE_Wiki0 from 'SE_Wiki0'
 import {getArticleLinks} from 'utils'
 
 function mapStateToProps(state) {
-  const {'technical-mecca':technicalMecca, 'about-humaniq':aboutHumaniq} = state.wiki
+  const {'technical-mecca':technicalMecca, 'about-humaniq':aboutHumaniq} = state.wikiArticles
 
   const articles = [
     ...getArticleLinks(technicalMecca.ids, technicalMecca.entities),
     ...getArticleLinks(aboutHumaniq.ids, aboutHumaniq.entities)
   ]
 
-  console.log(aboutHumaniq, technicalMecca)
   return {articles};
 }
 

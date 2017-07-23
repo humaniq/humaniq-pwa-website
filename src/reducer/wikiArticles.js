@@ -6,7 +6,7 @@ const initLevel0 = {
   entities: {}
 }
 
-const initWiki = {
+const initWikiArticles = {
   loading: false,
   loaded: false,
   'technical-mecca': {...initLevel0 },
@@ -45,15 +45,15 @@ const initWiki = {
   ]
 }
 
-export default (wiki = initWiki, {type, data}) => {
+export default (wikiArticles = initWikiArticles, {type, data}) => {
 
   switch (type) {
     case REQUEST + WIKI + START:
-      return {...wiki, loading: true}
+      return {...wikiArticles, loading: true}
     case REQUEST + WIKI + SUCCESS:
-      return {...wiki, loading: false, loaded: true, ...data}
+      return {...wikiArticles, loading: false, loaded: true, ...data}
     case REQUEST + WIKI + FAIL:
-      return {...wiki, loading: false}
+      return {...wikiArticles, loading: false}
   }
-  return wiki;
+  return wikiArticles;
 };

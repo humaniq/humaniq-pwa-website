@@ -4,15 +4,24 @@ import './styles.scss';
 import {cssClassName} from 'utils';
 import O_Search from 'O_Search';
 const cn = cssClassName('SE_WikiLayout');
+import history from 'history'
 
 class SE_WikiLayout extends Component {
+
+  handleSubmit = (searchString) => {
+    history.push('/wiki/search?searchTerm=' + searchString)
+  }
   render() {
-    const {children} = this.props;
+    const {children, searchRequest} = this.props;
 
     return (
       <div className={cn('root')}>
         <div className={cn('search')}>
-          <O_Search placeholder="Search anything"/>
+          <O_Search
+            placeholder="Search anything"
+            value={searchRequest}
+            handleSubmit = {this.handleSubmit}
+          />
         </div>
         {children}
       </div>
@@ -22,6 +31,7 @@ class SE_WikiLayout extends Component {
 
 SE_WikiLayout.propTypes = {
   children: T.any.isRequired,
+  searchRequest: T.string
 };
 
 export default SE_WikiLayout

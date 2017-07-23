@@ -14,3 +14,6 @@ export const ENDPOINT_SUBSCRIBE_FORM = `${HUMANIQ_BACKEND_API_URL}/dev/subscript
 
 export const ENDPOINT_PARTNERS = `https://s3-eu-west-1.amazonaws.com/humaniq-web-backend-public/partners`
 export const ENDPOINT_PARTNERS_LIST = `${ENDPOINT_PARTNERS}/partners.json`
+
+export const ENDPOINT_WIKI_SEARCH = 'https://f03pn9k2v8.execute-api.eu-west-1.amazonaws.com/dev/articles/search'
+
