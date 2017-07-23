@@ -28,6 +28,11 @@ class SE_SimpleFormSubscribeForm extends Component {
     }
   }
 
+  onFormSubmit = (e) => {
+    e.preventDefault()
+    this.onSubmit(this.props.handleSubmit)()
+  }
+
   validate = (value) => {
     let error
     if (!value) {
@@ -52,7 +57,7 @@ class SE_SimpleFormSubscribeForm extends Component {
     const {values: {email}, error, submitted} = this.state
 
     return (
-      <form  className={cn('form')}>
+      <form  className={cn('form')} onSubmit={this.onFormSubmit}>
         <Header>
           {submitted ||
             <A_Btn

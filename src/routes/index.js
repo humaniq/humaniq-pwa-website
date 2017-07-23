@@ -10,6 +10,7 @@ import Wiki from './Wiki'
 import Wiki0 from './Wiki0'
 import Wiki1 from './Wiki1'
 import Wiki2 from './Wiki2'
+import WikiSearch from './WikiSearch'
 
 const getRoutes = () => {
   return (
@@ -33,31 +34,19 @@ const getRoutes = () => {
           component={SimpleForm}
         />
       </Route>
-      <Route path="wiki"
-             component={Wiki}
-      >
-        <IndexRoute
-          component={Wiki0}
-        />
-        <Route
-          path=":level0"
-        >
-          <IndexRoute
-            component={Wiki1}
-          />
-          <Route
-            path=":id"
-            component={Wiki2}
-          />
+      <Route path="wiki" component={Wiki}>
+        <IndexRoute component={Wiki0}/>
+        <Route path="search" component={WikiSearch} prepareData={WikiSearch.prepareData} />
+        <Route path=":level0">
+          <IndexRoute component={Wiki1}/>
+          <Route path=":id" component={Wiki2}/>
         </Route>
       </Route>
-
       <Route path="use-cases"
              component={Cases}
       />
       <Route path="Partners"
              component={Partners}
-             // prepareData={Partners.prepareData}
       />
       {/*<Route*/}
         {/*path="/error/:err"*/}

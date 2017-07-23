@@ -9,24 +9,37 @@ import A_H from 'A_H';
 
 class O_Search extends Component {
   state = {
-    active: false
+    inActive: !this.props.value,
+    value: this.props.value || ''
   }
+
+  onSubmit = (e) =>{
+    e.preventDefault()
+    const {value} = this.state
+    if(value){
+      this.props.handleSubmit(value)
+    }
+  }
+
   render() {
-    const { active } = this.state;
+    const { inActive, value } = this.state;
     const {placeholder} = this.props
+
     return (
       <div>
         <A_Container type='wide'>
           <A_H type='search'>Welcome to Humaniq wiki</A_H>
-          <form action="" className={cn(`search ${ active ? 'o-search__input--focused': '' }`)}>
+          <form action="" className={cn(`search ${ inActive ? 'o-search__input--focused': '' }`)} onSubmit={this.onSubmit}>
             <input
               type="text"
-              className={cn('input')}
+              className={cn('input', {inActive})}
               placeholder={placeholder}
-              onFocus={() => this.setState({ active: true })}
-              onBlur={() => this.setState({ active: false })}
+              value = {value}
+              onChange= {e => this.setState({value: e.target.value})}
+              onFocus={() => this.setState({ inActive: true })}
+              onBlur={() => this.setState({ inActive: false })}
             />
-            <button className={cn('submit')}>
+            <button className={cn('submit')} type="submit">
               <svg className={cn('search-icon')} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 19">
                 <g fill="none" transform="translate(-1 -1)">
                   <path fill="none" d="M0 0h20v20H0z"/>
@@ -44,7 +57,8 @@ class O_Search extends Component {
 
 
 O_Search.propTypes = {
-  placeholder: T.string.isRequired
+  placeholder: T.string.isRequired,
+  handleSubmit: T.func.isRequired
 };
 
 export default O_Search

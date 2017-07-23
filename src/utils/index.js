@@ -74,3 +74,5 @@ export function getArticleLinks(ids, entities){
     })
   )
 }
+
+export const safeDA = (props, object) => props.reduce((prefix, val) => (prefix && prefix[val]) ? prefix[val] : null, object)

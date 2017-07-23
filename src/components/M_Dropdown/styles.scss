@@ -10,6 +10,8 @@
 
   }
   &__select{
+    border-radius: $form-radius;
+    box-shadow: $form-shadow;
     display: inline-flex;
     background-color: $white;
     border: solid 1px $form-border-color;

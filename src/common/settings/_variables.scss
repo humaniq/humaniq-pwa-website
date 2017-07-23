@@ -23,7 +23,7 @@ $brand: $blue-1; //- brand text
 $interactive: $blue-2; // itneractive text (links, buttons, ...etc)
 $wiki-articles: $blue-5;
 $shadow-1: 0 1px 4px 0 rgba(0, 0, 0, 0.2);
-$shadow-2:  0 3px 10px 0 rgba(0, 0, 0, 0.2);
+$shadow-2: 0 1px 2px rgba(0,0,0,0.2);
 
 
 //forms
@@ -36,9 +36,8 @@ $form-error-color: $red-1;
 $form-disabled-color: $gray-3;
 $form-placeholder-color: $gray-3;
 $form-mark-color: $black-1;
-$form-radius: .6rem;
-$form-shadow: $shadow-2;
-
+$form-radius: .2rem;
+$form-shadow: $shadow-1;
 
 
 $interactive-border-size-1: .3rem;

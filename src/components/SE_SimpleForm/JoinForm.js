@@ -35,6 +35,11 @@ class SE_SimpleFormJoinForm extends Component {
     }
   }
 
+  onFormSubmit = (e) => {
+    e.preventDefault()
+    this.onSubmit(this.props.handleSubmit)()
+  }
+
   validate(values){
     let errors = {};
 
@@ -90,7 +95,7 @@ class SE_SimpleFormJoinForm extends Component {
     } = this.state
 
     return (
-      <form className={cn('form')}>
+      <form className={cn('form')} onSubmit={this.onFormSubmit}>
         <Header>
           {submitted ||
             <A_Btn
