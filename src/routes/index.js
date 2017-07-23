@@ -11,8 +11,9 @@ import Wiki0 from './Wiki0'
 import Wiki1 from './Wiki1'
 import Wiki2 from './Wiki2'
 import WikiSearch from './WikiSearch'
+import {cleanWikiSearch} from 'AC/wiki'
 
-const getRoutes = () => {
+const getRoutes = (store) => {
   return (
     <Route
       path="/"
@@ -36,7 +37,12 @@ const getRoutes = () => {
       </Route>
       <Route path="wiki" component={Wiki}>
         <IndexRoute component={Wiki0}/>
-        <Route path="search" component={WikiSearch} prepareData={WikiSearch.prepareData} />
+        <Route
+          path="search"
+          component={WikiSearch}
+          prepareData={WikiSearch.prepareData}
+          onLeave={() => store.dispatch(cleanWikiSearch())}
+        />
         <Route path=":level0">
           <IndexRoute component={Wiki1}/>
           <Route path=":id" component={Wiki2}/>
