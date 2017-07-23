@@ -28,10 +28,9 @@ class SE_WikiSearch extends Component {
   render() {
     const {articles, total, request, show} = this.props
     let result
-
     if(show){
       result = total === 0 ?
-        <M_NoResults>{request}</M_NoResults>
+        <M_NoResults request={request} />
         : this.getResults(articles)
     }
 
