@@ -12,7 +12,14 @@ export default (wikiSearch = wikiSearchInit, {type, data}) => {
     case WIKI_SEARCH + START:
       return {...wikiSearch, loading: true, request: data}
     case WIKI_SEARCH + SUCCESS:
-      return {...wikiSearch, loading: false, loaded: true, ...data}
+      return {
+        ...wikiSearch,
+        loading: false,
+        loaded: true,
+        articles: data.articles,
+        request: data.initdata,
+        total: data.total
+      }
     case WIKI_SEARCH + FAIL:
       return {...wikiSearchInit}
     case CLEAN + WIKI_SEARCH:

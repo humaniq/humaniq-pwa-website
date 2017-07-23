@@ -7,7 +7,6 @@ import history from 'history'
 import createStore from 'store';
 import prepareData from 'utils/prepareData'
 // import offlinePluginStart from 'utils/offlinePlugin'
-import {cleanWikiSearch} from 'AC/wiki'
 import {closeMenu} from 'AC/navigation'
 
 const store = createStore(window.__INITIAL_STATE__)
@@ -32,7 +31,6 @@ const App = () => (
         window.scrollTo(0, 0)
         const state = store.getState()
         state.navigation.isMenuOpened && store.dispatch(closeMenu())
-        store.dispatch(cleanWikiSearch())
         hashLinkScroll()
       }}
     >
