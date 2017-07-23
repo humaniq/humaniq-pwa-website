@@ -31,7 +31,6 @@ export default () => next => action => {
 }
 
 function APICall({endpoint, method, query, payload}) {
-  console.log({endpoint})
   return new Promise((resolve, reject) => {
     let r = request[method.toLowerCase()](`${endpoint}`)
     if (query)
@@ -45,5 +44,4 @@ function APICall({endpoint, method, query, payload}) {
       error => reject(error)
     )
   })
-
 }
