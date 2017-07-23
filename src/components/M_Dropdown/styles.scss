@@ -10,25 +10,21 @@
 
   }
   &__select{
-    user-select: none;
-    cursor: pointer;
     display: inline-flex;
-    border-radius: $form-radius;
     background-color: $white;
     border: solid 1px $form-border-color;
     min-width: 13.3rem;
     align-items: center;
-    color: $interactive;
     padding-left: 1rem;
     padding-right: 1rem;
     font-size: 16px;
     line-height: 22px;
     height: 5.3rem;
-    box-shadow: $form-shadow;
     @include media($mobile) {
       width: 100%;
     }
     &-text{
+      color: $interactive;
       font-size: 1.7rem;
       font-weight: 600;
       margin: 0 auto;
@@ -44,7 +40,17 @@
         border-top: 6px solid $interactive;
       }
     }
-
+    &:hover, &:active{
+      &:after{
+        content: '';
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.1);
+      }
+    }
   }
 
   &__list-options{
