@@ -51,6 +51,7 @@ const A_H = ({type, icon, children, center}) =>{
 
 A_H.propTypes = {
   type: T.oneOf([
+    'hmq', // black icon title for hmq explorer 16/25 /600, mob -margin left 16px
     'hero', //black bold 25
     'search', // white bold 25 used on wiki search
     'bs', // blue title uses at hero home page, 16/24
@@ -60,7 +61,7 @@ A_H.propTypes = {
     'tooltip-sub', //blue subtitle 15/26 used on tooltip marign bottom 8px
     'xs', // black title uses at hero home page, 13/20 bold
     'section', //black title used for sections 23/32 padding-bottom 10
-    'section-sub', //black title used for sections 23/32 padding-bottom 10
+    'section-sub', //black title used for sections 16/32 padding-bottom 10
     'section-c', //black title used for sections 23/32 padding-bottom 30, always text-align center
   ]),
   icon: T.oneOf([

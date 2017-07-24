@@ -1,0 +1,180 @@
+@import "common/settings/variables";
+@import "common/utils";
+
+/* Transaction Section
+/* ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## */
+
+.o-transaction-holders {
+  &__asset-stats {
+    width: 94rem;
+    margin: 0 auto;
+    text-align: left;
+    border-collapse: separate;
+    @include media($tablet) {
+      width: 69rem;
+    }
+    @include media($mobile) {
+      width: 90%;
+    }
+    tbody {
+      display: table;
+      table-layout: fixed;
+      width: 100%;
+      border-spacing: 0 1rem;
+    }
+    &__tr {
+      background: #fff;
+      border-radius: .4rem;
+      box-shadow: 0 .1rem .6rem 0 rgba(0, 0, 0, 0.12), 0 .1rem .4rem 0 rgba(0, 0, 0, 0.12);
+      transition: all 0.3s ease;
+      &:hover {
+        box-shadow: 0 .3rem 1rem 0 rgba(0, 0, 0, 0.16), 0 .3rem 1rem 0 rgba(0, 0, 0, 0.23);
+      }
+    }
+    &__td {
+      padding: .5rem 0;
+      &:nth-child(1) {
+        width: 8%;
+        padding-left: 2rem;
+        @include media($tablet) {
+          display: none;
+        }
+        @include media($mobile) {
+          display: table-cell;
+          width: 30%;
+        }
+      }
+      &:nth-child(2) {
+        width: 21%;
+        padding-right: 3.5rem;
+        @include media($tablet) {
+          display: none;
+        }
+        @include media($mobile) {
+          width: 30%;
+          padding-right: 2rem;
+          display: table-cell;
+        }
+      }
+      &:nth-child(3) {
+        width: 7%;
+        padding-left: .5rem;
+        @include media($tablet) {
+          padding-left: 2rem;
+          border-top-left-radius: .4rem;
+          border-bottom-left-radius: .4rem;
+        }
+        @include media($mobile) {
+          display: none;
+        }
+      }
+      &:nth-child(4) {
+        width: 33%;
+        @include media($mobile) {
+          display: none;
+        }
+      }
+      &:nth-child(5) {
+        width: 20%;
+        padding-left: .7rem;
+        @include media($mobile) {
+          display: none;
+        }
+      }
+      &:nth-child(6) {
+        width: 11%;
+        @include media($mobile) {
+          width: 40%;
+        }
+      }
+      &:first-child {
+        border-top-left-radius: .4rem;
+        border-bottom-left-radius: .4rem;
+      }
+      &:last-child {
+        border-top-right-radius: .4rem;
+        border-bottom-right-radius: .4rem;
+      }
+      span {
+        display: block;
+      }
+    }
+    &__time {
+      font-size: 1.2rem;
+      color: rgba(51, 51, 51, 0.5);
+      position: relative;
+      top: 1rem;
+    }
+    &__icon {
+      position: relative;
+      margin: 0 .5rem;
+      &.o-asset-stats__icon--pending {
+        &:before {
+          content: '';
+          width: 1.3rem;
+          height: 1.3rem;
+          background: red;
+          position: absolute;
+          top: .3rem;
+          right: 0;
+        }
+      }
+      &.o-asset-stats__icon--success {
+        &:before {
+          content: '';
+          width: 1.3rem;
+          height: 1.3rem;
+          background: $blue-1;
+          position: absolute;
+          top: .3rem;
+          right: 0;
+        }
+      }
+    }
+
+    &__hash {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #333;
+    }
+    &__block {
+      @extend .o-transaction-log__asset-stats__hash;
+    }
+    &__from {
+      @extend .o-transaction-log__asset-stats__hash;
+    }
+    &__to {
+      @extend .o-transaction-log__asset-stats__hash;
+    }
+    &__price-usd {
+      @extend .o-transaction-log__asset-stats__hash;
+    }
+    &__price-hmq {
+      @extend .o-transaction-log__asset-stats__hash;
+      font-size: 1.3rem;
+      font-weight: bold;
+    }
+    &__hash-link {
+      font-size: 1.2rem;
+      text-decoration: none;
+      color: $blue-1;
+      display: block;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+    &__block-link {
+      @extend .o-transaction-log__asset-stats__hash-link;
+    }
+    &__from-link {
+      @extend .o-transaction-log__asset-stats__hash-link;
+    }
+    &__to-link {
+      @extend .o-transaction-log__asset-stats__hash-link;
+
+    }
+  }
+}

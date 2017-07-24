@@ -28,12 +28,13 @@ import A_Link from 'A_Link'
 import A_Logo from 'A_Logo'
 import M_Ripple from 'M_Ripple'
 import SE_SimpleForm from 'SE_SimpleForm'
+import A_H from 'A_H';
 
 import Header from 'SE_MainLayout/Header'
-import Footer from 'SE_MainLayout/Footer'
-import SE_MainLayout from 'SE_MainLayout'
-import HomePageHero from 'SE_Home/Hero/index.js';
+import Chart from 'SE_Hmq/Hero/Chart';
+
 import Title from 'SE_Home/Hero/title.js';
+import A_Container from "A_Container";
 
 
 const styleDecorator = (storyFn) => (
@@ -65,6 +66,19 @@ const mobile = (storyFn) => (
 
 
 addDecorator(styleDecorator)
+
+storiesOf('Chart HMQ', module)
+  .addDecorator(storyFN => <div style={{margin: 0, width: 680, height: 300, border: '1px solid tomato'}}>{storyFN()}</div>)
+  .add('', () => (
+    <Chart />
+  ));
+
+storiesOf('A_H HMQ', module)
+  .add('', () => (
+    <A_Container type='mob-wide-line'>
+      <A_H type="hmq" >HMQ Explorer</A_H>
+    </A_Container>
+  ));
 
 
 storiesOf('O_ScrollUp', module)
