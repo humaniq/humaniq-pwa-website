@@ -4,7 +4,7 @@
 /* Transaction Section
 /* ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## */
 
-.o-transaction-holders {
+.o-transaction-holder {
   &__asset-stats {
     width: 94rem;
     margin: 0 auto;
@@ -45,7 +45,7 @@
         }
       }
       &:nth-child(2) {
-        width: 21%;
+        width: 31%;
         padding-right: 3.5rem;
         @include media($tablet) {
           display: none;
@@ -69,20 +69,20 @@
         }
       }
       &:nth-child(4) {
-        width: 33%;
+        width: 16%;
         @include media($mobile) {
           display: none;
         }
       }
       &:nth-child(5) {
-        width: 20%;
+        width: 18%;
         padding-left: .7rem;
         @include media($mobile) {
           display: none;
         }
       }
       &:nth-child(6) {
-        width: 11%;
+        width: 10%;
         @include media($mobile) {
           width: 40%;
         }
@@ -138,19 +138,19 @@
       color: #333;
     }
     &__block {
-      @extend .o-transaction-log__asset-stats__hash;
+      @extend .o-transaction-holder__asset-stats__hash;
     }
     &__from {
-      @extend .o-transaction-log__asset-stats__hash;
+      @extend .o-transaction-holder__asset-stats__hash;
     }
     &__to {
-      @extend .o-transaction-log__asset-stats__hash;
+      @extend .o-transaction-holder__asset-stats__hash;
     }
     &__price-usd {
-      @extend .o-transaction-log__asset-stats__hash;
+      @extend .o-transaction-holder__asset-stats__hash;
     }
     &__price-hmq {
-      @extend .o-transaction-log__asset-stats__hash;
+      @extend .o-transaction-holder__asset-stats__hash;
       font-size: 1.3rem;
       font-weight: bold;
     }
@@ -167,13 +167,13 @@
       }
     }
     &__block-link {
-      @extend .o-transaction-log__asset-stats__hash-link;
+      @extend .o-transaction-holder__asset-stats__hash-link;
     }
     &__from-link {
-      @extend .o-transaction-log__asset-stats__hash-link;
+      @extend .o-transaction-holder__asset-stats__hash-link;
     }
     &__to-link {
-      @extend .o-transaction-log__asset-stats__hash-link;
+      @extend .o-transaction-holder__asset-stats__hash-link;
 
     }
   }
