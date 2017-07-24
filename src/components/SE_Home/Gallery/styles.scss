@@ -20,23 +20,22 @@
   }
 
   &__item{
-    flex: 1 1 26rem;
     height: auto;
     margin: 2rem 1rem 0;
     max-width: 26rem;
-
+    @include media($mobile) {
+      width: 100%;
+      margin: 2rem auto 0;
+    }
     &-interactive{
-      flex: 1 1 26rem;
       height: auto;
       margin: 2rem 1rem 0;
       max-width: 26rem;
-      &:hover, &:active{
-        //border-bottom: $interactive-border-b;
-        //margin-bottom: 0;
-      }
-      @include media($mobile) {
-        margin: 2rem auto 0;
 
+      @include media($mobile) {
+        flex-grow: 0;
+        width: 26rem;
+        margin: 2rem auto 0;
       }
 
       &-body{
@@ -48,11 +47,7 @@
       }
     }
 
-    @include media($mobile) {
-      flex: 1 0 100%;
-      margin: 2rem auto 0;
 
-    }
     &-title{
       padding-bottom: 0;
       margin-bottom: 0rem;
@@ -62,16 +57,10 @@
       height: auto;
       margin-bottom: .9rem;
       @include media($tablet) {
-        width: 100%;
 
-        height: auto;
-        margin: 0 auto;
       }
       @include media($mobile) {
-        width: 100%;
-        max-width: 26rem;
-        height: auto;
-        margin: 0 auto;
+
       }
     }
   }

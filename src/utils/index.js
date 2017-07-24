@@ -75,4 +75,19 @@ export function getArticleLinks(ids, entities){
   )
 }
 
-export const safeDA = (props, object) => props.reduce((prefix, val) => (prefix && prefix[val]) ? prefix[val] : null, object)
+export const safeDA = (object, props) => props.reduce((prefix, val) => (prefix && prefix[val]) ? prefix[val] : false, object)
+
+
+function rndStr(long){
+  const n = Math.ceil( long / 5 )
+  let string = ''
+  for(var i = 0; i < n; i++){
+    string += Math.random().toString(36).substring(8)
+  }
+  return (string.substr(0, long))
+}
+
+export const rnd = {
+  str: rndStr,
+  num: (long) => Math.round(Math.random() * Math.pow(10, long))
+}
