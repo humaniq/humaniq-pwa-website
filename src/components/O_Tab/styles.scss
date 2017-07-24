@@ -1,7 +1,7 @@
 @import "common/settings/variables";
 @import "common/utils";
 
-/* Search Section
+/* Tab Section
 /* ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## */
 
 .o-tab {
@@ -10,16 +10,16 @@
     box-shadow: 0 .1rem .4rem 0 rgba(0,0,0,.2);
     display: flex;
   }
-  &__underline{
-    &-nav{
+  &__underline {
+    &-nav {
       width: 95rem;
       @include media($tablet) {
         width: 100%;
       }
-      &__list{
+      &__list {
         list-style: none;
       }
-      &__li{
+      &__li {
         display: inline-block;
         vertical-align: middle;
         text-align: center;
