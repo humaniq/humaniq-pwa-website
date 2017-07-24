@@ -61,6 +61,11 @@ O_TransactionLog.propTypes = {
   time: dateString.isRequired,
   usdAmount: T.number.isRequired,
   hmqAmount: T.number.isRequired,
+  status: T.oneOf([
+    'pending',
+    'success',
+    'failure',
+  ]).isRequired,
 };
 
 export default O_TransactionLog

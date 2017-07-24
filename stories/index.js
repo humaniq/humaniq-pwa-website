@@ -36,6 +36,8 @@ import Chart from 'SE_Hmq/Hero/Chart';
 import Title from 'SE_Home/Hero/title.js';
 import A_Container from "A_Container";
 
+import O_Transaction from "O_Transaction";
+
 
 const styleDecorator = (storyFn) => (
   <div style={{
@@ -66,6 +68,32 @@ const mobile = (storyFn) => (
 
 
 addDecorator(styleDecorator)
+
+
+storiesOf('O_Transaction', module)
+  .add('', () => (
+    <div>
+      <O_Transaction type='log' {...{
+        txHash:"0xo31bdarse4zbeqzbdoq1y2",
+        block:25800,
+        from:"0xstxhyad7qd6gyuaxcfbytei8j7tmo4vvc6bzw0ndq",
+        to:"0xskvvfrmu0kiae5o150xezn6gt447230680z18pfvo",
+        time:"2017-07-25T04:09:26+08:00",
+        hmqAmount:41,
+        usdAmount:131.36
+      }} />
+      <O_Transaction type='holder' {...{
+        address: '0xfbb1b73c4f0bda4f67dca266ce6ef42f520fbb98',
+        rank: 1,
+        pecentage: 28.49,
+        txns: 94,
+        time: "2017-07-25T04:09:26+08:00",
+        usdAmount: 5999,
+        hmqAmount: 723.45,
+      }} />
+    </div>
+
+  ));
 
 storiesOf('Chart HMQ', module)
   .addDecorator(storyFN => <div style={{margin: 0, width: 680, height: 300, border: '1px solid tomato'}}>{storyFN()}</div>)
