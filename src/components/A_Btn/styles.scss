@@ -38,15 +38,11 @@ $form-btn-border-radius: 30px;
         color: $white;
         padding: 0;
         padding-right: 3.1rem;
-
-        &:hover, &:active{
-          text-decoration: underline;
-        }
         background: url('/img/arow_right.svg') right 13px center / .9rem no-repeat;
       }
       &_standart-form{
         user-select: none;
-        border-radius: $form-radius;
+        //border-radius: $form-radius;
         background-color: $interactive;
         color: $white;
         padding-left: 2.2rem;
@@ -54,13 +50,18 @@ $form-btn-border-radius: 30px;
         font-size: 1.7rem;
         vertical-align: top;
         height: 5.3rem;
-        box-shadow: $form-shadow;
       }
     }
   }
 
   &__ripple{
-
+    border-radius: $form-radius;
+    box-shadow: $form-shadow;
+    &_type{
+      &_window{
+        width: 100%;
+      }
+    }
     @include media($mobile) {
       width: 100%;
       margin: 0 auto;
@@ -93,15 +94,12 @@ $form-btn-border-radius: 30px;
         display: inline-flex;
         align-items: center;
         user-select: none;
-        //border-radius: $form-btn-border-radius;
-        //border-radius: $form-radius;
         background-color: $interactive;
         color: $white;
         padding-left: 2.2rem;
         padding-right: 2.2rem;
         font-size: 1.7rem;
         height: 5.3rem;
-        //box-shadow: $form-shadow;
         vertical-align: top;
         @extend .a-btn-material-hover;
 
@@ -112,8 +110,6 @@ $form-btn-border-radius: 30px;
         background-color: $interactive;
         height: 5.3rem;
         line-height: 3.5rem ;
-        border-radius: 6px;
-        box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.2);
         font-size: 1.7rem;
         font-weight: 600;
         text-align: center;
@@ -125,7 +121,6 @@ $form-btn-border-radius: 30px;
         background-color: $interactive;
         height: 5.3rem;
         line-height: 3.5rem ;
-        //border-radius: $form-btn-border-radius;
         font-size: 1.7rem;
         font-weight: 600;
         text-align: center;
@@ -135,9 +130,6 @@ $form-btn-border-radius: 30px;
         @include media($mobile) {
           width: 100%;
         }
-      }
-      &_interactive{
-
       }
     }
   }

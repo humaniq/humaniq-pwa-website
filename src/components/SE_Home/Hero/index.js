@@ -51,7 +51,7 @@ const SE_HomeHero = ({explorerData}) =>{
   )
 }
 SE_HomeHero.propTypes = {
-  explorerData: T.array
+  explorerData: T.array.isRequired
 };
 
 SE_HomeHero.defaultProps = {
