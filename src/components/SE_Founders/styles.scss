@@ -1,0 +1,22 @@
+@import "common/settings/variables";
+@import "common/utils";
+
+
+.se-founders{
+  &__founders-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__founders-title{
+      width: 980px;
+      height: 32px;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 23px;
+      font-weight: 600;
+      line-height: 1.39;
+      text-align: center;
+      color: #2c2d30;
+    }
+  }
+}
