@@ -11,7 +11,7 @@
   }
 
   &__root, &__h-width{
-    flex: 1 10 3.5rem;
+    flex: 0 10 12rem;
     @include media("max-width: #{$w-desktop + 226px}") {
       display: none;
     }
@@ -21,25 +21,22 @@
   }
 
   &__root {
-
+    transition: all .3s ease;
     position: relative;
     color: $brand;
     cursor: pointer;
-    opacity: 1;
     z-index: 100;
     box-sizing: content-box;
-    animation-duration:1s;
-    transition: opacity 0.4s ease-in-out;
+
     opacity: 1;
     &:hover {
-      transition: background-color 0.4s ease-in-out;
       background-color: $blue-3;
     }
   }
   &__button{
     padding-left: 2.5rem;
-
     position: fixed;
+    padding-top: 1.2rem;
     &-icon {
       display: inline-block;
       width: 1.6rem;
@@ -65,32 +62,4 @@
     visibility: hidden;
   }
 
-}
-
-//@keyframes opacityUP {
-//  0% {
-//    opacity: 0;
-//  }
-//  100% {
-//    opacity: 1;
-//  }
-//}
-
-
-@keyframes mouseOut {
-  from {
-    background-color: $blue-3;
-  }
-  to {
-    background-color: white;
-  }
-}
-
-@keyframe mouseIn {
-  from {
-    background-color: white;
-  }
-  to {
-    background-color: $blue-3;
-  }
 }

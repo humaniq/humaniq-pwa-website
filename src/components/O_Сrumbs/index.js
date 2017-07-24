@@ -4,21 +4,18 @@ import './styles.scss';
 import {cssClassName} from 'utils'
 const cn = cssClassName('O_Crumbs')
 import A_Link from 'A_Link';
-import A_Container from 'A_Container';
-
 
 const O_Сrumbs = ({path}) =>{
   const crumbs = path.map( (link, i, arr) => {
-    const linkName = i+1 < arr.length ? link.name + ' >' : link.name
+    const notLast = i+1 !== arr.length
+    const type = notLast ? 'crumbs-notlast' : 'crumbs'
     return(
-      <A_Link type='crumbs' key={'key_' + i} to={link.url} >{' '}{linkName}</A_Link>
+      <A_Link type={type} key={'key_' + i} to={link.url} >{link.name}</A_Link>
     )
   })
 
   return(
-    <A_Container type='section-clean'>
-      <div className={cn('root')}>{crumbs}</div>
-    </A_Container>
+    <div className={cn('root')}>{crumbs}</div>
   )
 }
 

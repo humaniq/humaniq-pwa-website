@@ -58,6 +58,7 @@ A_H.propTypes = {
     'search', // white bold 25 used on wiki search
     'timeline', // black title uses at component O_Timeline, 16/24
     'bs', // blue title uses at hero home page, 16/24
+    'wiki-result', // blue title 16/24/600/ marign-bottom 8
     'window', // black bold title 16/24 used on subscribe/personal/join/partners tooltip pages
     'tooltip', // black bold title 16/24 used on tooltip marign bottom 2px
     'tooltip-sub', //blue subtitle 15/26 used on tooltip marign bottom 8px
