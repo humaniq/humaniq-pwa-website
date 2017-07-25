@@ -20,7 +20,7 @@ class SE_Wiki0 extends Component {
           <div className={cn('hero')}>
             <div className={cn('hero-item')}>
               <A_Link type='block' to="/wiki/about-humaniq">
-                <A_Image src='/img/placeholder-squared.svg' alt='About Humaniq'/>
+                <A_Image src='/img/illustrations/wiki-about-humaniq.svg' alt='About Humaniq'/>
                 <div className={cn('hero-item-text')}>
                   About Humaniq
                 </div>
@@ -28,7 +28,7 @@ class SE_Wiki0 extends Component {
             </div>
             <div className={cn('hero-item')}>
               <A_Link type='block' to="/wiki/technical-mecca">
-                <A_Image src='/img/placeholder-squared.svg' alt='Technical Mecca '/>
+                <A_Image src='/img/illustrations/wiki-technical-mecca.svg' alt='Technical Mecca '/>
                 <div className={cn('hero-item-text')}>
                   Technical Mecca
                 </div>
@@ -46,7 +46,7 @@ class SE_Wiki0 extends Component {
               text: 'Find out more about the plans'
             }}
             img={{
-              src: '/img/placeholder-squared.svg',
+              src: '/img/illustrations/wiki-roadmap.svg',
               alt: 'Humaniq Roadmap'
             }}
           ><A_P type='third'>Humaniq global initiative plan involves a lot of research, investigations and partnerships,

@@ -3,13 +3,41 @@
 
 .se-home-hero {
 
+  &__back-img{
+    background-image: url("/img/group-23.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: -99;
+    @include media($tablet) {
+      background-position: right;
+    }
+    @include media($mobile) {
+      background-image: none;
+    }
+
+  }
   &__root{
+    padding: 9rem 0 9.6rem;
+    transform: translate(0, 3rem);
+
+
+
+
+
+
+
     display: flex;
     justify-content: space-between;
-    padding: 11.6rem 0 9.6rem;
+    //padding: 11.6rem 0 9.6rem;
     align-items: flex-start;
     @include media($tablet) {
-      padding-top: 1.7rem;
+      padding: 10rem 0 2.6rem;
+      //padding-top: 3rem;
+
+
+
+
+      //padding-top: 1.7rem;
       flex-flow: column-reverse;
     }
     @include media($mobile) {
@@ -34,11 +62,30 @@
     }
 
     &-text{
+      color: $white;
+      @include media($mobile) {
+        color: $title;
+      }
+
+
+
+
+
+
+
       margin-bottom: 3.1rem;
     }
   }
 
   &__explorer{
+    display: none;
+    @include media($mobile) {
+      display: block;
+    }
+
+
+
+
     flex: 0 0 35.5rem;
     @include media($tablet) {
       flex-basis: 26.3rem;
@@ -82,6 +129,15 @@
     }
   }
   &__subscribe-text{
+    color: $white;
+    @include media($mobile) {
+      color: $title;
+    }
+
+
+
+
+
     margin-top: 1.6rem;
 
     @include media($mobile) {
