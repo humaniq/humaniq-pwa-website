@@ -49,6 +49,9 @@
       &:hover {
         background: white;
       }
+      &::placeholder {
+        color: #ccc;
+      }
     }
   }
   &__submit {
