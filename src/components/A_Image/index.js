@@ -64,6 +64,7 @@ A_Image.propTypes = {
   ]),
   type: T.oneOf([
     'avatar',
+    'avatar-sm',
   ]),
   realSize: T.bool, // width and height auto
   rounded: T.bool, // remove space under the image in links
