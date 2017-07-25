@@ -15,9 +15,17 @@ const SE_HomeGallery = ({entities, title, type}) =>{
 
   if(type === 'links'){
     rederedItems = entities.map(({img, title, url})=>(
-      <div className={cn('galery-item', )} key={'key_' + title}>
-        <A_Btn type={'interactive'} img={{src: img, alt: title}} to={url} >
-          {title}
+      <div className={cn('item-interactive', )} key={'key_' + title}>
+        <A_Btn type="inline" to={url}>
+          <div className={cn('img')}>
+            <img
+              src={img}
+              alt={title}
+              width={211}
+              height={231}
+            />
+          </div>
+          <div className={cn('item-interactive-body')}>{title}</div>
         </A_Btn>
       </div>
 
@@ -25,23 +33,17 @@ const SE_HomeGallery = ({entities, title, type}) =>{
     containerType = 'section-interactive'
   } else {
     rederedItems = entities.map(({img, title, subtitle})=>(
-      <div className={cn('galery-item')} key={'key_' + title}>
-        <div className={cn('galery-item-img')}>
+      <div className={cn('item')} key={'key_' + title}>
+        <div className={cn('item-img')}>
           <A_Image src={img} alt={title}/>
         </div>
-        <div className={cn('galery-item-title')}>
+        <div className={cn('item-title')}>
           <A_H type="section-c">{title}</A_H>
         </div>
         <A_P type="third-center">{subtitle}</A_P>
       </div>
     ))
     containerType = 'section'
-  }
-
-  if(type === 'not-links'){
-    for(let i = 0; i<2; i++){
-      rederedItems.push(<div className={cn('galery-item')} key={'key_' + i} />)
-    }
   }
 
   return (
