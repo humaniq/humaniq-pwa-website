@@ -5,13 +5,12 @@ import {fetchWiki} from "AC/wiki";
 import {fetchPartners} from 'AC/otherAPI'
 import initialLoad from 'utils/initialLoad'
 import {setRoute} from 'AC/navigation'
-
 class AppRoute extends Component {
 
   static prepareData(store, query, params, location) {
     if(initialLoad()) return;
     store.dispatch(fetchWiki())
-    // store.dispatch(fetchPartners())
+    store.dispatch(fetchPartners())
     return store.dispatch(setRoute(location.pathname))
   }
 

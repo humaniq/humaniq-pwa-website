@@ -3,14 +3,14 @@ import SE_Wiki0 from 'SE_Wiki0'
 import {getArticleLinks} from 'utils'
 
 function mapStateToProps(state) {
-  const {loaded, loading, technical, about} = state.wiki
-  let articleTitles = [
-    ...getArticleLinks(technical, 'technical-mecca'),
-    ...getArticleLinks(about, 'about-humaniq'),
+  const {'technical-mecca':technicalMecca, 'about-humaniq':aboutHumaniq} = state.wikiArticles
 
-  ];
+  const articles = [
+    ...getArticleLinks(technicalMecca.ids, technicalMecca.entities),
+    ...getArticleLinks(aboutHumaniq.ids, aboutHumaniq.entities)
+  ]
 
-  return {loaded, loading, technical, about, articleTitles};
+  return {articles};
 }
 
 export default connect(mapStateToProps)(SE_Wiki0);

@@ -3,11 +3,12 @@ import * as T from "prop-types";
 import './styles.scss';
 import {cssClassName} from 'utils'
 const cn = cssClassName('SE_MainLayoutHeader')
-import A_Link from 'A_Link'
 import A_logo from 'A_Logo'
 import MenuBtn from './menuBtn'
 import {Motion, spring} from 'react-motion';
 import A_Container from 'A_Container'
+import M_Ripple from 'M_Ripple'
+import history from 'history'
 
 const main = [{
   url: '/contacts',
@@ -27,9 +28,11 @@ class SE_MainLayoutHeader extends Component {
 
   getNavLink({name, url}, theme) {
     return (
-      <span className={cn('nav-btn', {theme})} key={'key=' + name} >
-        <A_Link to={url} {...{type: (theme === 'dark' ? 'primary' : 'white')}}>{name}</A_Link>
-      </span>
+      <M_Ripple onClick={() => history.push(url)} type="flex" key={'key=' + name}>
+        <div className={cn('nav-btn', {theme})}  >
+            <div className={cn('nav-text')}>{name}</div>
+        </div>
+      </M_Ripple>
     )
   }
 

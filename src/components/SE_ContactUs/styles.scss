@@ -2,33 +2,18 @@
 @import "common/utils";
 
 
-.se-founders{
-  &__founders{
-    display: flex;
-    flex-direction: column;
+.se-contact-us{
+  &__contactus{
 
-    &-title{
+    &-header{
       display: flex;
-      justify-content: center;
-      padding: 5rem 0 5rem 0;
-    }
-    &-container{
-      display: flex;
-      justify-content: space-around;
-      padding-bottom: 5rem;
-      @include media($mobile) {
-        flex-wrap: wrap;
+
+      &-image{
+        margin-right: 5rem;
+        @include media($mobile) {
+          display: none;
+        }
       }
     }
-    &-image{
-      width: 20rem;
-      height: 20rem;
-      background-color: #d8d8d8;
-      border-radius: 50%;
-      @include media($mobile) {
-        margin-bottom: 5rem;
-      }
-    }
-
   }
 }

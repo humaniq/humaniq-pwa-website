@@ -38,14 +38,15 @@
       box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.03);
       font-weight: 400;
     }
-    &:focus {
+
+    &_in-active_true {
       box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
       color: rgba(44, 45, 48, .4);
       background: white;
       color: #3a3c4c;
       font-weight: 400;
-      &::placeholder {
-        color: rgba(44, 45, 48, .4);
+      &:hover {
+        background: white;
       }
     }
   }

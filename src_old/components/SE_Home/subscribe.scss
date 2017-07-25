@@ -1,0 +1,103 @@
+@import "common/settings/variables";
+@import "common/utils";
+
+.se-home-subscribe{
+  &__submit{
+    top:-2px;
+    position: relative;
+    padding-left: 19px;
+    @include media($mobile) {
+      padding-left: 0;
+    }
+  }
+  &__wrapper{
+    display: inline-block;
+    position: relative;
+    @include media($mobile) {
+      width: 100%
+    }
+    input{
+      color: $black-3;
+      box-sizing: border-box;
+      width: 250px;
+      height: 53px;
+      font-size: 17px;
+      opacity: 1;
+      border-radius: 4px;
+      background-color: white;
+      padding: 14px 13px;
+      min-width: 250px;
+      box-shadow: inset 0 1px 3px 0 rgba(0, 0, 0, 0.3);
+      border: solid 1px $gray-5;
+      &::placeholder {
+        color: $c-placeholder;
+      }
+      &:focus{
+        outline: 0;
+        background-color: #fff;
+        box-shadow: 0 0 7px rgba(0,0,0,.2)
+      }
+      @include media($mobile) {
+        width: 100%;
+        margin-bottom: 15px;
+      }
+
+
+    }
+    &_submitted_true{
+      button, input{
+        visibility: hidden;
+      }
+      //@include media($mobile) {
+      //  input{
+      //    visibility: visible;
+      //  }
+      //}
+    }
+  }
+  &__done{
+    display: none;
+    &_submitted_true{
+      display: block;
+      height: 53px;
+      bottom: 0;
+      position: absolute;
+      width: 100%;
+      text-align:center;
+      line-height: 53px;
+      border-radius: 4px;
+      background-color: $c-success;
+      img{
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+  }
+
+  &__tip {
+    margin: 14px 0 6px; // clarify
+    font-size: 14px;
+    line-height: 1.43;
+    color: rgba(37, 48, 57, 0.5);
+  }
+
+  &__button{
+    &:hover { opacity: 1; }
+
+    @include media($mobile) {
+      margin-left: 0;
+      width: 100%
+    }
+    position: relative;
+    user-select: none;
+    color: white;
+    background-color: #439fe0;
+    opacity: .8;
+    cursor: pointer;
+    width: 124px;
+    height: 52px;
+    border-radius: 6px;
+    box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.2);
+  }
+}
