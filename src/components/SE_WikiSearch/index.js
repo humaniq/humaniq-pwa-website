@@ -6,25 +6,31 @@ const cn = cssClassName('SE_WikiSearch')
 import A_Container from 'A_Container'
 import A_H from 'A_H'
 import M_NoResults from 'M_NoResults'
-import {} from "utils/index"
+import {safeDA} from "utils/index"
 import A_Link from 'A_Link'
+
+
 class SE_WikiSearch extends Component {
 
   getResults(articles){
     return (
       articles.map( article => {
-        const _text = article.highlight.article.join('...').replace(/<\/?p>/g, '')
-        const __html = `...${_text}...`
+        const _article = safeDA(article, ['highlight', 'article'])
+        let __html;
+        if(_article){
+          const _text =  _article && _article.join('...').replace(/<\/?p>/g, '')
+          __html = `...${_text}...`
+        }
         return(
           <div className={cn('item')} key={"key_" + article.title} >
             <A_Link to={article.url}><A_H type="wiki-result">{article.title}</A_H></A_Link>
-
-            <p className={cn('item-text')}dangerouslySetInnerHTML={{__html}} />
+            {_article && <p className={cn('item-text')}dangerouslySetInnerHTML={{__html}} />}
           </div>
         )
       })
     )
   }
+
   render() {
     const {articles, total, request, show} = this.props
     let result

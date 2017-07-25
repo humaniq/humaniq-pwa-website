@@ -25,10 +25,8 @@ const SE_HomeGallery = ({entities, title, type}) =>{
               height={231}
             />
           </div>
-
           <div className={cn('item-interactive-body')}>{title}</div>
         </A_Btn>
-
       </div>
 
     ))
@@ -46,12 +44,6 @@ const SE_HomeGallery = ({entities, title, type}) =>{
       </div>
     ))
     containerType = 'section'
-  }
-
-  if(type === 'not-links'){
-    for(let i = 0; i<2; i++){
-      rederedItems.push(<div className={cn('item')} key={'key_' + i} />)
-    }
   }
 
   return (

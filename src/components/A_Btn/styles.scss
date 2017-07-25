@@ -41,6 +41,7 @@ $form-btn-border-radius: 30px;
         background: url('/img/arow_right.svg') right 13px center / .9rem no-repeat;
       }
       &_standart-form{
+        text-transform: uppercase;
         user-select: none;
         //border-radius: $form-radius;
         background-color: $interactive;
@@ -90,7 +91,8 @@ $form-btn-border-radius: 30px;
       }
       &_link-standart-form{
         font-family: OpenSans;
-
+        text-transform: uppercase;
+        justify-content: center;
         display: inline-flex;
         align-items: center;
         user-select: none;
@@ -105,6 +107,7 @@ $form-btn-border-radius: 30px;
 
       }
       &_window{
+        text-transform: uppercase;
         padding: .8rem 1.6rem 1rem;
         color: white;
         background-color: $interactive;
@@ -116,6 +119,7 @@ $form-btn-border-radius: 30px;
         width: 100%
       }
       &_link-subscribe{
+        text-transform: uppercase;
         padding: .8rem 1.6rem 1rem;
         color: white;
         background-color: $interactive;

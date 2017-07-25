@@ -10,7 +10,11 @@ import Wiki from './Wiki'
 import Wiki0 from './Wiki0'
 import Wiki1 from './Wiki1'
 import Wiki2 from './Wiki2'
+import Legal from './Legal'
 import WikiSearch from './WikiSearch'
+import Hmq from './Hmq'
+import Markup from './Markup'
+
 import {cleanWikiSearch} from 'AC/wiki'
 
 const getRoutes = (store) => {
@@ -51,8 +55,17 @@ const getRoutes = (store) => {
       <Route path="use-cases"
              component={Cases}
       />
-      <Route path="Partners"
+      <Route path="partners"
              component={Partners}
+      />
+      <Route path="Legal"
+             component={Legal}
+      />
+      <Route path="hmq-explorer"
+             component={Hmq}
+      />
+      <Route path="mark-up"
+             component={Markup}
       />
       {/*<Route*/}
         {/*path="/error/:err"*/}

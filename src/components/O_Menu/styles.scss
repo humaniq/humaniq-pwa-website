@@ -1,0 +1,34 @@
+@import "common/settings/variables";
+@import "common/utils";
+
+.o-menu{
+  min-width: 30rem;
+  &__wider-screens{
+    @include media ($tablet) {
+      display: none;
+    }
+    @include media ($mobile) {
+      display: none;
+    }
+
+  }
+  &__smaller-screens{
+    @include media ($desktop) {
+      display: none;
+    }
+
+  }
+  &__nav-links-item{
+    &_active_true{
+      color: #179cde;
+      p{
+        margin-bottom: 0;
+      }
+    }
+    &_active_false{
+      .a-link {
+        color: #000;
+      }
+    }
+  }
+}
