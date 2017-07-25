@@ -15,7 +15,8 @@ const links = [
     links: [
       // {name: 'Features', url: '#'},
       // {name: 'Open source', url: '#'},
-      {name: 'Humaniq Wiki', url: '/wiki'}]
+      {name: 'Humaniq Wiki', url: '/wiki'},
+      {name: 'HMQ Explorer', url: '/hmq-explorer'}]
   },
   {
     section: 'company',
@@ -125,7 +126,7 @@ class SE_MainLayoutFooter extends Component {
                       className={cn('aux-title')}
                     >Humaniq</div>
                     <p className={cn('about')}>
-                      Humaniq is a simple and secure mobile banking app, based on Ethereum Blockchain. Humaniq tool of financial inclusion connects 2 billion unbanked people to the global economy.
+                      Humaniq is a simple and secure mobile banking app, based on Ethereum Blockchain. The Humaniq tool of financial inclusion connects 2 billion unbanked people to the global economy.
                     </p>
                     <div className={cn('soc')}>
                       {renderedSocialList}

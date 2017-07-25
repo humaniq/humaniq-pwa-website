@@ -10,8 +10,14 @@ import Wiki from './Wiki'
 import Wiki0 from './Wiki0'
 import Wiki1 from './Wiki1'
 import Wiki2 from './Wiki2'
+import Legal from './Legal'
+import WikiSearch from './WikiSearch'
+import Hmq from './Hmq'
+import Markup from './Markup'
 
-const getRoutes = () => {
+import {cleanWikiSearch} from 'AC/wiki'
+
+const getRoutes = (store) => {
   return (
     <Route
       path="/"
@@ -33,31 +39,33 @@ const getRoutes = () => {
           component={SimpleForm}
         />
       </Route>
-      <Route path="wiki"
-             component={Wiki}
-      >
-        <IndexRoute
-          component={Wiki0}
-        />
+      <Route path="wiki" component={Wiki}>
+        <IndexRoute component={Wiki0}/>
         <Route
-          path=":section"
-        >
-          <IndexRoute
-            component={Wiki1}
-          />
-          <Route
-            path=":article"
-            component={Wiki2}
-          />
+          path="search"
+          component={WikiSearch}
+          prepareData={WikiSearch.prepareData}
+          onLeave={() => store.dispatch(cleanWikiSearch())}
+        />
+        <Route path=":level0">
+          <IndexRoute component={Wiki1}/>
+          <Route path=":id" component={Wiki2}/>
         </Route>
       </Route>
-
       <Route path="use-cases"
              component={Cases}
       />
-      <Route path="Partners"
+      <Route path="partners"
              component={Partners}
-             // prepareData={Partners.prepareData}
+      />
+      <Route path="Legal"
+             component={Legal}
+      />
+      <Route path="hmq-explorer"
+             component={Hmq}
+      />
+      <Route path="mark-up"
+             component={Markup}
       />
       {/*<Route*/}
         {/*path="/error/:err"*/}
