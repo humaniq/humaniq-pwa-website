@@ -46,7 +46,7 @@ class SE_Wiki0 extends Component {
               text: 'Find out more about the plans'
             }}
             img={{
-              src: '/img/placeholder-squared.svg',
+              src: '/img/illustrations/wiki-roadmap.svg',
               alt: 'Humaniq Roadmap'
             }}
           ><A_P type='third'>Humaniq global initiative plan involves a lot of research, investigations and partnerships,
