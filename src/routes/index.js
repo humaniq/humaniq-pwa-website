@@ -6,12 +6,16 @@ import Home from './Home'
 import SimpleForm from './SimpleForm'
 import Partners from './Partners'
 import Cases from './Cases'
+import ContactUs from './ContactUs'
 import Wiki from './Wiki'
 import Wiki0 from './Wiki0'
 import Wiki1 from './Wiki1'
 import Wiki2 from './Wiki2'
+import WikiSearch from './WikiSearch'
+import {cleanWikiSearch} from 'AC/wiki'
 
-const getRoutes = () => {
+
+const getRoutes = (store) => {
   return (
     <Route
       path="/"
@@ -33,31 +37,27 @@ const getRoutes = () => {
           component={SimpleForm}
         />
       </Route>
-      <Route path="wiki"
-             component={Wiki}
-      >
-        <IndexRoute
-          component={Wiki0}
-        />
+      <Route path="wiki" component={Wiki}>
+        <IndexRoute component={Wiki0}/>
         <Route
-          path=":section"
-        >
-          <IndexRoute
-            component={Wiki1}
-          />
-          <Route
-            path=":article"
-            component={Wiki2}
-          />
+          path="search"
+          component={WikiSearch}
+          prepareData={WikiSearch.prepareData}
+          onLeave={() => store.dispatch(cleanWikiSearch())}
+        />
+        <Route path=":level0">
+          <IndexRoute component={Wiki1}/>
+          <Route path=":id" component={Wiki2}/>
         </Route>
       </Route>
-
       <Route path="use-cases"
              component={Cases}
       />
       <Route path="Partners"
              component={Partners}
-             // prepareData={Partners.prepareData}
+      />
+      <Route path="contactus"
+             component={ContactUs}
       />
       {/*<Route*/}
         {/*path="/error/:err"*/}
