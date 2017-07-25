@@ -18,8 +18,11 @@ class O_LegalSection extends React.Component {
 
   renderSections = (sections) => sections.map(s => (
     <div key={s.header} type="section-clean">
-      <A_H type='section-sub'>{s.header}</A_H>
-      {this.renderParagraphs(s.paragraphs)}
+      <div className={cn('text')}>
+        <A_H type='section-sub'>{s.header}</A_H>
+        {this.renderParagraphs(s.paragraphs)}
+      </div>
+
     </div>
   ));
 
@@ -33,7 +36,7 @@ class O_LegalSection extends React.Component {
         {renderedSections}
       </div>
     )
-  };
+  }
 }
 
 O_LegalSection.propTypes = {

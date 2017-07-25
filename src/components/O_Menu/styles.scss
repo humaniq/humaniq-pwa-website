@@ -4,11 +4,19 @@
 .o-menu{
   min-width: 30rem;
   &__wider-screens{
+    font-size: 13px;
+    font-weight: bold;
+    line-height: 20.0px;
     @include media ($tablet) {
       display: none;
     }
     @include media ($mobile) {
       display: none;
+    }
+    &_sticky-menu_true{
+      top: 1.2rem;
+      position: fixed;
+
     }
 
   }
@@ -19,11 +27,25 @@
 
   }
   &__nav-links-item{
+    a{
+      font-size: 13px;
+      font-weight: bold;
+      line-height: 20.0px;
+      padding-left: 21px;
+
+    }
+    div{
+      font-family: OpenSans;
+      font-size: 13px;
+      font-weight: bold;
+      line-height: 20.0px;
+      color: #0088cc;
+      border-left: 2px solid #0088cc;
+      padding-left: 19px;
+    }
     &_active_true{
-      color: #179cde;
-      p{
-        margin-bottom: 0;
-      }
+
+
     }
     &_active_false{
       .a-link {

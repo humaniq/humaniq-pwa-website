@@ -127,7 +127,7 @@ const SE_Home = () => (
         alt: 'Learn more about Humaniq Use Cases'
       }}
     >
-      <A_P type='third'>Humaniq brings isolated people into modern markets, creating a new source of growth for the world economy by impacting individual livers. Leveraging a widespread ambassador programme, Humaniq reaches even the most isolated regions in emerging countries, helping reduce hunger and poverty, while giving people the opportunity to save, lend and raise money.</A_P>
+      <A_P type='third'>Humaniq brings isolated people into modern markets, creating a new source of growth for the world economy by impacting individual livers. Leveraging a widespread ambassador program, Humaniq reaches even the most isolated regions in emerging countries, helping reduce hunger and poverty, while giving people the opportunity to save, lend and raise money.</A_P>
     </Info>
     <Magazines />
   </div>
