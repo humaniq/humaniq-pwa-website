@@ -10,6 +10,7 @@
       background-color: $grayblue-1;
       min-width: 14rem;
       position: relative;
+      box-shadow: $theme-shadow;
     }
   }
 
@@ -50,7 +51,7 @@
     }
     &__nav{
       padding: 0;
-      width: 140px;
+      width: 20rem;
       display: flex;
       align-items: center;
       justify-content: flex-end;
@@ -61,7 +62,9 @@
     background-color: $white;
     border-radius: 2px;
     box-shadow: 0 1px 1px 0 rgba(97, 127, 152, 0.2), 1px 0 0 0 rgba(97, 127, 152, 0.1), -1px 0 0 0 rgba(97, 127, 152, 0.1);
-
+    @include media($mobile) {
+      height: 100vh
+    }
   }
   &__final-btn{
     margin-top: 3.2rem;

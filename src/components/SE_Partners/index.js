@@ -56,7 +56,7 @@ class SE_Partners extends Component {
           ref={ node => this.nodes[i + 1] = node}
         >
           <A_Image
-            src={'img/mock/partners.svg'}
+            src={partner.logoLink2x}
             alt={partner.title}
           />
           <span className={cn('tooltip', {type: tooltipPlace})}>
@@ -71,7 +71,7 @@ class SE_Partners extends Component {
             </M_Tooltip>
           </span>
           <span className={cn('link')}>
-            <A_Link to={partner.link} external type="block" />
+            <A_Link to={partner.link} external type="block" >{' '}</A_Link>
           </span>
         </div>
       )
@@ -97,7 +97,7 @@ class SE_Partners extends Component {
       <div>
         <Meta />
         <A_Container type="equal">
-          <O_Hero img={{src: "/img/placeholder-squared.svg", alt: "parners"}}>
+          <O_Hero img={{src: "/img/illustrations/group-6.svg", alt: "parners"}}>
             <A_H type="hero">Join our Community</A_H>
             <A_P type="hero">Humaniq is proud of its wide partnership network which includes everybody from fintech
               companies and Blockchain communities to publishing media and app developers.</A_P>
@@ -109,13 +109,13 @@ class SE_Partners extends Component {
             help us to implement new solutions, laboratories who work with us to test products, Blockchain communities,
             and many more.</A_P>
           <div className={cn('form')}>
-            <span className={cn('form-select')}>
+            <div className={cn('form-select')}>
               <M_Dropdown
                 selected={filter}
                 options={options}
                 onChange={filter => this.setState({filter})}
               />
-            </span>
+            </div>
             <A_Btn
               type="link-standart-form"
               to='/form/join'
