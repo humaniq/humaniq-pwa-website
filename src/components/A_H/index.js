@@ -28,6 +28,9 @@ const A_H = ({type, icon, children, center}) =>{
     case 'xs':
       tagType = 'h6'
       break;
+    case 'xxs':
+      tagType = 'h6'
+      break;
     default:
       tagType = 'h3'
   }
@@ -63,6 +66,7 @@ A_H.propTypes = {
     'section', //black title used for sections 23/32 padding-bottom 10
     'section-sub', //black title used for sections 16/32 padding-bottom 10
     'section-c', //black title used for sections 23/32 padding-bottom 30, always text-align center
+    'xxs', //black title used at error page 60
   ]),
   icon: T.oneOf([
     'placeholder', // placeholder icon
