@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="134" height="105" viewBox="0 0 134 105">
+    <defs>
+        <linearGradient id="a" x1="2.173%" x2="76.04%" y1="-11.047%" y2="74.344%">
+            <stop offset="0%" stop-color="#1877D0"/>
+            <stop offset="100%" stop-color="#1877D0" stop-opacity="0"/>
+        </linearGradient>
+        <linearGradient id="b" x1="14.4%" x2="78.355%" y1="-23.917%" y2="48.473%">
+            <stop offset="0%" stop-color="#1877D0"/>
+            <stop offset="100%" stop-color="#1877D0" stop-opacity="0"/>
+        </linearGradient>
+        <linearGradient id="c" x1="48.733%" x2="-55.737%" y1="63.745%" y2="-35.458%">
+            <stop offset="0%" stop-opacity="0"/>
+            <stop offset="100%"/>
+        </linearGradient>
+        <linearGradient id="d" x1="108.02%" x2="16.907%" y1="119.369%" y2="28.816%">
+            <stop offset="0%" stop-color="#1877D0"/>
+            <stop offset="100%" stop-color="#1877D0" stop-opacity="0"/>
+        </linearGradient>
+        <linearGradient id="e" x1="101.436%" x2="-3.219%" y1="58.275%" y2="-28.871%">
+            <stop offset="0%" stop-opacity="0"/>
+            <stop offset="100%"/>
+        </linearGradient>
+        <linearGradient id="f" x1="89.222%" x2="-8.718%" y1="51.419%" y2="-37.844%">
+            <stop offset="0%" stop-opacity="0"/>
+            <stop offset="100%"/>
+        </linearGradient>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <path fill="#3AA3E3" fill-rule="nonzero" d="M31.6 29.6L67 65l-35.4 35.4c-2.9-2.9-4.6-6.8-4.6-11.2V40.8c0-4.3 1.8-8.3 4.6-11.2z"/>
+        <path fill="#67BCEF" fill-rule="nonzero" d="M102.4 29.6L67 65 31.6 29.6c2.9-2.9 6.8-4.6 11.2-4.6h48.3c4.4 0 8.4 1.8 11.3 4.6z"/>
+        <path fill="#3AA3E3" fill-rule="nonzero" d="M107 40.8v48.3c0 4.4-1.8 8.3-4.6 11.2L67 65l35.4-35.4c2.8 2.9 4.6 6.9 4.6 11.2z"/>
+        <path fill="url(#a)" fill-rule="nonzero" d="M62.3 54.6L50 65.7 33.4 49l15-8.3z"/>
+        <path fill="#67BCEF" fill-rule="nonzero" d="M102.4 100.4c-2.9 2.9-6.8 4.6-11.2 4.6H42.8c-4.4 0-8.3-1.8-11.2-4.6L67 65l35.4 35.4z"/>
+        <circle cx="95.4" cy="31.1" r="1.5" fill="#3AA3E3" fill-rule="nonzero"/>
+        <circle cx="100.9" cy="36.6" r="1.5" fill="#67BCEF" fill-rule="nonzero"/>
+        <circle cx="33.1" cy="36.6" r="1.5" fill="#67BCEF" fill-rule="nonzero"/>
+        <circle cx="38.6" cy="31.1" r="1.5" fill="#3AA3E3" fill-rule="nonzero"/>
+        <circle cx="38.6" cy="98.9" r="1.5" fill="#3AA3E3" fill-rule="nonzero"/>
+        <circle cx="33.1" cy="93.4" r="1.5" fill="#67BCEF" fill-rule="nonzero"/>
+        <circle cx="100.9" cy="93.4" r="1.5" fill="#67BCEF" fill-rule="nonzero"/>
+        <circle cx="95.4" cy="98.9" r="1.5" fill="#3AA3E3" fill-rule="nonzero"/>
+        <path fill="url(#b)" fill-rule="nonzero" d="M106.6 49.8l-3.9 13.8L86 47l16.2-1.6z"/>
+        <path fill="#143C8A" fill-rule="nonzero" d="M90.5 49.3l3.1.9c3.7 1.1 7.6-1.1 8.6-4.8l-16.5-4.7c-1.1 3.7 1.1 7.5 4.8 8.6z"/>
+        <circle cx="93.8" cy="61.8" r="8.2" fill="#FFF" fill-rule="nonzero"/>
+        <circle cx="40.9" cy="61.8" r="8.2" fill="#FFF" fill-rule="nonzero"/>
+        <path fill="#143C8A" fill-rule="nonzero" d="M43.7 49.3l-3.1.9c-3.7 1.1-7.6-1.1-8.6-4.8l16.5-4.7c1 3.7-1.1 7.5-4.8 8.6z"/>
+        <g fill-rule="nonzero" transform="translate(90 54)">
+            <circle cx="5" cy="5.4" r="4.5" fill="#1E54A0"/>
+            <g transform="translate(2 2)">
+                <circle cx="3" cy="3.4" r="2.4" fill="#1E54A0"/>
+                <path fill="#FFF" d="M6 3.4H4.9c0-1-.8-1.8-1.8-1.8V.5C4.7.5 6 1.8 6 3.4z"/>
+            </g>
+        </g>
+        <g fill-rule="nonzero" transform="translate(37 54)">
+            <circle cx="5.1" cy="5.4" r="4.5" fill="#1E54A0"/>
+            <g transform="translate(2 2)">
+                <circle cx="3.1" cy="3.4" r="2.4" fill="#1E54A0"/>
+                <path fill="#FFF" d="M6.1 3.4H5c0-1-.8-1.8-1.8-1.8V.5c1.6 0 2.9 1.3 2.9 2.9z"/>
+            </g>
+        </g>
+        <path fill="#143C8A" fill-rule="nonzero" d="M67 91c-8.3 0-15-6.7-15-15h30c0 8.3-6.7 15-15 15z"/>
+        <path fill="#1E54A0" fill-rule="nonzero" d="M52 72.2h30v3.9H52zM118.6 23.3l-5 5c-.8.8-1.8 1.2-2.9 1.3-1.3.1-2.6-.4-3.5-1.4-3-3.3-6.9-5.8-11.2-7.2-1.8-.6-3.1-2.2-3.1-4.2v-4.2c0-.5-.2-.9-.4-1.3-.3-.4-.7-.7-1.2-.8-7.8-1.8-16-3-24.3-3-8.7 0-17.2 1.3-25.3 3.2-1 .2-1.7 1.1-1.7 2.1v4.3c0 1.9-1.2 3.5-2.9 4.1-4 1.4-7.6 3.8-10.4 6.9-1.7 1.8-4.5 1.9-6.3.2l-5-5c-2.8-2.8-2.2-7.6 1.3-9.6C31.8 5.4 48.9.6 67 .6c18.1 0 35.2 4.7 50.3 13.1 3.5 2 4.2 6.8 1.3 9.6z"/>
+        <path fill="url(#c)" fill-rule="nonzero" d="M14.9 15.3l12.3 12.3c-.2.2-.4.4-.5.6-1.7 1.8-4.5 1.9-6.3.2l-5-5c-2.3-2.3-2.3-5.8-.5-8.1z" opacity=".2"/>
+        <path fill="url(#d)" fill-rule="nonzero" d="M110.8 29.6c-1.3.1-2.6-.4-3.5-1.4-3-3.3-6.9-5.8-11.2-7.2-1.8-.6-3.1-2.2-3.1-4.2v-4.2c0-.5-.2-.9-.4-1.3 0 0 6.8 4.1 11.4 8.7 4.6 4.8 6.8 9.6 6.8 9.6z" opacity=".7"/>
+        <path fill="#3AA3E3" fill-rule="nonzero" d="M.7 23.3C-.4 18.5.4 13.6 3 9.4c2.6-4.2 6.7-7.1 11.5-8.2l.2 1.1c-4.5 1-8.3 3.8-10.8 7.7-2.5 3.9-3.2 8.6-2.2 13.1l-1 .2z"/>
+        <path fill="#3AA3E3" fill-rule="nonzero" d="M6.8 21.9C5.3 15.3 9.4 8.8 16 7.3l.2 1.1c-6 1.4-9.7 7.3-8.3 13.3l-1.1.2zM133.3 23.3l-1.1-.2c1-4.5.3-9.2-2.2-13.1-2.5-3.9-6.3-6.7-10.8-7.7l.2-1.1c4.8 1.1 8.9 4 11.5 8.2 2.7 4.1 3.5 9.1 2.4 13.9z"/>
+        <path fill="#3AA3E3" fill-rule="nonzero" d="M127.2 21.9l-1.1-.2c1.4-6-2.4-11.9-8.3-13.3l.2-1.1c6.6 1.5 10.7 8 9.2 14.6z"/>
+        <path fill="#1E54A0" fill-rule="nonzero" d="M53.8 12.7l-3.5.4c-1.1.1-1.9 1-1.9 2.2V25h7.8V14.9c0-1.3-1.1-2.3-2.4-2.2z"/>
+        <path fill="url(#e)" fill-rule="nonzero" d="M8.2 2.9v6.8L.7 2.2c.3-.6.9-1 1.6-1.1L5.8.7c1.3-.1 2.4.9 2.4 2.2z" opacity=".2" transform="translate(48 12)"/>
+        <path fill="#1E54A0" fill-rule="nonzero" d="M83.7 13.1l-3.5-.4c-1.3-.1-2.4.9-2.4 2.2V25h7.8v-9.7c0-1.2-.8-2.1-1.9-2.2z"/>
+        <path fill="url(#f)" fill-rule="nonzero" d="M37.6 3.2v5.3l-7.2-7.2c.4-.5 1.1-.7 1.8-.7l3.5.4c1.1.2 1.9 1.1 1.9 2.2z" opacity=".2" transform="translate(48 12)"/>
+        <path d="M56.2 21.7l-7.5-7.6M85.6 20.6l-7.2-7.2"/>
+    </g>
+</svg>
