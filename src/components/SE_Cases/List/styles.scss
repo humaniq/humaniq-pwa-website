@@ -1,0 +1,17 @@
+@import "common/settings/variables";
+@import "common/utils";
+
+.se-cases-list{
+  &__root{
+    margin-bottom: 8rem;
+  }
+  &__image{
+    text-align: center;
+    padding: 4rem 0 2.8rem;
+    max-width: 40em;
+    width: auto;
+    height: auto;
+    margin: 0 auto;
+  }
+
+}

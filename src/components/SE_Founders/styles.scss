@@ -3,20 +3,33 @@
 
 
 .se-founders{
-  &__founders-container{
+  &__founders{
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
 
-    &__founders-title{
-      width: 980px;
-      height: 32px;
-      font-family: 'Open Sans', sans-serif;
-      font-size: 23px;
-      font-weight: 600;
-      line-height: 1.39;
-      text-align: center;
-      color: #2c2d30;
+    &-title{
+      display: flex;
+      justify-content: center;
+      padding: 5rem 0 5rem 0;
     }
+    &-container{
+      display: flex;
+      justify-content: space-around;
+      padding-bottom: 5rem;
+      @include media($mobile) {
+        flex-wrap: wrap;
+      }
+      &-image{
+        width: 20rem;
+        height: 20rem;
+        background-color: #d8d8d8;
+        border-radius: 50%;
+        @include media($mobile) {
+          margin-bottom: 5rem;
+        }
+      }
+    }
+
+
   }
 }

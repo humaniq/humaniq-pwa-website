@@ -12,6 +12,7 @@ const A_H = ({type, icon, children, center}) =>{
       tagType = 'h1'
       break;
     case 'section':
+    case 'search':
       tagType = 'h3'
       break;
     case 'section-sub':
@@ -46,17 +47,20 @@ const A_H = ({type, icon, children, center}) =>{
   )
 }
 
+
+
 A_H.propTypes = {
   type: T.oneOf([
     'hero', //black bold 25
+    'search', // white bold 25 used on wiki search
     'bs', // blue title uses at hero home page, 16/24
+    'wiki-result', // blue title 16/24/600/ marign-bottom 8
     'window', // black bold title 16/24 used on subscribe/personal/join/partners tooltip pages
     'tooltip', // black bold title 16/24 used on tooltip marign bottom 2px
     'tooltip-sub', //blue subtitle 15/26 used on tooltip marign bottom 8px
     'xs', // black title uses at hero home page, 13/20 bold
     'section', //black title used for sections 23/32 padding-bottom 10
     'section-sub', //black title used for sections 23/32 padding-bottom 10
-
     'section-c', //black title used for sections 23/32 padding-bottom 30, always text-align center
   ]),
   icon: T.oneOf([

@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
-import * as T from "prop-types";
 import './styles.scss';
 import {cssClassName} from 'utils'
 import A_Container from 'A_Container'
 const cn = cssClassName('SE_Founders');
+import A_H from 'A_H';
 
 class SE_Founders extends Component {
 
@@ -11,18 +11,17 @@ class SE_Founders extends Component {
     return (
       <div>
         <A_Container type='wide'>
-          <div className={cn('founders-container')}>
+          <div className={cn('founders')}>
             <div className={cn('founders-title')}>
-              <span>Humaniq Founders</span>
+              <A_H type='section'>Humaniq Founders</A_H>
             </div>
-            <div className={cn('founders-image')}>
-
-            </div>
-            <div className={cn('founders-image')}>
-
-            </div>
-            <div className={cn('founders-image')}>
-
+            <div className={cn('founders-container')}>
+              <div className={cn('founders-container-image')}>
+              </div>
+              <div className={cn('founders-container-image')}>
+              </div>
+              <div className={cn('founders-container-image')}>
+              </div>
             </div>
           </div>
         </A_Container>
@@ -31,7 +30,5 @@ class SE_Founders extends Component {
   }
 }
 
-SE_Founders.propTypes = {
-};
 
 export default SE_Founders
