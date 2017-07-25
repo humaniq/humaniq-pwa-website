@@ -23,19 +23,20 @@ const SE_HomeHero = ({explorerData}) =>{
   })
 
   return(
-    <A_Container>
-      <div className={cn('root')}>
-        <div className={cn('welcome')}>
-          <Title />
-          <div className={cn('welcome-text')}>
-            <A_P type="first" >Humaniq is a simple and secure mobile banking app, based on Ethereum Blockchain. Humaniq tool of financial inclusion connects 2 billion unbanked people to the global economy. </A_P>
-          </div>
-          <A_Btn type="link-subscribe" to="/form/subscribe">Subscribe</A_Btn>
-          <span className={cn('subscribe-text')}>
+    <div className={cn('back-img')}>
+      <A_Container>
+        <div className={cn('root')}>
+          <div className={cn('welcome')}>
+            <Title />
+            <div className={cn('welcome-text')}>
+              <A_P type="first" >Humaniq is a simple and secure mobile banking app, based on Ethereum Blockchain. Humaniq tool of financial inclusion connects 2 billion unbanked people to the global economy. </A_P>
+            </div>
+            <A_Btn type="link-subscribe" to="/form/subscribe">Subscribe</A_Btn>
+            <span className={cn('subscribe-text')}>
               <A_P type="second" >Want to be informed? Subscribe to our Newsletter </A_P>
           </span>
-        </div>
-        {explorerData &&
+          </div>
+          {explorerData &&
           <div className={cn('explorer')}>
             <div className={cn('explorer-info')}>
               <A_H type='bs'>HMQ Explorer</A_H>
@@ -45,13 +46,15 @@ const SE_HomeHero = ({explorerData}) =>{
               <A_Image src="/img/illustrations/block-0.svg"/>
             </div>
           </div>
-        }
-      </div>
-    </A_Container>
+          }
+        </div>
+      </A_Container>
+    </div>
+
   )
 }
 SE_HomeHero.propTypes = {
-  explorerData: T.array
+  explorerData: T.array.isRequired
 };
 
 SE_HomeHero.defaultProps = {

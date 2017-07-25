@@ -4,7 +4,7 @@ import A_Container from 'A_Container'
 import O_Hero from 'O_Hero'
 import A_H from 'A_H'
 import A_P from 'A_P'
-import Case from './Case'
+import List from './List'
 import Meta from './meta'
 import A_Link from 'A_Link'
 import {convert} from 'utils'
@@ -13,7 +13,7 @@ import {cssClassName} from 'utils'
 import O_ScrollUp from "O_ScrollUp";
 const cn = cssClassName('SE_Cases')
 
-const cases = [
+const casesData = [
   {
     title: 'Money Transfers',
     img: '/img/mock/holder_400x280.png',
@@ -60,9 +60,7 @@ const cases = [
 
 const SE_Cases = () => {
 
-  const renderdCases = cases.map( (props, i) => <Case key={"Key_" + i} {...props}/>)
-
-  const renderedlinks = cases.map( (caseItem, i) =>{
+  const renderedlinks = casesData.map( (caseItem, i) =>{
     const anchor = convert.toKebab(caseItem.title)
     return(
       <li key={'Key_' + i} className={cn('nav-links-item')}>
@@ -75,7 +73,7 @@ const SE_Cases = () => {
       <Meta />
       <O_ScrollUp>
         <A_Container type="section-clean">
-          <O_Hero img={{src: "/img/placeholder-squared.svg", alt: "Humaniq’s Global Mission"}}>
+          <O_Hero img={{src: '/img/illustrations/use-cases-160.svg', alt: "Humaniq’s Global Mission"}}>
             <A_H type="hero">Humaniq’s Global Mission</A_H>
             <div className={cn('hero-sub')}>
               <A_P type="hero">The core idea behind Humaniq stands far beyond the regular banking. Humaniq’s mission is in achieving global financial inclusion for everyone and everywhere.</A_P>
@@ -86,12 +84,12 @@ const SE_Cases = () => {
                 {renderedlinks}
               </ul>
             </nav>
-            <nav className={cn('nav-links-mob')}>
-              Use Cases
-            </nav>
+            {/*<nav className={cn('nav-links-mob')}>*/}
+              {/*Use Cases*/}
+            {/*</nav>*/}
           </O_Hero>
         </A_Container>
-        {renderdCases}
+        <List cases={casesData} />
       </O_ScrollUp>
     </div>
   )

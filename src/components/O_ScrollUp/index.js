@@ -20,9 +20,10 @@ class O_ScrollUp extends Component {
   }
 
   handleScroll = () => {
-    if (this.state.hide && (window.pageYOffset > 200)) {
+    const {showAfter} = this.props
+    if (this.state.hide && (window.pageYOffset > showAfter)) {
       this.setState({hide: false})
-    } else if (!this.state.hide && (window.pageYOffset < 200)) {
+    } else if (!this.state.hide && (window.pageYOffset < showAfter)) {
       this.setState({hide: true})
     }
   }
@@ -51,10 +52,12 @@ class O_ScrollUp extends Component {
 
 O_ScrollUp.propTypes = {
   initTop: T.number, // x position of button
+  showAfter: T.number, // x position of button
   children: T.node.isRequired
 };
 
 O_ScrollUp.defaultProps = {
+  showAfter: 200,
   initTop: 0
 }
 

@@ -5,11 +5,11 @@ import Wiki2Container from 'containers/Wiki2Container'
 class Wiki0Route extends Component {
 
   render() {
-    const {params:{section, article}} = this.props
+    const {params:{level0, id}} = this.props
 
     return (
       <div>
-        <Wiki2Container {...{section, article}}/>
+        <Wiki2Container {...{level0, id}}/>
       </div>
     )
   }
