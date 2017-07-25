@@ -1,17 +1,25 @@
 .a-logo{
   &__root{
-    width: 100%;
-    height: 100%;
+    cursor: pointer;
+    user-select: none;
     display: flex;
     align-items: center;
     justify-content: center;
+    &_size{
+      &_normal{
+        height: 7rem;
+      }
+      &_small{
+        height: 8.2rem;
+        width: 14rem;
+      }
+    }
   }
   &__image{
     &_size{
       &_normal{
+        padding: 1rem;
         width: 15.1rem;
-        padding: 0 1rem;
-
       }
       &_small{
         width: 10.3rem;

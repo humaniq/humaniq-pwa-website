@@ -42,22 +42,34 @@
 
     }
     &-text{
-      padding: 0 15px;
+      display: flex;
+      align-items: center;
+      padding: 0;
     }
     &-main{
       z-index: 1;
     }
     &-btn{
+      user-select: none;
+      cursor: pointer;
       box-sizing: border-box;
       display: flex;
       align-items: center;
       cursor: pointer;
       font-weight: 600;
       justify-content: center;
-
-      div{
-        display: flex;
-        align-items: center;
+      padding: 0 1.2rem;
+      height: 7rem;
+      &:hover, &:active{
+        &:after{
+          content: '';
+          position: absolute;
+          height: 100%;
+          width: 100%;
+          top: 0;
+          left: 0;
+          background-color: rgba(0, 0, 0, 0.1);
+        }
       }
       &_theme_light{
         div{
@@ -75,6 +87,7 @@
     display: flex;
     align-items: center;
     flex-flow: 0;
+    margin-left: 1.9rem;
     @include media($mobile) {
       margin-left: 0px;
     }

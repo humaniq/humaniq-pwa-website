@@ -7,7 +7,7 @@ import A_Link from 'A_Link'
 import A_Image from 'A_Image'
 import A_H from 'A_H'
 
-const SE_WikiInfo = ({children, type, img, title, link}) =>{
+const SE_WikiInfo = ({children, type, img, title, link, external}) =>{
   const moving = type == 'moving-title'
   return (
       <div className={cn('root')}>
@@ -16,7 +16,7 @@ const SE_WikiInfo = ({children, type, img, title, link}) =>{
             <A_H type="section">{title}</A_H>
           </span>
           {children}
-          <A_Link type="section-link" to={link.to}>{link.text}</A_Link>
+          <A_Link type="section-link" to={link.to} external={external}>{link.text}</A_Link>
         </div>
         <div className={cn('img-side', {type})}>
           {moving &&

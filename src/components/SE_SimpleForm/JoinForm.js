@@ -9,7 +9,6 @@ import A_P from 'A_P'
 import A_InputText from 'A_InputText'
 import Header from './Header'
 import A_Btn from 'A_Btn'
-import M_Ripple from 'M_Ripple'
 
 class SE_SimpleFormJoinForm extends Component {
 
@@ -28,13 +27,17 @@ class SE_SimpleFormJoinForm extends Component {
   }
 
 
-  onSubmit = (handleSubmit) => (e) => {
-    e.preventDefault()
+  onSubmit = (handleSubmit) => () => {
     const {values} = this.state
     if (this.validate(values)){
       handleSubmit(values)
       this.setState({submitted: true})
     }
+  }
+
+  onFormSubmit = (e) => {
+    e.preventDefault()
+    this.onSubmit(this.props.handleSubmit)()
   }
 
   validate(values){
@@ -92,15 +95,13 @@ class SE_SimpleFormJoinForm extends Component {
     } = this.state
 
     return (
-      <form onSubmit={this.onSubmit(handleSubmit)} className={cn('form')}>
+      <form className={cn('form')} onSubmit={this.onFormSubmit}>
         <Header>
           {submitted ||
-            <M_Ripple>
-              <A_Btn
-                type='nav-btn'
-                btnType="submit"
-              >Send</A_Btn>
-            </M_Ripple>
+            <A_Btn
+              onClick={this.onSubmit(handleSubmit)}
+              type='nav-btn'
+            >Send</A_Btn>
           }
         </Header>
         {submitted ? (

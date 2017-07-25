@@ -3,7 +3,6 @@ import * as T from "prop-types";
 import './styles.scss';
 import {cssClassName} from 'utils'
 const cn = cssClassName('SE_MainLayoutHeader')
-import A_Link from 'A_Link'
 import A_logo from 'A_Logo'
 import MenuBtn from './menuBtn'
 import {Motion, spring} from 'react-motion';
@@ -23,24 +22,17 @@ const extra = {
 
 class SE_MainLayoutHeader extends Component {
 
-  //todo: create new type of btn with dellay
-  handleLink = (url) => {
-    setTimeout(() => history.push(url), 300)
-  }
-
-
   getMainNav(mainNav, theme) {
     return mainNav.map(menuItem => this.getNavLink(menuItem, theme))
   }
 
   getNavLink({name, url}, theme) {
-    //todo: fix bad styles
     return (
-      <span className={cn('nav-btn', {theme})} key={'key=' + name} onClick={() => this.handleLink(url)}>
-        <M_Ripple>
-          <div className={cn('nav-text')}>{name}</div>
-        </M_Ripple>
-      </span>
+      <M_Ripple onClick={() => history.push(url)} type="flex" key={'key=' + name}>
+        <div className={cn('nav-btn', {theme})}  >
+            <div className={cn('nav-text')}>{name}</div>
+        </div>
+      </M_Ripple>
     )
   }
 

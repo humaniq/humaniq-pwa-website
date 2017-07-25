@@ -13,14 +13,14 @@ import O_ArticleList from 'O_ArticleList'
 class SE_Wiki0 extends Component {
 
   render() {
-    const {articleTitles} = this.props
+    const {articles} = this.props
     return (
       <div>
         <A_Container type='section-wiki'>
           <div className={cn('hero')}>
             <div className={cn('hero-item')}>
               <A_Link type='block' to="/wiki/about-humaniq">
-                <A_Image src='/img/placeholder-squared.svg' alt='About Humaniq'/>
+                <A_Image src='/img/illustrations/wiki-about-humaniq.svg' alt='About Humaniq'/>
                 <div className={cn('hero-item-text')}>
                   About Humaniq
                 </div>
@@ -28,7 +28,7 @@ class SE_Wiki0 extends Component {
             </div>
             <div className={cn('hero-item')}>
               <A_Link type='block' to="/wiki/technical-mecca">
-                <A_Image src='/img/placeholder-squared.svg' alt='Technical Mecca '/>
+                <A_Image src='/img/illustrations/wiki-technical-mecca.svg' alt='Technical Mecca '/>
                 <div className={cn('hero-item-text')}>
                   Technical Mecca
                 </div>
@@ -40,8 +40,9 @@ class SE_Wiki0 extends Component {
           <Info
             type='moving-title'
             title='Humaniq Roadmap'
+            external
             link={{
-              to: '#',
+              to: 'https://trello.com/b/xax1RSN8/humaniq-roadmap',
               text: 'Find out more about the plans'
             }}
             img={{
@@ -53,13 +54,15 @@ class SE_Wiki0 extends Component {
             to be as transparant as possible. That is why our technical roadmap is available to general public.</A_P>
           </Info>
         </A_Container>
-        <O_ArticleList articles={articleTitles} title="Featured Articles"/>
+        <O_ArticleList articles={articles} title="Featured Articles"/>
       </div>
     )
   }
 }
 
-SE_Wiki0.propTypes = {};
+SE_Wiki0.propTypes = {
+  articles: T.array.isRequired
+};
 
 SE_Wiki0.defaultProps = {}
 

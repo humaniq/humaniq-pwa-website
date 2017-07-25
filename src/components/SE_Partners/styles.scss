@@ -25,6 +25,10 @@
   }
 
   &__form{
+    display: flex;
+    justify-content: center;
+    flex-flow: wrap;
+    align-items: center;
     padding-top: 4rem;
     text-align: center;
     margin-bottom: 4rem;
@@ -40,7 +44,9 @@
   }
   &__tooltip{
     z-index: 100;
-    display: none;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s linear 0.3s, opacity .5s linear;
     position: absolute;
     top:50%;
     transform: translate(0, -50%);
@@ -64,7 +70,8 @@
 }
 
 .se-partners__partner-list-item:hover .se-partners__tooltip{
-  display: block;
+  visibility: visible;
+  opacity: 1;
   @include media($tablet) {
     display: none;
   }
@@ -75,3 +82,4 @@
     display: block;
   }
 }
+

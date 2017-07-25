@@ -20,7 +20,7 @@ export default () => next => action => {
 
   promise.then(
     response => (
-      next(nextAction(action, {data: response, type: successType}))
+      next(nextAction(action, {data: {...response, initdata: data}, type: successType}))
     ),
     error => {
       next(nextAction(action, {type: failureType}))
@@ -44,5 +44,4 @@ function APICall({endpoint, method, query, payload}) {
       error => reject(error)
     )
   })
-
 }
