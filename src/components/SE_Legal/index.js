@@ -13,11 +13,14 @@ const cn = cssClassName('SE_Legal');
 
 class SE_Legal extends Component {
   state = {
-    selected: null,
+    selected: this.props.articles[0],
+    stickyMenu: false,
   };
 
   componentDidMount() {
     document.addEventListener('scroll', this.checkVisibleSection);
+    this.forceUpdate()
+
   }
 
   componentWillUnmount() {
@@ -25,12 +28,19 @@ class SE_Legal extends Component {
   }
 
   checkVisibleSection = () => {
-    const anchors = this.props.articles.map(a => convert.toKebab(a.title));
+    if (this.state.stickyMenu && (document.body.scrollTop < this.helperNode.getBoundingClientRect().top)) {
+      this.setState({stickyMenu: false})
+    } else if (!this.state.stickyMenu && (document.body.scrollTop > this.helperNode.getBoundingClientRect().top)) {
+      this.setState({stickyMenu: true})
+    }
+
+
+    const anchors = this.props.articles.map(a => convert.toCleanKebab(a.title));
     let firstSectionOffset;
     let minimalNegativeOffset = 0;
     let { visibleSection } = this.state;
 
-    anchors.forEach(anchor => {
+    anchors.forEach((anchor, i) => {
       const distanceScrolled = document.body.scrollTop;
       const elemViewportOffset = this[anchor].node.getBoundingClientRect().top;
 
@@ -59,11 +69,11 @@ class SE_Legal extends Component {
   };
 
   renderSections(articles) {
-    return articles.map(props =>
+    return articles.map((props, i) =>
       <LegalSection
-        ref={node => this[convert.toKebab(props.title)] = node}
-        key={props.title}
-        id={convert.toKebab(props.title)}
+        ref={node => this[convert.toCleanKebab(props.title)] = node}
+        key={i}
+        id={convert.toCleanKebab(props.title)}
         {...props}
       />
     );
@@ -71,20 +81,21 @@ class SE_Legal extends Component {
 
   getMenuOptions(articles) {
     return articles.map(a => ({
-      anchor: convert.toKebab(a.title),
+      anchor: convert.toCleanKebab(a.title),
       text: a.title,
     }))
   }
 
   render() {
     const { articles } = this.props;
+    const {stickyMenu} = this.state
     const menuOptions = this.getMenuOptions(articles);
     const selected = this.state.selected;
 
     return (
       <div className={cn()}>
         <Meta />
-        <A_Container type="wide">
+        <A_Container type="section-clean">
 
           <div className={cn('top')}>
             <div type="equal">
@@ -95,8 +106,10 @@ class SE_Legal extends Component {
 
           <div className={cn('wrapper')}>
             <div className={cn('sidebar')}>
-              <div className={cn('fixed')} ref={ node => this.sidebar = node }>
+              <div ref={node => this.helperNode = node}  />
+              <div className={cn('menu')}>
                 <O_Menu
+                  stickyMenu = {stickyMenu}
                   options={menuOptions}
                   onClick={this.handleNavigation}
                   selected={selected}

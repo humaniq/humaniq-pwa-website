@@ -5,9 +5,7 @@ class LegalRoute extends Component {
   render() {
     return (
       <div>
-        <LegalContainer >
-          {this.props.children}
-        </LegalContainer>
+        <LegalContainer />
       </div>
     )
   }

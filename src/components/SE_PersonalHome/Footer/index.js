@@ -4,7 +4,6 @@ import './styles.scss';
 import {cssClassName} from 'utils'
 const cn = cssClassName('SE_MainLayoutFooter')
 import {Motion, spring} from 'react-motion';
-// import M_Select from 'M_Select';
 import A_Link from 'A_Link'
 import A_Image from 'A_Image'
 import A_Container from 'A_Container'
@@ -21,28 +20,10 @@ const links = [
   {
     section: 'company',
     links: [
-      // {name: 'Blog', url: '#'},
-      // {name: 'News', url: '#'},
       {name: 'Use Cases', url: '/use-cases'},
       {name: 'Partners', url: '/partners'},
-      // {name: 'Events', url: '#'}
     ]
   },
-  // {section: 'legal',
-    // links: [
-    // {name: 'Privacy', url: '#'},
-    // {name: 'Security', url: '#'},
-    // {name: 'Policies', url: '#'}
-    // ]
-  // },
-  // {
-  //   section: 'resources',
-    // links: [
-    //   {name: 'Support', url: '#'},
-    //   {name: 'Contact us', url: '#'},
-    //   {name: 'Download mobile app', url: '#'}
-    // ]
-  // }
 ]
 const socials = [
   {network: 'facebook', link: 'https://www.facebook.com/humaniq.co'},
@@ -80,7 +61,7 @@ class SE_MainLayoutFooter extends Component {
           >{section}</div>
           <ul className={cn('nav-list', {isOpen})}>
             { links.map(({name, url}) => (
-              <li className={cn('nav-list__item')} key={'key=' + name}><A_Link to={url} type='primary'>{name}</A_Link></li>
+              <li className={cn('nav-list__item')} key={'key=' + name}><A_Link to={url} type='primary' external>{name}</A_Link></li>
             )) }
           </ul>
         </div>

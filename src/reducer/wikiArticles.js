@@ -20,7 +20,7 @@ const initWikiArticles = {
     {
       level0:"about-humaniq",
       level1:"Getting Started",
-      description: "What drives us at Humaniq, and how is our app, and our HMQ coin, different to the mobile wallets and cryptocurrency we've seen in the past? Find out more about our mission to harness the Blockchain for good and get your questions about our mission to bring financial services to the global unbanked here."
+      description: "What drives us at Humaniq, and how is our app, and our HMQ coin, different to the mobile wallets and cryptocurrency we've seen in the past? Find out more about our mission to harness the Blockchain for good and get your questions about our mission to bring financial services to the global unbanked answered here."
     },
     {
       level0:"about-humaniq",
