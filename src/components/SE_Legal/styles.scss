@@ -44,15 +44,14 @@
       flex-direction: column;
     }
   }
-  &__fixed{
-    position: fixed;
+  &__menu{
     margin-left: 10rem;
     @include media ($tablet) {
       @include menu
     }
+
   }
-  &__sidebar{
-    flex: 1 1 7rem;
+  &__sidebar{  flex: 1 1 7rem;
     min-width: 30rem;
     display: flex;
     @include media ($tablet) {

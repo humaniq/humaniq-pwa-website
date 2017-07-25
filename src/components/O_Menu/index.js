@@ -4,22 +4,21 @@ import { browserHistory } from 'react-router';
 import './styles.scss';
 import { cssClassName, convert } from 'utils'
 const cn = cssClassName('O_Menu');
-import A_Link from 'A_Link';
-import A_P from 'A_P';
-import M_Dropdown from 'M_Dropdown';
+import {Link} from 'react-router';
+// import M_Dropdown from 'M_Dropdown';
 
 
-const O_Menu = ({ options, selected, onClick, rootLink }) => {
+const O_Menu = ({ options, selected, onClick, rootLink, stickyMenu }) => {
   const renderedLinks = options.map(({ anchor, text }) => {
     const isSelected = selected === anchor;
     return (
       <li key={'menu-item-' + anchor} className={cn('nav-links-item', { active: isSelected })}>
         {
           isSelected
-            ? <A_P type="hero">{text}</A_P>
-            : <A_Link to={rootLink + anchor} type="primary" onClick={() => onClick(anchor)}>
+            ? <div>{text}</div>
+            : <Link to={rootLink + anchor} onClick={() => onClick(anchor)}>
                 {text}
-              </A_Link>
+              </Link>
         }
       </li>
     )
@@ -28,21 +27,22 @@ const O_Menu = ({ options, selected, onClick, rootLink }) => {
 
   const selectedDropdownOption = options.find(option => option.anchor === selected) || options[0];
   const dropdownValue = selectedDropdownOption.text;
+  console.log(dropdownValue)
   return (
     <nav>
-      <ul className={cn('wider-screens')}>
+      <ul className={cn('wider-screens', {stickyMenu})}>
         { renderedLinks }
       </ul>
-      <div className={cn('smaller-screens')}>
-        <M_Dropdown
-          options={options.map(option => option.text)}
-          onChange={(text) => {
-            browserHistory.push(rootLink + convert.toKebab(text));
-            return text;
-          }}
-          selected={dropdownValue}
-        />
-      </div>
+      {/*<div className={cn('smaller-screens')}>*/}
+        {/*<M_Dropdown*/}
+          {/*options={options.map(option => option.text)}*/}
+          {/*onChange={(text) => {*/}
+            {/*browserHistory.push(rootLink + convert.toKebab(text));*/}
+            {/*return text;*/}
+          {/*}}*/}
+          {/*selectedText='text'*/}
+        {/*/>*/}
+      {/*</div>*/}
     </nav>
   )
 };
@@ -59,7 +59,7 @@ O_Menu.propTypes = {
 
 O_Menu.defaultProps = {
   options: [],
-  selected: false,
+  selected: '',
 };
 
 export default O_Menu

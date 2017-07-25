@@ -73,7 +73,7 @@ const SE_Cases = () => {
       <Meta />
       <O_ScrollUp>
         <A_Container type="section-clean">
-          <O_Hero img={{src: "/img/placeholder-squared.svg", alt: "Humaniq’s Global Mission"}}>
+          <O_Hero img={{src: '/img/illustrations/use-cases-160.svg', alt: "Humaniq’s Global Mission"}}>
             <A_H type="hero">Humaniq’s Global Mission</A_H>
             <div className={cn('hero-sub')}>
               <A_P type="hero">The core idea behind Humaniq stands far beyond the regular banking. Humaniq’s mission is in achieving global financial inclusion for everyone and everywhere.</A_P>
@@ -84,9 +84,9 @@ const SE_Cases = () => {
                 {renderedlinks}
               </ul>
             </nav>
-            <nav className={cn('nav-links-mob')}>
-              Use Cases
-            </nav>
+            {/*<nav className={cn('nav-links-mob')}>*/}
+              {/*Use Cases*/}
+            {/*</nav>*/}
           </O_Hero>
         </A_Container>
         <List cases={casesData} />
