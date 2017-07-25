@@ -6,12 +6,15 @@ export const CLOSE = 'CLOSE_'
 export const SET = 'SET_'
 export const CLEAN = 'CLEAN_'
 
+
 export const OPEN_ROUTE = 'OPEN_ROUTE'
 export const POST = 'POST'
 export const POSTS = 'POSTS'
 export const ERROR = 'ERROR'
 export const MENU = 'MENU'
 export const PARTNERS = 'PARTNERS'
+export const HMQ_TRANSACTIONS = 'HMQ_TRANSACTIONS'
+
 
 
 export const CONTENT = 'CONTENT'

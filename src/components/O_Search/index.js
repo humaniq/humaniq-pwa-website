@@ -24,20 +24,21 @@ class O_Search extends Component {
 
   componentWillReceiveProps(nextProps) {
     this.setState({
-      value: nextProps.value,
+      value: nextProps.value || '',
       inActive: !!nextProps.value
     })
   }
 
   render() {
-    const {inActive, value} = this.state;
+    const {inActive, value, title} = this.state;
     const {placeholder} = this.props
-
+    const _title = title && <A_H type='search'>{title}</A_H>
     return (
-      <div>
         <A_Container type='wide'>
-          <A_H type='search'>Welcome to Humaniq wiki</A_H>
-          <form action="" className={cn(`search ${ inActive ? 'o-search__input--focused' : '' }`)}
+          {_title}
+          <form action="" className={cn('search', {inActive}
+            // `o-search ${ inActive ? 'o-search__input--focused' : '' }`
+          )}
                 onSubmit={this.onSubmit}>
             <input
               type="text"
@@ -60,13 +61,13 @@ class O_Search extends Component {
             </button>
           </form>
         </A_Container>
-      </div>
     )
   }
 }
 
 
 O_Search.propTypes = {
+  title: T.string,
   placeholder: T.string.isRequired,
   handleSubmit: T.func.isRequired
 };

@@ -1,0 +1,52 @@
+.line {
+  fill: none;
+  stroke: #D9D9D9;
+  stroke-width: 1px; }
+
+.grid line {
+  stroke: #D9D9D9;
+  stroke-opacity: 0.5; }
+
+.grid path {
+  stroke-width: 0; }
+
+.path {
+  fill: #C6E2F7; }
+
+.line {
+  stroke: #3199DE;
+  stroke-width: 1.7px; }
+
+.dot {
+  stroke: #fff;
+  stroke-width: 1px;
+  fill: #3199DE;
+}
+
+.dot:hover {
+  cursor: pointer;
+}
+
+.yaxis {
+  stroke-width: 1px; }
+
+/*.tooltip {
+  position: absolute;
+  color: #000;
+  background: #fff;
+  border: 0;
+  border-radius: 4px;
+  pointer-events: none;
+  text-align: center;
+  padding: 8px;
+  font: 12px sans-serif;
+  margin-left: 50px;
+  min-width: 120px;
+  -webkit-box-shadow: 10px 10px 42px -6px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 42px -6px rgba(0,0,0,0.75);
+  box-shadow: 10px 10px 42px -6px rgba(0,0,0,0.75);
+}*/
+
+
+
+
