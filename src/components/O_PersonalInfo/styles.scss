@@ -1,0 +1,36 @@
+@import "common/settings/variables";
+@import "common/utils";
+
+/* Personal Info Section
+/* ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## */
+
+.o-personal-info {
+  &__info {
+    width: 40rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    @include media($mobile) {
+      width: 90%;
+      margin: 0 auto;
+    }
+  }
+  &__avatar {
+    width: 8rem;
+    height: 8rem;
+    display: block;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2);
+    object-fit: cover;
+  }
+  &__phone {
+    margin-top: 1.6rem;
+  }
+  &__description {
+    margin-top: -1rem;
+  }
+}
