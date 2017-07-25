@@ -26,7 +26,7 @@ class A_Image extends Component {
   }
 
   render() {
-    let {rounded, realSize, link, ...preProps} = this.props
+    let {rounded, realSize, link, type, ...preProps} = this.props
     const {onClick, objectFit, ...props} = preProps
     const complete = !!this.node && this.node.complete
     const imgReady = complete || this.state.imgReady
@@ -38,7 +38,7 @@ class A_Image extends Component {
       <span className={cn('root')} >
         <img
           ref={ node => this.node = node }
-          className={cn('img', {onClick: !!onClick, objectFit}, [rounded, link, realSize])}
+          className={cn('img', {onClick: !!onClick, objectFit, [type]: !!type}, [rounded, link, realSize])}
           onLoad = {this.handleLoad}
           style={imgReady ? {} : {display: 'none'}}
           onClick={onClick}
@@ -61,6 +61,9 @@ A_Image.propTypes = {
   objectFit: T.oneOf([
     'contain', // increases or decreases the size of the image to fill the box whilst preserving its aspect-ratio.
     'cover-hidden' // height 100% of widht
+  ]),
+  type: T.oneOf([
+    'avatar',
   ]),
   realSize: T.bool, // width and height auto
   rounded: T.bool, // remove space under the image in links
