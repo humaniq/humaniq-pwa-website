@@ -57,7 +57,7 @@
         }
       }
       &:nth-child(3) {
-        width: 7%;
+        width: 8%;
         padding-left: .5rem;
         @include media($tablet) {
           padding-left: 2rem;
@@ -69,7 +69,7 @@
         }
       }
       &:nth-child(4) {
-        width: 33%;
+        width: 32%;
         @include media($mobile) {
           display: none;
         }
