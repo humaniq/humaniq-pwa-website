@@ -12,6 +12,7 @@ import Wiki0 from './Wiki0'
 import Wiki1 from './Wiki1'
 import Wiki2 from './Wiki2'
 import Legal from './Legal'
+import OpenSource from './OpenSource'
 import WikiSearch from './WikiSearch'
 import Hmq from './Hmq'
 import Markup from './Markup'
@@ -64,6 +65,9 @@ const getRoutes = (store) => {
       />
       <Route path="Legal"
              component={Legal}
+      />
+      <Route path="opensource"
+             component={OpenSource}
       />
       <Route path="hmq-explorer"
              component={Hmq}

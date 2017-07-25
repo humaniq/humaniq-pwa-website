@@ -22,7 +22,7 @@ class SE_ContactUs extends Component {
             <A_Container type='section-long-text'>
               <div className={cn('contactus-header')}>
                 <div className={cn('contactus-header-image')}>
-                  <img src="img/contactus/contact-us-160-px.svg" />
+                  <img src="/img/contactus/contact-us-160-px.svg" />
                 </div>
                 <div className={cn('contactus-header-description')}>
                   <A_H type='section'>Contact Humaniq</A_H>
@@ -55,8 +55,8 @@ class SE_ContactUs extends Component {
             <A_Container type='section-long-text'>
               <A_H type='section'>Humaniq’s Legal Office</A_H>
               <A_P type='third'>Humaniq LLC.</A_P>
-              <p>25C, Boulevard Royal</p>
               <ul>
+                <li>25C, Boulevard Royal</li>
                 <li>Luxembourg, L-2449</li>
                 <li>Luxembourg</li>
               </ul>
