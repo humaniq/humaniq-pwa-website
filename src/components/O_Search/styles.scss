@@ -15,6 +15,7 @@
     @include media($mobile) {
       width: 100%;
     }
+
   }
   &__input {
     width: 100%;
@@ -38,14 +39,15 @@
       box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.03);
       font-weight: 400;
     }
-    &:focus {
+
+    &_in-active_true {
       box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
       color: rgba(44, 45, 48, .4);
       background: white;
       color: #3a3c4c;
       font-weight: 400;
-      &::placeholder {
-        color: rgba(44, 45, 48, .4);
+      &:hover {
+        background: white;
       }
     }
   }
@@ -56,29 +58,31 @@
     border: none;
     outline: none;
     position: absolute;
-    top: 50%;
-    right: 1rem;
-    margin-top: -2.7rem;
+    right: .6rem;
     cursor: pointer;
+    top: .6rem;
+    //border: 1px solid red;
   }
   &__search-icon {
+    position: relative;
+    display: block;
     width: 2.2rem;
     height: 2.2rem;
+    //transform: translate(0,-50%);
     .o-search__icon-path {
       stroke: $white;
       fill: $white;
+      .o-search__search_in-active_true &{
+        stroke: #35424C;
+        fill: #35424C;
+      }
     }
     .o-search__icon-circle {
       stroke: $white;
+      .o-search__search_in-active_true &{
+        stroke: #35424C;
+      }
     }
   }
-  &__input--focused {
-    .o-search__icon-path {
-      stroke: #35424C;
-      fill: #35424C;
-    }
-    .o-search__icon-circle {
-      stroke: #35424C;
-    }
-  }
+
 }

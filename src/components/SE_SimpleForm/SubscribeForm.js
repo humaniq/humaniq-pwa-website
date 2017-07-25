@@ -9,7 +9,6 @@ import A_P from 'A_P'
 import A_InputText from 'A_InputText'
 import Header from './Header'
 import A_Btn from 'A_Btn'
-import M_Ripple from 'M_Ripple'
 
 class SE_SimpleFormSubscribeForm extends Component {
 
@@ -27,6 +26,11 @@ class SE_SimpleFormSubscribeForm extends Component {
       handleSubmit({email})
       this.setState({submitted: true})
     }
+  }
+
+  onFormSubmit = (e) => {
+    e.preventDefault()
+    this.onSubmit(this.props.handleSubmit)()
   }
 
   validate = (value) => {
@@ -53,7 +57,7 @@ class SE_SimpleFormSubscribeForm extends Component {
     const {values: {email}, error, submitted} = this.state
 
     return (
-      <form  className={cn('form')}>
+      <form  className={cn('form')} onSubmit={this.onFormSubmit}>
         <Header>
           {submitted ||
             <A_Btn

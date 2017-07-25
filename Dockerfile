@@ -1,11 +1,11 @@
 FROM eu.gcr.io/humaniq-168420/site:base
 
-# Prepage gloabl env
-ENV NODE_ENV=production
-
 # Install app dependencies
 COPY package.json /usr/src/app/
-RUN npm install
+RUN NODE_ENV=development npm install
+
+# Prepage gloabl env
+ENV NODE_ENV=production
 
 # Bundle app source
 ADD . /usr/src/app
