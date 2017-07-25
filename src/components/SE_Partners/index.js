@@ -97,7 +97,7 @@ class SE_Partners extends Component {
       <div>
         <Meta />
         <A_Container type="equal">
-          <O_Hero img={{src: "/img/placeholder-squared.svg", alt: "parners"}}>
+          <O_Hero img={{src: "/img/illustrations/group-6.svg", alt: "parners"}}>
             <A_H type="hero">Join our Community</A_H>
             <A_P type="hero">Humaniq is proud of its wide partnership network which includes everybody from fintech
               companies and Blockchain communities to publishing media and app developers.</A_P>

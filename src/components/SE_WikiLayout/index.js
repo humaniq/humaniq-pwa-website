@@ -8,6 +8,8 @@ import history from 'history'
 
 class SE_WikiLayout extends Component {
 
+
+
   handleSubmit = (searchString) => {
     history.push('/wiki/search?searchTerm=' + searchString)
   }
@@ -18,6 +20,7 @@ class SE_WikiLayout extends Component {
       <div className={cn('root')}>
         <div className={cn('search')}>
           <O_Search
+            title="Welcome to Humaniq wiki"
             placeholder="Search anything"
             value={searchRequest}
             handleSubmit = {this.handleSubmit}
