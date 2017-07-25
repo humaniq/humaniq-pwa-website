@@ -45,7 +45,7 @@
         }
       }
       &:nth-child(2) {
-        width: 31%;
+        width: 21%;
         padding-right: 3.5rem;
         @include media($tablet) {
           display: none;
@@ -57,7 +57,7 @@
         }
       }
       &:nth-child(3) {
-        width: 7%;
+        width: 8%;
         padding-left: .5rem;
         @include media($tablet) {
           padding-left: 2rem;
@@ -69,20 +69,20 @@
         }
       }
       &:nth-child(4) {
-        width: 16%;
+        width: 32%;
         @include media($mobile) {
           display: none;
         }
       }
       &:nth-child(5) {
-        width: 18%;
+        width: 20%;
         padding-left: .7rem;
         @include media($mobile) {
           display: none;
         }
       }
       &:nth-child(6) {
-        width: 10%;
+        width: 11%;
         @include media($mobile) {
           width: 40%;
         }

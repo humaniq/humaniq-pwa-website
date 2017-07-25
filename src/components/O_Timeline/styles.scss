@@ -1,0 +1,87 @@
+@import "common/settings/variables";
+@import "common/utils";
+
+/* Timeline Section
+/* ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## */
+
+.o-timeline {
+  &__timeline {
+    position: relative;
+    display: table;
+    margin: 3rem auto;
+    max-width: 68rem;
+  }
+  &__border-line {
+    margin: 3rem 0;
+    &:after {
+      content: '';
+      width: .2rem;
+      position: absolute;
+      top: 1rem;
+      bottom: 0;
+      left: 6rem;
+      z-index: 1;
+      background: $gray-2;
+    }
+  }
+  &__year {
+    position: relative;
+    margin-bottom: -2.5rem;
+  }
+  &__year-date {
+    font-size: 1.5rem;
+    line-height: 1.73;
+    color: $black-1;
+    position: sticky;
+    top: 0;
+  }
+  &__month {
+    position: relative;
+    margin-top: -2.5rem;
+    padding-bottom: 1.5em;
+    margin-bottom: 3em;
+  }
+  &__month-name {
+    position: absolute;
+    bottom: 0;
+    font-weight: 400;
+    padding-left: 9rem;
+    font-size: 1.4rem;
+    line-height: 1.43;
+    color: rgba(37, 48, 57, 0.5);
+  }
+  &__month-list {
+    padding: 0 0 0 9rem;
+    list-style: none;
+    &:after {
+      content: '';
+      width: .6rem;
+      height: .6rem;
+      background: $gray-2;
+      border: .2rem solid $white;
+      border-radius: 50%;
+      position: absolute;
+      left: 5.6rem;
+      top: .7rem;
+      z-index: 2;
+    }
+  }
+  &__month-list__p {
+    font-size: 1.5rem;
+    line-height: 1.73;
+    color: $black-1;
+  }
+}
+
+.timeline-title {
+  font-size: 2.3rem;
+  font-weight: 600;
+  line-height: 1.39;
+  text-align: center;
+  color: $black-2;
+  position: relative;
+  left: 1rem;
+  @include media($tablet) {
+    left: 0;
+  }
+}
