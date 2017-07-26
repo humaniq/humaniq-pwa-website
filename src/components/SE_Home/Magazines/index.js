@@ -65,7 +65,7 @@ const SE_HomeMagazines = () =>{
   return (
     <div className={cn('root')}>
       <A_Container type="equal">
-          <A_H type='section-c' >Humaniq is seen in</A_H>
+          <A_H type='section-c' >As seen at:</A_H>
           <div className={cn('magazines')}>
             {renderedMagazines}
           </div>

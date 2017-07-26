@@ -60,7 +60,7 @@ class SE_PersonalForm extends Component {
           break;
         case 'code':
           if (!value) {
-            errors[valueName] = 'Please fill out form'
+            errors[valueName] = 'code'
           } else {
             errors[valueName] = ''
           }

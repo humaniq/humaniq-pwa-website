@@ -10,7 +10,7 @@ import A_P from 'A_P'
 
 class SE_HmqHero extends Component {
   render() {
-    const {chartProps} = this.props
+    const {chartProps, statistics, my} = this.props
     return (
       <div>
         <A_Container type="mob-wide-line">
@@ -33,7 +33,21 @@ class SE_HmqHero extends Component {
               <Chart {...{chartProps}} />
             </div>
             <div className={cn('stat')}>
-              <div style={{height: 466, width: 260, backgroundColor: 'dodgerblue'}}>stat</div>
+              <A_H type='hmq-e'>Token Supply</A_H>
+              <A_P type='hmq-e'>{my._tokenSupply}</A_P>
+              <A_H type='hmq-e'>Value per Token</A_H>
+              <A_P type='hmq-e'>{my._tokenValue}</A_P>
+              <A_H type='hmq-e'>Total Holders</A_H>
+              <A_P type='hmq-e'>{statistics.totalWallets}</A_P>
+              <A_H type='hmq-e'>Total Transactions</A_H>
+              <A_P type='hmq-e'>{statistics.totalTransactions}</A_P>
+              <A_H type='hmq-e'>Transactions 24h</A_H>
+              <A_P type='hmq-e'>{statistics.totalTransactions24}</A_P>
+              <A_H type='hmq-e'>Value 24h</A_H>
+              <A_P type='hmq-e'>{my._volume24}</A_P>
+              <A_H type='hmq-e'>Participating Exchanges</A_H>
+              <A_P type='hmq-e'>{statistics.participatingExchanges}</A_P>
+
             </div>
           </div>
         </A_Container>
@@ -41,7 +55,7 @@ class SE_HmqHero extends Component {
     )
   }
 }
-
+//
 SE_HmqHero.propTypes = {
   chartProps: T.object.isRequired,
 };
