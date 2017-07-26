@@ -1,4 +1,4 @@
-import {SUCCESS, REQUEST, HMQ_TRANSACTIONS} from 'constants'
+import {SUCCESS, REQUEST, HMQ_TRANSACTIONS, HMQ_TRANSACTION_UPDATE, REALTIME_UPDATE_CONNECT} from 'constants'
 import {rnd} from 'utils'
 import LastDate from 'utils/last'
 
@@ -24,7 +24,6 @@ function genTransactions(number){
   return(_res)
 }
 
-
 export function requestHmqTransactions() {
   return ({
     type: REQUEST + HMQ_TRANSACTIONS + SUCCESS,
@@ -32,4 +31,15 @@ export function requestHmqTransactions() {
   })
 }
 
+export function realtimeUpdatesConnect() {
+  return {
+    type: REALTIME_UPDATE_CONNECT
+  }
+}
 
+export function updateTransaction(transaction) {
+  return {
+    type: HMQ_TRANSACTION_UPDATE,
+    data: transaction
+  }
+}

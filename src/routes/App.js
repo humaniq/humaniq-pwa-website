@@ -5,7 +5,7 @@ import {fetchWiki} from "AC/wiki";
 import {fetchPartners} from 'AC/otherAPI'
 import initialLoad from 'utils/initialLoad'
 import {setRoute} from 'AC/navigation'
-import {requestHmqTransactions} from 'AC/hmqExp'
+import {requestHmqTransactions, realtimeUpdatesConnect} from 'AC/hmqExp'
 
 
 class AppRoute extends Component {
@@ -16,6 +16,7 @@ class AppRoute extends Component {
       dispatch(fetchWiki())
         .then(dispatch(fetchPartners()))
         .then(dispatch(requestHmqTransactions()))
+        .then(dispatch(realtimeUpdatesConnect()))
         .then(dispatch(setRoute(location.pathname)))
     )
   }
