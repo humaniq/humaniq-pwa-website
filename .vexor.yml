@@ -15,4 +15,4 @@ cache:
 deploy:
   shell:
     - "./deploy.sh"
-  branch: personal-deploy
+  branch: master
