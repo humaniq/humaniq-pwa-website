@@ -55,7 +55,7 @@ const SE_PersonalHome = ({
       <div className={cn('header-inner')}>
         <section className={cn('info')}>
           <div className={cn('phone')}>
-            <A_Image src={photo_url} type ='avatar' alt={first_name + ' ' + last_name} />
+            <A_Image src={'/img/1234.png'} type ='avatar' alt={first_name + ' ' + last_name} />
 
           </div>
           <div className={cn('phone')}>
