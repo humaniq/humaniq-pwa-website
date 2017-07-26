@@ -1,58 +1,74 @@
-import React from 'react';
+import React, { Component } from 'react';
 import * as T from "prop-types";
 import './styles.scss';
 import {cssClassName} from 'utils'
 const cn = cssClassName('SE_HomeHero')
-import A_Container from 'A_Container'
+
 import A_Image from 'A_Image'
 import A_H from 'A_H'
 import A_P from 'A_P'
 import A_Btn from 'A_Btn'
 import Title from './title'
+import BVideo from 'react-background-video-player'
+import A_Container from 'A_Container'
 
-const SE_HomeHero = ({explorerData}) =>{
 
-  const infoBlock = explorerData && explorerData.map( ({title, data}) => {
+class SE_HomeHero extends Component {
+
+  state = {
+    isPlaying: undefined,
+    isMuted: undefined,
+    progress: 0,
+    currentTime: 0,
+    duration: 0,
+  }
+  componentDidMount() {
+    this.setState({
+      isPlaying: !this.player.isPaused,
+      isMuted: this.player.isMuted,
+    });
+  }
+
+  render() {
+
+
+
     return (
-      <div className={cn('explorer-info-block')} key={'key_' + title}>
-        <A_H type='xs'>{title}</A_H>
-        <span className={cn('explorer-info-data')}>{data}</span>
-      </div>
-
-    )
-  })
-
-  return(
-    <div className={cn('back-img')}>
-      <A_Container>
-        <div className={cn('root')}>
-          <div className={cn('welcome')}>
-            <Title />
-            <div className={cn('welcome-text')}>
-              <A_P type="first" >Humaniq is a simple and secure mobile banking app, based on Ethereum Blockchain. Humaniq tool of financial inclusion connects 2 billion unbanked people to the global economy. </A_P>
+      <div className={cn('back-img')}>
+        <BVideo
+          playsInline = {false}
+          src={'/video/hero-video.mp4'}
+          ref={p => this.player = p}
+          containerWidth={1280}
+          containerHeight={'auto'}
+          poster={'/img/hero-image.png'}
+          onPlay={this.handleOnPlay}
+          onPause={this.handleOnPause}
+          onMute={this.handleOnMute}
+          onUnmute={this.handleOnUnmute}
+          style={{
+            top: '50%',
+            transform: 'translate(-50%,-50%)',
+            left: '50%',
+            width: 1280
+          }}
+      />
+        <div style={{backgroundColor:'rgba(0,0,0,0.3)', width: '100%'}}>
+          <A_Container type="video-hero">
+            <div className={cn('wrapper')}>
+              <div className={cn('inner')}>
+                <A_H type="video-hero">The new standard in financial solutions</A_H>
+                <A_P type="video-hero">Humaniq is a simple and secure mobile app, delivering financial inclusion solutions to the 3.5 billion unbanked / under banked globally.</A_P>
+                <A_Btn type="link-subscribe" to="/form/subscribe">Subscribe</A_Btn>
+              </div>
             </div>
-            <A_Btn type="link-subscribe" to="/form/subscribe">Subscribe</A_Btn>
-            <span className={cn('subscribe-text')}>
-              <A_P type="second" >Want to be informed? Subscribe to our Newsletter </A_P>
-          </span>
-          </div>
-          {explorerData &&
-          <div className={cn('explorer')}>
-            <div className={cn('explorer-info')}>
-              <A_H type='bs'>HMQ Explorer</A_H>
-              {infoBlock}
-            </div>
-            <div className={cn('explorer-img')}>
-              <A_Image src="/img/illustrations/block-0.svg"/>
-            </div>
-          </div>
-          }
+          </A_Container>
         </div>
-      </A_Container>
-    </div>
-
-  )
+      </div>
+    )
+  }
 }
+
 SE_HomeHero.propTypes = {
   explorerData: T.array.isRequired
 };

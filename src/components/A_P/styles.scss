@@ -3,6 +3,13 @@
 
 .a-p{
   &_type{
+    &_video-hero{
+      font-size: 18px;
+      line-height: 28.0px;
+      text-align: center;
+      color: #ffffff;
+      margin-bottom: 16px;
+    }
     &_hero {
       font-size: 1.5rem;
       line-height: 2.6rem;

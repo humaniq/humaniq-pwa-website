@@ -3,40 +3,18 @@
 
 .se-home-hero {
 
-  &__wrapper{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 600px;
-
-    text-align: center;
-    @include media($tablet) {
-      height: 600px;
-
-    }
-    @include media($mobile) {
-      height: 400px;
-
-    }
-
-  }
   &__back-img{
-    @include media($tablet) {
-      background-image: url("/img/hero-image.png");
-
-    }
-    @include media($mobile) {
-      background-image: url("/img/hero-image.png");
-
-    }
+    background-image: url("/img/hero-image.png");
     background-repeat: no-repeat;
     background-position: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: black;
-  }
+    @include media($tablet) {
+      background-position: right;
+    }
+    @include media($mobile) {
+      background-image: none;
+    }
 
+  }
   &__root{
     padding: 9rem 0 9.6rem;
     transform: translate(0, 3rem);
@@ -159,12 +137,4 @@
       text-align: center;
     }
   }
-}
-
-video{
-  //width: 100vw !important;
-  height: 100% !important;
-  top: 50% !important;
-  left: 50% !important;
-  transform: translate(-50%, -50%) !important;
 }

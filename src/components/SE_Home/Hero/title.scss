@@ -2,25 +2,25 @@
 @import "common/utils";
 
 
-@function makelongshadow($angle) {
-  $val: 0px 0px #CFD1D3;
-
-  @for $i from 1 through 70 {
-    $val: #{$val}, #{-$i * $angle}px #{$i}px #CFD1D3;
-  }
-  @return $val;
-}
+//@function makelongshadow($angle) {
+//  $val: 0px 0px #CFD1D3;
+//
+//  @for $i from 1 through 70 {
+//    $val: #{$val}, #{-$i * $angle}px #{$i}px #CFD1D3;
+//  }
+//  @return $val;
+//}
 
 //$val: #{$val}, #{-$i}px #{$i}px rgba(235, 235, 235, (round((100 - $i)/ 10) / 10) );
 
 
-@mixin longshadow() {
-  text-shadow: makelongshadow(0.76);
-  @include media($mobile) {
-    text-shadow: makelongshadow(0.77);
-  }
-
-}
+//@mixin longshadow() {
+//  text-shadow: makelongshadow(0.76);
+//  @include media($mobile) {
+//    text-shadow: makelongshadow(0.77);
+//  }
+//
+//}
 
 .se-home-hero-title{
   &__root{
@@ -32,6 +32,7 @@
   }
 
   &__title-1, &__title-2{
+    text-align: center;
     margin: 0;
     padding: 0;
     z-index: -10;
@@ -53,33 +54,33 @@
   }
   &__title-2{
     color: $white;
-    transform: translate(-4%, 0);
+    //transform: translate(-4%, 0);
 
     display: block;
 
-    @include media($mobile) {
-      transform: translate(0, 0);
-
-      color: $title;
-
-      &:after {
-        background-image: linear-gradient(180deg, #cfd1d3, #fff);
-        content: "";
-        display: block;
-        position: absolute;
-        transform: skew(143deg);
-        height: 5.5em;
-        width: 6.38em;
-        top: 1em;
-        left: -2.56em;
-        z-index: -1;
-        @include media($tablet) {
-          left: -2.55em;
-          width: 6.37em;
-
-        }
-      }
-    }
+    //@include media($mobile) {
+    //  transform: translate(0, 0);
+    //
+    //  color: $title;
+    //
+    //  &:after {
+    //    background-image: linear-gradient(180deg, #cfd1d3, #fff);
+    //    content: "";
+    //    display: block;
+    //    position: absolute;
+    //    transform: skew(143deg);
+    //    height: 5.5em;
+    //    width: 6.38em;
+    //    top: 1em;
+    //    left: -2.56em;
+    //    z-index: -1;
+    //    @include media($tablet) {
+    //      left: -2.55em;
+    //      width: 6.37em;
+    //
+    //    }
+    //  }
+    //}
 
     position: absolute;
     top: 0;
@@ -106,19 +107,19 @@
 
     }
   }
-  &__shadow-text{
-    display: none;
-    @include media($mobile) {
-      display: block;
-
-    }
-
-
-
-    z-index: -10;
-
-    @include longshadow();
-
-  }
+  //&__shadow-text{
+  //  display: none;
+  //  //@include media($mobile) {
+  //  //  display: block;
+  //  //
+  //  //}
+  //
+  //
+  //
+  //  z-index: -10;
+  //
+  //  //@include longshadow();
+  //
+  //}
 
 }
