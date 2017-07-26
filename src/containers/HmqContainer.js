@@ -14,12 +14,12 @@ var numberFormat = function(n, dp){
 };
 
 function mapStateToProps( state ) {
-  const {hmq:{data: chartProps}, transactions:{entities:transactions, statistics}} = state
+  const {hmq: chartProps, loaded, transactions:{entities:transactions, statistics}} = state
   const _tokenSupply = `${numberFormat(statistics.tokenSupply.hmq)} HMQ $ ${numberFormat(Math.round(statistics.tokenSupply.usd * 100) / 100)}`
   const _volume24 = `$ ${numberFormat(Math.round(statistics.lastHours24.tradesVolume.usd))} HMQ ${numberFormat(Math.round(statistics.lastHours24.tradesVolume.hmq *100)/ 100)}`
   const _tokenValue = `$ ${Math.round(statistics.tokenValue.usd * 10000) /10000} HMQ $ ${numberFormat(Math.round(statistics.tokenSupply.hmq * 1000000)/ 1000000)}`
 
-  return {chartProps, transactions, statistics, my:{_tokenSupply, _tokenValue, _volume24}};
+  return {chartProps, transactions, loaded, statistics, my:{_tokenSupply, _tokenValue, _volume24}};
 }
 
 function mapDispatchToProps(dispatch) {

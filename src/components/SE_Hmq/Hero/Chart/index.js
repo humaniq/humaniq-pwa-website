@@ -7,22 +7,13 @@ const cn = cssClassName('SE_HmqHeroChart')
 import D3Chart from './D3Chart'
 
 const periods = [
-  'hour', 'day', 'week', 'month', 'year', 'all'
+  '1h', '1d', '1w', '1m', '1y', 'all'
 ]
-
-const periodTitles = {
-  hour: '1h',
-  day: '1d',
-  week: '1w',
-  month: '1m',
-  year: '1y',
-  all: 'all'
-}
 
 class SE_HmqHeroChart extends Component {
 
   state = {
-    active: periods[3]
+    active: periods[1]
   }
 
   getNavItems(active){
@@ -32,7 +23,7 @@ class SE_HmqHeroChart extends Component {
           key={'key_' + period}
           onClick={() => this.setState({active: period})}
           className={cn('body__header-nav-item', {active: period === active})}
-        >{periodTitles[period]}</div>
+        >{period}</div>
       ))
     )
   }
@@ -42,6 +33,7 @@ class SE_HmqHeroChart extends Component {
     const {active} = this.state
     const navItems = this.getNavItems(active)
     const {chartProps} = this.props
+    console.log(active, chartProps)
     return (
       <div className={cn('root')}>
         <div className={cn('body')}>

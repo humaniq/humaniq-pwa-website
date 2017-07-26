@@ -78,50 +78,54 @@ export function fetchHmqMarkets() {
 export function fetchExchangeRates(query, period) {
   return ({
     [BACKEND_CALL]: {
-      endpoint: BLOCKCHAIN_EXCHANGE_RATES,
+      endpoint: ENDPOINT_BLOCKCHAIN_EXCHANGE_RATES,
       method: 'GET',
       query: query,
       types: [
-        REQUEST + ENDPOINT_BLOCKCHAIN_EXCHANGE_RATES + START,
-        REQUEST + ENDPOINT_BLOCKCHAIN_EXCHANGE_RATES + SUCCESS,
-        REQUEST + ENDPOINT_BLOCKCHAIN_EXCHANGE_RATES + FAIL,
+        REQUEST + BLOCKCHAIN_EXCHANGE_RATES + START,
+        REQUEST + BLOCKCHAIN_EXCHANGE_RATES + SUCCESS,
+        REQUEST + BLOCKCHAIN_EXCHANGE_RATES + FAIL,
       ],
       data:period
     }
   })
 }
 
-const apiDateFormat = momentDate => momentDate.format('YYYYMMDDTHHmmssZ');
 
+const apiDateFormat = momentDate => momentDate.format('YYYYMMDDTHHmmss[Z]');
 
 export function fetchGraphicData(period) {
   const now = moment()
   const toTimestampIso = apiDateFormat(now)
-  let from
+  let from, stepSeconds
+
 
   switch (period){
     case '1h':
+      stepSeconds = 36
       from = now.subtract(1, 'hour')
       break;
     case '1d':
+      stepSeconds = 864
       from = now.subtract(1, 'days')
       break;
     case '1w':
+      stepSeconds = 6048
       from = now.subtract(1, 'week')
       break;
     case '1m':
+      stepSeconds = 187488
       from = now.subtract(1, 'month')
       break;
     case '1y':
+      stepSeconds = 68433120
       from = now.subtract(1, 'year')
       break;
   }
 
+
   const fromTimestampIso = apiDateFormat(from)
-  const duration = moment.duration(now.diff(from));
-  const stepSeconds = Math.round(duration.get('seconds'));
-
-  console.log({toTimestampIso, fromTimestampIso, stepSeconds}, period)
-
-  // return fetchExchangeRates({toTimestampIso, fromTimestampIso, stepSeconds}, period)
+  // const duration = moment.duration(now.diff(from));
+  // const stepSeconds = Math.round(duration.get('seconds'));
+  return fetchExchangeRates({toTimestampIso, fromTimestampIso, stepSeconds}, period)
 }
