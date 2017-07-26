@@ -7,7 +7,7 @@ const cn = cssClassName('SE_HmqHeroChart')
 import D3Chart from './D3Chart'
 
 const periods = [
-  '1h', '1d', '1w', '1m', '1y', 'all'
+  '1w'
 ]
 
 class SE_HmqHeroChart extends Component {

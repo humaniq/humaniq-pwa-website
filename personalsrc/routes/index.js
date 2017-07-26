@@ -8,18 +8,20 @@ import PersonalForm from './PersonalForm'
 const getRoutes = () => {
   return (
     <Route
-      path="/invite/:invitationCode"
+      path="/"
       component={App}
-      prepareData={App.prepareData}
     >
       <IndexRoute
         component={Home}
         prepareData={Home.prepareData}
       />
-      <Route path="/invite/:invitationCode/registration"
+      <Route path="registration"
          component={PersonalForm}
       />
-
+      <Route
+        path="*"
+        component={Home}
+      />
     </Route >
   )
 }

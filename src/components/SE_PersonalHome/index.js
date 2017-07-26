@@ -67,7 +67,7 @@ const SE_PersonalHome = ({
         </section>
         <div className={cn('btn')}>
           <A_Btn
-            onClick={() => history.push(`/invite/${invitationCode}/registration`)}
+            onClick={() => history.push(`/registration`)}
             type='personal-nav-btn'
           >Go to registration</A_Btn>
         </div>
