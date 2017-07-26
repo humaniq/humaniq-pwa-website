@@ -20,10 +20,8 @@
     }
   }
   &__back-img{
-    @include media($tablet) {
-      background-image: url("/img/hero-image.png");
+    background-image: url("/img/hero-image.png");
 
-    }
     background-repeat: no-repeat;
     background-position: center;
     display: flex;

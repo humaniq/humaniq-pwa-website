@@ -57,13 +57,13 @@ class SE_Hmq extends Component {
     return (
       <div>
         <Hero {...{chartProps, statistics, my}}/>
-        <div ref={node => this.helperNode = node} style={{height: stickySearch ? 216 : 0}} />
-        <div className={cn('search', {stickySearch})} >
-          <Search />
-        </div>
-        <O_ScrollUp initTop={220} showAfter={700}>
-          {renderedTransactions}
-        </O_ScrollUp>
+        {/*<div ref={node => this.helperNode = node} style={{height: stickySearch ? 216 : 0}} />*/}
+        {/*<div className={cn('search', {stickySearch})} >*/}
+          {/*<Search />*/}
+        {/*</div>*/}
+        {/*<O_ScrollUp initTop={220} showAfter={700}>*/}
+          {/*{renderedTransactions}*/}
+        {/*</O_ScrollUp>*/}
       </div>
 
     )

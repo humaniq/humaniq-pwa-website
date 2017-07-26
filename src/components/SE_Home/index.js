@@ -80,11 +80,11 @@ const SE_Home = () => (
   <div>
     <Meta />
     <Hero explorerData={explorerMock}/>
-    <Gallery
-      entities={links}
-      type='links'
-      title="Financial inclusion with Humaniq"
-    />
+    {/*<Gallery*/}
+      {/*entities={links}*/}
+      {/*type='links'*/}
+      {/*title="Financial inclusion with Humaniq"*/}
+    {/*/>*/}
     <Info
       type = 'moving-title'
       title = 'The power of Blockchain'

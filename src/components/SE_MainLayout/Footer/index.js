@@ -21,8 +21,8 @@ const links = [
   {
     section: 'company',
     links: [
-      {name: 'Blog', url: 'forum.humaniq.com', external: true},
-      {name: 'Forum', url: 'blog.humaniq.com', external: true},
+      {name: 'Blog', url: 'https://forum.humaniq.com', external: true},
+      {name: 'Forum', url: 'https://blog.humaniq.com', external: true},
       // {name: 'News', url: '#'},
       {name: 'Use Cases', url: '/use-cases'},
       {name: 'Partners', url: '/partners'},
@@ -80,9 +80,12 @@ class SE_MainLayoutFooter extends Component {
             onClick={() => this.handleTongleSection(section)}
           >{section}</div>
           <ul className={cn('nav-list', {isOpen})}>
-            { links.map(({name, url, external}) => (
-              <li className={cn('nav-list__item')} key={'key=' + name}><A_Link to={url} type='primary' external={external}>{name}</A_Link></li>
-            )) }
+            { links.map(({name, url, external}) => {
+              console.log(external)
+              return(
+                <li className={cn('nav-list__item')} key={'key=' + name}><A_Link to={url} type='primary' external={external}>{name}</A_Link></li>
+              )
+            }) }
           </ul>
         </div>
       )
