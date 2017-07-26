@@ -10,6 +10,7 @@ const A_Container = ({children, type}) =>(
 
 A_Container.propTypes = {
   type: T.oneOf([
+    'video-hero', // video-hero
     'init', // only side paddings
     'section-hmq', // descktop: 32/40 tablet: 32/16, no bottom line
     'wide', // wide container

@@ -7,6 +7,15 @@ $icon-size: 20rem;
   margin: 0;
 
   &_type {
+    &_video-hero{
+      font-size: 40px;
+      font-weight: 600;
+      text-align: center;
+      color: #ffffff;
+      padding-bottom: 15px;
+      line-height: 43px;
+
+    }
     &_hmq{
       font-size: 1.6rem;
       font-weight: 600;
