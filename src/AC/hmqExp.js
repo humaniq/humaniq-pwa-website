@@ -110,7 +110,7 @@ export function fetchGraphicData(period) {
       from = now.subtract(1, 'days')
       break;
     case '1w':
-      stepSeconds = 6048
+      stepSeconds = 1500
       from = now.subtract(1, 'week')
       break;
     case '1m':

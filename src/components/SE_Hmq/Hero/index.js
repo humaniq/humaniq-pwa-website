@@ -10,7 +10,7 @@ import A_P from 'A_P'
 
 class SE_HmqHero extends Component {
   render() {
-    const {chartProps, statistics, my} = this.props
+    const {chartProps, statistics, my, loaded} = this.props
     return (
       <div>
         <A_Container type="mob-wide-line">
