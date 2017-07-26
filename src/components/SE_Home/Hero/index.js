@@ -4,11 +4,11 @@ import './styles.scss';
 import {cssClassName} from 'utils'
 const cn = cssClassName('SE_HomeHero')
 
-import A_Image from 'A_Image'
+// import A_Image from 'A_Image'
 import A_H from 'A_H'
 import A_P from 'A_P'
 import A_Btn from 'A_Btn'
-import Title from './title'
+// import Title from './title'
 import BVideo from 'react-background-video-player'
 import A_Container from 'A_Container'
 
@@ -37,7 +37,7 @@ class SE_HomeHero extends Component {
       <div className={cn('back-img')}>
         <BVideo
           playsInline = {false}
-          src={'/video/hero-video.mp4'}
+          src={'/video/hero704.mp4'}
           ref={p => this.player = p}
           containerWidth={1280}
           containerHeight={'auto'}
@@ -46,6 +46,7 @@ class SE_HomeHero extends Component {
           onPause={this.handleOnPause}
           onMute={this.handleOnMute}
           onUnmute={this.handleOnUnmute}
+          horizontalAlign = {3000}
           style={{
             top: '50%',
             transform: 'translate(-50%,-50%)',

@@ -21,8 +21,8 @@ const links = [
   {
     section: 'company',
     links: [
-      {name: 'Blog', url: 'http://google.com', external: true},
-      {name: 'Forum', url: '#', external: true},
+      {name: 'Blog', url: 'forum.humaniq.com', external: true},
+      {name: 'Forum', url: 'blog.humaniq.com', external: true},
       // {name: 'News', url: '#'},
       {name: 'Use Cases', url: '/use-cases'},
       {name: 'Partners', url: '/partners'},

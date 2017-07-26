@@ -28,6 +28,7 @@ const A_H = ({type, icon, children, center}) =>{
       break;
     case 'bs':
     case 'tooltip':
+    case 'hmq-e':
     case 's':
       tagType = 'h5'
       break;
@@ -58,6 +59,7 @@ const A_H = ({type, icon, children, center}) =>{
 A_H.propTypes = {
   type: T.oneOf([
     'video-hero',
+    'hmq-e',
     'hmq', // black icon title for hmq explorer 16/25 /600, mob -margin left 16px
     'hero', //black bold 25
     'search', // white bold 25 used on wiki search
@@ -71,6 +73,8 @@ A_H.propTypes = {
     'section', //black title used for sections 23/32 padding-bottom 10
     'section-sub', //black title used for sections 23/32 padding-bottom 10
     'section-c', //black title used for sections 23/32 padding-bottom 30, always text-align center
+
+    'hmq-title', //
   ]),
   icon: T.oneOf([
     'placeholder', // placeholder icon

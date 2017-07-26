@@ -62,6 +62,7 @@ const getRoutes = (store) => {
              component={Legal}
       />
       <Route path="hmq-explorer"
+             prepareData={Hmq.prepareData}
              component={Hmq}
       />
       <Route path="mark-up"
