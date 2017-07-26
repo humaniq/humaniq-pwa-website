@@ -15,7 +15,8 @@ const initWikiArticles = {
     {
       level0:"about-humaniq",
       level1:"root",
-      description: "Humaniq is about people as much as we are about technology. So who are we, who are our community members, and how can you become part of our story? Here we share what motivates us, the positive change we want to bring about, and the ways in which you can become involved yourself"
+      description: "Humaniq is about people as much as we are about technology. So who are we, who are our community members, and how can you become part of our story? Here we share what motivates us, the positive change we want to bring about, and the ways in which you can become involved yourself",
+      img: '/img/illustrations/wiki-about-humaniq.svg'
     },
     {
       level0:"about-humaniq",
@@ -35,7 +36,9 @@ const initWikiArticles = {
     {
       level0:"technical-mecca",
       level1:"root",
-      description: "Humaniq is working to help those shut out of the 21st Century and to support entrepreneurs to offer much-needed financial services to the global unbanked. What we do is made possible by technology allowing a massive untapped market to be served. Read more about the technology behind the Humaniq App and the HMQ coin cryptocurrency. "
+      description: "Humaniq is working to help those shut out of the 21st Century and to support entrepreneurs to offer much-needed financial services to the global unbanked. What we do is made possible by technology allowing a massive untapped market to be served. Read more about the technology behind the Humaniq App and the HMQ coin cryptocurrency.",
+      img: '/img/illustrations/wiki-technical-mecca.svg'
+
     },
     {
       level0:"technical-mecca",

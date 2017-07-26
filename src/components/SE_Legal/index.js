@@ -134,7 +134,7 @@ SE_Legal.propTypes = {
     title: T.string.isRequired,
     sections: T.arrayOf(T.shape({
       header: T.string,
-      paragraphs: T.arrayOf(T.string),
+      html: T.arrayOf(T.string),
     })),
   }))
 };

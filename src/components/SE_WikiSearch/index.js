@@ -23,7 +23,7 @@ class SE_WikiSearch extends Component {
         return(
           <div className={cn('item')} key={"key_" + article.title} >
             <A_Link to={article.url}><A_H type="wiki-result">{article.title}</A_H></A_Link>
-            {_article && <p className={cn('item-text')}dangerouslySetInnerHTML={{__html}} />}
+            {_article && <p className={cn('item-text')} dangerouslySetInnerHTML={{__html}} />}
           </div>
         )
       })

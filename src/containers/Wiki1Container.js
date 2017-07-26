@@ -13,7 +13,7 @@ function mapStateToProps(state, ownProps) {
     description.level0 === level0 && description.level1 === 'root'
   ))
 
-  const description = descriptionObj.description
+  const {description, img} = descriptionObj
 
   const
     _level1Categories = ids
@@ -29,7 +29,7 @@ function mapStateToProps(state, ownProps) {
     })
   })
   return {
-    level0, articlesByLevel1, description, level0Title
+    level0, articlesByLevel1, description, level0Title, img
   };
 }
 
