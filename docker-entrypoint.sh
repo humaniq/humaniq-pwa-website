@@ -2,4 +2,4 @@
 set -e
 
 echo "Working directory: $(pwd)"
-exec npm start "$@"
+exec npm run "$@"
