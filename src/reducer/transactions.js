@@ -5,28 +5,28 @@ const transactionsInit = {
   loaded: true,
   entities: [],
   markets:[],
-  statistics:{
+  statistics: {
     tokenSupply: {
-      hmq: '',
-      usd: '',
-      eth: ''
+      hmq: '184190410',
+      usd: '28383742.180999996404',
+      eth: '142696.4063194409274'
     },
-    totalWallets: 0,
-    totalTransactions: 0,
-    totalTransactions24: 0,
+    totalWallets: 11293,
+    totalTransactions: 30063,
+    totalTransactions24: 138,
     tokenValue: {
-      hmq: '',
-      usd: '',
-      eth: ''
+      hmq: '1',
+      usd: '0.15409999999999998048',
+      eth: '0.00077472223618722021087'
     },
-    participatingExchanges: 0,
+    participatingExchanges: 8,
     lastHours24: {
       tradesVolume: {
-        hmq: '',
-        usd: '',
-        eth: ''
+        hmq: '232603',
+        usd: '35388.967',
+        eth: '180.2027163038559827'
       },
-      numberTransactions: 0
+      numberTransactions: 138
     }
   }
 }
