@@ -14,8 +14,8 @@ prepare() {
     sudo gcloud docker -- pull $DOCKER_BASE_IMAGE
 }
 
-deploy() {
+release() {
     source /tmp/deploy_helpers.sh release
 }
 
-prepare && deploy
+prepare && release
