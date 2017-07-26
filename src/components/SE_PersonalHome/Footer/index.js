@@ -127,7 +127,7 @@ class SE_MainLayoutFooter extends Component {
                       className={cn('aux-title')}
                     >Humaniq</div>
                     <p className={cn('about')}>
-                      Humaniq is a simple and secure mobile app, delivering financial inclusion solutions to the 2.5 billion unbanked / 1 billion under banked globally.
+                      Humaniq is a simple and secure mobile app, delivering financial inclusion solutions to the 2.5 billion unbanked / 1 billion underbanked globally.
                     </p>
                     <div className={cn('soc')}>
                       {renderedSocialList}
