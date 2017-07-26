@@ -21,8 +21,8 @@ const links = [
   {
     section: 'company',
     links: [
-      {name: 'Blog', url: 'forum.humaniq.com', external: true},
-      {name: 'Forum', url: 'blog.humaniq.com', external: true},
+      {name: 'Blog', url: 'https://www.blog.humaniq.com', external: true},
+      {name: 'Forum', url: 'https://www.forum.humaniq.com', external: true},
       // {name: 'News', url: '#'},
       {name: 'Use Cases', url: 'https://humaniq.com/use-cases'},
       {name: 'Partners', url: 'https://humaniq.com/partners'},
@@ -127,7 +127,7 @@ class SE_MainLayoutFooter extends Component {
                       className={cn('aux-title')}
                     >Humaniq</div>
                     <p className={cn('about')}>
-                      Humaniq is a simple and secure mobile banking app, based on Ethereum Blockchain. The Humaniq tool of financial inclusion connects 2 billion unbanked people to the global economy.
+                      Humaniq is a simple and secure mobile app, delivering financial inclusion solutions to the 2.5 billion unbanked / 1 billion under banked globally.
                     </p>
                     <div className={cn('soc')}>
                       {renderedSocialList}
