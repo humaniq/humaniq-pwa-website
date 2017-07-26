@@ -1,3 +1,41 @@
-p {
-  margin-bottom: 2.5rem;
+@import "common/settings/variables";
+@import "common/utils";
+
+
+.o-legal-section{
+  &__html{
+    margin-bottom: 2.5rem;
+    p{
+      font-size: 1.5rem;
+      line-height: 2.6rem;
+      color: #333333;
+      margin-bottom: 3.2rem;
+    }
+    h3{
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 24.0px;
+      color: #2c2d30;
+    }
+    h2{
+      font-size: 24px;
+      font-weight: 600;
+      line-height: 32.0px;
+      color: #2c2d30;
+      padding-bottom: 1rem;
+    }
+    a{
+      color: $interactive;
+
+    }
+    ul{
+      list-style: circle;
+      padding-left: 2rem;
+      margin-bottom: 2rem;
+
+    }
+
+    ul li {list-style-type: disc;}
+
+  }
 }

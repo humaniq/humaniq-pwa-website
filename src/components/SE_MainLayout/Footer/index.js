@@ -21,28 +21,29 @@ const links = [
   {
     section: 'company',
     links: [
-      // {name: 'Blog', url: '#'},
+      {name: 'Blog', url: 'http://google.com', external: true},
+      {name: 'Forum', url: '#', external: true},
       // {name: 'News', url: '#'},
       {name: 'Use Cases', url: '/use-cases'},
       {name: 'Partners', url: '/partners'},
       // {name: 'Events', url: '#'}
     ]
   },
-  // {section: 'legal',
-    // links: [
-    // {name: 'Privacy', url: '#'},
-    // {name: 'Security', url: '#'},
-    // {name: 'Policies', url: '#'}
-    // ]
-  // },
-  // {
-  //   section: 'resources',
-    // links: [
-    //   {name: 'Support', url: '#'},
-    //   {name: 'Contact us', url: '#'},
-    //   {name: 'Download mobile app', url: '#'}
-    // ]
-  // }
+  {section: 'legal',
+    links: [
+    {name: 'Privacy', url: '/legal#general-privacy-policy'},
+    {name: 'Security', url: '/legal#data-privacy-policy'},
+    {name: 'Policies', url: '/legal#user-terms-of-service'}
+    ]
+  },
+  {
+    section: 'resources',
+    links: [
+      // {name: 'Support', url: '#'},
+      {name: 'Contact us', url: '#'},
+      // {name: 'Download mobile app', url: '#'}
+    ]
+  }
 ]
 const socials = [
   {network: 'facebook', link: 'https://www.facebook.com/humaniq.co'},
@@ -79,8 +80,8 @@ class SE_MainLayoutFooter extends Component {
             onClick={() => this.handleTongleSection(section)}
           >{section}</div>
           <ul className={cn('nav-list', {isOpen})}>
-            { links.map(({name, url}) => (
-              <li className={cn('nav-list__item')} key={'key=' + name}><A_Link to={url} type='primary'>{name}</A_Link></li>
+            { links.map(({name, url, external}) => (
+              <li className={cn('nav-list__item')} key={'key=' + name}><A_Link to={url} type='primary' external={external}>{name}</A_Link></li>
             )) }
           </ul>
         </div>
