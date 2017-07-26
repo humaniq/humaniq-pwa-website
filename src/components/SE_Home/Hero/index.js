@@ -66,7 +66,7 @@ class SE_HomeHero extends Component {
             <div className={cn('wrapper')}>
               <div className={cn('inner')} style={{maxWidth: 600}}>
                 <A_H type="video-hero">Empowering 3.5 Billion People in the world economy</A_H>
-                <A_P type="video-hero">Humaniq is a simple and secure mobile app, delivering financial inclusion solutions to the 2.5 billion unbanked / 1 billion under banked globally.</A_P>
+                <A_P type="video-hero">Humaniq is a simple and secure mobile app, delivering financial inclusion solutions to the 2.5 billion unbanked / 1 billion underbanked globally.</A_P>
                 <A_Btn type="link-subscribe" to="/form/subscribe">Subscribe</A_Btn>
               </div>
             </div>
