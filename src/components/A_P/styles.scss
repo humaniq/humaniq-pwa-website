@@ -20,9 +20,12 @@
       font-size: 1.5rem;
       line-height: 2.6rem;
       &-center{
-        font-size: 1.5rem;
-        line-height: 2.6rem;
+        @extend .a-p_type_third;
         text-align: center;
+        &_white{
+          @extend .a-p_type_third-center;
+          color: $white;
+        }
       }
     }
     &_fourth{

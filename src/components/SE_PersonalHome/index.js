@@ -2,7 +2,13 @@ import React from 'react';
 
 import Gallery from './Gallery'
 import Footer from './Footer'
+import './styles.scss';
+import {cssClassName} from 'utils'
+const cn = cssClassName('SE_PersonalHome')
+import history from 'history'
+import A_Image from 'A_Image';
 
+import A_P from 'A_P'
 
 const features = [
   {
@@ -36,8 +42,38 @@ const features = [
     subtitle: 'No matter what internet connection you have, Humaniq finds a way.'
   }
 ]
-const SE_Home = () => (
+
+import A_Btn from 'A_Btn'
+
+const SE_PersonalHome = ({
+                           invitationCode,
+                           name:{first_name, last_name},
+                           phone_number,
+                           photo_url}) => (
   <div>
+    <header className={cn('header')}>
+      <div className={cn('header-inner')}>
+        <section className={cn('info')}>
+          <div className={cn('phone')}>
+            <A_Image src={photo_url} type ='avatar' alt={first_name + ' ' + last_name} />
+
+          </div>
+          <div className={cn('phone')}>
+            <A_P type='third-center_white'>{phone_number}</A_P>
+          </div>
+          <div className={cn('description')}>
+            <A_P type='third-center_white'>Invites you to join Humaniq. As soon as you complete the registration process, you will get $1 USD.</A_P>
+          </div>
+        </section>
+        <div className={cn('btn')}>
+          <A_Btn
+            onClick={() => history.push(`/hmqref/invite/${invitationCode}/registration`)}
+            type='personal-nav-btn'
+          >Go to registration</A_Btn>
+        </div>
+
+      </div>
+    </header>
     <Gallery
       entities={features}
       type='not-links'
@@ -48,4 +84,4 @@ const SE_Home = () => (
   </div>
 )
 
-export default SE_Home
+export default SE_PersonalHome

@@ -18,8 +18,7 @@ class SE_WikiSearch extends Component {
         const _article = safeDA(article, ['highlight', 'article'])
         let __html;
         if(_article){
-          const _text =  _article && _article.join('...').replace(/<\/?p>/g, '')
-          __html = `...${_text}...`
+          __html =  _article && _article.join('...').replace(/<\/?p>/g, '')
         }
         return(
           <div className={cn('item')} key={"key_" + article.title} >

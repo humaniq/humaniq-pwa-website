@@ -9,9 +9,11 @@ class HomeRoute extends Component {
   }
 
   render() {
+    const {invitationCode} = this.props.params
+
     return (
       <div>
-        <PersonalHomeContainer />
+        <PersonalHomeContainer invitationCode={invitationCode}/>
       </div>
     )
   }
