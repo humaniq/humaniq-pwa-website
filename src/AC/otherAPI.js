@@ -36,36 +36,36 @@ export function subscribeByReference(code, phone_number) {
   })
 }
 
-// export function fetchPersonalData(invitationCode) {
-//   return ({
-//     type: FETCH + BY_REFERENCE + SUCCESS,
-//     data: {
-//       invitationCode,
-//       name:{
-//         first_name:'Anton',
-//         last_name:'Anton'
-//       },
-//       phone_number: {
-//         country_code: '1',
-//         phone_number: '4164647135'
-//       },
-//       photo_url:'https://storage.googleapis.com/production-tapatybe-facial-images/pe4Vnbfbui7MiDS20xxxtY?Expires=1501084818&GoogleAccessId=storage-manager%40humaniq-168420.iam.gserviceaccount.com&Signature=MO9X8ujUNNDHKekZ9cuEMMkDj%2FLBnxWU30w%2FKWU8RalWKLe5VL46ZRHKNMpAaLLUkllzeqPbVMmCOw5ugtKtq9qnG51wuT8rAIy0gcrmlsULQkqVjB2fQApzLBc0Cok5eRF%2FHAqmXpirnuQdaGIM8FkMTyGvz7NMArq4Yw%2FqMXHoq1BWKVB6%2BSW9F9adYaMylnjM4WtBlvFHqLcW2h8oWE6%2FSodRcQZlXSEDz7yEFmdRDNnPbD0KqzPp2BUizcU2%2F8rcKFBPpb9%2Bv2k4nEqSKgvUTLB%2FozZIGZtrnbXwepcb3pC0kyxjySOVfgFjaDan2BuPkkK8Se8QKuM0NChjnw%3D%3D'
-//     }
-//   })
-// }
-
-
-export function fetchPersonalData(payload) {
+export function fetchPersonalData(invitationCode) {
   return ({
-    [BACKEND_CALL]: {
-      endpoint: ENDPOINT_PERSONAL_DATA + payload,
-      method: 'GET',
-      types: [
-        FETCH + BY_REFERENCE + START,
-        FETCH + BY_REFERENCE + SUCCESS,
-        FETCH + BY_REFERENCE + FAIL,
-      ],
-      data: payload
+    type: FETCH + BY_REFERENCE + SUCCESS,
+    data: {
+      invitationCode,
+      name:{
+        first_name:'Anton',
+        last_name:'Anton'
+      },
+      phone_number: {
+        country_code: '1',
+        phone_number: '4164647135'
+      },
+      photo_url:'https://storage.googleapis.com/production-tapatybe-facial-images/pe4Vnbfbui7MiDS20xxxtY?Expires=1501084818&GoogleAccessId=storage-manager%40humaniq-168420.iam.gserviceaccount.com&Signature=MO9X8ujUNNDHKekZ9cuEMMkDj%2FLBnxWU30w%2FKWU8RalWKLe5VL46ZRHKNMpAaLLUkllzeqPbVMmCOw5ugtKtq9qnG51wuT8rAIy0gcrmlsULQkqVjB2fQApzLBc0Cok5eRF%2FHAqmXpirnuQdaGIM8FkMTyGvz7NMArq4Yw%2FqMXHoq1BWKVB6%2BSW9F9adYaMylnjM4WtBlvFHqLcW2h8oWE6%2FSodRcQZlXSEDz7yEFmdRDNnPbD0KqzPp2BUizcU2%2F8rcKFBPpb9%2Bv2k4nEqSKgvUTLB%2FozZIGZtrnbXwepcb3pC0kyxjySOVfgFjaDan2BuPkkK8Se8QKuM0NChjnw%3D%3D'
     }
   })
 }
+
+
+// export function fetchPersonalData(payload) {
+//   return ({
+//     [BACKEND_CALL]: {
+//       endpoint: ENDPOINT_PERSONAL_DATA + payload,
+//       method: 'GET',
+//       types: [
+//         FETCH + BY_REFERENCE + START,
+//         FETCH + BY_REFERENCE + SUCCESS,
+//         FETCH + BY_REFERENCE + FAIL,
+//       ],
+//       data: payload
+//     }
+//   })
+// }
