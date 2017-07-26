@@ -27,6 +27,19 @@ $form-btn-border-radius: 30px;
     cursor: pointer;
     box-sizing: border-box;
     &_type{
+      &_personal-nav-btn{
+        width: 17rem;
+        height: 8.2rem;
+        text-align: right;
+        display: block;
+        font-size: 1.4rem;
+        font-weight: 600;
+        line-height: 2.6rem;
+        color: $white;
+        padding: 0;
+        padding-right: 3.1rem;
+        background: url('/img/arow_right.svg') right 13px center / .9rem no-repeat;
+      }
       &_nav-btn{
         width: 14rem;
         height: 8.2rem;
@@ -107,6 +120,18 @@ $form-btn-border-radius: 30px;
 
       }
       &_window{
+        text-transform: uppercase;
+        padding: .8rem 1.6rem 1rem;
+        color: white;
+        background-color: $interactive;
+        height: 5.3rem;
+        line-height: 3.5rem ;
+        font-size: 1.7rem;
+        font-weight: 600;
+        text-align: center;
+        width: 100%
+      }
+      &_window-link{
         text-transform: uppercase;
         padding: .8rem 1.6rem 1rem;
         color: white;

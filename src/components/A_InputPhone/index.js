@@ -3,11 +3,17 @@ import * as T from "prop-types";
 import './styles.scss';
 import {cssClassName} from 'utils'
 const cn = cssClassName('A_InputText')
+import {convert} from "utils/index"
 
-class A_InputText extends Component {
+class A_InputPhone extends Component {
+
+  onChange = (e) =>{
+    const {handleChange} = this.props
+    handleChange(convert.toPhone(e.target.value))
+  }
 
   render(){
-    const {value, handleChange, placeholder, error, label, onFocus} = this.props
+    const {value, placeholder, error, label} = this.props
     const nonEmpty = !!value
     return (
       <fieldset className={cn('root')}>
@@ -16,8 +22,7 @@ class A_InputText extends Component {
             placeholder={placeholder}
             type="text"
             value={value}
-            onChange={e => handleChange(e.target.value)}
-            onFocus = {onFocus}
+            onChange={this.onChange}
           />
           <hr />
           <label className={cn('label', {'non-empty': nonEmpty, error: !!error})}>{label}</label>
@@ -28,15 +33,14 @@ class A_InputText extends Component {
   }
 }
 
-A_InputText.propTypes = {
+A_InputPhone.propTypes = {
   handleChange: T.func.isRequired,
   value: T.string.isRequired,
   placeHolder: T.string,
-  onFocus: T.func
 };
 
-A_InputText.defaultProps = {
+A_InputPhone.defaultProps = {
 }
 
-export default A_InputText
+export default A_InputPhone
 

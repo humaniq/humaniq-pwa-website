@@ -14,8 +14,7 @@ export const ERROR = 'ERROR'
 export const MENU = 'MENU'
 export const PARTNERS = 'PARTNERS'
 export const HMQ_TRANSACTIONS = 'HMQ_TRANSACTIONS'
-
-
+export const BY_REFERENCE = 'BY_REFERENCE'
 
 export const CONTENT = 'CONTENT'
 export const STATIC_DATA = 'STATIC_DATA'

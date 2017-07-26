@@ -8,7 +8,7 @@ import PersonalForm from './PersonalForm'
 const getRoutes = () => {
   return (
     <Route
-      path="/"
+      path="/hmqref/invite/:invitationCode"
       component={App}
       prepareData={App.prepareData}
     >
@@ -16,11 +16,9 @@ const getRoutes = () => {
         component={Home}
         prepareData={Home.prepareData}
       />
-      <Route path="form"
+      <Route path="/hmqref/invite/:invitationCode/registration"
          component={PersonalForm}
-      >
-
-      </Route>
+      />
 
     </Route >
   )

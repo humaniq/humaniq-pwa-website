@@ -1,21 +1,16 @@
 import React, {Component} from 'react';
 import * as T from "prop-types";
-import {fetchWiki} from "AC/wiki";
-import {fetchPartners} from 'AC/otherAPI'
 import initialLoad from 'utils/initialLoad'
-import {setRoute} from 'AC/navigation'
-import {requestHmqTransactions} from 'AC/hmqExp'
+import {fetchPersonalData} from 'AC/otherAPI'
 
 
 class AppRoute extends Component {
 
-  static prepareData({dispatch}, query, params, location) {
+  static prepareData({dispatch}, query, params) {
+    const {invitationCode} = params
     if(initialLoad()) return;
     return (
-      dispatch(fetchWiki())
-        .then(dispatch(fetchPartners()))
-        .then(dispatch(requestHmqTransactions()))
-        .then(dispatch(setRoute(location.pathname)))
+      dispatch(fetchPersonalData(invitationCode))
     )
   }
 

@@ -2,12 +2,22 @@ import React, {Component} from 'react';
 import * as T from "prop-types";
 import './styles.scss';
 import {cssClassName} from 'utils'
+
 const cn = cssClassName('A_InputText')
 
-class A_InputText extends Component {
+class A_InputNumber extends Component {
 
-  render(){
-    const {value, handleChange, placeholder, error, label, onFocus} = this.props
+  onChange = (e) => {
+    const {prefix, handleChange, max} = this.props
+    let value = e.target.value.replace(/\D/g, '')
+    if (max) {
+      value = value.substr(0, max)
+    }
+    handleChange(prefix + value)
+  }
+
+  render() {
+    const {value, placeholder, error, label} = this.props
     const nonEmpty = !!value
     return (
       <fieldset className={cn('root')}>
@@ -16,10 +26,9 @@ class A_InputText extends Component {
             placeholder={placeholder}
             type="text"
             value={value}
-            onChange={e => handleChange(e.target.value)}
-            onFocus = {onFocus}
+            onChange={this.onChange}
           />
-          <hr />
+          <hr/>
           <label className={cn('label', {'non-empty': nonEmpty, error: !!error})}>{label}</label>
         </div>
         <div className={cn('error')}>{error}</div>
@@ -28,15 +37,17 @@ class A_InputText extends Component {
   }
 }
 
-A_InputText.propTypes = {
+A_InputNumber.propTypes = {
   handleChange: T.func.isRequired,
   value: T.string.isRequired,
   placeHolder: T.string,
-  onFocus: T.func
+  prefix: T.string,
+  max: T.number
 };
 
-A_InputText.defaultProps = {
+A_InputNumber.defaultProps = {
+  prefix: ''
 }
 
-export default A_InputText
+export default A_InputNumber
 
