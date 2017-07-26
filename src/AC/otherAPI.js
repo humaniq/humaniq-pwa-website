@@ -62,10 +62,11 @@ export function fetchPersonalData(invitationCode) {
 //       method: 'GET',
 //       payload: payload,
 //       types: [
-//         FETCH + PERSONAL_DATA + START,
-//         FETCH + PERSONAL_DATA + SUCCESS,
-//         FETCH + PERSONAL_DATA + FAIL,
-//       ]
+//         FETCH + BY_REFERENCE + START,
+//         FETCH + BY_REFERENCE + SUCCESS,
+//         FETCH + BY_REFERENCE + FAIL,
+//       ],
+//       data: payload
 //     }
 //   })
 // }
