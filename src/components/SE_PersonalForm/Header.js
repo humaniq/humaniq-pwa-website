@@ -9,7 +9,7 @@ import history from 'history'
 
 const SE_PersonalFormHeader = ({phone_number, photo_url, children, invitationCode}) =>(
   <div className={cn('root')}>
-    <div className={cn('text')} onClick={() => history.push(`/hmqref/invite/${invitationCode}`)}>
+    <div className={cn('text')} onClick={() => history.push(`/invite/${invitationCode}`)}>
       <div className={cn('avatar')}>
         <A_Image src={photo_url} type='avatar-sm'/>
 
