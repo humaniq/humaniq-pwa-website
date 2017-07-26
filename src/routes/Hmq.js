@@ -7,13 +7,12 @@ import initialLoad from 'utils/initialLoad'
 class PostRoute extends Component {
 
   static prepareData({dispatch}) {
-    // if(initialLoad()) return;
+    if(initialLoad()) return;
 
-    fetchGraphicData('1h')
-    fetchGraphicData('1d')
-    fetchGraphicData('1y')
-    fetchGraphicData('1w')
-
+    dispatch(fetchGraphicData('1h'))
+    dispatch(fetchGraphicData('1d'))
+    dispatch(fetchGraphicData('1y'))
+    dispatch(fetchGraphicData('1w'))
   }
 
   render() {

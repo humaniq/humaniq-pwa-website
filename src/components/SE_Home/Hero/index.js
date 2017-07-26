@@ -16,44 +16,50 @@ import A_Container from 'A_Container'
 class SE_HomeHero extends Component {
 
   state = {
-    isPlaying: undefined,
+    isPlaying: true,
     isMuted: undefined,
     progress: 0,
     currentTime: 0,
     duration: 0,
+    width: 0
   }
   componentDidMount() {
-    this.setState({
-      isPlaying: !this.player.isPaused,
-      isMuted: this.player.isMuted,
-    });
+    if(__CLIENT__){
+      window.onresize = () => this.forceUpdate()
+    }
+    this.forceUpdate()
   }
+
 
   render() {
 
+    const show = this.node && this.node.offsetWidth > 767
 
 
     return (
-      <div className={cn('back-img')}>
-        <BVideo
-          playsInline = {false}
-          src={'/video/hero704.mp4'}
-          ref={p => this.player = p}
-          containerWidth={1280}
-          containerHeight={'auto'}
-          poster={'/img/hero-image.png'}
-          onPlay={this.handleOnPlay}
-          onPause={this.handleOnPause}
-          onMute={this.handleOnMute}
-          onUnmute={this.handleOnUnmute}
-          horizontalAlign = {3000}
-          style={{
-            top: '50%',
-            transform: 'translate(-50%,-50%)',
-            left: '50%',
-            width: 1280
-          }}
-      />
+      <div className={cn('back-img')} ref = {node => this.node = node}>
+        {show &&
+            <BVideo
+              playsInline = {false}
+              src={'/video/hero704.mp4'}
+              ref={p => this.player = p}
+              containerWidth={1280}
+              containerHeight={'auto'}
+              poster={'/img/hero-image.png'}
+              onPlay={this.handleOnPlay}
+              onPause={this.handleOnPause}
+              onMute={this.handleOnMute}
+              onUnmute={this.handleOnUnmute}
+              horizontalAlign = {3000}
+              style={{
+                top: '50%',
+                transform: 'translate(-50%,-50%)',
+                left: '50%',
+                width: 1280
+              }}
+            />
+        }
+
         <div style={{backgroundColor:'rgba(0,0,0,0.3)', width: '100%'}}>
           <A_Container type="video-hero">
             <div className={cn('wrapper')}>

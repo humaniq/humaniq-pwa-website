@@ -33,6 +33,8 @@ export default () => next => action => {
 function APICall({endpoint, method, query, payload}) {
   return new Promise((resolve, reject) => {
     let r = request[method.toLowerCase()](`${endpoint}`)
+    console.log(stringify(query))
+
     if (query)
       r.query(stringify(query))
 
