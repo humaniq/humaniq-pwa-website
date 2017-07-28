@@ -18,7 +18,8 @@ export default () => next => action => {
 
   const promise = APICall(action[BACKEND_CALL])
 
-  promise.then(
+  promise
+    .then(
     response => (
       next(nextAction(action, {data: {...response, initdata: data}, type: successType}))
     ),
@@ -33,6 +34,7 @@ export default () => next => action => {
 function APICall({endpoint, method, query, payload}) {
   return new Promise((resolve, reject) => {
     let r = request[method.toLowerCase()](`${endpoint}`)
+
     if (query)
       r.query(stringify(query))
 

@@ -15,7 +15,7 @@ prepare() {
 }
 
 deploy() {
-    source /tmp/deploy_helpers.sh deploy
+    source /tmp/deploy_helpers.sh release
 }
 
 prepare && deploy

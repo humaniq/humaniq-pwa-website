@@ -6,6 +6,10 @@ export const CLOSE = 'CLOSE_'
 export const SET = 'SET_'
 export const CLEAN = 'CLEAN_'
 
+export const BLOCKCHAIN_TRANSACTIONS = 'BLOCKCHAIN_TRANSACTIONS'
+export const BLOCKCHAIN_STATISTICS = 'BLOCKCHAIN_STATISTICS'
+export const BLOCKCHAIN_MARKETS = 'BLOCKCHAIN_MARKETS'
+export const BLOCKCHAIN_EXCHANGE_RATES = 'BLOCKCHAIN_EXCHANGE_RATES'
 
 export const OPEN_ROUTE = 'OPEN_ROUTE'
 export const POST = 'POST'
@@ -13,7 +17,6 @@ export const POSTS = 'POSTS'
 export const ERROR = 'ERROR'
 export const MENU = 'MENU'
 export const PARTNERS = 'PARTNERS'
-export const HMQ_TRANSACTIONS = 'HMQ_TRANSACTIONS'
 export const BY_REFERENCE = 'BY_REFERENCE'
 
 export const CONTENT = 'CONTENT'

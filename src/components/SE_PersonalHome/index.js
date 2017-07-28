@@ -55,7 +55,7 @@ const SE_PersonalHome = ({
       <div className={cn('header-inner')}>
         <section className={cn('info')}>
           <div className={cn('phone')}>
-            <A_Image src={photo_url} type ='avatar' alt={first_name + ' ' + last_name} />
+            <A_Image src={'/img/1234.png'} type ='avatar' alt={first_name + ' ' + last_name} />
 
           </div>
           <div className={cn('phone')}>
@@ -67,7 +67,7 @@ const SE_PersonalHome = ({
         </section>
         <div className={cn('btn')}>
           <A_Btn
-            onClick={() => history.push(`/invite/${invitationCode}/registration`)}
+            onClick={() => history.push(`/registration`)}
             type='personal-nav-btn'
           >Go to registration</A_Btn>
         </div>

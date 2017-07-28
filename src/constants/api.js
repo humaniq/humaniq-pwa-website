@@ -23,3 +23,6 @@ export const ENDPOINT_PERSONAL_DATA = `${ENDPOINT_PERSONAL}/user/`
 export const ENDPOINT_PERSONAL_REFERRER = `${ENDPOINT_PERSONAL}/referrers/`
 
 
+export const ENDPOINT_BLOCKCHAIN_STATISTICS = `${HUMANIQ_BACKEND_API_URL}/dev/blockchain/stats?extended=true`
+export const ENDPOINT_BLOCKCHAIN_MARKETS = `${HUMANIQ_BACKEND_API_URL}/dev/markets`
+export const ENDPOINT_BLOCKCHAIN_EXCHANGE_RATES = `${HUMANIQ_BACKEND_API_URL}/dev/exchange/rates`
