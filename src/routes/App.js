@@ -5,18 +5,20 @@ import {fetchWiki} from "AC/wiki";
 import {fetchPartners} from 'AC/otherAPI'
 import initialLoad from 'utils/initialLoad'
 import {setRoute} from 'AC/navigation'
-import {requestHmqTransactions} from 'AC/hmqExp'
+import {requestHmqTransactions, fetchHmqStatistics, fetchHmqMarkets} from 'AC/hmqExp'
 
 
 class AppRoute extends Component {
 
   static prepareData({dispatch}, query, params, location) {
     if(initialLoad()) return;
+    dispatch(fetchWiki())
+    dispatch(setRoute(location.pathname))
+    dispatch(fetchHmqStatistics())
+    dispatch(fetchHmqMarkets())
+    dispatch(requestHmqTransactions())
     return (
-      dispatch(fetchWiki())
-        .then(dispatch(fetchPartners()))
-        .then(dispatch(requestHmqTransactions()))
-        .then(dispatch(setRoute(location.pathname)))
+      dispatch(fetchPartners())
     )
   }
 

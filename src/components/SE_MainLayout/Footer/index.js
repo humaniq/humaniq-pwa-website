@@ -21,8 +21,8 @@ const links = [
   {
     section: 'company',
     links: [
-      {name: 'Blog', url: 'http://google.com', external: true},
-      {name: 'Forum', url: '#', external: true},
+      {name: 'Blog', url: 'https://blog.humaniq.co', external: true},
+      {name: 'Forum', url: 'https://forum.humaniq.co', external: true},
       // {name: 'News', url: '#'},
       {name: 'Use Cases', url: '/use-cases'},
       {name: 'Partners', url: '/partners'},
@@ -80,9 +80,12 @@ class SE_MainLayoutFooter extends Component {
             onClick={() => this.handleTongleSection(section)}
           >{section}</div>
           <ul className={cn('nav-list', {isOpen})}>
-            { links.map(({name, url, external}) => (
-              <li className={cn('nav-list__item')} key={'key=' + name}><A_Link to={url} type='primary' external={external}>{name}</A_Link></li>
-            )) }
+            { links.map(({name, url, external}) => {
+              console.log(external)
+              return(
+                <li className={cn('nav-list__item')} key={'key=' + name}><A_Link to={url} type='primary' external={external}>{name}</A_Link></li>
+              )
+            }) }
           </ul>
         </div>
       )
@@ -127,7 +130,7 @@ class SE_MainLayoutFooter extends Component {
                       className={cn('aux-title')}
                     >Humaniq</div>
                     <p className={cn('about')}>
-                      Humaniq is a simple and secure mobile banking app, based on Ethereum Blockchain. The Humaniq tool of financial inclusion connects 2 billion unbanked people to the global economy.
+                      Humaniq is a simple and secure mobile app, delivering financial inclusion solutions to the 2.5 billion unbanked / 1 billion underbanked globally.
                     </p>
                     <div className={cn('soc')}>
                       {renderedSocialList}

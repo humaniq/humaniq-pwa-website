@@ -1,7 +1,7 @@
 import {BACKEND_CALL} from 'middleware/humaniqBackendApi'
 import {
   ENDPOINT_PARTNERS_LIST,
-  // ENDPOINT_PERSONAL_DATA,
+  ENDPOINT_PERSONAL_DATA,
   ENDPOINT_PERSONAL_REFERRER
 } from 'constants/api'
 
@@ -24,8 +24,8 @@ export function fetchPartners() {
 export function subscribeByReference(code, phone_number) {
   return ({
     [BACKEND_CALL]: {
-      endpoint: ENDPOINT_PERSONAL_REFERRER,
-      method: 'GET',
+      endpoint: ENDPOINT_PERSONAL_REFERRER + code,
+      method: 'POST',
       payload: phone_number,
       types: [
         POST + BY_REFERENCE + START,
@@ -54,13 +54,12 @@ export function fetchPersonalData(invitationCode) {
   })
 }
 
-//
+
 // export function fetchPersonalData(payload) {
 //   return ({
 //     [BACKEND_CALL]: {
-//       endpoint: ENDPOINT_PERSONAL_DATA,
+//       endpoint: ENDPOINT_PERSONAL_DATA + payload,
 //       method: 'GET',
-//       payload: payload,
 //       types: [
 //         FETCH + BY_REFERENCE + START,
 //         FETCH + BY_REFERENCE + SUCCESS,
