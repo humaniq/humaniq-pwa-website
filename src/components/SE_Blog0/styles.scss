@@ -1,0 +1,43 @@
+@import "common/settings/variables";
+@import "common/utils";
+
+/* Blog0 Page
+/* ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## */
+
+.se-blog0 {
+  &__row {
+    display: flex;
+    flex-direction: column;
+  }
+  &__col {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 6.5rem;
+  }
+  &__hero {
+    &-sub {
+      margin-bottom: 1.6rem;
+    }
+  }
+  &__nav {
+    &-links {
+      &-item {
+        margin-bottom: .2rem;
+      }
+    }
+  }
+  &__container {
+    &-title {
+      padding-top: 1rem;
+      border-bottom: solid 1px #e8e8e8;
+    }
+  }
+  &__nav {
+    &-links {
+      @include media($mobile) {
+        display: none;
+      }
+    }
+  }
+}
