@@ -1,0 +1,107 @@
+@import "common/utils";
+@import "common/settings/variables";
+
+.se-personal-form{
+  &__background{
+    background-color: $theme-3;
+    height: 100vh;
+    &-blue{
+      height: 31vh;
+      background-color: $grayblue-1;
+      min-width: 14rem;
+      position: relative;
+      box-shadow: $theme-shadow;
+    }
+  }
+
+  &__root{
+    position: absolute;
+    top: calc(100% - 13.9rem);
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40.4rem;
+    margin: 0 auto;
+    @include media($mobile) {
+      top: 0;
+      width: 100%;
+    }
+  }
+
+  &__window-link{
+    text-transform: uppercase;
+    padding: .8rem 1.6rem 1rem;
+    color: white;
+    background-color: $interactive;
+    height: 5.3rem;
+    line-height: 5.3rem ;
+    font-size: 1.7rem;
+    font-weight: 600;
+    text-align: center;
+    width: 100%
+
+  }
+
+  &__final-btn{
+    margin-top: 3.2rem;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+  }
+
+  &-header{
+    &__root{
+      position: relative;
+      height: 8.2rem;
+      background-color: $grayblue-1;
+      display: flex;
+      justify-content: space-between;
+      align-items: stretch;
+      @include media($mobile) {
+        height: 4.6rem;
+      }
+    }
+
+    &__nav, &__text{
+      display: flex;
+      align-items: center;
+    }
+    &__text{
+      width: 25rem;
+      height: 100%;
+      padding: 2.5rem 2rem;
+      user-select: none;
+      cursor: pointer;
+    }
+    &__avatar{
+      margin-right: 1.5rem;
+    }
+    &__nav{
+      padding: 0;
+      width: 20rem;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+    }
+  }
+  &__body{
+    padding: 3.2rem 5.5rem;
+    background-color: $white;
+    border-radius: 2px;
+    box-shadow: 0 1px 1px 0 rgba(97, 127, 152, 0.2), 1px 0 0 0 rgba(97, 127, 152, 0.1), -1px 0 0 0 rgba(97, 127, 152, 0.1);
+    @include media($mobile) {
+      height: 100vh
+    }
+  }
+
+
+  &__code-phone{
+    display: flex;
+    &-code{
+      width: 4.5rem;
+      margin-right: 3.2rem;
+    }
+    &-phone{
+      width: 21.8rem
+    }
+  }
+}

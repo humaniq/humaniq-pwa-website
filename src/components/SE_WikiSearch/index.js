@@ -18,13 +18,12 @@ class SE_WikiSearch extends Component {
         const _article = safeDA(article, ['highlight', 'article'])
         let __html;
         if(_article){
-          const _text =  _article && _article.join('...').replace(/<\/?p>/g, '')
-          __html = `...${_text}...`
+          __html =  _article && _article.join('...').replace(/<\/?p>/g, '')
         }
         return(
           <div className={cn('item')} key={"key_" + article.title} >
             <A_Link to={article.url}><A_H type="wiki-result">{article.title}</A_H></A_Link>
-            {_article && <p className={cn('item-text')}dangerouslySetInnerHTML={{__html}} />}
+            {_article && <p className={cn('item-text')} dangerouslySetInnerHTML={{__html}} />}
           </div>
         )
       })

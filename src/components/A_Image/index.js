@@ -38,7 +38,7 @@ class A_Image extends Component {
       <span className={cn('root')} >
         <img
           ref={ node => this.node = node }
-          className={cn('img', {onClick: !!onClick, objectFit, [type]: !!type}, [rounded, link, realSize])}
+          className={cn('img', {onClick: !!onClick, objectFit, type}, [rounded, link, realSize])}
           onLoad = {this.handleLoad}
           style={imgReady ? {} : {display: 'none'}}
           onClick={onClick}
@@ -64,7 +64,7 @@ A_Image.propTypes = {
   ]),
   type: T.oneOf([
     'avatar',
-    'avatar-sm',
+    'avatar-sm'
   ]),
   realSize: T.bool, // width and height auto
   rounded: T.bool, // remove space under the image in links

@@ -100,7 +100,7 @@ class SE_SimpleFormJoinForm extends Component {
           {submitted ||
             <A_Btn
               onClick={this.onSubmit(handleSubmit)}
-              type='nav-btn'
+              type='personal-nav-btn'
             >Send</A_Btn>
           }
         </Header>

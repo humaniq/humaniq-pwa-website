@@ -12,6 +12,12 @@ const A_Btn = ({type, children, disabled, btnType, to, onClick, ...props}) =>{
   disabled = disabled && 'disabled'
 
   switch(type){
+    case 'window-link':
+      return (
+        <Link className={cn('link', {type}, [disabled])} disabled={disabled} external {...{onClick, to, ...props}}>
+          {children}
+        </Link>
+      )
     case 'inline':
 
       return (
@@ -49,6 +55,7 @@ const A_Btn = ({type, children, disabled, btnType, to, onClick, ...props}) =>{
 
 A_Btn.propTypes = {
   type: T.oneOf([
+    'personal-nav-btn', // 170x82 white ripple link style button 100%/100%, padding: 0 1.3rem
     'nav-btn', // 82 white ripple link style button 100%/100%, padding: 0 1.3rem
     'link-subscribe', //big blue button used on home page
     'standart-form', // normal blue button with white text

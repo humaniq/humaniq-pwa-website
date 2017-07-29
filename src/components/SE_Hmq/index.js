@@ -51,19 +51,19 @@ class SE_Hmq extends Component {
 
   }
   render() {
-    const {chartProps, transactions, requestHmqTransactions} = this.props
+    const {chartProps, transactions, requestHmqTransactions, statistics, my} = this.props
     const {stickySearch} = this.state
     const renderedTransactions = this.getTransactions(transactions, requestHmqTransactions)
     return (
       <div>
-        <Hero {...{chartProps}}/>
-        <div ref={node => this.helperNode = node} style={{height: stickySearch ? 216 : 0}} />
-        <div className={cn('search', {stickySearch})} >
-          <Search />
-        </div>
-        <O_ScrollUp initTop={220} showAfter={700}>
-          {renderedTransactions}
-        </O_ScrollUp>
+        <Hero {...{chartProps, statistics, my}}/>
+        {/*<div ref={node => this.helperNode = node} style={{height: stickySearch ? 216 : 0}} />*/}
+        {/*<div className={cn('search', {stickySearch})} >*/}
+          {/*<Search />*/}
+        {/*</div>*/}
+        {/*<O_ScrollUp initTop={220} showAfter={700}>*/}
+          {/*{renderedTransactions}*/}
+        {/*</O_ScrollUp>*/}
       </div>
 
     )
@@ -72,7 +72,8 @@ class SE_Hmq extends Component {
 
 SE_Hmq.propTypes = {
   chartProps: T.object.isRequired,
-  transactions: T.array.isRequired
+  transactions: T.array.isRequired,
+  statistics: T.object.isRequired
 }
 
 SE_Hmq.defaultProps = {

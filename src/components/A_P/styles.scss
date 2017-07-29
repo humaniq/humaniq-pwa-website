@@ -3,11 +3,24 @@
 
 .a-p{
   &_type{
+    &_video-hero{
+      font-size: 18px;
+      line-height: 28.0px;
+      text-align: center;
+      color: #ffffff;
+      margin-bottom: 16px;
+    }
     &_hero {
       font-size: 1.5rem;
       line-height: 2.6rem;
       border-left: $interactive-border-l;
       padding: .3rem 0 .3rem 1.7rem;
+    }
+    &_hmq-e{
+      font-size: 1.3rem;
+      line-height: 2rem;
+      color: #333333;
+      margin-bottom: 1rem;
     }
     &_first {
       font-size: 18px;
@@ -20,9 +33,12 @@
       font-size: 1.5rem;
       line-height: 2.6rem;
       &-center{
-        font-size: 1.5rem;
-        line-height: 2.6rem;
+        @extend .a-p_type_third;
         text-align: center;
+        &_white{
+          @extend .a-p_type_third-center;
+          color: $white;
+        }
       }
     }
     &_fourth{

@@ -3,42 +3,50 @@
 
 .se-home-hero {
 
-  &__back-img{
-    background-image: url("/img/group-23.jpg");
-    background-repeat: no-repeat;
-    background-position: center;
-    z-index: -99;
+  &__wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 600px;
+
+    text-align: center;
     @include media($tablet) {
-      background-position: right;
+      height: 600px;
+
     }
     @include media($mobile) {
-      background-image: none;
-    }
+      height: 400px;
 
+    }
   }
+  &__back-img{
+    background-image: url("/img/hero-image.png");
+
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+  }
+
   &__root{
     padding: 9rem 0 9.6rem;
     transform: translate(0, 3rem);
-
-
-
-
-
-
 
     display: flex;
     justify-content: space-between;
     //padding: 11.6rem 0 9.6rem;
     align-items: flex-start;
     @include media($tablet) {
-      padding: 10rem 0 2.6rem;
+      //padding: 10rem 0 2.6rem;
       //padding-top: 3rem;
 
 
 
 
       //padding-top: 1.7rem;
-      flex-flow: column-reverse;
+      //flex-flow: column-reverse;
     }
     @include media($mobile) {
       padding-bottom: 0;
@@ -146,4 +154,14 @@
   }
 }
 
+video{
+  //width: 100vw !important;
+  height: 100% !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+}
 
+.BackgroundVideo{
+  width: 1500px !important;
+}

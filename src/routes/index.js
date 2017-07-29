@@ -70,6 +70,7 @@ const getRoutes = (store) => {
              component={OpenSource}
       />
       <Route path="hmq-explorer"
+             prepareData={Hmq.prepareData}
              component={Hmq}
       />
       <Route path="mark-up"
