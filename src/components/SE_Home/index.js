@@ -89,7 +89,7 @@ const SE_Home = () => (
       type = 'moving-title'
       title = 'The power of Blockchain'
       link ={{
-        to: '#',
+        to: '/hmq-explorer',
         text: 'Learn more about HMQ'
       }}
       img ={{

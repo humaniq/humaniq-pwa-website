@@ -1,0 +1,28 @@
+@import "common/settings/variables";
+@import "common/utils";
+
+
+.se-wiki0{
+  &__hero{
+    max-width: 62rem;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &-item{
+      &-text{
+        text-align: center;
+        color: $interactive;
+        padding: 2.5rem 0 2.7rem;
+      }
+      @include media($mobile) {
+        flex-flow: column;
+        width: 200px;
+        height: auto;
+      }
+    }
+    @include media($mobile) {
+      flex-flow: column;
+    }
+  }
+}
