@@ -1,25 +1,19 @@
 import React, {Component} from 'react';
 import * as T from "prop-types";
 import MainLayoutContainer from 'containers/MainLayoutContainer'
-import {fetchWiki} from "AC/wiki";
-import {fetchPartners} from 'AC/otherAPI'
 import initialLoad from 'utils/initialLoad'
 import {setRoute} from 'AC/navigation'
-import {requestHmqTransactions, fetchHmqStatistics, fetchHmqMarkets} from 'AC/hmqExp'
+// import {requestHmqTransactions, fetchHmqStatistics, fetchHmqMarkets} from 'AC/hmqExp'
 
 
 class AppRoute extends Component {
 
   static prepareData({dispatch}, query, params, location) {
     if(initialLoad()) return;
-    dispatch(fetchWiki())
     dispatch(setRoute(location.pathname))
-    dispatch(fetchHmqStatistics())
-    dispatch(fetchHmqMarkets())
-    dispatch(requestHmqTransactions())
-    return (
-      dispatch(fetchPartners())
-    )
+    // dispatch(fetchHmqStatistics())
+    // dispatch(fetchHmqMarkets())
+    // dispatch(requestHmqTransactions())
   }
 
   render() {
