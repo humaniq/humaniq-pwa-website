@@ -1,0 +1,66 @@
+@import "common/settings/variables";
+@import "common/utils";
+
+$tooltip-shadow: 0 12px 22px 0 rgba(0, 0, 0, 0.24);
+$tooltip-border-radius: .8rem;
+$tooltip-tail-size: 1.6rem;
+$tooltip-border: 1px solid rgba(0, 0, 0, 0.14);
+
+
+.m-tooltip{
+  &__wrapper{
+    position: relative;
+    z-index: 1;
+  }
+  &__root{
+    width: 245px;
+    border-radius: $tooltip-border-radius;
+    background: $white;
+    position: relative;
+    padding: 1.6rem;
+    &:before{
+      border-radius: $tooltip-border-radius + .1rem;
+      z-index: -1;
+      content: '';
+      display: block;
+      position: absolute;
+      top: -1px;
+      right: -1px;
+      height: 100%;
+      width: 100%;
+      box-shadow: $tooltip-shadow;
+      border: $tooltip-border;
+    }
+    &:after{
+      z-index: -1;
+      background-color: $white;
+      content: '';
+      display: block;
+      position: absolute;
+      height: $tooltip-tail-size;
+      width: $tooltip-tail-size;
+      box-shadow: $tooltip-shadow;
+      transform: translate(-50%, -50%) rotate(45deg);
+      border: $tooltip-border;
+    }
+    &_type{
+      &_left:after{
+        right:-$tooltip-tail-size;
+        top: 50%;
+      }
+      &_right:after{
+        left:0;
+        top: 50%;
+      }
+      &_top:after{
+        left: 50%;
+        bottom: -$tooltip-tail-size;
+      }
+      &_bottom:after{
+        left: 50%;
+        top: 0;
+      }
+    }
+  }
+}
+

@@ -1,0 +1,69 @@
+@import "common/settings/variables";
+@import "common/utils";
+
+
+@function makelongshadow($angle) {
+  $val: 0px 0px #CFD1D3;
+
+  @for $i from 1 through 175 {
+    $val: #{$val}, #{-$i * $angle}px #{$i}px #D8D8D8;
+  }
+  @return $val;
+}
+
+@mixin longshadow() {
+  text-shadow: makelongshadow(0.76);
+  @include media($mobile) {
+    text-shadow: makelongshadow(0.77);
+  }
+  &:after {
+    background-image: linear-gradient(180deg, #D8D8D8,#fff);
+
+    content: "";
+    display: block;
+    position: absolute;
+    transform: skew(143deg);
+    height: 5.5em;
+    width: 6.36em;
+    @include media($mobile) {
+      width: 6.35em;
+    }
+    top: 2.2em;
+    left: -3.46em;
+
+    @include media($tablet) {
+      left: -3.47em;
+    }
+    z-index: 0;
+  }
+}
+
+.se-home-hero-title{
+  &__root{
+    margin: 0;
+    padding: 0;
+    postion: relative;
+    left: .9rem;
+
+    z-index: -1;
+
+  }
+  &__title{
+    margin: 0;
+    padding: 0;
+    @include longshadow();
+    z-index: -10;
+    font-size: 8.7rem;
+    font-weight: 700;
+    line-height: 1.12em;
+    padding-bottom: 2rem;
+    white-space: nowrap;
+    @include media($tablet) {
+      font-size: 8.7rem;
+    }
+    @include media($mobile) {
+      font-size: 15vw;
+    }
+  }
+
+}

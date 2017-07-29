@@ -86,6 +86,12 @@ $icon-size: 20rem;
       line-height: 2rem;
       padding-bottom: .2rem;
     }
+    &_xxs {
+      font-size: 60px;
+      line-height: 64px;
+      padding-bottom: .2rem;
+      font-weight: 600;
+    }
 
     &_section {
       font-size: 2.3rem;
@@ -109,6 +115,14 @@ $icon-size: 20rem;
       color: $title;
       text-align: center;
       padding-bottom: 1rem;
+
+    }
+    &_openitem {
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 1.71rem;
+      color: $black-4;
+      padding-bottom: .8rem;
 
     }
   }

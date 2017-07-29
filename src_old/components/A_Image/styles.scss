@@ -1,0 +1,52 @@
+@import "common/settings/variables";
+@import "common/utils";
+
+
+.a-image{
+  &__root{
+    width: 100%;
+    height: 100%;
+  }
+
+  &_on-click_true:hover{
+    cursor: pointer;
+  }
+  &__loader{
+    height: 100%;
+    //background-color: $blue-1;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &__img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    text-align: center;
+    vertical-align: top;
+
+    &_object-fit{
+      &_contain{
+        object-fit:contain
+      }
+      &_cover-hidden{
+        object-fit: cover;
+        overflow: hidden;
+      }
+    }
+    &.real-size{
+      width: auto;
+      height: auto;
+    }
+    &.rounded{
+      border-radius: 50%;
+    }
+    &.link{
+      vertical-align: top;
+    }
+  }
+
+
+
+}

@@ -2,15 +2,17 @@ import {Route, IndexRoute} from 'react-router'
 import React from 'react'
 import App from './App'
 import Home from './Home'
-// import Error from './Error'
+import Error from './Error'
 import SimpleForm from './SimpleForm'
 import Partners from './Partners'
 import Cases from './Cases'
+import ContactUs from './ContactUs'
 import Wiki from './Wiki'
 import Wiki0 from './Wiki0'
 import Wiki1 from './Wiki1'
 import Wiki2 from './Wiki2'
 import Legal from './Legal'
+import OpenSource from './OpenSource'
 import WikiSearch from './WikiSearch'
 import Hmq from './Hmq'
 import Markup from './Markup'
@@ -55,11 +57,17 @@ const getRoutes = (store) => {
       <Route path="use-cases"
              component={Cases}
       />
+      <Route path="contactus"
+             component={ContactUs}
+      />
       <Route path="partners"
              component={Partners}
       />
       <Route path="Legal"
              component={Legal}
+      />
+      <Route path="opensource"
+             component={OpenSource}
       />
       <Route path="hmq-explorer"
              prepareData={Hmq.prepareData}
@@ -68,10 +76,10 @@ const getRoutes = (store) => {
       <Route path="mark-up"
              component={Markup}
       />
-      {/*<Route*/}
-        {/*path="/error/:err"*/}
-        {/*component={Error}*/}
-      {/*/>*/}
+      <Route
+        path="/error/:err"
+        component={Error}
+      />
     </Route >
   )
 }
