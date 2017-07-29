@@ -39,7 +39,12 @@ const getRoutes = (store) => {
           component={SimpleForm}
         />
       </Route>
-      <Route path="wiki" component={Wiki}>
+      <Route
+        path="wiki"
+        component={Wiki}
+        prepareData={Wiki.prepareData}
+
+      >
         <IndexRoute component={Wiki0}/>
         <Route
           path="search"
@@ -56,9 +61,10 @@ const getRoutes = (store) => {
              component={Cases}
       />
       <Route path="partners"
+             prepareData={Partners.prepareData}
              component={Partners}
       />
-      <Route path="Legal"
+      <Route path="legal"
              component={Legal}
       />
       <Route path="hmq-explorer"
