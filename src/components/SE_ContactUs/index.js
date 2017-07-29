@@ -53,12 +53,12 @@ class SE_ContactUs extends Component {
             {/*</A_Container>*/}
 
             <A_Container type='section-long-text'>
-              <A_H type='section'>Humaniq’s Legal Office</A_H>
-              <A_P type='third'>Humaniq LLC.</A_P>
+              <A_H type='section'>Humaniq’s Office</A_H>
+              <A_P type='third'>Humaniq International LTD.</A_P>
               <ul>
-                <li>25C, Boulevard Royal</li>
-                <li>Luxembourg, L-2449</li>
-                <li>Luxembourg</li>
+                <li>41 Luke St</li>
+                <li>London, EC2A</li>
+                <li>United Kingdom</li>
               </ul>
             </A_Container>
 
