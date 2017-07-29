@@ -17,3 +17,12 @@ export const ENDPOINT_PARTNERS_LIST = `${ENDPOINT_PARTNERS}/partners.json`
 
 export const ENDPOINT_WIKI_SEARCH = 'https://f03pn9k2v8.execute-api.eu-west-1.amazonaws.com/dev/articles/search'
 
+export const ENDPOINT_PERSONAL = 'https://beta-api.humaniq.co/hmqref/api/v1'
+
+export const ENDPOINT_PERSONAL_DATA = `${ENDPOINT_PERSONAL}/user/`
+export const ENDPOINT_PERSONAL_REFERRER = `${ENDPOINT_PERSONAL}/referrers/`
+
+
+export const ENDPOINT_BLOCKCHAIN_STATISTICS = `${HUMANIQ_BACKEND_API_URL}/dev/blockchain/stats?extended=true`
+export const ENDPOINT_BLOCKCHAIN_MARKETS = `${HUMANIQ_BACKEND_API_URL}/dev/markets`
+export const ENDPOINT_BLOCKCHAIN_EXCHANGE_RATES = `${HUMANIQ_BACKEND_API_URL}/dev/exchange/rates`

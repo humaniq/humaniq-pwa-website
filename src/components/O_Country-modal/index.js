@@ -54,8 +54,6 @@ class O_Country extends Component {
         { show &&
           <section
             className={cn('modal-overlay')}
-            onClick={e => {
-            }}
           >
             <form className={cn('country-form')} action="">
               <div className={cn('form-head')}>

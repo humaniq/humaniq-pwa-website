@@ -17,6 +17,14 @@ export function _isContain(arr, element) {
 }
 export const simpleSnakeCase = (str) => str.split(/(?=[A-Z])/).join('_').toLowerCase();
 
+function toPhone(str){
+  let res = str.replace(/\D/g, '')
+  if(res.length > 2) res = res.substr(0, 3) + '-' + res.substr(3,20)
+  if(res.length > 6) res = res.substr(0, 7) + '-' + res.substr(7,4)
+
+  return res
+}
+
 export const convert = {
   toSnake: str => str.split(/(?=[A-Z])/).join('_').toLowerCase(),
   toKebab: str => {
@@ -31,6 +39,7 @@ export const convert = {
       newString
         .replace(/\w\S*/g, txt => txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase())
     )},
+  toPhone: toPhone,
   obj:{
     toCamel: str => camelcaseKeys(str, {deep: true}),
   }

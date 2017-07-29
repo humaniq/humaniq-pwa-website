@@ -10,18 +10,18 @@ const getRoutes = () => {
     <Route
       path="/"
       component={App}
-      prepareData={App.prepareData}
     >
       <IndexRoute
         component={Home}
         prepareData={Home.prepareData}
       />
-      <Route path="form"
+      <Route path="registration"
          component={PersonalForm}
-      >
-
-      </Route>
-
+      />
+      <Route
+        path="*"
+        component={Home}
+      />
     </Route >
   )
 }

@@ -14,7 +14,7 @@ import O_Hero from 'O_Hero'
 class SE_Wiki1 extends Component {
 
   render() {
-    const {level0, articlesByLevel1, description, level0Title} = this.props
+    const {level0, articlesByLevel1, description, level0Title, img} = this.props
 
     const renderedCategories = articlesByLevel1.map( ({level1Category, articleUrls}) =>
       <div key={'key_' + level1Category} className={cn('article-list')}>
@@ -29,7 +29,7 @@ class SE_Wiki1 extends Component {
             {name: level0Title, url: `/wiki/${level0}`}
           ]}
         />
-        <O_Hero img={{src: "/img/placeholder-squared.svg", alt: "Humaniq’s Global Mission"}}>
+        <O_Hero img={{src: img, alt: "Humaniq’s Global Mission"}}>
           <A_H type="hero">{level0Title}</A_H>
           <div className={cn('hero-sub')}>
             <A_P type="hero">{description}</A_P>

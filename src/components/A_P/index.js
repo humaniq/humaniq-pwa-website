@@ -10,6 +10,8 @@ const A_P = ({children, type}) =>(
 
 A_P.propTypes = {
   type: T.oneOf([
+    'video-hero',
+    'hmq-e', //
     'hero', // 15/26 + blue border on left side
     'first', // 	18/28
     'second', // 14
@@ -17,7 +19,7 @@ A_P.propTypes = {
     'third-center', // 15/26 + alight-text: center
     'fourth', // 15/26.600 brand blue
     'fifth' // 13/1.54 grey
-
+    'third-center_white', // 15/26 + alight-text: center
   ]),
 };
 

@@ -1,6 +1,38 @@
 @import "common/settings/variables";
 @import "common/utils";
 
-.se-home {
-
+.se-personal-home {
+  &__header{
+    background-color: $blue-6;
+    box-shadow: $shadow-1;
+    height: 41.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &-inner{
+      text-align: center;
+    }
+  }
+  &__phone {
+      margin-bottom: 1.6rem;
+  }
+  &__description {
+    margin-top: -1rem;
+  }
+  &__btn{
+    display: flex;
+    justify-content: center;
+  }
+  &__info {
+    width: 40rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    @include media($mobile) {
+      width: 90%;
+      margin: 0 auto;
+    }
+  }
 }

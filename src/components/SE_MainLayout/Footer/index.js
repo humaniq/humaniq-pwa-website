@@ -21,28 +21,29 @@ const links = [
   {
     section: 'company',
     links: [
-      // {name: 'Blog', url: '#'},
+      {name: 'Blog', url: 'https://blog.humaniq.co', external: true},
+      {name: 'Forum', url: 'https://forum.humaniq.co', external: true},
       // {name: 'News', url: '#'},
       {name: 'Use Cases', url: '/use-cases'},
       {name: 'Partners', url: '/partners'},
       // {name: 'Events', url: '#'}
     ]
   },
-  // {section: 'legal',
-    // links: [
-    // {name: 'Privacy', url: '#'},
-    // {name: 'Security', url: '#'},
-    // {name: 'Policies', url: '#'}
-    // ]
-  // },
-  // {
-  //   section: 'resources',
-    // links: [
-    //   {name: 'Support', url: '#'},
-    //   {name: 'Contact us', url: '#'},
-    //   {name: 'Download mobile app', url: '#'}
-    // ]
-  // }
+  {section: 'legal',
+    links: [
+    {name: 'Privacy', url: '/legal#general-privacy-policy'},
+    {name: 'Security', url: '/legal#data-privacy-policy'},
+    {name: 'Policies', url: '/legal#user-terms-of-service'}
+    ]
+  },
+  {
+    section: 'resources',
+    links: [
+      // {name: 'Support', url: '#'},
+      {name: 'Contact us', url: '#'},
+      // {name: 'Download mobile app', url: '#'}
+    ]
+  }
 ]
 const socials = [
   {network: 'facebook', link: 'https://www.facebook.com/humaniq.co'},
@@ -79,9 +80,12 @@ class SE_MainLayoutFooter extends Component {
             onClick={() => this.handleTongleSection(section)}
           >{section}</div>
           <ul className={cn('nav-list', {isOpen})}>
-            { links.map(({name, url}) => (
-              <li className={cn('nav-list__item')} key={'key=' + name}><A_Link to={url} type='primary'>{name}</A_Link></li>
-            )) }
+            { links.map(({name, url, external}) => {
+              console.log(external)
+              return(
+                <li className={cn('nav-list__item')} key={'key=' + name}><A_Link to={url} type='primary' external={external}>{name}</A_Link></li>
+              )
+            }) }
           </ul>
         </div>
       )
@@ -126,7 +130,7 @@ class SE_MainLayoutFooter extends Component {
                       className={cn('aux-title')}
                     >Humaniq</div>
                     <p className={cn('about')}>
-                      Humaniq is a simple and secure mobile banking app, based on Ethereum Blockchain. The Humaniq tool of financial inclusion connects 2 billion unbanked people to the global economy.
+                      Humaniq is a simple and secure mobile app, delivering financial inclusion solutions to the 2.5 billion unbanked / 1 billion underbanked globally.
                     </p>
                     <div className={cn('soc')}>
                       {renderedSocialList}
