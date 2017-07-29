@@ -11,7 +11,7 @@ import M_Ripple from 'M_Ripple'
 import history from 'history'
 
 const main = [{
-  url: '/contacts',
+  url: '/contact-us',
   name: 'Contact Us'
 }]
 

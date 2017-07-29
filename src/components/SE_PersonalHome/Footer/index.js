@@ -14,15 +14,15 @@ const links = [
     section: 'product',
     links: [
       // {name: 'Features', url: '#'},
-      // {name: 'Open source', url: '#'},
+      {name: 'Open source', url: 'open-source'},
       {name: 'Humaniq Wiki', url: 'https://humaniq.com/wiki'},
       {name: 'HMQ Explorer', url: 'https://humaniq.com/hmq-explorer' }]
   },
   {
     section: 'company',
     links: [
-      {name: 'Blog', url: 'https://www.blog.humaniq.co', external: true},
-      {name: 'Forum', url: 'https://www.forum.humaniq.co', external: true},
+      {name: 'Blog', url: 'https://www.blog.humaniq.co'},
+      {name: 'Forum', url: 'https://www.forum.humaniq.co'},
       // {name: 'News', url: '#'},
       {name: 'Use Cases', url: 'https://humaniq.com/use-cases'},
       {name: 'Partners', url: 'https://humaniq.com/partners'},
@@ -40,7 +40,7 @@ const links = [
     section: 'resources',
     links: [
       // {name: 'Support', url: '#'},
-      {name: 'Contact us', url: '#'},
+      {name: 'Contact us', url: '/contact-us'},
       // {name: 'Download mobile app', url: '#'}
     ]
   }

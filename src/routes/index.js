@@ -62,7 +62,7 @@ const getRoutes = (store) => {
       <Route path="use-cases"
              component={Cases}
       />
-      <Route path="contactus"
+      <Route path="contact-us"
              component={ContactUs}
       />
       <Route path="partners"

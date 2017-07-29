@@ -101,15 +101,15 @@ class SE_OpenSource extends Component {
               </div>
             </A_Container>
 
-            <A_Container type='section-clean'>
-              <div className={cn('opensource-help')}>
-                <A_H type='section'>Help us Develop</A_H>
-                <A_P type='second'>Join Humaniq ever growing network. Get in touch if you would like to code with us.</A_P>
-                <A_P type='hero'>
-                  <A_Link to={'/'} type='primary'>Drop off your information here »</A_Link>
-                </A_P>
-              </div>
-            </A_Container>
+            {/*<A_Container type='section-clean'>*/}
+              {/*<div className={cn('opensource-help')}>*/}
+                {/*<A_H type='section'>Help us Develop</A_H>*/}
+                {/*<A_P type='second'>Join Humaniq ever growing network. Get in touch if you would like to code with us.</A_P>*/}
+                {/*<A_P type='hero'>*/}
+                  {/*<A_Link to={'/'} type='primary'>Drop off your information here »</A_Link>*/}
+                {/*</A_P>*/}
+              {/*</div>*/}
+            {/*</A_Container>*/}
 
 
           </div>
