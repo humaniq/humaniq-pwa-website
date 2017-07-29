@@ -1,0 +1,23 @@
+@import "common/settings/variables";
+@import "common/utils";
+
+.o-hero{
+  &__root{
+    padding-top: .8rem;
+    display: flex;
+    padding-bottom: 3.2rem;
+
+  }
+  &__image{
+    flex: 0 0 16rem;
+    height: 16rem;
+    display: none;
+    margin-right: 5rem;
+    @include media($desktop) {
+      display: block;
+    }
+  }
+  &__text{
+    padding-top: .3rem;
+  }
+}

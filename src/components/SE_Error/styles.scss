@@ -1,0 +1,26 @@
+@import "common/settings/variables";
+@import "common/utils";
+
+
+.se-error{
+  &__error{
+
+    &-main{
+      display: flex;
+      justify-content: center;
+      margin: 10rem 0 10rem 0;
+      @include media($mobile) {
+        display: block;
+        margin: 5rem 0 5rem 0;
+      }
+
+      &-image{
+        margin-right: 3rem;
+      }
+      &-message{
+        width: 36rem;
+      }
+    }
+
+  }
+}

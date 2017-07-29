@@ -1,0 +1,84 @@
+@import "common/settings/variables";
+@import "common/utils";
+
+/* Search Section
+/* ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## */
+
+.o-search {
+  &__search {
+    width: 90rem;
+    margin: 0 auto;
+    position: relative;
+    @include media($tablet) {
+      width: 70rem;
+    }
+    @include media($mobile) {
+      width: 100%;
+    }
+  }
+  &__input {
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 1.8rem;
+    font-weight: 400;
+    line-height: 2;
+    border-radius: .4rem;
+    color: rgba(255, 255, 255, .7);
+    background: rgba(255, 255, 255, .2);
+    padding: 1.2rem 3rem 1.2rem 2rem;
+    box-shadow: 0 .1rem .2rem 0 rgba(0, 0, 0, 0.03);
+    box-sizing: border-box;
+    transition: all .5s ease;
+    &::placeholder {
+      color: rgba(255, 255, 255, 0.7);
+    }
+    &:hover {
+      background: rgba(255, 255, 255, 0.27);
+      box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.03);
+      font-weight: 400;
+    }
+    &:focus {
+      box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+      color: rgba(44, 45, 48, .4);
+      background: white;
+      color: #3a3c4c;
+      font-weight: 400;
+      &::placeholder {
+        color: rgba(44, 45, 48, .4);
+      }
+    }
+  }
+  &__submit {
+    background: transparent;
+    width: 5rem;
+    height: 5rem;
+    border: none;
+    outline: none;
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    margin-top: -2.7rem;
+    cursor: pointer;
+  }
+  &__search-icon {
+    width: 2.2rem;
+    height: 2.2rem;
+    .o-search__icon-path {
+      stroke: $white;
+      fill: $white;
+    }
+    .o-search__icon-circle {
+      stroke: $white;
+    }
+  }
+  &__input--focused {
+    .o-search__icon-path {
+      stroke: #35424C;
+      fill: #35424C;
+    }
+    .o-search__icon-circle {
+      stroke: #35424C;
+    }
+  }
+}
