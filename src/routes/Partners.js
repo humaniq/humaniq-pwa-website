@@ -5,7 +5,7 @@ import {fetchPartners} from 'AC/otherAPI'
 
 class PartnersRoute extends Component {
 
-  static prepareData({dispatch}, query, params) {
+  static prepareData({dispatch}, query) {
     if(initialLoad()) return;
     return (
       dispatch(fetchPartners())

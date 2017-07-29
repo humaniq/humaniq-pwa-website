@@ -34,23 +34,23 @@ class SE_ContactUs extends Component {
             <A_Container type='section-long-text'>
               <A_H type='section'>Customer Support</A_H>
               <A_P type='third'>For any questions you may have please contact:</A_P>
-              - <A_Link onClick={this.prevent} type='primary'>support@humaniq.com</A_Link>
+              - <A_Link to="mailto:support@humaniq.com" type='primary' external>support@humaniq.com</A_Link>
             </A_Container>
 
             <A_Container type='section-long-text'>
               <A_H type='section'>Questions regarding Privacy Policy</A_H>
-              <A_P type='third'>If you have any questions regarding our user or data Privacy Policy, please <A_Link onClick={this.prevent} type='primary'>reach out to us.</A_Link></A_P>
+              <A_P type='third'>If you have any questions regarding our user or data Privacy Policy, please <A_Link to="mailto:support@humaniq.com" type='primary' external>reach out to us.</A_Link></A_P>
             </A_Container>
 
             <A_Container type='section-long-text'>
               <A_H type='section'>Partnerships</A_H>
-              <A_P type='third'>For any inquires regarding partnerships, please <A_Link onClick={this.prevent} type='primary'>fill out this form.</A_Link></A_P>
+              <A_P type='third'>For any inquires regarding partnerships, please <A_Link to="/form/join" type='primary'>fill out this form.</A_Link></A_P>
             </A_Container>
 
-            <A_Container type='section-long-text'>
-              <A_H type='section'>Ambassador’s Program</A_H>
-              <A_P type='third'>If you want to become a part of Humaniq’s Global Initiative Program, please <A_Link onClick={this.prevent} type='primary'>fill out this form.</A_Link></A_P>
-            </A_Container>
+            {/*<A_Container type='section-long-text'>*/}
+              {/*<A_H type='section'>Ambassador’s Program</A_H>*/}
+              {/*<A_P type='third'>If you want to become a part of Humaniq’s Global Initiative Program, please <A_Link onClick={this.prevent} type='primary'>fill out this form.</A_Link></A_P>*/}
+            {/*</A_Container>*/}
 
             <A_Container type='section-long-text'>
               <A_H type='section'>Humaniq’s Legal Office</A_H>
