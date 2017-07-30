@@ -72,7 +72,7 @@ const getRoutes = (store) => {
       <Route path="legal"
              component={Legal}
       />
-      <Route path="opensource"
+      <Route path="open-source"
              component={OpenSource}
       />
       <Route path="hmq-explorer"
