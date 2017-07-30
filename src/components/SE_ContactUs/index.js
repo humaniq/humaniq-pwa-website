@@ -26,7 +26,7 @@ class SE_ContactUs extends Component {
                 </div>
                 <div className={cn('contactus-header-description')}>
                   <A_H type='section'>Contact Humaniq</A_H>
-                  <A_P type='hero'>Humaniq is proud of its wide partnership network which includes everybody from fintech companies and Blockchain communities to publishing media and app developoers.</A_P>
+                  <A_P type='hero'>Humaniq is powered both by the Blockchain, and by our community, everyone who uses our Humaniq App and HMQ coin cryptocurrency and contributes to our project. Like any community, it is better when we talk to each other. Find out how you can get in touch with us.</A_P>
                 </div>
               </div>
             </A_Container>
@@ -34,12 +34,12 @@ class SE_ContactUs extends Component {
             <A_Container type='section-long-text'>
               <A_H type='section'>Customer Support</A_H>
               <A_P type='third'>For any questions you may have please contact:</A_P>
-              - <A_Link to="mailto:support@humaniq.com" type='primary' external>support@humaniq.com</A_Link>
+              - <A_Link to="mailto:info@humaniq.com" type='primary' external>info@humaniq.com</A_Link>
             </A_Container>
 
             <A_Container type='section-long-text'>
               <A_H type='section'>Questions regarding Privacy Policy</A_H>
-              <A_P type='third'>If you have any questions regarding our user or data Privacy Policy, please <A_Link to="mailto:support@humaniq.com" type='primary' external>reach out to us.</A_Link></A_P>
+              <A_P type='third'>If you have any questions regarding our user or data Privacy Policy, please <A_Link to="mailto:info@humaniq.com" type='primary' external>reach out to us.</A_Link></A_P>
             </A_Container>
 
             <A_Container type='section-long-text'>
@@ -53,12 +53,12 @@ class SE_ContactUs extends Component {
             {/*</A_Container>*/}
 
             <A_Container type='section-long-text'>
-              <A_H type='section'>Humaniq’s Legal Office</A_H>
-              <A_P type='third'>Humaniq LLC.</A_P>
+              <A_H type='section'>Humaniq’s Office</A_H>
+              <A_P type='third'>Humaniq International LTD.</A_P>
               <ul>
-                <li>25C, Boulevard Royal</li>
-                <li>Luxembourg, L-2449</li>
-                <li>Luxembourg</li>
+                <li>41 Luke St</li>
+                <li>London, EC2A</li>
+                <li>United Kingdom</li>
               </ul>
             </A_Container>
 
