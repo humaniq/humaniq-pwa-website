@@ -67,7 +67,7 @@ A_Image.propTypes = {
     'avatar-sm'
   ]),
   realSize: T.bool, // width and height auto
-  rounded: T.bool, // remove space under the image in links
+  rounded: T.bool, // rounded Images.
   link: T.bool // remove space under the image in links
 }
 

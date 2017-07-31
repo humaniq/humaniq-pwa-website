@@ -9,10 +9,6 @@ import A_Link from 'A_Link';
 
 class SE_ContactUs extends Component {
 
-  prevent(event){
-    event.preventDefault();
-  }
-
   render() {
     return (
       <div>
