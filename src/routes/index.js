@@ -2,7 +2,7 @@ import {Route, IndexRoute} from 'react-router'
 import React from 'react'
 import App from './App'
 import Home from './Home'
-// import Error from './Error'
+import Error from './Error'
 import Blog0 from './Blog0'
 import SimpleForm from './SimpleForm'
 import Partners from './Partners'
@@ -75,6 +75,7 @@ const getRoutes = (store) => {
       />
       <Route path="blog"
              component={Blog0}
+      />
       <Route path="open-source"
              component={OpenSource}
       />
@@ -87,6 +88,10 @@ const getRoutes = (store) => {
       />
       <Route
         path="/error/:err"
+        component={Error}
+      />
+      <Route
+        path="*"
         component={Error}
       />
     </Route >
