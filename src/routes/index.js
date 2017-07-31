@@ -2,7 +2,8 @@ import {Route, IndexRoute} from 'react-router'
 import React from 'react'
 import App from './App'
 import Home from './Home'
-import Error from './Error'
+// import Error from './Error'
+import Blog0 from './Blog0'
 import SimpleForm from './SimpleForm'
 import Partners from './Partners'
 import Cases from './Cases'
@@ -72,6 +73,8 @@ const getRoutes = (store) => {
       <Route path="legal"
              component={Legal}
       />
+      <Route path="blog"
+             component={Blog0}
       <Route path="open-source"
              component={OpenSource}
       />
