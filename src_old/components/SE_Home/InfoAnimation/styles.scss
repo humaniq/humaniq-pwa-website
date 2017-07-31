@@ -1,0 +1,34 @@
+@import "common/utils";
+@import "common/settings/variables";
+
+.se-home-info-animation{
+  &__root{
+    width: 100%;
+    position: relative;
+    @include media($desktop) {
+      margin-top: -8rem;
+    }
+  }
+  &__img{
+    @include media($mobile) {
+      display: none;
+    }
+    width: 49%;
+    position: absolute;
+    margin-top: -3.2rem;
+    height: calc(100% + 5rem);
+    top: 0;
+    right: 0;
+  }
+  &__body{
+    width: 47rem;
+    @include media($tablet) {
+      width: 49%;
+    }
+    @include media($mobile) {
+      width: 100%;
+    }
+    padding-right: 2rem;
+  }
+
+}

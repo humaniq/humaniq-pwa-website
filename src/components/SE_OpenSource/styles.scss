@@ -1,0 +1,63 @@
+@import "common/settings/variables";
+@import "common/utils";
+
+
+.se-open-source{
+  &__opensource{
+
+    &-header{
+      display: flex;
+
+      &-image{
+        margin-right: 4rem;
+        @include media($tablet) {
+          display: none;
+        }
+      }
+    }
+    &-container{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+
+      &-item{
+        width: 29rem;
+        height: 28rem;
+        border-radius: 6px;
+        background-color: #ffffff;
+        border: solid 1px #e8e8e8;
+        margin-bottom: 7rem;
+
+        &-image{
+          width: 28.8rem;
+          height: 17rem;
+          border-radius: 6px 6px 0 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+        }
+        &:nth-child(1) &-image{
+          background-image: linear-gradient(120deg, #f52c00, #f47400);
+        }
+        &:nth-child(2) &-image, &:nth-child(3) &-image{
+          background-image: linear-gradient(120deg, #0d85c6, #94c8dc 76%, #bedce2);
+        }
+        &:nth-child(4) &-image, &:nth-child(5) &-image, &:nth-child(6) &-image{
+          background-image: linear-gradient(120deg, #f7971e, #ffd200);
+        }
+        //&:hover {
+        //  box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.12);
+        //  z-index: 1;
+        //}
+      }
+      &-text{
+        padding: 1.9rem 1.7rem 1.9rem 1.7rem;
+      }
+
+
+    }
+
+
+  }
+}

@@ -1,0 +1,19 @@
+@import "common/settings/variables";
+@import "common/utils";
+
+
+.se-contact-us{
+  &__contactus{
+
+    &-header{
+      display: flex;
+
+      &-image{
+        margin-right: 5rem;
+        @include media($mobile) {
+          display: none;
+        }
+      }
+    }
+  }
+}

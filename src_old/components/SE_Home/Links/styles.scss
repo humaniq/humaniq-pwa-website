@@ -1,0 +1,28 @@
+@import "common/settings/variables";
+@import "common/utils";
+
+.se-home-links{
+  &__links{
+    display: flex;
+    justify-content: space-around;
+    @include media($mobile) {
+      flex-flow: wrap;
+    }
+    &-item{
+      flex: 0 1 auto;
+      height:auto;
+      margin: 5px;
+      @include media($mobile) {
+        flex-basis: 100%;
+      }
+      &-img{
+        width: 100%;
+        height: auto;
+        @include media($tablet) {
+          height: auto;
+        }
+      }
+    }
+  }
+
+}

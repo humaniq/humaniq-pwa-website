@@ -1,0 +1,34 @@
+@import "common/settings/variables";
+@import "common/utils";
+
+/* Transaction Section
+/* ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## */
+
+.o-transaction-menu {
+
+  &__ul{
+    display: flex;
+    margin-left: 20rem;
+    height: 17px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.13;
+    text-align: left;
+    color: rgba(255, 255, 255, 0.5);
+  }
+  &__ul li{
+    height: 4rem;
+    text-align: center;
+    width: 15rem;
+
+    &:hover {
+      color: #ffffff;
+      border-bottom: solid 3px #ffffff;
+    }
+    &:focus {
+
+    }
+  }
+
+}

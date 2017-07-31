@@ -7,11 +7,13 @@ import Blog0 from './Blog0'
 import SimpleForm from './SimpleForm'
 import Partners from './Partners'
 import Cases from './Cases'
+import ContactUs from './ContactUs'
 import Wiki from './Wiki'
 import Wiki0 from './Wiki0'
 import Wiki1 from './Wiki1'
 import Wiki2 from './Wiki2'
 import Legal from './Legal'
+import OpenSource from './OpenSource'
 import WikiSearch from './WikiSearch'
 import Hmq from './Hmq'
 import Markup from './Markup'
@@ -40,7 +42,12 @@ const getRoutes = (store) => {
           component={SimpleForm}
         />
       </Route>
-      <Route path="wiki" component={Wiki}>
+      <Route
+        path="wiki"
+        component={Wiki}
+        prepareData={Wiki.prepareData}
+
+      >
         <IndexRoute component={Wiki0}/>
         <Route
           path="search"
@@ -56,14 +63,20 @@ const getRoutes = (store) => {
       <Route path="use-cases"
              component={Cases}
       />
+      <Route path="contact-us"
+             component={ContactUs}
+      />
       <Route path="partners"
+             prepareData={Partners.prepareData}
              component={Partners}
       />
-      <Route path="Legal"
+      <Route path="legal"
              component={Legal}
       />
       <Route path="blog"
              component={Blog0}
+      <Route path="open-source"
+             component={OpenSource}
       />
       <Route path="hmq-explorer"
              prepareData={Hmq.prepareData}
@@ -72,10 +85,10 @@ const getRoutes = (store) => {
       <Route path="mark-up"
              component={Markup}
       />
-      {/*<Route*/}
-        {/*path="/error/:err"*/}
-        {/*component={Error}*/}
-      {/*/>*/}
+      <Route
+        path="/error/:err"
+        component={Error}
+      />
     </Route >
   )
 }

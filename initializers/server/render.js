@@ -22,21 +22,26 @@ export default function(req, res){
     if (redirectLocation) {
       return res.redirect(302, redirectLocation.pathname + redirectLocation.search);
     }
-    // else if (error) {
-    //   return res.redirect(302, '/error/500?error=' + stringify(error));
-    // } else if (!renderProps) {
-    //   const url = location.pathname + location.search
-    //   return res.redirect(302, '/error/404?url=' + url);
+    else if (error) {
+      return res.status(500).end('Internal server error');
+      console.log(error, {routes, location, error, redirectLocation, renderProps})
+      // return res.redirect(302, '/error/500?error=' + stringify(error));
+    } else if (!renderProps) {
+      return res.status(404).send('Not found');
+      // const url = location.pathname + location.search
+      // return res.redirect(302, '/error/404?url=' + url);
+    }
+    //
+    // let status
+    // const regEx = /(\/error\/(?=(404|500)))/
+    //
+    // if(regEx.test(location.pathname)){
+    //   status = + location.pathname.replace(regEx, '')
+    // }else{
+    //   status = 200
     // }
 
-    let status
-    const regEx = /(\/error\/(?=(404|500)))/
-
-    if(regEx.test(location.pathname)){
-      status = + location.pathname.replace(regEx, '')
-    }else{
-      status = 200
-    }
+    const status = 200
 
     Promise.all(compact(prepareData(store, renderProps)))
       .then(() => {
