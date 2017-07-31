@@ -1,7 +1,7 @@
 import {BACKEND_CALL} from 'middleware/humaniqBackendApi'
 import {
   ENDPOINT_PARTNERS_LIST,
-  ENDPOINT_PERSONAL_DATA,
+  // ENDPOINT_PERSONAL_DATA,
   ENDPOINT_PERSONAL_REFERRER
 } from 'constants/api'
 

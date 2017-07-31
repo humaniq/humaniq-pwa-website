@@ -14,7 +14,7 @@ const links = [
     section: 'product',
     links: [
       // {name: 'Features', url: '#'},
-      // {name: 'Open source', url: '#'},
+      {name: 'Open source', url: 'open-source'},
       {name: 'Humaniq Wiki', url: '/wiki'},
       {name: 'HMQ Explorer', url: '/hmq-explorer'}]
   },
@@ -40,7 +40,7 @@ const links = [
     section: 'resources',
     links: [
       // {name: 'Support', url: '#'},
-      {name: 'Contact us', url: '#'},
+      {name: 'Contact us', url: '/contact-us'},
       // {name: 'Download mobile app', url: '#'}
     ]
   }
@@ -81,7 +81,6 @@ class SE_MainLayoutFooter extends Component {
           >{section}</div>
           <ul className={cn('nav-list', {isOpen})}>
             { links.map(({name, url, external}) => {
-              console.log(external)
               return(
                 <li className={cn('nav-list__item')} key={'key=' + name}><A_Link to={url} type='primary' external={external}>{name}</A_Link></li>
               )
