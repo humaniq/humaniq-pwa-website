@@ -1,4 +1,4 @@
-# Humaniq Wesbite v2.0
+# Humaniq Website v2.0
 
 Humaniq is a simple and secure 4th generation mobile banking app, based on [Ethereum](https://ethereum.org/) technologies. Safe and strong, this tool of financial inclusion connects 2 billion unbanked people to the global economy. 
 
