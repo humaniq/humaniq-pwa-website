@@ -26,23 +26,23 @@ const explorerMock = [
   },
 ]
 
-const links = [
-  {
-    img: '/img/illustrations/hmq-explorer.svg',
-    title: 'HMQ Explorer',
-    url: '#'
-  },
-  {
-    img: '/img/illustrations/humaniq-blog.svg',
-    title: 'Humaniq Blog',
-    url: '#'
-  },
-  {
-    img: '/img/illustrations/open-source.svg',
-    title: 'Open Source',
-    url: '#'
-  }
-]
+// const links = [
+//   {
+//     img: '/img/illustrations/hmq-explorer.svg',
+//     title: 'HMQ Explorer',
+//     url: '#'
+//   },
+//   {
+//     img: '/img/illustrations/humaniq-blog.svg',
+//     title: 'Humaniq Blog',
+//     url: '#'
+//   },
+//   {
+//     img: '/img/illustrations/open-source.svg',
+//     title: 'Open Source',
+//     url: '#'
+//   }
+// ]
 
 const features = [
   {
