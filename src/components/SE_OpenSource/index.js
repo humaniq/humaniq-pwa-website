@@ -11,8 +11,8 @@ const SE_OpenSource = () =>{
   
   const renderedLinks = libraries.map( ({name, description, url, type, imgSrc}) => {
     return(
-      <A_Link to={url} type="block" >
         <div className={cn('container-item', {type})} key={'key_' + name}>
+          <A_Link to={url} type="block" external>
           <div className={cn('container-item-image')}>
             <img src={imgSrc} alt='Humaniq Android' />
           </div>
@@ -20,8 +20,9 @@ const SE_OpenSource = () =>{
             <A_H type='openitem'>{name}</A_H>
             <A_P type='fifth'>{description}</A_P>
           </div>
+          </A_Link>
+
         </div>
-      </A_Link>
     )
   })
 
@@ -29,7 +30,6 @@ const SE_OpenSource = () =>{
     <div>
       <A_Container type='equal'>
         <div className={cn('opensource')}>
-
           <A_Container type='section-clean'>
             <div className={cn('header')}>
               <div className={cn('header-image')}>
@@ -73,42 +73,42 @@ const libraries = [
   {
     name: 'humaniq-android',
     description: 'Humaniq mobile app alpha version. Used as a concept to show the work of a DApp.',
-    url: '',
+    url: 'https://github.com/humaniq/humaniq-android',
     type: 'android',
     imgSrc: '/img/opensource/android.svg'
   },
   {
     name: 'findface',
     description: 'Golang client for FindFace cloud API. The wrapper was written for testing purposes.',
-    url: '',
+    url: 'https://github.com/humaniq/findface',
     type: 'go',
     imgSrc: '/img/opensource/go.svg'
   },
   {
     name: 'kairgo',
     description: 'Golang client for Kairos cloud API. The wrapper was written for testing purposes.',
-    url: '',
+    url: 'https://github.com/humaniq/kairgo',
     type: 'go',
     imgSrc: '/img/opensource/go.svg'
   },
   {
     name: 'emoji-auth',
     description: 'Graphic-pin authorization for the second step verification in your application.',
-    url: '',
+    url: 'https://github.com/humaniq/emoji-auth',
     type: 'js',
     imgSrc: '/img/opensource/js.svg'
   },
   {
     name: 'ico-contract',
     description: 'Humaniq smart contract. Was used during the ICO process.',
-    url: '',
+    url: 'https://github.com/humaniq/ico-contract',
     type: 'js',
     imgSrc: '/img/opensource/js.svg'
   },
   {
     name: 'ico-website',
     description: 'Humaniq ICO website v0. Was used during the ICO process.',
-    url: '',
+    url: 'https://github.com/humaniq/ico-website',
     type: 'js',
     imgSrc: '/img/opensource/js.svg'
   },

@@ -8,19 +8,8 @@ import createStore from 'store';
 import prepareData from 'utils/prepareData'
 // import offlinePluginStart from 'utils/offlinePlugin'
 import {closeMenu} from 'AC/navigation'
-
+import {hashLinkScroll} from 'utils/hashLinkScroll'
 const store = createStore(window.__INITIAL_STATE__)
-
-function hashLinkScroll() {
-  const { hash } = window.location;
-  if (hash !== '') {
-    setTimeout(() => {
-      const id = hash.replace('#', '');
-      const element = document.getElementById(id);
-      if (element) element.scrollIntoView();
-    }, 0);
-  }
-}
 
 const App = () => (
   <Provider store={store}>
