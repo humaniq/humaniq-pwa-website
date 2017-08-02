@@ -2,38 +2,38 @@ import React, {Component} from 'react';
 import * as T from "prop-types";
 import './styles.scss';
 import {cssClassName} from 'utils'
-const cn = cssClassName('SE_MainLayoutFooter')
+const cn = cssClassName('O_Footer')
 import {Motion, spring} from 'react-motion';
-// import M_Select from 'M_Select';
 import A_Link from 'A_Link'
 import A_Image from 'A_Image'
 import A_Container from 'A_Container'
+import {WEBSITE_DOMAIN_NAME} from 'constants/api'
 
 const links = [
   {
     section: 'product',
     links: [
       // {name: 'Features', url: '#'},
-      {name: 'Open source', url: 'open-source'},
-      {name: 'Humaniq Wiki', url: 'https://humaniq.com/wiki'},
-      {name: 'HMQ Explorer', url: 'https://humaniq.com/hmq-explorer' }]
+      {name: 'Open source', url: '/open-source'},
+      {name: 'Humaniq Wiki', url: '/wiki'},
+      {name: 'HMQ Explorer', url: '/hmq-explorer'}]
   },
   {
     section: 'company',
     links: [
-      {name: 'Blog', url: 'https://www.blog.humaniq.co'},
-      {name: 'Forum', url: 'https://www.forum.humaniq.co'},
+      {name: 'Blog', url: 'https://blog.humaniq.co', externalLink: true},
+      {name: 'Forum', url: 'https://forum.humaniq.co', externalLink: true},
       // {name: 'News', url: '#'},
-      {name: 'Use Cases', url: 'https://humaniq.com/use-cases'},
-      {name: 'Partners', url: 'https://humaniq.com/partners'},
+      {name: 'Use Cases', url: '/use-cases'},
+      {name: 'Partners', url: '/partners'},
       // {name: 'Events', url: '#'}
     ]
   },
   {section: 'legal',
     links: [
-      {name: 'Privacy', url: 'https://humaniq.com/legal#general-privacy-policy'},
-      {name: 'Security', url: 'https://humaniq.com/legal#data-privacy-policy'},
-      {name: 'Policies', url: 'https://humaniq.com/legal#user-terms-of-service'}
+    {name: 'Privacy', url: '/legal#general-privacy-policy'},
+    {name: 'Security', url: '/legal#data-privacy-policy'},
+    {name: 'Policies', url: '/legal#user-terms-of-service'}
     ]
   },
   {
@@ -55,7 +55,7 @@ const socials = [
   {network: 'instagram', link: 'https://www.instagram.com/humaniq.co/'}
 ]
 
-class SE_MainLayoutFooter extends Component {
+class O_Footer extends Component {
 
   state = {
     openedSection: null
@@ -70,9 +70,10 @@ class SE_MainLayoutFooter extends Component {
     }
   }
 
-  linksList(openedSection) {
+  linksList(openedSection, allLinksExternal) {
     return links.map(({section, links}) => {
       const isOpen = openedSection === section
+
       return (
         <div className={cn('nav-section')} key={'key=' + section}>
           <div
@@ -80,9 +81,13 @@ class SE_MainLayoutFooter extends Component {
             onClick={() => this.handleTongleSection(section)}
           >{section}</div>
           <ul className={cn('nav-list', {isOpen})}>
-            { links.map(({name, url, external}) => (
-              <li className={cn('nav-list__item')} key={'key=' + name}><A_Link to={url} type='primary' external>{name}</A_Link></li>
-            )) }
+            { links.map(({name, url, externalLink}) => {
+              const external = allLinksExternal || externalLink
+              const to = (allLinksExternal && !externalLink) ? `https://${WEBSITE_DOMAIN_NAME + url}`  : url
+              return(
+                <li className={cn('nav-list__item')} key={'key=' + name}><A_Link to={to} type='primary' external={external}>{name}</A_Link></li>
+              )
+            }) }
           </ul>
         </div>
       )
@@ -100,11 +105,11 @@ class SE_MainLayoutFooter extends Component {
   }
 
   render(){
-    const {isMenuOpened} = this.props
+    const {isMenuOpened, externalLinks} = this.props
     const {openedSection} = this.state
     const max = 100;
     const renderedSocialList = this.socialsList()
-    const renderedLinksList = this.linksList(openedSection)
+    const renderedLinksList = this.linksList(openedSection, externalLinks)
     return (
       <footer className={cn({isMenuOpened})}>
         <A_Container>
@@ -143,12 +148,14 @@ class SE_MainLayoutFooter extends Component {
   }
 }
 
-SE_MainLayoutFooter.propTypes = {
-  isMenuOpened: T.bool.isRequired
+O_Footer.propTypes = {
+  isMenuOpened: T.bool.isRequired,
+  externalLinks: T.bool
 };
 
-SE_MainLayoutFooter.defaultProps = {
-  isisMenuOpeneded: T.bool.isRequired
+O_Footer.defaultProps = {
+  isisMenuOpeneded: T.bool.isRequired,
+  externalLinks: false
 };
 
-export default SE_MainLayoutFooter
+export default O_Footer
