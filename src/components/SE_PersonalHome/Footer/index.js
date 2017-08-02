@@ -47,7 +47,7 @@ const links = [
 ]
 const socials = [
   {network: 'facebook', link: 'https://www.facebook.com/humaniq.co'},
-  {network: 'twitter', link: 'https://twitter.com/Humaniq_co'},
+  {network: 'twitter', link: 'https://twitter.com/Humaniq'},
   {network: 'github', link: 'https://github.com/humaniq'},
   {network: 'youtube', link: 'https://www.youtube.com/channel/UCXatRidLHbngYUtF8JXICPA'},
   {network: 'slack', link: 'https://humaniq-co.slack.com'},
