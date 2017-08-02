@@ -1,7 +1,7 @@
 @import "common/settings/variables";
 @import "common/utils";
 
-.se-main-layout-footer{
+.o-footer{
 
   border-top: $border-line;
   &_is-menu-opened_true{
@@ -11,7 +11,7 @@
     height: 100vh;
   }
   &__inner {
-    padding: 2rem * 2.5 0; // clarify
+    padding: 2rem * 2.5 0;
     display: flex;
     @include media($mobile) {
       padding: 0;
@@ -88,7 +88,7 @@
         font-size: 1.5rem;
         line-height: 2.4rem;
         font-weight: 600;
-        color: $interactive; // clarify
+        color: $interactive;
       }
     }
   }

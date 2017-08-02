@@ -1,6 +1,5 @@
 import nightmare from 'nightmare'
 
-
 beforeAll(() => {
   window.jasmine.DEFAULT_TIMEOUT_INTERVAL = 1000000;
 });
