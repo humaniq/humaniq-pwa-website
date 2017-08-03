@@ -30,16 +30,15 @@ class SE_Error extends Component {
                 <img src="/img/humaniq-logos/group.png" alt="Humaniq"/>
               </div>
               <div className={cn('error-main-message')}>
+                <A_H type='xxs'>404</A_H>
                 <A_H type='xxs'>{err}</A_H>
-                <A_P type='third'>{message}</A_P>
+                <span className={cn('message')}>{message}</span>
                 <A_P type='hero'>
                   <A_Link to={'/'} type='primary'>Go back to home page »</A_Link>
                 </A_P>
               </div>
             </div>
           </div>
-
-
 
         </A_Container>
       </div>
