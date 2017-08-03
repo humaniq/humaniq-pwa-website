@@ -11,12 +11,12 @@ const SE_OpenSource = () =>{
   
   const renderedLinks = libraries.map( ({name, description, url, type, imgSrc}) => {
     return(
-        <div className={cn('container-item', {type})} key={'key_' + name}>
+        <div className={cn('item', {type})} key={'key_' + name}>
           <A_Link to={url} type="block" external>
-          <div className={cn('container-item-image')}>
+          <div className={cn('item-image')}>
             <img src={imgSrc} alt='Humaniq Android' />
           </div>
-          <div className={cn('container-text')}>
+          <div className={cn('item-text')}>
             <A_H type='openitem'>{name}</A_H>
             <A_P type='fifth'>{description}</A_P>
           </div>
@@ -47,7 +47,7 @@ const SE_OpenSource = () =>{
           </A_Container>
 
           <A_Container type='section-clean'>
-            <div className={cn('container')}>
+            <div className={cn('list')}>
               {renderedLinks}
             </div>
           </A_Container>
