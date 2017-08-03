@@ -6,7 +6,7 @@ const cn = cssClassName('SE_CasesList')
 import A_Container from 'A_Container'
 import A_H from 'A_H'
 import A_P from 'A_P'
-import A_Image from "../../A_Image/index";
+import A_Image from "A_Image/index";
 import {convert} from 'utils'
 
 const SE_CasesList = ({cases}) =>{

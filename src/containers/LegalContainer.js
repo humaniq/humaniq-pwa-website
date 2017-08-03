@@ -1,5 +1,13 @@
 import { connect } from 'react-redux';
-import SE_Legal from '../components/SE_Legal';
+import SE_Legal from 'components/SE_Legal';
+
+
+
+function mapStateToProps() {
+  return {articles};
+}
+
+export default connect(mapStateToProps)(SE_Legal);
 
 const articles = [
   {
@@ -30,9 +38,3 @@ const articles = [
     ]
   }
 ]
-
-function mapStateToProps() {
-  return {articles};
-}
-
-export default connect(mapStateToProps)(SE_Legal);

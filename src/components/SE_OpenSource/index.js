@@ -11,9 +11,9 @@ const SE_OpenSource = () =>{
   
   const renderedLinks = libraries.map( ({name, description, url, type, imgSrc}) => {
     return(
-        <div className={cn('item', {type})} key={'key_' + name}>
+        <div className={cn('item')} key={'key_' + name}>
           <A_Link to={url} type="block" external>
-          <div className={cn('item-image')}>
+          <div className={cn('item-image', {type})}>
             <img src={imgSrc} alt='Humaniq Android' />
           </div>
           <div className={cn('item-text')}>

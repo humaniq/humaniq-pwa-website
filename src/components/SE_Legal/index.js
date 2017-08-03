@@ -7,7 +7,7 @@ import A_H from 'A_H'
 import A_P from 'A_P'
 import Meta from './meta'
 import LegalSection from './O_LegalSection/index'
-import O_Menu from '../O_Menu/index'
+import O_Menu from 'O_Menu/index'
 
 const cn = cssClassName('SE_Legal');
 
@@ -134,7 +134,7 @@ SE_Legal.propTypes = {
     title: T.string.isRequired,
     sections: T.arrayOf(T.shape({
       header: T.string,
-      html: T.arrayOf(T.string),
+      html: T.string,
     })),
   }))
 };
