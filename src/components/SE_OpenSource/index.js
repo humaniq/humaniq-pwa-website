@@ -24,7 +24,18 @@ const SE_OpenSource = () =>{
           </div>
         </A_Link>
       </div>
+//         <div className={cn('item')} key={'key_' + name}>
+//           <A_Link to={url} type="block" external>
+//           <div className={cn('item-image', {type})}>
+//             <img src={imgSrc} alt='Humaniq Android' />
+//           </div>
+//           <div className={cn('item-text')}>
+//             <A_H type='openitem'>{name}</A_H>
+//             <A_P type='fifth'>{description}</A_P>
+//           </div>
+//           </A_Link>
 
+//         </div>
     )
   })
 
@@ -36,6 +47,15 @@ const SE_OpenSource = () =>{
           <div className={cn('header')}>
             <div className={cn('header-image')}>
               <img src="/img/opensource/open-source-image.svg" alt='Humaniq OpenSource'/>
+//           <A_Container type='section-clean'>
+//             <div className={cn('header')}>
+//               <div className={cn('header-image')}>
+//                 <img src="/img/opensource/open-source-image.svg" alt='Humaniq OpenSource'/>
+//               </div>
+//               <div className={cn('header-description')}>
+//                 <A_H type='hero'>Open Source</A_H>
+//                 <A_P type='hero'>Humaniq relies on open-source software and likes to give back to the community. Check out the libararies we have built.</A_P>
+//               </div>
             </div>
             <div className={cn('header-description')}>
               <A_H type='hero'>Open Source</A_H>
@@ -46,7 +66,7 @@ const SE_OpenSource = () =>{
           <A_H type='section'>Released Libraries</A_H>
 
           <A_Container type='section-clean'>
-            <div className={cn('container')}>
+            <div className={cn('list')}>
               {renderedLinks}
             </div>
           </A_Container>
@@ -71,42 +91,42 @@ const libraries = [
   {
     name: 'humaniq-android',
     description: 'Humaniq mobile app alpha version. Used as a concept to show the work of a DApp.',
-    url: '',
+    url: 'https://github.com/humaniq/humaniq-android',
     type: 'android',
     imgSrc: '/img/opensource/android.svg'
   },
   {
     name: 'findface',
     description: 'Golang client for FindFace cloud API. The wrapper was written for testing purposes.',
-    url: '',
+    url: 'https://github.com/humaniq/findface',
     type: 'go',
     imgSrc: '/img/opensource/go.svg'
   },
   {
     name: 'kairgo',
     description: 'Golang client for Kairos cloud API. The wrapper was written for testing purposes.',
-    url: '',
+    url: 'https://github.com/humaniq/kairgo',
     type: 'go',
     imgSrc: '/img/opensource/go.svg'
   },
   {
     name: 'emoji-auth',
     description: 'Graphic-pin authorization for the second step verification in your application.',
-    url: '',
+    url: 'https://github.com/humaniq/emoji-auth',
     type: 'js',
     imgSrc: '/img/opensource/js.svg'
   },
   {
     name: 'ico-contract',
     description: 'Humaniq smart contract. Was used during the ICO process.',
-    url: '',
+    url: 'https://github.com/humaniq/ico-contract',
     type: 'js',
     imgSrc: '/img/opensource/js.svg'
   },
   {
     name: 'ico-website',
     description: 'Humaniq ICO website v0. Was used during the ICO process.',
-    url: '',
+    url: 'https://github.com/humaniq/ico-website',
     type: 'js',
     imgSrc: '/img/opensource/js.svg'
   },

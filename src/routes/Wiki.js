@@ -1,15 +1,16 @@
 import React, {Component} from 'react';
 import WikiLayoutContainer from 'containers/WikiLayoutContainer'
 import {fetchWiki} from "AC/wiki";
-import initialLoad from 'utils/initialLoad'
 
 
 class WikiLayoutRoute extends Component {
 
-  static prepareData({dispatch}, query, params) {
-    if(initialLoad()) return;
-    dispatch(fetchWiki())
+  static prepareData({dispatch}) {
+    if(__SERVER__){
+      dispatch(fetchWiki())
+    }
   }
+
 
   render() {
     return (

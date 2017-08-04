@@ -8,6 +8,8 @@ import wikiArticles from './wikiArticles'
 import wikiSearch from './wikiSearch'
 import hmq from './hmq'
 import transactions from './transactions'
+import expStatistic from './expStatistic.js'
+
 import personal from './personal'
 
 
@@ -17,6 +19,7 @@ export default combineReducers({
   wikiArticles,
   wikiSearch,
   hmq,
+  expStatistic,
   transactions,
   personal
 });

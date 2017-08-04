@@ -12,7 +12,10 @@ import A_Link from 'A_Link';
 class SE_Error extends Component {
 
   render() {
-    const {err, url, error} = this.props
+    const {err,
+      // url,
+      // error
+    } = this.props
     let message;
     if(err === '500'){
       message = '500 internal server error'
@@ -39,7 +42,6 @@ class SE_Error extends Component {
               </div>
             </div>
           </div>
-
         </A_Container>
       </div>
     )
@@ -47,7 +49,10 @@ class SE_Error extends Component {
 }
 
 SE_Error.propTypes = {
-  err: T.string.isRequired,
+  err: T.string,
 };
 
+SE_Error.defaultProps = {
+  err: '404',
+};
 export default SE_Error

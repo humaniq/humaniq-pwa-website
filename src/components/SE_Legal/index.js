@@ -41,7 +41,7 @@ class SE_Legal extends Component {
     let minimalNegativeOffset = 0;
     let { visibleSection } = this.state;
 
-    anchors.forEach((anchor, i) => {
+    anchors.forEach(anchor => {
       const distanceScrolled = document.body.scrollTop;
       const elemViewportOffset = this[anchor].node.getBoundingClientRect().top;
 
