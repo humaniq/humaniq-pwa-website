@@ -3,7 +3,8 @@ import T from "prop-types";
 import './styles.scss';
 import { cssClassName, convert } from 'utils'
 import A_Container from 'A_Container'
-import O_DropDownBlue from 'O_DropDownBlue'
+// import O_DropDownBlue from 'O_DropDownBlue'
+import O_CustomSelectBlue from 'O_CustomSelectBlue'
 import A_H from 'A_H'
 import A_P from 'A_P'
 import Meta from './meta'
@@ -105,7 +106,8 @@ class SE_Legal extends Component {
             </div>
           </div>
 
-          <O_DropDownBlue />
+          {/*<O_DropDownBlue />*/}
+          <O_CustomSelectBlue />
 
           <div className={cn('wrapper')}>
             <div className={cn('sidebar')}>
