@@ -1,7 +1,7 @@
 {
-  "name": "buttercms-blog",
+  "name": "humaniq-pwa-website",
   "version": "0.0.1",
-  "description": "MVP: blog on butter-cms",
+  "description": "Humaniq Website v2.0",
   "main": "index.html",
   "private": true,
   "engines": {
@@ -20,7 +20,8 @@
     "dev2": "NODE_ENV=development NO_SSR=true nodemon --watch ./initializers --watch ./development.js ./initializers/server/index.js",
     "test": "jest --config jest.config.json",
     "st": "start-storybook -s ./static -p 6006",
-    "b-st": "build-storybook"
+    "b-st": "build-storybook",
+    "test": "jest --config jest.config.json"
   },
   "dependencies": {
     "app-module-path": "^2.2.0",

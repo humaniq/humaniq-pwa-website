@@ -16,7 +16,7 @@ class ErrorRoute extends Component {
 
 ErrorRoute.propTypes = {
   params: T.shape({
-    err: T.string.isRequired,
+    err: T.string,
   }).isRequired
 };
 

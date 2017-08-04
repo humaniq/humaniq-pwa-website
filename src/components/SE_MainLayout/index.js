@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import * as T from "prop-types";
 import './styles.scss';
-import Footer from './Footer'
+import O_Footer from 'O_Footer'
 import Header from './Header'
 import {cssClassName} from 'utils'
 const cn = cssClassName('SE_MainLayout')
@@ -18,7 +18,7 @@ class SE_MainLayout extends Component {
           {...{isMenuOpened, onClick: toggleMenu, headerTheme}}
         />
           <div className={cn('body', {isMenuOpened})}>{ children }</div>
-        <Footer isMenuOpened={isMenuOpened}/>
+        <O_Footer isMenuOpened={isMenuOpened}/>
       </div>
     )
   }
