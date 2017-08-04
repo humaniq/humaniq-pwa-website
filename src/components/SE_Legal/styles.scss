@@ -30,7 +30,6 @@
     height: 14rem;
     margin: 4rem 0;
     @include media ($tablet) {
-      margin: 4rem 0 0;
       height: auto;
     }
   }
@@ -51,10 +50,12 @@
     }
 
   }
-  &__sidebar{  flex: 1 1 7rem;
+  &__sidebar{
+    flex: 1 1 7rem;
     min-width: 30rem;
     display: flex;
-    @include media ($tablet) {
+    @include media ($mobile) {
+      flex: 1 1 4rem;
     }
   }
   &__sections{
