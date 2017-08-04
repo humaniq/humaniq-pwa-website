@@ -28,7 +28,7 @@
 .se-legal{
   &__top{
     height: 14rem;
-    margin: 4rem 0;
+    margin: 2rem 0;
     @include media ($tablet) {
       height: auto;
     }
@@ -54,8 +54,8 @@
     flex: 1 1 7rem;
     min-width: 30rem;
     display: flex;
-    @include media ($mobile) {
-      flex: 1 1 4rem;
+    @include media ($tablet) {
+      flex: 1 1 1.5rem;
     }
   }
   &__sections{
