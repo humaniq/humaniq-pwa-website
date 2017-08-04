@@ -3,7 +3,7 @@ import T from "prop-types";
 import './styles.scss';
 import { cssClassName, convert } from 'utils'
 import A_Container from 'A_Container'
-import O_DropDownBlue from 'O_DropDownBlue'
+// import O_DropDownBlue from 'O_DropDownBlue'
 import A_H from 'A_H'
 import A_P from 'A_P'
 import Meta from './meta'
@@ -104,8 +104,6 @@ class SE_Legal extends Component {
               <A_P type="hero">Humaniq is proud of its wide partnership network which includes everybody from fintech companies and Blockchain communities to publishing media and app developers.</A_P>
             </div>
           </div>
-
-          <O_DropDownBlue />
 
           <div className={cn('wrapper')}>
             <div className={cn('sidebar')}>
