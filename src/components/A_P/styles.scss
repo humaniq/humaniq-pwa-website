@@ -4,8 +4,8 @@
 .a-p{
   &_type{
     &_video-hero{
-      font-size: 18px;
-      line-height: 28.0px;
+      font-size: 1.6rem;
+      line-height: 2.8rem;
       text-align: center;
       color: #ffffff;
       margin-bottom: 16px;
@@ -40,6 +40,9 @@
           color: $white;
         }
       }
+      //@include media($mobile) {
+      //  text-align: justify
+      //}
     }
     &_fourth{
       font-size: 1.5rem;
@@ -52,5 +55,11 @@
       line-height: 1.54rem;
       color: $black-2;
     }
+    &_sixth{
+      font-size: 1.3rem;
+      line-height: 2rem;
+      color: #48474c;
+    }
   }
 }
+

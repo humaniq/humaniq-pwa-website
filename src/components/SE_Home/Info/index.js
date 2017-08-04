@@ -8,10 +8,11 @@ import A_Image from 'A_Image'
 import A_H from 'A_H'
 import A_Container from 'A_Container'
 
-const SE_HomeInfo = ({children, type, img, title, link}) =>{
+const SE_HomeInfo = ({children, type, img, title, link, mobLast}) =>{
   const moving = type == 'moving-title'
+  const containerType = mobLast ? 'section-last-mob' : 'section'
   return (
-    <A_Container type='section'>
+    <A_Container type={containerType}>
       <div className={cn('root')}>
         <div className={cn('body')}>
           <span className={moving && "mobile-hide"}>

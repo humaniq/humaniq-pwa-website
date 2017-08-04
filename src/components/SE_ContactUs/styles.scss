@@ -10,8 +10,8 @@
 
       &-image{
         margin-right: 5.5rem;
-        left: -.8rem;
-        top: -.5rem;
+        //left: -.8rem;
+        //top: -.5rem;
         @include media($mobile) {
           display: none;
         }

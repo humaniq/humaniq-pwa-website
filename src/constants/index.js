@@ -17,6 +17,8 @@ export const POSTS = 'POSTS'
 export const ERROR = 'ERROR'
 export const MENU = 'MENU'
 export const PARTNERS = 'PARTNERS'
+export const AMBASSADORS = 'AMBASSADORS'
+
 export const BY_REFERENCE = 'BY_REFERENCE'
 
 export const CONTENT = 'CONTENT'
@@ -26,6 +28,7 @@ export const WIKI_SEARCH = 'WIKI_SEARCH'
 
 export const JOIN_FORM = 'JOIN_FORM'
 export const SUBSCRIBE_FORM = 'SUBSCRIBE_FORM'
+export const AMBASSADORS_FORM = 'AMBASSADORS_FORM'
 
 export const START = '_START'
 export const SUCCESS = '_SUCCESS'
