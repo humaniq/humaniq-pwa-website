@@ -46,7 +46,7 @@ class SE_ContactUs extends Component {
 
             <section className={cn('program')}>
               <A_H type='section'>Ambassador’s Program</A_H>
-              <A_P type='third'>If you want to become a part of Humaniq’s Global Initiative Program, please <A_Link onClick={this.prevent} type='primary'>fill out this form.</A_Link></A_P>
+              <A_P type='third'>If you want to become a part of Humaniq’s Global Initiative Program, please <A_Link to="/form/ambassadors" type='primary'>fill out this form.</A_Link></A_P>
             </section>
 
             <section className={cn('office')}>
