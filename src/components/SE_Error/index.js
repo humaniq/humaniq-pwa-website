@@ -20,7 +20,7 @@ class SE_Error extends Component {
     if(err === '500'){
       message = '500 internal server error'
     } else {
-      message = 'Welp, we searched all through the back end, and we couldn’t find the page you’re looking for.'
+      message = 'Welp, we searched all through the back end, and we couldn’t find the page you’re looking for'
     }
 
     return (
@@ -34,7 +34,7 @@ class SE_Error extends Component {
               </div>
               <div className={cn('error-main-message')}>
                 <A_H type='xxl'>{err}</A_H>
-                <span className={cn('message')}>{message}!!!!</span>
+                <span className={cn('message')}>{message}!</span>
                 <A_P type='hero'>
                   <A_Link to={'/'} type='primary'>Go back to home page »</A_Link>
                 </A_P>
