@@ -5,9 +5,9 @@ beforeAll(() => {
 });
 
 
-describe('home page', () => {
+let page
 
-  let page
+describe('home page', () => {
 
   beforeEach(() =>{
     page = nightmare().goto('http://localhost:8080')
@@ -24,8 +24,6 @@ describe('home page', () => {
 
 describe('Open Source page', () => {
 
-  let page
-
   beforeEach(() =>{
     page = nightmare().goto('http://localhost:8080/open-source')
   })
@@ -35,14 +33,12 @@ describe('Open Source page', () => {
     const text = await page
       .evaluate(() => document.body.textContent)
       .end()
-      expect(text).toContain('Humaniq relies on open-source software and likes to give back to the community.')
-    })
+    expect(text).toContain('Humaniq relies on open-source software and likes to give back to the community.')
+  })
 })
 
 
 describe('Contact Us page', () => {
-
-  let page
 
   beforeEach(() =>{
     page = nightmare().goto('http://localhost:8080/contact-us')
@@ -54,13 +50,12 @@ describe('Contact Us page', () => {
         .evaluate(() => document.body.textContent)
         .end()
 
-    expect(text).toContain('Humaniq is powered both by the Blockchain, and by our community,')
+    expect(text).toContain('Humaniq is proud of its wide partnership network')
   })
 })
 
 
 describe("Wiki page", () => {
-  let page
 
   beforeEach(() => {
     page = nightmare().goto('http://localhost:8080/wiki')
@@ -75,7 +70,6 @@ describe("Wiki page", () => {
 })
 
 describe("HQM Explorer page", () => {
-  let page
 
   beforeEach(() => {
     page = nightmare().goto('http://localhost:8080/hmq-explorer')
@@ -90,7 +84,6 @@ describe("HQM Explorer page", () => {
 })
 
 describe("Legal page", () => {
-  let page
 
   beforeEach(() => {
     page = nightmare().goto('http://localhost:8080/hmq-explorer')
@@ -106,7 +99,6 @@ describe("Legal page", () => {
 })
 
 describe("Subscribe page", () => {
-  let page
 
   beforeEach(() => {
     page = nightmare().goto('http://localhost:8080/form/subscribe')
@@ -114,15 +106,14 @@ describe("Subscribe page", () => {
   })
 
   it('shows page text', async () => {
-      const text = await page
-        .evaluate(() => document.body.textContent)
-        .end()
-      expect(text).toContain('Subscribe to our newsletter')
+    const text = await page
+      .evaluate(() => document.body.textContent)
+      .end()
+    expect(text).toContain('Subscribe to our newsletter')
   })
 })
 
 describe("Partners form page", () => {
-  let page
 
   beforeEach(() => {
     page = nightmare().goto('http://localhost:8080/form/join')
@@ -137,9 +128,22 @@ describe("Partners form page", () => {
   })
 })
 
+describe("Ambassadors form page", () => {
+
+  beforeEach(() => {
+    page = nightmare().goto('http://localhost:8080/form/ambassadors')
+
+  })
+
+  it('shows page text', async () => {
+    const text = await page
+      .evaluate(() => document.body.textContent)
+      .end()
+    expect(text).toContain('Biography')
+  })
+})
 
 describe("Use cases page", () => {
-  let page
 
   beforeEach(() => {
     page = nightmare().goto('http://localhost:8080/use-cases')
@@ -148,12 +152,38 @@ describe("Use cases page", () => {
 
   it('shows page text', async () => {
     const text = await page
-      .goto('http://localhost:8080/use-cases')
       .evaluate(() => document.body.textContent)
       .end()
-      expect(text).toContain('The core idea behind Humaniq stands far beyond the regular banking. ')
+    expect(text).toContain('The core idea behind Humaniq stands far beyond the regular banking. ')
   })
 })
 
+describe("Partners page", () => {
 
+  beforeEach(() => {
+    page = nightmare().goto('http://localhost:8080/partners')
 
+  })
+
+  it('shows page text', async () => {
+    const text = await page
+      .evaluate(() => document.body.textContent)
+      .end()
+    expect(text).toContain('We believe in the services that Humaniq partners provide, to support us in r')
+  })
+})
+
+describe("Ambassadors page", () => {
+
+  beforeEach(() => {
+    page = nightmare().goto('http://localhost:8080/ambassadors')
+
+  })
+
+  it('shows page text', async () => {
+    const text = await page
+      .evaluate(() => document.body.textContent)
+      .end()
+    expect(text).toContain('We want to communicate directly with the people we wish to serve: the unbanked')
+  })
+})

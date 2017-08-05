@@ -12,9 +12,14 @@ export const WEBSITE_DOMAIN_NAME = 'humaniq.com'
 export const HUMANIQ_BACKEND_API_URL = 'https://f03pn9k2v8.execute-api.eu-west-1.amazonaws.com'
 export const ENDPOINT_JOIN_FORM = `${HUMANIQ_BACKEND_API_URL}/dev/subscriptions/partners`
 export const ENDPOINT_SUBSCRIBE_FORM = `${HUMANIQ_BACKEND_API_URL}/dev/subscriptions/newsletters`
+export const ENDPOINT_AMBASSADORS_FORM = `${HUMANIQ_BACKEND_API_URL}/dev/subscriptions/ambassadors`
+
 
 export const ENDPOINT_PARTNERS = `https://s3-eu-west-1.amazonaws.com/humaniq-web-backend-public/partners`
 export const ENDPOINT_PARTNERS_LIST = `${ENDPOINT_PARTNERS}/partners.json`
+
+export const ENPOINT_AMBASSADORS = 'https://s3-eu-west-1.amazonaws.com/humaniq-web-backend-public/ambassadors'
+export const ENPOINT_AMBASSADORS_LIST = `${ENPOINT_AMBASSADORS}/ambassadors.json`
 
 export const ENDPOINT_WIKI_SEARCH = 'https://f03pn9k2v8.execute-api.eu-west-1.amazonaws.com/dev/articles/search'
 

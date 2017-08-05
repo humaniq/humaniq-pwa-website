@@ -20,6 +20,8 @@ A_P.propTypes = {
     'fourth', // 15/26.600 brand blue
     'fifth', // 13/1.54 grey
     'third-center_white', // 15/26 + alight-text: center
+    'third-center_white', // 15/26 + alight-text: center
+    'sixth' // 13/20 #48474c
   ]),
 };
 
