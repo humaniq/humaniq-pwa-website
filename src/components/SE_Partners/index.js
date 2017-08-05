@@ -13,6 +13,7 @@ import A_Btn from 'A_Btn'
 import M_Dropdown from 'M_Dropdown'
 import M_Tooltip from 'M_Tooltip'
 import A_Link from 'A_Link'
+import O_TextUsHere from 'O_TextUsHere'
 
 class SE_Partners extends Component {
 
@@ -96,7 +97,7 @@ class SE_Partners extends Component {
     return (
       <div>
         <Meta />
-        <A_Container type="equal">
+        <A_Container type="section">
           <O_Hero img={{src: "/img/illustrations/group-6.svg", alt: "parners"}}>
             <A_H type="hero">Join our Community</A_H>
             <A_P type="hero">Humaniq is proud of its wide partnership network which includes everybody from fintech
@@ -129,7 +130,19 @@ class SE_Partners extends Component {
               {this.getPartners(entities, filter)}
             </div>
           </div>
+        </A_Container>
+        <A_Container type="equal">
 
+          <O_TextUsHere
+            {...{
+              title: 'Join our Community',
+              text: 'Join Humaniq ever growing network. Get in touch if your organization would like to join the network.',
+              link: {
+                linkText: 'Drop off your information',
+                url: 'mailto:info@humaniq.com'
+              }
+            }}
+          />
         </A_Container>
       </div>
     )

@@ -63,7 +63,10 @@
     border-radius: 2px;
     box-shadow: 0 1px 1px 0 rgba(97, 127, 152, 0.2), 1px 0 0 0 rgba(97, 127, 152, 0.1), -1px 0 0 0 rgba(97, 127, 152, 0.1);
     @include media($mobile) {
-      height: 100vh
+      height: 100vh;
+      padding-left: 1.6rem;
+      padding-right: 1.6rem;
+
     }
   }
   &__final-btn{

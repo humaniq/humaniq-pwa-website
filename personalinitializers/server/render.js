@@ -1,17 +1,18 @@
-import React from 'react'
-import ReactDOMServer from 'react-dom/server'
-import {Provider} from 'react-redux';
-import {match, RouterContext} from 'react-router'
-import createStore from 'store'
-import getRoutes from '../../personalsrc/routes'
-import prepareData from 'utils/prepareData'
-import {compact} from 'lodash/array'
 import webpackAssets from './webpackAssets';
-import {createLocation} from 'history/lib/LocationUtils';
 import Helmet from 'react-helmet'
-import {stringify} from 'qs'
 
-const store = createStore()
+// import React from 'react'
+// import ReactDOMServer from 'react-dom/server'
+// import {Provider} from 'react-redux';
+// import {match, RouterContext} from 'react-router'
+// import createStore from 'store'
+// import getRoutes from '../../personalsrc/routes'
+// import prepareData from 'utils/prepareData'
+// import {compact} from 'lodash/array'
+// import {createLocation} from 'history/lib/LocationUtils';
+// import {stringify} from 'qs'
+
+// const store = createStore()
 
 export default function(req, res){
 

@@ -7,7 +7,9 @@ import A_Image from 'A_Image'
 import A_P from 'A_P'
 import history from 'history'
 
-const SE_PersonalFormHeader = ({phone_number, photo_url, children, invitationCode}) =>(
+const SE_PersonalFormHeader = ({phone_number, photo_url, children,
+                                 // invitationCode
+}) =>(
   <div className={cn('root')}>
     <div className={cn('text')} onClick={() => history.push(`/`)}>
       <div className={cn('avatar')}>

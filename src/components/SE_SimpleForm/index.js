@@ -5,6 +5,7 @@ import {cssClassName} from 'utils'
 const cn = cssClassName('SE_SimpleForm')
 import SubscribeForm from './SubscribeForm'
 import JoinForm from './JoinForm'
+import AmbassadorsForm from './AmbassadorsForm'
 
 class SE_SimpleForm extends Component {
 
@@ -14,6 +15,8 @@ class SE_SimpleForm extends Component {
         return <JoinForm {...{handleSubmit}} />
       case 'subscribe':
         return <SubscribeForm {...{handleSubmit}} />
+      case 'ambassadors':
+        return <AmbassadorsForm {...{handleSubmit}} />
     }
   }
 
@@ -36,6 +39,7 @@ SE_SimpleForm.propTypes = {
   page: T.oneOf([
     'join', // join partners form
     'subscribe', // subscribe letters form
+    'ambassadors' // join ambassadors form
   ]).isRequired,
   handleSubmit: T.func.isRequired,
 };

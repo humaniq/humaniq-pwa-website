@@ -16,7 +16,8 @@ import Legal from './Legal'
 import OpenSource from './OpenSource'
 import WikiSearch from './WikiSearch'
 import Hmq from './Hmq'
-import Markup from './Markup'
+import Ambassadors from './Ambassadors'
+
 
 import {cleanWikiSearch} from 'AC/wiki'
 
@@ -39,6 +40,10 @@ const getRoutes = (store) => {
         />
         <Route
           path="subscribe"
+          component={SimpleForm}
+        />
+        <Route
+          path="ambassadors"
           component={SimpleForm}
         />
       </Route>
@@ -83,8 +88,9 @@ const getRoutes = (store) => {
              prepareData={Hmq.prepareData}
              component={Hmq}
       />
-      <Route path="mark-up"
-             component={Markup}
+      <Route path="ambassadors"
+             prepareData={Ambassadors.prepareData}
+             component={Ambassadors}
       />
       <Route
         path="/error/:err"

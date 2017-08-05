@@ -84,7 +84,9 @@ export function getArticleLinks(ids, entities){
   )
 }
 
-export const safeDA = (object, props) => props.reduce((prefix, val) => (prefix && prefix[val]) ? prefix[val] : false, object)
+//save deep access to objects and arrays, ex. of use:   safeDA([{a:{b:10}}], ['0', 'a', 'b'], 0),
+// return value or noResult value, if there is no noResult value returns false.
+export const safeDA = (object, props, noResult = false) => props.reduce((prefix, val) => (prefix && prefix[val]) ? prefix[val] : noResult, object)
 
 
 function rndStr(long){
@@ -100,3 +102,16 @@ export const rnd = {
   str: rndStr,
   num: (long) => Math.round(Math.random() * Math.pow(10, long))
 }
+
+//number format function ex. of use: numberFormat(100000000000, 2) => '10,000,000.00'
+export const numberFormat = function(n, dp){
+
+  if(!n) return '0';
+  var e = '', s = e+n, l = s.length, b = n < 0 ? 1 : 0,
+    i = s.lastIndexOf('.'), j = i == -1 ? l : i,
+    r = e, d = s.substr(j+1, dp);
+  while ( (j-=3) > b ) { r = ',' + s.substr(j, 3) + r; }
+  return s.substr(0, j + 3) + r +
+    (dp ? '.' + d + ( d.length < dp ?
+      ('00000').substr(0, dp - d.length):e):e);
+};

@@ -25,9 +25,8 @@ const O_Menu = ({ options, selected, onClick, rootLink, stickyMenu }) => {
   });
 
 
-  const selectedDropdownOption = options.find(option => option.anchor === selected) || options[0];
-  const dropdownValue = selectedDropdownOption.text;
-  console.log(dropdownValue)
+  // const selectedDropdownOption = options.find(option => option.anchor === selected) || options[0];
+  // const dropdownValue = selectedDropdownOption.text;
   return (
     <nav>
       <ul className={cn('wider-screens', {stickyMenu})}>

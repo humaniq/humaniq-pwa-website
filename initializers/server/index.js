@@ -22,7 +22,6 @@ if (__DEVELOPMENT__) {
   const webpackDev = require('webpack-dev-middleware')
   const webpackHot = require('webpack-hot-middleware')
   const compiler = webpack(config)
-
   application.use(
     webpackDev(
       compiler,

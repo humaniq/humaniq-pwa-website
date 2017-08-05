@@ -1,15 +1,13 @@
 import React, {Component} from 'react';
 import PartnersContainer from 'containers/PartnersContainer'
-import initialLoad from 'utils/initialLoad'
 import {fetchPartners} from 'AC/otherAPI'
 
 class PartnersRoute extends Component {
 
-  static prepareData({dispatch}, query) {
-    if(initialLoad()) return;
-    return (
-      dispatch(fetchPartners())
-    )
+  static prepareData({dispatch}) {
+    if(__SERVER__) {
+      return dispatch(fetchPartners())
+    }
   }
 
   render() {
