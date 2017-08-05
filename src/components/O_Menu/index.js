@@ -1,64 +1,106 @@
-import React from 'react';
+import React, { Component } from 'react';
 import * as T from "prop-types";
-// import { browserHistory } from 'react-router';
 import './styles.scss';
-import { cssClassName } from 'utils'
-const cn = cssClassName('O_Menu');
-import {Link} from 'react-router';
-// import M_Dropdown from 'M_Dropdown';
+import {cssClassName, convert} from 'utils'
+const cn = cssClassName('O_Menu')
+import {safeDA} from "utils/index"
 
+class O_Menu extends Component {
+  state = {
+    stickyMenu: false,
+  };
 
-const O_Menu = ({ options, selected, onClick, rootLink, stickyMenu }) => {
-  const renderedLinks = options.map(({ anchor, text }) => {
-    const isSelected = selected === anchor;
+  componentDidMount() {
+    document.addEventListener('scroll', this.checkVisibleSection);
+    this.forceUpdate()
+
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('scroll', this.checkVisibleSection);
+  }
+
+  getMenuOptions(articles) {
+    return articles.map(a => ({
+      anchor: convert.toCleanKebab(a.title),
+      text: a.title,
+    }))
+  }
+
+  checkVisibleSection = () => {
+    if (this.state.stickyMenu && (document.body.scrollTop < this.helperNode.getBoundingClientRect().top)) {
+      this.setState({stickyMenu: false})
+    } else if (!this.state.stickyMenu && (document.body.scrollTop > this.helperNode.getBoundingClientRect().top)) {
+      this.setState({stickyMenu: true})
+    }
+
+  };
+
+  render() {
     return (
-      <li key={'menu-item-' + anchor} className={cn('nav-links-item', { active: isSelected })}>
-        {
-          isSelected
-            ? <div>{text}</div>
-            : <Link to={rootLink + anchor} onClick={() => onClick(anchor)}>
-                {text}
-              </Link>
-        }
-      </li>
+      <div>
+        тут текст
+      </div>
     )
-  });
-
-
-  // const selectedDropdownOption = options.find(option => option.anchor === selected) || options[0];
-  // const dropdownValue = selectedDropdownOption.text;
-  return (
-    <nav>
-      <ul className={cn('wider-screens', {stickyMenu})}>
-        { renderedLinks }
-      </ul>
-      {/*<div className={cn('smaller-screens')}>*/}
-        {/*<M_Dropdown*/}
-          {/*options={options.map(option => option.text)}*/}
-          {/*onChange={(text) => {*/}
-            {/*browserHistory.push(rootLink + convert.toKebab(text));*/}
-            {/*return text;*/}
-          {/*}}*/}
-          {/*selectedText='text'*/}
-        {/*/>*/}
-      {/*</div>*/}
-    </nav>
-  )
-};
-
+  }
+}
 
 O_Menu.propTypes = {
-  options: T.arrayOf(T.shape({
-    anchor: T.string,
-    text: T.string.isRequired,
-  })),
-  selected: T.string,
-  handleNavigation: T.func,
 };
 
 O_Menu.defaultProps = {
-  options: [],
-  selected: '',
-};
+}
 
 export default O_Menu
+
+
+// import React from 'react';
+// import * as T from "prop-types";
+// import Desktop from './Desktop'
+//
+// const O_MenuDesktop = ({ options, selected, rootLink, stickyMenu, type }) => {
+//   const _options = options.map(({ anchor, text }) => {
+//     const isSelected = selected === anchor;
+//     return ({
+//       text,
+//       url: rootLink + anchor,
+//       isSelected
+//     })
+//   });
+//
+//   return (
+//     <div>тут меню</div>
+//   )
+//
+//   //
+//   // console.log( options, selected, rootLink, stickyMenu, type)
+//   // switch(type){
+//   //   case 'desktop':
+//   //     return <Desktop {...{options: _options, stickyMenu}} />
+//   //   case 'mobile':
+//   //     return <Desktop {...{options: _options, stickyMenu}} />
+//   //
+//   // }
+// };
+//
+//
+// O_MenuDesktop.propTypes = {
+//   options: T.arrayOf(T.shape({
+//     anchor: T.string,
+//     text: T.string.isRequired,
+//   })),
+//   type: T.oneOf([
+//     'desctop', //shows on desctop
+//     'mobile' //shows on mobile
+//   ]),
+//   rootLink: T.string.isRequired,
+//   selected: T.string.isRequired,
+//   stickyMenu: T.bool.isRequired
+// };
+//
+// O_MenuDesktop.defaultProps = {
+//   options: [],
+//   selected: '',
+// };
+//
+// export default O_MenuDesktop

@@ -9,12 +9,12 @@ import A_P from 'A_P'
 import Meta from './meta'
 import LegalSection from './O_LegalSection/index'
 import O_Menu from 'O_Menu/index'
-
+import {safeDA} from "utils/index"
 const cn = cssClassName('SE_Legal');
 
 class SE_Legal extends Component {
   state = {
-    selected: this.props.articles[0],
+    selected: safeDA(this.props, ['articles', 0, 'anchor']),
     stickyMenu: false,
   };
 
@@ -65,10 +65,6 @@ class SE_Legal extends Component {
     }
   };
 
-  handleNavigation = (selected) => {
-    this.setState({ selected });
-  };
-
   renderSections(articles) {
     return articles.map((props, i) =>
       <LegalSection
@@ -89,9 +85,8 @@ class SE_Legal extends Component {
 
   render() {
     const { articles } = this.props;
-    const {stickyMenu} = this.state
+    const {stickyMenu, selected} = this.state
     const menuOptions = this.getMenuOptions(articles);
-    const selected = this.state.selected;
 
     return (
       <div className={cn()}>
@@ -104,18 +99,24 @@ class SE_Legal extends Component {
               <A_P type="hero">Humaniq is proud of its wide partnership network which includes everybody from fintech companies and Blockchain communities to publishing media and app developers.</A_P>
             </div>
           </div>
-          <O_CustomSelectBlue />
+          <O_CustomSelectBlue
+            stickyMenu = {stickyMenu}
+            options={menuOptions}
+            selected={selected}
+            rootLink="/legal/#"
+            type="desktop"
+          />
           <div className={cn('wrapper')}>
             <div className={cn('sidebar')}>
               <div ref={node => this.helperNode = node}  />
               <div className={cn('menu')}>
-                <O_Menu
-                  stickyMenu = {stickyMenu}
-                  options={menuOptions}
-                  onClick={this.handleNavigation}
-                  selected={selected}
-                  rootLink="/legal/#"
-                />
+                меню
+                {/*<O_Menu*/}
+                  {/*stickyMenu = {stickyMenu}*/}
+                  {/*options={menuOptions}*/}
+                  {/*selected={selected}*/}
+                  {/*rootLink="/legal/#"*/}
+                {/*/>*/}
               </div>
             </div>
 
