@@ -51,11 +51,11 @@ class SE_ContactUs extends Component {
 
             <section className={cn('office')}>
               <A_H type='section'>Humaniq’s Legal Office</A_H>
-              <A_P type='third'>Humaniq LLC.</A_P>
+              <A_P type='third'>Humaniq International LTD</A_P>
               <ul className={cn('address')}>
-                <li>25C, Boulevard Royal</li>
-                <li>Luxembourg, L-2449</li>
-                <li>Luxembourg</li>
+                <li>41 Luke St</li>
+                <li>London, EC2A</li>
+                <li>United Kingdom</li>
               </ul>
             </section>
 
