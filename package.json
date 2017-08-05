@@ -19,7 +19,7 @@
     "dev": "NODE_ENV=development nodemon --watch initializers --watch webpack.config.js ./initializers/server/index.js",
     "dev2": "NODE_ENV=development NO_SSR=true nodemon --watch ./initializers --watch webpack.config.js ./initializers/server/index.js",
     "st": "start-storybook -s ./static -p 6006",
-    "test": "jest --config jest.config.json"
+    "tests": "jest --config jest.config.json"
   },
   "dependencies": {
     "app-module-path": "^2.2.0",
