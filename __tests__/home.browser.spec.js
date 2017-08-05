@@ -139,7 +139,7 @@ describe("Ambassadors form page", () => {
     const text = await page
       .evaluate(() => document.body.textContent)
       .end()
-    expect(text).toContain('Biography')
+    expect(text).toContain('Tell us about yourself and why you want to become an ambassador')
   })
 })
 
