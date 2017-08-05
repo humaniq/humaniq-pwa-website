@@ -1,6 +1,6 @@
 import {BACKEND_CALL} from 'middleware/humaniqBackendApi'
-import {ENDPOINT_JOIN_FORM, ENDPOINT_SUBSCRIBE_FORM} from 'constants/api'
-import {START, SUCCESS, FAIL, POST, JOIN_FORM, SUBSCRIBE_FORM} from 'constants'
+import {ENDPOINT_JOIN_FORM, ENDPOINT_SUBSCRIBE_FORM, ENDPOINT_AMBASSADORS_FORM} from 'constants/api'
+import {START, SUCCESS, FAIL, POST, JOIN_FORM, SUBSCRIBE_FORM, AMBASSADORS_FORM} from 'constants'
 
 export function submit(formName, data) {
   let endpoint, form;
@@ -12,6 +12,10 @@ export function submit(formName, data) {
     case 'subscribe':
       endpoint = ENDPOINT_SUBSCRIBE_FORM
       form = SUBSCRIBE_FORM
+      break;
+    case 'ambassadors':
+      endpoint = ENDPOINT_AMBASSADORS_FORM
+      form = AMBASSADORS_FORM
   }
 
   return ({

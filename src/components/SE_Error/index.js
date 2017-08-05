@@ -12,7 +12,10 @@ import A_Link from 'A_Link';
 class SE_Error extends Component {
 
   render() {
-    const {err, url, error} = this.props
+    const {err,
+      // url,
+      // error
+    } = this.props
     let message;
     if(err === '500'){
       message = '500 internal server error'
@@ -30,17 +33,14 @@ class SE_Error extends Component {
                 <img src="/img/humaniq-logos/group.png" alt="Humaniq"/>
               </div>
               <div className={cn('error-main-message')}>
-                <A_H type='xxs'>{err}</A_H>
-                <A_P type='third'>{message}</A_P>
+                <A_H type='xxl'>{err}</A_H>
+                <span className={cn('message')}>{message}!!!!</span>
                 <A_P type='hero'>
                   <A_Link to={'/'} type='primary'>Go back to home page »</A_Link>
                 </A_P>
               </div>
             </div>
           </div>
-
-
-
         </A_Container>
       </div>
     )
@@ -48,7 +48,10 @@ class SE_Error extends Component {
 }
 
 SE_Error.propTypes = {
-  err: T.string.isRequired,
+  err: T.string,
 };
 
+SE_Error.defaultProps = {
+  err: '404',
+};
 export default SE_Error

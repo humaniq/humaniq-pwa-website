@@ -200,7 +200,7 @@ class SE_PersonalForm extends Component {
             </form>
           </div>
         </div>
-        <Country show={this.state.windowShow} handleSubmit={this.onCountrySubmit} />
+        <Country countryCodes={countryCodes} show={this.state.windowShow} handleSubmit={this.onCountrySubmit} />
       </div>
     )
   }

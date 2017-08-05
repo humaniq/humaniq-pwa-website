@@ -15,48 +15,49 @@ class SE_ContactUs extends Component {
         <A_Container type='equal'>
           <div className={cn('contactus')}>
 
-            <A_Container type='section-long-text'>
+            <A_Container type='section-hmq'>
               <div className={cn('contactus-header')}>
                 <div className={cn('contactus-header-image')}>
                   <img src="/img/contactus/contact-us-160-px.svg" />
                 </div>
                 <div className={cn('contactus-header-description')}>
-                  <A_H type='section'>Contact Humaniq</A_H>
-                  <A_P type='hero'>Humaniq is powered both by the Blockchain, and by our community, everyone who uses our Humaniq App and HMQ coin cryptocurrency and contributes to our project. Like any community, it is better when we talk to each other. Find out how you can get in touch with us.</A_P>
+                  <A_H type='hero'>Contact Humaniq</A_H>
+                  <A_P type='hero'>Humaniq is proud of its wide partnership network which includes everybody from fintech companies and Blockchain communities to publishing media and app developers.</A_P>
                 </div>
               </div>
             </A_Container>
 
-            <A_Container type='section-long-text'>
+            <section className={cn('support')}>
               <A_H type='section'>Customer Support</A_H>
               <A_P type='third'>For any questions you may have please contact:</A_P>
-              - <A_Link to="mailto:info@humaniq.com" type='primary' external>info@humaniq.com</A_Link>
-            </A_Container>
+              <A_Link to="mailto:info@humaniq.com" type='primary' external>info@humaniq.com</A_Link>
+            </section>
 
-            <A_Container type='section-long-text'>
+            <section className={cn('policy')}>
               <A_H type='section'>Questions regarding Privacy Policy</A_H>
               <A_P type='third'>If you have any questions regarding our user or data Privacy Policy, please <A_Link to="mailto:info@humaniq.com" type='primary' external>reach out to us.</A_Link></A_P>
-            </A_Container>
+            </section>
 
-            <A_Container type='section-long-text'>
+
+            <section className={cn('partnerships')}>
               <A_H type='section'>Partnerships</A_H>
               <A_P type='third'>For any inquires regarding partnerships, please <A_Link to="/form/join" type='primary'>fill out this form.</A_Link></A_P>
-            </A_Container>
+            </section>
 
-            {/*<A_Container type='section-long-text'>*/}
-              {/*<A_H type='section'>Ambassador’s Program</A_H>*/}
-              {/*<A_P type='third'>If you want to become a part of Humaniq’s Global Initiative Program, please <A_Link onClick={this.prevent} type='primary'>fill out this form.</A_Link></A_P>*/}
-            {/*</A_Container>*/}
+            <section className={cn('program')}>
+              <A_H type='section'>Ambassador’s Program</A_H>
+              <A_P type='third'>If you want to become a part of Humaniq’s Global Initiative Program, please <A_Link onClick={this.prevent} type='primary'>fill out this form.</A_Link></A_P>
+            </section>
 
-            <A_Container type='section-long-text'>
-              <A_H type='section'>Humaniq’s Office</A_H>
-              <A_P type='third'>Humaniq International LTD.</A_P>
-              <ul>
-                <li>41 Luke St</li>
-                <li>London, EC2A</li>
-                <li>United Kingdom</li>
+            <section className={cn('office')}>
+              <A_H type='section'>Humaniq’s Legal Office</A_H>
+              <A_P type='third'>Humaniq LLC.</A_P>
+              <ul className={cn('address')}>
+                <li>25C, Boulevard Royal</li>
+                <li>Luxembourg, L-2449</li>
+                <li>Luxembourg</li>
               </ul>
-            </A_Container>
+            </section>
 
           </div>
         </A_Container>

@@ -1,5 +1,5 @@
 import React , { Component } from 'react';
-import PropTypes from 'prop-types';
+import * as T from 'prop-types';
 import './styles.scss';
 import {cssClassName} from 'utils';
 const cn = cssClassName('O_Country');
@@ -100,10 +100,10 @@ O_Country.defaultProps = {
 };
 
 O_Country.propTypes = {
-  countries: PropTypes.arrayOf(
-    PropTypes.shape({
-      name: PropTypes.string,
-      code: PropTypes.string,
+  countries: T.arrayOf(
+    T.shape({
+      name: T.string,
+      code: T.string,
     }),
   )
 };

@@ -8,19 +8,25 @@
     &-main{
       display: flex;
       justify-content: center;
-      margin: 10rem 0 10rem 0;
+      margin: 13rem 0;
       @include media($mobile) {
         display: block;
         margin: 5rem 0 5rem 0;
       }
 
       &-image{
-        margin-right: 3rem;
+        margin-right: 2.5rem;
       }
       &-message{
         width: 36rem;
+        @include media($tablet) {
+          width: auto;
+        }
       }
     }
-
+  }
+  &__message {
+    display: inline-block;
+    padding-bottom: 2rem;
   }
 }
