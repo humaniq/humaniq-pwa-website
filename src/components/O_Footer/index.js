@@ -26,6 +26,7 @@ const links = [
       // {name: 'News', url: '#'},
       {name: 'Use Cases', url: '/use-cases'},
       {name: 'Partners', url: '/partners'},
+      {name: 'Ambassadors', url: '/ambassadors'},
       // {name: 'Events', url: '#'}
     ]
   },

@@ -14,7 +14,9 @@ $icon-size: 20rem;
       color: #ffffff;
       padding-bottom: 15px;
       line-height: 43px;
-
+      @include media($mobile) {
+        font-size: 2.3rem;
+      }
     }
     &_hmq-e{
       font-size: 1.3rem;
@@ -86,7 +88,7 @@ $icon-size: 20rem;
       line-height: 2rem;
       padding-bottom: .2rem;
     }
-    &_xxs {
+    &_xxl {
       font-size: 60px;
       line-height: 64px;
       padding-bottom: .2rem;
