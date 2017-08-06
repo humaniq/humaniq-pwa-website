@@ -15,7 +15,7 @@ const store = createStore(window.__INITIAL_STATE__)
 class App extends PureComponent {
 
   componentDidMount () {
-    if (typeof document !== 'undefined') {
+    if (__CLIENT__) {
       // TODO: test on iOS device!!!
       progress()
     }
