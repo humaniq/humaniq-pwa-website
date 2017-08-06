@@ -13,6 +13,7 @@
     flex: 0 0 40rem;
     @include media($mobile) {
       flex-basis: auto;
+      margin-bottom: 1.6rem;
     }
     &_type_hidding-img{
       @include media($mobile) {
@@ -25,7 +26,7 @@
     padding-right: 2rem;
     @include media($mobile) {
       flex-basis: auto;
+      padding-right: 0;
     }
   }
-
 }

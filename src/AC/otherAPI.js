@@ -1,11 +1,13 @@
 import {BACKEND_CALL} from 'middleware/humaniqBackendApi'
+
 import {
   ENDPOINT_PARTNERS_LIST,
+  ENPOINT_AMBASSADORS_LIST,
   // ENDPOINT_PERSONAL_DATA,
   ENDPOINT_PERSONAL_REFERRER
 } from 'constants/api'
 
-import {START, SUCCESS, FAIL, FETCH, PARTNERS, BY_REFERENCE, POST} from 'constants'
+import {START, SUCCESS, FAIL, FETCH, PARTNERS, AMBASSADORS, BY_REFERENCE, POST} from 'constants'
 
 export function fetchPartners() {
   return ({
@@ -16,6 +18,20 @@ export function fetchPartners() {
         FETCH + PARTNERS + START,
         FETCH + PARTNERS + SUCCESS,
         FETCH + PARTNERS + FAIL,
+      ]
+    }
+  })
+}
+
+export function fetchAmbassadors() {
+  return ({
+    [BACKEND_CALL]: {
+      endpoint: ENPOINT_AMBASSADORS_LIST,
+      method: 'GET',
+      types: [
+        FETCH + AMBASSADORS + START,
+        FETCH + AMBASSADORS + SUCCESS,
+        FETCH + AMBASSADORS + FAIL,
       ]
     }
   })

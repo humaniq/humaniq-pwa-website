@@ -37,7 +37,7 @@ const A_H = ({type, icon, children, center}) =>{
     case 'xs':
       tagType = 'h6'
       break;
-    case 'xxs':
+    case 'xxl':
       tagType = 'h6'
       break;
     case 'openitem':
@@ -79,7 +79,7 @@ A_H.propTypes = {
     'section', //black title used for sections 23/32 padding-bottom 10
     'section-sub', //black title used for sections 23/32 padding-bottom 10
     'section-c', //black title used for sections 23/32 padding-bottom 30, always text-align center
-    'xxs', //black title used at error page 60
+    'xxl', //black title used at error page 60
     'openitem', //light black used in open source page
     'hmq-title', //
   ]),

@@ -4,7 +4,7 @@ import MainLayoutContainer from 'containers/MainLayoutContainer'
 import initialLoad from 'utils/initialLoad'
 import {setRoute} from 'AC/navigation'
 import {fetchWiki} from "AC/wiki";
-import {fetchPartners} from 'AC/otherAPI'
+import {fetchPartners, fetchAmbassadors} from 'AC/otherAPI'
 import {fetchHmqStatistics} from 'AC/hmqExp'
 
 
@@ -16,6 +16,8 @@ class AppRoute extends Component {
       state.wikiArticles.loaded || dispatch(fetchWiki())
       state.transactions.loaded || dispatch(fetchHmqStatistics())
       state.partners.loaded || dispatch(fetchPartners())
+      state.partners.loaded || dispatch(fetchAmbassadors())
+
     }
 
     if(initialLoad()) return;
