@@ -2,67 +2,64 @@ import React from 'react';
 import './styles.scss';
 import {cssClassName} from 'utils'
 import A_Container from 'A_Container'
+
 const cn = cssClassName('SE_OpenSource');
 import A_H from 'A_H';
 import A_P from 'A_P';
 import A_Link from 'A_Link';
+import O_TextUsHere from 'O_TextUsHere'
 
-const SE_OpenSource = () =>{
-  
-  const renderedLinks = libraries.map( ({name, description, url, type, imgSrc}) => {
-    return(
-        <div className={cn('container-item', {type})} key={'key_' + name}>
-          <A_Link to={url} type="block" external>
-          <div className={cn('container-item-image')}>
-            <img src={imgSrc} alt='Humaniq Android' />
+const SE_OpenSource = () => {
+
+  const renderedLinks = libraries.map(({name, description, url, type, imgSrc}) => {
+    return (
+      <div className={cn('item')} key = {'key_' + name } >
+        <A_Link to={url} type="block" external>
+          <div className={cn('item-image', {type})}>
+            <img src={imgSrc} alt='Humaniq Android'/>
           </div>
-          <div className={cn('container-text')}>
+          <div className={cn('item-text')}>
             <A_H type='openitem'>{name}</A_H>
-            <A_P type='fifth'>{description}</A_P>
+            <A_P type='sixth'>{description}</A_P>
           </div>
-          </A_Link>
-
-        </div>
+        </A_Link>
+      </div>
     )
   })
 
   return (
     <div>
-      <A_Container type='equal'>
+      <A_Container type='section-clean'>
         <div className={cn('opensource')}>
-          <A_Container type='section-clean'>
-            <div className={cn('header')}>
-              <div className={cn('header-image')}>
-                <img src="/img/opensource/open-source-image.svg" alt='Humaniq OpenSource'/>
-              </div>
-              <div className={cn('header-description')}>
-                <A_H type='hero'>Open Source</A_H>
-                <A_P type='hero'>Humaniq relies on open-source software and likes to give back to the community. Check out the libararies we have built.</A_P>
-              </div>
+
+          <div className={cn('header')}>
+            <div className={cn('header-image')}>
+              <img src="/img/opensource/open-source-image.svg" alt='Humaniq OpenSource'/>
             </div>
-          </A_Container>
+            <div className={cn('header-description')}>
+              <A_H type='hero'>Open Source</A_H>
+              <A_P type='hero'>Humaniq relies on open-source software and likes to give back to the community. Check out
+                the libararies we have built.</A_P>
+            </div>
+          </div>
 
-          <A_Container type='section-clean'>
-            <A_H type='section'>Released Libraries</A_H>
-          </A_Container>
+          <A_H type='section'>Released Libraries</A_H>
 
-          <A_Container type='section-clean'>
-            <div className={cn('container')}>
+            <div className={cn('list')}>
               {renderedLinks}
             </div>
-          </A_Container>
-
-          <A_Container type='section-clean'>
-            <div className={cn('help')}>
-              <A_H type='section'>Help us Develop</A_H>
-              <A_P type='second'>Join Humaniq ever growing network. Get in touch if you would like to code with us.</A_P>
-              <A_P type='hero'>
-                <A_Link to='mailto:info@humaniq.com' target='_blank' type='primary'>Drop off your information here »</A_Link>
-              </A_P>
-            </div>
-          </A_Container>
         </div>
       </A_Container>
+      <O_TextUsHere
+        {...{
+          title: 'Help us Develop',
+          text: 'Join Humaniq ever growing network. Get in touch if you would like to code with us.',
+          link: {
+            linkText: 'Drop off your information',
+            url: 'mailto:info@humaniq.com'
+          }
+        }}
+      />
     </div>
   )
 }

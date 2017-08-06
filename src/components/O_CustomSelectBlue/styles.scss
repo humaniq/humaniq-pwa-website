@@ -1,0 +1,59 @@
+@import "common/settings/variables";
+@import "common/utils";
+
+/* component O_CustomSelectBlue
+/* ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## */
+
+.o-custom-select-blue {
+  &__menu {
+    background: #439fe0;
+    padding: 1.5rem 2rem;
+    width: calc(100% + 4rem);
+    left: -2rem;
+    display: none;
+    @include media ($tablet) {
+      display: block;
+    }
+    &-bt {
+      background: #439fe0;
+      color: $white;
+      border: none;
+      padding: 0;
+      width: 100%;
+      text-align: left;
+      outline: none;
+      position: relative;
+      font-size: 1.5rem;
+    }
+    &-icon {
+      position: absolute;
+      right: 1rem;
+      top: .5rem;
+      width: 1rem;
+      height: .6rem;
+      stroke: $white;
+      fill: $white;
+      transform: rotate(0deg);
+      &_active {
+        &_false {
+          transform: rotate(180deg);
+        }
+      }
+    }
+    &-list {
+      list-style: none;
+      padding: 1em 0;
+    }
+    &-li {
+      padding: .5rem 0;
+    }
+    &-a {
+      display: block;
+      text-decoration: none;
+      font-size: 1.3rem;
+      font-weight: bold;
+      line-height: 1.54;
+      color: $white;
+    }
+  }
+}

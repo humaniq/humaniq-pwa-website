@@ -2,8 +2,6 @@
 @import "common/utils";
 
 .o-footer{
-
-  border-top: $border-line;
   &_is-menu-opened_true{
     position: fixed;
     top: 70px;
@@ -11,6 +9,8 @@
     height: 100vh;
   }
   &__inner {
+    border-top: $border-line;
+
     padding: 2rem * 2.5 0;
     display: flex;
     @include media($mobile) {

@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import * as T from "prop-types";
 import './styles.scss';
 import {cssClassName} from 'utils'
-const cn = cssClassName('SE_Partners')
+const cn = cssClassName('SE_Ambassadors')
 import Meta from './meta'
 import A_Container from 'A_Container'
 import O_Hero from 'O_Hero'
@@ -15,7 +15,7 @@ import M_Tooltip from 'M_Tooltip'
 import A_Link from 'A_Link'
 import O_TextUsHere from 'O_TextUsHere'
 
-class SE_Partners extends Component {
+class SE_Ambassadors  extends Component {
 
   state = {
     filter: 'All',
@@ -30,15 +30,15 @@ class SE_Partners extends Component {
     this.forceUpdate()
   }
 
-  getPartners(entities, filter) {
+  getAmbassadors(entities, filter) {
     let filtered
     if (filter == 'All') {
       filtered = entities
     } else {
-      filtered = entities.filter(entity => entity.type === filter)
+      filtered = entities.filter(entity => entity.country === filter)
     }
 
-    let _renderedPartners = filtered.map((partner, i) => {
+    let _renderedAmbassadors = filtered.map((partner, i) => {
       let tooltipPlace;
       if (
         this.nodes[0]
@@ -52,23 +52,22 @@ class SE_Partners extends Component {
 
       return (
         <div
-          className={cn('partner-list-item')}
-          key={partner.title}
+          className={cn('list-item')}
+          key={partner.name}
           ref={ node => this.nodes[i + 1] = node}
         >
           <A_Image
             src={partner.logoLink2x}
-            alt={partner.title}
+            alt={partner.name}
           />
           <span className={cn('tooltip', {type: tooltipPlace})}>
             <M_Tooltip type={tooltipPlace}>
-              <A_H type='tooltip'>{partner.title}</A_H>
-              <span onClick={() => this.setState({filter: partner.type})} style={{cursor: 'pointer'}}>
-                <A_H type='tooltip-sub'>{partner.type}</A_H>
+              <A_H type='tooltip'>{partner.name}</A_H>
+              <span onClick={() => this.setState({filter: partner.country})} style={{cursor: 'pointer'}}>
+                <A_H type='tooltip-sub'>{partner.country}</A_H>
               </span>
-              {partner.type}{' '}
-              {partner.description}<br />
-              <A_Link to={partner.link} external type='section-link-clean'>More info » </A_Link>
+              {partner.country}{' '}
+              {partner.bio}
             </M_Tooltip>
           </span>
           <span className={cn('link')}>
@@ -79,36 +78,31 @@ class SE_Partners extends Component {
     })
 
     for (let i = 0; i < 4; i++) {
-      _renderedPartners.push(
+      _renderedAmbassadors.push(
         <div
-          className={cn('partner-list-item-empty')}
+          className={cn('list-item-empty')}
           key={'key_' + i}
         />
       )
     }
-    return _renderedPartners
+    return _renderedAmbassadors
   }
 
   render() {
-    const {types, entities} = this.props
-    const options = ['All', ...types]
+    const {countries, entities} = this.props
+    const options = ['All', ...countries]
 
     const {filter} = this.state
     return (
       <div>
         <Meta />
         <A_Container type="section">
-          <O_Hero img={{src: "/img/illustrations/group-6.svg", alt: "parners"}}>
-            <A_H type="hero">Join our Community</A_H>
-            <A_P type="hero">Humaniq is proud of its wide partnership network which includes everybody from fintech
-              companies and Blockchain communities to publishing media and app developers.</A_P>
+          <O_Hero img={{src: "/img/illustrations/ambassadors.svg", alt: "ambassadors"}}>
+            <A_H type="hero">Our Global Team</A_H>
+            <A_P type="hero">At Humaniq, everything we do is motivated by our wish to provide the most widespread access to banking possible.</A_P>
           </O_Hero>
           <A_H type="section">Ever growing network</A_H>
-          <A_P type="third">We believe in the services that Humaniq partners provide, to support us in raising standards
-            and making excellence a habit. Our partners create and deliver cutting-edge technologies and Blockchain
-            solutions vital to achieving financial inclusion for everybody. They include independent consultants who
-            help us to implement new solutions, laboratories who work with us to test products, Blockchain communities,
-            and many more.</A_P>
+          <A_P type="third">We want to communicate directly with the people we wish to serve: the unbanked. People without access to banking live in very rural areas. This is why we’ve started our Ambassador Program. Our ambassadors live in these developing countries and know the culture well. They are helping to promote cryptocurrencies in the Global South, as well as explaining the Humaniq project and app to the people in their countries.</A_P>
           <div className={cn('form')}>
             <div className={cn('form-select')}>
               <M_Dropdown
@@ -119,15 +113,15 @@ class SE_Partners extends Component {
             </div>
             <A_Btn
               type="link-standart-form"
-              to='/form/join'
-            >Join Humaniq Network</A_Btn>
+              to='/form/ambassadors'
+            >Join Ambassadors Program</A_Btn>
           </div>
-          <div className={cn('partner-list-wrapper')}>
+          <div className={cn('list-wrapper')}>
             <div
-              className={cn('partner-list')}
+              className={cn('list')}
               ref={ node => this.nodes[0] = node}
             >
-              {this.getPartners(entities, filter)}
+              {this.getAmbassadors(entities, filter)}
             </div>
           </div>
         </A_Container>
@@ -135,10 +129,10 @@ class SE_Partners extends Component {
 
           <O_TextUsHere
             {...{
-              title: 'Join our Community',
-              text: 'Join Humaniq ever growing network. Get in touch if your organization would like to join the network.',
+              title: 'Join Ambassadors',
+              text: 'If you believe you can help your community, join Humaniq global Ambassador\'s program.',
               link: {
-                linkText: 'Drop off your information',
+                linkText: 'Join Humaniq Network',
                 url: 'mailto:info@humaniq.com'
               }
             }}
@@ -149,9 +143,9 @@ class SE_Partners extends Component {
   }
 }
 
-SE_Partners.propTypes = {
+SE_Ambassadors .propTypes = {
   entities: T.array.isRequired,
-  types: T.array.isRequired
+  countries: T.array.isRequired
 };
 
-export default SE_Partners
+export default SE_Ambassadors 
