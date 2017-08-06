@@ -39,8 +39,38 @@
     <% }%>
     <link rel="icon" href="data:;base64,iVBORw0KGgo=">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
+
+    <!-- For preloader -->
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+        }
+        .progress {
+          position: relative;
+          height: 4px;
+          display: block;
+          width: 100%;
+          background-color: #FFEACC;
+          border-radius: 2px;
+          margin: 0;
+          overflow: hidden;
+        }
+        .progress .determinate {
+          position: absolute;
+          top: 0;
+          left: 0;
+          bottom: 0;
+          background-color: #ff9800;
+          -webkit-transition: width .3s linear;
+          transition: width .3s linear;
+        }
+    </style>
+    <!-- end preloader style block -->
+
   </head>
   <body>
+    <div class="progress"><div class="determinate" style="width: 10%;"></div></div>
     <div id="container"><%- typeof content !='undefined' ? content : ''%></div>
     <% if(!__DEVELOPMENT__){ %>
       <script type="text/javascript" src="/<%- webpackAssets('vendor', 'js') %>"></script>
