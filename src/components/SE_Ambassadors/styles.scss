@@ -8,17 +8,17 @@
     margin: 0 auto;
     justify-content: center;
     &-item{
-      flex-basis: 24.5rem;
+      flex-basis: 15rem;
       height: auto;
       align-items: center;
       &-empty{
-        flex-basis: 24.5rem;
+        flex-basis: 15rem;
       }
       @include media($mobile) {
-        flex-basis: 14.4rem;
+        flex-basis: 15rem;
         height: auto;
         &-empty{
-          flex-basis: 14.4rem;
+          flex-basis: 15rem;
         }
       }
     }

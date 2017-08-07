@@ -28,7 +28,6 @@ class App extends PureComponent {
           history={history}
           key={Math.random()}
           onUpdate={()=> {
-            window.scrollTo(0, 0)
             const state = store.getState()
             state.navigation.isMenuOpened && store.dispatch(closeMenu())
             hashLinkScroll()

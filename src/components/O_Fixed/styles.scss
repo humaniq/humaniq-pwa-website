@@ -1,0 +1,12 @@
+@import "common/settings/variables";
+@import "common/utils";
+
+.o-fixed{
+  &_sticky_true{
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    z-index: 99;
+    transition: all 0.3s ease;
+  }
+}

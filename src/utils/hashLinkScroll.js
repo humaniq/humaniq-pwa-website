@@ -4,7 +4,13 @@ export function hashLinkScroll() {
     setTimeout(() => {
       const id = hash.replace('#', '');
       const element = document.getElementById(id);
-      if (element) element.scrollIntoView();
+      if (element) {
+        element.scrollIntoView({block: 'start', behavior: 'smooth' });
+      }
+
+
     }, 0);
+  } else {
+    window.scrollTo(0, 0)
   }
 }

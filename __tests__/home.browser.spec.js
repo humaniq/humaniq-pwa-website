@@ -94,7 +94,7 @@ describe("Legal page", () => {
       .goto('http://localhost:8080/legal')
       .evaluate(() => document.body.textContent)
       .end()
-    expect(text).toContain('Humaniq is proud of its wide partnership network which includes everybody fro')
+    expect(text).toContain('Ensuring the security of our users’ data is our most important responsibility and we believe in')
   })
 })
 
