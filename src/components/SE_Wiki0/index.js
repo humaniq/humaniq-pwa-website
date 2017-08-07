@@ -51,7 +51,7 @@ class SE_Wiki0 extends Component {
             }}
           ><A_P type='third'>Humaniq global initiative plan involves a lot of research, investigations and partnerships,
             but it is also important to be aligned with the development. Since Humaniq is about the community, we want
-            to be as transparant as possible. That is why our technical roadmap is available to general public.</A_P>
+            to be as transparent as possible. That is why our technical roadmap is available to general public.</A_P>
           </Info>
         </A_Container>
         <O_ArticleList articles={articles} title="Featured Articles"/>
