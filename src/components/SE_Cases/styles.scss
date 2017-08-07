@@ -22,7 +22,7 @@
         display: none;
       }
     }
-    @include media($mobile) {
+    @include media($tablet) {
       display: none;
     }
 
