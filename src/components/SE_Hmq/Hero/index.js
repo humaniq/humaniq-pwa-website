@@ -24,7 +24,7 @@ class SE_HmqHero extends Component {
         <div className={cn('title-tablet')}>
           <A_Container type="section-hmq">
             <A_H type="section">Explore the HMQ</A_H>
-            <A_P type="third">Humaniq token is the core of the banking ecosystem that Humaniq has developed. We are eager to present the transparency and the real time updates of the HMQ.</A_P>
+            <A_P type="third">Humaniq token is the core of the banking ecosystem that the Humaniq has developed. We are eager to be transparent and provide real time updates of the HMQ.</A_P>
           </A_Container>
         </div>
         <A_Container type="section-hmq">
@@ -32,7 +32,7 @@ class SE_HmqHero extends Component {
             <div className={cn('chart')}>
               <div className={cn('title-desctop')}>
                 <A_H type="section">Explore the HMQ</A_H>
-                <A_P type="third">Humaniq token is the core of the banking ecosystem that Humaniq has developed. We are eager to present the transparency and the real time updates of the HMQ.</A_P>
+                <A_P type="third">Humaniq token is the core of the banking ecosystem that the Humaniq has developed. We are eager to be transparent and provide real time updates of the HMQ.</A_P>
               </div>
               {/*<Chart {...{chartProps}} />*/}
             </div>
