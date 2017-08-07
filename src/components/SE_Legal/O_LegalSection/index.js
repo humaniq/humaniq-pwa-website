@@ -20,11 +20,12 @@ class O_LegalSection extends React.Component {
   ));
 
   render() {
-    const { title, sections, id } = this.props;
+    const { title, sections, id, spaceTop } = this.props;
     const renderedSections = this.renderSections(sections);
 
     return(
-      <div className={cn()} ref={node => this.node = node} id={id}>
+      <div className={cn()} ref={node => this.node = node}>
+        <div style={{possition: 'absolute', top: -spaceTop}} id={id} />
         <A_H type='section'>{title}</A_H>
         {renderedSections}
       </div>

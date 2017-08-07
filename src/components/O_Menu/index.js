@@ -1,51 +1,44 @@
 import React, { Component } from 'react';
 import * as T from "prop-types";
-import './styles.scss';
-import {cssClassName, convert} from 'utils'
-const cn = cssClassName('O_Menu')
-import {safeDA} from "utils/index"
+import O_Fixed from 'O_Fixed'
+import Desktop from './Desktop'
+import Mobile from './Mobile'
 
 class O_Menu extends Component {
-  state = {
-    stickyMenu: false,
-  };
-
-  componentDidMount() {
-    document.addEventListener('scroll', this.checkVisibleSection);
-    this.forceUpdate()
-
-  }
-
-  componentWillUnmount() {
-    document.removeEventListener('scroll', this.checkVisibleSection);
-  }
-
-  getMenuOptions(articles) {
-    return articles.map(a => ({
-      anchor: convert.toCleanKebab(a.title),
-      text: a.title,
-    }))
-  }
-
-  checkVisibleSection = () => {
-    if (this.state.stickyMenu && (document.body.scrollTop < this.helperNode.getBoundingClientRect().top)) {
-      this.setState({stickyMenu: false})
-    } else if (!this.state.stickyMenu && (document.body.scrollTop > this.helperNode.getBoundingClientRect().top)) {
-      this.setState({stickyMenu: true})
-    }
-
-  };
 
   render() {
-    return (
-      <div>
-        тут текст
-      </div>
-    )
+    const { options, selected, rootLink, type, title} = this.props
+    const _options = options.map(({ anchor, text }) => {
+      const isSelected = selected === anchor;
+      return ({
+        text,
+        url: rootLink + anchor,
+        isSelected
+      })
+    });
+    switch (type){
+      case 'desktop':
+        return (
+          <O_Fixed>
+            <Desktop {...{options: _options}} />
+          </O_Fixed>
+        )
+      case 'mobile':
+        return (
+          <O_Fixed>
+            <Mobile {...{options: _options, title}} />
+          </O_Fixed>
+        )
+    }
+
   }
 }
 
 O_Menu.propTypes = {
+  type: T.oneOf([
+    'desktop', // simple menu, used on legal page
+    'mobile', // simple menu, used on legal page
+  ]).isRequired,
 };
 
 O_Menu.defaultProps = {

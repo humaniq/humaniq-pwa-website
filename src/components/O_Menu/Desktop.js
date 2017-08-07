@@ -5,8 +5,7 @@ import { cssClassName } from 'utils'
 const cn = cssClassName('O_MenuDesktop');
 import {Link} from 'react-router';
 
-
-const O_MenuDesktop = ({ options, stickyMenu }) => {
+const O_MenuDesktop = ({ options, sticky }) => {
   const renderedLinks = options.map(({ url, text, isSelected }, i) => {
     return (
       <li key={'menu-item-' + i} className={cn('nav-links-item', { active: isSelected })}>
@@ -23,7 +22,7 @@ const O_MenuDesktop = ({ options, stickyMenu }) => {
 
   return (
     <nav>
-      <ul className={cn('wider-screens', {stickyMenu})}>
+      <ul className={cn('root', {sticky})}>
         { renderedLinks }
       </ul>
     </nav>
@@ -37,7 +36,6 @@ O_MenuDesktop.propTypes = {
     text: T.string.isRequired,
     isSelected: T.bool.isRequired
   })),
-  stickyMenu: T.bool.isRequired,
 };
 
 O_MenuDesktop.defaultProps = {

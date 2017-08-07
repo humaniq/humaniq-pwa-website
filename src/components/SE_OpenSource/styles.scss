@@ -30,15 +30,25 @@
     flex-wrap: wrap;
     justify-content: space-between;
     padding: 3rem 3rem 0;
+    @include media($tablet) {
+      justify-content: space-around;
+    }
   }
 
   &__item{
+    cursor: pointer;
+    user-select: none;
     width: 29rem;
     border-radius: 6px;
     background-color: #ffffff;
     border: solid 1px #e8e8e8;
     margin-bottom: 4rem;
 
+    &-empty{
+      @extend .se-open-source__item;
+      height: 0;
+      visibility: hidden;
+    }
     &-image{
       width: 28.8rem;
       height: 17rem;

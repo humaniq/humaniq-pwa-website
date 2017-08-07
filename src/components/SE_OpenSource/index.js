@@ -27,27 +27,24 @@ const SE_OpenSource = () => {
     )
   })
 
+  renderedLinks.push(<div className={cn('item-empty')} key = {'key_empty' } />)
   return (
     <div>
       <A_Container type='section-clean'>
-        <div className={cn('opensource')}>
-
-          <div className={cn('header')}>
-            <div className={cn('header-image')}>
-              <img src="/img/opensource/open-source-image.svg" alt='Humaniq OpenSource'/>
-            </div>
-            <div className={cn('header-description')}>
-              <A_H type='hero'>Open Source</A_H>
-              <A_P type='hero'>Humaniq relies on open-source software and likes to give back to the community. Check out
-                the libararies we have built.</A_P>
-            </div>
+        <div className={cn('header')}>
+          <div className={cn('header-image')}>
+            <img src="/img/opensource/open-source-image.svg" alt='Humaniq OpenSource'/>
           </div>
+          <div className={cn('header-description')}>
+            <A_H type='hero'>Open Source</A_H>
+            <A_P type='hero'>Humaniq relies on open-source software and likes to give back to the community. Check out
+              the libararies we have built.</A_P>
+          </div>
+        </div>
+        <A_H type='section'>Released Libraries</A_H>
 
-          <A_H type='section'>Released Libraries</A_H>
-
-            <div className={cn('list')}>
-              {renderedLinks}
-            </div>
+        <div className={cn('list')}>
+          {renderedLinks}
         </div>
       </A_Container>
       <O_TextUsHere
@@ -109,4 +106,18 @@ const libraries = [
     type: 'js',
     imgSrc: '/img/opensource/js.svg'
   },
+  {
+    name: 'humaniq-pwa-website',
+    description: 'New Humaniq website built under PWA technology.',
+    url: 'https://github.com/humaniq/humaniq-pwa-website',
+    type: 'js',
+    imgSrc: '/img/opensource/js.svg'
+  },
+  {
+    name: 'react-native-android-library-humaniq-api',
+    description: 'React Native wrapper for Humaniq LITE application',
+    url: 'https://github.com/humaniq/react-native-android-library-humaniq-api',
+    type: 'android',
+    imgSrc: '/img/opensource/android.svg'
+  }
 ]
