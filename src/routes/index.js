@@ -19,7 +19,7 @@ import Hmq from './Hmq'
 import Ambassadors from './Ambassadors'
 
 
-import {cleanWikiSearch} from 'AC/wiki'
+import {cleanWikiSearch} from 'store/entities/wikiSearch/actions'
 
 const getRoutes = (store) => {
   return (

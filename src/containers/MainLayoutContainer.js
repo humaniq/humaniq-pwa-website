@@ -1,7 +1,7 @@
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux'
 import SE_MainLayout from 'SE_MainLayout'
-import {toggleMenu} from 'AC/navigation'
+import {toggleMenu} from 'store/entities/navigation/actions'
 import {_isContain} from 'utils'
 
 const blueMainLayoutPages = ['wiki'] // pages with normal layout + dark theme
