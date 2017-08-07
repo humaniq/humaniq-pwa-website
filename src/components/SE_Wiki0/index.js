@@ -50,7 +50,7 @@ class SE_Wiki0 extends Component {
               alt: 'Humaniq Roadmap'
             }}
           ><A_P type='third'>Humaniq global initiative plan involves a lot of research, investigations and partnerships,
-            but it is also important to be aligned with the development. Since Humaniq is about the community, we want
+            but it is also important to involve others in the app's. Since Humaniq is about the community, we want
             to be as transparent as possible. That is why our technical roadmap is available to general public.</A_P>
           </Info>
         </A_Container>
