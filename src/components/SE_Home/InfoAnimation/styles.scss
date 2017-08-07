@@ -5,6 +5,7 @@
   &__root{
     width: 100%;
     position: relative;
+    padding-top: 4rem;
     @include media($desktop) {
       margin-top: -8rem;
     }

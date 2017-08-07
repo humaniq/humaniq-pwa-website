@@ -37,6 +37,7 @@ import Title from 'SE_Home/Hero/title.js';
 import A_Container from "A_Container";
 
 import O_Transaction from "O_Transaction";
+import O_Fixed from "O_Fixed";
 
 
 const styleDecorator = (storyFn) => (
@@ -69,6 +70,25 @@ const mobile = (storyFn) => (
 
 addDecorator(styleDecorator)
 
+storiesOf('O_Fixed', module)
+  .addDecorator(storyFN =>
+      <div style={{margin: 0, width: 680, height: 1200, border: '1px solid tomato'}}>
+        1<br/>
+        2<br/>
+        3<br/>
+        4<br/>
+        5<br/>
+        {storyFN()}
+      </div>)
+
+  .add('', () => (
+    <O_Fixed>
+      <div style={{border: '1px solid red', width: 100,}}>
+        меню
+      </div>
+    </O_Fixed>
+
+  ));
 
 storiesOf('O_Transaction', module)
   .add('', () => (

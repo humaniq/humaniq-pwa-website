@@ -2,54 +2,109 @@
 @import "common/utils";
 
 .o-menu{
-  min-width: 30rem;
-  &__wider-screens{
-    font-size: 13px;
-    font-weight: bold;
-    line-height: 20.0px;
-    @include media ($tablet) {
-      display: none;
-    }
-    @include media ($mobile) {
-      display: none;
-    }
-    &_sticky-menu_true{
-      top: 1.2rem;
-      position: fixed;
-
-    }
-
-  }
-  &__smaller-screens{
-    @include media ($desktop) {
-      display: none;
-    }
-
-  }
-  &__nav-links-item{
-    a{
-      font-size: 13px;
+  &-desktop{
+    min-width: 30rem;
+    &__root{
+      padding-top: 1rem;
+      font-size: 1.3rem;
       font-weight: bold;
-      line-height: 20.0px;
-      padding-left: 21px;
+      line-height: 2rem;
+      @include media ($tablet) {
+        display: none;
+      }
+      @include media ($mobile) {
+        display: none;
+      }
+      &_sticky_true{
+        top: 4rem;
+        position: fixed;
+
+      }
 
     }
-    div{
-      font-family: OpenSans;
-      font-size: 13px;
-      font-weight: bold;
-      line-height: 20.0px;
-      color: #0088cc;
-      border-left: 2px solid #0088cc;
-      padding-left: 19px;
-    }
-    &_active_true{
-
+    &__smaller-screens{
+      @include media ($desktop) {
+        display: none;
+      }
 
     }
-    &_active_false{
-      .a-link {
-        color: #000;
+    &__nav-links-item{
+      a{
+        font-size: 1.3rem;
+        font-weight: bold;
+        line-height: 2rem;
+        padding-left: 2.1rem;
+
+      }
+      div{
+        font-size: 1.3rem;
+        font-weight: bold;
+        line-height: 2rem;
+        color: $interactive;
+        border-left: .2rem solid $interactive;
+        padding-left: 1.9rem;
+      }
+      &_active_true{
+
+
+      }
+      &_active_false{
+        .a-link {
+          color: #000;
+        }
+      }
+    }
+  }
+  &-mobile{
+    &__menu {
+      user-select: none;
+      background: $blue-2;
+      padding: 1.5rem 2rem;
+      width: calc(100%);
+      display: none;
+      @include media ($tablet) {
+        display: block;
+      }
+      &-bt {
+        background: $blue-2;
+        color: $white;
+        border: none;
+        padding: 0;
+        width: 100%;
+        text-align: left;
+        outline: none;
+        position: relative;
+        font-size: 1.5rem;
+      }
+      &-icon {
+        position: absolute;
+        right: 1rem;
+        top: .5rem;
+        width: 1rem;
+        height: .6rem;
+        stroke: $white;
+        fill: $white;
+        transform: rotate(0deg);
+        &_active {
+          &_false {
+            transform: rotate(180deg);
+          }
+        }
+      }
+      &-list {
+        list-style: none;
+        padding: 1em 0;
+      }
+      &-li {
+        padding: .5rem 0;
+      }
+      &-a {
+        display: block;
+        text-decoration: none;
+        font-size: 1.3rem;
+        font-weight: bold;
+        line-height: 1.54;
+        color: $white;
       }
     }
   }

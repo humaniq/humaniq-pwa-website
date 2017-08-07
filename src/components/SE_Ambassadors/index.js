@@ -24,11 +24,14 @@ class SE_Ambassadors  extends Component {
   nodes = []
 
   componentDidMount() {
-    if(__CLIENT__){
-      window.onresize = () => this.forceUpdate()
-    }
+    document.addEventListener('resize', this.forceUpdate);
     this.forceUpdate()
   }
+
+  componentWillUnmount() {
+    document.removeEventListener('resize', this.forceUpdate);
+  }
+
 
   getAmbassadors(entities, filter) {
     let filtered
@@ -56,6 +59,7 @@ class SE_Ambassadors  extends Component {
           key={partner.name}
           ref={ node => this.nodes[i + 1] = node}
         >
+
           <A_Image
             src={partner.logoLink2x}
             alt={partner.name}
@@ -77,7 +81,7 @@ class SE_Ambassadors  extends Component {
       )
     })
 
-    for (let i = 0; i < 4; i++) {
+    for (let i = 0; i < 7; i++) {
       _renderedAmbassadors.push(
         <div
           className={cn('list-item-empty')}
