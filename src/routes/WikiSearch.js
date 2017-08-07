@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import WikiSearchContainer from 'containers/WikiSearchContainer'
 import {parse} from 'qs'
-import {wikiSearch} from 'AC/wiki'
+import {wikiSearch} from 'store/entities/wikiSearch/actions'
 import initialLoad from 'utils/initialLoad'
 
 

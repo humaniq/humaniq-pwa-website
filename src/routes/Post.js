@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import PostContainer from 'containers/PostContainer'
-import {fetchPost} from 'AC/post'
+// import {fetchPost} from 'store/entities/post/actions'
 import initialLoad from 'utils/initialLoad'
-import {setPage} from 'AC/navigation'
+// import {setPage} from 'store/entities/navigation/actions'
 
 class PostRoute extends Component {
 

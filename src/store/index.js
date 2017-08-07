@@ -1,5 +1,5 @@
 if (__DEVELOPMENT__) {
-  module.exports = require('./configureStore.dev');
+  module.exports = require('store/configureStore.dev');
 } else {
-  module.exports = require('./configureStore.prod');
+  module.exports = require('store/configureStore.prod');
 }

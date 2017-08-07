@@ -1,7 +1,7 @@
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux'
 import SE_Hmq from 'SE_Hmq'
-import {requestHmqTransactions} from 'AC/hmqExp'
+import {requestHmqTransactions} from 'store/entities/transactions/actions'
 
 function mapStateToProps( state ) {
   const {hmq: chartProps, loaded, transactions:{entities:transactions}, expStatistic} = state

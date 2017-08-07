@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import * as T from "prop-types";
 import initialLoad from 'utils/initialLoad'
-import {fetchPersonalData} from 'AC/otherAPI'
+import {fetchPersonalData} from 'store/entities/personal/actions'
 
 
 class AppRoute extends Component {

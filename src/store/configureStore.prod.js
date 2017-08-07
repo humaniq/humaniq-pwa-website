@@ -1,8 +1,8 @@
 import {createStore, applyMiddleware} from 'redux';
-import reducer from 'reducer';
-import error from 'middleware/error';
-import humaniqBackendApi from 'middleware/humaniqBackendApi'
-import butterCmsApi from 'middleware/butterCmsApi'
+import reducer from 'rootReducer';
+import error from 'store/middleware/error';
+import humaniqBackendApi from 'store/middleware/humaniqBackendApi'
+import butterCmsApi from 'store/middleware/butterCmsApi'
 
 const enhancer = applyMiddleware(humaniqBackendApi, butterCmsApi, error)
 

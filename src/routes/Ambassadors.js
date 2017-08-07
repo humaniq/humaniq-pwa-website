@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import AmbassadorsContainer from 'containers/AmbassadorsContainer'
-import {fetchAmbassadors} from 'AC/otherAPI'
+import {fetchAmbassadors} from 'store/entities/ambassadors/actions'
 
 class AmbassadorsRoute extends Component {
 
