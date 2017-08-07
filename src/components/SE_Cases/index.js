@@ -1,60 +1,143 @@
-import React from 'react';
-// import * as T from "prop-types";
+import React, { Component } from 'react';
 import A_Container from 'A_Container'
 import O_Hero from 'O_Hero'
 import A_H from 'A_H'
 import A_P from 'A_P'
-import List from './List'
+import CaseSection from './CaseSection'
 import Meta from './meta'
 import A_Link from 'A_Link'
-import {convert} from 'utils'
 import './styles.scss';
-import {cssClassName} from 'utils'
+import {cssClassName, convert} from 'utils'
 import O_ScrollUp from "O_ScrollUp";
 const cn = cssClassName('SE_Cases')
+import O_Menu from 'O_Menu/index'
 
+const spaceTop = 50
 
-const SE_Cases = () => {
+class SE_Cases extends Component {
 
-  const renderedlinks = casesData.map( (caseItem, i) =>{
-    const anchor = convert.toKebab(caseItem.title)
-    return(
-      <li key={'Key_' + i} className={cn('nav-links-item')}>
-        <A_Link to={`/use-cases/#${anchor}`} type="primary">{caseItem.title}</A_Link>
-      </li>
+  // state = {
+  //   selected: casesData[0].title,
+  // };
+  //
+  // componentDidMount() {
+  //   document.addEventListener('scroll', this.checkVisibleSection);
+  //   this.forceUpdate()
+  //
+  // }
+  //
+  // componentWillUnmount() {
+  //   document.removeEventListener('scroll', this.checkVisibleSection);
+  // }
+  //
+  // checkVisibleSection = () => {
+  //
+  //   const anchors = casesData.map(a => convert.toCleanKebab(a.title));
+  //   let firstSectionOffset;
+  //   let minimalNegativeOffset = 0;
+  //   let { visibleSection } = this.state;
+  //
+  //   anchors.forEach(anchor => {
+  //     const distanceScrolled = document.body.scrollTop + spaceTop;
+  //     console.log(anchor)
+  //     const elemViewportOffset = this[anchor].node.getBoundingClientRect().top - spaceTop;
+  //     if (!visibleSection) {
+  //       firstSectionOffset = elemViewportOffset;
+  //       minimalNegativeOffset = elemViewportOffset;
+  //     }
+  //
+  //     if (distanceScrolled < firstSectionOffset) {
+  //       visibleSection = null;
+  //     } else {
+  //       if (elemViewportOffset <= 1 && elemViewportOffset >= minimalNegativeOffset) {
+  //         minimalNegativeOffset = elemViewportOffset;
+  //         visibleSection = anchor;
+  //       }
+  //     }
+  //   });
+  //
+  //   if (this.state.selected !== visibleSection) {
+  //     this.setState({ selected: visibleSection });
+  //   }
+  // };
+
+  getMenuOptions(casesData){
+    return (
+      casesData.map(section => ({
+        anchor: convert.toCleanKebab(section.title),
+        text: section.title,
+      }))
     )
-  })
-  return (
-    <div>
-      <Meta />
-      <O_ScrollUp>
-        <A_Container type="section-clean">
-          <O_Hero img={{src: '/img/illustrations/use-cases-160.svg', alt: "Humaniq’s Global Mission"}}>
-            <A_H type="hero">Humaniq’s Global Mission</A_H>
-            <div className={cn('hero-sub')}>
-              <A_P type="hero">The core idea behind Humaniq stands far beyond the regular banking. Humaniq’s mission is in achieving global financial inclusion for everyone and everywhere.</A_P>
-            </div>
-            <nav className={cn('nav-links')}>
-              <A_H type='section-sub'>Use Cases</A_H>
-              <ul>
-                {renderedlinks}
-              </ul>
-            </nav>
-            {/*<nav className={cn('nav-links-mob')}>*/}
-              {/*Use Cases*/}
-            {/*</nav>*/}
-          </O_Hero>
-        </A_Container>
-        <List cases={casesData} />
-      </O_ScrollUp>
-    </div>
-  )
+  }
+
+  getLinks(casesData){
+    return (
+      casesData.map( (caseItem, i) => {
+        const anchor = convert.toCleanKebab(caseItem.title)
+        return (
+          <li key={'Key_' + i} className={cn('nav-links-item')}>
+            <A_Link to={`/use-cases/#${anchor}`} type="primary">{caseItem.title}</A_Link>
+          </li>
+        )
+      })
+    )
+  }
+
+  getList = (caseData) => {
+    return(
+      <div className={cn('list')}>
+        {caseData.map(item => (
+          <CaseSection
+            ref={node => this[convert.toCleanKebab(item.title)] = node}
+            key={item.title}
+            {...{...item, spaceTop}}
+          />
+        ))}
+      </div>
+    )
+  }
+
+  render() {
+    const menuOptions = this.getMenuOptions(casesData);
+    const renderedlinks = this.getLinks(casesData)
+    const renderedList = this.getList(casesData)
+    return (
+      <div>
+        <Meta />
+        <O_ScrollUp>
+          <A_Container type="section-clean">
+            <O_Hero img={{src: '/img/illustrations/use-cases-160.svg', alt: "Humaniq’s Global Mission"}}>
+              <A_H type="hero">Humaniq’s Global Mission</A_H>
+              <div className={cn('hero-sub')}>
+                <A_P type="hero">The core idea behind Humaniq stands far beyond the regular banking. Humaniq’s mission is in achieving global financial inclusion for everyone and everywhere.</A_P>
+              </div>
+              <nav className={cn('nav-links')}>
+                <A_H type='section-sub'>Use Cases</A_H>
+                <ul>
+                  {renderedlinks}
+                </ul>
+              </nav>
+
+            </O_Hero>
+          </A_Container>
+          <O_Menu
+            options={menuOptions}
+            rootLink="/use-cases/#"
+            type="mobile"
+            selected='Use Cases'
+          />
+          {renderedList}
+        </O_ScrollUp>
+      </div>
+    )
+  }
 }
 
+SE_Cases.propTypes = {
+};
 
-SE_Cases.propTypes = {};
-
-SE_Cases.defaultProps = {}
+SE_Cases.defaultProps = {
+}
 
 export default SE_Cases
 

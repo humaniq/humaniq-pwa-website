@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
 import {Router, match} from 'react-router'
 import './common/style.scss'
 import getRoutes from './routes'
@@ -9,24 +9,36 @@ import prepareData from 'utils/prepareData'
 // import offlinePluginStart from 'utils/offlinePlugin'
 import {closeMenu} from 'AC/navigation'
 import {hashLinkScroll} from 'utils/hashLinkScroll'
+import progress from 'utils/progressCalculation'
 const store = createStore(window.__INITIAL_STATE__)
 
-const App = () => (
-  <Provider store={store}>
-    <Router
-      history={history}
-      key={Math.random()}
-      onUpdate={()=> {
-        window.scrollTo(0, 0)
-        const state = store.getState()
-        state.navigation.isMenuOpened && store.dispatch(closeMenu())
-        hashLinkScroll()
-      }}
-    >
-      {getRoutes(store)}
-    </Router>
-  </Provider>
-);
+class App extends PureComponent {
+
+  componentDidMount () {
+    if (__CLIENT__) {
+      // TODO: test on iOS device!!!
+      progress()
+    }
+  }
+
+  render () {
+    return (
+      <Provider store={store}>
+        <Router
+          history={history}
+          key={Math.random()}
+          onUpdate={()=> {
+            const state = store.getState()
+            state.navigation.isMenuOpened && store.dispatch(closeMenu())
+            hashLinkScroll()
+          }}
+        >
+          {getRoutes(store)}
+        </Router>
+      </Provider>
+    )
+  }
+}
 
 function historyCb(location) {
   match({location, routes: getRoutes(store)}, (error, redirectLocation, renderProps) => {
