@@ -38,7 +38,7 @@ const SE_OpenSource = () => {
           <div className={cn('header-description')}>
             <A_H type='hero'>Open Source</A_H>
             <A_P type='hero'>Humaniq relies on open-source software and likes to give back to the community. Check out
-              the libararies we have built.</A_P>
+              the libraries we have built.</A_P>
           </div>
         </div>
         <A_H type='section'>Released Libraries</A_H>
@@ -50,7 +50,7 @@ const SE_OpenSource = () => {
       <O_TextUsHere
         {...{
           title: 'Help us Develop',
-          text: 'Join Humaniq ever growing network. Get in touch if you would like to code with us.',
+          text: 'Join Humaniq's ever growing network. Get in touch if you would like to code with us.',
           link: {
             linkText: 'Drop off your information',
             url: 'mailto:info@humaniq.com'
