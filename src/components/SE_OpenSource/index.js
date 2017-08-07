@@ -50,7 +50,7 @@ const SE_OpenSource = () => {
       <O_TextUsHere
         {...{
           title: 'Help us Develop',
-          text: 'Join Humaniq's ever growing network. Get in touch if you would like to code with us.',
+          text: "Join Humaniq's ever growing network. Get in touch if you would like to code with us.",
           link: {
             linkText: 'Drop off your information',
             url: 'mailto:info@humaniq.com'
