@@ -112,11 +112,12 @@ class SE_About extends Component {
   }
 
   render() {
-    const {founders, advisers} = this.props
+    const {founders, advisers, team} = this.props
 
 
     const renderedFounders = this.getFounders(founders)
     const renderedAdvisers = this.getTeam(advisers)
+    const renderedTeam = this.getTeam(team)
 
     return (
       <div>
@@ -135,8 +136,14 @@ class SE_About extends Component {
         </A_Container>
         <A_Container type="equal">
 
-          <A_H type="section" >Humaniq Advisers</A_H>
+          <A_H type="section" >Humaniq Team</A_H>
           <div ref={ node => this.nodes.default = node}>
+            {renderedTeam}
+          </div>
+        </A_Container>
+        <A_Container type="equal">
+          <A_H type="section" >Humaniq Advisers</A_H>
+          <div>
             {renderedAdvisers}
           </div>
         </A_Container>
