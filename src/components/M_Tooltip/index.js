@@ -4,10 +4,10 @@ import './styles.scss';
 import {cssClassName} from 'utils'
 const cn = cssClassName('M_Tooltip')
 
-const M_Tooltip = ({children, type}) =>{
+const M_Tooltip = ({children, type, size}) =>{
   return(
       <div className={cn('wrapper')}>
-        <div className={cn('root', {type})}>
+        <div className={cn('root', {type, size})}>
           {children}
         </div>
       </div>
@@ -21,9 +21,14 @@ M_Tooltip.propTypes = {
     'top',
     'bottom',
   ]),
+  size: T.oneOf([
+    'wide', //50rem
+    'normal', //24.5rem
+  ]),
 };
 
 M_Tooltip.defaultProps = {
-  type: 'right'
+  type: 'right',
+  size: 'normal'
 }
 export default M_Tooltip
