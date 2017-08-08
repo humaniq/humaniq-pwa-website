@@ -58,7 +58,7 @@ class SE_About extends Component {
 
   getTeam(entities) {
 
-    let _renderedTeam = entities.map(({name, bio, imgSrc}) => {
+    let _renderedTeam = entities.map(({name, bio, imgSrc, position}) => {
       const kebabName = convert.toCleanKebab(name)
       let tooltipPlace;
       if (
@@ -71,10 +71,7 @@ class SE_About extends Component {
         tooltipPlace = 'right'
       }
 
-      if(this.nodes.default && this.nodes[kebabName]){
-        console.log (kebabName, (this.nodes.default.getBoundingClientRect().right - this.nodes[kebabName].getBoundingClientRect().right < 200))
-      }
-      console.l
+
       return (
         <div
           className={cn('team-member')}
@@ -89,6 +86,7 @@ class SE_About extends Component {
           <span className={cn('tooltip', {type: tooltipPlace})}>
             <M_Tooltip type={tooltipPlace} size="wide">
               <A_H type='tooltip'>{name}</A_H>
+              <A_H type='tooltip-sub'>{position}</A_H>
               <span dangerouslySetInnerHTML={{__html: bio}}/>
             </M_Tooltip>
           </span>
