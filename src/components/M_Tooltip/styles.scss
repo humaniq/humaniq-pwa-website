@@ -13,7 +13,6 @@ $tooltip-border: 1px solid rgba(0, 0, 0, 0.14);
     z-index: 1;
   }
   &__root{
-    width: 245px;
     border-radius: $tooltip-border-radius;
     background: $white;
     position: relative;
@@ -59,6 +58,14 @@ $tooltip-border: 1px solid rgba(0, 0, 0, 0.14);
       &_bottom:after{
         left: 50%;
         top: 0;
+      }
+    }
+    &_size{
+      &_wide{
+        width: 30rem;
+      }
+      &_normal{
+        width: 24.5rem;
       }
     }
   }
