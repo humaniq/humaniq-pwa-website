@@ -102,7 +102,7 @@ const team = [
     name: 'Serafima Semkina',
     position: 'CAO',
     bio: 'Bringing experience of management and economics, Serafima’s passions include art, music and Russian literature and the crypto-economy. She cannot stand inequality and is happy to have the opportunity to tackle it with Humaniq.',
-    imgSrc: `${imgPath}/serafima_semkina.jpg`
+    imgSrc: `${imgPath}/serafima_semkina.png`
   },
   {
     name: 'Javed Khattak',
@@ -126,7 +126,7 @@ const team = [
     name: 'Georgii Oleinikov',
     position: 'Developer',
     bio: 'Bringing experience of mathematics and computer science, Georgii loves things that have an impact and people that make these things happen. He believes there is big room for improvement in the financial sector, with many not served.',
-    imgSrc: `${imgPath}/georgii_oleinikov.jpg`
+    imgSrc: `${imgPath}/georgii_oleinikov.png`
   },
   {
     name: 'Kherel Kechil',
@@ -180,7 +180,7 @@ const team = [
     name: 'Andriy Schechenko',
     position: 'Forum Administrator',
     bio: 'Andriy has experience in computer science, security research, online community building and entrepreneurship and is passionate about both improving the world and space exploration. At Humaniq he wants to contribute to something good for humanity and boost financial independence.',
-    imgSrc: `${imgPath}/andriy_schechenko.jpg`
+    imgSrc: `${imgPath}/andriy_schechenko.png`
   },
   {
     name: 'Lee Baker',
