@@ -16,12 +16,9 @@ class SE_Founders extends Component {
               <A_H type='section'>Humaniq Founders</A_H>
             </div>
             <div className={cn('founders-container')}>
-              <div className={cn('founders-container-image')}>
-              </div>
-              <div className={cn('founders-container-image')}>
-              </div>
-              <div className={cn('founders-container-image')}>
-              </div>
+              <div className={cn('founders-container-image')}></div>
+              <div className={cn('founders-container-image')}></div>
+              <div className={cn('founders-container-image')}></div>
             </div>
           </div>
         </A_Container>

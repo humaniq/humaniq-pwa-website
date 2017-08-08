@@ -79,7 +79,7 @@ describe("HQM Explorer page", () => {
     const text = await page
       .evaluate(() => document.body.textContent)
       .end()
-    expect(text).toContain('umaniq token is the core of the banking ecosystem that H')
+    expect(text).toContain('umaniq token is the core of the banking ecosystem that the H')
   })
 })
 
@@ -185,5 +185,21 @@ describe("Ambassadors page", () => {
       .evaluate(() => document.body.textContent)
       .end()
     expect(text).toContain('We want to communicate directly with the people we wish to serve: the unbanked')
+  })
+})
+
+
+describe("About", () => {
+
+  beforeEach(() => {
+    page = nightmare().goto('http://localhost:8080/about')
+
+  })
+
+  it('shows page text', async () => {
+    const text = await page
+      .evaluate(() => document.body.textContent)
+      .end()
+    expect(text).toContain('Today, two billion people around the world do not have access to banking')
   })
 })
