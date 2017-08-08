@@ -17,6 +17,7 @@ import OpenSource from './OpenSource'
 import WikiSearch from './WikiSearch'
 import Hmq from './Hmq'
 import Ambassadors from './Ambassadors'
+import About from './About'
 
 
 import {cleanWikiSearch} from 'AC/wiki'
@@ -91,6 +92,9 @@ const getRoutes = (store) => {
       <Route path="ambassadors"
              prepareData={Ambassadors.prepareData}
              component={Ambassadors}
+      />
+      <Route path="about"
+             component={About}
       />
       <Route
         path="/error/:err"

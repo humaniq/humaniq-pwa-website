@@ -1,0 +1,101 @@
+@import "common/settings/variables";
+@import "common/utils";
+
+.se-about{
+  &__founders{
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 5rem;
+    padding-top: 7rem;
+    align-items: center;
+
+    @include media($mobile) {
+      flex-flow: column;
+      padding-top: 4rem;
+    }
+  }
+
+  &__founder{
+    width: 20rem;
+    height: 20rem;
+    @include media($mobile) {
+      & + &{
+        margin-top: 4rem;
+      }
+    }
+  }
+  &__team{
+    &-list {
+      display: flex;
+      flex-flow: wrap;
+      margin: 0 auto;
+      margin-top: 3rem;
+      justify-content: center;
+    }
+    &-member{
+      flex-basis: 19.6rem;
+      padding: 1rem;
+      height: auto;
+      align-items: center;
+      &-empty{
+        flex-basis: 19.6rem;
+      }
+    }
+  }
+
+  &__form{
+    display: flex;
+    justify-content: center;
+    flex-flow: wrap;
+    align-items: center;
+    padding-top: 4rem;
+    text-align: center;
+    margin-bottom: 4rem;
+    &-select{
+      margin-right: 3rem;
+      display: inline-block;
+      @include media($mobile) {
+        width: 100%;
+        margin: 0;
+        margin-bottom: 1.6rem;
+      }
+    }
+  }
+  &__tooltip{
+    z-index: 100;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s linear 0.3s, opacity .5s linear;
+    position: absolute;
+    top:50%;
+    transform: translate(0, -50%);
+    a{
+      color: $interactive;
+
+    }
+    &_type{
+      &_left{
+        right: 100%;
+      }
+      &_right{
+        //left: 50%;
+      }
+    }
+  }
+}
+
+.se-about__founder:hover .se-about__tooltip{
+  visibility: visible;
+  opacity: 1;
+  @include media($tablet) {
+    display: none;
+  }
+}
+
+.se-about__team-member:hover .se-about__tooltip{
+  visibility: visible;
+  opacity: 1;
+  @include media($tablet) {
+    display: none;
+  }
+}

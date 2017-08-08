@@ -21,6 +21,7 @@ const links = [
   {
     section: 'company',
     links: [
+      {name: 'About', url: '/about'},
       {name: 'Blog', url: 'https://blog.humaniq.co', externalLink: true},
       {name: 'Forum', url: 'https://forum.humaniq.co', externalLink: true},
       // {name: 'News', url: '#'},
