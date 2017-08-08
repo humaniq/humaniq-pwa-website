@@ -29,6 +29,7 @@
       display: flex;
       flex-flow: wrap;
       margin: 0 auto;
+      margin-top: 3rem;
       justify-content: center;
     }
     &-member{
@@ -39,13 +40,6 @@
       &-empty{
         flex-basis: 19.6rem;
       }
-      //@include media($mobile) {
-      //  flex-basis: 25rem;
-      //  height: auto;
-      //  &-empty{
-      //    flex-basis: 25rem;
-      //  }
-      //}
     }
   }
 

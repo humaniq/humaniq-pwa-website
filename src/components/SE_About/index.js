@@ -105,12 +105,8 @@ class SE_About extends Component {
       )
     }
     return (
-      <div className={cn('team-list-wrapper')}>
-        <div
-          className={cn('team-list')}
-        >
-          {_renderedTeam}
-        </div>
+      <div className={cn('team-list')} >
+        {_renderedTeam}
       </div>
     )
   }
