@@ -15,7 +15,7 @@ const founders = [
     name: 'Alex Fork',
     position: 'Head of Humaniq',
     bio: 'Humaniq founder and Fintech entrepreneur Alex is one of the most important members of the international Blockchain community, who has worked with the UN to lead the deployment of Blockchain technology to improve the efficiency of UN resources and remittances. He has also spearheaded the harnessing of blockchains in Russia, organising a conference for 500 participants on the Ethereum Blockchain; authoring Bitcoin. More than Just Money; and founding the Fintech accelerator for startups in Russia, Future Fintech. He started Humaniq to help lift the global banked out of poverty.',
-    imgSrc: `${imgPath}/alex_fork.jpg`
+    imgSrc: `${imgPath}/alex_fork.png`
   },
   {
     name: 'Dinis Guarda',
@@ -186,7 +186,7 @@ const team = [
     name: 'Lee Baker',
     position: 'Writer',
     bio: 'Lee has a background in both communications and community organising and loves story-telling to inspire positive action and to connect with others to change things for the better. He wants to unleash the power of the collaborative economy and help everyone to put their destinies into their own hands.',
-    imgSrc: `${imgPath}/lee_baker.jpg`
+    imgSrc: `${imgPath}/lee_baker.png`
   },
   {
     name: 'Olga Derbio',
