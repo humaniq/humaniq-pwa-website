@@ -70,7 +70,7 @@ const advisers = [
   {
     name: 'Michael Terpin',
     bio: 'Michael Terpin co-founded BitAngels (www.bitangels.co), the world\'s first angel network for digital currency startups, in May 2013, and now serves as its chairman. The distributed angel network currently has more than 600 members, and it has made more than 25 investments in bitcoin and cryptocurrency companies with two exits and several follow-on rounds. Terpin is also co-founder and managing partner of bCommerce Labs (www.bcommercelabs.com), the first technology incubator fund focused on e-commerce companies for bitcoin and the blockchain, and a partner at Flight VC.',
-    imgSrc: `${imgPath}/chami_akmeemana.jpg`
+    imgSrc: `${imgPath}/michael_terpin.jpg`
   },
 
   {
