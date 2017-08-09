@@ -1,5 +1,5 @@
-import {SUCCESS, FETCH, AMBASSADORS} from 'store/constants'
-import {ENPOINT_AMBASSADORS} from 'store/constants/api'
+import {SUCCESS, FETCH, AMBASSADORS} from 'constants'
+import {ENPOINT_AMBASSADORS} from 'constants/api'
 
 const initAmbassadors = {
   entities: [],

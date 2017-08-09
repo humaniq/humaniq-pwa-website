@@ -1,8 +1,8 @@
 import moment from 'moment'
-import { createRequestActions } from 'store/helpers'
-import { BLOCKCHAIN_EXCHANGE_RATES } from 'store/constants'
-import { BACKEND_CALL } from 'store/middleware/humaniqBackendApi'
-import { ENDPOINT_BLOCKCHAIN_EXCHANGE_RATES } from 'store/constants/api'
+import { createRequestActions } from 'helpers'
+import { BLOCKCHAIN_EXCHANGE_RATES } from 'constants'
+import { BACKEND_CALL } from 'middleware/humaniqBackendApi'
+import { ENDPOINT_BLOCKCHAIN_EXCHANGE_RATES } from 'constants/api'
 
 export function fetchExchangeRates (query, period) {
   return ({

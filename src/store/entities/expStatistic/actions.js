@@ -1,7 +1,7 @@
-import { createRequestActions } from 'store/helpers'
-import { BLOCKCHAIN_STATISTICS } from 'store/constants'
-import { BACKEND_CALL } from 'store/middleware/humaniqBackendApi'
-import { ENDPOINT_BLOCKCHAIN_STATISTICS } from 'store/constants/api'
+import { createRequestActions } from 'helpers'
+import { BLOCKCHAIN_STATISTICS } from 'constants'
+import { BACKEND_CALL } from 'middleware/humaniqBackendApi'
+import { ENDPOINT_BLOCKCHAIN_STATISTICS } from 'constants/api'
 
 export function fetchHmqStatistics () {
   return ({

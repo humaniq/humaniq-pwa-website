@@ -1,5 +1,5 @@
-import {SUCCESS, FETCH, PARTNERS} from 'store/constants'
-import {ENDPOINT_PARTNERS} from 'store/constants/api'
+import {SUCCESS, FETCH, PARTNERS} from 'constants'
+import {ENDPOINT_PARTNERS} from 'constants/api'
 
 const initPartners = {
   entities: [],

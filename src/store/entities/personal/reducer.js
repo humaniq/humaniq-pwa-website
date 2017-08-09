@@ -1,4 +1,4 @@
-import {SUCCESS, FETCH, START, FAIL, BY_REFERENCE} from 'store/constants'
+import {SUCCESS, FETCH, START, FAIL, BY_REFERENCE} from 'constants'
 
 const initPersonal = {
   loaded: false,
