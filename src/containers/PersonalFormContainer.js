@@ -1,6 +1,6 @@
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux'
-import {subscribeByReference} from 'AC/otherAPI'
+import {subscribeByReference} from 'store/entities/personal/actions'
 import SE_PersonalForm from 'SE_PersonalForm'
 
 function mapStateToProps(state) {
@@ -19,8 +19,8 @@ function mergeProps(stateProps, dispatchProps){
 
   const {invitationCode} = stateProps
   const {subscribeByReference} = dispatchProps
-  const handleSubmit = (data) => {
-    subscribeByReference(invitationCode, data)
+  const handleSubmit = (phone_number) => {
+    subscribeByReference(invitationCode, phone_number)
   }
 
   return {...stateProps, handleSubmit}

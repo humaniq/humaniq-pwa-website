@@ -20,7 +20,7 @@ import Ambassadors from './Ambassadors'
 import About from './About'
 
 
-import {cleanWikiSearch} from 'AC/wiki'
+import {cleanWikiSearch} from 'store/entities/wikiSearch/actions'
 
 const getRoutes = (store) => {
   return (

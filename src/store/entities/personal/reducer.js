@@ -3,13 +3,13 @@ import {SUCCESS, FETCH, START, FAIL, BY_REFERENCE} from 'constants'
 const initPersonal = {
   loaded: false,
   loading: false,
-  invitationCode: '1c472124-4fc9-418a-943f-683bd1fc8b13',
+  invitationCode: '',
   name:{
-    first_name:'Anton',
-    last_name:'Anton'
+    first_name:'',
+    last_name:''
   },
-  phone_number: '+1 416-464-71ХХ',
-  photo_url:'/img/1234.png'
+  phone_number: '',
+  photo_url:''
 }
 
 export default (personal = initPersonal, {type, data}) => {
@@ -23,6 +23,8 @@ export default (personal = initPersonal, {type, data}) => {
       const _phone = `+${country_code} (${_pn.substr(0, 3)}) ${_pn.substr(3, 3)} ${_pn.substr(6, 10)}`
 
       return {...personal,
+        loaded: true,
+        loading: false,
         ...data,
         phone_number:_phone
       }

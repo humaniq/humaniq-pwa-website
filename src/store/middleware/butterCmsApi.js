@@ -1,7 +1,7 @@
 import request from 'superagent'
 import {stringify} from 'qs'
-import {BUTTER_CMS_API_URL, BUTTER_CMS_API_AUTH_TOKEN, BUTTER_CMS_API_ENDPOINTS} from 'constants/api'
-import {REQUEST, CONTENT, WIKI, POST, START, SUCCESS, FAIL, ERROR} from 'constants'
+import {BUTTER_CMS_API_URL, BUTTER_CMS_API_AUTH_TOKEN, BUTTER_CMS_API_ENDPOINTS} from 'store/constants/api'
+import {REQUEST, CONTENT, WIKI, POST, START, SUCCESS, FAIL, ERROR} from 'store/constants'
 import {convert} from 'utils'
 
 export const BUTTER_CMS_CALL = 'BUTTER_CMS_CALL'

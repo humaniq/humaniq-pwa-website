@@ -1,6 +1,7 @@
 export const BUTTER_CMS_API_URL = 'https://api.buttercms.com/v2'
 export const BUTTER_CMS_API_AUTH_TOKEN = 'b251deef79e07f942e09e2df3fb18755f90522f2'
 
+
 export const BUTTER_CMS_API_ENDPOINTS = {
   post: `/posts/`,
   posts: `/posts/`,
@@ -23,7 +24,8 @@ export const ENPOINT_AMBASSADORS_LIST = `${ENPOINT_AMBASSADORS}/ambassadors.json
 
 export const ENDPOINT_WIKI_SEARCH = 'https://f03pn9k2v8.execute-api.eu-west-1.amazonaws.com/dev/articles/search'
 
-export const ENDPOINT_PERSONAL = 'https://beta-api.humaniq.co/hmqref/api/v1'
+export const ENDPOINT_PERSONAL = 'https://api.humaniq.com/hmqref/api/v1'
+export const ENDPOINT_PERSONAL_HEADERS = {Authorization: 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJkOGE5ZjhhNTk3YzU0ZjkxOWVlZDRmMWRmOTU2NjQwMiIsImlhdCI6MTUwMjI2NzM3NSwiZXhwIjpudWxsLCJhdWQiOiJodHRwOi8vaHVtYW5pcS5jb20iLCJzdWIiOiIifQ.VtxsTEM9pQTdQ1Acr1BL_v-4wk2Hgl3Wwjdfjy5iBmI'}
 
 export const ENDPOINT_PERSONAL_DATA = `${ENDPOINT_PERSONAL}/user/`
 export const ENDPOINT_PERSONAL_REFERRER = `${ENDPOINT_PERSONAL}/referrers/`

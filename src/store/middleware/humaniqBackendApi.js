@@ -1,4 +1,4 @@
-import {ERROR} from 'constants'
+import {ERROR} from 'store/constants'
 import request from 'superagent'
 import {stringify} from 'qs'
 
@@ -31,7 +31,7 @@ export default () => next => action => {
   return promise;
 }
 
-function APICall({endpoint, method, query, payload}) {
+function APICall({endpoint, method, query, payload, headers, type}) {
   return new Promise((resolve, reject) => {
     let r = request[method.toLowerCase()](`${endpoint}`)
 
@@ -40,6 +40,12 @@ function APICall({endpoint, method, query, payload}) {
 
     if (payload)
       r = r.send(payload)
+
+    if(headers)
+      r = r.set(headers)
+
+    if(type)
+      r = r.type(type)
 
     r.then(
       data => resolve(data.body),
