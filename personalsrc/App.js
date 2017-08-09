@@ -7,7 +7,7 @@ import history from 'history'
 import createStore from 'store';
 import prepareData from 'utils/prepareData'
 // import offlinePluginStart from 'utils/offlinePlugin'
-import {closeMenu} from 'AC/navigation'
+import {closeMenu} from 'store/entities/navigation/actions'
 
 const store = createStore(window.__INITIAL_STATE__)
 

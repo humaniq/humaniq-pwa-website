@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import WikiLayoutContainer from 'containers/WikiLayoutContainer'
-import {fetchWiki} from "AC/wiki";
+import {fetchWiki} from "store/entities/wikiArticles/actions";
 
 
 class WikiLayoutRoute extends Component {

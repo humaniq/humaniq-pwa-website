@@ -1,9 +1,9 @@
 import {createStore, applyMiddleware} from 'redux';
 import {composeWithDevTools} from 'redux-devtools-extension';
-import reducer from 'reducer';
-import error from 'middleware/error';
-import humaniqBackendApi from 'middleware/humaniqBackendApi'
-import butterCmsApi from 'middleware/butterCmsApi'
+import reducer from 'store/rootReducer';
+import error from 'store/middleware/error';
+import humaniqBackendApi from 'store/middleware/humaniqBackendApi'
+import butterCmsApi from 'store/middleware/butterCmsApi'
 
 // import createLogger from 'redux-logger';
 
@@ -21,8 +21,8 @@ const store = (initialState = {}) => createStore(
 )
 
 if (module.hot) {
-  module.hot.accept('../reducer', () => {
-    const nextRootReducer = require('../reducer/index');
+  module.hot.accept('./rootReducer', () => {
+    const nextRootReducer = require('./rootReducer');
     store.replaceReducer(nextRootReducer);
   });
 }

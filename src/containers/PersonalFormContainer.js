@@ -1,6 +1,6 @@
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux'
-import {subscribeByReference} from 'AC/otherAPI'
+import {subscribeByReference} from 'store/entities/personal/actions'
 import SE_PersonalForm from 'SE_PersonalForm'
 
 function mapStateToProps(state) {
