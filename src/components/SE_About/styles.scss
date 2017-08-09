@@ -40,6 +40,11 @@
       &-empty{
         flex-basis: 19.6rem;
       }
+      @include media($mobile) {
+        flex-basis: 15rem;
+        height: 15rem;
+        padding: 1rem;
+      }
     }
   }
 

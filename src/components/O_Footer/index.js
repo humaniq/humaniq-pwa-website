@@ -41,7 +41,7 @@ const links = [
   {
     section: 'resources',
     links: [
-      // {name: 'Support', url: '#'},
+      {name: 'White Paper', url: '/pdf/humaniq_wp_english.pdf', externalLink: true},
       {name: 'Contact us', url: '/contact-us'},
       // {name: 'Download mobile app', url: '#'}
     ]
