@@ -23,14 +23,15 @@ class SE_HomeHero extends Component {
     duration: 0,
     width: 0
   }
+
   componentDidMount() {
-    if(__CLIENT__){
-      window.onresize = () => this.forceUpdate()
-    }
+    document.addEventListener('resize', this.forceUpdate);
     this.setState({isPlaying: true})
-    this.forceUpdate()
   }
 
+  componentWillUnmount() {
+    document.removeEventListener('resize', this.forceUpdate);
+  }
 
   render() {
 

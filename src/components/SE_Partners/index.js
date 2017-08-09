@@ -24,10 +24,12 @@ class SE_Partners extends Component {
   nodes = []
 
   componentDidMount() {
-    if(__CLIENT__){
-      window.onresize = () => this.forceUpdate()
-    }
+    window.addEventListener('resize', this.forceUpdate, false);
     this.forceUpdate()
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.forceUpdate, false);
   }
 
   getPartners(entities, filter) {
@@ -92,6 +94,12 @@ class SE_Partners extends Component {
   render() {
     const {types, entities} = this.props
     const options = ['All', ...types]
+
+
+    console.log('0', this.nodes[0] && this.nodes[0].offsetLeft)
+    console.log('1', this.nodes[1] && this.nodes[1].offsetLeft)
+    console.log('2', this.nodes[2] && this.nodes[2].offsetLeft)
+
 
     const {filter} = this.state
     return (

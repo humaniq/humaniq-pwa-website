@@ -12,7 +12,7 @@ class O_Timeline extends Component {
       <div>
         <A_Container type='wide'>
           <div className={cn('timeline')}>
-            <A_H type='timeline timeline-title'>A quick walk through our history as a company:</A_H>
+            <A_H type='section-c'>A quick walk through our history as a company:</A_H>
             <div className={cn('border-line')}>
               <section className={cn('year')}>
                 <h3 className={cn('year-date')}>2016</h3>

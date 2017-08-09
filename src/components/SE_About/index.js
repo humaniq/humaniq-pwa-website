@@ -21,12 +21,25 @@ class SE_About extends Component {
 
   nodes = {}
 
-  componentDidMount() {
-    if(__CLIENT__){
-      window.onresize = () => this.forceUpdate()
-    }
-    this.forceUpdate()
-  }
+  // componentDidMount() {
+  //   console.log('componentDidMount')
+  //   window.addEventListener('resize', this.forceUpdate);
+  //   this.forceUpdate()
+  // }
+  //
+  // componentWillUnmount() {
+  //   console.log('componentWillUnmount')
+  //   window.removeEventListener('resize', this.forceUpdate);
+  // }
+  //
+  // componentDidUpdate() {
+  //   const defaultNode = this.default
+  //   if(!defaultNode || !defaultNode.getBoundingClientRect().right){
+  //     console.log(!defaultNode, !defaultNode.getBoundingClientRect().right, 'не работает', defaultNode.offsetLeft)
+  //   } else{
+  //     console.log(!defaultNode, !defaultNode.getBoundingClientRect().right, 'работает', defaultNode.offsetLeft)
+  //   }
+  // }
 
   getFounders(founders){
 
@@ -58,19 +71,31 @@ class SE_About extends Component {
 
   getTeam(entities) {
 
-    let _renderedTeam = entities.map(({name, bio, imgSrc, position}) => {
+    let _renderedTeam = entities.map(({name, bio, imgSrc, position}, i) => {
       const kebabName = convert.toCleanKebab(name)
-      let tooltipPlace;
-      if (
-        this.nodes.default
-        && this.nodes[kebabName]
-        && (this.nodes.default.getBoundingClientRect().right - this.nodes[kebabName].getBoundingClientRect().right < 200)
-      ) {
-        tooltipPlace = 'left'
-      } else {
-        tooltipPlace = 'right'
-      }
+      // let tooltipPlace;
+      // if(this.nodes[kebabName]){
+      //   console.log(
+      //     kebabName,
+      //     this.nodes[kebabName].offsetLeft,
+      //     this.nodes[kebabName],
+      //     // this.nodes.default.getBoundingClientRect().right,
+      //     // this.nodes[kebabName].getBoundingClientRect().right,
+      //     // this.nodes.default.getBoundingClientRect().right - this.nodes[kebabName].getBoundingClientRect().right < 200
+      //   )
+      // }
+      //
+      // if (
+      //   this.default
+      //   && this.nodes[kebabName]
+      //   && (this.default.getBoundingClientRect().right - this.nodes[kebabName].getBoundingClientRect().right < 200)
+      // ) {
+      //   tooltipPlace = 'left'
+      // } else {
+      //   tooltipPlace = 'right'
+      // }
 
+      const tooltipPlace = (i+1) % 5 === 0 ? 'left' : 'right'
 
       return (
         <div
@@ -86,7 +111,9 @@ class SE_About extends Component {
           <span className={cn('tooltip', {type: tooltipPlace})}>
             <M_Tooltip type={tooltipPlace} size="wide">
               <A_H type='tooltip'>{name}</A_H>
-              <A_H type='tooltip-sub'>{position}</A_H>
+              {position &&
+                <A_H type='tooltip-sub'>{position}</A_H>
+              }
               <span dangerouslySetInnerHTML={{__html: bio}}/>
             </M_Tooltip>
           </span>
@@ -112,7 +139,7 @@ class SE_About extends Component {
   render() {
     const {founders, advisers, team} = this.props
 
-
+    console.log(this.default && this.default.offsetLeft)
     const renderedFounders = this.getFounders(founders)
     const renderedAdvisers = this.getTeam(advisers)
     const renderedTeam = this.getTeam(team)
@@ -135,7 +162,8 @@ class SE_About extends Component {
         <A_Container type="equal">
 
           <A_H type="section" >Humaniq Team</A_H>
-          <div ref={ node => this.nodes.default = node}>
+          <div ref={ node => this.default = node} style={{width: '100%', height: 1}}>{' '}</div>
+          <div>
             {renderedTeam}
           </div>
         </A_Container>
@@ -152,9 +180,9 @@ class SE_About extends Component {
 }
 
 SE_About.propTypes = {
-  entities: T.array.isRequired,
-  types: T.array.isRequired,
-  founders: T.array.isRequired
+  founders: T.array.isRequired,
+  advisers: T.array.isRequired,
+  team: T.array.isRequired
 };
 
 export default SE_About

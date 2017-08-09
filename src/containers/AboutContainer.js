@@ -135,18 +135,6 @@ const team = [
     imgSrc: `${imgPath}/kherel_kechil.png`
   },
   {
-    name: 'George Al Medawar',
-    position: 'Investment Relations',
-    bio: 'George saw in Humaniq the potential to meet many of the United Nation’s pressing sustainable development goals. He has a background in banking and finance, auditing, and political science, and is passionate about both the Blockchain and the blue economy.',
-    imgSrc: `${imgPath}/george_al_medawar.jpg`
-  },
-  {
-    name: 'Alexander Perkins',
-    position: 'Vice President of Operations',
-    bio: 'With a background in finance, financial engineering, venture capital, and political opposition research, Alexander is as passionate about Fintech as playing the classical piano, and joined Humaniq because of his belief that increased access to the economic tools is the best development strategy.',
-    imgSrc: `${imgPath}/alexander_perkins.jpg`
-  },
-  {
     name: 'Dickson Nsofor',
     position: ' Head of Global Institution',
     bio: 'Dickson has experience of information engineering and international economics, and the Blockchain is his passion. He was motivated to work with Humaniq because of the potential to solve major problems around the world.',
