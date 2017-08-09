@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import HmqContainer from 'containers/HmqContainer'
-import {fetchHmqStatistics} from 'AC/hmqExp'
+import {fetchHmqStatistics} from 'store/entities/expStatistic/actions'
 
 class PostRoute extends Component {
 

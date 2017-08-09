@@ -19,6 +19,7 @@ export default (post = initPost, {type, data}) => {
       return {...post, loading: false, loaded: true, entry: data}
     case REQUEST + POST + FAIL:
       return {...post, loading: false}
+
   }
   return post;
 };

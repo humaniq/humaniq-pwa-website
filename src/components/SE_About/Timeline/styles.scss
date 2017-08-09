@@ -72,16 +72,3 @@
     color: $black-1;
   }
 }
-
-.timeline-title {
-  font-size: 2.3rem;
-  font-weight: 600;
-  line-height: 1.39;
-  text-align: center;
-  color: $black-2;
-  position: relative;
-  left: 1rem;
-  @include media($tablet) {
-    left: 0;
-  }
-}

@@ -33,7 +33,8 @@ class SE_PersonalForm extends Component {
   onSubmit = (handleSubmit) => () => {
     const {values} = this.state
     if (this.validate(values)){
-      handleSubmit(values)
+      const phone_number = values.code + values.phone.replace(/\D/g, '')
+      handleSubmit({phone_number})
       this.setState({submitted: true})
     }
   }
@@ -140,7 +141,7 @@ class SE_PersonalForm extends Component {
       <div className={cn('background')}>
         <div className={cn('background-blue')} >
           <div className={cn('root')} >
-            <form className={cn('form')} onSubmit={this.onFormSubmit}>
+            <form className={cn('form')}>
               <Header {...props}>
                 {submitted ||
                   <A_Btn

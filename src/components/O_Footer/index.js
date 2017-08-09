@@ -7,7 +7,7 @@ import {Motion, spring} from 'react-motion';
 import A_Link from 'A_Link'
 import A_Image from 'A_Image'
 import A_Container from 'A_Container'
-import {WEBSITE_DOMAIN_NAME} from 'constants/api'
+import {WEBSITE_DOMAIN_NAME} from 'store/constants/api'
 
 const links = [
   {
@@ -41,7 +41,7 @@ const links = [
   {
     section: 'resources',
     links: [
-      // {name: 'Support', url: '#'},
+      {name: 'White Paper', url: '/pdf/humaniq_wp_english.pdf', externalLink: true},
       {name: 'Contact us', url: '/contact-us'},
       // {name: 'Download mobile app', url: '#'}
     ]
