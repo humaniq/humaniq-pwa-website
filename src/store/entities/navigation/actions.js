@@ -1,4 +1,4 @@
-import {SET, MENU, OPEN, CLOSE, TOGGLE, OPEN_ROUTE} from 'store/constants'
+import {SET, MENU, OPEN, CLOSE, TOGGLE, OPEN_ROUTE} from 'constants'
 
 export function setRoute(str) {
   const data = str.split('/').filter(entry => entry.trim() != '')

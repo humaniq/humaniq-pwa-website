@@ -1,5 +1,5 @@
-import {BUTTER_CMS_CALL} from 'store/middleware/butterCmsApi'
-import {POSTS} from 'store/constants'
+import {BUTTER_CMS_CALL} from 'middleware/butterCmsApi'
+import {POSTS} from 'constants'
 
 export function fetchPosts() {
   return ({

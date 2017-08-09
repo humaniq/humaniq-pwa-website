@@ -1,4 +1,4 @@
-import {START, SUCCESS, REQUEST, FAIL, BLOCKCHAIN_EXCHANGE_RATES} from 'store/constants'
+import {START, SUCCESS, REQUEST, FAIL, BLOCKCHAIN_EXCHANGE_RATES} from 'constants'
 
 import moment from 'moment';
 

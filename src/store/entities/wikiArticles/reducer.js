@@ -1,4 +1,4 @@
-import {REQUEST, WIKI, START, SUCCESS, FAIL} from 'store/constants'
+import {REQUEST, WIKI, START, SUCCESS, FAIL} from 'constants'
 
 const initLevel0 = {
   level0Title: '',

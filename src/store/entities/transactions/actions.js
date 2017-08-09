@@ -1,13 +1,13 @@
-import { createRequestActions } from 'store/helpers'
+import { createRequestActions } from 'helpers'
 import {
   SUCCESS,
   REQUEST,
   BLOCKCHAIN_TRANSACTIONS,
   BLOCKCHAIN_MARKETS,
-} from 'store/constants'
-import { BACKEND_CALL } from 'store/middleware/humaniqBackendApi'
+} from 'constants'
+import { BACKEND_CALL } from 'middleware/humaniqBackendApi'
 
-import { ENDPOINT_BLOCKCHAIN_MARKETS } from 'store/constants/api'
+import { ENDPOINT_BLOCKCHAIN_MARKETS } from 'constants/api'
 
 import { rnd } from 'utils'
 import LastDate from 'utils/last'

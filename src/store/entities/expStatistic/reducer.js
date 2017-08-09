@@ -1,4 +1,4 @@
-import {START, SUCCESS, REQUEST, FAIL, BLOCKCHAIN_STATISTICS} from 'store/constants'
+import {START, SUCCESS, REQUEST, FAIL, BLOCKCHAIN_STATISTICS} from 'constants'
 import {safeDA, numberFormat} from 'utils'
 
 const expStatisticInit = {

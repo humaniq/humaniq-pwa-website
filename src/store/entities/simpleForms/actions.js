@@ -1,6 +1,6 @@
-import {BACKEND_CALL} from 'store/middleware/humaniqBackendApi'
-import {ENDPOINT_JOIN_FORM, ENDPOINT_SUBSCRIBE_FORM, ENDPOINT_AMBASSADORS_FORM} from 'store/constants/api'
-import {START, SUCCESS, FAIL, POST, JOIN_FORM, SUBSCRIBE_FORM, AMBASSADORS_FORM} from 'store/constants'
+import {BACKEND_CALL} from 'middleware/humaniqBackendApi'
+import {ENDPOINT_JOIN_FORM, ENDPOINT_SUBSCRIBE_FORM, ENDPOINT_AMBASSADORS_FORM} from 'constants/api'
+import {START, SUCCESS, FAIL, POST, JOIN_FORM, SUBSCRIBE_FORM, AMBASSADORS_FORM} from 'constants'
 
 export function submit(formName, data) {
   let endpoint, form;
