@@ -8,7 +8,7 @@ export function fetchAmbassadors () {
     [BACKEND_CALL]: {
       endpoint: ENPOINT_AMBASSADORS_LIST,
       method: 'GET',
-      types: createFetchActions(AMBASSADORS)
+      types: createFetchActions(AMBASSADORS),
     }
   })
 }
