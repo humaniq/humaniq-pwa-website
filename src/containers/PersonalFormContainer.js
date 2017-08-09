@@ -19,8 +19,8 @@ function mergeProps(stateProps, dispatchProps){
 
   const {invitationCode} = stateProps
   const {subscribeByReference} = dispatchProps
-  const handleSubmit = (data) => {
-    subscribeByReference(invitationCode, data)
+  const handleSubmit = (phone_number) => {
+    subscribeByReference(invitationCode, phone_number)
   }
 
   return {...stateProps, handleSubmit}

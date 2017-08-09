@@ -49,7 +49,7 @@ function historyCb(location) {
 
 history.listen(historyCb)
 
-// historyCb(window.location)
+historyCb(window.location)
 // offlinePluginStart()
 
 
