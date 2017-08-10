@@ -8,6 +8,7 @@ const A_H = ({type, icon, children, center}) =>{
 
   let tagType
   switch(type){
+    case 'animated-hero':
     case 'video-hero':
       tagType = 'h1'
       break;
@@ -64,6 +65,7 @@ const A_H = ({type, icon, children, center}) =>{
 
 A_H.propTypes = {
   type: T.oneOf([
+    'animated-hero',
     'video-hero',
     'hmq-e',
     'hmq', // black icon title for hmq explorer 16/25 /600, mob -margin left 16px
