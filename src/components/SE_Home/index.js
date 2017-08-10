@@ -6,11 +6,14 @@ import InfoAnimation from './InfoAnimation'
 import Gallery from './Gallery'
 import A_P from 'A_P'
 import Magazines from './Magazines'
-
-const SE_Home = () => (
+import AnimatedHero from './AnimatedHero'
+const SE_Home = ({animation}) => (
   <div>
     <Meta />
-    <Hero explorerData={explorerMock}/>
+    {animation ?
+      <AnimatedHero />
+      : <Hero explorerData={explorerMock}/>
+    }
     {/*<Gallery*/}
       {/*entities={links}*/}
       {/*type='links'*/}

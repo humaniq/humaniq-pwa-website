@@ -2,6 +2,7 @@ import {Route, IndexRoute} from 'react-router'
 import React from 'react'
 import App from './App'
 import Home from './Home'
+import HomeAnimations from './HomeAnimations'
 import Error from './Error'
 import Blog0 from './Blog0'
 import SimpleForm from './SimpleForm'
@@ -32,6 +33,10 @@ const getRoutes = (store) => {
       <IndexRoute
         component={Home}
         prepareData={Home.prepareData}
+      />
+      <Route
+        path="test-animated-home"
+        component={HomeAnimations}
       />
       <Route path="form"
       >
