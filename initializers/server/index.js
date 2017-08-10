@@ -3,7 +3,7 @@ require('app-module-path').addPath(path.join(process.cwd(), 'src'));
 require('./globals')
 // const compression = require('compression')
 // const mime = require('mime');
-const serveStatic = require('serve-static')
+// const serveStatic = require('serve-static')
 // const fs = require('fs.extra');
 
 require('babel-core/register');
@@ -15,7 +15,7 @@ const port = process.env.PORT || 8080;
 const express = require('express')
 const application = express()
 
-application.use(serveStatic('static'));
+application.use(express.static('static'));
 
 // application.use(serveStatic('static', {
 //   'index': false,
