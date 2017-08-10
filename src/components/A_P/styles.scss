@@ -3,6 +3,17 @@
 
 .a-p{
   &_type{
+    &_animated-hero{
+      font-size: 1.6rem;
+      line-height: 2.8rem;
+      text-align: center;
+      color: #ffffff;
+      margin-bottom: 16px;
+      @include media($mobile) {
+        line-height: 2.5rem;
+      }
+    }
+
     &_video-hero{
       font-size: 1.6rem;
       line-height: 2.8rem;
