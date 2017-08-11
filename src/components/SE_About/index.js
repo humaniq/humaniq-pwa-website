@@ -138,8 +138,6 @@ class SE_About extends Component {
 
   render() {
     const {founders, advisers, team} = this.props
-
-    console.log(this.default && this.default.offsetLeft)
     const renderedFounders = this.getFounders(founders)
     const renderedAdvisers = this.getTeam(advisers)
     const renderedTeam = this.getTeam(team)
