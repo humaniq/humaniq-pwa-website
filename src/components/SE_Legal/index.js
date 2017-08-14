@@ -1,90 +1,31 @@
 import React, {Component} from 'react';
 import T from "prop-types";
 import './styles.scss';
-import { cssClassName, convert, safeDA } from 'utils'
+import { cssClassName} from 'utils'
 import A_Container from 'A_Container'
-// import O_CustomSelectBlue from 'O_CustomSelectBlue'
 import O_Hero from 'O_Hero'
 
 import A_H from 'A_H'
 import A_P from 'A_P'
-import Meta from './meta'
-import LegalSection from './O_LegalSection/index'
 import O_Menu from 'O_Menu/index'
 const cn = cssClassName('SE_Legal');
-
-const spaceTop = 60
+import Meta from './meta'
 
 class SE_Legal extends Component {
-  state = {
-    selected: safeDA(this.props, ['articles', 0, 'anchor']),
-  };
 
-  componentDidMount() {
-    document.addEventListener('scroll', this.checkVisibleSection);
-    this.forceUpdate()
+  renderSections = (sections) => sections.map(s => (
+    <div key={s.header} type="section-clean">
+      <div className={cn('text')}>
+        <A_H type='section-sub'>{s.header}</A_H>
+        <div dangerouslySetInnerHTML={{__html: s.html}} className={cn('html')}/>
+      </div>
 
-  }
-
-  componentWillUnmount() {
-    document.removeEventListener('scroll', this.checkVisibleSection);
-  }
-
-  checkVisibleSection = () => {
-
-    const anchors = this.props.articles.map(a => convert.toCleanKebab(a.title));
-    let firstSectionOffset;
-    let minimalNegativeOffset = 0;
-    let { visibleSection } = this.state;
-
-    anchors.forEach(anchor => {
-      const distanceScrolled = document.body.scrollTop + spaceTop;
-      const elemViewportOffset = this[anchor].node.getBoundingClientRect().top - spaceTop;
-
-      if (!visibleSection) {
-        firstSectionOffset = elemViewportOffset;
-        minimalNegativeOffset = elemViewportOffset;
-      }
-
-      if (distanceScrolled < firstSectionOffset) {
-        visibleSection = null;
-      } else {
-        if (elemViewportOffset <= 1 && elemViewportOffset >= minimalNegativeOffset) {
-          minimalNegativeOffset = elemViewportOffset;
-          visibleSection = anchor;
-        }
-      }
-    });
-
-    if (this.state.selected !== visibleSection) {
-      this.setState({ selected: visibleSection });
-    }
-  };
-
-  renderSections(articles) {
-    return articles.map((props, i) =>(
-        <LegalSection
-          spaceTop = {spaceTop}
-          id={convert.toCleanKebab(props.title)}
-          ref={node => this[convert.toCleanKebab(props.title)] = node}
-          key={i}
-          {...props}
-        />
-      )
-    );
-  }
-
-  getMenuOptions(articles) {
-    return articles.map(a => ({
-      anchor: convert.toCleanKebab(a.title),
-      text: a.title,
-    }))
-  }
+    </div>
+  ));
 
   render() {
-    const { articles } = this.props;
-    const {selected} = this.state
-    const menuOptions = this.getMenuOptions(articles);
+    const { title, sections, options } = this.props;
+    const renderedSections = this.renderSections(sections);
 
     return (
       <div className={cn()}>
@@ -96,27 +37,23 @@ class SE_Legal extends Component {
           </O_Hero>
         </A_Container>
         <O_Menu
-          options={menuOptions}
-          selected={selected}
-          rootLink="/legal/#"
+          options={options}
           type="mobile"
         />
         <A_Container type="section-clean">
           <div className={cn('wrapper')}>
             <div className={cn('sidebar')}>
-              <div ref={node => this.helperNode = node}  />
+              <div />
               <div className={cn('menu')}>
                 <O_Menu
-                  options={menuOptions}
-                  selected={selected}
-                  rootLink="/legal/#"
+                  options={options}
                   type="desktop"
                 />
               </div>
             </div>
-
-            <div className={cn('sections')} >
-              { this.renderSections(articles) }
+           <div className={cn('page')}>
+              <A_H type='section'>{title}</A_H>
+              {renderedSections}
             </div>
           </div>
         </A_Container>
@@ -127,17 +64,16 @@ class SE_Legal extends Component {
 
 
 SE_Legal.propTypes = {
-  articles: T.arrayOf(T.shape({
-    title: T.string.isRequired,
-    sections: T.arrayOf(T.shape({
-      header: T.string,
-      html: T.string,
-    })),
-  }))
+  title: T.string.isRequired,
+  sections: T.arrayOf(T.shape({
+    header: T.string,
+    html: T.string,
+  })),
 };
 
 SE_Legal.defaultProps = {
-  articles: [],
+  articles: {},
+  sections: [],
 };
 
 export default SE_Legal

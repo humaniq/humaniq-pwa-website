@@ -25,6 +25,7 @@ module.exports = (storybookBaseConfig, configType) => {
   )
 
   storybookBaseConfig.resolve.modules = [
+    "node_modules",
     path.join(process.cwd(), 'src'),
     path.join(process.cwd(), 'stories'),
     path.join(process.cwd(), 'node_modules')
