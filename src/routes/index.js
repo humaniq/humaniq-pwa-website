@@ -20,7 +20,6 @@ import Hmq from './Hmq'
 import Ambassadors from './Ambassadors'
 import About from './About'
 
-
 import {cleanWikiSearch} from 'store/entities/wikiSearch/actions'
 
 const getRoutes = (store) => {
@@ -81,9 +80,11 @@ const getRoutes = (store) => {
              prepareData={Partners.prepareData}
              component={Partners}
       />
-      <Route path="legal"
-             component={Legal}
-      />
+      <Route path="legal">
+        <Route path="general-privacy-policy" component={Legal} section="general-privacy-policy"/>
+        <Route path="data-privacy-policy" component={Legal} section="general-privacy-policy" />
+        <Route path="user-terms-of-service" component={Legal} section="general-privacy-policy" />
+      </Route>
       <Route path="blog"
              component={Blog0}
       />

@@ -111,7 +111,7 @@ class SE_SimpleFormJoinForm extends Component {
               <A_P type='third'>Your application has been received. We will carefully review your website, and will contact you within the few days. Thank you for your application!</A_P>
             </div>
             <div className={cn('final-btn')}>
-              <A_Btn type="window" to="/">Go back to Humaniq</A_Btn>
+              <A_Btn type="material-r-link-window" to="/">Go back to Humaniq</A_Btn>
             </div>
           </div>
         ) : (

@@ -7,26 +7,18 @@ import Mobile from './Mobile'
 class O_Menu extends Component {
 
   render() {
-    const { options, selected, rootLink, type, title} = this.props
-    const _options = options.map(({ anchor, text }) => {
-      const isSelected = selected === anchor;
-      return ({
-        text,
-        url: rootLink + anchor,
-        isSelected
-      })
-    });
+    const {type, ...props} = this.props
     switch (type){
       case 'desktop':
         return (
           <O_Fixed>
-            <Desktop {...{options: _options}} />
+            <Desktop {...props} />
           </O_Fixed>
         )
       case 'mobile':
         return (
           <O_Fixed>
-            <Mobile {...{options: _options, title}} />
+            <Mobile {...props} />
           </O_Fixed>
         )
     }
