@@ -28,11 +28,11 @@ class M_Dropdown extends Component {
     this.props.onChange(selected)
   }
 
-  getListOptions(options, isOpened) {
+  getListOptions(options, isOpened, selected) {
     const renderOptions = options.map(option => {
       return (
         <ol
-          className={cn('list-options-item')}
+          className={cn('list-options-item', {selected: selected === option})}
           value={option}
           key={'key_' + option}
           onClick={() => this.handleChange(option)}
@@ -57,7 +57,7 @@ class M_Dropdown extends Component {
         <div className={cn('select')}>
           <div className={cn('select-text')}>{selected}</div>
         </div>
-        {isOpened && this.getListOptions(options, isOpened)}
+        {this.getListOptions(options, isOpened, selected)}
       </span>
 
     )

@@ -1,10 +1,24 @@
 import { connect } from 'react-redux';
 import SE_Legal from 'components/SE_Legal';
+import { convert } from 'utils'
 
+function mapStateToProps(state, ownProps) {
+  const {page} = ownProps
 
+  const _articles = articles.map(a => {
+    return {...a, slug: convert.toCleanKebab(a.title)}
+  })
 
-function mapStateToProps() {
-  return {articles};
+  const options = _articles.map(a => {
+    return {
+      text: a.title,
+      url:  `/legal/${a.slug}`,
+      isSelected: a.slug === page
+    }
+  })
+  
+  const article = _articles.filter(a => a.slug === page)[0]
+  return {...article, options};
 }
 
 export default connect(mapStateToProps)(SE_Legal);

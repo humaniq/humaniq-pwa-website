@@ -34,6 +34,7 @@
     margin-bottom: 4rem;
     &-select{
       margin-right: 3rem;
+      width: 19rem;
       display: inline-block;
       @include media($mobile) {
         width: 100%;
