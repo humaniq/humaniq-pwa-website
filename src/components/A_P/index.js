@@ -22,7 +22,9 @@ A_P.propTypes = {
     'fifth', // 13/1.54 grey
     'third-center_white', // 15/26 + alight-text: center
     'third-center_white', // 15/26 + alight-text: center
-    'sixth' // 13/20 #48474c
+    'sixth', // 13/20 #48474c
+    'android-white', // 13/20 white
+    'android-black', // 13/20 #565759 padding-top: 1.5rem padding-bottom: 4rem
   ]),
 };
 

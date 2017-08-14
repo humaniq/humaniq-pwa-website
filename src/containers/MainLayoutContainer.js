@@ -10,6 +10,8 @@ const noMainLayoutPages = ['form'] // pages with their own layout
 function mapStateToProps(state) {
   const {isMenuOpened, openRoute} = state.navigation
   const route0 = openRoute[0]
+
+
   const headerTheme = _isContain(blueMainLayoutPages, route0) ? 'blue' : 'white'
   const noLayout = _isContain(noMainLayoutPages, route0)
   return {isMenuOpened, headerTheme, noLayout};
