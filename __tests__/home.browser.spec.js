@@ -83,18 +83,17 @@ describe("HQM Explorer page", () => {
   })
 })
 
-describe("Legal page", () => {
+describe("Legal Section/General Privacy Policy page", () => {
 
   beforeEach(() => {
-    page = nightmare().goto('http://localhost:8080/hmq-explorer')
+    page = nightmare().goto('http://localhost:8080/legal/general-privacy-policy')
   })
 
   it('shows page text', async () => {
     const text = await page
-      .goto('http://localhost:8080/legal')
       .evaluate(() => document.body.textContent)
       .end()
-    expect(text).toContain('Ensuring the security of our users’ data is our most important responsibility and we believe in')
+    expect(text).toContain('is your data security here at Humaniq. As transparency is one of the principles')
   })
 })
 

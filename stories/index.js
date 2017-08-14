@@ -7,7 +7,7 @@ import {
   addDecorator
 } from '@storybook/react';
 import {action} from '@storybook/addon-actions';
-import {linkTo} from '@storybook/addon-links';
+// import {linkTo} from '@storybook/addon-links';
 
 // import { withKnobs,
 //   text,
@@ -38,7 +38,7 @@ import A_Container from "A_Container";
 
 import O_Transaction from "O_Transaction";
 import O_Fixed from "O_Fixed";
-
+import A_Btn from 'A_Btn'
 
 const styleDecorator = (storyFn) => (
   <div style={{
@@ -69,6 +69,17 @@ const mobile = (storyFn) => (
 
 
 addDecorator(styleDecorator)
+
+storiesOf('A_Btn', module)
+  .addDecorator(storyFN =>
+    <div style={{margin: 0, width: 680, height: 1200, border: '1px solid tomato'}}>
+      {storyFN()}
+    </div>)
+
+  .add('', () => (
+    <A_Btn type="material-r-link">primary</A_Btn>
+
+  ));
 
 storiesOf('O_Fixed', module)
   .addDecorator(storyFN =>
