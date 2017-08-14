@@ -17,6 +17,7 @@ $gray-2: #c5c5c5;
 $gray-3: #b3b3b3;
 $gray-4: #e6e6e6;
 $gray-5: #48474c;
+$gray-6: rgb(232, 232, 232);
 $red-1: #ff1744;
 
 $text: $black-1; // - text
@@ -37,7 +38,7 @@ $form-inactive-color: $gray-3;
 //$form-inactive-color: $gray-4;
 
 $form-error-color: $red-1;
-$form-disabled-color: $gray-3;
+$form-disabled-color: $gray-6;
 $form-placeholder-color: $gray-3;
 $form-mark-color: $black-1;
 $form-radius: .2rem;
