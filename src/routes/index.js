@@ -19,6 +19,7 @@ import WikiSearch from './WikiSearch'
 import Hmq from './Hmq'
 import Ambassadors from './Ambassadors'
 import About from './About'
+import MobileApp from './MobileApp'
 
 import {cleanWikiSearch} from 'store/entities/wikiSearch/actions'
 
@@ -101,6 +102,9 @@ const getRoutes = (store) => {
       />
       <Route path="about"
              component={About}
+      />
+      <Route path="mobile-app"
+             component={MobileApp}
       />
       <Route
         path="/error/:err"
