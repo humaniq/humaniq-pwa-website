@@ -5,6 +5,7 @@ node_modules
 npm-debug.log
 /fonts
 static/assets/
+static/report.html
 simple-api/node_module
 webpack-manifest.json
 webpack.config-copy.js

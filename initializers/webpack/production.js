@@ -5,7 +5,7 @@ import webpack from 'webpack';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import ProgressBarPlugin from 'progress-bar-webpack-plugin'
-import OfflinePlugin from 'offline-plugin'
+import SWPrecacheWebpackPlugin from 'sw-precache-webpack-plugin'
 const autoprefixer = require('autoprefixer');
 const sourcePath = path.join(__dirname, './src');
 
@@ -18,8 +18,9 @@ export default {
     bundle: './src/index.js'
   },
   output: {
-    path: path.join(process.cwd(), 'static', 'assets'),
-    filename: '[name].[chunkhash].js'
+    path: path.join(process.cwd(), 'static'),
+    filename: 'assets/js/[name].[chunkhash].js',
+    chunkFilename: 'assets/js/[name].[chunkhash].chunk.js',
   },
   module: {
     loaders: [
@@ -87,7 +88,7 @@ export default {
       __DEVELOPMENT__: false,
       'process.env.NODE_ENV': JSON.stringify('production')
     }),
-    new ExtractTextPlugin('[name].[chunkhash].css'),
+    new ExtractTextPlugin('assets/css/[name].[chunkhash].css'),
     new webpack.ContextReplacementPlugin(/moment[\\\/]locale$/, /^\.\/(en)$/),
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
@@ -101,15 +102,15 @@ export default {
     new BundleAnalyzerPlugin({
       analyzerMode: 'static'
     }),
-    new OfflinePlugin({
-      publicPath: '/assets/',
-      caches: 'all',
-      ServiceWorker: {
-        events: true
-      },
-      AppCache: {
-        events: true
+    new SWPrecacheWebpackPlugin(
+      {
+        cacheId: 'humaniq',
+        dontCacheBustUrlsMatching: /\.\w{8}\./,
+        filename: 'service-worker.js',
+        minify: true,
+        navigateFallback: 'https://humaniq.com/index.html',
+        staticFileGlobsIgnorePatterns: [/\.map$/, /asset-manifest\.json$/],
       }
-    })
+    ),
   ]
 };
