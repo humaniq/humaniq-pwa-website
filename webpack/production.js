@@ -1,20 +1,22 @@
 /* eslint-disable */
-
-import path from 'path';
-import webpack from 'webpack';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import ProgressBarPlugin from 'progress-bar-webpack-plugin';
 import ManifestPlugin from 'webpack-manifest-plugin';
 import OfflinePlugin from 'offline-plugin';
-import HtmlWebpackPlugin from 'html-webpack-plugin';
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 const autoprefixer = require('autoprefixer');
 const sourcePath = path.join(__dirname, './src');
 
 const root = path.join(process.cwd());
 
-process.noDeprecation = true
-export default {
+import webpack from 'webpack'
+import webpackMerge from 'webpack-merge'
+import { resolve } from 'path'
+
+import commonConfig from './base'
+
+export default webpackMerge(commonConfig, {
   devtool: 'source-map',
   entry: {
     bundle: [
@@ -23,7 +25,7 @@ export default {
     ],
   },
   output: {
-    path: path.join(process.cwd(), 'static'),
+    path: resolve(process.cwd(), 'static'),
     filename: 'assets/js/[name].[hash:8].js',
     chunkFilename: 'assets/js/[name].[hash:8].chunk.js',
     publicPath: '/',
@@ -112,9 +114,9 @@ export default {
     new ManifestPlugin({
       fileName: 'manifest.json',
       seed: {
-        name: 'HumanIQ',
-        short_name: 'HumanIQ',
-        description: 'HumanIQ is a simple and secure mobile app, delivering financial inclusion solutions globally.',
+        name: 'Humaniq',
+        short_name: 'Humaniq',
+        description: 'Humaniq is a simple and secure mobile app, delivering financial inclusion solutions globally.',
         lang: 'en-US',
         start_url: '.',
         display: 'standalone',
@@ -125,14 +127,6 @@ export default {
           src: 'img/apple-touch-icon/180x180.png',
           sizes: '180x180',
           type: 'image/png',
-        },{
-          src: 'img/apple-touch-icon/192x192.png',
-          sizes: '192x192',
-          type: 'image/png',
-        },{
-          src: 'img/apple-touch-icon/512x512.png',
-          sizes: '512x512',
-          type: 'image/png',
         }],
         related_applications: [{
           'platform': 'web'
@@ -142,14 +136,9 @@ export default {
     new OfflinePlugin({
       caches: 'all',
       publicPath: '/',
-      responseStrategy: 'network-first',
+      responseStrategy: 'cache-first',
       updateStrategy: 'changed',
-      externals: [
-        '/img/apple-touch-icon/180x180.png',
-        'https://fonts.googleapis.com/css?family=Open+Sans:400,600,700',
-        'https://www.google-analytics.com/analytics.js',
-        'https://www.google-analytics.com/collect?v=1&_v=j58&a=180854128&t=pageview&_s=1&dl=http%3A%2F%2Flocalhost%2F&ul=en-us&de=UTF-8&dt=Humaniq&sd=24-bit&sr=1920x1080&vp=1920x339&je=0&fl=26.0%20r0&_u=AACAAMABI~&jid=&gjid=&cid=1252809312.1501694302&tid=UA-91023234-4&_gid=1062100651.1502775875&z=2046795873',
-      ],
+      externals: [],
       relativePaths: true,
       cacheMaps: [
         {
@@ -167,10 +156,21 @@ export default {
       },
     }),
     new HtmlWebpackPlugin({
-      title: 'HumanIQ',
-      cache: true,
-      showErrors: true,
-      template: path.resolve(__dirname, '..', 'server', 'template.html'),
-    })
+      title: Package.title,
+      inject: true,
+      template: resolve(__dirname, '..', 'static', 'index.html'),
+      minify: {
+        removeComments: true,
+        collapseWhitespace: true,
+        removeRedundantAttributes: true,
+        useShortDoctype: true,
+        removeEmptyAttributes: true,
+        removeStyleLinkTypeAttributes: true,
+        keepClosingSlash: true,
+        minifyJS: true,
+        minifyCSS: true,
+        minifyURLs: true,
+      }
+    }),
   ]
-};
+})

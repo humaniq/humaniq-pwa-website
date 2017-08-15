@@ -13,19 +13,19 @@ export default {
       __CLIENT__: true,
       __DEVELOPMENT__: true
     }),
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
   ],
   devtool: 'cheap-module-eval-source-map',
-  entry:  [
+  entry: [
     'babel-polyfill',
     'react-hot-loader/patch',
     'webpack-hot-middleware/client',
-    './src/index.js'
+    './src/index.js',
   ],
   output: {
     path: path.join(process.cwd(), 'static', 'assets'),
-    filename: 'bundle.js',
-    publicPath: '/assets/'
+    filename: 'assets/bundle.js',
+    publicPath: '/'
   },
   module: {
     rules: [

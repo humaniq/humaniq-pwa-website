@@ -11,14 +11,4 @@ export default function() {
       window.location.reload();
     }
   });
-
-  (function() {
-    //TODO: here we can detect network status and update content
-    window.addEventListener('offline', function() {
-      window.console.log('offline');
-    });
-    window.addEventListener('online', function() {
-      window.console.log('online')
-    })
-  })();
 }

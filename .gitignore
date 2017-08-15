@@ -7,6 +7,7 @@ npm-debug.log
 static/assets/
 static/report.html
 static/service-worker.js
+static/manifest.json
 simple-api/node_module
 webpack-manifest.json
 webpack.config-copy.js

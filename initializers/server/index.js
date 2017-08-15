@@ -41,7 +41,12 @@ if (__DEVELOPMENT__) {
       {
         hot: true,
         publicPath: config.output.publicPath,
-        stats: {colors: true}
+        stats: {colors: true},
+        historyApiFallback: true,
+        inline: true,
+        quiet: false,
+        noInfo: true,
+        reload: true,
       }
     )
   )

@@ -6,7 +6,7 @@ import {Provider} from 'react-redux';
 import history from 'history'
 import createStore from 'store';
 import prepareData from 'utils/prepareData'
-// import offlinePluginStart from 'utils/offlinePlugin'
+import offlinePluginStart from 'utils/offlinePlugin'
 import {closeMenu} from 'store/entities/navigation/actions'
 import {hashLinkScroll} from 'utils/hashLinkScroll'
 import progress from 'utils/progressCalculation'
@@ -51,7 +51,6 @@ function historyCb(location) {
 history.listen(historyCb)
 
 historyCb(window.location)
-// offlinePluginStart()
-
+offlinePluginStart()
 
 export default App
