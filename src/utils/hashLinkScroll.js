@@ -7,8 +7,6 @@ export function hashLinkScroll() {
       if (element) {
         element.scrollIntoView({block: 'start', behavior: 'smooth' });
       }
-
-
     }, 0);
   } else {
     window.scrollTo(0, 0)

@@ -2,14 +2,14 @@ import React from 'react';
 import * as T from "prop-types";
 import './styles.scss';
 import {cssClassName} from 'utils'
-const cn = cssClassName('SE_CasesList')
+const cn = cssClassName('SE_UseCasesList')
 import A_Container from 'A_Container'
 import A_H from 'A_H'
 import A_P from 'A_P'
 import A_Image from "A_Image/index";
 import {convert} from 'utils'
 
-const SE_CasesList = ({title, introduction, img, solution, spaceTop}) =>{
+const SE_UseCasesList = ({title, introduction, img, solution, spaceTop}) =>{
 
   // const _render = cases.map(({title, introduction, img, solution}) => {
   //   const anchor = convert.toCleanKebab(title)
@@ -50,7 +50,7 @@ const SE_CasesList = ({title, introduction, img, solution, spaceTop}) =>{
   )
 }
 
-SE_CasesList.propTypes = {
+SE_UseCasesList.propTypes = {
   cases: T.arrayOf(T.shape({
     title: T.string.isRequired,
     introduction: T.string.isRequired,
@@ -60,7 +60,7 @@ SE_CasesList.propTypes = {
   })).isRequired
 };
 
-SE_CasesList.defaultProps = {
+SE_UseCasesList.defaultProps = {
   cases: []
 }
-export default SE_CasesList
+export default SE_UseCasesList
