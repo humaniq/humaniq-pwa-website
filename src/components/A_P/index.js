@@ -10,6 +10,7 @@ const A_P = ({children, type}) =>(
 
 A_P.propTypes = {
   type: T.oneOf([
+    'animated-hero',
     'video-hero',
     'hmq-e', //
     'hero', // 15/26 + blue border on left side

@@ -116,7 +116,7 @@ class SE_Ambassadors  extends Component {
               />
             </div>
             <A_Btn
-              type="link-standart-form"
+              type="material-r-link"
               to='/form/ambassadors'
             >Join Ambassadors Program</A_Btn>
           </div>

@@ -74,7 +74,7 @@ class SE_SimpleFormSubscribeForm extends Component {
                 confirming the subscription. Stay tuned, interesting news are on the way.</A_P>
             </div>
             <div className={cn('final-btn')}>
-              <A_Btn type="window" to="/">Go back to Humaniq</A_Btn>
+              <A_Btn type="material-r-link-window" to="/">Go back to Humaniq</A_Btn>
             </div>
           </div>
         ) : (

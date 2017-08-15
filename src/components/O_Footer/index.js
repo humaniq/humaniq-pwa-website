@@ -33,9 +33,9 @@ const links = [
   },
   {section: 'legal',
     links: [
-    {name: 'Privacy', url: '/legal#general-privacy-policy'},
-    {name: 'Security', url: '/legal#data-privacy-policy'},
-    {name: 'Policies', url: '/legal#user-terms-of-service'}
+    {name: 'Privacy', url: '/legal/general-privacy-policy'},
+    {name: 'Security', url: '/legal/data-privacy-policy'},
+    {name: 'Policies', url: '/legal/user-terms-of-service'}
     ]
   },
   {

@@ -2,6 +2,7 @@ import {Route, IndexRoute} from 'react-router'
 import React from 'react'
 import App from './App'
 import Home from './Home'
+import HomeAnimations from './HomeAnimations'
 import Error from './Error'
 import Blog0 from './Blog0'
 import SimpleForm from './SimpleForm'
@@ -19,7 +20,6 @@ import Hmq from './Hmq'
 import Ambassadors from './Ambassadors'
 import About from './About'
 
-
 import {cleanWikiSearch} from 'store/entities/wikiSearch/actions'
 
 const getRoutes = (store) => {
@@ -32,6 +32,10 @@ const getRoutes = (store) => {
       <IndexRoute
         component={Home}
         prepareData={Home.prepareData}
+      />
+      <Route
+        path="test-animated-home"
+        component={HomeAnimations}
       />
       <Route path="form"
       >
@@ -76,9 +80,11 @@ const getRoutes = (store) => {
              prepareData={Partners.prepareData}
              component={Partners}
       />
-      <Route path="legal"
-             component={Legal}
-      />
+      <Route path="legal">
+        <Route path="general-privacy-policy" component={Legal} section="general-privacy-policy"/>
+        <Route path="data-privacy-policy" component={Legal} section="general-privacy-policy" />
+        <Route path="user-terms-of-service" component={Legal} section="general-privacy-policy" />
+      </Route>
       <Route path="blog"
              component={Blog0}
       />
