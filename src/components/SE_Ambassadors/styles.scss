@@ -32,6 +32,7 @@
     text-align: center;
     margin-bottom: 4rem;
     &-select{
+      width: 15rem;
       margin-right: 3rem;
       display: inline-block;
       @include media($mobile) {
