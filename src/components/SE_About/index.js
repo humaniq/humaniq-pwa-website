@@ -137,7 +137,7 @@ class SE_About extends Component {
   }
 
   render() {
-    const {founders, advisers, team} = this.props
+    const {founders, advisers, team, timeLineData} = this.props
     const renderedFounders = this.getFounders(founders)
     const renderedAdvisers = this.getTeam(advisers)
     const renderedTeam = this.getTeam(team)
@@ -171,7 +171,7 @@ class SE_About extends Component {
             {renderedAdvisers}
           </div>
         </A_Container>
-        <Timeline />
+        <Timeline timeLineData={timeLineData} />
       </div>
     )
   }
