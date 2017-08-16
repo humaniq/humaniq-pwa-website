@@ -1,0 +1,105 @@
+@import "common/settings/variables";
+@import "common/utils";
+
+/* Stepper Section
+/* ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## */
+
+.o-stepper {
+  &__list {
+    width: 30rem;
+    list-style: none;
+    padding: 3rem;
+  }
+  &__step {
+    height: 5rem;
+    position: relative;
+    display: flex;
+    &:last-of-type {
+      .o-stepper__bar {
+        display: none;
+      }
+    }
+    &--done {
+      .o-stepper__bar {
+        &:after {
+          height: 100%;
+        }
+      }
+      .o-stepper__dot {
+        background: $blue-2;
+        width: 2.5rem;
+        height: 2.5rem;
+        margin-top: -1rem;
+        margin-left: -1rem;
+        &:before {
+          background: url('/img/icons/check.svg');
+          content: '';
+          width: 1.1rem;
+          height: 1rem;
+          position: absolute;
+          top: .7rem;
+          left: .7rem;
+          transition: background .3s ease;
+        }
+      }
+    }
+    &--next {
+      .o-stepper__dot {
+        background: $blue-2;
+      }
+    }
+  }
+  &__bar {
+    &:before {
+      content: '';
+      position: absolute;
+      height: 100%;
+      width: .5rem;
+      left: 0;
+      top: 0;
+      background: $gray-1;
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      width: .5rem;
+      height: 0;
+      left: 0;
+      top: 0;
+      background: $blue-2;
+      transition: height .5s ease;
+    }
+  }
+  &__dot {
+    position: absolute;
+    width: 1.5rem;
+    height: 1.5rem;
+    display: block;
+    background: #f5f5f5;
+    top: 0;
+    left: 0;
+    margin-top: -.5rem;
+    margin-left: -.5rem;
+    border-radius: 50%;
+    z-index: 2;
+    transition: background .3s ease;
+    &:before {
+      content: '';
+      background: transparent;
+      width: 1.1rem;
+      height: 1rem;
+      position: absolute;
+      top: .4rem;
+      left: .4rem;
+      transition: background .3s ease;
+    }
+  }
+  &__txt {
+    position: absolute;
+    top: -1.2rem;
+    left: 3rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
