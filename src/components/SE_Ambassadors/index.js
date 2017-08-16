@@ -147,7 +147,7 @@ class SE_Ambassadors  extends Component {
   }
 }
 
-SE_Ambassadors .propTypes = {
+SE_Ambassadors.propTypes = {
   entities: T.array.isRequired,
   countries: T.array.isRequired
 };
