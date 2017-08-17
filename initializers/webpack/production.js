@@ -55,7 +55,7 @@ export default webpackMerge(commonConfig, {
             includePaths: SOURCE_PATH,
           }},
         ]
-      }
+      },
     ]
   }
 })

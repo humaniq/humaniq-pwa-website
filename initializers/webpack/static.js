@@ -1,14 +1,12 @@
 /* eslint-disable */
 import webpack from 'webpack'
 import webpackMerge from 'webpack-merge'
-import path from 'path';
 import ExtractTextPlugin from 'extract-text-webpack-plugin'
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'
 import ManifestPlugin from 'webpack-manifest-plugin'
-import HtmlWebpackPlugin from 'html-webpack-plugin'
 import autoprefixer from 'autoprefixer'
 
-import { SOURCE_PATH } from './_consts'
+import { SOURCE_PATH, MANIFEST_NAME } from './_consts'
 import commonConfig from './base'
 
 export default webpackMerge(commonConfig, {
@@ -41,13 +39,13 @@ export default webpackMerge(commonConfig, {
       }
     }),
     new webpack.optimize.UglifyJsPlugin({
-      sourceMap: 'source-map'
+      sourceMap: 'source-map',
     }),
-    new BundleAnalyzerPlugin({
-      analyzerMode: 'static'
-    }),
+    // new BundleAnalyzerPlugin({
+    //   analyzerMode: 'static'
+    // }),
     new ManifestPlugin({
-      fileName: 'manifest.json',
+      fileName: MANIFEST_NAME,
       seed: {
         name: 'HumanIQ',
         short_name: 'HumanIQ',
@@ -76,12 +74,6 @@ export default webpackMerge(commonConfig, {
         }]
       }
     }),
-    new HtmlWebpackPlugin({
-      title: 'HumanIQ',
-      cache: true,
-      showErrors: true,
-      template: path.resolve(__dirname, '..', '..', 'server', 'template.html'),
-    })
   ],
   devtool: 'source-map',
   entry: {
@@ -89,9 +81,6 @@ export default webpackMerge(commonConfig, {
       'babel-polyfill',
       './index.js',
     ],
-  },
-  output: {
-    pathinfo: false,
   },
   module: {
     rules: [
@@ -101,8 +90,11 @@ export default webpackMerge(commonConfig, {
           fallback: 'style-loader',
           use: [
             { loader: "css-loader" },
-            { loader: "resolve-url-loader" },
-            { loader: "postcss-loader" },
+            // { loader: "resolve-url-loader" },
+            { loader: "postcss-loader", options: {
+              sourceMap: true,
+              includePaths: SOURCE_PATH,
+            }},
             { loader: "sass-loader", options: {
               sourceMap: true,
               includePaths: SOURCE_PATH,
@@ -116,16 +108,14 @@ export default webpackMerge(commonConfig, {
           fallback: 'style-loader',
           use: [
             { loader: "css-loader" },
-            { loader: "resolve-url-loader" },
-            { loader: "postcss-loader" },
+            // { loader: "resolve-url-loader" },
+            { loader: "postcss-loader", options: {
+              sourceMap: true,
+              includePaths: SOURCE_PATH,
+            }},
           ]
         }),
       }
-    ]
-  },
-  resolve: {
-    modules: [
-      SOURCE_PATH,
     ]
   },
 })

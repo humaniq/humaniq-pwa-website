@@ -16,6 +16,7 @@ export default {
       externals: [
         '/',
         '/img/apple-touch-icon/180x180.png',
+        '/img/illustrations/the-power-of-blockchain.svg',
         'https://www.google-analytics.com/collect?v=1&_v=j58&a=180854128&t=pageview&_s=1&dl=http%3A%2F%2Flocalhost%2F&ul=en-us&de=UTF-8&dt=Humaniq&sd=24-bit&sr=1920x1080&vp=1920x339&je=0&fl=26.0%20r0&_u=AACAAMABI~&jid=&gjid=&cid=1252809312.1501694302&tid=UA-91023234-4&_gid=1062100651.1502775875&z=2046795873',
       ],
       relativePaths: true,
