@@ -14,7 +14,7 @@
       "plugins": [
         "transform-react-remove-prop-types"
       ],
-      "presets": ["minify"]
+      "presets": []
     },
     "development": {
       "presets": [
