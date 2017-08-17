@@ -11,7 +11,7 @@ export default {
     new OfflinePlugin({
       caches: 'all',
       publicPath: PUBLIC_PATH,
-      responseStrategy: 'cache-first',
+      responseStrategy: 'network-first',
       updateStrategy: 'changed',
       externals: [
         '/',
@@ -30,9 +30,10 @@ export default {
       autoUpdate: 1000 * 60 * 60 * 3, // (3 hours auto update)
       ServiceWorker: {
         output: 'service-worker.js',
-        navigateFallbackURL: '/',
+        navigateFallbackURL: PUBLIC_PATH,
         minify: true,
       },
+      AppCache: false,
     }),
   ],
   context: SOURCE_PATH,
@@ -55,10 +56,25 @@ export default {
         exclude: /node_modules/,
         loader: 'url-loader',
       },
+      {
+        test: /\.(jpe?g|png|gif|svg)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              digest: 'hex',
+              name: 'assets/media/[name].[hash:8].[ext]',
+            },
+          },
+        ],
+      },
     ]
   },
   resolve: {
     extensions: ['.js', '.json', '.md'],
+    alias: {
+      static: OUTPUT_PATH,
+    },
     modules: [
       'node_modules',
     ],

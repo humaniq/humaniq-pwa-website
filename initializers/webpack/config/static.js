@@ -80,7 +80,7 @@ export default webpackMerge(commonConfig, {
       title: 'HumanIQ',
       cache: true,
       showErrors: true,
-      template: path.resolve(__dirname, '..', 'server', 'template.html'),
+      template: path.resolve(__dirname, '..', '..', 'server', 'template.html'),
     })
   ],
   devtool: 'source-map',

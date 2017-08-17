@@ -7,6 +7,10 @@ import Gallery from './Gallery'
 import A_P from 'A_P'
 import Magazines from './Magazines'
 import AnimatedHero from './AnimatedHero'
+
+import imgThePowerOfBlockchain from 'static/img/illustrations/the-power-of-blockchain.svg'
+import imgGlobalAccess from 'static/img/illustrations/global-access.svg'
+
 const SE_Home = ({animation}) => (
   <div>
     <Meta />
@@ -27,7 +31,7 @@ const SE_Home = ({animation}) => (
         text: 'Learn more about HMQ'
       }}
       img ={{
-        src: 'img/illustrations/the-power-of-blockchain.svg',
+        src: imgThePowerOfBlockchain,
         alt: 'Learn more about Humaniq partners'
       }}
     ><A_P type='third'>Join the Humaniq Forum — a public discussion board for entrepreneurs around the world. Connect with other entrepreneurs, find beta users, learn from experienced founders, and get advice on how to overcome early challenges.
@@ -58,7 +62,7 @@ const SE_Home = ({animation}) => (
         text: 'Learn more about Humaniq Use Cases'
       }}
       img ={{
-        src: 'img/illustrations/global-access.svg',
+        src: imgGlobalAccess,
         alt: 'Learn more about Humaniq Use Cases'
       }}
     >
