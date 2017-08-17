@@ -1,8 +1,8 @@
 /* eslint-disable */
 import webpack from 'webpack'
 import webpackMerge from 'webpack-merge'
-import { resolve } from 'path'
 
+import { SOURCE_PATH } from './_consts'
 import commonConfig from './base'
 
 export default webpackMerge(commonConfig, {
@@ -10,15 +10,13 @@ export default webpackMerge(commonConfig, {
     new webpack.DefinePlugin({
       __SERVER__: false,
       __CLIENT__: true,
-      __DEVELOPMENT__: true
+      __DEVELOPMENT__: false,
+      'process.env.NODE_ENV': JSON.stringify('production')
     }),
-    new webpack.HotModuleReplacementPlugin(),
   ],
   devtool: 'cheap-module-eval-source-map',
   entry: {
     bundle: [
-      'react-hot-loader/patch',
-      'webpack-hot-middleware/client',
       'babel-polyfill',
       './index.js',
     ],
@@ -36,23 +34,26 @@ export default webpackMerge(commonConfig, {
         }
       },
       {
-        test: /\.(woff|woff2|eot|ttf|svg)$/,
-        exclude: /node_modules/,
-        loader: 'url-loader'
-      },
-      {
         test: /\.scss$/,
         use: [
           { loader: "style-loader" },
           { loader: "css-loader" },
-          { loader: "sass-loader", options: { includePaths: resolve(process.cwd(), "src") } },
+          { loader: "resolve-url-loader" },
+          { loader: "sass-loader", options: {
+            sourceMap: true,
+            includePaths: SOURCE_PATH,
+          }},
         ]
       },
       {
         test: /\.css$/,
         use: [
           { loader: "style-loader"},
-          { loader: "css-loader", options: { includePaths: resolve(__dirname, "src") } },
+          { loader: "resolve-url-loader" },
+          { loader: "css-loader", options: {
+            sourceMap: true,
+            includePaths: SOURCE_PATH,
+          }},
         ]
       }
     ]

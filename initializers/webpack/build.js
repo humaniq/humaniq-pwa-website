@@ -3,7 +3,7 @@ var fs = require('fs.extra');
 
 var webpack = require('webpack');
 
-var config = require('./production.js').default;
+var config = require('./config/static.js').default;
 
 webpack(config, function (_error, stats) {
   console.log("-=callback started=-");

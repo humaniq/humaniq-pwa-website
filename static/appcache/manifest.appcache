@@ -1,12 +1,12 @@
 CACHE MANIFEST
-#ver:8/15/2017, 10:39:49 PM
+#ver:8/17/2017, 9:32:18 AM
 #plugin:4.8.3
 
 CACHE:
-../assets/js/bundle.74dbe927.js
-../assets/js/vendor.74dbe927.js
-../assets/css/bundle.63715311a7c3e677029b.css
-../manifest.json
+../assets/js/bundle.js
+../assets/js/vendor.js
+../assets/css/bundle.140eff3f867fd65b210a.css
+/
 /img/apple-touch-icon/180x180.png
 
 NETWORK:

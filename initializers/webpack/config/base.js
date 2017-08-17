@@ -1,12 +1,9 @@
 /* eslint-disable */
-import { resolve } from 'path'
 import ProgressBarPlugin from 'progress-bar-webpack-plugin'
 import OfflinePlugin from 'offline-plugin'
 process.noDeprecation = true
 
-const SOURCE_PATH = resolve(__dirname, '..', 'src')
-const OUTPUT_PATH = resolve(__dirname, '..', 'static')
-const PUBLIC_PATH = '/'
+import { SOURCE_PATH, OUTPUT_PATH, PUBLIC_PATH } from './_consts'
 
 export default {
   plugins: [
@@ -42,6 +39,7 @@ export default {
   output: {
     path: OUTPUT_PATH,
     filename: 'assets/js/[name].js',
+    chunkFilename: 'assets/js/[name].[hash:8].chunk.js',
     publicPath: PUBLIC_PATH,
     pathinfo: true,
   },
@@ -50,7 +48,12 @@ export default {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: 'babel-loader'
+        loader: 'babel-loader',
+      },
+      {
+        test: /\.(woff|woff2|eot|ttf|svg)$/,
+        exclude: /node_modules/,
+        loader: 'url-loader',
       },
     ]
   },

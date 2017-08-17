@@ -10,7 +10,7 @@ require('babel-core/register');
 ['.css', '.less', '.sass', '.ttf', '.woff', '.woff2', '.scss'].forEach((ext) => require.extensions[ext] = () => {
 });
 
-const port = process.env.PORT || 8080;
+const PORT = process.env.PORT || 8080;
 
 const express = require('express')
 const application = express()
@@ -31,7 +31,7 @@ application.set('view engine', 'ejs')
 
 if (__DEVELOPMENT__) {
   const webpack = require('webpack');
-  const config = require('../../webpack.config.js').default;
+  const config = require('../webpack/config/development').default;
   const webpackDev = require('webpack-dev-middleware')
   const webpackHot = require('webpack-hot-middleware')
   const compiler = webpack(config)
@@ -61,6 +61,7 @@ if(process.env.NO_SSR){
 }
 
 
-application.listen(port, (err) => {
-  if (err) console.log(err);
+application.listen(PORT, (err) => {
+  if (err) return console.log(err);
+  console.log(`Listening at http://localhost:${PORT}`)
 })
