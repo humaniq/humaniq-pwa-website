@@ -2,7 +2,12 @@
   "plugins": [
     "transform-class-properties",
     "transform-export-extensions",
-    ["module-resolver", {"root": ["./src", "./src/components", "./src/store", ""]}]
+    ["module-resolver", {
+      "root": ["./src", "./src/components", "./src/store"],
+      "alias": {
+        "static": "./static"
+      }
+    }]
   ],
   "presets": [
     "react",

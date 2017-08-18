@@ -8,6 +8,8 @@ import A_P from 'A_P'
 import Magazines from './Magazines'
 import AnimatedHero from './AnimatedHero'
 
+// import imgPowerBlockchain from 'static/img/illustrations/the-power-of-blockchain.svg'
+
 const SE_Home = ({animation}) => (
   <div>
     <Meta />
@@ -28,7 +30,7 @@ const SE_Home = ({animation}) => (
         text: 'Learn more about HMQ'
       }}
       img ={{
-        src: 'img/illustrations/the-power-of-blockchain.svg',
+        src: '/img/illustrations/the-power-of-blockchain.svg',
         alt: 'Learn more about Humaniq partners'
       }}
     ><A_P type='third'>Join the Humaniq Forum — a public discussion board for entrepreneurs around the world. Connect with other entrepreneurs, find beta users, learn from experienced founders, and get advice on how to overcome early challenges.

@@ -3,9 +3,7 @@ import { MANIFEST_NAME, OUTPUT_PATH } from '../webpack/_consts'
 let assetPath
 
 if (__DEVELOPMENT__){
-  assetPath = (asset, extension) => (
-    `assets/${asset}.${extension}`
-  );
+  assetPath = asset => `assets/${asset}`
 }else {
   const fs = require('fs')
   const path = require('path')
@@ -14,7 +12,7 @@ if (__DEVELOPMENT__){
 
   const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf8'))
 
-  assetPath = (asset, extension) => manifest[`${asset}.${extension}`]
+  assetPath = asset => manifest[`${asset}`]
 }
 
 export default assetPath

@@ -2,7 +2,7 @@
 import webpack from 'webpack'
 import webpackMerge from 'webpack-merge'
 import ExtractTextPlugin from 'extract-text-webpack-plugin'
-import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'
+// import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'
 import ManifestPlugin from 'webpack-manifest-plugin'
 import autoprefixer from 'autoprefixer'
 
@@ -39,7 +39,18 @@ export default webpackMerge(commonConfig, {
       }
     }),
     new webpack.optimize.UglifyJsPlugin({
-      sourceMap: 'source-map',
+      output: {
+        comments: false,
+      },
+      beautify: false,
+      mangle: true,
+      compress: {
+        warnings: false
+      },
+      comments: false,
+      drop_console: true,
+      drop_debugger: true,
+      screw_ie8: false,
     }),
     // new BundleAnalyzerPlugin({
     //   analyzerMode: 'static'
@@ -51,7 +62,7 @@ export default webpackMerge(commonConfig, {
         short_name: 'HumanIQ',
         description: 'HumanIQ is a simple and secure mobile app, delivering financial inclusion solutions globally.',
         lang: 'en-US',
-        start_url: '.',
+        start_url: '/?pwa=true',
         display: 'standalone',
         orientation: 'portrait',
         theme_color: '#3AA3E3',
@@ -75,12 +86,15 @@ export default webpackMerge(commonConfig, {
       }
     }),
   ],
-  devtool: 'source-map',
+  devtool: false,
   entry: {
     bundle: [
       'babel-polyfill',
       './index.js',
     ],
+  },
+  output: {
+    pathinfo: false,
   },
   module: {
     rules: [
@@ -90,7 +104,6 @@ export default webpackMerge(commonConfig, {
           fallback: 'style-loader',
           use: [
             { loader: "css-loader" },
-            // { loader: "resolve-url-loader" },
             { loader: "postcss-loader", options: {
               sourceMap: true,
               includePaths: SOURCE_PATH,
@@ -108,14 +121,13 @@ export default webpackMerge(commonConfig, {
           fallback: 'style-loader',
           use: [
             { loader: "css-loader" },
-            // { loader: "resolve-url-loader" },
             { loader: "postcss-loader", options: {
               sourceMap: true,
               includePaths: SOURCE_PATH,
             }},
           ]
         }),
-      }
+      },
     ]
   },
 })

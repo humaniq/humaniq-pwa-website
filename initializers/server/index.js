@@ -3,12 +3,10 @@ require('app-module-path').addPath(path.join(process.cwd(), 'src'));
 require('./globals')
 const compression = require('compression')
 const mime = require('mime');
-// const serveStatic = require('serve-static')
-// const fs = require('fs.extra');
 
 require('babel-core/register');
-['.css', '.less', '.sass', '.ttf', '.woff', '.woff2', '.scss'].forEach((ext) => require.extensions[ext] = () => {
-});
+['.css', '.less', '.sass', '.ttf', '.woff', '.woff2', '.scss', '.svg', '.jpg', '.jpeg', '.png']
+  .forEach((ext) => require.extensions[ext] = () => {});
 
 const PORT = process.env.PORT || 8080;
 
@@ -31,7 +29,7 @@ application.set('view engine', 'ejs')
 
 if (__DEVELOPMENT__) {
   const webpack = require('webpack');
-  const config = require('../webpack/config/development').default;
+  const config = require('../webpack/development').default;
   const webpackDev = require('webpack-dev-middleware')
   const webpackHot = require('webpack-hot-middleware')
   const compiler = webpack(config)

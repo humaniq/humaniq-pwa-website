@@ -23,6 +23,9 @@ export default webpackMerge(commonConfig, {
       './index.js',
     ],
   },
+  output: {
+    filename: 'assets/[name].js',
+  },
   module: {
     rules: [
       {

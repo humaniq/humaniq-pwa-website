@@ -11,13 +11,29 @@ export default {
     new OfflinePlugin({
       caches: 'all',
       publicPath: PUBLIC_PATH,
-      responseStrategy: 'network-first',
+      responseStrategy: 'cache-first',
       updateStrategy: 'changed',
       externals: [
         '/',
-        '/img/apple-touch-icon/180x180.png',
         '/img/illustrations/the-power-of-blockchain.svg',
-        'https://www.google-analytics.com/collect?v=1&_v=j58&a=180854128&t=pageview&_s=1&dl=http%3A%2F%2Flocalhost%2F&ul=en-us&de=UTF-8&dt=Humaniq&sd=24-bit&sr=1920x1080&vp=1920x339&je=0&fl=26.0%20r0&_u=AACAAMABI~&jid=&gjid=&cid=1252809312.1501694302&tid=UA-91023234-4&_gid=1062100651.1502775875&z=2046795873',
+        '/img/illustrations/free-payments.svg',
+        '/img/illustrations/biometrics-protected.svg',
+        '/img/illustrations/digital-identity.svg',
+        '/img/illustrations/powerful-platform.svg',
+        '/img/illustrations/open-api.svg',
+        '/img/illustrations/light-weight.svg',
+        '/img/logos/blockchainage@2x.jpg',
+        '/img/logos/deepknowledgeventures@2x.jpg',
+        '/img/logos/openbusinesscouncil@2x.jpg',
+        '/img/logos/deloitte@2x.jpg',
+        '/img/logos/riselondon@2x.jpg',
+        '/img/logos/futurefintech@2x.jpg',
+        '/img/logos/l39@2x.jpg',
+        '/img/logos/intelligentHQ@2x.jpg',
+        '/img/logos/blockchaincommunity@2x.jpg',
+        '/img/logos/cointelegraph@2x.jpg',
+        '/img/illustrations/global-access.svg',
+        '//www.google-analytics.com/collect?v=1&_v=j58&a=180854128&t=pageview&_s=1&dl=http%3A%2F%2Flocalhost%2F&ul=en-us&de=UTF-8&dt=Humaniq&sd=24-bit&sr=1920x1080&vp=1920x339&je=0&fl=26.0%20r0&_u=AACAAMABI~&jid=&gjid=&cid=1252809312.1501694302&tid=UA-91023234-4&_gid=1062100651.1502775875&z=2046795873',
       ],
       relativePaths: true,
       cacheMaps: [
@@ -25,7 +41,7 @@ export default {
           match: function(requestUrl) {
             return new URL('/', location)
           },
-          requestTypes: ['navigate', 'same-origin']
+          requestTypes: ['navigate']
         },
       ],
       autoUpdate: 1000 * 60 * 60 * 3, // (3 hours auto update)
@@ -40,7 +56,7 @@ export default {
   context: SOURCE_PATH,
   output: {
     path: OUTPUT_PATH,
-    filename: 'assets/js/[name].js',
+    filename: 'assets/js/[name].[hash:8].js',
     chunkFilename: 'assets/js/[name].[hash:8].chunk.js',
     publicPath: PUBLIC_PATH,
     pathinfo: true,
