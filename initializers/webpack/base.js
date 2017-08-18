@@ -15,6 +15,10 @@ export default {
       updateStrategy: 'changed',
       externals: [
         '/',
+        '*.svg',
+        '*.png',
+        '*.jpg',
+        '*.jpeg',
         '/img/illustrations/the-power-of-blockchain.svg',
         '/img/illustrations/free-payments.svg',
         '/img/illustrations/biometrics-protected.svg',
