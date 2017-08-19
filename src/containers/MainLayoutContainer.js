@@ -5,7 +5,7 @@ import {toggleMenu} from 'store/entities/navigation/actions'
 import {_isContain} from 'utils'
 
 const blueMainLayoutPages = ['wiki'] // pages with normal layout + dark theme
-const noMainLayoutPages = ['form'] // pages with their own layout
+const noMainLayoutPages = ['form', 'internal-form'] // pages with their own layout
 
 function mapStateToProps(state) {
   const {isMenuOpened, openRoute} = state.navigation
