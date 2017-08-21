@@ -11,7 +11,7 @@ import A_P from 'A_P'
 
 const features = [
   {
-    //img: '/img/illustrations/free-payments.svg',
+    img: '/img/illustrations/free-payments.svg',
     height: 260,
     title: 'Free Payments',
     subtitle: 'Send, receive and request funds with no transmission comission.'

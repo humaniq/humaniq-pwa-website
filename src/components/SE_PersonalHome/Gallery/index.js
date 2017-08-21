@@ -13,7 +13,6 @@ const SE_HomeGallery = ({entities, title, type}) =>{
 
   let rederedItems, containerType
 
-  console.log('entities', entities)
   if(type === 'links'){
     rederedItems = entities.map(({img, title, url})=>(
       <div className={cn('item-interactive', )} key={'key_' + title}>
