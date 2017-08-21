@@ -32,10 +32,14 @@ const SE_HomeGallery = ({entities, title, type}) =>{
     ))
     containerType = 'section-interactive'
   } else {
-    rederedItems = entities.map(({img, title, subtitle})=>(
+    rederedItems = entities.map(({img, title, subtitle, height})=>(
       <div className={cn('item')} key={'key_' + title}>
         <div className={cn('item-img')}>
-          <A_Image src={img} alt={title}/>
+          <A_Image
+            src={img}
+            alt={title}
+            height={height}
+          />
         </div>
         <div className={cn('item-title')}>
           <A_H type="section-c">{title}</A_H>

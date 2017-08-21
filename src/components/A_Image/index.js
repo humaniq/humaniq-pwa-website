@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
-import * as T from "prop-types";
+import T from "prop-types";
 import './styles.scss';
 import {cssClassName} from 'utils'
 const cn = cssClassName('A_Image')
 import isInitialLoad from 'utils/initialLoad'
+import LazyLoad from 'react-lazyload'
 
 class A_Image extends Component {
 
@@ -27,26 +28,37 @@ class A_Image extends Component {
 
   render() {
     let {rounded, realSize, link, type, ...preProps} = this.props
-    const {onClick, objectFit, ...props} = preProps
-    const complete = !!this.node && this.node.complete
-    const imgReady = complete || this.state.imgReady
+    const {onClick, objectFit, height, ...props} = preProps
     rounded = rounded && 'rounded'
     link = link && 'link'
     realSize = realSize && 'real-size'
 
+    // TODO: set blur default image
     return (
       <span className={cn('root')} >
-        <img
-          ref={ node => this.node = node }
-          className={cn('img', {onClick: !!onClick, objectFit, type}, [rounded, link, realSize])}
-          onLoad = {this.handleLoad}
-          style={imgReady ? {} : {display: 'none'}}
-          onClick={onClick}
-          {...props}
-        />
-        <div style={imgReady ? {display: 'none'} : {}} className={cn('loader')} >
-          {/*loading*/}
-        </div>
+        <LazyLoad
+          height={height}
+          once
+          offset={[-200, 0]}
+          placeholder={(
+            <div className={cn('placeholder-wrapper')} style={{height: height}}>
+              <div
+                className={cn('placeholder')}
+                style={{height: height*0.7}}
+              />
+            </div>
+          )}
+          debounce={100}
+        >
+          <img
+            ref={ node => this.node = node }
+            className={cn('img', {onClick: !!onClick, objectFit, type}, [rounded, link, realSize])}
+            onLoad = {this.handleLoad}
+            onClick={onClick}
+            {...props}
+          />
+        </LazyLoad>
+
       </span>
     )
   }
@@ -56,7 +68,7 @@ A_Image.propTypes = {
   src: T.string.isRequired,
   alt: T.string.isRequired,
   width: T.number,
-  height: T.number,
+  height: T.any.isRequired,
   onClick: T.func,
   objectFit: T.oneOf([
     'contain', // increases or decreases the size of the image to fill the box whilst preserving its aspect-ratio.
