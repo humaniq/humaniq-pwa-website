@@ -1,14 +1,14 @@
 import React, {Component} from 'react';
-import HmqLayoutContainer from 'containers/HmqLayoutContainer'
+import HmqLayoutKherelContainer from 'containers/HmqLayoutKherelContainer'
 
 class HmqLayoutRoute extends Component {
 
   render() {
     return (
       <div>
-        <HmqLayoutContainer >
+        <HmqLayoutKherelContainer >
           {this.props.children}
-        </HmqLayoutContainer>
+        </HmqLayoutKherelContainer>
       </div>
     )
   }
