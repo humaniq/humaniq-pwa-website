@@ -1,6 +1,6 @@
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux'
-import SE_Hmq from 'SE_Hmq'
+import SE_HmqHome from 'SE_HmqHome'
 import {requestHmqTransactions} from 'store/entities/transactions/actions'
 
 function mapStateToProps( state ) {
@@ -13,4 +13,4 @@ function mapDispatchToProps(dispatch) {
   const actions = bindActionCreators({requestHmqTransactions}, dispatch)
   return {...actions};
 }
-export default connect(mapStateToProps, mapDispatchToProps)(SE_Hmq);
+export default connect(mapStateToProps, mapDispatchToProps)(SE_HmqHome);
