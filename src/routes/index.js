@@ -19,6 +19,7 @@ import WikiSearch from './WikiSearch'
 import Hmq from './Hmq'
 import Ambassadors from './Ambassadors'
 import About from './About'
+import HmqLayout from './HmqLayout'
 
 import {cleanWikiSearch} from 'store/entities/wikiSearch/actions'
 
@@ -101,6 +102,9 @@ const getRoutes = (store) => {
       />
       <Route path="about"
              component={About}
+      />
+      <Route path="hmq-layout"
+             component={HmqLayout}
       />
       <Route
         path="/error/:err"

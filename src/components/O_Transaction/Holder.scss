@@ -30,6 +30,12 @@
       &:hover {
         box-shadow: 0 .3rem 1rem 0 rgba(0, 0, 0, 0.16), 0 .3rem 1rem 0 rgba(0, 0, 0, 0.23);
       }
+      @include media($mobile) {
+        box-shadow: 0 4px 1px -3px #e8e8e8;
+        &:hover {
+          box-shadow: 0 4px 2px -2px #e8e8e8;
+        }
+      }
     }
     &__td {
       padding: .5rem 0;
@@ -69,9 +75,8 @@
         }
       }
       &:nth-child(4) {
-        width: 32%;
+        width: 30%;
         @include media($mobile) {
-          display: none;
         }
       }
       &:nth-child(5) {
@@ -82,9 +87,10 @@
         }
       }
       &:nth-child(6) {
-        width: 11%;
+        width: 13%;
         @include media($mobile) {
           width: 40%;
+          display: none;
         }
       }
       &:first-child {
