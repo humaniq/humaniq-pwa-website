@@ -34,11 +34,7 @@ class O_ScrollUp extends Component {
 
     return(
       <div className={cn('wrapper')}>
-        <div className={cn('root', {hide})} onClick={() => window.scrollTo({
-          top: 0,
-          left: 0,
-          behavior: 'smooth'
-        })}
+        <div className={cn('root', {hide})} onClick={() => window.scrollTo(0, 0)}
         ><div className={cn('h-height')}>.</div>
           <div style={{top: initTop}} className={cn('button')}>
             <span className={cn('button-icon')}><A_Image src="/img/icons/download-3@2x.png" alt='go up'/></span>
