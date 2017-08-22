@@ -19,7 +19,7 @@ import WikiSearch from './WikiSearch'
 import HmqHome from './HmqHome'
 import Ambassadors from './Ambassadors'
 import About from './About'
-import HmqLayout from './HmqLayout'
+import HmqLayoutKherel from './HmqLayoutKherel'
 
 import {cleanWikiSearch} from 'store/entities/wikiSearch/actions'
 
@@ -94,7 +94,7 @@ const getRoutes = (store) => {
       />
       <Route
         path="hmq-explorer"
-        component={HmqLayout}
+        component={HmqLayoutKherel}
       >
         <IndexRoute
           component={HmqHome}
