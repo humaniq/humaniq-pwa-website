@@ -4,7 +4,7 @@ import SE_HmqHolders from 'SE_HmqHolders'
 import {fetchHmqHolders} from 'store/entities/hmqHolders/actions'
 
 function mapStateToProps( state ) {
-  const {entities, offset} = state.hmqHolders
+  const {entities} = state.hmqHolders
 
   return {entities};
 }

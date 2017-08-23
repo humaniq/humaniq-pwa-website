@@ -14,8 +14,7 @@ const M_ScrollScreen = ({children}) =>{
 }
 
 M_ScrollScreen.propTypes = {
+  children: T.any.isRequired,
 };
 
-M_ScrollScreen.defaultProps = {
-}
 export default M_ScrollScreen
