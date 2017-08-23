@@ -20,6 +20,13 @@ import HmqHome from './HmqHome'
 import Ambassadors from './Ambassadors'
 import About from './About'
 import HmqLayout from './HmqLayout'
+import HmqTest from './HmqTest'
+import HmqTxLog from './HmqTxLog'
+import HmqTxHash from './HmqTxHash'
+import HmqMarkets from './HmqMarkets'
+import HmqHolders from './HmqHolders'
+import HmqHolder from './HmqHolder'
+import HmqBlock from './HmqBlock'
 
 
 import {cleanWikiSearch} from 'store/entities/wikiSearch/actions'
@@ -95,12 +102,29 @@ const getRoutes = (store) => {
       />
       <Route
         path="hmq-explorer"
-        component={HmqLayoutKherel}
+        component={HmqLayout}
       >
         <IndexRoute
           component={HmqHome}
           prepareData={HmqHome.prepareData}
         />
+        <Route path="transaction-log" >
+          <IndexRoute
+            component={HmqTxLog}
+            // prepareData={HmqTxLog.prepareData}
+          />
+          <Route path=":txhash" component={HmqTxHash}/>
+        </Route>
+        <Route path="token-holders" >
+          <IndexRoute
+            component={HmqHolders}
+            // prepareData={HmqHome.prepareData}
+          />
+          <Route path=":holder" component={HmqHolder}/>
+        </Route>
+        <Route path="markets" component={HmqMarkets}/>
+        <Route path="block/:block" component={HmqBlock}/>
+
       </Route>
       <Route path="ambassadors"
              prepareData={Ambassadors.prepareData}
@@ -108,9 +132,6 @@ const getRoutes = (store) => {
       />
       <Route path="about"
              component={About}
-      />
-      <Route path="hmq-layout"
-             component={HmqLayout}
       />
       <Route
         path="/error/:err"

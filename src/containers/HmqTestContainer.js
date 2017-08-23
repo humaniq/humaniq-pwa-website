@@ -1,3 +1,3 @@
-import SE_HmqLayoutKherel from 'SE_HmqLayoutKherel'
+import SE_HmqTest from 'SE_HmqTest'
 
-export default SE_HmqLayoutKherel;
+export default SE_HmqTest;
