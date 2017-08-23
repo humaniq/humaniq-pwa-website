@@ -4,6 +4,7 @@ import './styles.scss';
 import {cssClassName} from 'utils';
 const cn = cssClassName('SE_HmqLayout');
 import O_Fixed from 'O_Fixed'
+import NavBar from './NavBar'
 
 class SE_HmqLayout extends Component {
 
@@ -13,7 +14,7 @@ class SE_HmqLayout extends Component {
     return (
       <div className={cn('root')}>
         <O_Fixed>
-          <div className={cn('nav-menu')}>--nav-menu--</div>
+          <div className={cn('nav-menu')}><NavBar /></div>
         </O_Fixed>
         {children}
       </div>
