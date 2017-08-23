@@ -8,12 +8,15 @@ import O_ScrollUp from "O_ScrollUp";
 
 class SE_HmqHolders extends Component {
 
-  getTransactions(entities, loadMore){
+  getTransactions(entities, loadMore, loading){
     return (entities.map( (props, i) => {
+
+      const entitiesCount = entities.length
+      const addWayPoint = !loading && (i + 30 === entitiesCount || i + 5 === entitiesCount)
       return (
         <div key ={props.address}>
           <O_Transaction {...props} type="holder"/>
-          {i + 30 === entities.length &&
+          {addWayPoint &&
             <Waypoint
               scrollableAncestor={'window'}
               onEnter={loadMore}
@@ -25,11 +28,12 @@ class SE_HmqHolders extends Component {
   }
 
   render() {
-    const {entities, loadMore} = this.props
-    const renderedTransactions = this.getTransactions(entities, loadMore)
+    const {entities, loadMore, children, loading} = this.props
+    const renderedTransactions = this.getTransactions(entities, loadMore, loading)
     return (
       <div>
-        <O_ScrollUp initTop={0} showAfter={700}>
+        {children}
+        <O_ScrollUp initTop={50} showAfter={700}>
           <M_ScrollScreen >
             {renderedTransactions}
           </M_ScrollScreen>
@@ -42,7 +46,8 @@ class SE_HmqHolders extends Component {
 
 SE_HmqHolders.propTypes = {
   entities: T.array.isRequired,
-  loadMore: T.func.isRequired
+  loadMore: T.func.isRequired,
+  children: T.any
 }
 
 SE_HmqHolders.defaultProps = {

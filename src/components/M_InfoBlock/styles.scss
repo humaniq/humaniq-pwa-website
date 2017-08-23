@@ -1,0 +1,7 @@
+@import "common/settings/variables";
+@import "common/utils";
+
+.m-info-block{
+  border-left: $interactive-border-l;
+  padding-left: 1.6rem;
+}
