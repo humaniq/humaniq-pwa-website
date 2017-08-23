@@ -70,7 +70,6 @@ class SE_Ambassadors  extends Component {
               <span onClick={() => this.setState({filter: partner.country})} style={{cursor: 'pointer'}}>
                 <A_H type='tooltip-sub'>{partner.country}</A_H>
               </span>
-              {partner.country}{' '}
               {partner.bio}
             </M_Tooltip>
           </span>
