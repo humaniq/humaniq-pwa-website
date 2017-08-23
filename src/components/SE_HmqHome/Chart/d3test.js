@@ -64,8 +64,6 @@ class App extends Component {
         </div>
 
         <div>
-
-          sss
           {/*<Chart*/}
           {/*title="DataSmall"*/}
           {/*width="100"*/}

@@ -7,7 +7,12 @@ const cn = cssClassName('SE_HmqHeroChart')
 import D3Chart from './D3Chart'
 
 const periods = [
-  'hour', 'day', 'week', 'month', 'year', 'all'
+  // 'hour',
+  'day',
+  'week',
+  // 'month',
+  // 'year',
+  // 'all'
 ]
 
 const periodTitles = {
@@ -19,19 +24,16 @@ const periodTitles = {
   all: 'all'
 }
 
-class SE_HmqHeroChart extends Component {
+class SE_HmqChart extends Component {
 
-  state = {
-    active: periods[3]
-  }
 
-  getNavItems(active){
+  getNavItems(active, fetchGraphData, loading){
     return(
       periods.map( period => (
         <div
           key={'key_' + period}
-          onClick={() => this.setState({active: period})}
-          className={cn('body__header-nav-item', {active: period === active})}
+          onClick={loading ? undefined : () => fetchGraphData(periodTitles[period])}
+          className={cn('body__header-nav-item', {active: periodTitles[period] === active})}
         >{periodTitles[period]}</div>
       ))
     )
@@ -39,9 +41,10 @@ class SE_HmqHeroChart extends Component {
 
 
   render() {
-    const {active} = this.state
-    const navItems = this.getNavItems(active)
-    const {chartProps} = this.props
+    const {loaded, entities, period, fetchGraphData, loading} = this.props
+    const navItems = this.getNavItems(period, fetchGraphData, loading)
+
+    if(!loaded) return null;
     return (
       <div className={cn('root')}>
         <div className={cn('body')}>
@@ -54,25 +57,22 @@ class SE_HmqHeroChart extends Component {
           <D3Chart
             width="680"
             height="306"
-            data={chartProps[active]}/>
+            data={entities}
+          />
+
         </div>
       </div>
     )
   }
 }
 
-SE_HmqHeroChart.propTypes = {
-  chartProps: T.shape({
-    year: T.array.isRequired,
-    month: T.array.isRequired,
-    week: T.array.isRequired,
-    day: T.array.isRequired,
-    hour: T.array.isRequired,
-    all: T.array.isRequired,
-  }).isRequired,
+SE_HmqChart.propTypes = {
+  period: T.string.isRequired,
+  loaded: T.bool.isRequired,
+  entities: T.array.isRequired
 };
 
-SE_HmqHeroChart.defaultProps = {
+SE_HmqChart.defaultProps = {
 }
 
-export default SE_HmqHeroChart
+export default SE_HmqChart

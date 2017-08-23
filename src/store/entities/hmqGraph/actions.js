@@ -1,16 +1,16 @@
 import moment from 'moment'
 import { createRequestActions } from 'helpers'
-import { BLOCKCHAIN_EXCHANGE_RATES } from 'constants'
+import { HMQ_GRAPH } from 'constants'
 import { BACKEND_CALL } from 'middleware/humaniqBackendApi'
-import { ENDPOINT_BLOCKCHAIN_EXCHANGE_RATES } from 'constants/api'
+import { ENDPOINT_HMQ_GRAPH } from 'constants/api'
 
 export function fetchExchangeRates (query, period) {
   return ({
     [BACKEND_CALL]: {
-      endpoint: ENDPOINT_BLOCKCHAIN_EXCHANGE_RATES,
+      endpoint: ENDPOINT_HMQ_GRAPH,
       method: 'GET',
       query: query,
-      types: createRequestActions(BLOCKCHAIN_EXCHANGE_RATES),
+      types: createRequestActions(HMQ_GRAPH),
       data: period
     }
   })
@@ -18,32 +18,33 @@ export function fetchExchangeRates (query, period) {
 
 const apiDateFormat = momentDate => momentDate.format('YYYYMMDDTHHmmss[Z]')
 
-export function fetchGraphicData (period) {
-  const now = moment()
+export function fetchGraphData (period) {
+  const now = moment().utc()
   const toTimestampIso = apiDateFormat(now)
   let from, stepSeconds
 
   switch (period) {
     case '1h':
-      stepSeconds = 36
+      stepSeconds = 60
       from = now.subtract(1, 'hour')
       break
     case '1d':
-      stepSeconds = 864
+      stepSeconds = 1728
       from = now.subtract(1, 'days')
       break
     case '1w':
-      stepSeconds = 1500
+      stepSeconds = 12096
       from = now.subtract(1, 'week')
       break
-    case '1m':
-      stepSeconds = 187488
-      from = now.subtract(1, 'month')
-      break
-    case '1y':
-      stepSeconds = 68433120
-      from = now.subtract(1, 'year')
-      break
+    // case '1m':
+    //   stepSeconds = 133920
+    //
+    //   from = now.subtract(1, 'month')
+    //   break
+    // case '1y':
+    //   stepSeconds = 68433120
+    //   from = now.subtract(1, 'year')
+    //   break
   }
 
   const fromTimestampIso = apiDateFormat(from)

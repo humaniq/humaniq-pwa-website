@@ -5,6 +5,9 @@
 /* ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## */
 
 .o-transaction-holder {
+  &__value{
+    font-size: 12px
+  }
   &__asset-stats {
     width: 94rem;
     margin: 0 auto;
@@ -66,7 +69,7 @@
         }
       }
       &:nth-child(2) {
-        width: 21%;
+        width: 36%;
         padding-right: 3.5rem;
         @include media($tablet) {
           width: 40%;
@@ -93,7 +96,7 @@
         }
       }
       &:nth-child(4) {
-        width: 30%;
+        width: 15%;
         padding-left: .8rem;
         @include media($tablet) {
           display: none;
@@ -207,7 +210,6 @@
     }
     &__to-link {
       @extend .o-transaction-holder__asset-stats__hash-link;
-
     }
   }
 }

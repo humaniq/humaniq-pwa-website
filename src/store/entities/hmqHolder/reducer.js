@@ -5,7 +5,8 @@ const hmqHolderInit = {
   loading: false,
   loaded: false,
   totalTransactions: 0,
-  balance: 'no data'
+  balance: 'no data',
+  address: ''
 }
 
 export default (hmqHolder = hmqHolderInit, { type, data } ) => {

@@ -128,3 +128,5 @@ export function arrayUnique(array) {
 
   return a;
 }
+
+export const apiDateFormat = momentDate => momentDate.format('YYYYMMDDTHHmmss[Z]')
