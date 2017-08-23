@@ -1,5 +1,5 @@
 import {START, SUCCESS, REQUEST, FAIL, HMQ_STATISTICS} from 'constants'
-import {safeDA, numberFormat} from 'utils'
+import mapper from './mapper'
 
 const hmqStatisticInit = {
   loading: false,
@@ -39,19 +39,7 @@ export default (hmqStatistic = hmqStatisticInit, { type, data } ) => {
       return {...hmqStatistic, loading: true}
 
     case REQUEST + HMQ_STATISTICS + SUCCESS:
-      const _tokenSupplyHmq = safeDA(data, ['tokenSupply', 'hmq'], 0)
-      const _tokenSupplyUsd = safeDA(data, ['tokenSupply', 'usd'], 0)
-      const _lastHours24TradesVolumeUsd = safeDA(data, ['lastHours24', 'tradesVolume', 'usd'], 0)
-      const _lastHours24TradesVolumeHmq = safeDA(data, ['lastHours24', 'tradesVolume', 'hmq'], 0)
-
-      const _tokenValueUsd = safeDA(data, ['tokenValue', 'usd'], 0)
-      const _tokenValueHmq = safeDA(data, ['tokenSupply', 'hmq'], 0)
-
-      const tokenSupplyString = `${numberFormat(_tokenSupplyHmq)} HMQ $ ${numberFormat(Math.round(_tokenSupplyUsd * 100) / 100)}`
-      const volume24String = `$ ${numberFormat(Math.round(_lastHours24TradesVolumeUsd))} HMQ ${numberFormat(Math.round(_lastHours24TradesVolumeHmq *100)/ 100)}`
-      const tokenValueString = `$ ${Math.round(_tokenValueUsd * 10000) /10000} HMQ $ ${numberFormat(Math.round(_tokenValueHmq * 1000000)/ 1000000)}`
-
-      return {...hmqStatistic, loading: false, loaded: true, ...data, tokenSupplyString, volume24String, tokenValueString}
+      return {...hmqStatistic, loading: false, loaded: true, ...mapper(data)}
     case REQUEST + HMQ_STATISTICS + FAIL:
       return {...hmqStatistic, loading: false}
   }

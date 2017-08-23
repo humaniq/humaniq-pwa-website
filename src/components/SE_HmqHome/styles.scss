@@ -8,13 +8,15 @@
     justify-content: space-between;
     @include media($tablet) {
       flex-flow: column-reverse;
+
     }
   }
   &__chart, &__stat{
     width: 26rem;
     //flex: 0 1 26rem;
     @include media($tablet) {
-      margin: 0 auto;
+      margin: 0 ;
+      margin-bottom: 4rem;
     }
   }
 
@@ -26,7 +28,7 @@
   &__chart{
     width: 68rem;
     @include media($tablet) {
-      margin: 0 auto;
+      margin: 0 ;
     }
     @include media($mobile) {
       display: none;

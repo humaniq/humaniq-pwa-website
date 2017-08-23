@@ -11,9 +11,9 @@ export const HMQ_STATISTICS = 'HMQ_STATISTICS'
 export const HMQ_MARKETS = 'HMQ_MARKETS'
 export const HMQ_HOLDERS = 'HMQ_HOLDERS'
 export const HMQ_HOLDER = 'HMQ_HOLDER'
+export const HMQ_LOG = 'HMQ_LOG'
 
-export const BLOCKCHAIN_EXCHANGE_RATES = 'BLOCKCHAIN_EXCHANGE_RATES'
-
+export const HMQ_GRAPH = 'HMQ_GRAPH'
 export const OPEN_ROUTE = 'OPEN_ROUTE'
 export const POST = 'POST'
 export const POSTS = 'POSTS'

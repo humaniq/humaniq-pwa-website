@@ -1,4 +1,4 @@
-import {START, SUCCESS, REQUEST, FAIL, BLOCKCHAIN_EXCHANGE_RATES} from 'constants'
+import {START, SUCCESS, REQUEST, FAIL, HMQ_GRAPH} from 'constants'
 
 import moment from 'moment';
 
@@ -28,7 +28,7 @@ function addDateShow(rates){
     return {
       date: moment(timestampIso, 'YYYYMMDDTHHmmss[Z]').format('YYYY-MM-DD, HH:mm:ss'),
       dateShow: moment(timestampIso, 'YYYYMMDDTHHmmss[Z]').format(format[period]),
-      valueShow: `$ ${Math.round(rate.usd * 1000) / 1000} (${Math.round(rate.usd * 1000000 / 1000000)} ETH)`,
+      valueShow: `$ ${(rate.usd).toFixed(3)} (${(rate.usd).toFixed(5)} ETH)`,
       value: Math.round(rate.eth * 1000000000)
     }
   }))
@@ -37,13 +37,13 @@ function addDateShow(rates){
 export default (hmq = hmqInit, { type, data }) => {
 
   switch (type) {
-    case REQUEST + BLOCKCHAIN_EXCHANGE_RATES + START:
+    case REQUEST + HMQ_GRAPH + START:
       return {...hmq, loading: true}
-    case REQUEST + BLOCKCHAIN_EXCHANGE_RATES + SUCCESS:
+    case REQUEST + HMQ_GRAPH + SUCCESS:
       const period = data.initdata
       const entities = addDateShow(data.rates, period)
       return {...hmq, loading: false, loaded: true, [period]:entities}
-    case REQUEST + BLOCKCHAIN_EXCHANGE_RATES + FAIL:
+    case REQUEST + HMQ_GRAPH + FAIL:
       return {...hmq, loading: false}
   }
 

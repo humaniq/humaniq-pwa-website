@@ -136,7 +136,9 @@ class D3Chart extends Component {
       return {
         date: parse(d.date),
         value: +d.value,
-        dateShow: d.dateShow
+        dateShow: d.dateShow,
+        valueShow: d.valueShow
+
       }
     });
     //YYYY-MM-DD, HH:mm:ss
@@ -150,14 +152,14 @@ class D3Chart extends Component {
 
     this.yScale.domain(domainY);
 
-    const formatY = (value) => {
-      if (value < 1) {
-        return value.toFixed(2);
-      } else if (value < 10 && value % 1 === 0) {
-        return value.toFixed(0);
-      }
-      return d3.format('.2s')(value);
-    };
+    // const formatY = (value) => {
+    //   if (value < 1) {
+    //     return value.toFixed(2);
+    //   } else if (value < 10 && value % 1 === 0) {
+    //     return value.toFixed(0);
+    //   }
+    //   return d3.format('.2s')(value);
+    // };
 
     const line = d3.line()
       .x(d => component.xScale(d.date))
@@ -271,10 +273,10 @@ class D3Chart extends Component {
           d = x0 - d0.date > d1.date - x0 ? d1 : d0;
 
         component.tooltip.select(".se-hmq-hero-chart__tooltip-root")
-          .html(`<b>Value: </b>${formatY(d.value)}<br/><b>Date: </b>${d.dateShow}`)
+          .html(`<b>Value: </b>${d.valueShow}<br/><b>Date: </b>${d.dateShow}`)
 
         component.tooltip   //d3.event.pageX d3.mouse(this)[0]
-          .style('left', `${+component.xScale(d.date) - 75}px`)
+          .style('left', `${+component.xScale(d.date) - 95}px`)
           .style('top', `${+component.yScale(d.value) -5}px`)
           // .style('left', `${+d3.event.pageX - 96}px`)
           // .style('top', `${+d3.event.pageY - 85}px`)
@@ -283,6 +285,7 @@ class D3Chart extends Component {
           .transition()
           .duration(500)
           .style('opacity', 1);
+
 
         component.tipCircle.attr('cx', component.xScale(d.date))
           .attr('cy', component.yScale(d.value))

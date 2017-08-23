@@ -1,5 +1,4 @@
 import {numberFormat} from 'utils'
-import moment from 'moment'
 
 export default (arr) => {
   return arr.map(({address, walletRank, hmqPercentage, totalTransactions, balance}) =>({
@@ -8,7 +7,6 @@ export default (arr) => {
     pecentage: (+ hmqPercentage).toFixed(2),
     txns: totalTransactions,
     usdAmount: numberFormat(+ balance.usd, 2),
-    hmqAmount: numberFormat(+ balance.hmq, 2),
-    time: moment().format()
+    hmqAmount: numberFormat(+ balance.hmq, 2)
   }))
 }

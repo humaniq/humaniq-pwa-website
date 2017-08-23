@@ -6,6 +6,7 @@ import {cssClassName} from 'utils';
 const cn = cssClassName('O_TransactionHolder');
 import moment from 'moment';
 import {dateString} from 'utils/propsValidationHelpers';
+import A_Link from 'A_Link'
 
 class O_TransactionHolder extends Component {
 
@@ -22,16 +23,16 @@ class O_TransactionHolder extends Component {
                 <span className={cn('asset-stats__block')}>Rank:</span>
               </td>
               <td className={cn('asset-stats__td')}>
-                <a href="javascript:void(0);" className={cn('asset-stats__hash-link')}>{address}</a>
-                <span>{rank}</span>
+                <A_Link to={`/hmq-explorer/token-holders/${address}`} className={cn('asset-stats__hash-link')}>{address}</A_Link>
+                <span className={cn('value')}>{rank}</span>
               </td>
               <td className={cn('asset-stats__td')}>
                 <span className={cn('asset-stats__from')}>Pecentage:</span>
                 <span className={cn('asset-stats__to')}>Txns:</span>
               </td>
               <td className={cn('asset-stats__td')}>
-                <a href="javascript:void(0);" className={cn('asset-stats__from-link')}>{pecentage} %</a>
-                <a href="javascript:void(0);" className={cn('asset-stats__to-link')}>{txns}</a>
+                <span className={cn('value')}>{pecentage} %</span>
+                <span className={cn('value')}>{txns}</span>
               </td>
               <td className={cn('asset-stats__td')}>
                 <span className={cn('asset-stats__price-hmq')}>{hmqAmount} HMQ</span>

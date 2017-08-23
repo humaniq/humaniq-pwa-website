@@ -4,9 +4,11 @@ import HmqHoldersContainer from 'containers/HmqHoldersContainer'
 
 class HmqHolders extends Component {
 
-  static prepareData({dispatch}) {
+  static prepareData({dispatch, getState}) {
+    const state = getState()
 
-    if(!__CLIENT__) return;
+    if(!__CLIENT__ || state.hmqHolders.entities.length) return;
+
     return dispatch(fetchHmqHolders())
   }
 
