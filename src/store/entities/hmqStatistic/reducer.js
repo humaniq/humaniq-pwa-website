@@ -51,9 +51,9 @@ export default (hmqStatistic = hmqStatisticInit, { type, data } ) => {
       const volume24String = `$ ${numberFormat(Math.round(_lastHours24TradesVolumeUsd))} HMQ ${numberFormat(Math.round(_lastHours24TradesVolumeHmq *100)/ 100)}`
       const tokenValueString = `$ ${Math.round(_tokenValueUsd * 10000) /10000} HMQ $ ${numberFormat(Math.round(_tokenValueHmq * 1000000)/ 1000000)}`
 
-      return {...hmqStatistic, ...data, tokenSupplyString, volume24String, tokenValueString}
+      return {...hmqStatistic, loading: false, loaded: true, ...data, tokenSupplyString, volume24String, tokenValueString}
     case REQUEST + HMQ_STATISTICS + FAIL:
-      return {...hmqStatistic, loading: true}
+      return {...hmqStatistic, loading: false}
   }
   return hmqStatistic;
 };
