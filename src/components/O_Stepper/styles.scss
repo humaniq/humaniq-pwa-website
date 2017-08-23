@@ -18,30 +18,6 @@
         display: none;
       }
     }
-    &--done {
-      .o-stepper__bar {
-        &:after {
-          height: 100%;
-        }
-      }
-      .o-stepper__dot {
-        background: $blue-2;
-        width: 1.6rem;
-        height: 1.6rem;
-        margin-top: -.7rem;
-        margin-left: -.7rem;
-        &:before {
-          background: url('/img/icons/check.svg');
-          content: '';
-          width: .9rem;
-          height: .8rem;
-          position: absolute;
-          top: .4rem;
-          left: .4rem;
-          transition: background .3s ease;
-        }
-      }
-    }
     &--next {
       .o-stepper__dot {
         background: $blue-2;
@@ -101,13 +77,41 @@
     overflow: hidden;
     text-overflow: ellipsis;
     color: #617079;
-    .o-stepper__step--done & {
+    .o-stepper__step_step_true & {
       color: $blue-1;
       font-weight: 600;
     }
     .o-stepper__step--next & {
       color: #617079;
       font-weight: 600;
+    }
+  }
+  &__step {
+    &_step {
+      &_true {
+        .o-stepper__bar {
+          &:after {
+            height: 100%;
+          }
+        }
+        .o-stepper__dot {
+          background: $blue-2;
+          width: 1.6rem;
+          height: 1.6rem;
+          margin-top: -.7rem;
+          margin-left: -.7rem;
+          &:before {
+            background: url('/img/icons/check.svg');
+            content: '';
+            width: .9rem;
+            height: .8rem;
+            position: absolute;
+            top: .4rem;
+            left: .4rem;
+            transition: background .3s ease;
+          }
+        }
+      }
     }
   }
 }
