@@ -28,6 +28,11 @@
       display: inline-block;
       vertical-align: middle;
       text-align: center;
+      &:last-child {
+        .se-hmq-layout-nav-bar__nav-a {
+          margin-right: 0;
+        }
+      }
     }
     &-a {
       display: block;
@@ -50,13 +55,13 @@
         }
       }
       @include media($mobile) {
+        margin-right: 3rem;
       }
     }
   }
   &__search-form {
-    @include media($tablet) {
-      display: none;
-    }
+    position: relative;
+    padding-right: 2rem;
   }
   &__search-input {
     width: 27rem;
@@ -67,6 +72,9 @@
     border: solid .1rem #e6ecf0;
     outline: none;
     padding: .8rem 5rem .6rem 2.3rem;
+    @include media($tablet) {
+      width: 20rem;
+    }
   }
   &__search-icon {
     width: 2rem;
@@ -75,7 +83,7 @@
     background: transparent;
     position: absolute;
     top: 50%;
-    right: 2rem;
+    right: 3rem;
     margin-top: -.8rem;
     outline: none;
     cursor: pointer;

@@ -4,11 +4,13 @@ import './Holder.scss';
 import A_Container from 'A_Container';
 import {cssClassName} from 'utils';
 const cn = cssClassName('O_TransactionHolder');
+import moment from 'moment';
+import {dateString} from 'utils/propsValidationHelpers';
 
 class O_TransactionHolder extends Component {
 
   render() {
-    const {address, rank, pecentage, txns, usdAmount, hmqAmount} = this.props
+    const {address, rank, pecentage, txns, usdAmount, hmqAmount, time} = this.props
     return (
       <div>
         <A_Container type='wide'>
@@ -28,14 +30,18 @@ class O_TransactionHolder extends Component {
                 <span className={cn('asset-stats__to')}>Txns:</span>
               </td>
               <td className={cn('asset-stats__td')}>
-                <span >{pecentage} %</span>
-                <span >{txns}</span>
+                <a href="javascript:void(0);" className={cn('asset-stats__from-link')}>{pecentage} %</a>
+                <a href="javascript:void(0);" className={cn('asset-stats__to-link')}>{txns}</a>
               </td>
               <td className={cn('asset-stats__td')}>
                 <span className={cn('asset-stats__price-hmq')}>{hmqAmount} HMQ</span>
                 <span className={cn('asset-stats__price-usd')}>${usdAmount} USD</span>
               </td>
               <td className={cn('asset-stats__td')}>
+                <small className={cn('asset-stats__time asset-stats__time--success')}>
+                  <i className={cn('asset-stats__icon o-asset-stats__icon--success')}></i>
+                  {moment(time).fromNow()}
+                </small>
               </td>
             </tr>
             </tbody>
@@ -54,6 +60,7 @@ O_TransactionHolder.propTypes = {
   txns: T.number.isRequired,
   usdAmount: T.string.isRequired,
   hmqAmount: T.string.isRequired,
+  time: dateString.isRequired,
 };
 
 export default O_TransactionHolder

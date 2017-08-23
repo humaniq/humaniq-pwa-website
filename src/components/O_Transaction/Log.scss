@@ -23,17 +23,29 @@
       border-spacing: 0 1rem;
     }
     &__tr {
+      position: relative;
       background: #fff;
       border-radius: .4rem;
-      box-shadow: 0 .1rem .6rem 0 rgba(0, 0, 0, 0.12), 0 .1rem .4rem 0 rgba(0, 0, 0, 0.12);
       transition: all 0.3s ease;
-      &:hover {
-        box-shadow: 0 .3rem 1rem 0 rgba(0, 0, 0, 0.16), 0 .3rem 1rem 0 rgba(0, 0, 0, 0.23);
-      }
-      @include media($mobile) {
-        box-shadow: 0 4px 1px -3px #e8e8e8;
-        &:hover {
-          box-shadow: 0 4px 2px -2px #e8e8e8;
+      &:before {
+        box-sizing: border-box;
+        content:'';
+        position:absolute;
+        left: 0;
+        right: 0;
+        display: inline-block;
+        width: 94rem;
+        margin: 0 auto;
+        height: 6.5rem;
+        border-radius: .4rem;
+        box-shadow: 0 .1rem .6rem 0 rgba(0, 0, 0, 0.12), 0 .1rem .4rem 0 rgba(0, 0, 0, 0.12);
+        @include media($tablet) {
+          width: 69rem;
+        }
+        @include media($mobile) {
+          width: 90%;
+          height: 6.2rem;
+          box-shadow: 0 4px 1px -3px #e8e8e8;
         }
       }
     }
@@ -43,7 +55,7 @@
         width: 8%;
         padding-left: 2rem;
         @include media($tablet) {
-          display: none;
+          //display: none;
         }
         @include media($mobile) {
           display: table-cell;
@@ -54,7 +66,7 @@
         width: 21%;
         padding-right: 3.5rem;
         @include media($tablet) {
-          display: none;
+          //display: none;
         }
         @include media($mobile) {
           width: 30%;
@@ -128,8 +140,8 @@
       &.o-asset-stats__icon--success {
         &:before {
           content: '';
-          width: 1.3rem;
-          height: 1.3rem;
+          width: 1rem;
+          height: 1rem;
           background: $blue-1;
           position: absolute;
           top: .3rem;
