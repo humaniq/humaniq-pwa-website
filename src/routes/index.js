@@ -115,12 +115,18 @@ const getRoutes = (store) => {
           />
           <Route path=":txhash" component={HmqTxHash}/>
         </Route>
-        <Route path="token-holders" >
+        <Route
+          path="token-holders"
+          prepareData={HmqHolders.prepareData}
+        >
           <IndexRoute
             component={HmqHolders}
-            prepareData={HmqHolders.prepareData}
           />
-          <Route path=":holder" component={HmqHolder}/>
+          <Route
+            path=":holder"
+            component={HmqHolder}
+            prepareData={HmqHolder.prepareData}
+          />
         </Route>
         <Route path="markets"
                component={HmqMarkets}

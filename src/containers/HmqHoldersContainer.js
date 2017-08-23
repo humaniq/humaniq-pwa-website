@@ -4,9 +4,9 @@ import SE_HmqHolders from 'SE_HmqHolders'
 import {fetchHmqHolders} from 'store/entities/hmqHolders/actions'
 
 function mapStateToProps( state ) {
-  const {entities} = state.hmqHolders
+  const {entities, loading} = state.hmqHolders
 
-  return {entities};
+  return {entities, loading};
 }
 
 function mapDispatchToProps(dispatch) {
@@ -14,13 +14,14 @@ function mapDispatchToProps(dispatch) {
   return {...actions};
 }
 
-function mergeProps(stateProps, {fetchHmqHolders}){
+function mergeProps(stateProps, {fetchHmqHolders}, ownProps){
 
   const loadMore = () => {
+    console.log('loading')
     fetchHmqHolders(stateProps.entities.length)
   }
 
-  return {...stateProps, loadMore}
+  return {...stateProps, loadMore, ...ownProps}
 }
 
 
