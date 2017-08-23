@@ -118,7 +118,7 @@ const getRoutes = (store) => {
         <Route path="token-holders" >
           <IndexRoute
             component={HmqHolders}
-            // prepareData={HmqHome.prepareData}
+            prepareData={HmqHolders.prepareData}
           />
           <Route path=":holder" component={HmqHolder}/>
         </Route>

@@ -21,15 +21,15 @@ class O_TransactionHolder extends Component {
               </td>
               <td className={cn('asset-stats__td')}>
                 <a href="javascript:void(0);" className={cn('asset-stats__hash-link')}>{address}</a>
-                <a href="javascript:void(0);" className={cn('asset-stats__block-link')}>{rank}</a>
+                <span>{rank}</span>
               </td>
               <td className={cn('asset-stats__td')}>
                 <span className={cn('asset-stats__from')}>Pecentage:</span>
                 <span className={cn('asset-stats__to')}>Txns:</span>
               </td>
               <td className={cn('asset-stats__td')}>
-                <a href="javascript:void(0);" className={cn('asset-stats__from-link')}>{pecentage}</a>
-                <a href="javascript:void(0);" className={cn('asset-stats__to-link')}>{txns}</a>
+                <span >{pecentage} %</span>
+                <span >{txns}</span>
               </td>
               <td className={cn('asset-stats__td')}>
                 <span className={cn('asset-stats__price-hmq')}>{hmqAmount} HMQ</span>
@@ -50,10 +50,10 @@ class O_TransactionHolder extends Component {
 O_TransactionHolder.propTypes = {
   address: T.string.isRequired,
   rank: T.number.isRequired,
-  pecentage: T.number.isRequired,
-  txns: T.string.isRequired,
-  usdAmount: T.number.isRequired,
-  hmqAmount: T.number.isRequired,
+  pecentage: T.string.isRequired,
+  txns: T.number.isRequired,
+  usdAmount: T.string.isRequired,
+  hmqAmount: T.string.isRequired,
 };
 
 export default O_TransactionHolder

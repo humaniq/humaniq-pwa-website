@@ -13,9 +13,9 @@ export default (hmqMarkets = hmqMarketsInit, { type, data } ) => {
       return {...hmqMarkets, loading: true}
 
     case REQUEST + HMQ_MARKETS + SUCCESS:
-      return {...hmqMarkets, entities: data}
+      return {...hmqMarkets, loading: false, loaded: true, entities: data}
     case REQUEST + HMQ_MARKETS + FAIL:
-      return {...hmqMarkets, loading: true}
+      return {...hmqMarkets, loading: false}
   }
   return hmqMarkets;
 };
