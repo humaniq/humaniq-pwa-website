@@ -10,6 +10,7 @@ import personal from 'store/entities/personal/reducer'
 import hmqStatistic from 'store/entities/hmqStatistic/reducer'
 import hmqMarkets from 'store/entities/hmqMarkets/reducer'
 import hmqHolders from 'store/entities/hmqHolders/reducer'
+import hmqHolder from 'store/entities/hmqHolder/reducer'
 
 export default combineReducers({
   navigation,
@@ -21,6 +22,7 @@ export default combineReducers({
   hmqStatistic,
   hmqMarkets,
   hmqHolders,
+  hmqHolder,
   transactions,
   personal
 })

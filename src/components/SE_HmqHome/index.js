@@ -52,8 +52,8 @@ class SE_HmqHome extends Component {
               <A_P type='hmq-e'>{hmqStatistic.participatingExchanges}</A_P>
             </div>
           </div>
-        </A_Container>      </div>
-
+        </A_Container>
+      </div>
     )
   }
 }
