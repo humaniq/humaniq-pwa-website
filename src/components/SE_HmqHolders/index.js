@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
 import * as T from "prop-types";
-import './styles.scss';
-import {cssClassName} from 'utils'
-const cn = cssClassName('SE_HmqHolders')
 import O_Transaction from 'O_Transaction'
 import Waypoint from 'react-waypoint'
 import M_ScrollScreen from 'M_ScrollScreen'
