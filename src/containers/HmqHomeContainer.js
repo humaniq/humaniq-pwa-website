@@ -4,9 +4,9 @@ import SE_HmqHome from 'SE_HmqHome'
 import {requestHmqTransactions} from 'store/entities/transactions/actions'
 
 function mapStateToProps( state ) {
-  const {hmq: chartProps, loaded, transactions:{entities:transactions}, expStatistic} = state
+  const {hmq: chartProps, loaded, transactions:{entities:transactions}, hmqStatistic} = state
 
-  return {chartProps, transactions, loaded, expStatistic};
+  return {chartProps, transactions, loaded, hmqStatistic};
 }
 
 function mapDispatchToProps(dispatch) {

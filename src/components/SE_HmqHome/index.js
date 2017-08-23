@@ -1,84 +1,70 @@
 import React, { Component } from 'react';
 import * as T from "prop-types";
-// import './styles.scss';
-// import {cssClassName} from 'utils'
-import Hero from './Hero'
-// const cn = cssClassName('SE_Hmq')
-// import Search from './Search';
-// import O_Transaction from 'O_Transaction'
-// import Waypoint from 'react-waypoint'
+import './styles.scss';
+import {cssClassName} from 'utils'
+const cn = cssClassName('SE_HmqHome')
+import A_P from 'A_P'
+import A_Container from 'A_Container'
+import A_H from 'A_H'
+// import Chart from './Chart'
 
-// import O_ScrollUp from "O_ScrollUp";
-
-class SE_Hmq extends Component {
-
-  // state = {
-  //   stickySearch: false,
-  // }
-
-  // componentDidMount() {
-  //   __CLIENT__ && window.addEventListener('scroll', this.handleScroll);
-  //   this.forceUpdate()
-  // }
-  //
-  // componentWillUnmount() {
-  //   __CLIENT__ && window.removeEventListener('scroll', this.handleScroll);
-  // }
-
-
-  // handleScroll = () => {
-  //   if (this.state.stickySearch && (window.pageYOffset < (this.helperNode.offsetTop + 70))) {
-  //     this.setState({stickySearch: false})
-  //   } else if (!this.state.stickySearch && (window.pageYOffset > (this.helperNode.offsetTop + 70))) {
-  //     this.setState({stickySearch: true})
-  //   }
-  // }
-
-  // getTransactions(transactions, requestHmqTransactions){
-  //   return (transactions.map( (props, i) => {
-  //     return (
-  //       <div key ={props.txHash}>
-  //         <O_Transaction {...{...props}} type="log"/>
-  //         {i + 10 === transactions.length &&
-  //           <Waypoint
-  //             scrollableAncestor={'window'}
-  //             onEnter={requestHmqTransactions}
-  //           />
-  //         }
-  //       </div>
-  //     )
-  //   }))
-  // }
+class SE_HmqHome extends Component {
 
   render() {
     const {chartProps,
-      // transactions, requestHmqTransactions,
-      expStatistic} = this.props
-    // const {stickySearch} = this.state
-    // const renderedTransactions = this.getTransactions(transactions, requestHmqTransactions)
+      hmqStatistic} = this.props
+
     return (
       <div>
-        <Hero {...{chartProps, expStatistic}}/>
-        {/*<div ref={node => this.helperNode = node} style={{height: stickySearch ? 216 : 0}} />*/}
-        {/*<div className={cn('search', {stickySearch})} >*/}
-          {/*<Search />*/}
-        {/*</div>*/}
-        {/*<O_ScrollUp initTop={220} showAfter={700}>*/}
-          {/*{renderedTransactions}*/}
-        {/*</O_ScrollUp>*/}
-      </div>
+        <A_Container type="mob-wide-line">
+          <A_H type="hmq" >HMQ Explorer</A_H>
+          <hr className={cn('hr')}/>
+        </A_Container>
+        <div className={cn('title-tablet')}>
+          <A_Container type="section-hmq">
+            <A_H type="section">Explore the HMQ</A_H>
+            <A_P type="third">Humaniq token is the core of the banking ecosystem that the Humaniq has developed. We are eager to be transparent and provide real time updates of the HMQ.</A_P>
+          </A_Container>
+        </div>
+        <A_Container type="section-hmq">
+          <div className={cn('root')}>
+            <div className={cn('chart')}>
+              <div className={cn('title-desctop')}>
+                <A_H type="section">Explore the HMQ</A_H>
+                <A_P type="third">Humaniq token is the core of the banking ecosystem that the Humaniq has developed. We are eager to be transparent and provide real time updates of the HMQ.</A_P>
+              </div>
+              {/*<Chart {...{chartProps}} />*/}
+            </div>
+            <div className={cn('stat')}>
+              <A_H type='hmq-e'>Token Supply</A_H>
+              <A_P type='hmq-e'>{hmqStatistic.tokenSupplyString}</A_P>
+              <A_H type='hmq-e'>Value per Token</A_H>
+              <A_P type='hmq-e'>{hmqStatistic.tokenValueString}</A_P>
+              <A_H type='hmq-e'>Total Holders</A_H>
+              <A_P type='hmq-e'>{hmqStatistic.totalWallets}</A_P>
+              <A_H type='hmq-e'>Total Transactions</A_H>
+              <A_P type='hmq-e'>{hmqStatistic.totalTransactions}</A_P>
+              <A_H type='hmq-e'>Transactions 24h</A_H>
+              <A_P type='hmq-e'>{hmqStatistic.totalTransactions24}</A_P>
+              <A_H type='hmq-e'>Value 24h</A_H>
+              <A_P type='hmq-e'>{hmqStatistic.volume24String}</A_P>
+              <A_H type='hmq-e'>Participating Exchanges</A_H>
+              <A_P type='hmq-e'>{hmqStatistic.participatingExchanges}</A_P>
+            </div>
+          </div>
+        </A_Container>      </div>
 
     )
   }
 }
 
-SE_Hmq.propTypes = {
+SE_HmqHome.propTypes = {
   chartProps: T.object.isRequired,
   transactions: T.array.isRequired,
-  expStatistic: T.object.isRequired
+  hmqStatistic: T.object.isRequired
 }
 
-SE_Hmq.defaultProps = {
+SE_HmqHome.defaultProps = {
 }
 
-export default SE_Hmq
+export default SE_HmqHome

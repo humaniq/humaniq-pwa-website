@@ -1,10 +1,60 @@
-.se-hmq{
-  &__search_sticky-search_true{
-    position: fixed;
-    top: 0;
-    width: 100vw;
-    z-index: 99;
-    transition: all 0.3s ease;
+@import "common/settings/variables";
+@import "common/utils";
 
+.se-hmq-home{
+  &__root{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    @include media($tablet) {
+      flex-flow: column-reverse;
+    }
+  }
+  &__chart, &__stat{
+    width: 26rem;
+    //flex: 0 1 26rem;
+    @include media($tablet) {
+      margin: 0 auto;
+    }
+  }
+
+  &__stat{
+    border-left: $interactive-border-l;
+    padding-left: 1.6rem;
+    height: 100%;
+  }
+  &__chart{
+    width: 68rem;
+    @include media($tablet) {
+      margin: 0 auto;
+    }
+    @include media($mobile) {
+      display: none;
+    }
+    //
+    //flex: 0 1 68rem;
+  }
+  &__hr{
+    margin-top: 1.6rem;
+    border-top: $border-line;
+  }
+
+
+  &__title{
+    &-tablet, &-desctop{
+      margin-bottom: 3.2rem;
+      display: none;
+
+    }
+    &-tablet{
+      @include media($tablet) {
+        display: block;
+      }
+    }
+    &-desctop{
+      @include media($desktop) {
+        display: block;
+      }
+    }
   }
 }

@@ -122,7 +122,12 @@ const getRoutes = (store) => {
           />
           <Route path=":holder" component={HmqHolder}/>
         </Route>
-        <Route path="markets" component={HmqMarkets}/>
+        <Route path="markets"
+               component={HmqMarkets}
+               prepareData={HmqMarkets.prepareData}
+        />
+        <Route path="test" component={HmqTest}/>
+
         <Route path="block/:block" component={HmqBlock}/>
 
       </Route>

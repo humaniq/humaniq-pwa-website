@@ -13,7 +13,7 @@ class SE_HmqLayout extends Component {
 
     return (
       <div className={cn('root')}>
-        <O_Fixed>
+        <O_Fixed quite>
           <div className={cn('nav-menu')}><NavBar /></div>
         </O_Fixed>
         {children}

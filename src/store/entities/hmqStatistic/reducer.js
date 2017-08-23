@@ -1,7 +1,7 @@
-import {START, SUCCESS, REQUEST, FAIL, BLOCKCHAIN_STATISTICS} from 'constants'
+import {START, SUCCESS, REQUEST, FAIL, HMQ_STATISTICS} from 'constants'
 import {safeDA, numberFormat} from 'utils'
 
-const expStatisticInit = {
+const hmqStatisticInit = {
   loading: false,
   loaded: false,
   volume24String: 'no data',
@@ -32,13 +32,13 @@ const expStatisticInit = {
 
 }
 
-export default (expStatistic = expStatisticInit, { type, data } ) => {
+export default (hmqStatistic = hmqStatisticInit, { type, data } ) => {
 
   switch (type) {
-    case REQUEST + BLOCKCHAIN_STATISTICS + START:
-      return {...expStatistic, loading: true}
+    case REQUEST + HMQ_STATISTICS + START:
+      return {...hmqStatistic, loading: true}
 
-    case REQUEST + BLOCKCHAIN_STATISTICS + SUCCESS:
+    case REQUEST + HMQ_STATISTICS + SUCCESS:
       const _tokenSupplyHmq = safeDA(data, ['tokenSupply', 'hmq'], 0)
       const _tokenSupplyUsd = safeDA(data, ['tokenSupply', 'usd'], 0)
       const _lastHours24TradesVolumeUsd = safeDA(data, ['lastHours24', 'tradesVolume', 'usd'], 0)
@@ -51,9 +51,9 @@ export default (expStatistic = expStatisticInit, { type, data } ) => {
       const volume24String = `$ ${numberFormat(Math.round(_lastHours24TradesVolumeUsd))} HMQ ${numberFormat(Math.round(_lastHours24TradesVolumeHmq *100)/ 100)}`
       const tokenValueString = `$ ${Math.round(_tokenValueUsd * 10000) /10000} HMQ $ ${numberFormat(Math.round(_tokenValueHmq * 1000000)/ 1000000)}`
 
-      return {...expStatistic, ...data, tokenSupplyString, volume24String, tokenValueString}
-    case REQUEST + BLOCKCHAIN_STATISTICS + FAIL:
-      return {...expStatistic, loading: true}
+      return {...hmqStatistic, ...data, tokenSupplyString, volume24String, tokenValueString}
+    case REQUEST + HMQ_STATISTICS + FAIL:
+      return {...hmqStatistic, loading: true}
   }
-  return expStatistic;
+  return hmqStatistic;
 };
