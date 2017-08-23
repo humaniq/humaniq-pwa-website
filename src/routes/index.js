@@ -16,10 +16,11 @@ import Wiki2 from './Wiki2'
 import Legal from './Legal'
 import OpenSource from './OpenSource'
 import WikiSearch from './WikiSearch'
-import Hmq from './Hmq'
+import HmqHome from './HmqHome'
 import Ambassadors from './Ambassadors'
 import About from './About'
 import HmqLayout from './HmqLayout'
+
 
 import {cleanWikiSearch} from 'store/entities/wikiSearch/actions'
 
@@ -92,10 +93,15 @@ const getRoutes = (store) => {
       <Route path="open-source"
              component={OpenSource}
       />
-      <Route path="hmq-explorer"
-             prepareData={Hmq.prepareData}
-             component={Hmq}
-      />
+      <Route
+        path="hmq-explorer"
+        component={HmqLayoutKherel}
+      >
+        <IndexRoute
+          component={HmqHome}
+          prepareData={HmqHome.prepareData}
+        />
+      </Route>
       <Route path="ambassadors"
              prepareData={Ambassadors.prepareData}
              component={Ambassadors}

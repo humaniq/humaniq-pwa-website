@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
-import HmqContainer from 'containers/HmqContainer'
+import HmqHomeContainer from 'containers/HmqHomeContainer'
+
 import {fetchHmqStatistics} from 'store/entities/expStatistic/actions'
 
-class PostRoute extends Component {
+class HmqRoute extends Component {
 
   static prepareData({dispatch}) {
     if(__SERVER__){
@@ -13,10 +14,10 @@ class PostRoute extends Component {
   render() {
     return (
       <div>
-        <HmqContainer />
+        <HmqHomeContainer />
       </div>
     )
   }
 }
 
-export default PostRoute;
+export default HmqRoute;
