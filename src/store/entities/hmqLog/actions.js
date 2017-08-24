@@ -12,11 +12,12 @@ export function fetchHmqLog (fromTimestampIso, toTimestampIso) {
     toTimestampIso = apiDateFormat(now)
   }
 
-  if(!fromTimestampIso){
-    const _to = moment.utc(toTimestampIso, 'YYYYMMDDTHHmmss[Z]')
-    const from = _to.subtract(4, 'hours')
-    fromTimestampIso = apiDateFormat(from)
-  }
+  // if(!fromTimestampIso){
+  //   const _to = moment.utc(toTimestampIso, 'YYYYMMDDTHHmmss[Z]')
+  //   const from = _to.subtract(4, 'hours')
+  //   fromTimestampIso = apiDateFormat(from)
+  // }
+
 
   return ({
     [BACKEND_CALL]: {
@@ -24,7 +25,7 @@ export function fetchHmqLog (fromTimestampIso, toTimestampIso) {
       method: 'GET',
       query: {
         toTimestampIso,
-        fromTimestampIso
+        count: 100
       },
       types: createRequestActions(HMQ_LOG),
     }
