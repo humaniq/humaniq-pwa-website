@@ -12,9 +12,9 @@ export default ({info, amount, fee, gas, blockchain}) => {
     timeStamp: _time.format('MMM-DD-YYYY h:mm:ss a +UTC'),
     from: info.senderAddress,
     to: info.receiverAddress,
-    value: `${(+ amount.usd).toFixed(2)} ETH ($${(+ amount.usd).toFixed(2)})`,
+    value: `${(+ amount.hmq).toFixed(2)} HMQ ($${(+ amount.usd).toFixed(2)})`,
     // gasLimit:
-    fee: `${(+ fee.eth).toFixed(8)} 0.00224711 ETH ($${(+ fee.usd).toFixed(2)})`,
+    fee: `${(+ fee.eth).toFixed(8)} ($${(+ fee.usd).toFixed(2)})`,
     usedByTransaction: gas.usedByTransaction,
     status: info.status
   })
