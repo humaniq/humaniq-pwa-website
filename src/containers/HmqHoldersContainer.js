@@ -5,7 +5,6 @@ import {fetchHmqHolders} from 'store/entities/hmqHolders/actions'
 
 function mapStateToProps( state ) {
   const {entities, loading} = state.hmqHolders
-
   return {entities, loading};
 }
 
@@ -17,7 +16,6 @@ function mapDispatchToProps(dispatch) {
 function mergeProps(stateProps, {fetchHmqHolders}, ownProps){
 
   const loadMore = () => {
-    console.log('loading')
     fetchHmqHolders(stateProps.entities.length)
   }
 

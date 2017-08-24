@@ -53,6 +53,31 @@
           box-shadow: 0 .4rem .2rem -.2rem #e8e8e8;
         }
       }
+      &_up_true{
+        &:before {
+          box-sizing: border-box;
+          content:'';
+          position:absolute;
+          left: 0;
+          right: 0;
+          display: inline-block;
+          width: 94rem;
+          margin: 0 auto;
+          height: 6.5rem;
+          border-radius: .4rem;
+          box-shadow: 0 .3rem 1rem 0 rgba(0, 0, 0, 0.16), 0 .3rem 1rem 0 rgba(0, 0, 0, 0.23);
+          z-index: -2;
+          @include media($tablet) {
+            width: 69rem;
+          }
+          @include media($mobile) {
+            border-radius: 0;
+            width: 90%;
+            height: 6.2rem;
+            box-shadow: 0 .4rem .2rem -.2rem #e8e8e8;
+          }
+        }
+      }
     }
     &__td {
       padding: .5rem 0;

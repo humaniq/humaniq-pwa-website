@@ -1,6 +1,5 @@
 import {START, SUCCESS, REQUEST, FAIL, HMQ_LOG} from 'constants'
-// import mapper from './mapper'
-// import {arrayUnique} from 'utils'
+import mapper from './mapper'
 
 const hmqLogInit = {
   loading: false,
@@ -14,7 +13,7 @@ export default (hmqLog = hmqLogInit, { type, data } ) => {
     case REQUEST + HMQ_LOG + START:
       return {...hmqLog, loading: true}
     case REQUEST + HMQ_LOG + SUCCESS:
-      return {...hmqLog, loading: false, loaded: true, ...data}
+      return {...hmqLog, loading: false, loaded: true, entities:mapper(data.transactions)}
     case REQUEST + HMQ_LOG + FAIL:
       return {...hmqLog, loading: false}
   }

@@ -12,8 +12,11 @@ export const HMQ_MARKETS = 'HMQ_MARKETS'
 export const HMQ_HOLDERS = 'HMQ_HOLDERS'
 export const HMQ_HOLDER = 'HMQ_HOLDER'
 export const HMQ_LOG = 'HMQ_LOG'
-
+export const HMQ_SECTION = 'HMQ_SECTION'
+export const HMQ_BLOCK = 'HMQ_BLOCK'
 export const HMQ_GRAPH = 'HMQ_GRAPH'
+export const HMQ_HASH = 'HMQ_HASH'
+
 export const OPEN_ROUTE = 'OPEN_ROUTE'
 export const POST = 'POST'
 export const POSTS = 'POSTS'
@@ -21,7 +24,6 @@ export const ERROR = 'ERROR'
 export const MENU = 'MENU'
 export const PARTNERS = 'PARTNERS'
 export const AMBASSADORS = 'AMBASSADORS'
-
 export const BY_REFERENCE = 'BY_REFERENCE'
 
 export const CONTENT = 'CONTENT'
