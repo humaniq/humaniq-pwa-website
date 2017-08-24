@@ -21,17 +21,17 @@ class O_Stepper extends Component {
           <li className={cn('step', { step: this.state.stepsCompleted.includes(1)})} onClick={() => this.setStep(1)}>
             <div className={cn('bar')}></div>
             <div className={cn('dot')}></div>
-            <div className={cn('txt')}>Шаг первый</div>
+            <div className={cn('txt')}>Create your Rocket Rides account</div>
           </li>
           <li className={cn('step', { step: this.state.stepsCompleted.includes(2)})} onClick={() => this.setStep(2)}>
             <div className={cn('bar')}></div>
             <div className={cn('dot')}></div>
-            <div className={cn('txt')}>Шаг второй</div>
+            <div className={cn('txt')}>Create your Stripe account</div>
           </li>
           <li className={cn('step', { step: this.state.stepsCompleted.includes(3)})} onClick={() => this.setStep(3)}>
             <div className={cn('bar')}></div>
             <div className={cn('dot')} ></div>
-            <div className={cn('txt')}>Шаг третий</div>
+            <div className={cn('txt')}>Ready to get paid</div>
           </li>
         </ul>
       </div>
