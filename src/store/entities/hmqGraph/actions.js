@@ -29,11 +29,11 @@ export function fetchGraphData (period) {
       from = now.subtract(1, 'hour')
       break
     case '1d':
-      stepSeconds = 1728
+      stepSeconds = 1080
       from = now.subtract(1, 'days')
       break
     case '1w':
-      stepSeconds = 12096
+      stepSeconds = 7560
       from = now.subtract(1, 'week')
       break
     // case '1m':

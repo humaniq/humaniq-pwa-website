@@ -21,8 +21,8 @@ import Ambassadors from './Ambassadors'
 import About from './About'
 import HmqLayout from './HmqLayout'
 import HmqTest from './HmqTest'
-import HmqTxLog from './HmqTxLog'
-import HmqTxHash from './HmqTxHash'
+import HmqLog from './HmqLog'
+import HmqHash from './HmqHash'
 import HmqMarkets from './HmqMarkets'
 import HmqHolders from './HmqHolders'
 import HmqHolder from './HmqHolder'
@@ -110,10 +110,10 @@ const getRoutes = (store) => {
         />
         <Route path="transaction-log" >
           <IndexRoute
-            component={HmqTxLog}
-            // prepareData={HmqTxLog.prepareData}
+            component={HmqLog}
+            prepareData={HmqLog.prepareData}
           />
-          <Route path=":txhash" component={HmqTxHash}/>
+          <Route path=":hash" component={HmqHash} prepareData={HmqHash.prepareData}/>
         </Route>
         <Route
           path="token-holders"
@@ -133,8 +133,7 @@ const getRoutes = (store) => {
                prepareData={HmqMarkets.prepareData}
         />
         <Route path="test" component={HmqTest}/>
-
-        <Route path="block/:block" component={HmqBlock}/>
+        <Route path="block/:block" component={HmqBlock} prepareData={HmqBlock.prepareData}/>
 
       </Route>
       <Route path="ambassadors"

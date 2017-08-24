@@ -1,12 +1,16 @@
 import {numberFormat} from 'utils'
 
+//txHash, block, from, to, time, usdAmount, hmqAmount, status
+
 export default (arr) => {
-  return arr.map(({address, walletRank, hmqPercentage, totalTransactions, balance}) =>({
-    address: address,
-    rank: walletRank,
-    pecentage: (+ hmqPercentage).toFixed(2),
-    txns: totalTransactions,
-    usdAmount: numberFormat(+ balance.usd, 2),
-    hmqAmount: numberFormat(+ balance.hmq, 2)
+  return arr.map(({info, amount, blockchain}) =>({
+    txHash: info.hash,
+    block: blockchain.blockNumber,
+    from: info.senderAddress,
+    to: info.receiverAddress,
+    time: info.timestampIso,
+    usdAmount: numberFormat(+ amount.usd, 2),
+    hmqAmount: numberFormat(+ amount.hmq, 2),
+    status: info.status
   }))
 }

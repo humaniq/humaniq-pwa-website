@@ -1,40 +1,40 @@
 import React , { Component } from 'react';
 import * as T from "prop-types";
-import './Log.scss';
+import './Market.scss';
 import A_Container from 'A_Container';
 import {cssClassName} from 'utils';
-const cn = cssClassName('O_TransactionLog');
+const cn = cssClassName('O_TransactionMarket');
+import A_Link from 'A_Link'
 
 class O_TransactionMarket extends Component {
 
-
   render() {
-    const {address, rank, price, pair, usdAmount, hmqAmount} = this.props
+    const {address, rank, price, pair, usdAmount, hmqAmount, url, up} = this.props
     return (
       <div>
         <A_Container type='wide'>
           <table className={cn('asset-stats')}>
             <tbody>
-            <tr className={cn('asset-stats__tr')}>
+            <tr className={cn('asset-stats__tr', {up})}>
               <td className={cn('asset-stats__td')}>
-                <span className={cn('asset-stats__hash')}>Address:</span>
-                <span className={cn('asset-stats__block')}>Rank:</span>
+                <span className={cn('title')}>Address:</span>
+                <span className={cn('title')}>Rank:</span>
               </td>
               <td className={cn('asset-stats__td')}>
-                <a href="javascript:void(0);" className={cn('asset-stats__hash-link')}>{address}</a>
-                <a href="javascript:void(0);" className={cn('asset-stats__block-link')}>{rank}</a>
+                <A_Link to={url} type="transactions" external>{address}</A_Link>
+                <span className={cn('value')}>{rank}</span>
               </td>
               <td className={cn('asset-stats__td')}>
-                <span className={cn('asset-stats__from')}>Price:</span>
-                <span className={cn('asset-stats__to')}>Pair:</span>
+                <span className={cn('title')}>Price:</span>
+                <span className={cn('title')}>Pair:</span>
               </td>
               <td className={cn('asset-stats__td')}>
-                <a href="javascript:void(0);" className={cn('asset-stats__from-link')}>{price}</a>
-                <a href="javascript:void(0);" className={cn('asset-stats__to-link')}>{pair}</a>
+                <span className={cn('value')}>{price}</span>
+                <span className={cn('value')}>{pair}</span>
               </td>
               <td className={cn('asset-stats__td')}>
-                <span className={cn('asset-stats__price-hmq')}>{hmqAmount} HMQ</span>
-                <span className={cn('asset-stats__price-usd')}>${usdAmount} USD</span>
+                <span className={cn('value-bold')}>{hmqAmount} HMQ</span>
+                <span className={cn('value')}>${usdAmount} USD</span>
               </td>
               <td className={cn('asset-stats__td')}>
               </td>
@@ -53,8 +53,8 @@ O_TransactionMarket.propTypes = {
   rank: T.number.isRequired,
   price: T.string.isRequired,
   pair: T.string.isRequired,
-  usdAmount: T.number.isRequired,
-  hmqAmount: T.number.isRequired,
+  usdAmount: T.string.isRequired,
+  hmqAmount: T.string.isRequired,
 };
 
 export default O_TransactionMarket

@@ -9,12 +9,12 @@ import NavBar from './NavBar'
 class SE_HmqLayout extends Component {
 
   render() {
-    const {children} = this.props;
+    const {children, menu} = this.props;
 
     return (
       <div className={cn('root')}>
         <O_Fixed quite>
-          <div className={cn('nav-menu')}><NavBar /></div>
+          <div className={cn('nav-menu')}><NavBar {...{menu}}/></div>
         </O_Fixed>
         {children}
       </div>
@@ -24,6 +24,7 @@ class SE_HmqLayout extends Component {
 
 SE_HmqLayout.propTypes = {
   children: T.any.isRequired,
+  menu: T.array.isRequired
 };
 
 export default SE_HmqLayout

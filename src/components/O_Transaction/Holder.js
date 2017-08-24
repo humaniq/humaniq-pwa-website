@@ -11,13 +11,13 @@ import A_Link from 'A_Link'
 class O_TransactionHolder extends Component {
 
   render() {
-    const {address, rank, pecentage, txns, usdAmount, hmqAmount, time} = this.props
+    const {address, rank, pecentage, txns, usdAmount, hmqAmount, time, up} = this.props
     return (
       <div>
         <A_Container type='wide'>
           <table className={cn('asset-stats')}>
             <tbody>
-            <tr className={cn('asset-stats__tr')}>
+            <tr className={cn('asset-stats__tr', {up})}>
               <td className={cn('asset-stats__td')}>
                 <span className={cn('asset-stats__hash')}>Address:</span>
                 <span className={cn('asset-stats__block')}>Rank:</span>
