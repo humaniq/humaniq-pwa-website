@@ -20,18 +20,18 @@ class SE_HmqHash extends Component {
         <A_Container type='equal'>
           <O_Сrumbs
             path={[
-              {name: 'Token Holders', url: `/hmq-explorer/token-holders`},
-              {name: txHash, url: `/hmq-explorer/token-holders/${txHash}`}
+              {name: 'Transactions', url: `/hmq-explorer/transaction-log`},
+              {name: txHash, url: `/hmq-explorer/transaction-log/${txHash}`}
             ]}
           />
           <M_InfoBlock>
-            <A_H type='hmq-e'>TxHasht</A_H>
+            <A_H type='hmq-e'>TxHash</A_H>
             <A_P type='hmq-e'>{txHash}</A_P>
             <A_H type='hmq-e'>Block Height</A_H>
             <A_P type='hmq-e'>
-              <A_Link to={`/hmq-explorer/block/${block}`} className={cn('asset-stats__hash-link')}>{block}</A_Link>({numberConfirmations} block confirmations)</A_P>
+              <A_Link to={`/hmq-explorer/block/${block}`} className={cn('asset-stats__hash-link')}>{block}</A_Link>{' '}({numberConfirmations} block confirmations)</A_P>
             <A_H type='hmq-e'>Time Stamp</A_H>
-            <A_P type='hmq-e'><span className={cn('from-now')}>{fromNow}</span>({timeStamp})</A_P>
+            <A_P type='hmq-e'><span className={cn('from-now')}>{fromNow}</span>{' '}({timeStamp})</A_P>
             <A_H type='hmq-e'>From</A_H>
             <A_P type='hmq-e'><A_Link to={`/hmq-explorer/token-holders/${from}`}>{from}</A_Link></A_P>
             <A_H type='hmq-e'>To</A_H>
@@ -40,7 +40,7 @@ class SE_HmqHash extends Component {
             <A_P type='hmq-e'>{value}</A_P>
             <A_H type='hmq-e'>Actual Tx Cost/Fee</A_H>
             <A_P type='hmq-e'>{fee}</A_P>
-            <A_H type='hmq-e'>Cumulative Gas Used</A_H>
+            <A_H type='hmq-e'>Gas Used By Txn</A_H>
             <A_P type='hmq-e'>{usedByTransaction}</A_P>
           </M_InfoBlock>
         </A_Container>
