@@ -1,0 +1,112 @@
+@import "common/settings/variables";
+@import "common/utils";
+
+.se-hmq-layout-nav-bar{
+  &__navigation {
+    box-shadow: 0 .2rem .2rem 0 rgba(0, 0, 0, 0.07);
+    background: $white;
+    @include media($mobile) {
+      overflow-x: scroll;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+  }
+  &__flex-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__nav {
+    @include media($tablet) {
+      min-width: 45rem;
+    }
+    &-list {
+      list-style: none;
+    }
+    &-li {
+      display: inline-block;
+      vertical-align: middle;
+      text-align: center;
+      &:last-child {
+        .se-hmq-layout-nav-bar__nav-a {
+          margin-right: 0;
+        }
+      }
+    }
+    &-a {
+      display: block;
+      margin-right: 4rem;
+      padding: 1.4rem 0;
+      text-decoration: none;
+      font-size: 1.3rem;
+      font-weight: 600;
+      line-height: 1.13;
+      color: $black-1;
+      transition: color .5s ease;
+      &:hover {
+        color: $blue-6;
+      }
+      &_active_true {
+        color: $blue-1;
+        border-bottom: .3rem solid $blue-2;
+        &:hover {
+          color: $blue-1;
+        }
+      }
+      @include media($mobile) {
+        margin-right: 3rem;
+      }
+    }
+  }
+  &__search-form {
+    position: relative;
+    padding-right: 2rem;
+  }
+  &__search-input {
+    width: 27rem;
+    height: 1.5rem;
+    font-size: 1.3rem;
+    border-radius: 10rem;
+    background-color: #f5f8fa;
+    border: solid .1rem #e6ecf0;
+    outline: none;
+    padding: .8rem 5rem .6rem 2.3rem;
+    @include media($tablet) {
+      width: 20rem;
+    }
+  }
+  &__search-icon {
+    width: 2rem;
+    height: 2rem;
+    border: none;
+    background: transparent;
+    position: absolute;
+    top: 50%;
+    right: 3rem;
+    margin-top: -.8rem;
+    outline: none;
+    cursor: pointer;
+    &:before {
+      content: '';
+      border: .2rem solid #66757f;
+      border-radius: 50%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 1rem;
+      height: 1rem;
+    }
+    &:after {
+      content: '';
+      border-top: .2rem solid #66757f;
+      position: absolute;
+      bottom: .8rem;
+      right: .9rem;
+      width: .7rem;
+      height: .1rem;
+      transform-origin: 100% 50%;
+      transform: rotate(-135deg);
+    }
+  }
+}

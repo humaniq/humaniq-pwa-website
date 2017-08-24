@@ -32,8 +32,9 @@ class O_Fixed extends Component {
 
   render() {
     const {sticky, componentWidth, componentHeight} = this.state
-    const {children} = this.props
-    const _newChild = cloneElement(universalChildrenOnly(children), {sticky})
+    const {children, quite} = this.props
+    const newProps = quite ? undefined : {sticky}
+    const _newChild = cloneElement(universalChildrenOnly(children), newProps)
 
     const style = sticky ?
       { height: componentHeight, width: componentWidth}
