@@ -34,6 +34,7 @@ class SE_HmqSearch extends Component {
         <div className={cn('search')}>
           <O_Search
             placeholder="Search TxHash or Address"
+            focus
             handleSubmit={this.handleSubmit}
           />
         </div>

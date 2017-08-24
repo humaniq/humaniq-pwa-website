@@ -18,7 +18,7 @@ export function hmqSearch ({searchTerm}) {
   })
 }
 
-export function cleanWikiSearch () {
+export function cleanHmqSearch () {
   return ({
     type: CLEAN + HMQ_SEARCH
   })

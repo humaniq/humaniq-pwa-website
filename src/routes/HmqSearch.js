@@ -10,7 +10,6 @@ class HmqSearch extends Component {
   static prepareData(store, query, params, location) {
     // if(initialLoad()) return;
     const search = parse(location.search.substr(1))
-    console.log(search)
     // return store.dispatch(wikiSearch(search))
   }
 
