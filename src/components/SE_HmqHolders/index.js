@@ -3,7 +3,7 @@ import * as T from "prop-types";
 import O_Transaction from 'O_Transaction'
 import Waypoint from 'react-waypoint'
 import M_ScrollScreen from 'M_ScrollScreen'
-
+import A_Container from 'A_Container'
 import O_ScrollUp from "O_ScrollUp";
 
 class SE_HmqHolders extends Component {
@@ -32,12 +32,14 @@ class SE_HmqHolders extends Component {
     const renderedTransactions = this.getTransactions(entities, loadMore, loading)
     return (
       <div>
-        {children}
-        <O_ScrollUp initTop={50} showAfter={700}>
-          <M_ScrollScreen >
-            {renderedTransactions}
-          </M_ScrollScreen>
-        </O_ScrollUp>
+        <A_Container type='section-clean'>
+          {children}
+          <O_ScrollUp initTop={50} showAfter={700}>
+            <M_ScrollScreen >
+              {renderedTransactions}
+            </M_ScrollScreen>
+          </O_ScrollUp>
+        </A_Container>
       </div>
 
     )

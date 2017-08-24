@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import * as T from "prop-types";
+// import * as T from "prop-types";
 import A_H from 'A_H'
 import A_P from 'A_P'
 import M_InfoBlock from 'M_InfoBlock'
@@ -12,15 +12,17 @@ const cn = cssClassName('SE_HmqBlock')
 class SE_HmqBlock extends Component {
 
   render() {
-    const {blockNumber, height, fromNow, timeStamp, hash, parentHash, difficulty, gasLimit, gasUsed} = this.props
+    const {loaded, blockNumber, height, fromNow, timeStamp, hash, parentHash, difficulty, gasLimit, gasUsed} = this.props
 
+    if(!loaded) return null;
     return (
       <div>
         <A_Container type='equal'>
           <O_Сrumbs
+            notLink
             path={[
-              {name: 'Token Holders', url: `/hmq-explorer/token-holders`},
-              {name: blockNumber, url: `/hmq-explorer/blocks/${blockNumber}`}
+              {name: 'Block Info'},
+              {name: blockNumber}
             ]}
           />
           <M_InfoBlock>
