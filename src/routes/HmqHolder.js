@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {fetchHmqHolder, fetchHmqHolderT} from 'store/entities/hmqHolder/actions'
 import initialLoad from 'utils/initialLoad'
-import HmqHoldersContainer from 'containers/HmqHoldersContainer'
+// import HmqHoldersContainer from 'containers/HmqHoldersContainer'
 import HmqHolderContainer from 'containers/HmqHolderContainer'
 
 class HmqHolder extends Component {
@@ -14,9 +14,7 @@ class HmqHolder extends Component {
 
   render() {
     return (
-      <HmqHoldersContainer>
-        <HmqHolderContainer />
-      </HmqHoldersContainer>
+      <HmqHolderContainer />
     )
   }
 }
