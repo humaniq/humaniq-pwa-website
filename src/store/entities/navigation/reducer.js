@@ -1,8 +1,9 @@
-import {SET, MENU, OPEN, CLOSE, TOGGLE, OPEN_ROUTE} from 'constants'
+import {SET, MENU, OPEN, CLOSE, TOGGLE, OPEN_ROUTE, HMQ_SECTION} from 'constants'
 
 const initNavigation = {
-  page: undefined,
-  isMenuOpened: false
+  openRoute: [],
+  isMenuOpened: false,
+  hmqSection: ''
 }
 
 export default (navigation = initNavigation, {type, data}) => {
@@ -17,6 +18,8 @@ export default (navigation = initNavigation, {type, data}) => {
     case TOGGLE + MENU:
       const isMenuOpened = !navigation.isMenuOpened
       return {...navigation, isMenuOpened}
+    case SET + HMQ_SECTION:
+      return {...navigation, hmqSection:data}
   }
   return navigation;
 };

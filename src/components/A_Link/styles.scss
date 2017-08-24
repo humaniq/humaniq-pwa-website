@@ -12,6 +12,11 @@
       height: 100%;
     }
 
+    &_transactions{
+      font-size: 1.2rem;
+      color: $interactive;
+    }
+
     &_article{
       font-size: 1.5rem;
       line-height: 2.6rem;
