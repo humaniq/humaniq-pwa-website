@@ -8,6 +8,26 @@ import A_Link from 'A_Link'
 
 class SE_HmqLayoutNavBar extends Component {
 
+  state = {
+    inActive: !!this.props.value,
+    value: this.props.value || ''
+  }
+
+  onSubmit = (e) => {
+    e.preventDefault()
+    const {value} = this.state
+    if (value) {
+      this.props.handleSubmit(value)
+    }
+  }
+
+  componentWillReceiveProps(nextProps) {
+    this.setState({
+      value: nextProps.value || '',
+      inActive: !!nextProps.value
+    })
+  }
+
   getLinks(menu){
     const links = menu.map(({title, url, active}, i) => (
       <li className={cn('nav-li')} key={"key_" + i}>
@@ -25,7 +45,8 @@ class SE_HmqLayoutNavBar extends Component {
     )
   }
   render() {
-    const { menu } = this.props;
+    const { menu, hideSearch } = this.props;
+    const { /* inActive, */ value} = this.state;
 
     const renderedLinks = this.getLinks(menu)
     return (
@@ -37,13 +58,21 @@ class SE_HmqLayoutNavBar extends Component {
                 {renderedLinks}
               </ul>
             </nav>
-            <form action="" className={cn('search-form')}>
-              <input type="text"
-                     className={cn('search-input')}
-                     placeholder="Search TxHash or Address"
-              />
-              <button className={cn('search-icon')}></button>
-            </form>
+            {
+              hideSearch ||
+                <form action="" className={cn('search-form')} onSubmit={this.onSubmit} >
+                  <input type="text"
+                         className={cn('search-input')}
+                         placeholder="Search TxHash or Address"
+                         value={value}
+                         onChange={e => this.setState({value: e.target.value})}
+                         onFocus={() => this.setState({inActive: true})}
+                         onBlur={() => this.setState({inActive: false})}
+                  />
+                  <button className={cn('search-icon')} type="submit"></button>
+                </form>
+            }
+
           </div>
         </A_Container>
       </div>
@@ -52,7 +81,8 @@ class SE_HmqLayoutNavBar extends Component {
 }
 
 SE_HmqLayoutNavBar.propTypes = {
-  menu: T.array.isRequired
+  menu: T.array.isRequired,
+  hideSearch: T.bool.isRequired
 };
 
 SE_HmqLayoutNavBar.defaultProps = {
