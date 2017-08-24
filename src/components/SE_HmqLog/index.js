@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import * as T from "prop-types";
 import O_Transaction from 'O_Transaction'
 import M_ScrollScreen from 'M_ScrollScreen'
-
+import A_Container from 'A_Container'
 import O_ScrollUp from "O_ScrollUp";
 
 class SE_HmqLog extends Component {
@@ -18,11 +18,13 @@ class SE_HmqLog extends Component {
     const renderedTransactions = this.getTransactions(entities)
     return (
       <div>
-        <O_ScrollUp initTop={50} showAfter={700}>
-          <M_ScrollScreen >
-            {renderedTransactions}
-          </M_ScrollScreen>
-        </O_ScrollUp>
+        <A_Container type='section-clean'>
+          <O_ScrollUp initTop={50} showAfter={700}>
+            <M_ScrollScreen >
+              {renderedTransactions}
+            </M_ScrollScreen>
+          </O_ScrollUp>
+        </A_Container>
       </div>
 
     )

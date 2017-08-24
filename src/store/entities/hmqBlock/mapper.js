@@ -1,7 +1,7 @@
 import {numberFormat} from 'utils'
 import moment from 'moment'
 
-export default ({blockNumber, timestampIso, hash, parentHash, difficulty, gasLimit, gasUsed, transactionBlockCount}) => {
+export default ({blockNumber, timestampIso, hash, parentHash, difficulty, gasLimit, gasUsed}) => {
   const _time = moment(timestampIso, 'YYYYMMDDTHHmmss[Z]')
   return({
     blockNumber,

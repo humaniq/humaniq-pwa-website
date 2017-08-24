@@ -36,15 +36,15 @@ export function fetchGraphData (period) {
       stepSeconds = 7560
       from = now.subtract(1, 'week')
       break
-    // case '1m':
-    //   stepSeconds = 133920
-    //
-    //   from = now.subtract(1, 'month')
-    //   break
-    // case '1y':
-    //   stepSeconds = 68433120
-    //   from = now.subtract(1, 'year')
-    //   break
+    case '1m':
+      stepSeconds = 133920
+
+      from = now.subtract(1, 'month')
+      break
+    case '1y':
+      stepSeconds = 68433120
+      from = now.subtract(1, 'year')
+      break
   }
 
   const fromTimestampIso = apiDateFormat(from)

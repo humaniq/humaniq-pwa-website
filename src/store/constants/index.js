@@ -16,6 +16,7 @@ export const HMQ_SECTION = 'HMQ_SECTION'
 export const HMQ_BLOCK = 'HMQ_BLOCK'
 export const HMQ_GRAPH = 'HMQ_GRAPH'
 export const HMQ_HASH = 'HMQ_HASH'
+export const HMQ_SEARCH = 'HMQ_SEARCH'
 
 export const OPEN_ROUTE = 'OPEN_ROUTE'
 export const POST = 'POST'

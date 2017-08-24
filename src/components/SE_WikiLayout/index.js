@@ -8,8 +8,6 @@ import history from 'history'
 
 class SE_WikiLayout extends Component {
 
-
-
   handleSubmit = (searchString) => {
     history.push('/wiki/search?searchTerm=' + searchString)
   }

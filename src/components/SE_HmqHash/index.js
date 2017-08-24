@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import * as T from "prop-types";
+// import * as T from "prop-types";
 import A_H from 'A_H'
 import A_P from 'A_P'
 import M_InfoBlock from 'M_InfoBlock'
@@ -20,9 +20,10 @@ class SE_HmqHash extends Component {
         <A_Container type='equal'>
           <O_Сrumbs
             path={[
-              {name: 'Transactions', url: `/hmq-explorer/transaction-log`},
+              {name: 'TxHash', url: `/hmq-explorer/transaction-log`},
               {name: txHash, url: `/hmq-explorer/transaction-log/${txHash}`}
             ]}
+            notLink
           />
           <M_InfoBlock>
             <A_H type='hmq-e'>TxHash</A_H>
@@ -40,7 +41,7 @@ class SE_HmqHash extends Component {
             <A_P type='hmq-e'>{value}</A_P>
             <A_H type='hmq-e'>Actual Tx Cost/Fee</A_H>
             <A_P type='hmq-e'>{fee}</A_P>
-            <A_H type='hmq-e'>Gas Used By Txn</A_H>
+            <A_H type='hmq-e'>Total Gas Used by Txn</A_H>
             <A_P type='hmq-e'>{usedByTransaction}</A_P>
           </M_InfoBlock>
         </A_Container>
