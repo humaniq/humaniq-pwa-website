@@ -25,7 +25,7 @@ export function fetchHmqLog (fromTimestampIso, toTimestampIso) {
       method: 'GET',
       query: {
         toTimestampIso,
-        count: 100
+        count: 50
       },
       types: createRequestActions(HMQ_LOG),
     }
