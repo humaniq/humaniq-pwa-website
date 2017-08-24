@@ -16,6 +16,7 @@ import Wiki2 from './Wiki2'
 import Legal from './Legal'
 import OpenSource from './OpenSource'
 import WikiSearch from './WikiSearch'
+import HmqSearch from './HmqSearch'
 import HmqHome from './HmqHome'
 import Ambassadors from './Ambassadors'
 import About from './About'
@@ -28,7 +29,7 @@ import HmqHolders from './HmqHolders'
 import HmqHolder from './HmqHolder'
 import HmqBlock from './HmqBlock'
 
-
+import {cleanHmqSearch} from 'store/entities/hmqSearch/actions'
 import {cleanWikiSearch} from 'store/entities/wikiSearch/actions'
 
 const getRoutes = (store) => {
@@ -134,7 +135,12 @@ const getRoutes = (store) => {
         />
         <Route path="test" component={HmqTest}/>
         <Route path="block/:block" component={HmqBlock} prepareData={HmqBlock.prepareData}/>
-
+        <Route
+          path="search"
+          component={HmqSearch}
+          prepareData={HmqSearch.prepareData}
+          onLeave={() => store.dispatch(cleanHmqSearch())}
+        />
       </Route>
       <Route path="ambassadors"
              prepareData={Ambassadors.prepareData}

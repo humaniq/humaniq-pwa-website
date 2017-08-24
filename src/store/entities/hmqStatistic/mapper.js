@@ -10,8 +10,8 @@ export default (data) => {
   const _tokenValueUsd = safeDA(data, ['tokenValue', 'usd'], 0)
   const _tokenValueEth = safeDA(data, ['tokenValue', 'eth'], 0)
 
-  const tokenSupplyString = `${numberFormat(_tokenSupplyHmq)} HMQ $ ${numberFormat(Math.round(_tokenSupplyUsd * 100) / 100)}`
-  const volume24String = `$ ${numberFormat(Math.round(_lastHours24TradesVolumeUsd))} HMQ ${numberFormat(Math.round(_lastHours24TradesVolumeHmq *100)/ 100)}`
+  const tokenSupplyString = `${numberFormat(_tokenSupplyHmq)} HMQ ($ ${numberFormat(Math.round(_tokenSupplyUsd * 100) / 100)})`
+  const volume24String = `${numberFormat(Math.round(_lastHours24TradesVolumeHmq *100)/ 100)} HMQ ($ ${numberFormat(Math.round(_lastHours24TradesVolumeUsd))} )`
   const tokenValueString = `$ ${Math.round(_tokenValueUsd * 10000) /10000} (${(+ _tokenValueEth).toFixed(6)} ETH)`
 
   return ({

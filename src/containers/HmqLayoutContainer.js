@@ -19,13 +19,15 @@ function mergeProps({openRoute, hmqSection}, {setHmqSection}, ownProps){
     setHmqSection(openRoute[1])
   }
 
+  const hideSearch = openRoute[1] == 'search'
+
   const menu = initMenu.map( ({title, urlSection}) => ({
     title,
     url: `/hmq-explorer/${urlSection || ''}`,
     active: urlSection === hmqSection
   }))
 
-  return {hmqSection, menu, ...ownProps}
+  return {hmqSection, menu, ...ownProps, hideSearch}
 }
 
 export default connect(mapStateToProps, mapDispatchToProps, mergeProps)(HmqLayout);

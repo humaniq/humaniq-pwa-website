@@ -1,0 +1,29 @@
+@import "common/settings/variables";
+@import "common/utils";
+
+.se-hmq-search{
+  &__search{
+    background-color: #598fba;
+    height: 14.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+    color: $white;
+    @include media($mobile) {
+      display: block;
+      padding-top: 6rem;
+    }
+    &:after{
+      content:"";
+      position:absolute;
+      width: 100%;
+      bottom:0px;
+      z-index:-1;
+      box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.2);
+    }
+  }
+  &__root{
+    min-height: 35vh;
+  }
+}
