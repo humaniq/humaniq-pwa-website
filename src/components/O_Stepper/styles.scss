@@ -23,9 +23,6 @@
         background: $blue-2;
       }
     }
-    //&:nth-child(2) {
-    //  background: red;
-    //}
   }
   &__bar {
     &:before {
@@ -92,6 +89,12 @@
   &__step {
     &_step {
       &_true {
+        + .o-stepper__step_step_false .o-stepper__dot {
+          background: $blue-2;
+        }
+        + .o-stepper__step_step_false .o-stepper__txt {
+          font-weight: 600;
+        }
         .o-stepper__bar {
           &:after {
             height: 100%;
@@ -114,9 +117,6 @@
             transition: background .3s ease;
           }
         }
-      }
-      &_false {
-        //background: red;
       }
     }
   }
