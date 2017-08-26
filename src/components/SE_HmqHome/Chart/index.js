@@ -7,7 +7,7 @@ const cn = cssClassName('SE_HmqHeroChart')
 import D3Chart from './D3Chart'
 
 const periods = [
-  // 'hour',
+  // '3hour',
   'day',
   'week',
   // 'month',
@@ -16,7 +16,7 @@ const periods = [
 ]
 
 const periodTitles = {
-  hour: '1h',
+  '3hour': '3h',
   day: '1d',
   week: '1w',
   month: '1m',
