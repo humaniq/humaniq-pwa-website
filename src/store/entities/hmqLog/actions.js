@@ -8,7 +8,7 @@ import moment from 'moment'
 export function fetchHmqLog (fromTimestampIso, toTimestampIso) {
 
   if(!toTimestampIso){
-    const now= moment().utc()
+    const now = moment().utc()
     toTimestampIso = apiDateFormat(now)
   }
 
@@ -18,14 +18,13 @@ export function fetchHmqLog (fromTimestampIso, toTimestampIso) {
   //   fromTimestampIso = apiDateFormat(from)
   // }
 
-
   return ({
     [BACKEND_CALL]: {
       endpoint: ENDPOINT_HMQ_LOG,
       method: 'GET',
       query: {
         toTimestampIso,
-        count: 50
+        count: 30
       },
       types: createRequestActions(HMQ_LOG),
     }
