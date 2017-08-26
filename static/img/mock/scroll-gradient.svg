@@ -1,0 +1,8 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	viewBox="0 0 900 150" enable-background="new 0 0 900 150" xml:space="preserve">
+	<linearGradient id="SVG-1" gradientUnits="userSpaceOnUse" x1="450" y1="150" x2="450" y2="15">
+		<stop  offset="0" style="stop-color:#FFFFFF"/>
+		<stop  offset="1" style="stop-color:#FFFFFF;stop-opacity:0"/>
+	</linearGradient>
+	<rect x="-1" fill="url(#SVG-1)" width="1200" height="150"/>
+</svg>

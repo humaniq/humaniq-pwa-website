@@ -1,9 +1,18 @@
+@import "common/settings/variables";
+@import "common/utils";
+
 .m-scroll-screen{
-  &__screen{
+  &__screen {
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 15rem;
-    background: linear-gradient(to bottom, rgba(255,0,0,0), rgb(255, 255, 255));
+    height: 10rem;
+    background: url("/img/mock/scroll-gradient.svg");
+    @include media($tablet) {
+      height: 9rem;
+    }
+    @include media($mobile) {
+      height: 7rem;
+    }
   }
 }

@@ -38,14 +38,11 @@ class SE_HmqHolder extends Component {
             <A_P type='hmq-e'>{totalTransactions}</A_P>
           </M_InfoBlock>
         </A_Container>
-
-        <A_Container type='section-clean'>
-          <O_ScrollUp initTop={50} showAfter={700}>
-            <M_ScrollScreen >
-              {renderedTransactions}
-            </M_ScrollScreen>
-          </O_ScrollUp>
-        </A_Container>
+        <O_ScrollUp initTop={50} showAfter={700}>
+          <M_ScrollScreen >
+            {renderedTransactions}
+          </M_ScrollScreen>
+        </O_ScrollUp>
       </div>
 
     )

@@ -6,8 +6,6 @@ const cn = cssClassName('O_Timeline');
 import A_Container from 'A_Container';
 import A_H from 'A_H';
 
-
-
 class O_Timeline extends Component {
 
   renderEvent = (month, event) => {

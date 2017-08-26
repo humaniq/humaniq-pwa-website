@@ -18,13 +18,13 @@ class SE_HmqLog extends Component {
     const renderedTransactions = this.getTransactions(entities)
     return (
       <div>
-        <A_Container type='section-clean'>
-          <O_ScrollUp initTop={50} showAfter={700}>
-            <M_ScrollScreen >
-              {renderedTransactions}
-            </M_ScrollScreen>
-          </O_ScrollUp>
-        </A_Container>
+        <O_ScrollUp initTop={50} showAfter={700}>
+          <A_Container type='section-clean'>
+              <M_ScrollScreen >
+                {renderedTransactions}
+              </M_ScrollScreen>
+          </A_Container>
+        </O_ScrollUp>
       </div>
 
     )
