@@ -24,9 +24,9 @@ export function fetchGraphData (period) {
   let from, stepSeconds
 
   switch (period) {
-    case '1h':
-      stepSeconds = 60
-      from = now.subtract(1, 'hour')
+    case '3h':
+      stepSeconds = 180
+      from = now.subtract(3, 'hour')
       break
     case '1d':
       stepSeconds = 1080

@@ -20,11 +20,12 @@ class O_TransactionLog extends Component {
             <tr className={cn('asset-stats__tr', {up})}>
               <td className={cn('asset-stats__td')}>
                 <span className={cn('asset-stats__hash')}>TxHash:</span>
-                <span className={cn('asset-stats__block')}>Block:</span>
+                {block && <span className={cn('asset-stats__block')}>Block:</span>}
+
               </td>
               <td className={cn('asset-stats__td')}>
                 <A_Link to={`/hmq-explorer/transaction-log/${txHash}`} className={cn('asset-stats__hash-link')}>{txHash}</A_Link>
-                <A_Link to={`/hmq-explorer/block/${block}`} className={cn('asset-stats__hash-link')}>{block}</A_Link>
+                {block && <A_Link to={`/hmq-explorer/block/${block}`} className={cn('asset-stats__hash-link')}>{block}</A_Link>}
               </td>
               <td className={cn('asset-stats__td')}>
                 <span className={cn('asset-stats__from')}>From:</span>

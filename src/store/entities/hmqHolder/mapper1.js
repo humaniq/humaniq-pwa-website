@@ -5,7 +5,7 @@ import {numberFormat} from 'utils'
 export default (arr) => {
   return arr.map(({info, amount}) =>({
     txHash: info.hash,
-    block: 'no data',
+    block: null,
     from: info.senderAddress,
     to: info.receiverAddress,
     time: info.timestampIso,

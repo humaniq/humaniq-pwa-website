@@ -17,11 +17,11 @@ class SE_HmqMarkets extends Component {
     const renderedTransactions = this.getTransactions(entities)
     return (
       <div>
-        <A_Container type='section-clean'>
-          <O_ScrollUp initTop={50} showAfter={700}>
-            {renderedTransactions}
-          </O_ScrollUp>
-        </A_Container>
+        <O_ScrollUp initTop={50} showAfter={700}>
+          <A_Container type='section-clean'>
+              {renderedTransactions}
+          </A_Container>
+        </O_ScrollUp>
       </div>
 
     )

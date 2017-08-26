@@ -5,11 +5,13 @@ import A_Container from 'A_Container';
 import {cssClassName} from 'utils';
 const cn = cssClassName('O_TransactionMarket');
 import A_Link from 'A_Link'
+import moment from 'moment';
+import {dateString} from 'utils/propsValidationHelpers'
 
 class O_TransactionMarket extends Component {
 
   render() {
-    const {address, rank, price, pair, usdAmount, hmqAmount, url, up} = this.props
+    const {address, rank, price, pair, usdAmount, hmqAmount, url, up, time} = this.props
     return (
       <div>
         <A_Container type='wide'>
@@ -37,6 +39,10 @@ class O_TransactionMarket extends Component {
                 <span className={cn('value')}>${usdAmount} USD</span>
               </td>
               <td className={cn('asset-stats__td')}>
+                <small className={cn('asset-stats__time asset-stats__time--success')}>
+                  <i className={cn('asset-stats__icon', {confirmed: status === 'confirmed'})}></i>
+                  {moment(time).fromNow()}
+                </small>
               </td>
             </tr>
             </tbody>
@@ -55,6 +61,7 @@ O_TransactionMarket.propTypes = {
   pair: T.string.isRequired,
   usdAmount: T.string.isRequired,
   hmqAmount: T.string.isRequired,
+  time: dateString.isRequired,
 };
 
 export default O_TransactionMarket
