@@ -27,6 +27,10 @@
       background: #fff;
       border-radius: .4rem;
       transition: all 0.3s ease;
+      display: flex;
+      @include media($mobile) {
+        display: table-row;
+      }
       &:before {
         box-sizing: border-box;
         content:'';
@@ -44,12 +48,12 @@
           width: 69rem;
         }
         @include media($mobile) {
-          width: 90%;
+          width: 80%;
           height: 6.2rem;
-          box-shadow: 0 4px 1px -3px #e8e8e8;
+          box-shadow: 0 .4rem .1rem -.1rem $gray-1;
         }
       }
-      &_up_true{
+      &_up_true {
         &:before {
           box-sizing: border-box;
           content:'';
@@ -68,9 +72,9 @@
           }
           @include media($mobile) {
             border-radius: 0;
-            width: 90%;
+            width: 80%;
             height: 6.2rem;
-            box-shadow: 0 .4rem .2rem -.2rem #e8e8e8;
+            box-shadow: 0 .4rem .1rem -.1rem $gray-1;
           }
         }
       }
@@ -78,32 +82,36 @@
     &__td {
       padding: .5rem 0;
       &:nth-child(1) {
-        width: 8%;
+        width: 6%;
         padding-left: 2rem;
         @include media($tablet) {
-          //display: none;
+          display: none;
         }
         @include media($mobile) {
           display: table-cell;
-          width: 30%;
+          width: 20%;
+          padding-left: 0;
         }
       }
       &:nth-child(2) {
-        width: 21%;
+        width: 17%;
+        padding-left: .5rem;
         padding-right: 3.5rem;
         @include media($tablet) {
-          //display: none;
+          display: none;
         }
         @include media($mobile) {
-          width: 30%;
-          padding-right: 2rem;
+          width: 40%;
+          padding-right: 4rem;
+          padding-left: 0;
           display: table-cell;
         }
       }
       &:nth-child(3) {
-        width: 8%;
-        padding-left: .5rem;
+        width: 5%;
+        padding-left: 1rem;
         @include media($tablet) {
+          width: 7%;
           padding-left: 2rem;
           border-top-left-radius: .4rem;
           border-bottom-left-radius: .4rem;
@@ -113,19 +121,32 @@
         }
       }
       &:nth-child(4) {
-        width: 30%;
-        @include media($mobile) {
+        width: 39%;
+        @include media($tablet) {
+          width: 50%;
         }
-      }
-      &:nth-child(5) {
-        width: 20%;
-        padding-left: .7rem;
         @include media($mobile) {
           display: none;
         }
       }
+      &:nth-child(5) {
+        width: 19%;
+        padding-left: .7rem;
+        @include media($tablet) {
+          width: 23%;
+          padding-left: 1rem;
+        }
+        @include media($mobile) {
+          width: 40%;
+          padding-left: 0;
+        }
+      }
       &:nth-child(6) {
-        width: 13%;
+        width: 14%;
+        @include media($tablet) {
+          width: 20%;
+          padding-left: 2rem;
+        }
         @include media($mobile) {
           width: 40%;
           display: none;
