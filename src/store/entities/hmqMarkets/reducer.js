@@ -13,7 +13,6 @@ export default (hmqMarkets = hmqMarketsInit, { type, data } ) => {
     case REQUEST + HMQ_MARKETS + START:
       return {...hmqMarkets, loading: true}
     case REQUEST + HMQ_MARKETS + SUCCESS:
-      console.log(typeof data)
       return {...hmqMarkets, loading: false, loaded: true, ...mapper(data)}
     case REQUEST + HMQ_MARKETS + FAIL:
       return {...hmqMarkets, loading: false}
