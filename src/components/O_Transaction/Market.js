@@ -61,7 +61,11 @@ O_TransactionMarket.propTypes = {
   pair: T.string.isRequired,
   usdAmount: T.string.isRequired,
   hmqAmount: T.string.isRequired,
-  time: dateString.isRequired,
+  time: dateString
 };
+
+O_TransactionMarket.defaultProps = {
+  time: moment().format()
+}
 
 export default O_TransactionMarket
