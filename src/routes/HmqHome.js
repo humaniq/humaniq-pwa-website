@@ -6,10 +6,12 @@ import {fetchGraphData} from 'store/entities/hmqGraph/actions'
 
 class HmqHomeRoute extends Component {
 
-  static prepareData({dispatch}) {
+  static prepareData({dispatch, getState}) {
     if(__SERVER__){
       return dispatch(fetchHmqStatistics())
     }else{
+      const state = getState()
+      state.hmqStatistic.loaded || dispatch(fetchHmqStatistics())
       return dispatch(fetchGraphData('1d'))
     }
   }
