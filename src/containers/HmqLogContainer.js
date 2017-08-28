@@ -1,7 +1,7 @@
 import {connect} from 'react-redux';
-import {bindActionCreators} from 'redux'
+// import {bindActionCreators} from 'redux'
 import SE_HmqLog from 'SE_HmqLog'
-import {fetchHmqLog} from 'store/entities/hmqHolders/actions'
+// import {fetchHmqLog} from 'store/entities/hmqHolders/actions'
 
 function mapStateToProps( state ) {
   const {entities} = state.hmqLog
