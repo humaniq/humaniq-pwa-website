@@ -54,7 +54,7 @@ const socials = [
   {network: 'youtube', link: 'https://www.youtube.com/channel/UCXatRidLHbngYUtF8JXICPA'},
   {network: 'slack', link: 'https://humaniq-co.slack.com'},
   {network: 'linkedin', link: 'https://www.linkedin.com/company/humaniq'},
-  {network: 'instagram', link: 'https://www.instagram.com/humaniq.co/'}
+  {network: 'instagram', link: 'https://www.instagram.com/humaniq_com/'}
 ]
 
 class O_Footer extends Component {
