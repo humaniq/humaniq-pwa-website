@@ -16,10 +16,20 @@ import Wiki2 from './Wiki2'
 import Legal from './Legal'
 import OpenSource from './OpenSource'
 import WikiSearch from './WikiSearch'
-import Hmq from './Hmq'
+import HmqSearch from './HmqSearch'
+import HmqHome from './HmqHome'
 import Ambassadors from './Ambassadors'
 import About from './About'
+import HmqLayout from './HmqLayout'
+import HmqTest from './HmqTest'
+import HmqLog from './HmqLog'
+import HmqHash from './HmqHash'
+import HmqMarkets from './HmqMarkets'
+import HmqHolders from './HmqHolders'
+import HmqHolder from './HmqHolder'
+import HmqBlock from './HmqBlock'
 
+import {cleanHmqSearch} from 'store/entities/hmqSearch/actions'
 import {cleanWikiSearch} from 'store/entities/wikiSearch/actions'
 
 const getRoutes = (store) => {
@@ -91,10 +101,47 @@ const getRoutes = (store) => {
       <Route path="open-source"
              component={OpenSource}
       />
-      <Route path="hmq-explorer"
-             prepareData={Hmq.prepareData}
-             component={Hmq}
-      />
+      <Route
+        path="hmq-explorer"
+        component={HmqLayout}
+      >
+        <IndexRoute
+          component={HmqHome}
+          prepareData={HmqHome.prepareData}
+        />
+        <Route path="transaction-log" >
+          <IndexRoute
+            component={HmqLog}
+            prepareData={HmqLog.prepareData}
+          />
+          <Route path=":hash" component={HmqHash} prepareData={HmqHash.prepareData}/>
+        </Route>
+        <Route
+          path="token-holders"
+          prepareData={HmqHolders.prepareData}
+        >
+          <IndexRoute
+            component={HmqHolders}
+          />
+          <Route
+            path=":holder"
+            component={HmqHolder}
+            prepareData={HmqHolder.prepareData}
+          />
+        </Route>
+        <Route path="markets"
+               component={HmqMarkets}
+               prepareData={HmqMarkets.prepareData}
+        />
+        <Route path="test" component={HmqTest}/>
+        <Route path="block/:block" component={HmqBlock} prepareData={HmqBlock.prepareData}/>
+        <Route
+          path="search"
+          component={HmqSearch}
+          prepareData={HmqSearch.prepareData}
+          onLeave={() => store.dispatch(cleanHmqSearch())}
+        />
+      </Route>
       <Route path="ambassadors"
              prepareData={Ambassadors.prepareData}
              component={Ambassadors}

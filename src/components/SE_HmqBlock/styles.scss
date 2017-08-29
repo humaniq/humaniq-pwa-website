@@ -1,0 +1,8 @@
+@import "common/settings/variables";
+@import "common/utils";
+
+.se-hmq-block{
+  &__from-now{
+    color: $interactive
+  }
+}

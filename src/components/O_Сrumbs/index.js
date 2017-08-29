@@ -5,13 +5,19 @@ import {cssClassName} from 'utils'
 const cn = cssClassName('O_Crumbs')
 import A_Link from 'A_Link';
 
-const O_Сrumbs = ({path}) =>{
-  const crumbs = path.map( (link, i, arr) => {
+const O_Сrumbs = ({path, notLink}) =>{
+  const crumbs = path.map( (item, i, arr) => {
     const notLast = i+1 !== arr.length
     const type = notLast ? 'crumbs-notlast' : 'crumbs'
-    return(
-      <A_Link type={type} key={'key_' + i} to={link.url} >{link.name}</A_Link>
-    )
+    if(notLink){
+      return(
+        <span key={'key_' + i} className={cn('not-links', {'not-last': notLast})}>{item.name}</span>
+      )
+    } else{
+      return(
+        <A_Link type={type} key={'key_' + i} to={item.url} >{item.name}</A_Link>
+      )
+    }
   })
 
   return(

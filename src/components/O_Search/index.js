@@ -25,7 +25,7 @@ class O_Search extends Component {
   componentWillReceiveProps(nextProps) {
     this.setState({
       value: nextProps.value || '',
-      inActive: !!nextProps.value
+      inActive: nextProps.focus ? true : !!nextProps.value
     })
   }
 
