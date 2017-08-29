@@ -13,7 +13,7 @@ export default (hmqLog = hmqLogInit, { type, data } ) => {
     case REQUEST + HMQ_LOG + START:
       return {...hmqLog, loading: true}
     case REQUEST + HMQ_LOG + SUCCESS:
-      return {...hmqLog, loading: false, loaded: true, entities:mapper(data.transactions)}
+      return {...hmqLog, loading: false, loaded: true, ...mapper(data, hmqLog.entities)}
     case REQUEST + HMQ_LOG + FAIL:
       return {...hmqLog, loading: false}
   }
