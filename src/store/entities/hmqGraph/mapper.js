@@ -21,7 +21,7 @@ export default (rates, period) => {
     return {
       date: moment(timestampIso, 'YYYYMMDDTHHmmss[Z]').format('YYYY-MM-DD, HH:mm:ss'),
       dateShow: moment.utc(timestampIso, 'YYYYMMDDTHHmmss[Z]').local().format(format[period]),
-      valueShow: `$ ${(+ rate.usd).toFixed(3)} (${(+ rate.usd).toFixed(5)} ETH)`,
+      valueShow: `$ ${(+ rate.usd).toFixed(3)} (${(+ rate.eth).toFixed(5)} ETH)`,
       value: (rate.usd - delta) * 10000
     }
   })
