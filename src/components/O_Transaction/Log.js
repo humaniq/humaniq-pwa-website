@@ -57,7 +57,7 @@ class O_TransactionLog extends Component {
 
 O_TransactionLog.propTypes = {
   txHash: T.string.isRequired,
-  block: T.number.isRequired,
+  block: T.number,
   from: T.string.isRequired,
   to: T.string.isRequired,
   time: dateString.isRequired,
