@@ -6,7 +6,7 @@ export const dateString = (function (){
     const testValue = props[propName]
     if(!testValue) return null;
     if (!_isDateValid(testValue) || typeof testValue != 'string') {
-      return new Error(`wrong format of date string: ${testValue}, check ${propName} `);
+      return new Error(`wrong format of date string: ${testValue }, check ${propName} `);
     }
     return null
   }

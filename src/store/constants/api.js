@@ -31,6 +31,10 @@ export const ENDPOINT_PERSONAL_DATA = `${ENDPOINT_PERSONAL}/user/`
 export const ENDPOINT_PERSONAL_REFERRER = `${ENDPOINT_PERSONAL}/referrers/`
 
 
-export const ENDPOINT_BLOCKCHAIN_STATISTICS = `${HUMANIQ_BACKEND_API_URL}/dev/blockchain/stats?extended=true`
-export const ENDPOINT_BLOCKCHAIN_MARKETS = `${HUMANIQ_BACKEND_API_URL}/dev/markets`
-export const ENDPOINT_BLOCKCHAIN_EXCHANGE_RATES = `${HUMANIQ_BACKEND_API_URL}/dev/exchange/rates`
+export const ENDPOINT_HMQ_STATISTICS = `${HUMANIQ_BACKEND_API_URL}/dev/blockchain/stats?extended=true`
+export const ENDPOINT_HMQ_MARKETS = `${HUMANIQ_BACKEND_API_URL}/dev/markets`
+export const ENDPOINT_HMQ_HOLDERS = `${HUMANIQ_BACKEND_API_URL}/dev/blockchain/wallets`
+export const ENDPOINT_HMQ_LOG = `${HUMANIQ_BACKEND_API_URL}/dev/blockchain/transactions`
+export const ENDPOINT_HMQ_BLOCK = `${HUMANIQ_BACKEND_API_URL}/dev/blockchain/blocks/`
+export const ENDPOINT_HMQ_GRAPH = `${HUMANIQ_BACKEND_API_URL}/dev/exchange/rates`
+export const ENDPOINT_HMQ_HASH = `${HUMANIQ_BACKEND_API_URL}/dev/blockchain/transactions/`
