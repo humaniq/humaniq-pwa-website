@@ -1,12 +1,25 @@
 import {connect} from 'react-redux';
-// import {bindActionCreators} from 'redux'
 import SE_HmqLog from 'SE_HmqLog'
-// import {fetchHmqLog} from 'store/entities/hmqHolders/actions'
+import {bindActionCreators} from 'redux'
+import {fetchHmqLog} from 'store/entities/hmqLog/actions'
 
 function mapStateToProps( state ) {
-  const {entities} = state.hmqLog
+  const {loading, entities, next} = state.hmqLog
 
-  return {entities};
+  return {entities, loading, next};
 }
 
-export default connect(mapStateToProps)(SE_HmqLog);
+function mapDispatchToProps(dispatch) {
+  const actions = bindActionCreators({fetchHmqLog}, dispatch)
+  return {...actions};
+}
+
+function mergeProps({next, ...stateProps}, {fetchHmqLog}, ownProps){
+
+  const loadMore = () => fetchHmqLog(next)
+
+  return {...stateProps, loadMore, ...ownProps}
+}
+
+
+export default connect(mapStateToProps, mapDispatchToProps, mergeProps)(SE_HmqLog);
