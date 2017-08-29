@@ -6,7 +6,7 @@ import createStore from 'store'
 import getRoutes from 'routes'
 import prepareData from 'utils/prepareData'
 import {compact} from 'lodash/array'
-import webpackAssets from './webpackAssets';
+import getAsset from './getAsset';
 import {createLocation} from 'history/lib/LocationUtils';
 import Helmet from 'react-helmet'
 import {stringify} from 'qs'
@@ -24,22 +24,9 @@ export default function(req, res){
     }
     else if (error) {
       return res.status(500).end('Internal server error');
-      console.log(error, {routes, location, error, redirectLocation, renderProps})
-      // return res.redirect(302, '/error/500?error=' + stringify(error));
     } else if (!renderProps) {
       return res.status(404).send('Not found');
-      // const url = location.pathname + location.search
-      // return res.redirect(302, '/error/404?url=' + url);
     }
-    //
-    // let status
-    // const regEx = /(\/error\/(?=(404|500)))/
-    //
-    // if(regEx.test(location.pathname)){
-    //   status = + location.pathname.replace(regEx, '')
-    // }else{
-    //   status = 200
-    // }
 
     const status = 200
 
@@ -57,7 +44,7 @@ export default function(req, res){
         res.status(status);
         res.render(
           'index',
-          {initialState, content, helmet, webpackAssets});
+          {initialState, content, helmet, getAsset});
 
       })
       .catch(error => {

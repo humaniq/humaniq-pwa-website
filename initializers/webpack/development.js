@@ -10,16 +10,21 @@ export default webpackMerge(commonConfig, {
     new webpack.DefinePlugin({
       __SERVER__: false,
       __CLIENT__: true,
-      __DEVELOPMENT__: false,
-      'process.env.NODE_ENV': JSON.stringify('production')
+      __DEVELOPMENT__: true
     }),
+    new webpack.HotModuleReplacementPlugin(),
   ],
   devtool: 'cheap-module-eval-source-map',
   entry: {
     bundle: [
+      'react-hot-loader/patch',
+      'webpack-hot-middleware/client',
       'babel-polyfill',
       './index.js',
     ],
+  },
+  output: {
+    filename: 'assets/[name].js',
   },
   module: {
     rules: [
@@ -55,7 +60,7 @@ export default webpackMerge(commonConfig, {
             includePaths: SOURCE_PATH,
           }},
         ]
-      },
+      }
     ]
   }
 })

@@ -1,7 +1,39 @@
 {
   "plugins": [
-    "react-hot-loader/babel",
-    ["module-resolver", {"root": ["./src", "./src/components", "./src/store", ""]}]
+    "transform-class-properties",
+    "transform-export-extensions",
+    ["module-resolver", {
+      "root": ["./src", "./src/components", "./src/store"],
+      "alias": {
+        "static": "./static"
+      }
+    }]
   ],
-  "presets": [ "react", "es2015", "stage-0"]
+  "presets": [
+    "react",
+    "es2015",
+    "stage-0"
+  ],
+  "env": {
+    "production": {
+      "plugins": [
+        "transform-react-remove-prop-types"
+      ],
+      "presets": []
+    },
+    "development": {
+      "presets": [
+      ],
+      "plugins": [
+        "react-hot-loader/babel"
+      ]
+    },
+    "test": {
+      "presets": [
+      ],
+      "plugins": [
+      ]
+    }
+  }
+
 }

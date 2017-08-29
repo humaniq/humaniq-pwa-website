@@ -1,6 +1,12 @@
 //default helpers
 import catnip from 'catnip';
-import camelcaseKeys from 'camelcase-keys';
+
+function toCamelCase (str) {
+  return str
+    .replace(/\s(.)/g, function ($1) { return $1.toUpperCase(); })
+    .replace(/\s/g, '')
+    .replace(/^(.)/, function ($1) { return $1.toLowerCase(); });
+}
 
 function cssDecamelize(string) {
   let newString = string.split('_').filter(n => n !== '').join('-')
@@ -41,7 +47,7 @@ export const convert = {
     )},
   toPhone: toPhone,
   obj:{
-    toCamel: str => camelcaseKeys(str, {deep: true}),
+    toCamel: str => toCamelCase(str),
   }
 }
 

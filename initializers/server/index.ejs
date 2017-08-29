@@ -35,11 +35,11 @@
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <% if(!__DEVELOPMENT__){ %>
-      <link rel="stylesheet" type="text/css" href="/<%- webpackAssets('bundle', 'css') %>" />
+      <link rel="stylesheet" type="text/css" href="/<%- getAsset('bundle.css') %>" />
     <% }%>
     <link rel="icon" href="data:;base64,iVBORw0KGgo=">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
-
+    <link rel="manifest" href="/manifest.json">
     <!-- For preloader -->
     <style>
         html, body {
@@ -156,12 +156,13 @@
     <div class="progress"><div class="indeterminate"></div></div>
     <div id="container"><%- typeof content !='undefined' ? content : ''%></div>
     <% if(!__DEVELOPMENT__){ %>
-      <script type="text/javascript" src="/<%- webpackAssets('vendor', 'js') %>"></script>
+      <script type="text/javascript" src="/<%- getAsset('vendor.js') %>"></script>
     <% }%>
     <% if(typeof initialState !='undefined'){ %>
       <script type="text/javascript">window.__INITIAL_STATE__ = <%- initialState %></script>
     <% }%>
-    <script type="text/javascript" src="/<%- webpackAssets('bundle', 'js') %>"></script>
+    <!-- TODO: loop for getting all assets -->
+    <script type="text/javascript" src="/<%- getAsset('bundle.js') %>"></script>
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
