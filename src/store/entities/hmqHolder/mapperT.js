@@ -1,7 +1,5 @@
 import {numberFormat} from 'utils'
 
-//txHash, block, from, to, time, usdAmount, hmqAmount, status
-
 export default (arr) => {
   return arr.map(({info, amount}) =>({
     txHash: info.hash,
