@@ -5,7 +5,7 @@ import { ENDPOINT_HMQ_LOG } from 'constants/api'
 import {apiDateFormat} from 'utils'
 import moment from 'moment'
 
-export function fetchHmqLog (fromTimestampIso, toTimestampIso) {
+export function fetchHmqLog (toTimestampIso) {
 
   if(!toTimestampIso){
     const now = moment().utc()
