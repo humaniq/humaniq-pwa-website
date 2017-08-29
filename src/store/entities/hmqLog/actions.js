@@ -5,18 +5,17 @@ import { ENDPOINT_HMQ_LOG } from 'constants/api'
 import {apiDateFormat} from 'utils'
 import moment from 'moment'
 
-export function fetchHmqLog (fromTimestampIso, toTimestampIso) {
+export function fetchHmqLog (next) {
 
-  if(!toTimestampIso){
-    const now = moment().utc()
-    toTimestampIso = apiDateFormat(now)
+  let _to
+
+  if(!next){
+    _to = moment().utc()
+  }else{
+    _to = moment.utc(next)
   }
 
-  // if(!fromTimestampIso){
-  //   const _to = moment.utc(toTimestampIso, 'YYYYMMDDTHHmmss[Z]')
-  //   const from = _to.subtract(4, 'hours')
-  //   fromTimestampIso = apiDateFormat(from)
-  // }
+  const toTimestampIso = apiDateFormat(_to)
 
   return ({
     [BACKEND_CALL]: {

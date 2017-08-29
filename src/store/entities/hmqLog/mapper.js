@@ -1,16 +1,30 @@
-import {numberFormat} from 'utils'
+import {arrayUnique, numberFormat} from 'utils'
 
-//txHash, block, from, to, time, usdAmount, hmqAmount, status
+export default ({transactions, nextTimestampIso}, oldEntities) => {
+  let entities, complete
 
-export default (arr) => {
-  return arr.map(({info, amount, blockchain}) =>({
-    txHash: info.hash,
-    block: blockchain.blockNumber,
-    from: info.senderAddress,
-    to: info.receiverAddress,
-    time: info.timestampIso,
-    usdAmount: numberFormat(+ amount.usd, 2),
-    hmqAmount: numberFormat(+ amount.hmq, 2),
-    status: info.status
-  }))
+  if(transactions.length === 0){
+    complete = true
+    entities = oldEntities
+  } else {
+    complete = false
+    const newEntities = transactions.map(({info, amount, blockchain}) =>({
+      txHash: info.hash,
+      block: blockchain.blockNumber || undefined,
+      from: info.senderAddress,
+      to: info.receiverAddress,
+      time: info.timestampIso,
+      usdAmount: numberFormat(+ amount.usd, 2),
+      hmqAmount: numberFormat(+ amount.hmq, 2),
+      status: info.status
+    }))
+    entities = arrayUnique(oldEntities.concat(newEntities));
+  }
+
+
+  return({
+    entities,
+    complete,
+    next: nextTimestampIso,
+  })
 }

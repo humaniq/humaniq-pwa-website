@@ -4,11 +4,11 @@ import './styles.scss';
 import {cssClassName} from 'utils'
 const cn = cssClassName('M_ScrollScreen')
 
-const M_ScrollScreen = ({children}) =>{
+const M_ScrollScreen = ({children, desabled}) =>{
   return(
     <div>
       {children}
-      <div className={cn('screen')}/>
+      {desabled || <div className={cn('screen')}/>}
     </div>
   )
 }
