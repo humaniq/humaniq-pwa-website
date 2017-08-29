@@ -27,12 +27,6 @@ class SE_HmqLog extends Component {
     }))
   }
 
-  // getTransactions(entities) {
-  //   return (entities.map((props, i) =>
-  //     <O_Transaction key={'key_' + i} {...props} type="log" up={i == 0}/>
-  //   ))
-  // }
-
   render() {
     const {entities, loadMore, loading} = this.props
     const renderedTransactions = this.getTransactions(entities, loadMore, loading)
@@ -53,6 +47,7 @@ class SE_HmqLog extends Component {
 
 SE_HmqLog.propTypes = {
   entities: T.array.isRequired,
+  loadMore: T.func.isRequired
 }
 
 SE_HmqLog.defaultProps = {

@@ -8,19 +8,33 @@ import O_Transaction from 'O_Transaction'
 import M_ScrollScreen from 'M_ScrollScreen'
 import A_Container from 'A_Container'
 import O_ScrollUp from "O_ScrollUp";
+import Waypoint from 'react-waypoint'
 
 class SE_HmqHolder extends Component {
 
-  getTransactions(entities) {
-    return (entities.map((props, i) =>
-      <O_Transaction key={'key_' + i} {...props} type="log" up={i == 0}/>
-    ))
+  getTransactions(entities, loadMore, load){
+    return (entities.map( (props, i) => {
+
+      const entitiesCount = entities.length
+      const addWayPoint = load && (i + 30 === entitiesCount || i + 5 === entitiesCount)
+      return (
+        <div key={'key_' + props.txHash}>
+          <O_Transaction {...props} type="log" up={i == 0}/>
+          {addWayPoint &&
+            <Waypoint
+              scrollableAncestor={'window'}
+              onEnter={loadMore}
+            />
+          }
+        </div>
+      )
+    }))
   }
 
   render() {
-    const {totalTransactions, balance, address} = this.props
-    const {entities} = this.props
-    const renderedTransactions = this.getTransactions(entities)
+    const {totalTransactions, balance, address, loadMore, transactions:{entities, complete, loading}} = this.props
+    const load = !complete && !loading
+    const renderedTransactions = this.getTransactions(entities, loadMore, load)
     return (
       <div>
         <A_Container type='section-clean'>
@@ -39,7 +53,7 @@ class SE_HmqHolder extends Component {
           </M_InfoBlock>
         </A_Container>
         <O_ScrollUp initTop={50} showAfter={700}>
-          <M_ScrollScreen >
+          <M_ScrollScreen desabled={complete}>
             {renderedTransactions}
           </M_ScrollScreen>
         </O_ScrollUp>
@@ -52,28 +66,16 @@ class SE_HmqHolder extends Component {
 SE_HmqHolder.propTypes = {
   totalTransactions: T.number.isRequired,
   balance: T.string.isRequired,
-  address: T.string.isRequired
+  address: T.string.isRequired,
+  loadMore: T.func.isRequired,
+  transactions: T.shape({
+    entities: T.array.isRequired,
+    complete: T.bool.isRequired,
+    loading: T.bool.isRequired
+  }).isRequired,
 }
 
 SE_HmqHolder.defaultProps = {
 }
 
 export default SE_HmqHolder
-
-
-// render() {
-//   const {entities} = this.props
-//   const renderedTransactions = this.getTransactions(entities)
-//   return (
-//     <div>
-//       <A_Container type='section-clean'>
-//         <O_ScrollUp initTop={50} showAfter={700}>
-//           <M_ScrollScreen >
-//             {renderedTransactions}
-//           </M_ScrollScreen>
-//         </O_ScrollUp>
-//       </A_Container>
-//     </div>
-//
-//   )
-// }
