@@ -28,7 +28,7 @@ function addDateShow(rates){
     return {
       date: moment(timestampIso, 'YYYYMMDDTHHmmss[Z]').format('YYYY-MM-DD, HH:mm:ss'),
       dateShow: moment(timestampIso, 'YYYYMMDDTHHmmss[Z]').format(format[period]),
-      valueShow: `$ ${(rate.usd).toFixed(3)} (${(rate.usd).toFixed(5)} ETH)`,
+      valueShow: `$ ${(rate.usd).toFixed(3)} (${(rate.eth).toFixed(5)} ETH)`,
       value: Math.round(rate.eth * 1000000000)
     }
   }))
