@@ -61,8 +61,6 @@ class O_ScrollUp extends Component {
               {children}
             </div>
             <div className={cn('h-width', {hide})}>.</div>
-          </div>
-        }
       </Motion>
     );
   }
