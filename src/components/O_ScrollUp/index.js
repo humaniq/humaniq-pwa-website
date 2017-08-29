@@ -1,10 +1,11 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import * as T from "prop-types";
 import './styles.scss';
 import {cssClassName} from 'utils'
+
 const cn = cssClassName('O_ScrollUp')
 import A_Image from 'A_Image'
-import { Motion, spring } from 'react-motion'
+import {Motion, spring} from 'react-motion'
 
 class O_ScrollUp extends Component {
 
@@ -35,21 +36,21 @@ class O_ScrollUp extends Component {
     const {initTop, children} = this.props
     const {hide, up} = this.state
 
-    return(
+    return (
       <Motion
         style={{
           x: up ?
-            spring(0, { stiffness: 230, damping: 25, precision: 10 })
+            spring(0, {stiffness: 230, damping: 25, precision: 10})
             : 500
         }}
         onRest={() => this.setState({up: false})}
       >
         {s =>
           <div className={cn('wrapper')} onScroll={this.handleScroll}>
-            {(up && s.x !==0 && s.x !== 500) ? window.scrollTo(0, s.x) : null}
+            {(up && s.x !== 0 && s.x !== 500) ? window.scrollTo(0, s.x) : null}
             <div className={cn('root', {hide})}
-              onClick={() => this.setState({up:true})}
-              ref={e => this.e = e}
+                 onClick={() => this.setState({up: true})}
+                 ref={e => this.e = e}
             >
               <div className={cn('h-height')}>.</div>
               <div style={{top: initTop}} className={cn('button')}>

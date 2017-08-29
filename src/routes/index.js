@@ -31,6 +31,7 @@ import HmqBlock from './HmqBlock'
 
 import {cleanHmqSearch} from 'store/entities/hmqSearch/actions'
 import {cleanWikiSearch} from 'store/entities/wikiSearch/actions'
+import {cleanHmqHolderT} from 'store/entities/hmqHolder/actions'
 
 const getRoutes = (store) => {
   return (
@@ -127,6 +128,8 @@ const getRoutes = (store) => {
             path=":holder"
             component={HmqHolder}
             prepareData={HmqHolder.prepareData}
+            onLeave={() => store.dispatch(cleanHmqHolderT())
+            }
           />
         </Route>
         <Route path="markets"

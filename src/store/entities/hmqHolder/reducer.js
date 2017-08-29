@@ -15,7 +15,8 @@ const hmqHolderInit = {
     loading: false,
     loaded: false,
     complete: false,
-    offset: 0
+    offset: 0,
+    clean: false
   }
 }
 
@@ -32,20 +33,21 @@ export default (hmqHolder = hmqHolderInit, { type, data } ) => {
     case REQUEST + HMQ_HOLDER_T + SUCCESS:
     case REQUEST + HMQ_HOLDER_T + FAIL:
     case CLEAN + HMQ_HOLDER_T:
-      return {...hmqHolder, transactions: hmqHolderT(hmqHolder.transactions, {type, data}, hmqHolder.totalTransactions)}
+      return {...hmqHolder, transactions: hmqHolderT(hmqHolder.transactions, {type, data}, hmqHolder.totalTransactions, hmqHolder.address)}
 
 
   }
   return hmqHolder;
 };
 
-const hmqHolderT = (hmqHolderT, { type, data }, totalTransactions ) => {
+const hmqHolderT = (hmqHolderT, { type, data }, totalTransactions, address ) => {
 
   switch (type) {
     case CLEAN + HMQ_HOLDER_T:
-      return {...hmqHolderInit.transactions}
+      return {...hmqHolderInit.transactions, loading: hmqHolderT.loading}
     case REQUEST + HMQ_HOLDER_T + START:
-      return {...hmqHolderT, loading: true}
+      const clean = address !== data
+      return {...hmqHolderT, loading: true, clean}
     case REQUEST + HMQ_HOLDER_T + SUCCESS:
       let entities, complete
       const oldEntities = hmqHolderT.entities
