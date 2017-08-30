@@ -44,7 +44,7 @@ module.exports = {
     "no-console": 0,
     "linebreak-style": [
       "error",
-      "unix"
+      "windows"
     ],
     "jest/no-focused-tests": "warn",
     "jest/no-identical-title": "error",

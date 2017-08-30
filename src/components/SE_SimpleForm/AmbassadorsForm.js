@@ -3,7 +3,7 @@ import './styles.scss';
 import {cssClassName} from 'utils'
 const cn = cssClassName('SE_SimpleForm')
 import * as T from "prop-types";
-import {validateEmail} from 'utils/validateHelpers'
+import {WithValidation} from 'HOC/WithValidation'
 import A_H from 'A_H'
 import A_P from 'A_P'
 import A_InputText from 'A_InputText'
@@ -18,92 +18,20 @@ import A_Btn from 'A_Btn'
 
 class SE_SimpleFormAmbassadorsForm extends Component {
 
-  state = {
-    values: {
-      email: '',
-      name: '',
-      bio: ''
-    },
-    submitted: false,
-    errors: {
-      email: '',
-      name: '',
-      bio: ''
-    }
-  }
-
-
-  onSubmit = (handleSubmit) => () => {
-    const {values} = this.state
-    if (this.validate(values)){
-      handleSubmit(values)
-      this.setState({submitted: true})
-    }
-  }
-
-  onFormSubmit = (e) => {
-    e.preventDefault()
-    this.onSubmit(this.props.handleSubmit)()
-  }
-
-  validate(values){
-    let errors = {};
-
-    for (let valueName in values) {
-      const value = values[valueName]
-      switch(valueName){
-        case 'email':
-          if (!value) {
-            errors[valueName] = 'Please fill out our email form'
-          } else if (!validateEmail(value)) {
-            errors[valueName] = 'Looks like an invalid email address'
-          } else {
-            errors[valueName] = ''
-          }
-          break;
-        case 'name':
-          if (!value) {
-            errors[valueName] = 'Please fill out your full name'
-          } else {
-            errors[valueName] = ''
-          }
-          break;
-        case 'bio':
-          if(!value){
-            errors[valueName] = 'Please fill bio field'
-          } else {
-            errors[valueName] = ''
-          }
-          break;
-      }
-    }
-
-    this.setState({errors: {...this.state.errors, ...errors}})
-    const valid = Object.keys(errors).every(key => errors[key] === '')
-    return valid
-  }
-
-  onChange = (name, value, error) => {
-    if (error)
-      this.validate({[name]: value})
-
-    this.setState({values: {...this.state.values, [name]:value}})
-  }
-
   render() {
-    const {handleSubmit} = this.props
+    const {handleSubmit} = this.props;
     const {
       values: {email, name, bio},
       errors,
       submitted,
-    } = this.state
+    } = this.props;
 
     return (
-      <form className={cn('form')} onSubmit={this.onFormSubmit}>
+      <form className={cn('form')} onSubmit={this.props.onFormSubmit}>
         <Header>
           {submitted ||
             <A_Btn
-              onClick={this.onSubmit(handleSubmit)}
+              onClick={this.props.onSubmit(handleSubmit)}
               type='personal-nav-btn'
             >Send</A_Btn>
           }
@@ -130,7 +58,7 @@ class SE_SimpleFormAmbassadorsForm extends Component {
               label="Email"
               placeholder="your@email.com"
               error={errors.email}
-              handleChange={text => this.onChange('email', text, errors.email)}
+              handleChange={text => this.props.onChange('email', text, errors.email)}
             />
             <A_InputText
               value={name}
@@ -138,7 +66,7 @@ class SE_SimpleFormAmbassadorsForm extends Component {
               label="Your name"
               placeholder="Bob Smith"
               error={errors.name}
-              handleChange={text => this.onChange('name', text, errors.name)}
+              handleChange={text => this.props.onChange('name', text, errors.name)}
             />
             <A_InputText
               value={bio}
@@ -146,7 +74,7 @@ class SE_SimpleFormAmbassadorsForm extends Component {
               label="Bio"
               placeholder="Tell us about yourself. Why would you like to become an ambassador?"
               error={errors.bio}
-              handleChange={text => this.onChange('bio', text, errors.bio)}
+              handleChange={text => this.props.onChange('bio', text, errors.bio)}
             />
           </div>
         )}
@@ -159,4 +87,4 @@ SE_SimpleFormAmbassadorsForm.propTypes = {
   handleSubmit: T.func.isRequired
 };
 
-export default SE_SimpleFormAmbassadorsForm
+export default WithValidation(SE_SimpleFormAmbassadorsForm);

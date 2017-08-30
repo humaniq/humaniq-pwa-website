@@ -3,7 +3,7 @@ import './styles.scss';
 import {cssClassName} from 'utils'
 const cn = cssClassName('SE_SimpleForm')
 import * as T from "prop-types";
-import {validateEmail, validateWebsiteName} from 'utils/validateHelpers'
+import {WithValidation} from 'HOC/WithValidation'
 import A_H from 'A_H'
 import A_P from 'A_P'
 import A_InputText from 'A_InputText'
@@ -12,94 +12,20 @@ import A_Btn from 'A_Btn'
 
 class SE_SimpleFormJoinForm extends Component {
 
-  state = {
-    values: {
-      email: '',
-      companyWebsite: '',
-      businessDescription: ''
-    },
-    submitted: false,
-    errors: {
-      email: '',
-      companyWebsite: '',
-      businessDescription: ''
-    }
-  }
-
-
-  onSubmit = (handleSubmit) => () => {
-    const {values} = this.state
-    if (this.validate(values)){
-      handleSubmit(values)
-      this.setState({submitted: true})
-    }
-  }
-
-  onFormSubmit = (e) => {
-    e.preventDefault()
-    this.onSubmit(this.props.handleSubmit)()
-  }
-
-  validate(values){
-    let errors = {};
-
-    for (let valueName in values) {
-      const value = values[valueName]
-      switch(valueName){
-        case 'email':
-          if (!value) {
-            errors[valueName] = 'Please fill out our email form'
-          } else if (!validateEmail(value)) {
-            errors[valueName] = 'Looks like an invalid email address'
-          } else {
-            errors[valueName] = ''
-          }
-          break;
-        case 'companyWebsite':
-          if (!value) {
-            errors[valueName] = 'Please fill website name field'
-          } else if (!validateWebsiteName(value)) {
-            errors[valueName] = 'Looks like an invalid url address'
-          } else {
-            errors[valueName] = ''
-          }
-          break;
-        case 'businessDescription':
-          if(!value){
-            errors[valueName] = 'Please fill description field'
-          } else {
-            errors[valueName] = ''
-          }
-          break;
-      }
-    }
-
-    this.setState({errors: {...this.state.errors, ...errors}})
-    const valid = Object.keys(errors).every(key => errors[key] === '')
-    return valid
-  }
-
-  onChange = (name, value, error) => {
-    if (error)
-      this.validate({[name]: value})
-
-    this.setState({values: {...this.state.values, [name]:value}})
-  }
-
   render() {
-    const {handleSubmit} = this.props
+    const {handleSubmit} = this.props.onSubmit;
     const {
       values: {email, companyWebsite, businessDescription},
       errors,
       submitted,
-    } = this.state
+    } = this.props;
 
     return (
-      <form className={cn('form')} onSubmit={this.onFormSubmit}>
+      <form className={cn('form')} onSubmit={this.props.onFormSubmit}>
         <Header>
           {submitted ||
             <A_Btn
-              onClick={this.onSubmit(handleSubmit)}
+              onClick={this.props.onSubmit(handleSubmit)}
               type='personal-nav-btn'
             >Send</A_Btn>
           }
@@ -126,7 +52,7 @@ class SE_SimpleFormJoinForm extends Component {
               label="Email"
               placeholder="your@email.com"
               error={errors.email}
-              handleChange={text => this.onChange('email', text, errors.email)}
+              handleChange={text => this.props.onChange('email', text, errors.email)}
             />
             <A_InputText
               value={companyWebsite}
@@ -134,7 +60,7 @@ class SE_SimpleFormJoinForm extends Component {
               label="Website"
               placeholder="your-company-website.com"
               error={errors.companyWebsite}
-              handleChange={text => this.onChange('companyWebsite', text, errors.companyWebsite)}
+              handleChange={text => this.props.onChange('companyWebsite', text, errors.companyWebsite)}
             />
             <A_InputText
               value={businessDescription}
@@ -142,7 +68,7 @@ class SE_SimpleFormJoinForm extends Component {
               label="Business description"
               placeholder="What are you building?"
               error={errors.businessDescription}
-              handleChange={text => this.onChange('businessDescription', text, errors.businessDescription)}
+              handleChange={text => this.props.onChange('businessDescription', text, errors.businessDescription)}
             />
           </div>
         )}
@@ -155,4 +81,4 @@ SE_SimpleFormJoinForm.propTypes = {
   handleSubmit: T.func.isRequired
 };
 
-export default SE_SimpleFormJoinForm
+export default WithValidation(SE_SimpleFormJoinForm);
