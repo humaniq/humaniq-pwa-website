@@ -38,3 +38,4 @@ export const ENDPOINT_HMQ_LOG = `${HUMANIQ_BACKEND_API_URL}/dev/blockchain/trans
 export const ENDPOINT_HMQ_BLOCK = `${HUMANIQ_BACKEND_API_URL}/dev/blockchain/blocks/`
 export const ENDPOINT_HMQ_GRAPH = `${HUMANIQ_BACKEND_API_URL}/dev/exchange/rates`
 export const ENDPOINT_HMQ_HASH = `${HUMANIQ_BACKEND_API_URL}/dev/blockchain/transactions/`
+export const ENDPOINT_HMQ_SEARCH = `${HUMANIQ_BACKEND_API_URL}/dev/blockchain/search`
