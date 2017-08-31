@@ -1,8 +1,11 @@
 import {HMQ_SEARCH, START, SUCCESS, FAIL, CLEAN} from 'constants'
+import mapper from './mapper'
 
 const hmqSearchInit = {
-  request: '',
-  total:0
+  loading: false,
+  loaded: false,
+  entities: [],
+  searchTerm: ''
 }
 
 export default (hmqSearch = hmqSearchInit, {type, data}) => {
@@ -11,13 +14,16 @@ export default (hmqSearch = hmqSearchInit, {type, data}) => {
     case HMQ_SEARCH + START:
       return {...hmqSearch, loading: true, request: data}
     case HMQ_SEARCH + SUCCESS:
+
       return {
         ...hmqSearch,
         loading: false,
-        loaded: true
+        loaded: true,
+        request: data.initdata,
+        entities: mapper(data.searchResults),
       }
     case HMQ_SEARCH + FAIL:
-      return {...hmqSearchInit}
+      return {...hmqSearch, loading: false}
     case CLEAN + HMQ_SEARCH:
       return {...hmqSearchInit}
   }

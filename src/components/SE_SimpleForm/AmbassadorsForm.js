@@ -10,12 +10,6 @@ import A_InputText from 'A_InputText'
 import Header from './Header'
 import A_Btn from 'A_Btn'
 
-// "email": "harry@hogwarts.com",
-//   "name": "Harry Potter",
-//   "country": "England",
-//   "bio": "Harry likes selling magic cookies"
-
-
 class SE_SimpleFormAmbassadorsForm extends Component {
 
   state = {
@@ -31,7 +25,6 @@ class SE_SimpleFormAmbassadorsForm extends Component {
       bio: ''
     }
   }
-
 
   onSubmit = (handleSubmit) => () => {
     const {values} = this.state

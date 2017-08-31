@@ -4,12 +4,10 @@ import './styles.scss';
 import {cssClassName} from 'utils'
 const cn = cssClassName('SE_HmqSearch')
 import A_Container from 'A_Container'
-// import A_H from 'A_H'
 import M_NoResults from 'M_NoResults'
-// import {safeDA} from "utils/index"
-// import A_Link from 'A_Link'
 import O_Search from 'O_Search'
 import history from 'history'
+import O_Transaction from 'O_Transaction'
 
 class SE_HmqSearch extends Component {
 
@@ -17,22 +15,28 @@ class SE_HmqSearch extends Component {
     history.push('/hmq-explorer/search?searchTerm=' + searchString)
   }
 
+  getResults(entities){
+    return(
+      entities.map( ({type, ...props}, i) => (
+        <O_Transaction key={'key_' + i} {...props} type={type} up={i == 0}/>
+      ))
+    )
+  }
+
   render() {
-    const {request} = this.props
+    const {request, show, entities} = this.props
 
-    // const {articles, total, request, show} = this.props
-    // let result
-    // if(show){
-    //   result = total === 0 ?
-    //     <M_NoResults request={request} />
-    //     : this.getResults(articles)
-    // }
-
-    const result = <M_NoResults request={request} />
+    let result
+    if(show){
+      result = entities.length === 0 ?
+        <M_NoResults request={request} />
+        : this.getResults(entities)
+    }
     return (
       <div>
         <div className={cn('search')}>
           <O_Search
+            value={request}
             placeholder="Search TxHash or Address"
             focus
             handleSubmit={this.handleSubmit}
@@ -49,8 +53,7 @@ class SE_HmqSearch extends Component {
 }
 
 SE_HmqSearch.propTypes = {
-  articles: T.array.isRequired,
-  total: T.number.isRequired,
+  entities: T.array.isRequired,
   request: T.string
 };
 
