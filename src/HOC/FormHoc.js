@@ -2,24 +2,28 @@ import React, { Component } from "react";
 import {validateEmail, validateWebsiteName} from 'utils/validateHelpers'
 
 
-export const WithValidation = ComposedComponent => class WithValidation extends Component {
+export default (ComposedComponent) => class FormHoc extends Component {
 
   state = {
-    values: {
-      businessDescription: '',
-      bio: '',
-      companyWebsite: '',
-      email: '',
-      name: ''
-    },
+    values: {},
     submitted: false,
-    errors: {
-      businessDescription: '',
-      bio: '',
-      companyWebsite: '',
-      email: '',
-      name: ''
-    }
+    errors: {}
+  };
+
+  onStateDataCatch = (inputTypes) => {
+    let nextValues, nextErrors;
+    inputTypes.forEach(inputType => {
+      nextValues = Object.assign({}, nextValues, {
+        [inputType]: ''
+      });
+      nextErrors = Object.assign({}, nextErrors, {
+        [inputType]: ''
+      });
+    });
+    this.setState({
+      values: nextValues,
+      errors: nextErrors
+    });
   };
 
   onChange = (name, value, error) => {
@@ -99,6 +103,7 @@ export const WithValidation = ComposedComponent => class WithValidation extends 
 
   render() {
     return <ComposedComponent {...this.props}
+                              throwHocStateData = {this.onStateDataCatch}
                               values = {this.state.values}
                               submitted = {this.state.submitted}
                               errors = {this.state.errors}

@@ -42,10 +42,6 @@ module.exports = {
     "no-irregular-whitespace": 0,
     "no-debugger": 0,
     "no-console": 0,
-    "linebreak-style": [
-      "error",
-      "windows"
-    ],
     "jest/no-focused-tests": "warn",
     "jest/no-identical-title": "error",
     "jest/valid-expect": "error"

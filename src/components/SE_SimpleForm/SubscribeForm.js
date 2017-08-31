@@ -3,7 +3,7 @@ import * as T from "prop-types";
 import './styles.scss';
 import {cssClassName} from 'utils'
 const cn = cssClassName('SE_SimpleForm');
-import {WithValidation} from 'HOC/WithValidation'
+import FormHoc from 'HOC/FormHoc'
 import A_H from 'A_H'
 import A_P from 'A_P'
 import A_InputText from 'A_InputText'
@@ -11,6 +11,10 @@ import Header from './Header'
 import A_Btn from 'A_Btn'
 
 class SE_SimpleFormSubscribeForm extends Component {
+
+  componentWillMount() {
+    this.props.throwHocStateData(['email']);
+  }
 
   render() {
     const {handleSubmit} = this.props.onSubmit;
@@ -50,7 +54,9 @@ class SE_SimpleFormSubscribeForm extends Component {
               label="Email"
               placeholder="your@email.com"
               error={errors.email}
-              handleChange={text => this.props.onChange('email', text, errors.email)}
+              handleChange={
+                text => this.props.onChange('email', text, errors.email)
+              }
             />
           </div>
         )}
@@ -63,4 +69,4 @@ SE_SimpleFormSubscribeForm.propTypes = {
   handleSubmit: T.func.isRequired
 };
 
-export default WithValidation(SE_SimpleFormSubscribeForm);
+export default FormHoc(SE_SimpleFormSubscribeForm);

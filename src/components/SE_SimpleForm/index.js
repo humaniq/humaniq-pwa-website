@@ -21,7 +21,7 @@ class SE_SimpleForm extends Component {
   }
 
   render() {
-    const {page, handleSubmit} = this.props
+    const {page, handleSubmit} = this.props;
 
     return (
       <div className={cn('background')}>

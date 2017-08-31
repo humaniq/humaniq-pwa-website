@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import './styles.scss';
 import {cssClassName} from 'utils'
-const cn = cssClassName('SE_SimpleForm')
+const cn = cssClassName('SE_SimpleForm');
 import * as T from "prop-types";
-import {WithValidation} from 'HOC/WithValidation'
+import FormHoc from 'HOC/FormHoc'
 import A_H from 'A_H'
 import A_P from 'A_P'
 import A_InputText from 'A_InputText'
@@ -11,6 +11,11 @@ import Header from './Header'
 import A_Btn from 'A_Btn'
 
 class SE_SimpleFormJoinForm extends Component {
+
+  componentWillMount() {
+    this.props.throwHocStateData(['email', 'companyWebsite', 'businessDescription']);
+  }
+
 
   render() {
     const {handleSubmit} = this.props.onSubmit;
@@ -81,4 +86,4 @@ SE_SimpleFormJoinForm.propTypes = {
   handleSubmit: T.func.isRequired
 };
 
-export default WithValidation(SE_SimpleFormJoinForm);
+export default FormHoc(SE_SimpleFormJoinForm);
