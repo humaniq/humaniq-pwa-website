@@ -8,7 +8,7 @@ class A_InputText extends Component {
 
   render(){
     const {value, handleChange, placeholder, error, label, onFocus} = this.props;
-    const nonEmpty = !!value
+    const nonEmpty = !!value;
     return (
       <fieldset className={cn('root')}>
         <div className={cn('inner')}>

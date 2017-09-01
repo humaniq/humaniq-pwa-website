@@ -7,28 +7,36 @@ export default (ComposedComponent) => class FormHoc extends Component {
   state = {
     values: {},
     submitted: false,
-    errors: {}
+    errors: {},
+    validateSettings: {}
   };
 
-  onStateDataCatch = (inputTypes) => {
-    let nextValues, nextErrors;
-    inputTypes.forEach(inputType => {
-      nextValues = Object.assign({}, nextValues, {
-        [inputType]: ''
-      });
-      nextErrors = Object.assign({}, nextErrors, {
-        [inputType]: ''
-      });
+  onStateDataCatch = (inputProps) => {
+
+    let values, validateSettings;
+
+    inputProps.forEach(inputProp => {
+      values = {...values, [inputProp.name]: ''};
+      validateSettings = {...validateSettings,
+        [inputProp.name]: {
+          'type': inputProp.type,
+          'required': inputProp.required || false,
+          'customErrors': inputProp.customErrors || null
+        }}
     });
+
     this.setState({
-      values: nextValues,
-      errors: nextErrors
+      values: values,
+      errors: values,
+      validateSettings: validateSettings
     });
+
   };
 
   onChange = (name, value, error) => {
+    const {validateSettings} = this.state;
     if (error) {
-      this.validate({[name]: value});
+      this.validate({[name]: value}, validateSettings);
     }
     this.setState({values: {...this.state.values, [name]:value}})
   };
@@ -39,55 +47,44 @@ export default (ComposedComponent) => class FormHoc extends Component {
   };
 
   onSubmit = (handleSubmit) => () => {
-    const {values} = this.state;
-    if (this.validate(values)){
+    const {values, validateSettings} = this.state;
+    if (this.validate(values, validateSettings)){
       handleSubmit(values);
       this.setState({submitted: true})
     }
   };
 
-  validate(values) {
+  validate(values, settings) {
     let errors = {};
-
     for (let valueName in values) {
       if (values.hasOwnProperty(valueName)) {
         const value = values[valueName];
-        switch (valueName) {
-          case 'bio':
-            if (!value) {
-              errors[valueName] = 'Please fill bio field'
-            } else {
-              errors[valueName] = ''
-            }
-            break;
-          case 'businessDescription':
-            if (!value) {
-              errors[valueName] = 'Please fill description field'
-            } else {
-              errors[valueName] = ''
-            }
-            break;
-          case 'companyWebsite':
-            if (!value) {
-              errors[valueName] = 'Please fill website name field'
-            } else if (!validateWebsiteName(value)) {
-              errors[valueName] = 'Looks like an invalid url address'
-            } else {
-              errors[valueName] = ''
-            }
-            break;
+        const validateSettings = settings[valueName];
+        const required = settings[valueName].required;
+        const customErrors = settings[valueName].customErrors;
+
+        switch (validateSettings.type) {
           case 'email':
-            if (!value) {
-              errors[valueName] = 'Please fill out our email form'
+            if (required && !value) {
+              errors[valueName] = customErrors.ifRequired || 'Please fill email field'
             } else if (!validateEmail(value)) {
               errors[valueName] = 'Looks like an invalid email address'
             } else {
               errors[valueName] = ''
             }
             break;
-          case 'name':
+          case 'url':
             if (!value) {
-              errors[valueName] = 'Please fill out your full name'
+              errors[valueName] = customErrors.ifRequired || 'Please fill url field'
+            } else if (!validateWebsiteName(value)) {
+              errors[valueName] = 'Looks like an invalid url address'
+            } else {
+              errors[valueName] = ''
+            }
+            break;
+          case 'text':
+            if (!value) {
+              errors[valueName] = customErrors.ifRequired || 'Please fill text field'
             } else {
               errors[valueName] = ''
             }

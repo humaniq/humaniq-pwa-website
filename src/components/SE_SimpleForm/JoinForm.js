@@ -12,18 +12,71 @@ import A_Btn from 'A_Btn'
 
 class SE_SimpleFormJoinForm extends Component {
 
-  componentWillMount() {
-    this.props.throwHocStateData(['email', 'companyWebsite', 'businessDescription']);
+  static inputs() {
+    return ([
+      {
+        name: 'email',
+        type: 'email',
+        required: true,
+        label: 'Email',
+        placeholder: 'your@email.com',
+        customErrors: {}
+      },
+      {
+        name: 'companyWebsite',
+        type: 'url',
+        required: true,
+        label: 'Website',
+        placeholder: 'your-company-website.com',
+        customErrors: {
+          ifRequired: 'Please fill website name field'
+        }
+      },
+      {
+        name: 'businessDescription',
+        type: 'text',
+        required: true,
+        label: 'Business description',
+        placeholder: 'What are you building?',
+        customErrors: {
+          ifRequired: 'Please fill description field'
+        }
+      }
+    ])
   }
 
+  componentWillMount() {
+    const inputsState = SE_SimpleFormJoinForm.inputs().map((input) => (
+      {
+        name: input.name,
+        type: input.type,
+        required: input.required || false,
+        customErrors: input.customErrors || null
+      }
+    ));
+
+    this.props.throwHocStateData(inputsState);
+  }
 
   render() {
     const {handleSubmit} = this.props.onSubmit;
-    const {
-      values: {email, companyWebsite, businessDescription},
-      errors,
-      submitted,
-    } = this.props;
+    const {errors, submitted,} = this.props;
+
+    const inputs = SE_SimpleFormJoinForm.inputs().map(input => {
+      return (
+        <A_InputText
+          key = {input.name}
+          value = {this.props.values[input.name] || ''}
+          onChange
+          label = {input.label}
+          placeholder = {input.placeholder}
+          error = {errors[input.name]}
+          handleChange = {
+            text => this.props.onChange(input.name, text, errors[input.name])
+          }
+        />
+      )
+    });
 
     return (
       <form className={cn('form')} onSubmit={this.props.onFormSubmit}>
@@ -51,30 +104,7 @@ class SE_SimpleFormJoinForm extends Component {
             <div className={cn('text')}>
               <A_P type='third'>Tell us about what you’re working on and we’ll get back to you.</A_P>
             </div>
-            <A_InputText
-              value={email}
-              onChange
-              label="Email"
-              placeholder="your@email.com"
-              error={errors.email}
-              handleChange={text => this.props.onChange('email', text, errors.email)}
-            />
-            <A_InputText
-              value={companyWebsite}
-              onChange
-              label="Website"
-              placeholder="your-company-website.com"
-              error={errors.companyWebsite}
-              handleChange={text => this.props.onChange('companyWebsite', text, errors.companyWebsite)}
-            />
-            <A_InputText
-              value={businessDescription}
-              onChange
-              label="Business description"
-              placeholder="What are you building?"
-              error={errors.businessDescription}
-              handleChange={text => this.props.onChange('businessDescription', text, errors.businessDescription)}
-            />
+            {inputs}
           </div>
         )}
       </form>

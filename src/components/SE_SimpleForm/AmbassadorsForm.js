@@ -18,17 +18,71 @@ import A_Btn from 'A_Btn';
 
 class SE_SimpleFormAmbassadorsForm extends Component {
 
+  static inputs() {
+    return ([
+      {
+        name: 'email',
+        type: 'email',
+        required: true,
+        label: 'Email',
+        placeholder: 'your@email.com',
+        customErrors: {}
+      },
+      {
+        name: 'name',
+        type: 'text',
+        required: true,
+        label: 'Your name',
+        placeholder: 'Bob Smith',
+        customErrors: {
+          ifRequired: 'Please fill out your full name'
+        }
+      },
+      {
+        name: 'bio',
+        type: 'text',
+        required: true,
+        label: 'Bio',
+        placeholder: 'Tell us about yourself. Why would you like to become an ambassador?',
+        customErrors: {
+          ifRequired: 'Please fill bio field'
+        }
+      }
+    ])
+  }
+
   componentWillMount() {
-    this.props.throwHocStateData(['email', 'name', 'bio']);
+    const inputsState = SE_SimpleFormAmbassadorsForm.inputs().map((input) => (
+      {
+        name: input.name,
+        type: input.type,
+        required: input.required || false,
+        customErrors: input.customErrors || null
+      }
+    ));
+
+    this.props.throwHocStateData(inputsState);
   }
 
   render() {
     const {handleSubmit} = this.props;
-    const {
-      values: {email, name, bio},
-      errors,
-      submitted,
-    } = this.props;
+    const {errors, submitted} = this.props;
+
+    const inputs = SE_SimpleFormAmbassadorsForm.inputs().map(input => {
+      return (
+        <A_InputText
+          key = {input.name}
+          value = {this.props.values[input.name] || ''}
+          onChange
+          label = {input.label}
+          placeholder = {input.placeholder}
+          error = {errors[input.name]}
+          handleChange = {
+            text => this.props.onChange(input.name, text, errors[input.name])
+          }
+        />
+      )
+    });
 
     return (
       <form className={cn('form')} onSubmit={this.props.onFormSubmit}>
@@ -56,30 +110,7 @@ class SE_SimpleFormAmbassadorsForm extends Component {
             <div className={cn('text')}>
               <A_P type='third'>Tell us about yourself and why you want to become an ambassador, and we'll get back to you.</A_P>
             </div>
-            <A_InputText
-              value={email}
-              onChange
-              label="Email"
-              placeholder="your@email.com"
-              error={errors.email}
-              handleChange={text => this.props.onChange('email', text, errors.email)}
-            />
-            <A_InputText
-              value={name}
-              onChange
-              label="Your name"
-              placeholder="Bob Smith"
-              error={errors.name}
-              handleChange={text => this.props.onChange('name', text, errors.name)}
-            />
-            <A_InputText
-              value={bio}
-              onChange
-              label="Bio"
-              placeholder="Tell us about yourself. Why would you like to become an ambassador?"
-              error={errors.bio}
-              handleChange={text => this.props.onChange('bio', text, errors.bio)}
-            />
+            {inputs}
           </div>
         )}
       </form>
