@@ -15,70 +15,58 @@ import A_Btn from 'A_Btn';
 //   "country": "England",
 //   "bio": "Harry likes selling magic cookies"
 
+const fieldsSettings = [
+  {
+    name: 'email',
+    type: 'email',
+    required: true,
+    label: 'Email',
+    placeholder: 'your@email.com',
+    customErrors: {}
+  },
+  {
+    name: 'name',
+    type: 'text',
+    required: true,
+    label: 'Your name',
+    placeholder: 'Bob Smith',
+    customErrors: {
+      ifRequired: 'Please fill out your full name'
+    }
+  },
+  {
+    name: 'bio',
+    type: 'text',
+    required: true,
+    label: 'Bio',
+    placeholder: 'Tell us about yourself. Why would you like to become an ambassador?',
+    customErrors: {
+      ifRequired: 'Please fill bio field'
+    }
+  }
+];
 
 class SE_SimpleFormAmbassadorsForm extends Component {
 
-  static inputs() {
-    return ([
-      {
-        name: 'email',
-        type: 'email',
-        required: true,
-        label: 'Email',
-        placeholder: 'your@email.com',
-        customErrors: {}
-      },
-      {
-        name: 'name',
-        type: 'text',
-        required: true,
-        label: 'Your name',
-        placeholder: 'Bob Smith',
-        customErrors: {
-          ifRequired: 'Please fill out your full name'
-        }
-      },
-      {
-        name: 'bio',
-        type: 'text',
-        required: true,
-        label: 'Bio',
-        placeholder: 'Tell us about yourself. Why would you like to become an ambassador?',
-        customErrors: {
-          ifRequired: 'Please fill bio field'
-        }
-      }
-    ])
-  }
-
   componentWillMount() {
-    const inputsState = SE_SimpleFormAmbassadorsForm.inputs().map((input) => (
-      {
-        name: input.name,
-        type: input.type,
-        required: input.required || false,
-        customErrors: input.customErrors || null
-      }
-    ));
-
-    this.props.throwHocStateData(inputsState);
+    this.props.throwHocStateData(fieldsSettings);
   }
+
 
   render() {
-    const {handleSubmit} = this.props;
-    const {errors, submitted} = this.props;
+    const {errors, submitted, onSubmit:{handleSubmit}}  = this.props;
 
-    const inputs = SE_SimpleFormAmbassadorsForm.inputs().map(input => {
+    const fields = fieldsSettings.map(({name, label, placeholder}) => {
       return (
         <A_InputText
-          key = {input.name}
-          value = {this.props.values[input.name] || ''}
+          key = {name}
+          value = {this.props.values[name] || ''}
           onChange
-          label = {input.label}
-          placeholder = {input.placeholder}
-          error = {errors[input.name]}
+          label = {label}
+          placeholder = {placeholder}
+          error = {errors[name]}
           handleChange = {
-            text => this.props.onChange(input.name, text, errors[input.name])
+            text => this.props.onChange(name, text)
           }
         />
       )
@@ -110,7 +98,7 @@ class SE_SimpleFormAmbassadorsForm extends Component {
             <div className={cn('text')}>
               <A_P type='third'>Tell us about yourself and why you want to become an ambassador, and we'll get back to you.</A_P>
             </div>
-            {inputs}
+            {fields}
           </div>
         )}
       </form>

@@ -10,69 +10,58 @@ import A_InputText from 'A_InputText'
 import Header from './Header'
 import A_Btn from 'A_Btn'
 
+const fieldsSettings = [
+  {
+    name: 'email',
+    type: 'email',
+    required: true,
+    label: 'Email',
+    placeholder: 'your@email.com',
+    customErrors: {}
+  },
+  {
+    name: 'companyWebsite',
+    type: 'url',
+    required: true,
+    label: 'Website',
+    placeholder: 'your-company-website.com',
+    customErrors: {
+      ifRequired: 'Please fill website name field'
+    }
+  },
+  {
+    name: 'businessDescription',
+    type: 'text',
+    required: true,
+    label: 'Business description',
+    placeholder: 'What are you building?',
+    customErrors: {
+      ifRequired: 'Please fill description field'
+    }
+  }
+];
+
 class SE_SimpleFormJoinForm extends Component {
 
-  static inputs() {
-    return ([
-      {
-        name: 'email',
-        type: 'email',
-        required: true,
-        label: 'Email',
-        placeholder: 'your@email.com',
-        customErrors: {}
-      },
-      {
-        name: 'companyWebsite',
-        type: 'url',
-        required: true,
-        label: 'Website',
-        placeholder: 'your-company-website.com',
-        customErrors: {
-          ifRequired: 'Please fill website name field'
-        }
-      },
-      {
-        name: 'businessDescription',
-        type: 'text',
-        required: true,
-        label: 'Business description',
-        placeholder: 'What are you building?',
-        customErrors: {
-          ifRequired: 'Please fill description field'
-        }
-      }
-    ])
-  }
-
   componentWillMount() {
-    const inputsState = SE_SimpleFormJoinForm.inputs().map((input) => (
-      {
-        name: input.name,
-        type: input.type,
-        required: input.required || false,
-        customErrors: input.customErrors || null
-      }
-    ));
-
-    this.props.throwHocStateData(inputsState);
+    this.props.throwHocStateData(fieldsSettings);
   }
 
   render() {
-    const {handleSubmit} = this.props.onSubmit;
-    const {errors, submitted,} = this.props;
 
-    const inputs = SE_SimpleFormJoinForm.inputs().map(input => {
+    const {errors, submitted, onSubmit:{handleSubmit}}  = this.props;
+
+    const fields = fieldsSettings.map(({name, label, placeholder}) => {
       return (
         <A_InputText
-          key = {input.name}
-          value = {this.props.values[input.name] || ''}
+          key = {name}
+          value = {this.props.values[name] || ''}
           onChange
-          label = {input.label}
-          placeholder = {input.placeholder}
-          error = {errors[input.name]}
+          label = {label}
+          placeholder = {placeholder}
+          error = {errors[name]}
           handleChange = {
-            text => this.props.onChange(input.name, text, errors[input.name])
+            text => this.props.onChange(name, text)
           }
         />
       )
@@ -104,7 +93,7 @@ class SE_SimpleFormJoinForm extends Component {
             <div className={cn('text')}>
               <A_P type='third'>Tell us about what you’re working on and we’ll get back to you.</A_P>
             </div>
-            {inputs}
+            {fields}
           </div>
         )}
       </form>

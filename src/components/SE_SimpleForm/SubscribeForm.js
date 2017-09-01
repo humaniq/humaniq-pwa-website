@@ -10,56 +10,46 @@ import A_InputText from 'A_InputText'
 import Header from './Header'
 import A_Btn from 'A_Btn'
 
+const fieldsSettings = [
+  {
+    name: 'email',
+    type: 'email',
+    validationTypes: {
+      required: true,
+      ranged: {from: 2, to:8},
+    },
+    label: 'Email',
+    placeholder: 'your@email.com',
+    customErrors: {
+      ifRequired: 'Please fill out our email form'
+    }
+  }
+];
+
 class SE_SimpleFormSubscribeForm extends Component {
 
-  static inputs() {
-    return ([
-      {
-        name: 'email',
-        type: 'email',
-        required: true,
-        label: 'Email',
-        placeholder: 'your@email.com',
-        customErrors: {
-          ifRequired: 'Please fill out our email form'
-        }
-      }
-    ])
-  }
-
   componentWillMount() {
-    const inputsState = SE_SimpleFormSubscribeForm.inputs().map((input) => (
-      {
-        name: input.name,
-        type: input.type,
-        required: input.required || false,
-        customErrors: input.customErrors || null
-      }
-    ));
-
-    this.props.throwHocStateData(inputsState);
+    this.props.throwHocStateData(fieldsSettings);
   }
 
   render() {
-    const {handleSubmit} = this.props.onSubmit;
-    const {errors, submitted} = this.props;
+    const {errors, submitted, onSubmit:{handleSubmit}}  = this.props;
 
-    const inputs = SE_SimpleFormSubscribeForm.inputs().map(input => {
+    const fields = fieldsSettings.map(({name, label, placeholder}) => {
       return (
         <A_InputText
-          key = {input.name}
-          value = {this.props.values[input.name] || ''}
+          key = {name}
+          value = {this.props.values[name] || ''}
           onChange
-          label = {input.label}
-          placeholder = {input.placeholder}
-          error = {errors[input.name]}
+          label = {label}
+          placeholder = {placeholder}
+          error = {errors[name]}
           handleChange = {
-            text => this.props.onChange(input.name, text, errors[input.name])
+            text => this.props.onChange(name, text)
           }
         />
       )
     });
-
 
     return (
       <form  className={cn('form')} onSubmit={this.props.onFormSubmit}>
@@ -89,7 +79,7 @@ class SE_SimpleFormSubscribeForm extends Component {
               <A_P type='third'>Enter your email and join the community of more than 25,000+ people worldwide. Receive
                 only relevant emails about Humaniq and crypto community. </A_P>
             </div>
-            {inputs}
+            {fields}
           </div>
         )}
       </form>

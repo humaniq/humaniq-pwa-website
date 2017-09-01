@@ -11,31 +11,27 @@ export default (ComposedComponent) => class FormHoc extends Component {
     validateSettings: {}
   };
 
-  onStateDataCatch = (inputProps) => {
+  onStateDataCatch = (fieldsProps) => {
 
     let values, validateSettings;
 
-    inputProps.forEach(inputProp => {
-      values = {...values, [inputProp.name]: ''};
+    fieldsProps.forEach(fieldProp => {
+      values = {...values, [fieldProp.name]: ''};
       validateSettings = {...validateSettings,
-        [inputProp.name]: {
-          'type': inputProp.type,
-          'required': inputProp.required || false,
-          'customErrors': inputProp.customErrors || null
+        [fieldProp.name]: {
+          'type': fieldProp.type,
+          'required': fieldProp.required || false,
+          'customErrors': fieldProp.customErrors || null
         }}
     });
 
-    this.setState({
-      values: values,
-      errors: values,
-      validateSettings: validateSettings
-    });
+    this.setState({values, errors: values, validateSettings});
 
   };
 
-  onChange = (name, value, error) => {
+  onChange = (name, value) => {
     const {validateSettings} = this.state;
-    if (error) {
+    if (this.state.errors[name]) {
       this.validate({[name]: value}, validateSettings);
     }
     this.setState({values: {...this.state.values, [name]:value}})
