@@ -69,7 +69,7 @@ class SE_SimpleFormAmbassadorsForm extends Component {
           break;
         case 'country':
           if (!value) {
-            errors[valueName] = 'Please choose country'
+            errors[valueName] = 'Please choose your country'
           } else {
             errors[valueName] = ''
           }
@@ -150,6 +150,8 @@ class SE_SimpleFormAmbassadorsForm extends Component {
               handleChange={text => this.onChange('name', text, errors.name)}
             />
             <Dropdown
+              label="Country"
+              placeholder="Choose country"
               selected={country}
               options={countries}
               onChange={country => this.onChange('country', country, errors.country)}
