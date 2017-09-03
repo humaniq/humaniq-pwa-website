@@ -3,7 +3,7 @@
 
 .a-p{
   &_type{
-    &_animated-hero{
+    &_animated-hero {
       font-size: 1.6rem;
       line-height: 2.8rem;
       text-align: center;
@@ -14,7 +14,7 @@
       }
     }
 
-    &_video-hero{
+    &_video-hero {
       font-size: 1.6rem;
       line-height: 2.8rem;
       text-align: center;
@@ -27,7 +27,7 @@
       border-left: $interactive-border-l;
       padding: .3rem 0 .3rem 1.7rem;
     }
-    &_hmq-e{
+    &_hmq-e {
       font-size: 1.3rem;
       line-height: 2rem;
       color: #333333;
@@ -37,16 +37,16 @@
       font-size: 18px;
       line-height: 28.0px;
     }
-    &_second{
+    &_second {
       font-size: 14px;
     }
-    &_third{
+    &_third {
       font-size: 1.5rem;
       line-height: 2.6rem;
-      &-center{
+      &-center {
         @extend .a-p_type_third;
         text-align: center;
-        &_white{
+        &_white {
           @extend .a-p_type_third-center;
           color: $white;
         }
@@ -54,22 +54,45 @@
       //@include media($mobile) {
       //  text-align: justify
       //}
+      &_white{
+        color: $white;
+      }
     }
-    &_fourth{
+    &_fourth {
       font-size: 1.5rem;
       font-weight: 600;
       line-height: 2.6rem;
       color: $brand;
     }
-    &_fifth{
+    &_fifth {
       font-size: 13px;
       line-height: 1.54rem;
       color: $black-2;
     }
-    &_sixth{
+    &_sixth {
       font-size: 1.3rem;
       line-height: 2rem;
       color: #48474c;
+    }
+    &_android-white {
+      font-size: 1.7rem;
+      line-height: 2.6rem;
+      padding-top: 1rem;
+      padding-bottom: 3rem;
+      color: $white;
+      @include media($mobile) {
+        padding-bottom: 2rem;
+      }
+    }
+    &_android-black {
+      font-size: 1.7rem;
+      line-height: 2.6rem;
+      padding-top: 1.5rem;
+      padding-bottom: 4rem;
+      color: #565759;
+      @include media($mobile) {
+        padding-top: 1rem;
+      }
     }
   }
 }

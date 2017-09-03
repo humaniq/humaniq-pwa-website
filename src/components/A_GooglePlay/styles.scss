@@ -5,16 +5,6 @@
 /* ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## */
 
 .a-google-play {
-  &__div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 40rem;
-    margin: -3rem auto;
-    border-radius: .2rem;
-    background-color: $white;
-    box-shadow: 0 1px 1px 0 rgba(97, 127, 152, 0.2), 1px 0 0 0 rgba(97, 127, 152, 0.1), -1px 0 0 0 rgba(97, 127, 152, 0.1);
-  }
   &__google-bt {
     width: 18rem;
   }
