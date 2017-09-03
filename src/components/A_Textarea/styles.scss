@@ -29,7 +29,7 @@
       height: 3.3rem;
       transition: height .3s;
       &:focus {
-        height: 14rem;
+        height: 8rem;
       }
       &::placeholder {
         color: $form-inactive-color;
@@ -85,7 +85,8 @@
 
   }
   &__error{
-    height: 1.2rem;
+    //height: 1.2rem;
+    line-height: 1.5rem;
     font-size: 1.2rem;
     color: $form-error-color
   }
