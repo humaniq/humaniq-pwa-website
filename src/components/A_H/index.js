@@ -18,6 +18,12 @@ const A_H = ({type, icon, children, center}) =>{
     case 'section':
       tagType = 'h2'
       break;
+    case 'android-white':
+      tagType = 'h2'
+      break;
+    case 'android-black':
+      tagType = 'h2'
+      break;
     case 'timeline':
       tagType = 'h2'
       break;
@@ -84,6 +90,8 @@ A_H.propTypes = {
     'xxl', //black title used at error page 60
     'openitem', //light black used in open source page
     'hmq-title', //
+    'android-white', // white bold 30 used on mobile-app
+    'android-black', // white bold 30 used on mobile-app
   ]),
   icon: T.oneOf([
     'placeholder', // placeholder icon

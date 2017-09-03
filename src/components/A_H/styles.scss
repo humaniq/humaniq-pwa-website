@@ -52,6 +52,24 @@ $icon-size: 20rem;
       color: $white;
       padding-bottom: 1rem;
     }
+    &_android-white {
+      font-size: 3rem;
+      font-weight: bold;
+      color: $white;
+      padding-bottom: 1rem;
+      @include media($mobile) {
+        font-size: 2.4rem;
+      }
+    }
+    &_android-black {
+      font-size: 3rem;
+      font-weight: bold;
+      color: $gray-3;
+      padding-bottom: 1rem;
+      @include media($mobile) {
+        font-size: 2.4rem;
+      }
+    }
     &_hero {
       font-size: 2.5rem;
       font-weight: bold;
