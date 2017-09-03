@@ -4,38 +4,45 @@ import './Holder.scss';
 import A_Container from 'A_Container';
 import {cssClassName} from 'utils';
 const cn = cssClassName('O_TransactionHolder');
+import moment from 'moment';
+import {dateString} from 'utils/propsValidationHelpers';
+import A_Link from 'A_Link'
 
 class O_TransactionHolder extends Component {
 
   render() {
-    const {address, rank, pecentage, txns, usdAmount, hmqAmount} = this.props
+    const {address, rank, pecentage, txns, usdAmount, hmqAmount, time, up} = this.props
     return (
       <div>
         <A_Container type='wide'>
           <table className={cn('asset-stats')}>
             <tbody>
-            <tr className={cn('asset-stats__tr')}>
+            <tr className={cn('asset-stats__tr', {up})}>
               <td className={cn('asset-stats__td')}>
-                <span className={cn('asset-stats__hash')}>Address:</span>
-                <span className={cn('asset-stats__block')}>Rank:</span>
+                {address && <span className={cn('asset-stats__hash')}>Address:</span>}
+                {rank && <span className={cn('asset-stats__block')}>Rank:</span>}
               </td>
               <td className={cn('asset-stats__td')}>
-                <a href="javascript:void(0);" className={cn('asset-stats__hash-link')}>{address}</a>
-                <a href="javascript:void(0);" className={cn('asset-stats__block-link')}>{rank}</a>
+                {address && <A_Link to={`/hmq-explorer/token-holders/${address}`} className={cn('asset-stats__hash-link')}>{address}</A_Link>}
+                {rank && <span className={cn('value')}>{rank}</span>}
               </td>
               <td className={cn('asset-stats__td')}>
-                <span className={cn('asset-stats__from')}>Pecentage:</span>
-                <span className={cn('asset-stats__to')}>Txns:</span>
+                {pecentage && <span className={cn('asset-stats__from')}>Pecentage:</span>}
+                {txns && <span className={cn('asset-stats__to')}>Txns:</span>}
               </td>
               <td className={cn('asset-stats__td')}>
-                <a href="javascript:void(0);" className={cn('asset-stats__from-link')}>{pecentage}</a>
-                <a href="javascript:void(0);" className={cn('asset-stats__to-link')}>{txns}</a>
+                {pecentage && <span className={cn('value')}>{pecentage} %</span>}
+                {txns && <span className={cn('value')}>{txns}</span>}
               </td>
               <td className={cn('asset-stats__td')}>
-                <span className={cn('asset-stats__price-hmq')}>{hmqAmount} HMQ</span>
-                <span className={cn('asset-stats__price-usd')}>${usdAmount} USD</span>
+                {hmqAmount && <span className={cn('asset-stats__price-hmq')}>{hmqAmount} HMQ</span>}
+                {usdAmount && <span className={cn('asset-stats__price-usd')}>${usdAmount} USD</span>}
               </td>
               <td className={cn('asset-stats__td')}>
+                {time && <small className={cn('asset-stats__time asset-stats__time--success')}>
+                  <i className={cn('asset-stats__icon o-asset-stats__icon--success')}></i>
+                  {moment(time).fromNow()}
+                </small>}
               </td>
             </tr>
             </tbody>
@@ -48,12 +55,13 @@ class O_TransactionHolder extends Component {
 
 
 O_TransactionHolder.propTypes = {
-  address: T.string.isRequired,
-  rank: T.number.isRequired,
-  pecentage: T.number.isRequired,
-  txns: T.string.isRequired,
-  usdAmount: T.number.isRequired,
-  hmqAmount: T.number.isRequired,
+  address: T.string,
+  rank: T.number,
+  pecentage: T.string,
+  txns: T.number,
+  usdAmount: T.string,
+  hmqAmount: T.string,
+  time: dateString,
 };
 
 export default O_TransactionHolder

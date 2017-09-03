@@ -137,9 +137,9 @@ class SE_Partners extends Component {
           <O_TextUsHere
             {...{
               title: 'Join our Community',
-              text: 'Join Humaniq ever growing network. Get in touch if your organization would like to join the network.',
+              text: 'Join Humaniq\'s ever growing network. Get in touch if your organization would like to join the network.',
               link: {
-                linkText: 'Drop off your information',
+                linkText: 'Leave your information',
                 url: 'mailto:info@humaniq.com'
               }
             }}

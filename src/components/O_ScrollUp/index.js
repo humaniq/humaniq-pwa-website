@@ -1,14 +1,17 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import * as T from "prop-types";
 import './styles.scss';
 import {cssClassName} from 'utils'
+
 const cn = cssClassName('O_ScrollUp')
 import A_Image from 'A_Image'
+import {Motion, spring} from 'react-motion'
 
 class O_ScrollUp extends Component {
 
   state = {
-    hide: true
+    hide: true,
+    up: false,
   }
 
   componentDidMount() {
@@ -28,28 +31,40 @@ class O_ScrollUp extends Component {
     }
   }
 
+
   render() {
     const {initTop, children} = this.props
-    const {hide} = this.state
+    const {hide, up} = this.state
 
-    return(
-      <div className={cn('wrapper')}>
-        <div className={cn('root', {hide})} onClick={() => window.scrollTo({
-          top: 0,
-          left: 0,
-          behavior: 'smooth'
-        })}
-        ><div className={cn('h-height')}>.</div>
-          <div style={{top: initTop}} className={cn('button')}>
-            <span className={cn('button-icon')}><A_Image src="/img/icons/download-3@2x.png" alt='go up'/></span>
-            <span className={cn('button-text')}>Go up</span>
+    return (
+      <Motion
+        style={{
+          x: up ?
+            spring(0, {stiffness: 230, damping: 25, precision: 10})
+            : 500
+        }}
+        onRest={() => this.setState({up: false})}
+      >
+        {s =>
+          <div className={cn('wrapper')} onScroll={this.handleScroll}>
+            {(up && s.x !== 0 && s.x !== 500) ? window.scrollTo(0, s.x) : null}
+            <div className={cn('root', {hide})}
+                 onClick={() => this.setState({up: true})}
+                 ref={e => this.e = e}
+            >
+              <div className={cn('h-height')}>.</div>
+              <div style={{top: initTop}} className={cn('button')}>
+                <span className={cn('button-icon')}><A_Image src="/img/icons/download-3@2x.png" alt='go up'/></span>
+                <span className={cn('button-text')}>Go up</span>
+              </div>
+            </div>
+            <div className={cn('children')}>
+              {children}
+            </div>
+            <div className={cn('h-width', {hide})}>.</div>
           </div>
-        </div>
-        <div className={cn('children')}>
-          {children}
-        </div>
-        <div className={cn('h-width', {hide})}>.</div>
-      </div>
+        }
+      </Motion>
     );
   }
 }

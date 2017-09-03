@@ -72,7 +72,6 @@ const SE_PersonalHome = ({
               type='personal-nav-btn'
             >Go to registration</A_Btn>
           </div>
-
         </div>
       </header>
       <Gallery

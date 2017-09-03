@@ -32,6 +32,7 @@ const A_Link = ({children, type, block, disabled, external, to, ...props}) => {
 A_Link.propTypes = {
   type: T.oneOf([
     'article', // wiki articles not bold text
+    'transactions', // transactions
     'primary', // brand blue link
     'crumbs', // brand  blue link 12, weight 600
     'crumbs-notlast', // brand  blue link 12, weight 600 + icon

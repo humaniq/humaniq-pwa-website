@@ -115,3 +115,18 @@ export const numberFormat = function(n, dp){
     (dp ? '.' + d + ( d.length < dp ?
       ('00000').substr(0, dp - d.length):e):e);
 };
+
+
+export function arrayUnique(array) {
+  var a = array.concat();
+  for(var i=0; i<a.length; ++i) {
+    for(var j=i+1; j<a.length; ++j) {
+      if(JSON.stringify(a[i]) === JSON.stringify(a[j]))
+        a.splice(j--, 1);
+    }
+  }
+
+  return a;
+}
+
+export const apiDateFormat = momentDate => momentDate.format('YYYYMMDDTHHmmss[Z]')
