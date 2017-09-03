@@ -1,4 +1,4 @@
-import {createStore, applyMiddleware} from 'redux';
+import {createStore as reduxCreateStore, applyMiddleware} from 'redux';
 import {composeWithDevTools} from 'redux-devtools-extension';
 import reducer from 'store/rootReducer';
 import error from 'store/middleware/error';
@@ -7,24 +7,29 @@ import butterCmsApi from 'store/middleware/butterCmsApi'
 
 // import createLogger from 'redux-logger';
 
-const enhancer = composeWithDevTools(
-  applyMiddleware(
-    humaniqBackendApi,
-    butterCmsApi,
-    error),
-);
+let store
 
-const store = (initialState = {}) => createStore(
-  reducer,
-  initialState,
-  enhancer
-)
+const createStore = (initialState = {}) => {
+  if (!store) {
+    const enhancer = composeWithDevTools(
+      applyMiddleware(humaniqBackendApi, butterCmsApi, error)
+    )
 
-if (module.hot) {
-  module.hot.accept('./rootReducer', () => {
-    const nextRootReducer = require('./rootReducer');
-    store.replaceReducer(nextRootReducer);
-  });
+    store = reduxCreateStore(
+      reducer,
+      initialState,
+      enhancer
+    )
+  }
+
+  if (module.hot) {
+    module.hot.accept('./', () => {
+      const nextRootReducer = require('./rootReducer')
+      store.replaceReducer(nextRootReducer)
+    })
+  }
+
+  return store
 }
 
-export default store;
+export default createStore
