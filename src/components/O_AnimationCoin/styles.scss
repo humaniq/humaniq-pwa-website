@@ -1,0 +1,231 @@
+@import "common/settings/variables";
+@import "common/utils";
+
+/* Animation Coin
+/* ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## */
+
+.o-animation-coin {
+  &__bg {
+    overflow: hidden;
+    position: relative;
+    height: 50rem;
+    background-image: radial-gradient(circle at 51% 50%, #fed44f, #ffc107);
+    perspective: 100rem;
+  }
+  &__coin {
+    top: 25rem;
+    position: relative;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    transform-origin: center center;
+    transform: rotateY(0);
+    -webkit-animation: rotate-money 10s linear infinite;
+    &.odd {
+      right: 5rem;
+    }
+  }
+  &__nth-scale {
+    left: -70rem;
+    transform: scale(.4);
+    z-index: 30;
+    opacity: 1;
+    @include media($mobile) {
+      transform: scale(.2);
+      left: -20rem;
+    }
+    &:nth-child(3n + 3) {
+      top: 15rem;
+      transform: scale(.2);
+      opacity: .6;
+      z-index: 10;
+      @include media($mobile) {
+        transform: scale(.1);
+        top: 10rem;
+      }
+    }
+    &:nth-child(4n + 4) {
+      opacity: .8;
+      top: 30rem;
+      transform: scale(.3);
+      z-index: 20;
+      @include media($mobile) {
+        transform: scale(.2);
+        top: 20rem;
+      }
+    }
+    &.even {
+      left: 5rem;
+      bottom: 3rem;
+    }
+  }
+  &__front {
+    width: 22.8rem;
+    height: 22.8rem;
+    background-color: #ffd745;
+    border-radius: 11.4rem;
+    position: absolute;
+    &::after {
+      content: "";
+      width: 16rem;
+      height: 16rem;
+      background-color: #ffbb00;
+      border-radius: 8rem;
+      position: absolute;
+      top: 3.4rem;
+      left: 3.4rem;
+    }
+  }
+  &__back {
+    width: 22.8rem;
+    height: 22.8rem;
+    background-color: #ffd745;
+    border-radius: 11.4rem;
+    position: absolute;
+    &::after {
+      content: "";
+      width: 16rem;
+      height: 16rem;
+      background-color: #ffbb00;
+      border-radius: 8rem;
+      position: absolute;
+      top: 3.4rem;
+      left: 3.4rem;
+    }
+  }
+  &__front {
+    width: 22.8rem;
+    height: 22.8rem;
+    background-color: #ffd745;
+    border-radius: 11.4rem;
+    position: absolute;
+    &::after {
+      content: "";
+      width: 16rem;
+      height: 16rem;
+      background-color: #ffbb00;
+      border-radius: 8rem;
+      position: absolute;
+      top: 3.4rem;
+      left: 3.4rem;
+    }
+  }
+  &__slide {
+    width: 2rem;
+    height:2rem;
+    position: absolute;
+    top: 10.4rem;
+    transform: rotateY(90deg) translateX(1rem) translateZ(-1rem);
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    transform-origin: center center;
+    &>div {
+      display: block;
+      width: 2rem;
+      height: 2rem;
+      background-color: #ffe16b;
+      position: absolute;
+      -webkit-transform-style: preserve-3d;
+      transform-style: preserve-3d;
+      transform-origin: center center;
+      top: 0;
+      left: 0;
+      &>span {
+        display: block;
+        width: 2rem;
+        height: .2rem;
+        background-color: #ffd745;
+        margin-top: .9rem;
+        &::after, &::before {
+          content: "";
+          display: block;
+          width: 2rem;
+          height: .2rem;
+          background-color: #ffd745;
+          position: absolute;
+        }
+        &::after {
+          margin-top: .6rem;
+        }
+        &::before {
+          margin-top: -.6rem;
+        }
+      }
+      &::after, &::before {
+        content: "";
+        display: block;
+        width: 2rem;
+        height: 2.1rem;
+        background-color: #ffe16b;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+      &::after {
+        top: -2rem;
+        transform: rotateX(-10deg) translateZ(.2rem);
+      }
+      &::before {
+        top: 2rem;
+        transform: rotateX(10deg) translateZ(.2rem);
+      }
+    }
+  }
+  &__c1 {
+    transform: rotateX(0) translateY(0) translateZ(0);
+  }
+  &__c2 {
+    transform: rotateX(-30deg) translateY(-5.6rem) translateZ(-1.5rem);
+  }
+  &__c3 {
+    transform: rotateX(-60deg) translateY(-9.8rem) translateZ(-5.6rem);
+  }
+  &__c4 {
+    transform: rotateX(-90deg) translateY(-11.4rem) translateZ(-11.4rem);
+  }
+  &__c5 {
+    transform: rotateX(-120deg) translateY(-9.8rem)    translateZ(-17rem);
+  }
+  &__c6 {
+    transform: rotateX(-150deg) translateY(-5.6rem) translateZ(-21.2rem);
+  }
+  &__c7 {
+    transform: rotateX(-180deg) translateY(0) translateZ(-22.8rem);
+  }
+  &__c8 {
+    transform: rotateX(30deg) translateY(5.6rem) translateZ(-1.5rem);
+  }
+  &__c9 {
+    transform: rotateX(60deg) translateY(9.8rem) translateZ(-5.6rem);
+  }
+  &__c10 {
+    transform: rotateX(90deg) translateY(11.4rem) translateZ(-11.4rem);
+  }
+  &__c11 {
+    transform: rotateX(120deg) translateY(9.8rem) translateZ(-17rem);
+  }
+  &__c12 {
+    transform: rotateX(150deg) translateY(5.6rem) translateZ(-21.2rem);
+  }
+  &__front {
+    transform: rotateY(0) translateZ(0);
+  }
+  &__back {
+    transform: rotateY(-180deg)  translateZ(2rem);
+  }
+}
+
+
+@keyframes move {
+  0% {
+    transform: translate(-50%, 0) rotate(-25deg) rotateY(0);
+    @include media($mobile) {
+      transform: translate(-50%, 0) rotateY(0);
+    }
+  }
+  100% {
+    transform: translate(1000%, 0) rotate(25deg) rotateY(1440deg);
+    @include media($mobile) {
+      transform: translate(100%, 0) rotateY(1440deg);
+    }
+  }
+}
