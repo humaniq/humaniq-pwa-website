@@ -13,15 +13,11 @@ import A_Btn from 'A_Btn'
 const fieldsSettings = [
   {
     name: 'email',
-    type: 'email',
-    validationTypes: {
-      required: true,
-      ranged: {from: 2, to:8},
-    },
     label: 'Email',
     placeholder: 'your@email.com',
-    customErrors: {
-      ifRequired: 'Please fill out our email form'
+    validationRules: {
+      isEmail: '',
+      required: 'Please fill out our email form'
     }
   }
 ];

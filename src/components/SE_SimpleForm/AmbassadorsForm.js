@@ -18,30 +18,28 @@ import A_Btn from 'A_Btn';
 const fieldsSettings = [
   {
     name: 'email',
-    type: 'email',
-    required: true,
     label: 'Email',
     placeholder: 'your@email.com',
-    customErrors: {}
+    validationRules: {
+      isEmail: '',
+      required: '',
+    }
   },
   {
     name: 'name',
-    type: 'text',
-    required: true,
     label: 'Your name',
     placeholder: 'Bob Smith',
-    customErrors: {
-      ifRequired: 'Please fill out your full name'
+    validationRules: {
+      required: 'Please fill out your full name',
     }
   },
   {
     name: 'bio',
-    type: 'text',
-    required: true,
     label: 'Bio',
     placeholder: 'Tell us about yourself. Why would you like to become an ambassador?',
-    customErrors: {
-      ifRequired: 'Please fill bio field'
+    validationRules: {
+      required: 'Please fill bio field',
+      ranged: {from: 3, to: 9}
     }
   }
 ];

@@ -8,31 +8,27 @@ export default (ComposedComponent) => class FormHoc extends Component {
     values: {},
     submitted: false,
     errors: {},
-    validateSettings: {}
+    validationRules: {}
   };
 
   onStateDataCatch = (fieldsProps) => {
 
-    let values, validateSettings;
+    let values, validationRules;
 
     fieldsProps.forEach(fieldProp => {
       values = {...values, [fieldProp.name]: ''};
-      validateSettings = {...validateSettings,
-        [fieldProp.name]: {
-          'type': fieldProp.type,
-          'required': fieldProp.required || false,
-          'customErrors': fieldProp.customErrors || null
-        }}
+      validationRules = {...validationRules,
+        [fieldProp.name]: {...fieldProp.validationRules}}
     });
 
-    this.setState({values, errors: values, validateSettings});
+    this.setState({values, errors: values, validationRules});
 
   };
 
   onChange = (name, value) => {
-    const {validateSettings} = this.state;
+    const {validationRules} = this.state;
     if (this.state.errors[name]) {
-      this.validate({[name]: value}, validateSettings);
+      this.validate({[name]: value}, validationRules);
     }
     this.setState({values: {...this.state.values, [name]:value}})
   };
@@ -43,8 +39,8 @@ export default (ComposedComponent) => class FormHoc extends Component {
   };
 
   onSubmit = (handleSubmit) => () => {
-    const {values, validateSettings} = this.state;
-    if (this.validate(values, validateSettings)){
+    const {values, validationRules} = this.state;
+    if (this.validate(values, validationRules)){
       handleSubmit(values);
       this.setState({submitted: true})
     }
@@ -52,39 +48,52 @@ export default (ComposedComponent) => class FormHoc extends Component {
 
   validate(values, settings) {
     let errors = {};
+
     for (let valueName in values) {
       if (values.hasOwnProperty(valueName)) {
-        const value = values[valueName];
-        const validateSettings = settings[valueName];
-        const required = settings[valueName].required;
-        const customErrors = settings[valueName].customErrors;
 
-        switch (validateSettings.type) {
-          case 'email':
-            if (required && !value) {
-              errors[valueName] = customErrors.ifRequired || 'Please fill email field'
-            } else if (!validateEmail(value)) {
-              errors[valueName] = 'Looks like an invalid email address'
-            } else {
-              errors[valueName] = ''
+        const value = values[valueName];
+        const validationRules = settings[valueName];
+
+        for (let ruleName in validationRules) {
+          if (validationRules.hasOwnProperty(ruleName)) {
+
+            if (ruleName === 'isEmail' && value) {
+              if (!validateEmail(value)) {
+                errors[valueName] = validationRules[ruleName] || 'Looks like an invalid email address';
+                break;
+              } else {
+                errors[valueName] = ''
+              }
             }
-            break;
-          case 'url':
-            if (!value) {
-              errors[valueName] = customErrors.ifRequired || 'Please fill url field'
-            } else if (!validateWebsiteName(value)) {
-              errors[valueName] = 'Looks like an invalid url address'
-            } else {
-              errors[valueName] = ''
+            else if(ruleName === 'isUrl' && value) {
+              if (!validateWebsiteName(value)) {
+                errors[valueName] = validationRules[ruleName] || 'Looks like an invalid url address';
+                break;
+              } else {
+                errors[valueName] = ''
+              }
             }
-            break;
-          case 'text':
-            if (!value) {
-              errors[valueName] = customErrors.ifRequired || 'Please fill text field'
-            } else {
-              errors[valueName] = ''
+            else if(ruleName === 'ranged' && value) {
+              let from = validationRules[ruleName].from;
+              let to = validationRules[ruleName].to;
+              let valLength = value.trim().length;
+              if (from > valLength || to < valLength) {
+                errors[valueName] = 'Field should contain min. ' + from + ', max. ' + to + ' characters';
+                break;
+              } else {
+                errors[valueName] = ''
+              }
             }
-            break;
+            else if(ruleName === 'required') {
+              if (!value) {
+                errors[valueName] = validationRules[ruleName] || 'Please fill this field';
+                break;
+              } else {
+                errors[valueName] = ''
+              }
+            }
+          }
         }
       }
     }

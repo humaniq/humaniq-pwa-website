@@ -13,30 +13,28 @@ import A_Btn from 'A_Btn'
 const fieldsSettings = [
   {
     name: 'email',
-    type: 'email',
-    required: true,
     label: 'Email',
     placeholder: 'your@email.com',
-    customErrors: {}
+    validationRules: {
+      isEmail: '',
+      required: '',
+    }
   },
   {
     name: 'companyWebsite',
-    type: 'url',
-    required: true,
     label: 'Website',
     placeholder: 'your-company-website.com',
-    customErrors: {
-      ifRequired: 'Please fill website name field'
+    validationRules: {
+      isUrl: '',
+      required: '',
     }
   },
   {
     name: 'businessDescription',
-    type: 'text',
-    required: true,
     label: 'Business description',
     placeholder: 'What are you building?',
-    customErrors: {
-      ifRequired: 'Please fill description field'
+    validationRules: {
+      required: 'Please fill description field'
     }
   }
 ];
