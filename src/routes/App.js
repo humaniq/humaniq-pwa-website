@@ -6,7 +6,7 @@ import {setRoute} from 'store/entities/navigation/actions'
 import {fetchWiki} from 'store/entities/wikiArticles/actions';
 import {fetchAmbassadors} from 'store/entities/ambassadors/actions'
 import {fetchPartners} from 'store/entities/partners/actions'
-import {fetchHmqStatistics} from 'store/entities/expStatistic/actions'
+// import {fetchHmqStatistics} from 'store/entities/hmqStatistic/actions'
 
 
 class AppRoute extends Component {
@@ -15,9 +15,8 @@ class AppRoute extends Component {
     if(__CLIENT__) {
       const state = getState()
       state.wikiArticles.loaded || dispatch(fetchWiki())
-      state.transactions.loaded || dispatch(fetchHmqStatistics())
       state.partners.loaded || dispatch(fetchPartners())
-      state.partners.loaded || dispatch(fetchAmbassadors())
+      state.ambassadors.loaded || dispatch(fetchAmbassadors())
 
     }
 

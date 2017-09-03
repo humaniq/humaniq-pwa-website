@@ -70,7 +70,6 @@ class SE_Ambassadors  extends Component {
               <span onClick={() => this.setState({filter: partner.country})} style={{cursor: 'pointer'}}>
                 <A_H type='tooltip-sub'>{partner.country}</A_H>
               </span>
-              {partner.country}{' '}
               {partner.bio}
             </M_Tooltip>
           </span>
@@ -134,7 +133,7 @@ class SE_Ambassadors  extends Component {
           <O_TextUsHere
             {...{
               title: 'Join Ambassadors',
-              text: 'If you believe you can help your community, join Humaniq global Ambassador\'s program.',
+              text: 'If you believe you can help your community, join Humaniq global Ambassador\'s programme.',
               link: {
                 linkText: 'Join Humaniq Network',
                 url: 'mailto:info@humaniq.com'
@@ -152,4 +151,4 @@ SE_Ambassadors .propTypes = {
   countries: T.array.isRequired
 };
 
-export default SE_Ambassadors 
+export default SE_Ambassadors

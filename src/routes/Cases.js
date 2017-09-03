@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
-import CasesContainer from 'containers/CasesContainer'
+import UseCasesContainer from 'containers/UseCasesContainer'
 
 class CasesRoute extends Component {
   render() {
     return (
       <div>
-        <CasesContainer />
+        <UseCasesContainer />
       </div>
     )
   }

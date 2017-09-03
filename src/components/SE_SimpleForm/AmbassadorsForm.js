@@ -7,14 +7,9 @@ import {validateEmail} from 'utils/validateHelpers'
 import A_H from 'A_H'
 import A_P from 'A_P'
 import A_InputText from 'A_InputText'
+import A_Textarea from 'A_Textarea'
 import Header from './Header'
 import A_Btn from 'A_Btn'
-
-// "email": "harry@hogwarts.com",
-//   "name": "Harry Potter",
-//   "country": "England",
-//   "bio": "Harry likes selling magic cookies"
-
 
 class SE_SimpleFormAmbassadorsForm extends Component {
 
@@ -31,7 +26,6 @@ class SE_SimpleFormAmbassadorsForm extends Component {
       bio: ''
     }
   }
-
 
   onSubmit = (handleSubmit) => () => {
     const {values} = this.state
@@ -140,11 +134,14 @@ class SE_SimpleFormAmbassadorsForm extends Component {
               error={errors.name}
               handleChange={text => this.onChange('name', text, errors.name)}
             />
-            <A_InputText
+            <A_Textarea
+              hintText="Tell us about yourself."
+              multiLine={true}
+              rows={2}
+              rowsMax={8}
               value={bio}
               onChange
               label="Bio"
-              placeholder="Tell us about yourself. Why would you like to become an ambassador?"
               error={errors.bio}
               handleChange={text => this.onChange('bio', text, errors.bio)}
             />

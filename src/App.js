@@ -53,5 +53,4 @@ history.listen(historyCb)
 historyCb(window.location)
 // offlinePluginStart()
 
-
 export default App

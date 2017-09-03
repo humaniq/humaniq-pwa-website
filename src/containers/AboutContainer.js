@@ -3,7 +3,7 @@ import SE_About from 'SE_About'
 
 function mapStateToProps() {
 
-  return {founders, advisers, team};
+  return {founders, advisers, team, timeLineData};
 }
 
 export default connect(mapStateToProps)(SE_About);
@@ -181,5 +181,70 @@ const team = [
     position: 'Graphic Designer',
     bio: 'Olga has a background in architecture, interior design and graphic design, and is passionate about inspiring others, building sites, spontaneity, and the universe. She is at Humaniq so she can be creative for social good - and to become a crypto geek!',
     imgSrc: `${imgPath}/olga_derbio.jpg`
+  },
+]
+
+
+const timeLineData = [
+  {
+    year: '2016',
+    months: [
+      {
+        name: 'April',
+        events: [
+          'Inception of the Humaniq idea by Alex Fork.',
+        ]
+      },
+      {
+        name: 'November',
+        events: [
+          'Humaniq Whitebook is written and the original project team is formed.',
+        ]
+      },
+      {
+        name: 'December',
+        events: [
+          'Humaniq.co website is launched and pre-ICO is announced',
+        ]
+      },
+    ],
+  },
+  {
+    year: '2017',
+    months: [
+      {
+        name: 'February',
+        events: [
+          'Smart contracts are being developed, due diligence and marketing campaign take place.',
+          'Humaniq team meets with project partners in India. Alex Fork conducts the first performance tests of the project in unbanked regions of India.',
+          'Humaniq announces first online hackathon',
+          'Pre-ICO (crowdsale) is launched',
+        ]
+      },
+      {
+        name: 'March',
+        events: [
+          'Alpha version of the app is available for testing on IOS and Android.',
+        ]
+      },
+      {
+        name: 'April',
+        events: [
+          'Humaniq collects $1.5 mln in the first hour of their ICO.',
+        ]
+      },
+      {
+        name: 'May',
+        events: [
+          'App with new enchanced biometrics is being released.',
+        ]
+      },
+      {
+        name: 'Now',
+        events: [
+          'Humaniq is 43 people now, working from 14 countries.',
+        ]
+      },
+    ],
   },
 ]

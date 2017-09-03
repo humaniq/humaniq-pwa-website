@@ -1,0 +1,87 @@
+@import "common/settings/variables";
+@import "common/utils";
+
+.se-hmq-hero-chart{
+
+  &__body{
+    flex: 0 1 10rem;
+
+    &__header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      &-title{
+        flex: 0 0 20rem;
+        padding-left: .8rem;
+        font-size: 1.6rem;
+        font-weight: 600;
+        line-height: 2.4rem;
+      }
+      &-nav{
+        flex: 0 0 auto;
+        &-item{
+          user-select: none;
+          cursor: pointer;
+          text-transform: uppercase;
+          display: inline-block;
+          width: 3.5rem;
+          padding-bottom: .8rem;
+          text-align: center;
+          padding-right: .3rem;
+          &_active_true{
+            color: $interactive;
+
+            padding-bottom: .6rem;
+            border-bottom: .3rem solid $interactive;
+          }
+        }
+      }
+    }
+  }
+  &__tooltip{
+    &-wrapper {
+      position: absolute;
+      z-index: 1;
+      pointer-events: none;
+      top: 0;
+      //transition: visibility 0s linear 0.3s, opacity .5s linear;
+
+    }
+    &-root {
+      width: 200px;
+      border-radius: 0.8rem;
+      background: white;
+      position: relative;
+      padding: 1rem;
+      font: 12px sans-serif;
+      &:before {
+        border-radius: 0.9rem;
+        z-index: -1;
+        content: '';
+        display: block;
+        position: absolute;
+        top: -1px;
+        right: -1px;
+        height: 100%;
+        width: 100%;
+        box-shadow: 0 12px 22px 0 rgba(0, 0, 0, 0.24);
+      }
+      &:after {
+        z-index: -1;
+        background-color: white;
+        content: '';
+        display: block;
+        position: absolute;
+        height: 1.6rem;
+        width: 1.6rem;
+        box-shadow: 0 12px 22px 0 rgba(0, 0, 0, 0.24);
+        transform: translate(-50%, -50%) rotate(45deg);
+        border: 0;
+      }
+      &_type_top:after {
+        left: 50%;
+        bottom: -1.6rem;
+      }
+    }
+  }
+}
