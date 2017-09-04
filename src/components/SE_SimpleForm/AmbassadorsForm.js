@@ -9,6 +9,7 @@ import A_P from 'A_P';
 import A_InputText from 'A_InputText';
 import Header from './Header';
 import A_Btn from 'A_Btn';
+//import Dropdown from './Dropdown';
 
 // "email": "harry@hogwarts.com",
 //   "name": "Harry Potter",
@@ -17,6 +18,7 @@ import A_Btn from 'A_Btn';
 
 const fieldsSettings = [
   {
+    type: 'input',
     name: 'email',
     label: 'Email',
     placeholder: 'your@email.com',
@@ -26,6 +28,7 @@ const fieldsSettings = [
     }
   },
   {
+    type: 'input',
     name: 'name',
     label: 'Your name',
     placeholder: 'Bob Smith',
@@ -34,6 +37,16 @@ const fieldsSettings = [
     }
   },
   {
+    type: 'dropdown',
+    name: 'country',
+    label: 'Country',
+    placeholder: 'Choose country',
+    validationRules: {
+      required: 'Please choose your country',
+    }
+  },
+  {
+    type: 'textarea',
     name: 'bio',
     label: 'Bio',
     placeholder: 'Tell us about yourself. Why would you like to become an ambassador?',
