@@ -75,11 +75,11 @@ export default (ComposedComponent) => class FormHoc extends Component {
               }
             }
             else if(ruleName === 'ranged' && value) {
-              let from = validationRules[ruleName].from;
-              let to = validationRules[ruleName].to;
+              let max = validationRules[ruleName].max;
               let valLength = value.trim().length;
-              if (from > valLength || to < valLength) {
-                errors[valueName] = 'Field should contain min. ' + from + ', max. ' + to + ' characters';
+              let overMax = valLength - max;
+              if (max < valLength) {
+                errors[valueName] = `Maximum length is 500 characters. The text is larger by ${overMax} character${overMax !== 1 ? 's' : ''}`;
                 break;
               } else {
                 errors[valueName] = ''

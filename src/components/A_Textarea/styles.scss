@@ -1,0 +1,101 @@
+@import "common/settings/variables";
+@import "common/utils";
+
+.a-textarea {
+  &__root{
+    margin: 0;
+    padding: 0;
+  }
+  &__inner{
+    position: relative;
+    padding: 0;
+    margin: 0;
+    margin-top: 3rem;
+    border: none;
+    overflow: visible;
+
+    textarea {
+      box-sizing: border-box;
+      width: 100%;
+      padding: 0;
+      border: none;
+      border-radius: 0;
+      box-shadow: none;
+      border-bottom: .1rem solid $form-inactive-color;
+      font-size: 1.4rem;
+      outline: none;
+      cursor: text;
+      resize: none;
+      height: 3.3rem;
+      transition: height .3s;
+      &:focus {
+        height: 8rem;
+      }
+      &::placeholder {
+        color: $form-inactive-color;
+        transition: color 300ms ease;
+      }
+      &:not(:focus)::placeholder {
+        color: transparent;
+      }
+    }
+
+    hr {
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: .7rem;
+      left: 0;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: .2rem;
+      border: none;
+      background: $form-active-color;
+      font-size: .1rem;
+      will-change: transform, visibility;
+      transition: all 200ms ease-out;
+      transform: scaleX(0);
+      visibility: hidden;
+      z-index: 10;
+    }
+    textarea:focus ~ hr {
+      transform: scaleX(1);
+      visibility: visible;
+    }
+
+    label {
+      position: absolute;
+      top: .5rem;
+      left: 0;
+      font-size: 1.4rem;
+      transform-origin: 0 -150%;
+      color: $form-inactive-color;
+      transition: transform 300ms ease, color 300ms linear;
+      pointer-events: none;
+    }
+    textarea:focus ~ label{
+      transform: scale(0.9) translateY(-3rem);
+      color: $form-active-color;
+    }
+
+    & + &{
+      margin-top: 3rem // todo: change after final ui-kit, used on simple form join
+    }
+
+  }
+  &__error{
+    //height: 1.2rem;
+    line-height: 1.5rem;
+    font-size: 1.2rem;
+    color: $form-error-color
+  }
+  &__root &__label_non-empty_true{
+    transform: scale(0.9) translateY(-2rem);
+    color: $form-active-color;
+  }
+  &__root &__label_error_true{
+    transform: scale(0.9) translateY(-2rem);
+    color: $form-error-color;
+  }
+}
