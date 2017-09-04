@@ -2,12 +2,15 @@ import React, { Component } from 'react';
 import * as T from "prop-types";
 import './styles.scss';
 import {cssClassName} from 'utils'
-const cn = cssClassName('M_Dropdown')
+const cn = cssClassName('M_Dropdown2')
 import onClickOutside from 'react-onclickoutside'
+import A_InputText from 'A_InputText'
 
-class M_Dropdown extends Component {
+class M_Dropdown2 extends Component {
   state = {
-    isOpened: false
+    isOpened: false,
+    inActive: !!this.props.value,
+    value: this.props.value || '',
   }
 
   handleClickOutside = () => {
@@ -49,13 +52,30 @@ class M_Dropdown extends Component {
     )
   }
 
+  componentWillReceiveProps(nextProps) {
+    this.setState({
+      inActive: nextProps.focus ? true : !!nextProps.value
+    })
+  }
+
   render() {
-    const {options, selected} = this.props
-    const {isOpened} = this.state
+    const {options, selected} = this.props;
+    const {isOpened} = this.state;
     return (
       <span className={cn('root')} onClick={this.handleClick}>
-        <div className={cn('select')}>
-          <div className={cn('select-text')}>{selected}</div>
+        <div className={cn('select', {isOpened})}>
+          <form action="" className={cn('form')}>
+            <A_InputText
+              label="Your country"
+              onFocus = {() => this.setState({windowShow: true, inActive: true})}
+              onBlur={() => this.setState({inActive: false})}
+              handleChange={() => {}}
+              required data-reactid=".0.0"
+            />
+            <div className={cn('selected')}>
+              {selected}
+            </div>
+          </form>
         </div>
         {this.getListOptions(options, isOpened, selected)}
       </span>
@@ -64,15 +84,15 @@ class M_Dropdown extends Component {
   }
 }
 
-M_Dropdown.propTypes = {
+M_Dropdown2.propTypes = {
   options: T.array.isRequired,
   selected: T.string.isRequired
 };
 
-M_Dropdown.defaultProps = {
+M_Dropdown2.defaultProps = {
 }
 
-export default onClickOutside(M_Dropdown)
+export default onClickOutside(M_Dropdown2)
 
 
 

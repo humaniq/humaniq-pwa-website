@@ -153,6 +153,7 @@ class SE_SimpleFormAmbassadorsForm extends Component {
               label="Country"
               placeholder="Choose country"
               selected={country}
+              value={country}
               options={countries}
               onChange={country => this.onChange('country', country, errors.country)}
             />
