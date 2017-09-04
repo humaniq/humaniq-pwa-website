@@ -1,13 +1,26 @@
 @import "common/settings/variables";
 @import "common/utils";
 
-.m-dropdown{
+.m-dropdown2 {
   &__root{
     position: relative;
+    top: 1rem;
     @include media($mobile) {
       width: 100%;
     }
-
+  }
+  &__form {
+    width: 100%;
+    position: relative;
+    & input {
+      //pointer-events: none;
+    }
+  }
+  &__selected {
+    position: absolute;
+    top: 3rem;
+    width: 100%;
+    background: #fff;
   }
   &__select{
     display: inline-flex;
@@ -16,8 +29,6 @@
     width: 100%;
     min-width: 13.3rem;
     align-items: center;
-    padding-left: 1rem;
-    padding-right: 1rem;
     font-size: 16px;
     line-height: 22px;
     height: 3.6rem;
@@ -25,23 +36,28 @@
       width: 100%;
     }
     &-text{
-      font-size: 1.7rem;
-      padding-right: 1rem;
-      color: $interactive;
-
+      font-size: 1.4rem;
     }
     &:after{
       content: '';
       position: absolute;
-      top: 50%;
-      transform: translate(0,-50%);
-      right: 0.7rem;
+      top: 2rem;
+      right: 1rem;
       border-left: 5px solid transparent;
       border-right: 5px solid transparent;
-      border-top: 6px solid $interactive;
+      border-top: 6px solid $gray-3;
+      transition: transform .3s;
     }
     &:hover, &:active{
       cursor: pointer;
+    }
+    &_is-opened {
+      &_true {
+        &:after {
+          transform: rotate(180deg);
+          transition: transform .3s;
+        }
+      }
     }
   }
 
@@ -75,16 +91,17 @@
       border-radius: 0;
     }
   }
-  &__list-wrapper{
+  &__list-wrapper {
     position: absolute;
-    top: -.4rem;
+    top: 2.8rem;
     left: 0;
-    max-height: 763px;
+    max-height: 300px;
     overflow-y: auto;
     width: 100%;
     z-index: 100;
     transform: scaleY(.5);
     opacity: 0;
+    border-bottom: 1px solid #ccc;
 
     &_closed_false{
       transition-property: transform, opacity;
@@ -93,8 +110,8 @@
       transition-delay: 0ms, 0ms;
       transform-origin: left top 0px;
       opacity: 1;
-
       transform: scaleY(1);
+      height: 13rem;
     }
 
   }
