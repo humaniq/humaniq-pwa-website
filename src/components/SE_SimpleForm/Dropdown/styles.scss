@@ -1,0 +1,128 @@
+@import "common/settings/variables";
+@import "common/utils";
+
+.m-dropdown2 {
+  &__root{
+    top: 2rem;
+    position: relative;
+
+    @include media($mobile) {
+      width: 100%;
+    }
+  }
+
+  &__error{
+    height: 1.2rem;
+    font-size: 1.2rem;
+    color: $form-error-color
+  }
+
+  &__inner {
+
+    width: 100%;
+    position: relative;
+    & input {
+      //pointer-events: none;
+    }
+  }
+  &__selected {
+    position: absolute;
+    top: 3rem;
+    width: 100%;
+    background: #fff;
+  }
+  &__select{
+    display: inline-flex;
+    background-color: $white;
+    border-bottom: solid 1px $form-border-color;
+    width: 100%;
+    min-width: 13.3rem;
+    align-items: center;
+    line-height: 22px;
+    height: 3.6rem;
+    @include media($mobile) {
+      width: 100%;
+    }
+    &-text{
+      font-size: 1.4rem;
+    }
+    &:after{
+      content: '';
+      position: absolute;
+      top: 2rem;
+      right: 1rem;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-top: 6px solid $gray-3;
+      transition: transform .3s;
+    }
+    &:hover, &:active{
+      cursor: pointer;
+    }
+    &_is-opened {
+      &_true {
+        &:after {
+          transform: rotate(180deg);
+          transition: transform .3s;
+        }
+      }
+    }
+  }
+
+  &__list-options{
+    z-index: 1;
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0 auto;
+    display: block;
+    background-color: $white;
+    border: 1px solid $form-border-color;
+    padding: 16px 0px;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px;
+
+    &-item{
+      padding: 0px 2.4rem;
+      user-select: none;
+      cursor: pointer;
+      text-align: start;
+      &_selected_true{
+        color: $interactive;
+      }
+      &:hover{
+        background-color: $form-disabled-color;
+      }
+    }
+    @include media($mobile) {
+      width: 100%;
+      border-radius: 0;
+    }
+  }
+  &__list-wrapper {
+    position: absolute;
+    top: 2.8rem;
+    left: 0;
+    max-height: 300px;
+    overflow-y: auto;
+    width: 100%;
+    z-index: 100;
+    transform: scaleY(.5);
+    opacity: 0;
+    display: none;
+    border-bottom: 1px solid #ccc;
+
+    &_closed_false{
+      display: block;
+
+      transition-property: transform, opacity;
+      transition-duration: 250ms, 250ms;
+      transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1), cubic-bezier(0.23, 1, 0.32, 1);
+      transition-delay: 0ms, 0ms;
+      transform-origin: left top 0px;
+      opacity: 1;
+      transform: scaleY(1);
+      height: 13rem;
+    }
+
+  }
+}

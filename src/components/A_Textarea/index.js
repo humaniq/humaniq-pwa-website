@@ -2,13 +2,9 @@ import React, {Component} from 'react';
 import * as T from "prop-types";
 import './styles.scss';
 import {cssClassName} from 'utils'
-const cn = cssClassName('A_InputText')
+const cn = cssClassName('A_Textarea')
 
-class A_InputText extends Component {
-
-  componentDidUpdate(){
-    this.props.setFocus && this.input.focus()
-  }
+class A_Textarea extends Component {
 
   render(){
     const {value, handleChange, placeholder, error, label, onFocus} = this.props
@@ -16,13 +12,12 @@ class A_InputText extends Component {
     return (
       <fieldset className={cn('root')}>
         <div className={cn('inner')}>
-          <input
-            ref = {node => this.input = node}
+          <textarea
             placeholder={placeholder}
             type="text"
             value={value}
             onChange={e => handleChange(e.target.value)}
-            onFocus={onFocus}
+            onFocus = {onFocus}
           />
           <hr />
           <label className={cn('label', {'non-empty': nonEmpty, error: !!error})}>{label}</label>
@@ -33,15 +28,15 @@ class A_InputText extends Component {
   }
 }
 
-A_InputText.propTypes = {
+A_Textarea.propTypes = {
   handleChange: T.func.isRequired,
   value: T.string.isRequired,
   placeHolder: T.string,
-  onFocus: T.func,
-  setFocus: T.bool
+  onFocus: T.func
 };
 
-A_InputText.defaultProps = {
-};
+A_Textarea.defaultProps = {
+}
 
-export default A_InputText
+export default A_Textarea
+
