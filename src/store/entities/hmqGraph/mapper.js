@@ -11,17 +11,31 @@ const format = {
 
 export default (rates, period) => {
 
+  let _rates = rates.map(({timestampIso, rate}) => {
+    if(rate && rate.usd){
+      return ({timestampIso, rate})
+    }else{
+      return;
+    }
+  })
+
+  _rates = _rates.filter(function(n){ return n != undefined });
+
+
   let min = 9999999999
-  rates.forEach(({rate}) => {
-    if(min > rate.usd) min = rate.usd
+  _rates.forEach(({rate}) => {
+    if(rate && min > rate.usd) min = rate.usd
   })
 
   const delta = min * 0.9
-  const entities = rates.map( ({timestampIso, rate}) => {
+  const entities = _rates.map( ({timestampIso, rate}) => {
+
+    const ethString = rate.eth ? `${(+ rate.eth).toFixed(5)} ETH)` : ''
+
     return {
       date: moment(timestampIso, 'YYYYMMDDTHHmmss[Z]').format('YYYY-MM-DD, HH:mm:ss'),
       dateShow: moment.utc(timestampIso, 'YYYYMMDDTHHmmss[Z]').local().format(format[period]),
-      valueShow: `$ ${(+ rate.usd).toFixed(3)} (${(+ rate.eth).toFixed(5)} ETH)`,
+      valueShow: `$ ${(+ rate.usd).toFixed(3)} ${ethString}`,
       value: (rate.usd - delta) * 10000
     }
   })
