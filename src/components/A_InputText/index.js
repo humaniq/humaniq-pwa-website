@@ -6,6 +6,10 @@ const cn = cssClassName('A_InputText')
 
 class A_InputText extends Component {
 
+  componentDidUpdate(){
+    this.props.setFocus && this.input.focus()
+  }
+
   render(){
     const {value, handleChange, placeholder, error, label, onFocus} = this.props
     const nonEmpty = !!value
@@ -13,6 +17,7 @@ class A_InputText extends Component {
       <fieldset className={cn('root')}>
         <div className={cn('inner')}>
           <input
+            ref = {node => this.input = node}
             placeholder={placeholder}
             type="text"
             value={value}
@@ -32,7 +37,8 @@ A_InputText.propTypes = {
   handleChange: T.func.isRequired,
   value: T.string.isRequired,
   placeHolder: T.string,
-  onFocus: T.func
+  onFocus: T.func,
+  setFocus: T.bool
 };
 
 A_InputText.defaultProps = {

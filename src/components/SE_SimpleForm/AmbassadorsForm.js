@@ -156,6 +156,7 @@ class SE_SimpleFormAmbassadorsForm extends Component {
               value={country}
               options={countries}
               onChange={country => this.onChange('country', country, errors.country)}
+              error={errors.country}
             />
             <A_Textarea
               placeholder="Tell us about yourself. Why would you like to become an ambassador? (Maximum length is 500 characters)"
