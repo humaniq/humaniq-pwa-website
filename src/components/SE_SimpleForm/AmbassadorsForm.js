@@ -33,9 +33,7 @@ class SE_SimpleFormAmbassadorsForm extends Component {
   onSubmit = (handleSubmit) => () => {
     const {values} = this.state
     if (this.validate(values)){
-      const {email, name, bio:formBio, country} = values
-      const bio = `[${country}] ${formBio}`
-      handleSubmit({email, name, bio})
+      handleSubmit(values)
       this.setState({submitted: true})
     }
   }
