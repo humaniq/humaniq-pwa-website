@@ -20,6 +20,7 @@ import HmqSearch from './HmqSearch'
 import HmqHome from './HmqHome'
 import Ambassadors from './Ambassadors'
 import About from './About'
+import MobileApp from './MobileApp'
 import HmqLayout from './HmqLayout'
 import HmqTest from './HmqTest'
 import HmqLog from './HmqLog'
@@ -151,6 +152,9 @@ const getRoutes = (store) => {
       />
       <Route path="about"
              component={About}
+      />
+      <Route path="mobile-app"
+             component={MobileApp}
       />
       <Route
         path="/error/:err"

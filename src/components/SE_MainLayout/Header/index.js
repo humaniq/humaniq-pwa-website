@@ -38,6 +38,8 @@ class SE_MainLayoutHeader extends Component {
 
   render() {
     const {isMenuOpened: menuOpen, onClick, headerTheme} = this.props
+
+
     const theme = headerTheme === 'blue' ? 'light' : 'dark' //theme of inner elements
     const mainNav = this.getMainNav(main, theme)
     const extraNav = this.getNavLink(extra, theme)
