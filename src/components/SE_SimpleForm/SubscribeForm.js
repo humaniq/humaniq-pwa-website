@@ -16,7 +16,7 @@ const fieldsSettings = [
     label: 'Email',
     placeholder: 'your@email.com',
     validationRules: {
-      isEmail: '',
+      isEmail: 'default error',
       required: 'Please fill out our email form'
     }
   }

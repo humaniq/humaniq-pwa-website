@@ -24,8 +24,8 @@ const fieldsSettings = [
     label: 'Email',
     placeholder: 'your@email.com',
     validationRules: {
-      isEmail: '',
-      required: '',
+      isEmail: 'default error',
+      required: 'default error',
     }
   },
   {
@@ -106,10 +106,13 @@ class SE_SimpleFormAmbassadorsForm extends Component {
             <Dropdown
               key = {name}
               selected = {this.props.values[name] || ''}
-              label= {label}
+              label = {label}
               placeholder= {placeholder}
               options = {countries}
-              onChange={country => this.onChange('country', country, errors.country)}
+              error = {errors[name]}
+              onChange = {
+                country => this.props.onChange(name, country)
+              }
             />
           );
       }

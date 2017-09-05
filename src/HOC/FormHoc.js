@@ -46,21 +46,26 @@ export default (ComposedComponent) => class FormHoc extends Component {
     }
   };
 
-  validate(values, settings) {
+  validate(values, valRules) {
     let errors = {};
 
     for (let valueName in values) {
       if (values.hasOwnProperty(valueName)) {
 
         const value = values[valueName];
-        const validationRules = settings[valueName];
+        const validationRules = valRules[valueName];
 
         for (let ruleName in validationRules) {
+
           if (validationRules.hasOwnProperty(ruleName)) {
+
+            let customError = validationRules[ruleName] !== 'default error'
+              ? validationRules[ruleName]
+              : false;
 
             if (ruleName === 'isEmail' && value) {
               if (!validateEmail(value)) {
-                errors[valueName] = validationRules[ruleName] || 'Looks like an invalid email address';
+                errors[valueName] = customError || 'Looks like an invalid email address';
                 break;
               } else {
                 errors[valueName] = ''
@@ -68,7 +73,7 @@ export default (ComposedComponent) => class FormHoc extends Component {
             }
             else if(ruleName === 'isUrl' && value) {
               if (!validateWebsiteName(value)) {
-                errors[valueName] = validationRules[ruleName] || 'Looks like an invalid url address';
+                errors[valueName] = customError || 'Looks like an invalid url address';
                 break;
               } else {
                 errors[valueName] = ''
@@ -87,7 +92,7 @@ export default (ComposedComponent) => class FormHoc extends Component {
             }
             else if(ruleName === 'required') {
               if (!value) {
-                errors[valueName] = validationRules[ruleName] || 'Please fill this field';
+                errors[valueName] = customError || 'Please fill this field';
                 break;
               } else {
                 errors[valueName] = ''

@@ -16,8 +16,8 @@ const fieldsSettings = [
     label: 'Email',
     placeholder: 'your@email.com',
     validationRules: {
-      isEmail: '',
-      required: '',
+      isEmail: 'default error',
+      required: 'default error',
     }
   },
   {
@@ -25,8 +25,8 @@ const fieldsSettings = [
     label: 'Website',
     placeholder: 'your-company-website.com',
     validationRules: {
-      isUrl: '',
-      required: '',
+      isUrl: 'default error',
+      required: 'default error',
     }
   },
   {
