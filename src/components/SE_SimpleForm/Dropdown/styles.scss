@@ -3,13 +3,22 @@
 
 .m-dropdown2 {
   &__root{
+    top: 2rem;
     position: relative;
-    top: 1rem;
+
     @include media($mobile) {
       width: 100%;
     }
   }
-  &__form {
+
+  &__error{
+    height: 1.2rem;
+    font-size: 1.2rem;
+    color: $form-error-color
+  }
+
+  &__inner {
+
     width: 100%;
     position: relative;
     & input {
@@ -29,7 +38,6 @@
     width: 100%;
     min-width: 13.3rem;
     align-items: center;
-    font-size: 16px;
     line-height: 22px;
     height: 3.6rem;
     @include media($mobile) {
@@ -73,7 +81,6 @@
     padding: 16px 0px;
     box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px;
 
-
     &-item{
       padding: 0px 2.4rem;
       user-select: none;
@@ -101,9 +108,12 @@
     z-index: 100;
     transform: scaleY(.5);
     opacity: 0;
+    display: none;
     border-bottom: 1px solid #ccc;
 
     &_closed_false{
+      display: block;
+
       transition-property: transform, opacity;
       transition-duration: 250ms, 250ms;
       transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1), cubic-bezier(0.23, 1, 0.32, 1);
