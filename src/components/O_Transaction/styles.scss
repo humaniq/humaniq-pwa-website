@@ -1,0 +1,231 @@
+@import "common/settings/variables";
+@import "common/utils";
+
+.hmq-card {
+  $this: &;
+  position: relative;
+  width: 100%;
+  padding: .5rem 2rem;
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+  background-color: #fff;
+  @include media($mobile) {
+    padding: 0;
+    justify-content: space-around;
+    background-color: transparent;
+  }
+
+  &_on-top {
+    &_true {
+      box-shadow: 0 0.3rem 1rem 0 rgba(0, 0, 0, 0.16), 0 0.3rem 1rem 0 rgba(0, 0, 0, 0.23);
+    }
+    &_false {
+      box-shadow: 0 0.1rem 0.6rem 0 rgba(0, 0, 0, 0.12), 0 0.1rem 0.4rem 0 rgba(0, 0, 0, 0.12);
+    }
+    @include media($mobile) {
+      &_true, &_false {
+        box-shadow: 0 0.2rem 0.1rem -0.1rem #e8e8e8;
+      }
+    }
+  }
+
+  &__section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__row {
+    position: relative;
+    display: flex;
+    font-size: 12px;
+  }
+
+  &__label {
+    flex-shrink: 0;
+    width: 50px;
+    font-weight: 600;
+    color: #333;
+    &_type {
+      &_wide {
+        width: 70px;
+      }
+    }
+  }
+
+  &__value {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-decoration: none;
+    white-space: nowrap;
+    &_type {
+      &_link {
+        color: $blue-1;
+      }
+      &_hmq {
+        font-size: 14px;
+        font-weight: bold;
+      }
+      &_usd {
+        font-weight: 600;
+        color: #333;
+      }
+    }
+  }
+
+  &__time-counter {
+    position: relative;
+	padding-left: 20px;
+    color: rgba(51, 51, 51, 0.5);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+    }
+    &_confirmed {
+      &_false {
+        &:before {
+          width: 11px;
+          height: 11px;
+          margin-top: -5.5px;
+          background: url('/img/icons/wait.svg');
+        }
+      }
+      &_true {
+        &:before {
+          content: '';
+          width: 14px;
+          height: 8px;
+          margin-top: -4px;
+          background: url('/img/icons/done.svg');
+        }
+      }
+    }
+  }
+
+  &_type{
+    &_transactions {
+      #{$this}__section {
+        &:nth-child(1) {
+          width: 25%;
+        }
+        &:nth-child(2) {
+          width: 38%;
+        }
+        &:nth-child(3) {
+          width: 15%;
+        }
+        &:nth-child(4) {
+          width: 15%;
+        }
+        @include media($tablet) {
+          &:nth-child(1) {
+            display: none;
+          }
+          &:nth-child(2) {
+            width: 53%;
+          }
+          &:nth-child(3) {
+            width: 22%;
+          }
+          &:nth-child(4) {
+            width: 20%;
+          }
+        }
+        @include media($mobile) {
+          &:nth-child(1) {
+            display: flex;
+            width: 60%;
+          }
+          &:nth-child(2) {
+            display: none;
+          }
+          &:nth-child(3) {
+            width: 35%;
+          }
+          &:nth-child(4) {
+            display: none;
+          }
+        }
+      }
+    }
+
+    &_holders {
+      #{$this}__section {
+        &:nth-child(1) {
+          width: 40%;
+        }
+        &:nth-child(2) {
+          width: 20%;
+        }
+        &:nth-child(3) {
+          width: 20%;
+        }
+        &:nth-child(4) {
+          width: 12%;
+        }
+        @include media($tablet) {
+          &:nth-child(1) {
+            width: 50%;
+          }
+          &:nth-child(2) {
+            display: none;
+          }
+          &:nth-child(3) {
+            width: 25%;
+          }
+          &:nth-child(4) {
+            width: 20%;
+          }
+        }
+        @include media($mobile) {
+          &:nth-child(1) {
+            width: 50%;
+          }
+          &:nth-child(3) {
+            width: 45%;
+          }
+          &:nth-child(4) {
+            display: none;
+          }
+        }
+      }
+    }
+
+    &_markets {
+      #{$this}__section {
+        &:nth-child(1) {
+          width: 25%;
+        }
+        &:nth-child(2) {
+          width: 20%;
+        }
+        &:nth-child(3) {
+          width: 22%;
+        }
+        &:nth-child(4) {
+          width: 20%;
+        }
+        @include media($mobile) {
+          &:nth-child(1) {
+            width: 50%;
+          }
+          &:nth-child(2) {
+            display: none;
+          }
+          &:nth-child(3) {
+            width: 45%;
+          }
+          &:nth-child(4) {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
