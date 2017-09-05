@@ -7,8 +7,8 @@ const cn = cssClassName('A_InputText')
 class A_InputText extends Component {
 
   render(){
-    const {value, handleChange, placeholder, error, label, onFocus} = this.props;
-    const nonEmpty = !!value;
+    const {value, handleChange, placeholder, error, label, onFocus} = this.props
+    const nonEmpty = !!value
     return (
       <fieldset className={cn('root')}>
         <div className={cn('inner')}>
@@ -17,7 +17,7 @@ class A_InputText extends Component {
             type="text"
             value={value}
             onChange={e => handleChange(e.target.value)}
-            onFocus = {onFocus}
+            onFocus={onFocus}
           />
           <hr />
           <label className={cn('label', {'non-empty': nonEmpty, error: !!error})}>{label}</label>
@@ -36,7 +36,6 @@ A_InputText.propTypes = {
 };
 
 A_InputText.defaultProps = {
-}
+};
 
 export default A_InputText
-
