@@ -15,7 +15,7 @@ class SE_HmqLog extends Component {
       const addWayPoint = !loading && (i + 30 === entitiesCount || i + 5 === entitiesCount)
       return (
         <div key ={props.txHash}>
-          <O_Transaction {...props} type="log" up={i == 0}/>
+          <O_Transaction {...props} type="log" onTop = {i === 0}/>
           {addWayPoint &&
           <Waypoint
             scrollableAncestor={'window'}

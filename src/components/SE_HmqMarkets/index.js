@@ -8,13 +8,13 @@ class SE_HmqMarkets extends Component {
 
   getTransactions(entities) {
     return (entities.map((props, i) =>
-      <O_Transaction key={'key_' + i} {...props} type="market" up={i == 0}/>
+      <O_Transaction key={'key_' + i} {...props} type="market" up={i === 0} onTop={i === 0}/>
     ))
   }
 
   render() {
-    const {entities} = this.props
-    const renderedTransactions = this.getTransactions(entities)
+    const {entities} = this.props;
+    const renderedTransactions = this.getTransactions(entities);
     return (
       <div>
         <O_ScrollUp initTop={50} showAfter={700}>
