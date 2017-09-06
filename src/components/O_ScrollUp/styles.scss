@@ -3,12 +3,14 @@
 
 .o-scroll-up {
   &__wrapper{
-    //display: flex;
-    //justify-content: space-between;
-    //align-items: stretch;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
     position: relative;
     padding-top: 3.5rem;
-
+    @include media($tablet) {
+      display: block;
+    }
   }
 
   &__root, &__h-width{

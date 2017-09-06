@@ -5,10 +5,11 @@
   $this: &;
   position: relative;
   width: 100%;
-  padding: .5rem 2rem;
-  margin-bottom: 2rem;
   display: flex;
   justify-content: space-between;
+  padding: .5rem 2rem;
+  margin-bottom: 2rem;
+  border-radius: .4rem;
   background-color: #fff;
   @include media($mobile) {
     padding: 0;
@@ -60,9 +61,6 @@
     text-decoration: none;
     white-space: nowrap;
     &_type {
-      &_link {
-        color: $blue-1;
-      }
       &_hmq {
         font-size: 14px;
         font-weight: bold;

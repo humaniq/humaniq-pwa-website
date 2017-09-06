@@ -1,7 +1,6 @@
 import React , { Component } from 'react';
 import * as T from "prop-types";
 import './styles.scss';
-import A_Container from 'A_Container';
 import {cssClassName} from 'utils';
 const cn = cssClassName('hmq-card');
 import moment from 'moment';
@@ -13,50 +12,48 @@ class O_TransactionHolder extends Component {
   render() {
     const {address, rank, pecentage, txns, usdAmount, hmqAmount, time, onTop} = this.props;
     return (
-      <A_Container type='wide'>
-        <div className={cn({onTop, 'type':'holders'})}>
+      <div className={cn({onTop, 'type':'holders'})}>
 
-          <div className={cn('section')}>
-            <div className={cn('row')}>
-              {address && <div className={cn('label', {'type':'wide'})}>Address:</div>}
-              {address && <A_Link to={`/hmq-explorer/token-holders/${address}`} className={cn('value', {'type': 'link'})}>{address}</A_Link>}
-            </div>
-            <div className={cn('row')}>
-              {rank && <div className={cn('label', {'type':'wide'})}>Rank:</div>}
-              {rank && <div className={cn('value')}>{rank}</div>}
-            </div>
+        <div className={cn('section')}>
+          <div className={cn('row')}>
+            {address && <div className={cn('label', {'type':'wide'})}>Address:</div>}
+            {address && <A_Link to={`/hmq-explorer/token-holders/${address}`} type='hmq-card'>{address}</A_Link>}
           </div>
-
-          <div className={cn('section')}>
-            <div className={cn('row')}>
-              {pecentage && <div className={cn('label', {'type':'wide'})}>Pecentage:</div>}
-              {pecentage && <div className={cn('value')}>{pecentage} %</div>}
-            </div>
-            <div className={cn('row')}>
-              {txns && <div className={cn('label', {'type':'wide'})}>Txns:</div>}
-              {txns && <div className={cn('value')}>{txns}</div>}
-            </div>
+          <div className={cn('row')}>
+            {rank && <div className={cn('label', {'type':'wide'})}>Rank:</div>}
+            {rank && <div className={cn('value')}>{rank}</div>}
           </div>
-
-          <div className={cn('section')}>
-            <div className={cn('row')}>
-              {hmqAmount && <div className={cn('value', {'type': 'hmq'})}>{hmqAmount} HMQ</div>}
-            </div>
-            <div className={cn('row')}>
-              {usdAmount && <div className={cn('value', {'type': 'usd'})}>${usdAmount} USD</div>}
-            </div>
-          </div>
-
-          <div className={cn('section')}>
-            <div className={cn('row')}>
-              {time && <div className={cn('time-counter', {confirmed: status === 'confirmed'})}>
-                {moment(time).fromNow()}
-              </div>}
-            </div>
-          </div>
-
         </div>
-      </A_Container>
+
+        <div className={cn('section')}>
+          <div className={cn('row')}>
+            {pecentage && <div className={cn('label', {'type':'wide'})}>Pecentage:</div>}
+            {pecentage && <div className={cn('value')}>{pecentage} %</div>}
+          </div>
+          <div className={cn('row')}>
+            {txns && <div className={cn('label', {'type':'wide'})}>Txns:</div>}
+            {txns && <div className={cn('value')}>{txns}</div>}
+          </div>
+        </div>
+
+        <div className={cn('section')}>
+          <div className={cn('row')}>
+            {hmqAmount && <div className={cn('value', {'type': 'hmq'})}>{hmqAmount} HMQ</div>}
+          </div>
+          <div className={cn('row')}>
+            {usdAmount && <div className={cn('value', {'type': 'usd'})}>${usdAmount} USD</div>}
+          </div>
+        </div>
+
+        <div className={cn('section')}>
+          <div className={cn('row')}>
+            {time && <div className={cn('time-counter', {confirmed: status === 'confirmed'})}>
+              {moment(time).fromNow()}
+            </div>}
+          </div>
+        </div>
+
+      </div>
     )
   }
 }
