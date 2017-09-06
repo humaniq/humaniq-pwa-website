@@ -109,13 +109,62 @@
   &_type{
     &_plug {
       height: 62px;
-      animation-duration: 1s;
-      animation-fill-mode: forwards;
-      animation-iteration-count: infinite;
-      animation-name: plugAnimation;
-      animation-timing-function: linear;
-      background: linear-gradient(to right, #ffffff 8%, #dddddd 18%, #ffffff 33%);
-      background-size: 800px 104px;
+      #{$this}__section {
+        justify-content: space-around;
+        &:nth-child(1) {
+          width: 25%;
+        }
+        &:nth-child(2) {
+          width: 38%;
+        }
+        &:nth-child(3) {
+          width: 15%;
+        }
+        &:nth-child(4) {
+          width: 15%;
+        }
+        @include media($tablet) {
+          &:nth-child(1) {
+            display: none;
+          }
+          &:nth-child(2) {
+            width: 53%;
+          }
+          &:nth-child(3) {
+            width: 22%;
+          }
+          &:nth-child(4) {
+            width: 20%;
+          }
+        }
+        @include media($mobile) {
+          &:nth-child(1) {
+            display: flex;
+            width: 60%;
+          }
+          &:nth-child(2) {
+            display: none;
+          }
+          &:nth-child(3) {
+            width: 35%;
+          }
+          &:nth-child(4) {
+            display: none;
+          }
+        }
+      }
+      #{$this}__row {
+        overflow: hidden;
+        height: 10px;
+        width: 100%;
+        animation-duration: 5s;
+        animation-fill-mode: forwards;
+        animation-iteration-count: infinite;
+        animation-name: plugAnimation;
+        animation-timing-function: linear;
+        background: linear-gradient(to right, #dddddd 8%, #ffffff 18%, #dddddd 33%);
+        background-size: 320px 104px;
+      }
     }
 
     &_transactions {

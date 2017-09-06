@@ -21,6 +21,7 @@ const O_Transaction = ({type, ...props}) =>{
 
 O_Transaction.propTypes = {
   type: T.oneOf([
+    'plug',
     'log',
     'holder',
     'market'
