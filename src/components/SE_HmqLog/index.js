@@ -35,10 +35,10 @@ class SE_HmqLog extends Component {
       <div>
         <O_ScrollUp initTop={50} showAfter={700}>
           <A_Container type='section-clean'>
-              <M_ScrollScreen >
-                {renderedTransactions}
-              </M_ScrollScreen>
-             {loading && <O_HmqContentPlaceholder layout='transactions' amount = {20}/>}
+            <M_ScrollScreen >
+              {renderedTransactions}
+              {loading && <O_HmqContentPlaceholder layout='transactions' amount = {20}/>}
+            </M_ScrollScreen>
           </A_Container>
         </O_ScrollUp>
       </div>

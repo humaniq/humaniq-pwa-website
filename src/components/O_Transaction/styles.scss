@@ -118,9 +118,9 @@
       animation-duration: 5s;
       animation-fill-mode: forwards;
       animation-iteration-count: infinite;
-      animation-name: plugAnimation;
+      animation-name: placeholderAnimation;
       animation-timing-function: linear;
-      background: linear-gradient(to right, #acdcf3 8%, #ffffff 18%, #acdcf3 33%);
+      background: linear-gradient(to right, darkgray 8%, lightgray 18%, darkgray 33%);
       background-size: 320px 104px;
     }
   }
@@ -247,7 +247,7 @@
   }
 }
 
-@keyframes plugAnimation{
+@keyframes placeholderAnimation{
   0%{
     background-position: -468px 0
   }

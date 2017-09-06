@@ -37,10 +37,10 @@ class SE_HmqHolders extends Component {
         <O_ScrollUp initTop={50} showAfter={700}>
           <A_Container type='section-clean'>
             {children}
-              <M_ScrollScreen >
-                {renderedTransactions}
-              </M_ScrollScreen>
-             {loading && <O_HmqContentPlaceholder layout='holders' amount = {20}/>}
+            <M_ScrollScreen >
+              {renderedTransactions}
+              {loading && <O_HmqContentPlaceholder layout='holders' amount = {20}/>}
+            </M_ScrollScreen>
           </A_Container>
         </O_ScrollUp>
       </div>
