@@ -11,7 +11,12 @@
       width: 100%;
       height: 100%;
     }
-
+    &_hmq-card {
+      color: $interactive;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
     &_transactions{
       font-size: 1.2rem;
       color: $interactive;

@@ -1,55 +1,59 @@
 import React , { Component } from 'react';
 import * as T from "prop-types";
-import './Log.scss';
-import A_Container from 'A_Container';
+import './styles.scss';
 import {cssClassName} from 'utils';
-const cn = cssClassName('O_TransactionLog');
-import {dateString} from 'utils/propsValidationHelpers'
+const cn = cssClassName('hmq-card');
 import moment from 'moment';
+import {dateString} from 'utils/propsValidationHelpers'
 import A_Link from 'A_Link'
 
 class O_TransactionLog extends Component {
 
   render() {
-    const {txHash, block, from, to, time, usdAmount, hmqAmount, status, up} = this.props
+    const {txHash, block, from, to, time, usdAmount, hmqAmount, status, onTop} = this.props;
     return (
-      <div>
-        <A_Container type='wide'>
-          <table className={cn('asset-stats')}>
-            <tbody>
-            <tr className={cn('asset-stats__tr', {up})}>
-              <td className={cn('asset-stats__td')}>
-                <span className={cn('asset-stats__hash')}>TxHash:</span>
-                {block && <span className={cn('asset-stats__block')}>Block:</span>}
+        <div className={cn({onTop, 'type':'transactions'})}>
 
-              </td>
-              <td className={cn('asset-stats__td')}>
-                <A_Link to={`/hmq-explorer/transaction-log/${txHash}`} className={cn('asset-stats__hash-link')}>{txHash}</A_Link>
-                {block && <A_Link to={`/hmq-explorer/block/${block}`} className={cn('asset-stats__hash-link')}>{block}</A_Link>}
-              </td>
-              <td className={cn('asset-stats__td')}>
-                {from && <span className={cn('asset-stats__from')}>From:</span>}
-                {to && <span className={cn('asset-stats__to')}>To:</span>}
-              </td>
-              <td className={cn('asset-stats__td')}>
-                {from && <A_Link to={`/hmq-explorer/token-holders/${from}`} className={cn('asset-stats__hash-link')}>{from}</A_Link>}
-                {to && <A_Link to={`/hmq-explorer/token-holders/${to}`} className={cn('asset-stats__hash-link')}>{to}</A_Link>}
-              </td>
-              <td className={cn('asset-stats__td')}>
-                {hmqAmount && <span className={cn('asset-stats__price-hmq')}>{hmqAmount} HMQ</span>}
-                {usdAmount && <span className={cn('asset-stats__price-usd')}>${usdAmount} USD</span>}
-              </td>
-              <td className={cn('asset-stats__td')}>
-                {time && <small className={cn('asset-stats__time asset-stats__time--success')}>
-                  <i className={cn('asset-stats__icon', {confirmed: status === 'confirmed'})}></i>
-                  {moment(time).fromNow()}
-                </small>}
-              </td>
-            </tr>
-            </tbody>
-          </table>
-        </A_Container>
-      </div>
+          <div className={cn('section')}>
+            <div className={cn('row')}>
+              <div className={cn('label')}>TxHash:</div>
+              <A_Link to={`/hmq-explorer/transaction-log/${txHash}`} type='hmq-card'>{txHash}</A_Link>
+            </div>
+            <div className={cn('row')}>
+              {block && <div className={cn('label')}>Block:</div>}
+              {block && <A_Link to={`/hmq-explorer/block/${block}`} type='hmq-card'>{block}</A_Link>}
+            </div>
+          </div>
+
+          <div className={cn('section')}>
+            <div className={cn('row')}>
+              {from && <div className={cn('label')}>From:</div>}
+              {from && <A_Link to={`/hmq-explorer/token-holders/${from}`} type='hmq-card'>{from}</A_Link>}
+            </div>
+            <div className={cn('row')}>
+              {to && <div className={cn('label')}>To:</div>}
+              {to && <A_Link to={`/hmq-explorer/token-holders/${to}`} type='hmq-card'>{to}</A_Link>}
+            </div>
+          </div>
+
+          <div className={cn('section')}>
+            <div className={cn('row')}>
+              {hmqAmount && <div className={cn('value', {'type': 'hmq'})}>{hmqAmount} HMQ</div>}
+            </div>
+            <div className={cn('row')}>
+              {usdAmount && <div className={cn('value', {'type': 'usd'})}>${usdAmount} USD</div>}
+            </div>
+          </div>
+
+          <div className={cn('section')}>
+            <div className={cn('row')}>
+              {time && <div className={cn('time-counter', {confirmed: status === 'confirmed'})}>
+                {moment(time).fromNow()}
+              </div>}
+            </div>
+          </div>
+
+        </div>
     )
   }
 }
