@@ -2,7 +2,6 @@ import {connect} from 'react-redux';
 import SE_HmqMarkets from 'SE_HmqMarkets'
 
 function mapStateToProps( state ) {
-  console.log(state);
   const {loading, entities} = state.hmqMarkets;
 
   return {loading, entities};
