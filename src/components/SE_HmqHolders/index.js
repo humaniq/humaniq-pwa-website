@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import * as T from "prop-types";
 import O_Transaction from 'O_Transaction'
+import O_HmqCardPlug from 'O_HmqCardPlug'
 import Waypoint from 'react-waypoint'
 import M_ScrollScreen from 'M_ScrollScreen'
 import A_Container from 'A_Container'
@@ -12,7 +13,7 @@ class SE_HmqHolders extends Component {
     return (entities.map( (props, i) => {
 
       const entitiesCount = entities.length;
-      const addWayPoint = !loading && (i + 30 === entitiesCount || i + 5 === entitiesCount);
+      const addWayPoint = !loading && (i + 20 === entitiesCount || i + 5 === entitiesCount);
       return (
         <div key ={props.address}>
           <O_Transaction {...props} type="holder" onTop = {i === 0}/>
@@ -27,24 +28,8 @@ class SE_HmqHolders extends Component {
     }))
   }
 
-  addLoadingPlugs() {
-    let plugs = [];
-
-    for(let i = 0; i <= 30; i++) {
-      let plug = () =>(
-        <div key = {i + 1}>
-          <O_Transaction type="plug" onTop = {i === 0}/>
-        </div>
-      );
-      plugs = [...plugs, plug()];
-    }
-
-    return plugs
-  }
-
   render() {
     const {entities, loadMore, children, loading} = this.props;
-    const loadingPlugs = this.addLoadingPlugs();
     const renderedTransactions = this.getTransactions(entities, loadMore, loading);
 
     return (
@@ -53,11 +38,9 @@ class SE_HmqHolders extends Component {
           <A_Container type='section-clean'>
             {children}
               <M_ScrollScreen >
-                {loading
-                  ? (loadingPlugs)
-                  : (renderedTransactions)
-                }
+                {renderedTransactions}
               </M_ScrollScreen>
+             {loading && <O_HmqCardPlug amount = {20}/>}
           </A_Container>
         </O_ScrollUp>
       </div>

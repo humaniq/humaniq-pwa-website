@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import * as T from "prop-types";
 import O_Transaction from 'O_Transaction'
+import O_HmqCardPlug from 'O_HmqCardPlug'
 import M_ScrollScreen from 'M_ScrollScreen'
 import A_Container from 'A_Container'
 import O_ScrollUp from "O_ScrollUp";
@@ -11,8 +12,8 @@ class SE_HmqLog extends Component {
   getTransactions(entities, loadMore, loading){
     return (entities.map( (props, i) => {
 
-      const entitiesCount = entities.length
-      const addWayPoint = !loading && (i + 30 === entitiesCount || i + 5 === entitiesCount)
+      const entitiesCount = entities.length;
+      const addWayPoint = !loading && (i + 20 === entitiesCount || i + 5 === entitiesCount)
       return (
         <div key ={props.txHash}>
           <O_Transaction {...props} type="log" onTop = {i === 0}/>
@@ -28,8 +29,8 @@ class SE_HmqLog extends Component {
   }
 
   render() {
-    const {entities, loadMore, loading} = this.props
-    const renderedTransactions = this.getTransactions(entities, loadMore, loading)
+    const {entities, loadMore, loading} = this.props;
+    const renderedTransactions = this.getTransactions(entities, loadMore, loading);
     return (
       <div>
         <O_ScrollUp initTop={50} showAfter={700}>
@@ -37,6 +38,7 @@ class SE_HmqLog extends Component {
               <M_ScrollScreen >
                 {renderedTransactions}
               </M_ScrollScreen>
+             {loading && <O_HmqCardPlug amount = {20}/>}
           </A_Container>
         </O_ScrollUp>
       </div>
