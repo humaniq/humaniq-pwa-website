@@ -9,6 +9,7 @@ import M_ScrollScreen from 'M_ScrollScreen'
 import A_Container from 'A_Container'
 import O_ScrollUp from "O_ScrollUp";
 import Waypoint from 'react-waypoint'
+import O_HmqContentPlaceholder from 'O_HmqContentPlaceholder'
 
 class SE_HmqHolder extends Component {
 
@@ -53,9 +54,12 @@ class SE_HmqHolder extends Component {
           </M_InfoBlock>
         </A_Container>
         <O_ScrollUp initTop={50} showAfter={700}>
-          <M_ScrollScreen desabled={complete}>
-            {renderedTransactions}
-          </M_ScrollScreen>
+          <A_Container type='section-clean'>
+            <M_ScrollScreen desabled={complete}>
+              {renderedTransactions}
+              {loading && <O_HmqContentPlaceholder layout='holders' amount = {20}/>}
+            </M_ScrollScreen>
+          </A_Container>
         </O_ScrollUp>
       </div>
 
