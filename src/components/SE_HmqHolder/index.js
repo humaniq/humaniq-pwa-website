@@ -19,7 +19,7 @@ class SE_HmqHolder extends Component {
       const addWayPoint = load && (i + 30 === entitiesCount || i + 5 === entitiesCount)
       return (
         <div key={'key_' + props.txHash}>
-          <O_Transaction {...props} type="log" up={i == 0}/>
+          <O_Transaction {...props} type="log" onTop={i === 0}/>
           {addWayPoint &&
             <Waypoint
               scrollableAncestor={'window'}
