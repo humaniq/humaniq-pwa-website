@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import * as T from "prop-types";
 import O_Transaction from 'O_Transaction'
-import O_HmqCardPlug from 'O_HmqCardPlug'
+import O_HmqContentPlaceholder from 'O_HmqContentPlaceholder'
 import M_ScrollScreen from 'M_ScrollScreen'
 import A_Container from 'A_Container'
 import O_ScrollUp from "O_ScrollUp";
@@ -38,7 +38,7 @@ class SE_HmqLog extends Component {
               <M_ScrollScreen >
                 {renderedTransactions}
               </M_ScrollScreen>
-             {loading && <O_HmqCardPlug amount = {20}/>}
+             {loading && <O_HmqContentPlaceholder layout='transactions' amount = {20}/>}
           </A_Container>
         </O_ScrollUp>
       </div>
