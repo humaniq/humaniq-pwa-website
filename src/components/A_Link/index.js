@@ -33,6 +33,7 @@ A_Link.propTypes = {
   type: T.oneOf([
     'article', // wiki articles not bold text
     'transactions', // transactions
+    'hmq-card', // hmq card link with overflow|text-overflow|whitespace settings
     'primary', // brand blue link
     'crumbs', // brand  blue link 12, weight 600
     'crumbs-notlast', // brand  blue link 12, weight 600 + icon
