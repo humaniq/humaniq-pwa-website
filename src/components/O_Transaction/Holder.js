@@ -1,9 +1,8 @@
 import React , { Component } from 'react';
 import * as T from "prop-types";
-import './Holder.scss';
-import A_Container from 'A_Container';
+import './styles.scss';
 import {cssClassName} from 'utils';
-const cn = cssClassName('O_TransactionHolder');
+const cn = cssClassName('hmq-card');
 import moment from 'moment';
 import {dateString} from 'utils/propsValidationHelpers';
 import A_Link from 'A_Link'
@@ -11,43 +10,49 @@ import A_Link from 'A_Link'
 class O_TransactionHolder extends Component {
 
   render() {
-    const {address, rank, pecentage, txns, usdAmount, hmqAmount, time, up} = this.props
+    const {address, rank, pecentage, txns, usdAmount, hmqAmount, time, onTop} = this.props;
     return (
-      <div>
-        <A_Container type='wide'>
-          <table className={cn('asset-stats')}>
-            <tbody>
-            <tr className={cn('asset-stats__tr', {up})}>
-              <td className={cn('asset-stats__td')}>
-                {address && <span className={cn('asset-stats__hash')}>Address:</span>}
-                {rank && <span className={cn('asset-stats__block')}>Rank:</span>}
-              </td>
-              <td className={cn('asset-stats__td')}>
-                {address && <A_Link to={`/hmq-explorer/token-holders/${address}`} className={cn('asset-stats__hash-link')}>{address}</A_Link>}
-                {rank && <span className={cn('value')}>{rank}</span>}
-              </td>
-              <td className={cn('asset-stats__td')}>
-                {pecentage && <span className={cn('asset-stats__from')}>Pecentage:</span>}
-                {txns && <span className={cn('asset-stats__to')}>Txns:</span>}
-              </td>
-              <td className={cn('asset-stats__td')}>
-                {pecentage && <span className={cn('value')}>{pecentage} %</span>}
-                {txns && <span className={cn('value')}>{txns}</span>}
-              </td>
-              <td className={cn('asset-stats__td')}>
-                {hmqAmount && <span className={cn('asset-stats__price-hmq')}>{hmqAmount} HMQ</span>}
-                {usdAmount && <span className={cn('asset-stats__price-usd')}>${usdAmount} USD</span>}
-              </td>
-              <td className={cn('asset-stats__td')}>
-                {time && <small className={cn('asset-stats__time asset-stats__time--success')}>
-                  <i className={cn('asset-stats__icon o-asset-stats__icon--success')}></i>
-                  {moment(time).fromNow()}
-                </small>}
-              </td>
-            </tr>
-            </tbody>
-          </table>
-        </A_Container>
+      <div className={cn({onTop, 'type':'holders'})}>
+
+        <div className={cn('section')}>
+          <div className={cn('row')}>
+            {address && <div className={cn('label', {'type':'wide'})}>Address:</div>}
+            {address && <A_Link to={`/hmq-explorer/token-holders/${address}`} type='hmq-card'>{address}</A_Link>}
+          </div>
+          <div className={cn('row')}>
+            {rank && <div className={cn('label', {'type':'wide'})}>Rank:</div>}
+            {rank && <div className={cn('value')}>{rank}</div>}
+          </div>
+        </div>
+
+        <div className={cn('section')}>
+          <div className={cn('row')}>
+            {pecentage && <div className={cn('label', {'type':'wide'})}>Pecentage:</div>}
+            {pecentage && <div className={cn('value')}>{pecentage} %</div>}
+          </div>
+          <div className={cn('row')}>
+            {txns && <div className={cn('label', {'type':'wide'})}>Txns:</div>}
+            {txns && <div className={cn('value')}>{txns}</div>}
+          </div>
+        </div>
+
+        <div className={cn('section')}>
+          <div className={cn('row')}>
+            {hmqAmount && <div className={cn('value', {'type': 'hmq'})}>{hmqAmount} HMQ</div>}
+          </div>
+          <div className={cn('row')}>
+            {usdAmount && <div className={cn('value', {'type': 'usd'})}>${usdAmount} USD</div>}
+          </div>
+        </div>
+
+        <div className={cn('section')}>
+          <div className={cn('row')}>
+            {time && <div className={cn('time-counter', {confirmed: status === 'confirmed'})}>
+              {moment(time).fromNow()}
+            </div>}
+          </div>
+        </div>
+
       </div>
     )
   }

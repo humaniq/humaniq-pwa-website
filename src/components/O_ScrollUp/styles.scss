@@ -8,7 +8,9 @@
     align-items: stretch;
     position: relative;
     padding-top: 3.5rem;
-
+    @include media($tablet) {
+      display: block;
+    }
   }
 
   &__root, &__h-width{
