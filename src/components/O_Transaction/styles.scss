@@ -107,6 +107,17 @@
   }
 
   &_type{
+    &_plug {
+      height: 62px;
+      animation-duration: 1s;
+      animation-fill-mode: forwards;
+      animation-iteration-count: infinite;
+      animation-name: plugAnimation;
+      animation-timing-function: linear;
+      background: linear-gradient(to right, #ffffff 8%, #dddddd 18%, #ffffff 33%);
+      background-size: 800px 104px;
+    }
+
     &_transactions {
       #{$this}__section {
         &:nth-child(1) {
@@ -225,5 +236,14 @@
         }
       }
     }
+  }
+}
+
+@keyframes plugAnimation{
+  0%{
+    background-position: -468px 0
+  }
+  100%{
+    background-position: 468px 0
   }
 }

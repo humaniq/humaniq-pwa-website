@@ -11,8 +11,8 @@ class SE_HmqHolders extends Component {
   getTransactions(entities, loadMore, loading){
     return (entities.map( (props, i) => {
 
-      const entitiesCount = entities.length
-      const addWayPoint = !loading && (i + 30 === entitiesCount || i + 5 === entitiesCount)
+      const entitiesCount = entities.length;
+      const addWayPoint = !loading && (i + 30 === entitiesCount || i + 5 === entitiesCount);
       return (
         <div key ={props.address}>
           <O_Transaction {...props} type="holder" onTop = {i === 0}/>
@@ -27,16 +27,36 @@ class SE_HmqHolders extends Component {
     }))
   }
 
+  addLoadingPlugs() {
+    let plugs = [];
+
+    for(let i = 0; i <= 30; i++) {
+      let plug = () =>(
+        <div key = {i + 1}>
+          <O_Transaction type="plug" onTop = {i === 0}/>
+        </div>
+      );
+      plugs = [...plugs, plug()];
+    }
+
+    return plugs
+  }
+
   render() {
-    const {entities, loadMore, children, loading} = this.props
-    const renderedTransactions = this.getTransactions(entities, loadMore, loading)
+    const {entities, loadMore, children, loading} = this.props;
+    const loadingPlugs = this.addLoadingPlugs();
+    const renderedTransactions = this.getTransactions(entities, loadMore, loading);
+
     return (
       <div>
         <O_ScrollUp initTop={50} showAfter={700}>
           <A_Container type='section-clean'>
             {children}
               <M_ScrollScreen >
-                {renderedTransactions}
+                {loading
+                  ? (loadingPlugs)
+                  : (renderedTransactions)
+                }
               </M_ScrollScreen>
           </A_Container>
         </O_ScrollUp>
