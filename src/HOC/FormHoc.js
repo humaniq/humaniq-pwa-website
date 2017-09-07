@@ -47,6 +47,7 @@ export default (ComposedComponent) => class FormHoc extends Component {
   };
 
   validate(values, valRules) {
+
     let errors = {};
 
     for (let valueName in values) {
@@ -55,51 +56,8 @@ export default (ComposedComponent) => class FormHoc extends Component {
         const value = values[valueName];
         const validationRules = valRules[valueName];
 
-        for (let ruleName in validationRules) {
+        errors = this.applyValidationRules(valueName, value, validationRules, errors);
 
-          if (validationRules.hasOwnProperty(ruleName)) {
-
-            let customError = validationRules[ruleName] !== 'default error'
-              ? validationRules[ruleName]
-              : false;
-
-            if (ruleName === 'isEmail' && value) {
-              if (!validateEmail(value)) {
-                errors[valueName] = customError || 'Looks like an invalid email address';
-                break;
-              } else {
-                errors[valueName] = ''
-              }
-            }
-            else if(ruleName === 'isUrl' && value) {
-              if (!validateWebsiteName(value)) {
-                errors[valueName] = customError || 'Looks like an invalid url address';
-                break;
-              } else {
-                errors[valueName] = ''
-              }
-            }
-            else if(ruleName === 'ranged' && value) {
-              let max = validationRules[ruleName].max;
-              let valLength = value.trim().length;
-              let overMax = valLength - max;
-              if (max < valLength) {
-                errors[valueName] = `Maximum length is 500 characters. The text is larger by ${overMax} character${overMax !== 1 ? 's' : ''}`;
-                break;
-              } else {
-                errors[valueName] = ''
-              }
-            }
-            else if(ruleName === 'required') {
-              if (!value) {
-                errors[valueName] = customError || 'Please fill this field';
-                break;
-              } else {
-                errors[valueName] = ''
-              }
-            }
-          }
-        }
       }
     }
 
@@ -107,6 +65,50 @@ export default (ComposedComponent) => class FormHoc extends Component {
     const valid = Object.keys(errors).every(key => errors[key] === '');
     return valid
   }
+
+  applyValidationRules(valueName, value, validationRules, errors) {
+
+    for (let ruleName in validationRules) {
+      if (validationRules.hasOwnProperty(ruleName)) {
+
+        errors[valueName] = '';
+
+        let customError = validationRules[ruleName] !== 'default error'
+          ? validationRules[ruleName]
+          : false;
+
+        if (ruleName === 'isEmail' && value) {
+          if (!validateEmail(value)) {
+            errors[valueName] = customError || 'Looks like an invalid email address';
+            break;
+          }
+        }
+        else if(ruleName === 'isUrl' && value) {
+          if (!validateWebsiteName(value)) {
+            errors[valueName] = customError || 'Looks like an invalid url address';
+            break;
+          }
+        }
+        else if(ruleName === 'ranged' && value) {
+          let max = validationRules[ruleName].max;
+          let valLength = value.trim().length;
+          let overMax = valLength - max;
+          if (max < valLength) {
+            errors[valueName] = `Maximum length is 500 characters. The text is larger by ${overMax} character${overMax !== 1 ? 's' : ''}`;
+            break;
+          }
+        }
+        else if(ruleName === 'required') {
+          if (!value) {
+            errors[valueName] = customError || 'Please fill this field';
+            break;
+          }
+        }
+      }
+    }
+    return errors
+  }
+
 
   render() {
     return <ComposedComponent {...this.props}
