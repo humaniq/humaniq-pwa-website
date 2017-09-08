@@ -1,4 +1,5 @@
 import {arrayUnique, numberFormat} from 'utils'
+import moment from 'moment';
 
 export default ({transactions, nextTimestampIso}, oldEntities) => {
   let entities, complete
@@ -20,8 +21,9 @@ export default ({transactions, nextTimestampIso}, oldEntities) => {
     }))
     entities = arrayUnique(oldEntities.concat(newEntities));
   }
-
-
+  entities.sort(function (left, right) {
+    return moment.utc(right.time, 'YYYYMMDDTHHmmss[Z]').diff(moment.utc(left.time, 'YYYYMMDDTHHmmss[Z]'))
+  });
   return({
     entities,
     complete,
