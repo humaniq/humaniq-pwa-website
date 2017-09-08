@@ -18,10 +18,10 @@ class SE_HmqLog extends Component {
         <div key ={props.txHash}>
           <O_Transaction {...props} type="log" onTop = {i === 0}/>
           {addWayPoint &&
-          <Waypoint
-            scrollableAncestor={'window'}
-            onEnter={loadMore}
-          />
+            <Waypoint
+              scrollableAncestor={'window'}
+              onEnter={loadMore}
+            />
           }
         </div>
       )
