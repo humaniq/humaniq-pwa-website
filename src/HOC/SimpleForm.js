@@ -4,9 +4,8 @@ import update from 'immutability-helper';
 
 const defaultError = {
   email: 'Looks like an invalid email address',
-  url: 'Looks like an invalid email address',
+  url: 'Looks like an invalid url address',
   maxLengh: max => `Maximum length is ${max} characters.`,
-  // maxLengh: (max, overMax) => `Maximum length is ${max} characters. The text is larger by ${overMax} character${overMax !== 1 ? 's' : ''}`,
   required: 'Please fill this field'
 }
 
@@ -44,19 +43,19 @@ export default (ComposedComponent, config)  => class FormHoc extends Component {
     return res
   }
 
-  getFormValidationConfig(fieldNamesArray = [], validations = {}){
+  getFormValidationConfig(fieldNamesArray = [], validations = {}, customErrors = {}){
     let res = {}
 
     fieldNamesArray.forEach( fieldName => {
       const fieldConfig = validations[fieldName]
-      res[fieldName] = this.getFieldValidationConfig(fieldConfig, fieldName)
+
+      res[fieldName] = this.getFieldValidationConfig(fieldConfig, fieldName, customErrors[fieldName])
     })
     return res
   }
 
-  getFieldValidationConfig (fieldConfig, fieldName){
-    let type, customError, option;
-    const customErrors = config.customErrors || {}
+  getFieldValidationConfig (fieldConfig, fieldName, customError){
+    let type, error, option;
 
     switch(_typeOf(fieldConfig)){
       case 'array':
@@ -67,15 +66,14 @@ export default (ComposedComponent, config)  => class FormHoc extends Component {
         })
         return types
       case 'object':
-        console.log(fieldConfig.type, fieldConfig.option)
         type = fieldConfig.type
-        customError = this.getInitError(customErrors[fieldName])
+        error = customError && customError[type] || defaultError[type]
         option = fieldConfig.option
-        return ([this.getInitValType({type, customError, option})])
+        return ([this.getInitValType({type, error, option})])
       case 'string':
         type = fieldConfig
-        customError = this.getInitError(customErrors[fieldName])
-        return [this.getInitValType({type, customError})]
+        error = customError || defaultError[type]
+        return [this.getInitValType({type, error})]
       case 'undefined':
         return []
     }
@@ -89,10 +87,9 @@ export default (ComposedComponent, config)  => class FormHoc extends Component {
     }
   }
   
-  getInitValType({type, option, customError}){
-    const
-      error =  customError || defaultError[type],
-      errorFunc = _typeOf(error) == 'function'
+  getInitValType({type, option, error}){
+    const errorFunc = _typeOf(error) == 'function'
+
 
     return({type, option, errorFunc, error})
   }
@@ -151,7 +148,7 @@ export default (ComposedComponent, config)  => class FormHoc extends Component {
 
     return ( value => {
       const isValid = validationFunc(value)
-      const _error = (errorFunc ? error.maxLengh(option) : error)
+      const _error = (errorFunc ? error(option) : error)
       console.log(_error)
       return({
         isValid,
@@ -204,7 +201,6 @@ export default (ComposedComponent, config)  => class FormHoc extends Component {
 
   render() {
     const {fields, formValid, submited} = this.state
-    console.log(fields.lastName)
 
     const {...props} = this.props
     delete props.handeSubmit;

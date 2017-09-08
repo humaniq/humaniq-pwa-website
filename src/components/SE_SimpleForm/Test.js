@@ -4,9 +4,7 @@ import SimpleForm from 'HOC/SimpleForm';
 
 
 const config = {
-  // fieldNames: ['firstName', 'lastName', 'email', 'webSite', 'bio', 'word'],
-  fieldNames: ['firstName', 'lastName'],
-
+  fieldNames: ['firstName', 'lastName', 'email', 'webSite', 'bio', 'word'],
   validations: {
     firstName: 'required',
     lastName: ['required', {type: 'maxLengh', option: 5}],
@@ -51,46 +49,46 @@ class Test extends Component {
               text => this.props.onFieldChange('lastName', text)
             }
           />
-          {/*<A_InputText*/}
-            {/*value = {fields['email'].value}*/}
-            {/*onChange*/}
-            {/*label = {'emaillabel'}*/}
-            {/*placeholder = {'emailplaceholder'}*/}
-            {/*error = {fields['email'].error}*/}
-            {/*handleChange = {*/}
-              {/*text => this.props.onFieldChange('email', text)*/}
-            {/*}*/}
-          {/*/>*/}
-          {/*<A_InputText*/}
-            {/*value = {fields['webSite'].value}*/}
-            {/*onChange*/}
-            {/*label = {'label'}*/}
-            {/*placeholder = {'placeholder'}*/}
-            {/*error = {fields['webSite'].error}*/}
-            {/*handleChange = {*/}
-              {/*text => this.props.onFieldChange('webSite', text)*/}
-            {/*}*/}
-          {/*/>*/}
-          {/*<A_InputText*/}
-            {/*value = {fields['bio'].value}*/}
-            {/*onChange*/}
-            {/*label = {'bio'}*/}
-            {/*placeholder = {'bioplaceholder'}*/}
-            {/*error = {fields['bio'].error}*/}
-            {/*handleChange = {*/}
-              {/*text => this.props.onFieldChange('bio', text)*/}
-            {/*}*/}
-          {/*/>*/}
-          {/*<A_InputText*/}
-            {/*value = {fields['word'].value}*/}
-            {/*onChange*/}
-            {/*label = {'label'}*/}
-            {/*placeholder = {'placeholder'}*/}
-            {/*error = {fields['word'].error}*/}
-            {/*handleChange = {*/}
-              {/*text => this.props.onFieldChange('word', text)*/}
-            {/*}*/}
-          {/*/>*/}
+          <A_InputText
+            value = {fields['email'].value}
+            onChange
+            label = {'emaillabel'}
+            placeholder = {'emailplaceholder'}
+            error = {fields['email'].error}
+            handleChange = {
+              text => this.props.onFieldChange('email', text)
+            }
+          />
+          <A_InputText
+            value = {fields['webSite'].value}
+            onChange
+            label = {'webSite'}
+            placeholder = {'placeholder'}
+            error = {fields['webSite'].error}
+            handleChange = {
+              text => this.props.onFieldChange('webSite', text)
+            }
+          />
+          <A_InputText
+            value = {fields['bio'].value}
+            onChange
+            label = {'bio'}
+            placeholder = {'bioplaceholder'}
+            error = {fields['bio'].error}
+            handleChange = {
+              text => this.props.onFieldChange('bio', text)
+            }
+          />
+          <A_InputText
+            value = {fields['word'].value}
+            onChange
+            label = {'label'}
+            placeholder = {'placeholder'}
+            error = {fields['word'].error}
+            handleChange = {
+              text => this.props.onFieldChange('word', text)
+            }
+          />
           <button onClick={handeSubmit}>Submit</button>
         </form>
       </div>
