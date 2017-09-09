@@ -18,13 +18,13 @@ class SE_HmqSearch extends Component {
   getResults(entities){
     return(
       entities.map( ({type, ...props}, i) => (
-        <O_Transaction key={'key_' + i} {...props} type={type} up={i == 0}/>
+        <O_Transaction key={'key_' + i} {...props} type={type} onTop={i === 0}/>
       ))
     )
   }
 
   render() {
-    const {request, show, entities} = this.props
+    const {request, show, entities} = this.props;
 
     let result
     if(show){
