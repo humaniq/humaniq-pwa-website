@@ -12,7 +12,8 @@ export default (data) => {
     price: `$ ${(+ tokenValue.usd).toFixed(5)}`,
     pair: `${marketPair.first}\\${marketPair.second}`,
     usdAmount: numberFormat(+lastHours24.tradesVolume.usd, 2),
-    hmqAmount: numberFormat(+lastHours24.tradesVolume.hmq, 2)
+    hmqAmount: numberFormat(+lastHours24.tradesVolume.hmq, 2),
+    status: true,
   }))
 
   return({
