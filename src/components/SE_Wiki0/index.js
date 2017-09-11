@@ -9,6 +9,7 @@ import A_Link from 'A_Link'
 import Info from './Info'
 import A_P from 'A_P'
 import O_ArticleList from 'O_ArticleList'
+import M_Preloader from 'M_Preloader'
 
 class SE_Wiki0 extends Component {
 
@@ -16,6 +17,7 @@ class SE_Wiki0 extends Component {
     const {articles} = this.props
     return (
       <div>
+        <M_Preloader />
         <A_Container type='section-wiki'>
           <div className={cn('hero')}>
             <div className={cn('hero-item')}>
