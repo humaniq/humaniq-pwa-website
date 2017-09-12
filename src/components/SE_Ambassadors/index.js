@@ -99,7 +99,7 @@ class SE_Ambassadors  extends Component {
     return (
       <div>
         <Meta />
-        <A_Container type="section">
+        <A_Container type="equal">
           <O_Hero img={{src: "/img/illustrations/ambassadors.svg", alt: "ambassadors"}}>
             <A_H type="hero">Our Global Team</A_H>
             <A_P type="hero">At Humaniq, everything we do is motivated by our wish to provide the most widespread access to banking possible.</A_P>
@@ -128,19 +128,19 @@ class SE_Ambassadors  extends Component {
             </div>
           </div>
         </A_Container>
-        <A_Container type="equal">
+        {/*<A_Container type="equal">*/}
 
-          <O_TextUsHere
-            {...{
-              title: 'Join Ambassadors',
-              text: 'If you believe you can help your community, join Humaniq global Ambassador\'s programme.',
-              link: {
-                linkText: 'Join Humaniq Network',
-                url: 'mailto:info@humaniq.com'
-              }
-            }}
-          />
-        </A_Container>
+          {/*<O_TextUsHere*/}
+            {/*{...{*/}
+              {/*title: 'Join Ambassadors',*/}
+              {/*text: 'If you believe you can help your community, join Humaniq global Ambassador\'s programme.',*/}
+              {/*link: {*/}
+                {/*linkText: 'Join Humaniq Network',*/}
+                {/*url: 'mailto:info@humaniq.com'*/}
+              {/*}*/}
+            {/*}}*/}
+          {/*/>*/}
+        {/*</A_Container>*/}
       </div>
     )
   }
