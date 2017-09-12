@@ -10,7 +10,7 @@ import {dateString} from 'utils/propsValidationHelpers'
 class O_TransactionMarket extends Component {
 
   render() {
-    const {address, rank, price, pair, usdAmount, hmqAmount, url, time, onTop} = this.props;
+    const {address, rank, price, pair, usdAmount, hmqAmount, url, time, status, onTop} = this.props;
     return (
       <div className={cn({onTop, 'type':'markets'})}>
 
