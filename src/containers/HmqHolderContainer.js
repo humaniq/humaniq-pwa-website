@@ -5,9 +5,14 @@ import {fetchHmqHolderT} from 'store/entities/hmqHolder/actions'
 import {cleanHmqHolderT} from 'store/entities/hmqHolder/actions'
 
 function mapStateToProps( state ) {
-  const {totalTransactions, loaded, loading, balance, address, transactions:{offset, clean, ...transactions}} = state.hmqHolder
+  const {
+    totalTransactions, loaded, loading, balance, address,
+    transactions:{offset, clean, ...transactions}} = state.hmqHolder;
 
-  return {totalTransactions, balance, loaded, loading, address, offset, clean, transactions};
+  return {
+    holder: {totalTransactions, balance, loaded, loading, address, offset, clean},
+    transactions
+  };
 }
 
 function mapDispatchToProps(dispatch) {
