@@ -4,6 +4,7 @@ import A_H from 'A_H'
 import A_P from 'A_P'
 import M_InfoBlock from 'M_InfoBlock'
 import O_Сrumbs from 'O_Сrumbs'
+import M_Preloader from 'M_Preloader'
 import A_Container from 'A_Container';
 import './styles.scss';
 import {cssClassName} from 'utils'
@@ -12,7 +13,7 @@ const cn = cssClassName('SE_HmqBlock')
 class SE_HmqBlock extends Component {
 
   render() {
-    const {loaded, blockNumber, height, fromNow, timeStamp, hash, parentHash, difficulty, gasLimit, gasUsed} = this.props
+    const {loading, loaded, blockNumber, height, fromNow, timeStamp, hash, parentHash, difficulty, gasLimit, gasUsed} = this.props
 
     if(!loaded) return null;
     return (
@@ -25,22 +26,28 @@ class SE_HmqBlock extends Component {
               {name: blockNumber}
             ]}
           />
-          <M_InfoBlock>
-            <A_H type='hmq-e'>Block Height</A_H>
-            <A_P type='hmq-e'>{height}</A_P>
-            <A_H type='hmq-e'>Time Stamp</A_H>
-            <A_P type='hmq-e'><span className={cn('from-now')}>{fromNow} </span>({timeStamp})</A_P>
-            <A_H type='hmq-e'>Hash</A_H>
-            <A_P type='hmq-e'>{hash}</A_P>
-            <A_H type='hmq-e'>Parent Hash</A_H>
-            <A_P type='hmq-e'>{parentHash}</A_P>
-            <A_H type='hmq-e'>Difficulty</A_H>
-            <A_P type='hmq-e'>{difficulty}</A_P>
-            <A_H type='hmq-e'>Gas Limit</A_H>
-            <A_P type='hmq-e'>{gasLimit}</A_P>
-            <A_H type='hmq-e'>Gas Used</A_H>
-            <A_P type='hmq-e'>{gasUsed}</A_P>
-          </M_InfoBlock>
+
+          {loading ? (
+            <M_Preloader />
+          ) : (
+            <M_InfoBlock>
+              <A_H type='hmq-e'>Block Height</A_H>
+              <A_P type='hmq-e'>{height}</A_P>
+              <A_H type='hmq-e'>Time Stamp</A_H>
+              <A_P type='hmq-e'><span className={cn('from-now')}>{fromNow} </span>({timeStamp})</A_P>
+              <A_H type='hmq-e'>Hash</A_H>
+              <A_P type='hmq-e'>{hash}</A_P>
+              <A_H type='hmq-e'>Parent Hash</A_H>
+              <A_P type='hmq-e'>{parentHash}</A_P>
+              <A_H type='hmq-e'>Difficulty</A_H>
+              <A_P type='hmq-e'>{difficulty}</A_P>
+              <A_H type='hmq-e'>Gas Limit</A_H>
+              <A_P type='hmq-e'>{gasLimit}</A_P>
+              <A_H type='hmq-e'>Gas Used</A_H>
+              <A_P type='hmq-e'>{gasUsed}</A_P>
+            </M_InfoBlock>
+          )}
+
         </A_Container>
       </div>
 
