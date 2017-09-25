@@ -24,7 +24,7 @@ class O_TransactionPlaceholder extends Component {
           <div className={cn('row')} />
         </div>
 
-        <div className={cn('section')}>
+        <div className={cn('section', {'align-content': 'center'})}>
           <div className={cn('row')} />
         </div>
       </div>
