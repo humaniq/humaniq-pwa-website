@@ -27,7 +27,8 @@ const SE_Home = ({animation}) => (
         text: 'Learn more about HMQ'
       }}
       img ={{
-        src: 'img/illustrations/the-power-of-blockchain.svg',
+        src: '/img/illustrations/the-power-of-blockchain.svg',
+        height: 280,
         alt: 'Learn more about Humaniq partners'
       }}
     ><A_P type='third'>Join the Humaniq Forum — a public discussion board for entrepreneurs around the world. Connect with other entrepreneurs, find beta users, learn from experienced founders, and get advice on how to overcome early challenges.
@@ -75,31 +76,37 @@ export default SE_Home
 const features = [
   {
     img: '/img/illustrations/free-payments.svg',
+    height: 260,
     title: 'Free Payments',
     subtitle: 'Send, receive and request funds with no transmission comission.'
   },
   {
     img: '/img/illustrations/biometrics-protected.svg',
+    height: 260,
     title: 'Biometrics Protected',
     subtitle: 'Lock money with your biometrics, avoiding obscure passwords.'
   },
   {
     img: '/img/illustrations/digital-identity.svg',
+    height: 260,
     title: 'Digital Identity',
     subtitle: 'Create a virtual identity that evolves with you and your funds.'
   },
   {
     img: '/img/illustrations/powerful-platform.svg',
+    height: 260,
     title: 'Powerful Platform',
     subtitle: 'Entirely transparent, free and accessible at all times.'
   },
   {
     img: '/img/illustrations/open-api.svg',
+    height: 260,
     title: 'Open API',
     subtitle: 'Create the next generation DApp to solve world’s biggest challenges.'
   },
   {
     img: '/img/illustrations/light-weight.svg',
+    height: 260,
     title: 'Light Weight',
     subtitle: 'No matter what internet connection you have, Humaniq finds a way.'
   }

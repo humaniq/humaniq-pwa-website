@@ -12,31 +12,37 @@ import A_P from 'A_P'
 const features = [
   {
     img: '/img/illustrations/free-payments.svg',
+    height: 260,
     title: 'Free Payments',
     subtitle: 'Send, receive and request funds with no transmission comission.'
   },
   {
     img: '/img/illustrations/biometrics-protected.svg',
+    height: 260,
     title: 'Biometrics Protected',
     subtitle: 'Lock money with your biometrics, avoiding obscure passwords.'
   },
   {
     img: '/img/illustrations/digital-identity.svg',
+    height: 260,
     title: 'Digital Identity',
     subtitle: 'Create a virtual identity that evolves with you and your funds.'
   },
   {
     img: '/img/illustrations/powerful-platform.svg',
+    height: 260,
     title: 'Powerful Platform',
     subtitle: 'Entirely transparent, free and accessible at all times.'
   },
   {
     img: '/img/illustrations/open-api.svg',
+    height: 260,
     title: 'Open API',
     subtitle: 'Create the next generation DApp to solve world’s biggest challenges.'
   },
   {
     img: '/img/illustrations/light-weight.svg',
+    height: 260,
     title: 'Light Weight',
     subtitle: 'No matter what internet connection you have, Humaniq finds a way.'
   }

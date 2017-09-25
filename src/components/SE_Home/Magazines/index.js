@@ -18,7 +18,8 @@ const magazines = [
   {
     img: {
       alt: 'Richtopia',
-      src: '/img/magazines-logos/cointelegraph@2x.jpg'
+      src: '/img/magazines-logos/cointelegraph@2x.jpg',
+      height: 62.22,
     },
     to: 'https://cointelegraph.com/news/ethereum-based-humaniq-to-deliver-banking-40-to-2-bln-unbanked'
   },
