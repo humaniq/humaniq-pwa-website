@@ -6,6 +6,7 @@ import M_InfoBlock from 'M_InfoBlock'
 import O_Сrumbs from 'O_Сrumbs'
 import O_Transaction from 'O_Transaction'
 import M_ScrollScreen from 'M_ScrollScreen'
+import M_Preloader from 'M_Preloader'
 import A_Container from 'A_Container'
 import O_ScrollUp from "O_ScrollUp";
 import Waypoint from 'react-waypoint'
@@ -33,9 +34,10 @@ class SE_HmqHolder extends Component {
   }
 
   render() {
-    const {totalTransactions, balance, address, loadMore, transactions:{entities, complete, loading}} = this.props
-    const load = !complete && !loading
-    const renderedTransactions = this.getTransactions(entities, loadMore, load)
+    const {holder, transactions, loadMore} = this.props;
+
+    const load = !transactions.complete && !transactions.loading;
+    const renderedTransactions = this.getTransactions(transactions.entities, loadMore, load);
     return (
       <div>
         <A_Container type='section-clean'>
@@ -43,21 +45,26 @@ class SE_HmqHolder extends Component {
             notLink
             path={[
               {name: 'Token Holders'},
-              {name: address}
+              {name: holder.address}
             ]}
           />
-          <M_InfoBlock>
-            <A_H type='hmq-e'>Balance</A_H>
-            <A_P type='hmq-e'>{balance}</A_P>
-            <A_H type='hmq-e'>Total Transactions</A_H>
-            <A_P type='hmq-e'>{totalTransactions}</A_P>
-          </M_InfoBlock>
+          {holder.loading ? (
+            <M_Preloader />
+          ) : (
+            <M_InfoBlock>
+              <A_H type='hmq-e'>Balance</A_H>
+              <A_P type='hmq-e'>{holder.balance}</A_P>
+              <A_H type='hmq-e'>Total Transactions</A_H>
+              <A_P type='hmq-e'>{holder.totalTransactions}</A_P>
+            </M_InfoBlock>
+          )}
+
         </A_Container>
         <O_ScrollUp initTop={50} showAfter={700}>
           <A_Container type='section-clean'>
-            <M_ScrollScreen desabled={complete}>
+            <M_ScrollScreen desabled={transactions.complete}>
               {renderedTransactions}
-              {loading && <O_HmqContentPlaceholder layout='holders' amount = {20}/>}
+              {transactions.loading && <O_HmqContentPlaceholder layout='holders' amount = {20}/>}
             </M_ScrollScreen>
           </A_Container>
         </O_ScrollUp>
@@ -68,10 +75,14 @@ class SE_HmqHolder extends Component {
 }
 
 SE_HmqHolder.propTypes = {
-  totalTransactions: T.number.isRequired,
-  balance: T.string.isRequired,
-  address: T.string.isRequired,
+  holder: T.shape({
+    totalTransactions: T.number.isRequired,
+    balance: T.string.isRequired,
+    address: T.string.isRequired,
+  }).isRequired,
+
   loadMore: T.func.isRequired,
+
   transactions: T.shape({
     entities: T.array.isRequired,
     complete: T.bool.isRequired,
