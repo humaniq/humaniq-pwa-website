@@ -45,7 +45,7 @@ class O_TransactionMarket extends Component {
           </div>
         </div>
 
-        <div className={cn('section')}>
+        <div className={cn('section', {'align-content': 'center'})}>
           <div className={cn('row')}>
             {time && <div className={cn('time-counter', {confirmed: status === 'confirmed'})}>
               {moment(time).fromNow()}

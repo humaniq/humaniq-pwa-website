@@ -13,9 +13,9 @@ const cn = cssClassName('SE_HmqBlock')
 class SE_HmqBlock extends Component {
 
   render() {
-    const {loading, loaded, blockNumber, height, fromNow, timeStamp, hash, parentHash, difficulty, gasLimit, gasUsed} = this.props
 
-    if(!loaded) return null;
+    const {loading, loaded, blockNumber, height, fromNow, timeStamp, hash, parentHash, difficulty, gasLimit, gasUsed} = this.props;
+
     return (
       <div>
         <A_Container type='equal'>
@@ -29,7 +29,7 @@ class SE_HmqBlock extends Component {
 
           {loading ? (
             <M_Preloader />
-          ) : (
+          ) : ( loaded ? (
             <M_InfoBlock>
               <A_H type='hmq-e'>Block Height</A_H>
               <A_P type='hmq-e'>{height}</A_P>
@@ -46,6 +46,9 @@ class SE_HmqBlock extends Component {
               <A_H type='hmq-e'>Gas Used</A_H>
               <A_P type='hmq-e'>{gasUsed}</A_P>
             </M_InfoBlock>
+            ) : (
+              <p>Could not retrieve information from server</p>
+              )
           )}
 
         </A_Container>
