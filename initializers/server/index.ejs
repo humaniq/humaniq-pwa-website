@@ -55,7 +55,7 @@
           background-color: #FFEACC;
           transition: height .3s linear;
         }
-        .progress::before, .progress::after {
+        .progress::after {
           content: '';
           position: absolute;
           background-color: #ff9800;
@@ -66,12 +66,8 @@
           will-change: animation;
         }
 
-        .progress::before {
-          animation: indeterminate 2.1s cubic-bezier(0.195, 0.360, 0.945, 1.650) infinite;
-        }
-
         .progress::after {
-          animation: indeterminate 2.1s cubic-bezier(0.900, -0.590, 0.715, 1.045) infinite;
+          animation: indeterminate 1.9s cubic-bezier(0.6, -.5, 0.35, 1) infinite;
         }
 
         @keyframes indeterminate {
