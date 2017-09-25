@@ -15,7 +15,7 @@ class SE_HmqHash extends Component {
 
   render() {
     const {loading, loaded, txHash, block, numberConfirmations, fromNow, timeStamp, from, to, value, fee, usedByTransaction} = this.props
-    if(!loaded) return null;
+
     return (
       <div>
         <A_Container type='equal'>
@@ -28,7 +28,7 @@ class SE_HmqHash extends Component {
           />
           {loading ? (
             <M_Preloader />
-          ) : (
+          ) : ( loaded ? (
             <M_InfoBlock>
               <A_H type='hmq-e'>TxHash</A_H>
               <A_P type='hmq-e'>{txHash}</A_P>
@@ -48,6 +48,9 @@ class SE_HmqHash extends Component {
               <A_H type='hmq-e'>Total Gas Used by Txn</A_H>
               <A_P type='hmq-e'>{usedByTransaction}</A_P>
             </M_InfoBlock>
+            ) : (
+              <p>Could not retrieve information from server</p>
+            )
           )}
 
         </A_Container>
