@@ -1,4 +1,5 @@
 import {REQUEST, WIKI, START, SUCCESS, FAIL} from 'constants'
+import mapper from './mapper'
 
 const initLevel0 = {
   level0Title: '',
@@ -49,14 +50,13 @@ const initWikiArticles = {
 }
 
 export default (wikiArticles = initWikiArticles, {type, data}) => {
-
   switch (type) {
     case REQUEST + WIKI + START:
-      return {...wikiArticles, loading: true}
+      return {...wikiArticles, loading: true};
     case REQUEST + WIKI + SUCCESS:
-      return {...wikiArticles, loading: false, loaded: true, ...data}
+      return {...wikiArticles, loading: false, loaded: true, ...mapper(data)};
     case REQUEST + WIKI + FAIL:
-      return {...wikiArticles, loading: false}
+      return {...wikiArticles, loading: false};
   }
   return wikiArticles;
 };

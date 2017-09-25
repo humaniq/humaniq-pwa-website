@@ -2,7 +2,6 @@ import request from 'superagent'
 import {stringify} from 'qs'
 import {BUTTER_CMS_API_URL, BUTTER_CMS_API_AUTH_TOKEN, BUTTER_CMS_API_ENDPOINTS} from 'store/constants/api'
 import {REQUEST, CONTENT, WIKI, POST, START, SUCCESS, FAIL, ERROR} from 'store/constants'
-import {convert} from 'utils'
 
 export const BUTTER_CMS_CALL = 'BUTTER_CMS_CALL'
 
@@ -50,7 +49,7 @@ export default () => next => action => {
   promise.then(
     response => (
       next(nextAction(action, {
-        data: preparation(butterType, response.data),
+        data: response.data,
         type: successType
       }))
     ),
@@ -77,33 +76,4 @@ function APICall({endpoint, query}) {
       error => reject(error)
     )
   })
-}
-
-function preparation(butterType, data) {
-  switch(butterType){
-    case WIKI:
-      return prepareWiki(data)
-  }
-  return data
-}
-
-function prepareWiki(data) {
-  let _preparedData = {}
-  for (let valueName in data) {
-    const level0Title =  convert.toTitleCase(valueName)
-    const _kebabCaseName = convert.toKebab(valueName)
-    _preparedData[_kebabCaseName] = {
-      ids: [],
-      entities: {},
-      level0Title
-    }
-
-    data[valueName].forEach(({title, category, article}) => {
-      const pseudoId = convert.toCleanKebab(title)
-
-      _preparedData[_kebabCaseName].ids.push(pseudoId)
-      _preparedData[_kebabCaseName].entities[pseudoId] = {title, id:pseudoId, level0:_kebabCaseName, level1:category, article}
-    })
-  }
-  return _preparedData
 }
