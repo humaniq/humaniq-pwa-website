@@ -1,5 +1,7 @@
 # Humaniq Website v2.0
 
+Do not merge me!!! For test only!
+
 Humaniq is a simple and secure 4th generation mobile banking app, based on [Ethereum](https://ethereum.org/) technologies. Safe and strong, this tool of financial inclusion connects 2 billion unbanked people to the global economy. 
 
 Our new version of the website is built on the [PWA technology](https://developers.google.com/web/progressive-web-apps/) to provide our users an ability to safely search the website without any internet connection. 
