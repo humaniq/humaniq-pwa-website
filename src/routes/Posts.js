@@ -13,9 +13,7 @@ class PostsRoute extends Component {
 
   render() {
     return (
-      <div>
-        <PostsContainer />
-      </div>
+      <PostsContainer />
     )
   }
 }

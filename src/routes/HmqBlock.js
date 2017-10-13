@@ -12,9 +12,7 @@ class HmqBlock extends Component {
 
   render() {
     return (
-      <div>
-        <HmqBlockContainer />
-      </div>
+      <HmqBlockContainer />
     )
   }
 }

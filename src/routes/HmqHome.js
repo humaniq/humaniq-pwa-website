@@ -18,9 +18,7 @@ class HmqHomeRoute extends Component {
 
   render() {
     return (
-      <div>
-        <HmqHomeContainer />
-      </div>
+      <HmqHomeContainer />
     )
   }
 }

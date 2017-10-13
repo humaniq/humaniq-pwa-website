@@ -15,9 +15,7 @@ class HmqSearch extends Component {
 
   render() {
     return (
-      <div>
-        <HmqSearchContainer />
-      </div>
+      <HmqSearchContainer />
     )
   }
 }

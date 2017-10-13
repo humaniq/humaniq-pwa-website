@@ -15,9 +15,7 @@ class WikiSearch extends Component {
 
   render() {
     return (
-      <div>
-        <WikiSearchContainer />
-      </div>
+      <WikiSearchContainer />
     )
   }
 }

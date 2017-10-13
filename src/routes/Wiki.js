@@ -14,11 +14,9 @@ class WikiLayoutRoute extends Component {
 
   render() {
     return (
-      <div>
-        <WikiLayoutContainer >
-          {this.props.children}
-        </WikiLayoutContainer>
-      </div>
+      <WikiLayoutContainer >
+        {this.props.children}
+      </WikiLayoutContainer>
     )
   }
 }

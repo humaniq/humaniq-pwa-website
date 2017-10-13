@@ -3,11 +3,9 @@ import HmqLayoutContainer from 'containers/HmqLayoutContainer'
 class HmqLayoutRoute extends Component {
   render() {
     return (
-      <div>
-        <HmqLayoutContainer >
-          {this.props.children}
-        </HmqLayoutContainer>
-      </div>
+      <HmqLayoutContainer >
+        {this.props.children}
+      </HmqLayoutContainer>
     )
   }
 }

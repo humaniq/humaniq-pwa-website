@@ -12,9 +12,7 @@ class AmbassadorsRoute extends Component {
 
   render() {
     return (
-      <div>
-        <AmbassadorsContainer />
-      </div>
+      <AmbassadorsContainer />
     )
   }
 }

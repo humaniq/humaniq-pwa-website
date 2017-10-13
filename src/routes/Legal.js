@@ -5,9 +5,7 @@ class LegalRoute extends Component {
   render() {
     const page = this.props.route.path
     return (
-      <div>
-        <LegalContainer page={page}/>
-      </div>
+      <LegalContainer page={page}/>
     )
   }
 }

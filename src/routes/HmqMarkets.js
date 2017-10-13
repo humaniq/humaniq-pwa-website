@@ -12,9 +12,7 @@ class HmqMarkets extends Component {
 
   render() {
     return (
-      <div>
-        <HmqMarketsContainer />
-      </div>
+      <HmqMarketsContainer />
     )
   }
 }

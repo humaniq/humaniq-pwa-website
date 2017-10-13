@@ -10,9 +10,7 @@ class HomeRoute extends Component {
 
   render() {
     return (
-      <div>
-        <HomeContainer />
-      </div>
+      <HomeContainer />
     )
   }
 }

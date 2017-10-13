@@ -6,9 +6,7 @@ class Wiki0Route extends Component {
 
   render() {
     return (
-      <div>
-        <Wiki0Container />
-      </div>
+      <Wiki0Container />
     )
   }
 }

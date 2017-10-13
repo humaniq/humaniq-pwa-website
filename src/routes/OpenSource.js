@@ -4,9 +4,7 @@ import OpenSourceContainer from 'containers/OpenSourceContainer'
 class OpenSourceRoute extends Component {
   render() {
     return (
-        <div>
-            <OpenSourceContainer />
-        </div>
+      <OpenSourceContainer />
     )
   }
 }
