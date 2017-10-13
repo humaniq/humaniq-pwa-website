@@ -12,9 +12,7 @@ class HmqTxLog extends Component {
 
   render() {
     return (
-      <div>
-        <HmqLogContainer />
-      </div>
+      <HmqLogContainer />
     )
   }
 }

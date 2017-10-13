@@ -14,9 +14,7 @@ class HmqHolders extends Component {
 
   render() {
     return (
-      <div>
-        <HmqHoldersContainer />
-      </div>
+      <HmqHoldersContainer />
     )
   }
 }

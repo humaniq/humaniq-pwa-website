@@ -12,9 +12,7 @@ class HmqTxHash extends Component {
 
   render() {
     return (
-      <div>
-        <HmqHashContainer />
-      </div>
+      <HmqHashContainer />
     )
   }
 }

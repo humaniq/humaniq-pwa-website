@@ -8,9 +8,7 @@ class Wiki0Route extends Component {
     const {params:{level0}} = this.props
 
     return (
-      <div>
-        <Wiki1Container level0={level0}/>
-      </div>
+      <Wiki1Container level0={level0}/>
     )
   }
 }

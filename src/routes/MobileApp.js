@@ -3,11 +3,9 @@ import MobileAppContainer from 'containers/MobileAppContainer'
 class MobileAppRoute extends Component {
   render() {
     return (
-      <div>
-        <MobileAppContainer >
-          {this.props.children}
-        </MobileAppContainer>
-      </div>
+      <MobileAppContainer >
+        {this.props.children}
+      </MobileAppContainer>
     )
   }
 }

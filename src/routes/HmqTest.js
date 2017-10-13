@@ -5,9 +5,7 @@ class HmqTest extends Component {
 
   render() {
     return (
-      <div>
-        <HmqTestContainer />
-      </div>
+      <HmqTestContainer />
     )
   }
 }

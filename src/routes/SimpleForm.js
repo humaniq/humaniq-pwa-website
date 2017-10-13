@@ -5,9 +5,7 @@ class SubscribeRoute extends Component {
 
   render() {
     return (
-      <div>
-        <SimpleFormContainer />
-      </div>
+      <SimpleFormContainer />
     )
   }
 }

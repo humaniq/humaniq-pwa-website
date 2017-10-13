@@ -7,9 +7,7 @@ class ErrorRoute extends Component {
   render() {
     const {params:{err}, location:{query:{url, error}}} = this.props
     return (
-      <div>
-        <SE_Error {...{err, url, error}}/>
-      </div>
+      <SE_Error {...{err, url, error}}/>
     )
   }
 }
