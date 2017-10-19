@@ -1,7 +1,7 @@
 {
   "plugins": [
     "react-hot-loader/babel",
-    ["module-resolver", {"root": ["./src", "./src/components", "./src/store", ""]}]
+    ["module-resolver", {"root": ["./src", "./src/components/pages", "./src/components/widgets", "./src/store", ""]}]
   ],
   "presets": [ "react", "es2015", "stage-0"]
 }

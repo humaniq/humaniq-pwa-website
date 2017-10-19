@@ -1,0 +1,9 @@
+@import "common/utils";
+
+.se-main-layout{
+  &__body{
+    &_is-menu-opened_true{
+      display: none;
+    }
+  }
+}
