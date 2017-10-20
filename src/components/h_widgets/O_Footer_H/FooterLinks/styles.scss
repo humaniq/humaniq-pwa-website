@@ -1,0 +1,91 @@
+@import "common/settings/variables";
+@import "common/utils";
+
+.m-footer-links {
+  display: flex;
+  justify-content: flex-end;
+  @include media($desktop-xl) {
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+
+  &__section {
+    flex-shrink: 0;
+    &:nth-child(1) {
+      width: 300px;
+    }
+    &:nth-child(2){
+      width: 400px;
+    }
+    &:nth-child(3){
+      width: 230px;
+    }
+    &:nth-child(4) {
+      width: 250px;
+    }
+    @include media($desktop-xxl) {
+      &:nth-child(1) {
+        width: 250px;
+      }
+      &:nth-child(2){
+        width: 300px;
+      }
+      &:nth-child(3){
+        width: 160px;
+      }
+      &:nth-child(4) {
+        width: 180px;
+      }
+    }
+    @include media($desktop-xl) {
+      flex-shrink: 1;
+      justify-content: space-between;
+      &:nth-child(1), &:nth-child(2), &:nth-child(3), &:nth-child(4) {
+        width: 20%;
+        margin-right: 5px;
+      }
+    }
+    @include media($tablet) {
+      &:nth-child(1), &:nth-child(2), &:nth-child(3), &:nth-child(4) {
+        width: 48%;
+        margin-bottom: 15px;
+      }
+    }
+    @include media($mobile-xs) {
+      &:nth-child(1), &:nth-child(2), &:nth-child(3), &:nth-child(4) {
+        width: 100%;
+      }
+    }
+
+    &-title {
+      margin-bottom: 30px;
+      font-family: $font-ProximaNova;
+      font-size: 31px;
+      font-weight: 700;
+      color: $color-black;
+      @include media($desktop-xxl) {
+        font-size: 22px;
+      }
+    }
+  }
+
+  &__list-item {
+    margin-bottom: 14px;
+    font-family: $font-ProximaNova;
+    font-size: 21px;
+    line-height: 1.2;
+    @include media($desktop-xxl) {
+      font-size: 15px;
+    }
+    span {
+      font-weight: 700;
+    }
+    a {
+      font-weight: 400;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

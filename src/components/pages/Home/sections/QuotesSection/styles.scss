@@ -1,0 +1,95 @@
+@import "common/settings/variables";
+@import "common/utils";
+
+.se-home-quotes {
+  &__slider {
+    position: relative;
+    width: 400%;
+    height: 100%;
+    display: flex;
+    overflow: hidden;
+    transform: translateX(0);
+    transition: transform .5s ease-in-out;
+    @include media($tablet) {
+      height: 700px;
+    }
+  }
+  &__slide {
+    flex-grow: 0;
+    flex-shrink: 0;
+    height: 100%;
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: $color-main-blue;
+    background-position: 18%,100% 100%;
+    background-size: 420px,cover;
+    background-repeat: no-repeat;
+    @include media($tablet) {
+      align-items: flex-start;
+    }
+    @include media($mobile) {
+      background-image: url('https://lp.humaniq.com/img/quotes.png')!important;
+    }
+
+    &-content {
+      width: 700px;
+      margin-right: 215px;
+      font-family: $font-ProximaNova;
+      color: $color-white;
+      @include media($desktop-xxl) {
+        width: 490px;
+      }
+      @include media($tablet) {
+        width: auto;
+        padding: 100px 30px 60px;
+        margin-right: 0;
+      }
+      @include media($mobile-xs) {
+        padding: 100px 15px 60px;
+      }
+    }
+    &-title {
+      margin-bottom: 55px;
+      @include media($mobile) {
+        margin-bottom: 25px;
+      }
+    }
+    &-text {
+      margin-bottom: 68px;
+      font-size: 33px;
+      line-height: 1.6;
+      @include media($desktop-xxl) {
+        font-size: 21px;
+      }
+      @include media($mobile) {
+        margin-bottom: 55px;
+        font-size: 18px;
+      }
+      &_type {
+        &_small {
+          font-size: 25px;
+          @include media($desktop-xxl) {
+            font-size: 21px;
+          }
+          @include media($mobile) {
+            margin-bottom: 20px;
+            font-size: 15px;
+            line-height: 1.4;
+          }
+        }
+      }
+    }
+    &-author {
+      font-size: 21px;
+      @include media($desktop-xxl) {
+        font-size: 18px;
+      }
+      @include media($mobile-xs) {
+        font-size: 16px;
+      }
+    }
+  }
+}

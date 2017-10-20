@@ -1,0 +1,77 @@
+@import "common/settings/variables";
+@import "common/utils";
+
+.se-home-world-talking {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 12.2%;
+  background-color: $color-main-blue;
+  background-image: url('https://lp.humaniq.com/img/decor.jpg');
+  background-repeat: no-repeat;
+  background-position: 100% 0;
+  @include media($mobile) {
+    background-image: none;
+  }
+
+  &__content {
+    width: 1200px;
+    position: relative;
+    margin: 60px 0 0 60px;
+    font-family: $font-ProximaNova;
+    @include media($desktop-xxl) {
+      width: 860px;
+      margin: 60px 0 0 106px;
+    }
+    @include media($desktop-xl) {
+      margin: 60px 0 0 45px;
+    }
+    @include media($tablet) {
+      width: auto;
+      margin: 0;
+    }
+  }
+
+  &__mentions-list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__mention {
+    box-sizing: border-box;
+    width: 33%;
+    margin-top: 90px;
+    padding-right: 90px;
+    flex-shrink: 0;
+    font-family: $font-ProximaNova;
+    color: $color-black;
+    @include media($tablet) {
+      width: 50%;
+    }
+    @include media($mobile) {
+      width: 100%;
+      padding-right: 0;
+      margin-top: 60px;
+    }
+    &-title {
+      margin-bottom: 35px;
+      font-size: 31px;
+      font-weight: 700;
+      @include media($desktop-xxl) {
+        font-size: 24px;
+      }
+      @include media($mobile-xs) {
+        font-size: 22px;
+      }
+    }
+
+    &-link {
+      font-size: 21px;
+      line-height: 1.2;
+      text-decoration: underline;
+      @include media($desktop-xxl) {
+        font-size: 18px;
+      }
+    }
+  }
+}

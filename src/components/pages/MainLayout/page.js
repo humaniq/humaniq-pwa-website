@@ -1,41 +1,62 @@
 import React, {Component} from 'react';
 import * as T from "prop-types";
 import './styles.scss';
-import O_Footer from 'O_Footer'
 import Header from './Header'
+import Sidebar from './Sidebar'
+import MobileMenu from './MobileMenu'
 import {cssClassName} from 'utils'
-const cn = cssClassName('SE_MainLayout')
+const cn = cssClassName('SE_MainLayout_H')
 
-class SE_MainLayout extends Component {
+class SE_MainLayout_H extends Component {
+
+  state = {
+    headerLinks: ['situation', 'platform', 'perspective', 'challenge'],
+    sidebarLinks: ['timeline', 'team', 'press'],
+    mobileMenuIsActive: false
+  }
+
+  toggleMobileMenu = () => {
+    this.setState({mobileMenuIsActive: !this.state.mobileMenuIsActive})
+  }
 
   render() {
-    const {isMenuOpened, children, toggleMenu, headerTheme, noLayout} = this.props
-    if(noLayout){return children}
+    const { headerLinks, sidebarLinks, mobileMenuIsActive } = this.state
+    const { children } = this.props
+
+    const mobileMenuLinks = [...headerLinks, ...sidebarLinks]
 
     return (
-      <div>
-        { children }
-        {/*<Header*/}
-          {/*{...{isMenuOpened, onClick: toggleMenu, headerTheme}}*/}
-        {/*/>*/}
-          {/*<div className={cn('body', {isMenuOpened})}></div>*/}
-        {/*<O_Footer isMenuOpened={isMenuOpened}/>*/}
+      <div className = {cn()}>
+        <MobileMenu
+          mix = {cn('mobile-menu')}
+          menuLinks = {mobileMenuLinks}
+          mobileMenuIsActive = {mobileMenuIsActive}
+        />
+
+        <Header
+          mix = {cn('header')}
+          menuLinks = {headerLinks}
+          mobileMenuIsActive = {mobileMenuIsActive}
+          toggleMobileMenu = {this.toggleMobileMenu}
+        />
+
+        <div className = {cn('body')}>
+          {children}
+        </div>
+
+        <Sidebar
+          mix = {cn('sidebar')}
+          menuLinks = {sidebarLinks}
+          theme = 'bright'
+        />
       </div>
     )
   }
 }
 
 
-SE_MainLayout.propTypes = {
-  headerTheme: Header.propTypes.headerTheme,
+SE_MainLayout_H.propTypes = {
   children: T.any.isRequired,
-  isMenuOpened: T.bool,
-  toggleMenu: T.func.isRequired
 };
 
-SE_MainLayout.defaultProps = {
-  isMenuOpened: false,
-  mainTagline: '',
-}
-
-export default SE_MainLayout
+export default SE_MainLayout_H

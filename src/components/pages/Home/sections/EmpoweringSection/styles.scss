@@ -1,0 +1,138 @@
+@import "common/settings/variables";
+@import "common/utils";
+
+.se-home-empowering {
+  display: flex;
+  @include media($tablet) {
+    background: $color-main-blue url(https://lp.humaniq.com/img/map-bg.png) no-repeat;
+    background-size: 156%;
+    background-position: 26% 45%;
+  }
+
+  &__left-side {
+    flex: 0 0 50%;
+    @include media($tablet) {
+      display: none;
+    }
+  }
+
+  &__right-side {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: $color-main-blue;
+    flex: 1 1 auto;
+    @include media($tablet) {
+      display: block;
+      margin-bottom: 50px;
+      background-color: transparent;
+    }
+  }
+
+  &__map {
+    width: 100%;
+    height: 100%;
+    background: $color-main-light-blue url(https://lp.humaniq.com/img/map-bg.png) no-repeat;
+    background-size: cover;
+  }
+
+  &__text {
+    position: relative;
+    margin-bottom: 70px;
+    margin-right: 80px;
+    font-family: $font-ProximaNova;
+    color: $color-white;
+    @include media($desktop-xxl) {
+      margin-right: 60px;
+    }
+    @include media($desktop-xl) {
+      margin-right: 0;
+    }
+    @include media($tablet) {
+      margin-bottom: 0;
+    }
+    &-title {
+      margin-bottom: 50px;
+    }
+    &-subtitle {
+      font-size: 42px;
+      line-height: 1.4;
+      @include media($desktop-xxl) {
+        font-size: 30px;
+      }
+      @include media($mobile) {
+        font-size: 25px;
+      }
+      @include media($mobile-xs) {
+        font-size: 22px;
+      }
+    }
+  }
+
+
+  &__hmq-description {
+    position: absolute;
+    bottom: 233px;
+    left: -81px;
+    font-family: $font-ProximaNova;
+    font-size: 21px;
+    color: $color-black;
+    line-height: 1.3;
+    font-weight: 400;
+    letter-spacing: .02em;
+    transform: rotate(-90deg);
+    @include media($desktop-xxl) {
+      left: -60px;
+      bottom: 170px;
+      font-size: 15px;
+    }
+    @include media($tablet) {
+      position: relative;
+      left: 0;
+      bottom: 0;
+      margin-bottom: 60px;
+      font-size: 18px;
+      transform: rotate(0);
+    }
+    @include media($mobile-xs) {
+      font-size: 16px;
+    }
+  }
+
+  &__members {
+    position: absolute;
+    bottom: 65px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 15px;
+    text-align: center;
+    font-weight: 700;
+    color: $color-white;
+    @include media($tablet) {
+      position: relative;
+      bottom: 0;
+      left: 0;
+      transform: translateX(0);
+    }
+    &-number {
+      margin-bottom: 15px;
+      font-family: $font-Celdum;
+      font-size: 72px;
+      line-height: 1;
+      @include media($desktop-xxl) {
+        margin-bottom: 10px;
+        font-size: 51px;
+      }
+    }
+    &-text {
+      font-family: $font-ProximaNova;
+      font-size: 17px;
+      text-transform: uppercase;
+      letter-spacing: .3em;
+      @include media($desktop-xxl) {
+        font-size: 12px;
+      }
+    }
+  }
+}

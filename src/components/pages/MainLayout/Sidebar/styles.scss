@@ -1,0 +1,57 @@
+@import "common/settings/variables";
+@import "common/utils";
+
+.se-main-layout-sidebar {
+  display: flex;
+  @include media($desktop-xl) {
+    display: none;
+  }
+
+  &__angle {
+    position: absolute;
+    right: -39%;
+    bottom: 30px;
+    width: 22px;
+    height: 22px;
+    border: 3px solid #fff;
+    border-left: none;
+    border-top: none;
+    transition: border-color .5s;
+    &_theme {
+      &_bright {
+        border-color: #fff;
+      }
+      &_dark {
+        border-color: #000;
+      }
+    }
+    @include media($desktop-xxl) {
+      right: -32%;
+      width: 18px;
+      height: 18px;
+      border-width: 2px;
+    }
+  }
+
+  &__menu {
+    display: flex;
+    &-link {
+      padding: 30px 32px;
+      font-family: ProximaNova,sans-serif;
+      font-weight: 700;
+      font-size: 17px;
+      letter-spacing: .3em;
+      color: #000;
+      text-transform: uppercase;
+      transform: rotate(0);
+      transition: transform .3s linear;
+      &:hover {
+        transform: rotate(90deg);
+      }
+      @include media($desktop-xxl) {
+        padding: 30px 23px;
+        font-size: 12px;
+      }
+    }
+  }
+}

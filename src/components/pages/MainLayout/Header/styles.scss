@@ -1,95 +1,54 @@
 @import "common/settings/variables";
 @import "common/utils";
 
-.se-main-layout-header {
-  &__root{
-    cursor: default;
-    user-select: none;
-    z-index: 2;
-    &_header-theme_white{
-      border-bottom: $border-line;
-      background-color: $theme-1;
-    }
-    &_header-theme_blue{
-      background-color: $theme-2;
+.se-main-layout-header-h {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @include media($desktop-xl) {
+    padding: 15px 0;
+  }
+
+  &__logo {
+    width: 150px;
+    height: 35px;
+    margin-left: 60px;
+    @include media($desktop-xxl) {
+      width: 105px;
+      height: 25px;
     }
   }
 
-  &__inner {
-    display: flex;
-    align-items: center;
-    height: 100%;
-    height: 7rem;
-    align-items: stretch;
+  &__menu-btn {
+    display: none;
+    margin-right: 65px;
+    @include media($desktop-xl) {
+      display: block;
+    }
   }
-  &__logo{
-    margin-left: -1rem;
-    flex: 0 .5 100px;
-    display: flex;
-    align-items: center;
-  }
-  &__nav{
-    flex: 1 .5 50%;
-    display: flex;
-    justify-content: flex-end;
-    align-items: stretch;
 
-    &-main, &-extra{
-      display: flex;
-      @include media($mobile) {
-        display: none;
-      }
-
-    }
-    &-text{
-      display: flex;
-      align-items: center;
-      padding: 0;
-    }
-    &-main{
-      z-index: 1;
-    }
-    &-btn{
-      user-select: none;
-      cursor: pointer;
-      box-sizing: border-box;
-      display: flex;
-      align-items: center;
-      cursor: pointer;
-      font-weight: 600;
-      justify-content: center;
-      padding: 0 1.2rem;
-      height: 7rem;
-      &:hover, &:active{
-        &:after{
-          content: '';
-          position: absolute;
-          height: 100%;
-          width: 100%;
-          top: 0;
-          left: 0;
-          background-color: rgba(0, 0, 0, 0.1);
-        }
-      }
-      &_theme_light{
-        div{
-          color: white;
-        }
-      }
-      &_theme_dark{
-        div{
-          color: $interactive;
-        }
-      }
-    }
-  }
-  &__menu-btn{
+  &__menu {
     display: flex;
-    align-items: center;
-    flex-flow: 0;
-    margin-left: 1.9rem;
-    @include media($mobile) {
-      margin-left: 0px;
+    margin-right: 17.2%;
+    &-link {
+      padding: 37px 32px;
+      font-family: $font-ProximaNova;
+      color: $color-black;
+      font-size: 17px;
+      font-weight: 700;
+      letter-spacing: .3em;
+      text-transform: uppercase;
+      transition: transform .2s;
+      &:hover {
+        transform: scale(1.1);
+      }
+      @include media($desktop-xxl) {
+        padding: 20px 23px;
+        font-size: 12px;
+      }
+    }
+    @include media($desktop-xl) {
+      display: none;
     }
   }
 }

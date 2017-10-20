@@ -1,0 +1,33 @@
+@import "common/settings/variables";
+@import "common/utils";
+
+.se-home-use-cases {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-right: 20%;
+  padding-left: 27.6%;
+  background-image: url('https://lp.humaniq.com/img/waves.png');
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: contain;
+
+  &__content {
+	width: 100%;
+	position: relative;
+	font-family: $font-ProximaNova;
+  }
+
+  &__title {
+	margin-bottom: 150px;
+	@include media($desktop-xxl) {
+	  margin-bottom: 100px;
+	}
+  }
+
+  &__slider-wrap {
+	width: 100%;
+	overflow-x: scroll;
+  }
+}

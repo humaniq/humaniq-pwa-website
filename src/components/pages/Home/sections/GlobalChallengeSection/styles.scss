@@ -1,0 +1,43 @@
+@import "common/settings/variables";
+@import "common/utils";
+
+.se-home-global-challenge {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 12.2%;
+  background-image: url('https://lp.humaniq.com/img/global.bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50%;
+  @include media($mobile) {
+    background-image: none;
+    background-color: $color-main-blue;
+  }
+
+  &__content {
+    width: 1200px;
+    position: relative;
+    margin: 60px 0 0 60px;
+    font-family: $font-ProximaNova;
+    @include media($desktop-xxl) {
+      width: 745px;
+      margin: 60px 0 0 106px;
+    }
+    @include media($tablet) {
+      width: auto;
+      margin: 0;
+    }
+  }
+
+  &__title {
+    margin-bottom: 60px;
+    @include media($desktop-xxl) {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__info-columns {
+    margin-bottom: 60px;
+  }
+}

@@ -1,0 +1,9 @@
+@import "../utils";
+
+@include font-face('ProximaNova', '../../static/fonts/ProximaNova/ProximaNova-Regular', 400);
+@include font-face('ProximaNova', '../../static/fonts/ProximaNova/ProximaNova-Semibold', 600);
+@include font-face('ProximaNova', '../../static/fonts/ProximaNova/ProximaNova-Bold', 700);
+
+@include font-face('Celdum', '../../static/fonts/Celdum/Celdum-Bold', 700);
+@include font-face('Celdum', '../../static/fonts/Celdum/Celdum-Medium', 500);
+@include font-face('Celdum', '../../static/fonts/Celdum/Celdum-ExtraBold', 800);

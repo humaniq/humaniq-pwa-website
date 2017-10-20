@@ -1,6 +1,7 @@
 import {Route, IndexRoute} from 'react-router'
 import React from 'react'
 import App from './App'
+import AppOld from './App_old'
 import Home from './Home'
 import Error from './Error'
 import Partners from './Partners'
@@ -18,46 +19,55 @@ const getRoutes = (store) => {
   return (
     <Route
       path="/"
-      component={App}
       prepareData={App.prepareData}
     >
-      <IndexRoute
-        component={Home}
-        prepareData={Home.prepareData}
-      />
-      <Route path="use-cases"
-             component={Cases}
-      />
-      <Route path="contact-us"
-             component={ContactUs}
-      />
-      <Route path="partners"
-             prepareData={Partners.prepareData}
-             component={Partners}
-      />
-      {Form}
-      {legal}
-      {HmqExplorer(store)}
-      {Wiki(store)}
+      <Route
+        component={App}
+      >
+        <IndexRoute
+          component={Home}
+          prepareData={Home.prepareData}
+        />
+      </Route>
 
-      <Route path="open-source"
-             component={OpenSource}
-      />
-      <Route path="ambassadors"
-             prepareData={Ambassadors.prepareData}
-             component={Ambassadors}
-      />
-      <Route path="about"
-             component={About}
-      />
       <Route
-        path="/error/:err"
-        component={Error}
-      />
-      <Route
-        path="*"
-        component={Error}
-      />
+        component={AppOld}
+      >
+        <Route path="use-cases"
+               component={Cases}
+        />
+        <Route path="contact-us"
+               component={ContactUs}
+        />
+        <Route path="partners"
+               prepareData={Partners.prepareData}
+               component={Partners}
+        />
+        {Form}
+        {legal}
+        {HmqExplorer(store)}
+        {Wiki(store)}
+
+        <Route path="open-source"
+               component={OpenSource}
+        />
+        <Route path="ambassadors"
+               prepareData={Ambassadors.prepareData}
+               component={Ambassadors}
+        />
+        <Route path="about"
+               component={About}
+        />
+        <Route
+          path="/error/:err"
+          component={Error}
+        />
+        <Route
+          path="*"
+          component={Error}
+        />
+      </Route>
+
     </Route >
   )
 }
