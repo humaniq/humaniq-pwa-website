@@ -1,0 +1,64 @@
+@import "common/settings/variables";
+@import "common/utils";
+
+.se-home-first-mobile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: $color-white;
+  background-image: url(https://lp.humaniq.com/img/waves-platform.png);
+  background-repeat: no-repeat;
+  background-position: 100% 0;
+
+  &__content {
+    position: relative;
+    margin: 60px 0 0 60px;
+    font-family: $font-ProximaNova;
+    @include media($tablet) {
+      margin: 0;
+    }
+  }
+
+  &__title {
+    margin-bottom: 60px;
+    @include media($desktop-xxl) {
+      margin-bottom: 30px;
+    }
+
+  }
+  &__subtitle {
+    margin-bottom: 80px;
+    color: $color-text-gray;
+    font-size: 40px;
+    line-height: 1.2;
+    @include media($desktop-xxl) {
+      margin-bottom: 50px;
+      font-size: 28px;
+    }
+    @include media($tablet) {
+      font-size: 20px;
+    }
+    @include media($mobile) {
+      br {
+        display: none;
+      }
+    }
+  }
+
+  &__button {
+    display: inline-block;
+    position: absolute;
+    right: 12.4%;
+    bottom: 7.5%;
+    @include media($tablet) {
+      position: relative;
+      margin-top: 30px;
+      right: 0;
+      bottom: 0;
+    }
+    @include media($mobile-xs) {
+      display: none;
+    }
+  }
+}

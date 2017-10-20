@@ -1,0 +1,54 @@
+@import "common/settings/variables";
+@import "common/utils";
+
+.a-burger-btn {
+  $this: &;
+  box-sizing: border-box;
+  position: relative;
+  width: 40px;
+  padding: 10px;
+  cursor: pointer;
+  &_is-active {
+    &_true {
+      #{$this}__line {
+        &_position {
+          &_top {
+            top: 5px;
+            transform: rotateZ(45deg);
+            transition: top .3s cubic-bezier(0.23,1,0.32,1), transform .3s cubic-bezier(0.23,1,0.32,1) .3s;
+          }
+          &_middle {
+            opacity: 0;
+            transition: .3s opacity;
+          }
+          &_bottom {
+            top: -5px;
+            transform: rotateZ(-45deg);
+            transition: top .3s cubic-bezier(0.23,1,0.32,1), transform .3s cubic-bezier(0.23,1,0.32,1) .3s;
+          }
+        }
+      }
+    }
+  }
+
+  &__line {
+    background: #000;
+    height: 2px;
+    margin-bottom: 3px;
+    position: relative;
+    top: 0;
+    opacity: 1;
+    &:nth-last-child(1) {
+      margin-bottom: 0
+    }
+    &_position {
+      &_top, &_bottom {
+        transition: top .3s cubic-bezier(0.23,1,0.32,1) 0.3s, transform .3s cubic-bezier(0.23,1,0.32,1);
+      }
+      &_middle {
+        opacity: 1;
+        transition: .4s opacity;
+      }
+    }
+  }
+}

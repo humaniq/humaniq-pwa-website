@@ -5,48 +5,66 @@ import {cssClassName} from 'utils'
 const cn = cssClassName('Home')
 // import Meta from './meta.js'
 import {isMobile} from 'utils/isMobile'
+import O_Footer_H from 'O_Footer_H'
+import EmpoweringSection from './sections/EmpoweringSection'
+import FirstMobileSection from './sections/FirstMobileSection'
+import UnbankedStatSection from './sections/UnbankedStatSection'
+import QuotesSection from './sections/QuotesSection'
+import WhatMakesSection from './sections/WhatMakesSection'
+import SafetySection from './sections/SafetySection'
+import OpportunitiesSection from './sections/OpportunitiesSection'
+import GrowingSection from './sections/GrowingSection'
+import UseCasesSection from './sections/UseCasesSection'
+import GlobalChallengeSection from './sections/GlobalChallengeSection'
+import ExpeditionSection from './sections/ExpeditionSection'
+import TimelineSection from './sections/TimelineSection'
+import WorldTalkingSection from './sections/WorldTalkingSection'
 
 const sectionsNames = [
-  'intro',
-  'project',
+  'empowering',
+  'mobile',
   'situation',
   'changes',
-  // 'platform',
-  // 'perspective',
-  // 'opportunities',
-  // 'use cases',
-  // 'challenge',
-  // 'expedition',
-  // 'timeline',
-  // 'team',
-  // 'press',
-  // 'extra'
+  'platform',
+  'perspective',
+  'opportunities',
+  'use cases',
+  'challenge',
+  'expedition',
+  'timeline',
+  'team',
+  'press',
+  'contacts'
 ]
 
-
 const sectionsObj = {
-  'intro': <div className={cn('section', {bg:'blue'})} key='intro'>text intro</div>,
-  'project': <div className={cn('section')}  key='project'>text project</div>,
-  'situation': <div className={cn('section', {bg:'blue'})}  key='situation'>text situation</div>,
-  'changes': <div className={cn('section')}  key='changes'> changes</div>,
-
+  'empowering': <EmpoweringSection mix={cn('section')} key='empowering' />,
+  'mobile': <FirstMobileSection mix={cn('section')} key='mobile' />,
+  'situation': <UnbankedStatSection mix={cn('section')} key='situation' />,
+  'changes': <QuotesSection mix={cn('section', {type: 'no-padding'})} key='changes' />,
+  'platform': <WhatMakesSection mix={cn('section')} key='platform'/>,
+  'simplicity': <SafetySection mix={cn('section')} key='simplicity'/>,
+  'opportunities': <OpportunitiesSection mix={cn('section')} key='opportunities'/>,
+  'userbase': <GrowingSection mix={cn('section')} key='userbase'/>,
+  'use cases': <UseCasesSection mix={cn('section')} key='usecases'/>,
+  'challenge': <GlobalChallengeSection mix={cn('section')} key='challenge'/>,
+  'expedition': <ExpeditionSection mix={cn('section')} key='expedition'/>,
+  'timeline': <TimelineSection mix={cn('section')} key='timeline'/>,
+  'team': <div className={cn('section')}  key='team'>team</div>,
+  'press': <WorldTalkingSection mix={cn('section')}  key='press'/>,
+  'extra': <O_Footer_H mix={cn('section', {type: 'half-height'})}  key='extra'/>,
 }
+
+const showingWidth = 1120
 
 class Home extends Component {
 
   state = {
     showIndex: this.props.showIndex || 0,
     scroll: true,
-    slowScroll: true
+    slowScroll: true,
+    widthBig: window.innerWidth >= showingWidth
   }
-
-  // on(){
-  //   window.onscroll = window.ontouchmove = window.onwheel = () => true
-  // }
-  //
-  // off(){
-  //   window.onscroll = window.ontouchmove = window.onwheel = (e) => { e.preventDefault(); }
-  // }
 
   getSideMenu(showIndex){
     const hashLinks = sectionsNames.map((name, i) => (
@@ -68,7 +86,6 @@ class Home extends Component {
 
   handleWeel = ({deltaY}) => {
     const {showIndex: oldIndex, slowScroll} = this.state
-    console.log(deltaY)
     if(!slowScroll && Math.abs(deltaY) < 500) return;
 
     const showIndex = deltaY > 0 ? oldIndex + 1: oldIndex - 1
@@ -80,21 +97,52 @@ class Home extends Component {
     }
 
   }
+  componentDidMount(){
+    window.addEventListener("resize", this.getWidth);
+  }
+
+  componentWillUnmount(){
+    window.removeEventListener("resize", this.getWidth)
+  }
+
+  getWidth = () => {
+    const
+      widthBig = window.innerWidth >= showingWidth,
+      shorter = this.state.widthBig && !widthBig,
+      bigger = !this.state.widthBig && widthBig
+
+    if(shorter || bigger){
+      this.setState({widthBig})
+    }
+  }
+
+  getPostionY(showIndex){
+    if(showIndex === sectionsNames.length -1){
+      return(
+        ((showIndex-1) * 100) + 50
+      )
+    }else{
+      return showIndex * 100
+    }
+  }
 
   render() {
-    const {showIndex, scroll} = this.state
-    const positionY = showIndex * 100
+    const {showIndex, scroll, widthBig} = this.state
+
     const sideMenu = this.getSideMenu(showIndex)
-    const onWheel = (scroll && !isMobile.any) ? this.handleWeel : undefined
+    const controlledScroll =  !isMobile.any && widthBig
+    const positionY = controlledScroll ? this.getPostionY(showIndex) : 0
+
+    const onWheel = (scroll && controlledScroll) ? this.handleWeel : undefined
 
     return (
       <div
-        className={cn({'is-mobile': isMobile.any})}
+        className={cn({scroll: !controlledScroll})}
         onWheel = {onWheel}
       >
         <div
           className={cn('inner')}
-          style={isMobile.any ? {} : {transform: `translate3d(0, ${-positionY}vh, 0px`}}
+          style={{transform: `translate3d(0, ${-positionY}vh, 0px`}}
         >
           {sectionsNames.map(name => sectionsObj[name])}
         </div>
