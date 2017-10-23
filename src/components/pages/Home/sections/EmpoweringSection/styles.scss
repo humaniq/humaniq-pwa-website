@@ -4,6 +4,7 @@
 .se-home-empowering {
   display: flex;
   @include media($tablet) {
+    display: block;
     background: $color-main-blue url(https://lp.humaniq.com/img/map-bg.png) no-repeat;
     background-size: 156%;
     background-position: 26% 45%;
