@@ -1,6 +1,6 @@
 import moment from 'moment'
 import { createRequestActions } from 'helpers'
-import { HMQ_GRAPH } from 'constants'
+import { HMQ_GRAPH } from 'store/constants'
 import { BACKEND_CALL } from 'middleware/humaniqBackendApi'
 import { ENDPOINT_HMQ_GRAPH } from 'constants/api'
 

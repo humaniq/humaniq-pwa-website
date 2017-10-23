@@ -1,14 +1,17 @@
-import {SET, MENU, OPEN, CLOSE, TOGGLE, OPEN_ROUTE, HMQ_SECTION} from 'constants'
+import {SET, MENU, OPEN, THEME, CLOSE, TOGGLE, OPEN_ROUTE, HMQ_SECTION} from 'store/constants'
 
 const initNavigation = {
   openRoute: [],
   isMenuOpened: false,
-  hmqSection: ''
+  hmqSection: '',
+  theme: 'bright'
 }
 
 export default (navigation = initNavigation, {type, data}) => {
 
   switch (type) {
+    case SET + THEME:
+      return {...navigation, theme:data}
     case SET + OPEN_ROUTE:
       return {...navigation, openRoute:data}
     case OPEN + MENU:

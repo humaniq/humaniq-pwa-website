@@ -1,4 +1,4 @@
-import {START, SUCCESS, REQUEST, FAIL, HMQ_LOG} from 'constants'
+import {START, SUCCESS, REQUEST, FAIL, HMQ_LOG} from 'store/constants'
 import mapper from './mapper'
 
 const hmqLogInit = {
