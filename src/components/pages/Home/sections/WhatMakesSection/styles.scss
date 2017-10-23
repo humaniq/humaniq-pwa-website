@@ -2,14 +2,10 @@
 @import "common/utils";
 
 .se-home-what-makes {
-  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: $color-white;
-  @include media($tablet) {
-    display: block;
-  }
 
   &__background {
     position: absolute;

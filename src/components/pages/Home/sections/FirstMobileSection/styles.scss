@@ -2,7 +2,6 @@
 @import "common/utils";
 
 .se-home-first-mobile {
-  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -10,9 +9,6 @@
   background-image: url(https://lp.humaniq.com/img/waves-platform.png);
   background-repeat: no-repeat;
   background-position: 100% 0;
-  @include media($tablet) {
-    display: block;
-  }
 
   &__content {
     position: relative;

@@ -41,7 +41,7 @@ const sectionsObj = {
   'empowering': <EmpoweringSection mix={cn('section')} key='empowering' />,
   'mobile': <FirstMobileSection mix={cn('section')} key='mobile' />,
   'situation': <UnbankedStatSection mix={cn('section')} key='situation' />,
-  'changes': <QuotesSection mix={cn('section', {type: 'no-padding'})} key='changes' />,
+  'changes': <QuotesSection mix={cn('section', {type: 'slider'})} key='changes' />,
   'platform': <WhatMakesSection mix={cn('section')} key='platform'/>,
   'simplicity': <SafetySection mix={cn('section')} key='simplicity'/>,
   'opportunities': <OpportunitiesSection mix={cn('section')} key='opportunities'/>,
@@ -50,7 +50,7 @@ const sectionsObj = {
   'challenge': <GlobalChallengeSection mix={cn('section')} key='challenge'/>,
   'expedition': <ExpeditionSection mix={cn('section')} key='expedition'/>,
   'timeline': <TimelineSection mix={cn('section')} key='timeline'/>,
-  'team': <div className={cn('section')}  key='team'>team</div>,
+  'team': <div className={cn('section')} key='team'>team</div>,
   'press': <WorldTalkingSection mix={cn('section')}  key='press'/>,
   'extra': <O_Footer_H mix={cn('section', {type: 'half-height'})}  key='extra'/>,
 }
