@@ -2,7 +2,6 @@
 @import "common/utils";
 
 .se-home-growing {
-  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -10,9 +9,6 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 0;
-  @include media($tablet) {
-    display: block;
-  }
 
   &__content {
     width: 1200px;

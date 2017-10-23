@@ -2,7 +2,6 @@
 @import "common/utils";
 
 .se-home-world-talking {
-  display: flex;
   flex-direction: column;
   justify-content: center;
   padding-left: 12.2%;
@@ -11,10 +10,13 @@
   background-repeat: no-repeat;
   background-position: 100% 0;
   @include media($tablet) {
-    display: block;
+    padding: 180px 30px 90px;
   }
   @include media($mobile) {
     background-image: none;
+  }
+  @include media($mobile-xs) {
+    padding: 200px 15px 60px;
   }
 
   &__content {

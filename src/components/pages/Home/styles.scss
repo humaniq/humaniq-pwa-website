@@ -18,6 +18,7 @@
 
   &__section {
     position: relative;
+    display: flex;
     height: 100vh;
     @include media($tablet) {
       display: block;
@@ -28,7 +29,8 @@
       padding: 200px 15px 60px;
     }
     &_type {
-      &_no-padding {
+      &_slider {
+        display: block;
         @include media($tablet) {
           padding: 0;
         }
