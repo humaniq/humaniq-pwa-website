@@ -11,6 +11,9 @@
     }
     &_bright {
       fill: $color-white;
+      @include media ($desktop-xl) {
+        fill: $color-black;
+      }
     }
   }
 }
