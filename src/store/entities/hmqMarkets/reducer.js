@@ -1,4 +1,4 @@
-import {START, SUCCESS, REQUEST, FAIL, HMQ_MARKETS} from 'constants'
+import {START, SUCCESS, REQUEST, FAIL, HMQ_MARKETS} from 'store/constants'
 import mapper from './mapper'
 
 const hmqMarketsInit = {

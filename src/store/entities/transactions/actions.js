@@ -4,7 +4,7 @@ import {
   REQUEST,
   BLOCKCHAIN_TRANSACTIONS,
   BLOCKCHAIN_MARKETS,
-} from 'constants'
+} from 'store/constants'
 import { BACKEND_CALL } from 'middleware/humaniqBackendApi'
 
 import { ENDPOINT_BLOCKCHAIN_MARKETS } from 'constants/api'

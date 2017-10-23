@@ -1,5 +1,5 @@
 import {BUTTER_CMS_CALL} from 'middleware/butterCmsApi'
-import {CONTENT, STATIC_DATA} from 'constants'
+import {CONTENT, STATIC_DATA} from 'store/constants'
 import {convert} from 'utils'
 
 export function fetchContent(collection, ...slugs) {

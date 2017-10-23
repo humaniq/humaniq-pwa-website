@@ -1,4 +1,4 @@
-import {WIKI_SEARCH, START, SUCCESS, FAIL, CLEAN} from 'constants'
+import {WIKI_SEARCH, START, SUCCESS, FAIL, CLEAN} from 'store/constants'
 
 const wikiSearchInit = {
   articles: [],
