@@ -2,7 +2,6 @@
 @import "common/utils";
 
 .se-home-use-cases {
-  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -13,7 +12,6 @@
   background-position: 0 100%;
   background-size: contain;
   @include media($tablet) {
-    display: block;
     padding: 180px 30px 90px;
   }
   @include media($mobile-xs) {
