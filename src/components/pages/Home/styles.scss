@@ -1,14 +1,19 @@
 @import "common/settings/variables";
 @import "common/utils";
 
-.home{
+.home {
   $c: &;
   overflow: hidden;
   height: 100vh;
-
-  @include media ($desktop-xl) {
-    overflow: auto;
+  &_scroll_true{
     height: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+  @include media ($desktop-xl) {
+    height: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
   }
 
   &__section {
@@ -41,10 +46,7 @@
     }
   }
 
-  &_scroll_true{
-    overflow: auto;
-    height: auto;
-  }
+
 
   &__inner{
     transition: 0.4s;

@@ -9,6 +9,9 @@
   background-image: url('https://lp.humaniq.com/img/waves-extra-platform.png');
   background-repeat: no-repeat;
   background-position: 100% 100%;
+  @include media($tablet) {
+    display: block;
+  }
 
   &__content {
     width: 1200px;

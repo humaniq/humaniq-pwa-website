@@ -10,6 +10,9 @@
   background-image: url('https://lp.humaniq.com/img/decor.jpg');
   background-repeat: no-repeat;
   background-position: 100% 0;
+  @include media($tablet) {
+    display: block;
+  }
   @include media($mobile) {
     background-image: none;
   }
