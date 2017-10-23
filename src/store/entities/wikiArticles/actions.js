@@ -1,4 +1,4 @@
-import {WIKI} from 'constants'
+import {WIKI} from 'store/constants'
 import {BUTTER_CMS_CALL} from 'middleware/butterCmsApi'
 
 export function fetchWiki() {

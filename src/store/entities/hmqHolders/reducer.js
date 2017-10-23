@@ -1,4 +1,4 @@
-import {START, SUCCESS, REQUEST, FAIL, HMQ_HOLDERS} from 'constants'
+import {START, SUCCESS, REQUEST, FAIL, HMQ_HOLDERS} from 'store/constants'
 import mapper from './mapper'
 import {arrayUnique} from 'utils'
 

@@ -1,4 +1,4 @@
-import {START, SUCCESS, REQUEST, FAIL, HMQ_HASH} from 'constants'
+import {START, SUCCESS, REQUEST, FAIL, HMQ_HASH} from 'store/constants'
 import mapper from './mapper'
 
 const hmqHashInit = {

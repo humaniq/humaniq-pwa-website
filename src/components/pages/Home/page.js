@@ -55,6 +55,11 @@ const sectionsObj = {
   'contacts': <O_Footer_H mix={cn('section', {type: 'half-height'})}  key='contacts'/>,
 }
 
+const dark = [
+  'mobile',
+  'situation',
+]
+
 const showingWidth = 1120
 
 class Home extends Component {
@@ -71,7 +76,7 @@ class Home extends Component {
       <div
         key={name}
         className={cn('side-menu-item')}
-        onClick={() => this.setState({showIndex:i})}
+        onClick={() => this.handleSideMenu(i)}
       >
         <div className={cn('dot', {selected: showIndex === i})}/>
         <span className={cn('text')}>{name}</span>
@@ -82,6 +87,16 @@ class Home extends Component {
         {hashLinks}
       </aside>
     )
+  }
+
+  handleSideMenu = (i) => {
+    const {setTheme} = this.props
+    this.setState({showIndex:i})
+    if(dark.includes(sectionsNames[i])){
+      setTheme('dark')
+    }else{
+      setTheme('bright')
+    }
   }
 
   handleWeel = ({deltaY}) => {
@@ -116,7 +131,7 @@ class Home extends Component {
     }
   }
 
-  getPostionY(showIndex){
+  getPositionY(showIndex){
     if(showIndex === sectionsNames.length -1){
       return(
         ((showIndex-1) * 100) + 50
@@ -131,7 +146,7 @@ class Home extends Component {
 
     const sideMenu = this.getSideMenu(showIndex)
     const controlledScroll =  !isMobile.any && widthBig
-    const positionY = controlledScroll ? this.getPostionY(showIndex) : 0
+    const positionY = controlledScroll ? this.getPositionY(showIndex) : 0
 
     const onWheel = (scroll && controlledScroll) ? this.handleWeel : undefined
 

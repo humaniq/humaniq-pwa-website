@@ -1,4 +1,4 @@
-import {REQUEST, WIKI, START, SUCCESS, FAIL} from 'constants'
+import {REQUEST, WIKI, START, SUCCESS, FAIL} from 'store/constants'
 import mapper from './mapper'
 
 const initLevel0 = {

@@ -1,4 +1,4 @@
-import {SET, MENU, OPEN, CLOSE, TOGGLE, OPEN_ROUTE, HMQ_SECTION} from 'constants'
+import {SET, MENU, THEME, OPEN, CLOSE, TOGGLE, OPEN_ROUTE, HMQ_SECTION} from 'store/constants'
 
 export function setRoute(str) {
   const data = str.split('/').filter(entry => entry.trim() != '')
@@ -11,6 +11,13 @@ export function setRoute(str) {
 export function setHmqSection(data) {
   return ({
     type: SET + HMQ_SECTION,
+    data
+  })
+}
+
+export function setTheme(data) {
+  return ({
+    type: SET + THEME,
     data
   })
 }

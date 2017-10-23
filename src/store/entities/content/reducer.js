@@ -1,4 +1,4 @@
-import {REQUEST, START, SUCCESS, FAIL, STATIC_DATA} from 'constants'
+import {REQUEST, START, SUCCESS, FAIL, STATIC_DATA} from 'store/constants'
 
 const initStaticContent = {
   indexPageTitle: '',
