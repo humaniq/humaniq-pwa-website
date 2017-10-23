@@ -5,6 +5,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+
   @include media($desktop-xl) {
     padding: 15px 0;
   }
@@ -16,6 +17,7 @@
     @include media($desktop-xxl) {
       width: 105px;
       height: 25px;
+
     }
   }
 

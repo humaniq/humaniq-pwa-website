@@ -1,4 +1,4 @@
-import {REQUEST, CLOSE, POST, START, SUCCESS, FAIL} from 'constants'
+import {REQUEST, CLOSE, POST, START, SUCCESS, FAIL} from 'store/constants'
 
 const initPost = {
   loading: false,

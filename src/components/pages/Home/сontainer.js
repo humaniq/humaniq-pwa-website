@@ -1,3 +1,17 @@
-import page from './page'
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux'
+import Page from './page'
+import {setTheme} from 'store/entities/navigation/actions'
 
-export default page
+
+function mapStateToProps(state) {
+  const {theme} = state.navigation
+  return {theme}
+}
+
+function mapDispatchToProps(dispatch) {
+  const actions = bindActionCreators({setTheme}, dispatch)
+  return {...actions};
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Page);

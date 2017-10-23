@@ -11,6 +11,12 @@ const SE_Home_Empowering = ({mix}) => (
   <section className={cn([mix])}>
     <div className={cn('left-side')}>
       <div className = {cn('map')}/>
+      <div className={cn('point', {number: 1})}>
+        <span />
+        <span />
+        <span />
+        <span />
+      </div>
     </div>
 
     <div className={cn('right-side')}>
