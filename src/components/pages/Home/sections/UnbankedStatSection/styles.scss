@@ -3,6 +3,9 @@
 
 .se-home-unbanked-stat {
   display: flex;
+  @include media($tablet) {
+    display: block;
+  }
   &__left-side {
     flex: 0 0 52%;
   }

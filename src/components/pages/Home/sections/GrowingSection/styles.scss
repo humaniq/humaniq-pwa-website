@@ -10,6 +10,9 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 0;
+  @include media($tablet) {
+    display: block;
+  }
 
   &__content {
     width: 1200px;

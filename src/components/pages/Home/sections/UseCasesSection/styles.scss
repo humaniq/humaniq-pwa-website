@@ -12,22 +12,29 @@
   background-repeat: no-repeat;
   background-position: 0 100%;
   background-size: contain;
+  @include media($tablet) {
+    display: block;
+    padding: 180px 30px 90px;
+  }
+  @include media($mobile-xs) {
+    padding: 200px 15px 60px;
+  }
 
   &__content {
-	width: 100%;
-	position: relative;
-	font-family: $font-ProximaNova;
+    width: 100%;
+    position: relative;
+    font-family: $font-ProximaNova;
   }
 
   &__title {
-	margin-bottom: 150px;
-	@include media($desktop-xxl) {
-	  margin-bottom: 100px;
-	}
+    margin-bottom: 150px;
+    @include media($desktop-xxl) {
+      margin-bottom: 100px;
+    }
   }
 
   &__slider-wrap {
-	width: 100%;
-	overflow-x: scroll;
+    width: 100%;
+    overflow-x: scroll;
   }
 }
