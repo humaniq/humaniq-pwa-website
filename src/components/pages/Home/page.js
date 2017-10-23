@@ -26,7 +26,7 @@ const sectionsNames = [
   'situation',
   'changes',
   'platform',
-  'perspective',
+  'simplicity',
   'opportunities',
   'use cases',
   'challenge',
@@ -52,7 +52,7 @@ const sectionsObj = {
   'timeline': <TimelineSection mix={cn('section')} key='timeline'/>,
   'team': <div className={cn('section')}  key='team'>team</div>,
   'press': <WorldTalkingSection mix={cn('section')}  key='press'/>,
-  'extra': <O_Footer_H mix={cn('section', {type: 'half-height'})}  key='extra'/>,
+  'contacts': <O_Footer_H mix={cn('section', {type: 'half-height'})}  key='contacts'/>,
 }
 
 const showingWidth = 1120
