@@ -21,7 +21,7 @@ class SE_MainLayout_H extends Component {
 
   render() {
     const { headerLinks, sidebarLinks, mobileMenuIsActive } = this.state
-    const { children } = this.props
+    const { children, toggleMenu,  } = this.props
 
     const mobileMenuLinks = [...headerLinks, ...sidebarLinks]
 
