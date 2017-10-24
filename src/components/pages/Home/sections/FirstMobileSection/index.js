@@ -47,12 +47,12 @@ export default SE_Home_FirstMobile
 
 const infoColumns = [
   {
-    imageSrc: 'http://via.placeholder.com/70x74',
+    imageSrc: '/img/design-v2/icons/sections/key.svg',
     title: 'For unbanked people',
     text: 'Humaniq opens up the benefits of financial inclusion and grants access to a series of financial services'
   } ,
   {
-    imageSrc: 'http://via.placeholder.com/70x74',
+    imageSrc: '/img/design-v2/icons/sections/busness.svg',
     title: 'For businesses',
     text: 'Humaniq enables start-ups and projects to offer their services an audience of billions'
   }

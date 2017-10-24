@@ -41,12 +41,12 @@ export default SE_Home_WhatMakes
 
 const infoColumns = [
   {
-    imageSrc: 'http://via.placeholder.com/70x74',
+    imageSrc: '/img/design-v2/icons/sections/connect-unbanked.svg',
     title: 'Connecting the unbanked',
     text: '10 years of research across Asia and Africa, carried out by the authors of Portfolios of the Poor, showed that poverty proliferates in regions whose inhabitants do not have access to financial services. Humaniq is becoming the simplest route to financial inclusion for billions of people.'
   },
   {
-    imageSrc: 'http://via.placeholder.com/70x74',
+    imageSrc: '/img/design-v2/icons/sections/user-base-expo.svg',
     title: 'User base exponential growth',
     text: 'According to Metcalfe\'s law, the value of a network is proportional to the square of the number of its users. For Humaniq, this means that the more unbanked people who have already joined the system, the greater the motivation will be for other people to join.'
   }
