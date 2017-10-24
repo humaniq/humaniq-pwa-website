@@ -5,21 +5,23 @@ import {cssClassName} from 'utils'
 
 const cn = cssClassName('M_SocialLinks_H')
 
+const socialIcons = `/img/design-v2/icons/social/sprite.svg`
+
 const _createLinks = (links) => (
-  links.map((link, index) => {
-    const linkIcon = {
-      backgroundImage: `url(${link.icon})`
-    }
+  links.map(({name, url}, index) => {
 
     return (
       <a
         key={`socialLink-${index + 1}`}
         className={cn('link')}
-        href={link.url}
-        title={link.name}
-        style={linkIcon}
+        href={url}
+        title={name}
         target="_blank"
-      />
+      >
+        <svg>
+          <use xlinkHref={`${socialIcons}#${name}`} />
+        </svg>
+      </a>
     )
   })
 )
@@ -46,42 +48,34 @@ M_SocialLinks_H.propTypes = {
 const socialLinks = [
   {
     name: 'facebook',
-    url: 'https://www.facebook.com/humaniq.co/',
-    icon: 'http://via.placeholder.com/45x45'
+    url: 'https://www.facebook.com/humaniq.co/'
   },
   {
     name: 'twitter',
-    url: 'https://twitter.com/Humaniq',
-    icon: 'http://via.placeholder.com/45x45'
+    url: 'https://twitter.com/Humaniq'
   },
   {
     name: 'instagram',
-    url: 'https://www.instagram.com/humaniq_com/',
-    icon: 'http://via.placeholder.com/45x45'
+    url: 'https://www.instagram.com/humaniq_com/'
   },
   {
     name: 'github',
     url: 'https://github.com/humaniq',
-    icon: 'http://via.placeholder.com/45x45'
   },
   {
     name: 'youtube',
-    url: 'https://www.youtube.com/channel/UCXatRidLHbngYUtF8JXICPA',
-    icon: 'http://via.placeholder.com/45x45'
+    url: 'https://www.youtube.com/channel/UCXatRidLHbngYUtF8JXICPA'
   },
   {
     name: 'slack',
-    url: 'https://humaniq-co.slack.com/',
-    icon: 'http://via.placeholder.com/45x45'
+    url: 'https://humaniq-co.slack.com/'
   },
   {
     name: 'linkedin',
-    url: 'https://www.linkedin.com/company/humaniq',
-    icon: 'http://via.placeholder.com/45x45'
+    url: 'https://www.linkedin.com/company/humaniq'
   },
   {
     name: 'telegram',
-    url: 'https://t.me/humaniqglobalchallenge',
-    icon: 'http://via.placeholder.com/45x45'
+    url: 'https://t.me/humaniqglobalchallenge'
   }
 ]

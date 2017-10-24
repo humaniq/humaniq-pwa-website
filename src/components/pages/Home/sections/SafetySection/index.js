@@ -37,17 +37,17 @@ export default SE_Home_Safety
 
 const infoColumns = [
   {
-    imageSrc: 'http://via.placeholder.com/70x74',
+    imageSrc: '/img/design-v2/icons/sections/card.svg',
     title: 'Biometric identification',
     text: 'Users are verified by their face and voice, eliminating the need for formal documentation '
   } ,
   {
-    imageSrc: 'http://via.placeholder.com/70x74',
+    imageSrc: '/img/design-v2/icons/sections/access.svg',
     title: 'Independent HMQ currency',
     text: 'Every new user receives $20 worth of HMQ in their account, the value of which bears no relation to their local currency'
   },
   {
-    imageSrc: 'http://via.placeholder.com/70x74',
+    imageSrc: '/img/design-v2/icons/sections/interface.svg',
     title: 'The interface is simple to interact with',
     text: 'Even for those who have never used gadgets before'
   }
