@@ -5,21 +5,21 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-
-
+  padding: 0 17.2% 0 65px;
   @include media($desktop-xl) {
-    padding: 15px 0;
+    padding: 15px 65px;
     background-color: white;
     &_mob-menu-open_true{
       background-color: $color-main-blue;
     }
   }
+  @include media($tablet) {
+    padding: 15px 20px;
+  }
 
   &__logo {
     width: 150px;
     height: 35px;
-    margin-left: 60px;
     @include media($desktop-xxl) {
       width: 105px;
       height: 25px;
@@ -29,7 +29,6 @@
 
   &__menu-btn {
     display: none;
-    margin-right: 65px;
     @include media($desktop-xl) {
       display: block;
     }
@@ -37,7 +36,6 @@
 
   &__menu {
     display: flex;
-    margin-right: 17.2%;
     &-link {
       padding: 37px 32px;
       font-family: $font-ProximaNova;
