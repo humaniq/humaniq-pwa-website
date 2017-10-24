@@ -2,6 +2,7 @@
 @import "common/utils";
 
 .se-home-what-makes {
+  overflow: hidden;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -15,7 +16,7 @@
     transform: translateY(-50%);
     right: -8%;
 
-    @include media($desktop-xl) {
+    @include media($desktop-xxl) {
       max-width: 440px;
     }
     @include media($tablet) {
