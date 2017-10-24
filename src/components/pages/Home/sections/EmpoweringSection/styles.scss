@@ -3,15 +3,20 @@
 
 .se-home-empowering {
   @include media($tablet) {
-    background: $color-main-blue url(https://lp.humaniq.com/img/map-bg.png) no-repeat;
-    background-size: 156%;
-    background-position: 26% 45%;
+    background: $color-main-light-blue;
+    justify-content: flex-end;
+    align-items: flex-end;
   }
 
   &__left-side {
     flex: 0 0 50%;
+    background: $color-main-light-blue;
+    overflow: hidden;
     @include media($tablet) {
-      display: none;
+      position: absolute;
+      width: 100%;
+      top: 0;
+      right: 0;
     }
   }
 
@@ -32,8 +37,27 @@
   &__map {
     width: 100%;
     height: 100%;
-    background: $color-main-light-blue url(https://lp.humaniq.com/img/map-bg.png) no-repeat;
-    background-size: cover;
+    overflow: hidden;
+    &-img{
+
+      &_type_mobile{
+        display: none;
+        width: 980px;
+
+        @include media ($tablet) {
+          display: block;
+          float: right;
+        }
+      }
+      &_type_desktop{
+        display: block;
+        width: 800px;
+        @include media ($tablet) {
+          display: none;
+
+        }
+      }
+    }
   }
 
   &__text {
@@ -137,25 +161,50 @@
 
   &__point {
 
+    @include media ($tablet) {
+      transform: scale(0.5);
+      left: auto !important;
+    }
+
     &_number_1{
-      top: 30rem;
-      left: 10rem;
+      top: 38rem;
+      left: 18rem;
+      @include media ($tablet) {
+        top: 12rem;
+        right: 20rem;
+      }
     }
     &_number_2{
-      top: 20rem;
-      left: 10rem;
+      top: 28rem;
+      left: 30rem;
+      @include media ($tablet) {
+        top: 17rem;
+        right: 48rem;
+      }
     }
     &_number_3{
       top: 30rem;
-      left: 10rem;
+      left: 45rem;
+      @include media ($tablet) {
+        top: 54rem;
+        right: 15rem;
+      }
     }
     &_number_4{
-      top: 40rem;
-      left: 10rem;
+      top: 49rem;
+      left: 28rem;
+      @include media ($tablet) {
+        top: 32rem;
+        right: 40rem;
+      }
     }
-    &_number_5{
-      top: 50rem;
-      left: 10rem;
+    &_number_5 {
+      top: 53rem;
+      left: 43rem;
+      @include media ($tablet) {
+        top: 30rem;
+        right: 50rem;
+      }
     }
 
     position: absolute;
