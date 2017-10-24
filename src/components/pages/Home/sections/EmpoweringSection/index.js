@@ -4,19 +4,33 @@ import A_Title from 'A_Title_H'
 import SectionCounter from '../common/SectionCounter/index.js'
 import './styles.scss'
 import {cssClassName} from 'utils'
-
+import A_Image from 'A_Image'
 const cn = cssClassName('SE_Home_Empowering');
 
 const SE_Home_Empowering = ({mix}) => (
   <section className={cn([mix])}>
+
     <div className={cn('left-side')}>
-      <div className = {cn('map')}/>
-      <div className={cn('point', {number: 1})}>
-        <span />
-        <span />
-        <span />
-        <span />
+      <div className = {cn('map')}>
+        <img className={cn('map-img', {type:'desktop'})} src="/img/v1/home/map-bg.png" alt="EMPOWERING THE UNBANKED"/>
+        <img className={cn('map-img', {type:'mobile'})} src="/img/v1/home/mobile-map.jpg" alt="EMPOWERING THE UNBANKED"/>
+        <div className={cn('point', {number: 1})}>
+          <span /><span /><span /><span />
+        </div>
+        <div className={cn('point', {number: 2})}>
+          <span /><span /><span /><span />
+        </div>
+        <div className={cn('point', {number: 3})}>
+          <span /><span /><span /><span />
+        </div>
+        <div className={cn('point', {number: 4})}>
+          <span /><span /><span /><span />
+        </div>
+        <div className={cn('point', {number: 5})}>
+          <span /><span /><span /><span />
+        </div>
       </div>
+
     </div>
 
     <div className={cn('right-side')}>

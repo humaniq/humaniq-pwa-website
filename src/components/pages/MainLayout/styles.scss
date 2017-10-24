@@ -4,7 +4,7 @@
 .se-main-layout-h {
   &__header,  &__sidebar, &__mobile-menu {
     position: fixed;
-    z-index: 999;
+    z-index: 100;
   }
 
   &__header, &__mobile-menu {
