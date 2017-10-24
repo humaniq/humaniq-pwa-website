@@ -58,6 +58,11 @@ const sectionsObj = {
 const dark = [
   'mobile',
   'situation',
+  'platform',
+  'opportunities',
+  'use cases',
+  'expedition',
+  'team'
 ]
 
 const showingWidth = 1120
@@ -76,7 +81,7 @@ class Home extends Component {
       <div
         key={name}
         className={cn('side-menu-item')}
-        onClick={() => this.handleSideMenu(i)}
+        onClick={() => this.handleSideMenu({showIndex:i})}
       >
         <div className={cn('dot', {selected: showIndex === i})}/>
         <span className={cn('text')}>{name}</span>
@@ -89,10 +94,10 @@ class Home extends Component {
     )
   }
 
-  handleSideMenu = (i) => {
+  handleSideMenu = ({showIndex, ...extra}) => {
     const {setTheme} = this.props
-    this.setState({showIndex:i})
-    if(dark.includes(sectionsNames[i])){
+    this.setState({showIndex, ...extra})
+    if(dark.includes(sectionsNames[showIndex])){
       setTheme('dark')
     }else{
       setTheme('bright')
@@ -108,7 +113,7 @@ class Home extends Component {
     setTimeout(() => this.setState({slowScroll: true}), 600);
 
     if(showIndex >= 0 && showIndex < sectionsNames.length){
-      this.setState({showIndex, scroll:false, slowScroll: false})
+      this.handleSideMenu({showIndex, scroll:false, slowScroll: false})
     }
 
   }
