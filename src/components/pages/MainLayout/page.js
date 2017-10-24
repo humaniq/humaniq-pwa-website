@@ -21,7 +21,7 @@ class SE_MainLayout_H extends Component {
 
   render() {
     const { headerLinks, sidebarLinks, mobileMenuIsActive } = this.state
-    const { children, toggleMenu,  } = this.props
+    const { children, toggleMenu, theme} = this.props
 
     const mobileMenuLinks = [...headerLinks, ...sidebarLinks]
 
@@ -38,6 +38,7 @@ class SE_MainLayout_H extends Component {
           menuLinks = {headerLinks}
           mobileMenuIsActive = {mobileMenuIsActive}
           toggleMobileMenu = {this.toggleMobileMenu}
+          theme = {theme}
         />
 
         <div className = {cn('body')}>
@@ -47,7 +48,7 @@ class SE_MainLayout_H extends Component {
         <Sidebar
           mix = {cn('sidebar')}
           menuLinks = {sidebarLinks}
-          theme = 'bright'
+          theme = {theme}
         />
       </div>
     )

@@ -18,7 +18,7 @@ const _getMenuLinks= (links) => (
   ))
 )
 
-const SE_MainLayoutHeader_H = ({mix, menuLinks, mobileMenuIsActive, toggleMobileMenu}) => (
+const SE_MainLayoutHeader_H = ({mix, theme, menuLinks, mobileMenuIsActive, toggleMobileMenu}) => (
   <header
     className={cn([mix], {'mob-menu-open': mobileMenuIsActive})}
   >
@@ -26,7 +26,7 @@ const SE_MainLayoutHeader_H = ({mix, menuLinks, mobileMenuIsActive, toggleMobile
       className={cn('logo')}
       href="#"
     >
-      <A_Logo_H theme='bright'/>
+      <A_Logo_H theme={theme}/>
     </a>
 
     <ul className={cn('menu')}>
