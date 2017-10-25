@@ -11,7 +11,7 @@ const SE_Home_WhatMakes = ({mix}) => (
   <section className={cn([mix])}>
     <img
       className= {cn('background')}
-      src="https://lp.humaniq.com/img/head.svg"
+      src='/img/design-v2/sections/what-makes/head.svg'
     />
     <div className={cn('content')}>
       <A_Title
