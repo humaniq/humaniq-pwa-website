@@ -4,7 +4,7 @@
 .se-home-unbanked-stat {
 
   &__left-side {
-    flex: 0 0 52%;
+    flex: 0 0 53%;
   }
 
   &__right-side {
@@ -25,9 +25,8 @@
     height: 100%;
     background-image: url('/img/design-v2/sections/unbanked-stat/perspective-map.jpg');
     background-repeat: no-repeat;
-    background-size: 95%;
-    background-position: 5px 250px;
-    font-size: 0;
+    background-size: 100%;
+    background-position: 0 160px;
   }
 
   &__text {
