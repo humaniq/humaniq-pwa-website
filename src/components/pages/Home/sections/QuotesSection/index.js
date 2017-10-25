@@ -14,7 +14,7 @@ const _getQuotesSlides = (quotes) => {
     quotes.map((quote, index) => {
 
       const slideStyle = {
-        backgroundImage: `url(https://lp.humaniq.com/img/quotes.png), url(${quote.img})`
+        backgroundImage: `url('/img/design-v2/sections/quotes/quotes.png'), url(${quote.img})`
       }
 
       return (
@@ -108,25 +108,25 @@ const quotes = [
     title: 'The world is ready for the change',
     text: 'Including the poorest in the financial system that increases instead of limiting the value of their assets, transforming the underlying economics of financial services through digital currency will help those who live in poverty directly.',
     author: 'Bill Gates',
-    img:  'https://lp.humaniq.com/img/bill-gates2.jpg'
+    img:  '/img/design-v2/sections/quotes/bill-gates2.jpg'
   },
   {
     title: 'The world is ready for the change',
     text: 'Because of technology, we can help shape the arc of history to bend it towards financial inclusion and greater human progress. Financial inclusion is a massive undertaking – one that can only be met together – across countries, sectors, and industries.',
     author: 'Ajaypal Singh Banga, MasterCard CEO',
-    img:  'https://lp.humaniq.com/img/ajaypal-singh-banga.jpg'
+    img:  '/img/design-v2/sections/quotes/ajaypal-singh-banga.jpg'
   },
   {
     title: 'The world is ready for the change',
     text: 'Widely used digital finance has the power to transform the economic prospects of billions of people and inject new dynamism into small businesses that today are held back for lack of credit. Emerging economies have an opportunity to use mobile technologies to provide digital financial services for all, rapidly unlocking economic opportunity and accelerating social development.',
     author: 'McKinsey Global Institute Report September 2016',
-    img:  'https://lp.humaniq.com/img/mckinsey-global-Institute.jpg'
+    img:  '/img/design-v2/sections/quotes/mckinsey-global-Institute.jpg'
   },
   {
     title: 'The world is ready for the change',
     text: 'In pyramid of development the bottom-most layer needs to be strengthened through financial inclusionimproving purchasing power of the poor.',
     author: 'Narendra Modi',
-    img:  'https://lp.humaniq.com/img/narendra-modi.jpg'
+    img:  '/img/design-v2/sections/quotes/narendra-modi.jpg'
   }
 ]
 
