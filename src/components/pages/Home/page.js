@@ -73,7 +73,7 @@ class Home extends Component {
     showIndex: this.props.showIndex || 0,
     scroll: true,
     slowScroll: true,
-    widthBig: window.innerWidth >= showingWidth
+    widthBig: __CLIENT__ && window.innerWidth >= showingWidth
   }
 
   getSideMenu(showIndex){
@@ -161,8 +161,8 @@ class Home extends Component {
         onWheel = {onWheel}
       >
         <div
-          className={cn('inner')}
-          style={{transform: `translate3d(0, ${-positionY}vh, 0px`}}
+        className={cn('inner')}
+        style={{transform: `translate3d(0, ${-positionY}vh, 0px`}}
         >
           {sectionsNames.map(name => sectionsObj[name])}
         </div>
@@ -177,5 +177,7 @@ Home.propTypes = {
 
 Home.defaultProps = {
 }
+
+
 
 export default Home
