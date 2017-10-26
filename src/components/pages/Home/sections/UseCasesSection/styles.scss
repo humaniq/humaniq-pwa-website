@@ -54,10 +54,13 @@
   &__dots{
     text-align: center;
     width: 30%;
-    display: flex;
     justify-items: center;
     align-items: center;
     margin: 0 auto;
+    display: none;
+    @include media ($mobile) {
+      display: flex;
+    }
     &-item{
       height: 3.5rem;
       width: 3.5rem;
