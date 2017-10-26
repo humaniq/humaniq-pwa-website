@@ -40,7 +40,7 @@ class SE_Home_Team extends Component {
               alt={name}
               rounded
             />
-          </div>
+          </div>.
         </div>
       )
     )
