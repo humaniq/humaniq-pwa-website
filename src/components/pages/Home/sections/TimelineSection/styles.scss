@@ -38,6 +38,7 @@
   }
 
   &__event-list {
+    margin-left: 1rem;
     display: flex;
     @include media($tablet) {
       flex-direction: column;
@@ -60,7 +61,7 @@
       width: 100%;
       border-top: none;
       border-left: 1px solid #fff;
-      padding: 0 0 35px 45px;
+      padding: 0 0 35px 35px;
     }
     &:nth-last-child(1) {
       border: none;
