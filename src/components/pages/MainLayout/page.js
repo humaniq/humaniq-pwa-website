@@ -10,8 +10,8 @@ const cn = cssClassName('SE_MainLayout_H')
 class SE_MainLayout_H extends Component {
 
   state = {
-    headerLinks: ['situation', 'platform', 'perspective', 'challenge'],
-    sidebarLinks: ['timeline', 'team', 'press'],
+    headerLinks: ['Humaniq Wiki', 'HMQ Explorer', 'Challenge', 'Ambassadors' ],
+    sidebarLinks: ['Open source', 'Contact us', 'Subscribe'],
     mobileMenuIsActive: false
   }
 
