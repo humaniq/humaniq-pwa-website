@@ -1,38 +1,108 @@
-import React from 'react'
+import React, { Component } from 'react';
 import A_Title from 'A_Title_H'
 import SectionCounter from '../common/SectionCounter/index.js'
-import InfoColumns from '../common/InfoColumns'
+import InfoColumn from '../common/InfoColumn'
 import './styles.scss'
 import {cssClassName} from 'utils'
 
 const cn = cssClassName('SE_Home_UseCases');
 
-const SE_Home_UseCases = ({mix}) => (
-  <section className={cn([mix])}>
-    <div className={cn('content')}>
-      <A_Title
-        mix={cn('title')}
-        type='section'
-        theme='dark'
-      >
-        Humaniq use cases
-      </A_Title>
+class SE_Home_UseCases extends Component {
 
-      <div className={cn('slider-wrap')}>
-        <InfoColumns
-          mix={cn('slider')}
-          type='slider'
-          columns={infoColumns}
+  state = {
+    show: 0,
+    slideWidth: 0
+  }
+
+  prev = () =>{
+    this.changeShow(-1)
+  }
+
+  next = () =>{
+    this.changeShow(1)
+  }
+
+  changeShow(n){
+    const {show:oldShow} = this.state
+    const show = (oldShow + n + infoColumns.length) % infoColumns.length
+    this.setState({show})
+  }
+
+
+  getSlides(){
+
+    let res = []
+    const genSlidesArray = (keysName) => (
+      infoColumns.map((column, i) =>
+        <InfoColumn
+          column={column}
+          key={i + keysName}
+          mix={cn('slider-item')}
+          setWidth={i === 0 ? slideWidth => this.setState({slideWidth}) : undefined}
+        />)
+    )
+
+    res = res.concat(genSlidesArray('clone_before') )
+    res = res.concat(genSlidesArray('clone_middle') )
+    res = res.concat(genSlidesArray('clone_after') )
+
+    return res
+  }
+
+  getDots(){
+    const {show} = this.state
+
+    let dots = []
+
+    for (let i = 1; i <= 5; i++) {
+      dots.push(
+        <div className={cn('dots-item', {active: show === i })} onClick={() => this.setState({show: i})} />
+      )
+    }
+
+    return dots
+  }
+
+  render() {
+    const {mix} = this.props
+    const _renderSlides = this.getSlides()
+    const {show, slideWidth} = this.state
+    const pctX = show * slideWidth
+    const dots = this.getDots()
+
+    return (
+      <section className={cn([mix])}>
+        <div className={cn('content')}>
+          <A_Title
+            mix={cn('title')}
+            type='section'
+            theme='dark'
+          >
+            Humaniq use cases
+          </A_Title>
+
+          <div className={cn('slider-wrap')}>
+            <div className={cn('slider')} style={{transform: `translateX(-${pctX}px)`}}>
+              {_renderSlides}
+            </div>
+          </div>
+          <div className={cn('nav')}>
+            <div className={cn('nav-prev')} onClick={this.prev} />
+            <div className={cn('nav-next')} onClick={this.next} />
+          </div>
+          <div className={cn('dots')}>
+            {dots}
+          </div>
+        </div>
+
+        <SectionCounter
+          sectionNum={9}
+          theme='bright'
         />
-      </div>
-
-    </div>
-    <SectionCounter
-      sectionNum={9}
-      theme='bright'
-    />
-  </section>
-)
+      </section>
+    )
+  }
+}
 
 export default SE_Home_UseCases
 

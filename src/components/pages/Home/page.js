@@ -84,7 +84,6 @@ class Home extends Component {
         onClick={() => this.handleSideMenu({showIndex:i})}
       >
         <div className={cn('dot', {selected: showIndex === i})}/>
-        <span className={cn('text')}>{name}</span>
       </div>
     ))
     return(
