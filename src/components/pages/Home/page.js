@@ -19,6 +19,7 @@ import GlobalChallengeSection from './sections/GlobalChallengeSection'
 import ExpeditionSection from './sections/ExpeditionSection'
 import TimelineSection from './sections/TimelineSection'
 import WorldTalkingSection from './sections/WorldTalkingSection'
+import TeamSection from './sections/TeamSection'
 
 const sectionsNames = [
   'empowering',
@@ -50,7 +51,7 @@ const sectionsObj = {
   'challenge': <GlobalChallengeSection mix={cn('section')} key='challenge'/>,
   'expedition': <ExpeditionSection mix={cn('section')} key='expedition'/>,
   'timeline': <TimelineSection mix={cn('section')} key='timeline'/>,
-  'team': <div className={cn('section')} key='team'>team</div>,
+  'team': <TeamSection mix={cn('section')} key='team' />,
   'press': <WorldTalkingSection mix={cn('section')}  key='press'/>,
   'contacts': <O_Footer_H mix={cn('section', {type: 'half-height'})}  key='contacts'/>,
 }
