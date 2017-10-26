@@ -33,7 +33,7 @@ const sectionsNames = [
   'challenge',
   'expedition',
   'timeline',
-  'team',
+  // 'team',
   'press',
   'contacts'
 ]
