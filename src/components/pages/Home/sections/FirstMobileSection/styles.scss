@@ -15,7 +15,7 @@
     margin: 30px 0 0 60px;
     font-family: $font-ProximaNova;
     @include media($desktop-xxl) {
-      margin: 0 0 0 60px;
+      margin: 0 0 0 130px;
     }
     @include media($tablet) {
       margin: 0;
@@ -48,16 +48,25 @@
     }
   }
 
+  &__columns-wrapper {
+    position: relative;
+    display: flex;
+    @include media($desktop-xl) {
+      flex-wrap: wrap;
+    }
+  }
+
+  &__info-columns {
+    @include media($desktop-xl) {
+      flex-grow: 1;
+    }
+  }
+
   &__button {
+    align-self: flex-end;
     display: inline-block;
-    position: absolute;
-    right: 12.4%;
-    bottom: 7.5%;
-    @include media($tablet) {
-      position: relative;
+    @include media($desktop-xl) {
       margin-top: 30px;
-      right: 0;
-      bottom: 0;
     }
     @include media($mobile-xs) {
       display: none;

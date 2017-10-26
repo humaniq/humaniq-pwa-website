@@ -41,8 +41,6 @@
     }
     @include media($tablet) {
       font-size: 18px;
-    }
-    @include media($mobile) {
       br {
         display: none;
       }
@@ -67,6 +65,7 @@
       width: 196px;
       height: 196px;
       padding: 40px 0;
+      margin: 0 auto;
     }
     &-percentage {
       margin-bottom: 10px;

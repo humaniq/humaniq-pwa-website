@@ -20,12 +20,19 @@ const SE_Home_FirstMobile = ({mix}) => (
         The first mobile service with<br/>the capacity to change the world
       </A_Title_H>
       <p className={cn('subtitle')}>Humaniq is a fourth generation mobile bank with its own<br/>cryptocurrency, which is bringing millions of unbanked<br/>people into one financial network</p>
+      <div className={cn('columns-wrapper')}>
+        <InfoColumns
+          mix={cn('info-columns')}
+          columns={infoColumns}
+          type='narrow'
+        />
 
-      <InfoColumns
-        mix={cn('info-columns')}
-        columns={infoColumns}
-        type='narrow'
-      />
+        <A_Btn_H
+          mix={cn('button')}
+        >
+          Project details
+        </A_Btn_H>
+      </div>
 
     </div>
 
@@ -34,11 +41,6 @@ const SE_Home_FirstMobile = ({mix}) => (
       theme='bright'
     />
 
-    <A_Btn_H
-      mix={cn('button')}
-    >
-      Project details
-    </A_Btn_H>
 
   </section>
 )
