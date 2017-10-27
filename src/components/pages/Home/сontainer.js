@@ -1,7 +1,7 @@
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux'
 import Page from './page'
-import {setTheme} from 'store/entities/navigation/actions'
+import {setTheme, openPopup} from 'store/entities/navigation/actions'
 
 
 function mapStateToProps(state) {
@@ -10,7 +10,7 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-  const actions = bindActionCreators({setTheme}, dispatch)
+  const actions = bindActionCreators({setTheme, openPopup}, dispatch)
   return {...actions};
 }
 
