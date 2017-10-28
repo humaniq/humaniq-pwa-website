@@ -50,8 +50,9 @@
 
   &__content {
     position: relative;
+    width: 100%;
     max-width: 640px;
-    padding: 35px;
+    padding: 85px 35px;
     background: $color-white;
     &:after, &:before {
       content: "";

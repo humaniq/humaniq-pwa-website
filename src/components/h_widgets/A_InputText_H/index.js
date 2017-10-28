@@ -17,7 +17,6 @@ class A_InputText_H extends Component {
           value={value}
           onChange={e => handleChange(e.target.value)}
         />
-
         <div className={cn('error')}>{error}</div>
       </fieldset>
     )

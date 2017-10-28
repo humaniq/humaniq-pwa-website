@@ -8,7 +8,7 @@ const cn = cssClassName('O_Popup_H')
 class O_Popup_H extends Component {
 
   render() {
-    const { isActive, closePopup, formType } = this.props
+    const { isActive, closePopup, popupType } = this.props
 
     return (
       <div className = {cn({isActive})}>
@@ -18,7 +18,7 @@ class O_Popup_H extends Component {
         />
         <div className= {cn('content')}>
           <O_SimpleForm_H
-            formType={'subscribe'}
+            formType={popupType}
           />
         </div>
       </div>
