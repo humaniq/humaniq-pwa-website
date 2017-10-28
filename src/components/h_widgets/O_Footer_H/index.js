@@ -8,7 +8,7 @@ import {cssClassName} from 'utils'
 
 const cn = cssClassName('O_Footer_H')
 
-const O_Footer_H = ({mix}) => (
+const O_Footer_H = ({mix, openPopup}) => (
   <footer className={cn([mix])}>
     <div className={cn('top')}>
       <A_Logo_H
@@ -22,7 +22,10 @@ const O_Footer_H = ({mix}) => (
       </M_SocialLinks_H>
     </div>
 
-    <FooterLinks mix={cn('bottom')} />
+    <FooterLinks
+      mix={cn('bottom')}
+      openPopup={openPopup}
+    />
 
   </footer>
 )

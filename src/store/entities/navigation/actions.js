@@ -1,4 +1,4 @@
-import {SET, MENU, THEME, OPEN, CLOSE, TOGGLE, OPEN_ROUTE, HMQ_SECTION} from 'store/constants'
+import {SET, MENU, POPUP, THEME, OPEN, CLOSE, TOGGLE, OPEN_ROUTE, HMQ_SECTION} from 'store/constants'
 
 export function setRoute(str) {
   const data = str.split('/').filter(entry => entry.trim() != '')
@@ -37,5 +37,18 @@ export function closeMenu() {
 export function toggleMenu(){
   return ({
     type: TOGGLE + MENU
+  })
+}
+
+export function openPopup(data) {
+  return ({
+    type: OPEN + POPUP,
+    data
+  })
+}
+
+export function closePopup() {
+  return ({
+    type: CLOSE + POPUP
   })
 }
