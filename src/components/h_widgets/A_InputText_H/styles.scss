@@ -1,0 +1,19 @@
+@import "common/settings/variables";
+@import "common/utils";
+
+.a-input-text-h{
+  padding: 0;
+  input {
+	box-sizing: border-box;
+    display: block;
+    width: 100%;
+    padding: 5px;
+    text-align: center;
+    border: 2px solid $color-main-blue;
+    margin-bottom: 30px;
+    font-family: $font-ProximaNova;
+    font-weight: 700;
+    font-size: 14px;
+    color: $color-main-blue;
+  }
+}

@@ -90,7 +90,7 @@ const footerLinks = [
   {
     section: 'Info',
     links: [
-      {name: 'Project details', url: '/open-source'},
+      {name: 'Project details', popupLink: true, formType: 'ambasadors'},
       {name: 'Subscribe to newsletter', popupLink: true, formType: 'subscribe'},
       {name: 'HMQ Explorer', url: '/hmq-explorer'},
       {name: 'Humaniq blog', url: '/hmq-explorer'}]

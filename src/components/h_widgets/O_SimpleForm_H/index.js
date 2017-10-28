@@ -16,9 +16,13 @@ class O_SimpleForm_H extends Component {
 
   render() {
     const {formType} = this.props;
+    console.log('this.props from Simple Form',this.props);
+    console.log('formType from Simple Form',formType);
 
     return (
-      this.getForm(formType, this.props)
+      formType ? (
+        this.getForm(formType, this.props)
+      ):(null)
     )
   }
 
@@ -28,7 +32,7 @@ O_SimpleForm_H.propTypes = {
   formType: T.oneOf([
     'subscribe',
     'ambasadors',
-  ]).isRequired,
+  ])
 };
 
 export default O_SimpleForm_H
