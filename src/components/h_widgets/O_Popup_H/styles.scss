@@ -46,6 +46,10 @@
     &:after {
       transform: rotate(45deg);
     }
+    @include media($mobile) {
+      top: 5px;
+      right: 5px;
+    }
   }
 
   &__content {

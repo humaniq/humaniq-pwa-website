@@ -4,9 +4,13 @@
 .a-title {
   padding: 0;
   margin: 0;
+  font-size: 32px;
   font-family: $font-ProximaNova;
   font-weight: 700;
   line-height: 1.2;
+  @include media($mobile) {
+    font-size: 25px;
+  }
   &_type {
     &_hero, &_section {
       font-size: 72px;

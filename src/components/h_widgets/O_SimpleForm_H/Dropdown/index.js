@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import * as T from "prop-types";
 import './styles.scss';
 import {cssClassName} from 'utils'
-const cn = cssClassName('M_Dropdown2')
+const cn = cssClassName('M_Dropdown_H')
 import onClickOutside from 'react-onclickoutside'
 import A_InputText from 'A_InputText'
 
-class M_Dropdown2 extends Component {
+class M_Dropdown extends Component {
   state = {
     isOpened: false,
     value: this.props.value || '',
@@ -94,16 +94,16 @@ class M_Dropdown2 extends Component {
   }
 }
 
-M_Dropdown2.propTypes = {
+M_Dropdown.propTypes = {
   options: T.array.isRequired,
   selected: T.string.isRequired,
   error: T.string
 };
 
-M_Dropdown2.defaultProps = {
+M_Dropdown.defaultProps = {
 }
 
-export default onClickOutside(M_Dropdown2)
+export default onClickOutside(M_Dropdown)
 
 
 
