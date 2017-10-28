@@ -1,10 +1,9 @@
 @import "common/settings/variables";
 @import "common/utils";
 
-.m-dropdown2 {
+.m-dropdown-h {
   &__root{
     position: relative;
-
     @include media($mobile) {
       width: 100%;
     }
