@@ -4,6 +4,7 @@ import './styles.scss';
 import Header from './Header'
 import Sidebar from './Sidebar'
 import MobileMenu from './MobileMenu'
+import O_Popup from './../../h_widgets/O_Popup_H'
 import {cssClassName} from 'utils'
 const cn = cssClassName('SE_MainLayout_H')
 
@@ -21,7 +22,7 @@ class SE_MainLayout_H extends Component {
 
   render() {
     const { headerLinks, sidebarLinks, mobileMenuIsActive } = this.state
-    const { children, toggleMenu, theme} = this.props
+    const { children, popupType, theme, isPopupOpened, closePopup} = this.props
 
     const mobileMenuLinks = [...headerLinks, ...sidebarLinks]
 
@@ -49,6 +50,12 @@ class SE_MainLayout_H extends Component {
           mix = {cn('sidebar')}
           menuLinks = {sidebarLinks}
           theme = {theme}
+        />
+
+        <O_Popup
+          isActive = {isPopupOpened}
+          closePopup = {closePopup}
+          popupType = {popupType}
         />
       </div>
     )

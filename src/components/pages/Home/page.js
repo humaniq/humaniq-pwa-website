@@ -38,24 +38,6 @@ const sectionsNames = [
   'contacts'
 ]
 
-const sectionsObj = {
-  'empowering': <EmpoweringSection mix={cn('section')} key='empowering' />,
-  'mobile': <FirstMobileSection mix={cn('section')} key='mobile' />,
-  'situation': <UnbankedStatSection mix={cn('section')} key='situation' />,
-  'changes': <QuotesSection mix={cn('section', {type: 'slider'})} key='changes' />,
-  'platform': <WhatMakesSection mix={cn('section')} key='platform'/>,
-  'simplicity': <SafetySection mix={cn('section')} key='simplicity'/>,
-  'opportunities': <OpportunitiesSection mix={cn('section')} key='opportunities'/>,
-  'userbase': <GrowingSection mix={cn('section')} key='userbase'/>,
-  'use cases': <UseCasesSection mix={cn('section')} key='usecases'/>,
-  'challenge': <GlobalChallengeSection mix={cn('section')} key='challenge'/>,
-  'expedition': <ExpeditionSection mix={cn('section')} key='expedition'/>,
-  'timeline': <TimelineSection mix={cn('section')} key='timeline'/>,
-  'team': <TeamSection mix={cn('section')} key='team' />,
-  'press': <WorldTalkingSection mix={cn('section')}  key='press'/>,
-  'contacts': <O_Footer_H mix={cn('section', {type: 'half-height'})}  key='contacts'/>,
-}
-
 const dark = [
   'mobile',
   'situation',
@@ -76,6 +58,30 @@ class Home extends Component {
     slowScroll: true,
     widthBig: __CLIENT__ && window.innerWidth >= showingWidth
   }
+
+  sectionsObj = {
+    'empowering': <EmpoweringSection mix={cn('section')} key='empowering' />,
+    'mobile': <FirstMobileSection mix={cn('section')} key='mobile' />,
+    'situation': <UnbankedStatSection mix={cn('section')} key='situation' />,
+    'changes': <QuotesSection mix={cn('section', {type: 'slider'})} key='changes' />,
+    'platform': <WhatMakesSection mix={cn('section')} key='platform'/>,
+    'simplicity': <SafetySection mix={cn('section')} key='simplicity'/>,
+    'opportunities': <OpportunitiesSection mix={cn('section')} key='opportunities'/>,
+    'userbase': <GrowingSection mix={cn('section')} key='userbase'/>,
+    'use cases': <UseCasesSection mix={cn('section')} key='usecases'/>,
+    'challenge': <GlobalChallengeSection mix={cn('section')} key='challenge'/>,
+    'expedition': <ExpeditionSection mix={cn('section')} key='expedition'/>,
+    'timeline': <TimelineSection mix={cn('section')} key='timeline'/>,
+    'team': <TeamSection mix={cn('section')} key='team' />,
+    'press': <WorldTalkingSection mix={cn('section')}  key='press'/>,
+    'contacts':
+      <O_Footer_H
+        mix={cn('section', {type: 'half-height'})}
+        openPopup = {this.props.openPopup}
+        key='contacts'
+      />,
+  }
+
 
   getSideMenu(showIndex){
     const hashLinks = sectionsNames.map((name, i) => (
@@ -164,7 +170,7 @@ class Home extends Component {
         className={cn('inner')}
         style={{transform: `translate3d(0, ${-positionY}vh, 0px`}}
         >
-          {sectionsNames.map(name => sectionsObj[name])}
+          {sectionsNames.map(name => this.sectionsObj[name])}
         </div>
         {isMobile.any || sideMenu}
       </div>
