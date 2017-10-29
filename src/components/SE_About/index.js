@@ -137,8 +137,8 @@ class SE_About extends Component {
   }
 
   render() {
-    const {founders, advisers, team, timeLineData} = this.props
-    const renderedFounders = this.getFounders(founders)
+    const {advisers, team, timeLineData} = this.props
+    // const renderedFounders = this.getFounders(founders)
     const renderedAdvisers = this.getTeam(advisers)
     const renderedTeam = this.getTeam(team)
 
@@ -153,10 +153,10 @@ class SE_About extends Component {
           <A_H type="section">Our Mission</A_H>
           <A_P type="third">Today, two billion people around the world do not have access to banking.  Humaniq aims to increase financial inclusion worldwide by providing new financial services to the unbanked based on Blockchain technology and biometric identification systems. With this new mobile digital economy, we will help people who are excluded from the financial system break free from poverty and improve their lives, and emerging economies shift into the cryptoeconomy. </A_P>
         </A_Container>
-        <A_Container type="equal">
-          <A_H type="section-c">Humaniq Founders</A_H>
-          {renderedFounders}
-        </A_Container>
+        {/*<A_Container type="equal">*/}
+          {/*<A_H type="section-c">Humaniq Founders</A_H>*/}
+          {/*{renderedFounders}*/}
+        {/*</A_Container>*/}
         <A_Container type="equal">
 
           <A_H type="section" >Humaniq Team</A_H>
