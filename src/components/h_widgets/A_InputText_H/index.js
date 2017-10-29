@@ -8,16 +8,18 @@ class A_InputText_H extends Component {
 
   render(){
     const {value, handleChange, placeholder, error} = this.props
+
+    const hasError = !!error
     return (
-      <fieldset className={cn()}>
+      <fieldset className={cn({hasError})}>
         <input
           ref = {node => this.input = node}
+          className={cn('input')}
           placeholder={placeholder}
           type="text"
           value={value}
           onChange={e => handleChange(e.target.value)}
         />
-        <div className={cn('error')}>{error}</div>
       </fieldset>
     )
   }

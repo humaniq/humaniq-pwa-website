@@ -5,12 +5,12 @@ import {cssClassName} from 'utils'
 
 const cn = cssClassName('A_Btn_H');
 
-const A_Btn_H = ({mix, children, type}) => {
+const A_Btn_H = ({mix, children, type, formHasErrors}) => {
   switch(type) {
     case 'submit':
       return (
         <button
-          className={cn([mix])}
+          className={cn([mix],{formHasErrors})}
           type='submit'
         >
           {children}
@@ -32,5 +32,6 @@ A_Btn_H.propTypes = {
   mix: T.string, //BEM mixin from parent block
   type: T.oneOf([
     'submit', // form submit btn
-  ])
+  ]),
+  formHasErrors: T.bool // form error mod for submit-btn
 }

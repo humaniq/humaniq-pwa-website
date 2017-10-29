@@ -2,8 +2,19 @@
 @import "common/utils";
 
 .a-input-text-h{
+  $this: &;
   padding: 0;
-  input {
+  &_has-error {
+    &_true {
+      #{$this}__input {
+        border: 2px solid $color-main-red-error;
+        &::placeholder {
+          color: $color-main-red-error;
+        }
+      }
+    }
+  }
+  &__input {
 	box-sizing: border-box;
     display: block;
     width: 100%;
@@ -15,5 +26,9 @@
     font-weight: 700;
     font-size: 14px;
     color: $color-main-blue;
+    transition: color, border, .3s linear;
+    &:focus {
+      outline: none;
+    }
   }
 }

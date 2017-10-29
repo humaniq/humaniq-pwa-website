@@ -28,7 +28,12 @@ class O_Popup_H extends Component {
 
 
 O_Popup_H.propTypes = {
-  //children: T.any.isRequired,
+  isActive: T.bool.isRequired, //popup is visible or not
+  closePopup: T.func.isRequired, //close popup action
+  popupType: T.oneOf([
+    'subscribe', //popup with subscribe form inside
+    'ambasadors' //popup with ambasadors form inside
+  ])
 };
 
 export default O_Popup_H

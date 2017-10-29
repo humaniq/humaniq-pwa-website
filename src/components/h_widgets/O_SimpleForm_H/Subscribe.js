@@ -19,8 +19,7 @@ const HOC_CONFIG = {
 const FIELDS_CONFIG = [
   {
     fieldName: 'email',
-    placeholder: 'email',
-    label: 'email'
+    placeholder: 'Enter email'
   },
 ]
 
@@ -28,13 +27,12 @@ const FIELDS_CONFIG = [
 class O_SubscribeForm extends Component {
 
   _createInputs = (fieldsConfig) => (
-    fieldsConfig.map(({fieldName, placeholder, label}) => (
+    fieldsConfig.map(({fieldName, placeholder}) => (
       <A_InputText_H
         key = {`${fieldName}_field`}
         value = {this.props.fields[fieldName].value}
         onChange
         placeholder = {placeholder}
-        label = {label}
         error = {this.props.fields[fieldName].error}
         handleChange = {
           text => this.props.onFieldChange(fieldName, text)
@@ -58,10 +56,10 @@ class O_SubscribeForm extends Component {
 
         <A_Btn_H
           mix={cn('submit-btn')}
-          error={formHasErrors}
+          formHasErrors={formHasErrors}
           type='submit'
         >
-          {formHasErrors ? 'Check errors' : 'Send'}
+          Send
         </A_Btn_H>
 
       </form>
