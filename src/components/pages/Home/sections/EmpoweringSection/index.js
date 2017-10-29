@@ -4,7 +4,7 @@ import A_Title from 'A_Title_H'
 import SectionCounter from '../common/SectionCounter/index.js'
 import './styles.scss'
 import {cssClassName} from 'utils'
-import A_Image from 'A_Image'
+//import A_Image from 'A_Image'
 const cn = cssClassName('SE_Home_Empowering');
 
 const SE_Home_Empowering = ({mix}) => (
