@@ -11,8 +11,16 @@
   font-size: 16.5px;
   letter-spacing: .3em;
   text-transform: uppercase;
-  transition: background-color .3s,color .2s linear;
+  pointer-events: auto;
+  transition: background-color, color, border, .3s linear;
   cursor: pointer;
+  &_form-has-errors {
+    &_true {
+      color: $color-text-gray;
+      border: 2px solid $color-text-gray;
+      pointer-events: none;
+    }
+  }
   &:hover {
     background-color: $color-main-blue;
     color: $color-white;

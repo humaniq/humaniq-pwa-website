@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import A_Title from 'A_Title_H'
 import SectionCounter from '../common/SectionCounter/index.js'
-import InfoColumns from '../common/InfoColumns'
+//import InfoColumns from '../common/InfoColumns'
 import './styles.scss'
 import {cssClassName} from 'utils'
 import A_Image from "../../../../widgets/A_Image/index";
