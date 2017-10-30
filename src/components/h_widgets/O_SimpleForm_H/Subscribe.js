@@ -42,27 +42,39 @@ class O_SubscribeForm extends Component {
   )
 
   render() {
-    const { mix, formHasErrors, handleSubmit } = this.props;
+    const { mix, formHasErrors, handleSubmit, submited } = this.props;
 
     return (
-      <form className={cn([mix])} onSubmit={handleSubmit}>
-        <A_Title_H
-          mix={cn('title')}
-        >
-          Sign up for<br/>Humaniq Newsletter
-        </A_Title_H>
+      <div>
 
-        {this._createInputs(FIELDS_CONFIG)}
+        {
+          submited ?
+            <A_Title_H
+              mix={cn('title')}
+            >
+              Stay tuned, interesting news are on the way.
+            </A_Title_H>
+            : <form className={cn([mix])} onSubmit={handleSubmit}>
+                <A_Title_H
+                  mix={cn('title')}
+                >
+                  Sign up for<br/>Humaniq Newsletter
+                </A_Title_H>
 
-        <A_Btn_H
-          mix={cn('submit-btn')}
-          formHasErrors={formHasErrors}
-          type='submit'
-        >
-          Send
-        </A_Btn_H>
+                {this._createInputs(FIELDS_CONFIG)}
 
-      </form>
+                <A_Btn_H
+                  mix={cn('submit-btn')}
+                  formHasErrors={formHasErrors}
+                  type='submit'
+                >
+                  Send
+                </A_Btn_H>
+
+              </form>
+        }
+      </div>
+
     )
   }
 }
