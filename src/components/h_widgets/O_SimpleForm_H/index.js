@@ -1,23 +1,26 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux'
 import * as T from "prop-types";
 import O_SubscribeForm from './Subscribe'
 import O_AmbasadorsForm from './Ambasadors'
+import {submit} from 'store/entities/simpleForms/actions'
 
 class O_SimpleForm_H extends Component {
 
-  getForm(formType, props){
+  getForm(formType, {submit, ...props}){
     switch(formType){
       case 'subscribe':
-        return <O_SubscribeForm {...props} />;
+        return <O_SubscribeForm {...props} handleSubmit={data => submit('subscribe', data)}/>;
       case 'ambasadors':
-        return <O_AmbasadorsForm {...props} />;
+        return <O_AmbasadorsForm {...props} handleSubmit={data => submit('ambassadors', data)}/>;
     }
   }
 
   render() {
-    const {formType} = this.props;
-    console.log('this.props from Simple Form',this.props);
-    console.log('formType from Simple Form',formType);
+    const {formType, } = this.props;
+    // console.log('this.props from Simple Form',this.props);
+    // console.log('formType from Simple Form',formType);
 
     return (
       formType ? (
@@ -35,4 +38,11 @@ O_SimpleForm_H.propTypes = {
   ])
 };
 
-export default O_SimpleForm_H
+
+
+function mapDispatchToProps(dispatch) {
+  const actions = bindActionCreators({ submit}, dispatch)
+  return {...actions};
+}
+
+export default connect(()=>{}, mapDispatchToProps)(O_SimpleForm_H);

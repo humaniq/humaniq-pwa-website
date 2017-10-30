@@ -7,6 +7,7 @@
     @include media($mobile) {
       width: 100%;
     }
+    padding-bottom:1.2rem;
   }
 
   &__error{
@@ -32,7 +33,6 @@
   &__select{
     display: inline-flex;
     background-color: $white;
-    border-bottom: solid 1px $form-border-color;
     width: 100%;
     min-width: 13.3rem;
     align-items: center;
@@ -47,7 +47,7 @@
     &:after{
       content: '';
       position: absolute;
-      top: 2rem;
+      top: .2rem;
       right: 1rem;
       border-left: 5px solid transparent;
       border-right: 5px solid transparent;
@@ -68,6 +68,7 @@
   }
 
   &__list-options{
+
     z-index: 1;
     position: relative;
     width: 100%;
@@ -75,7 +76,9 @@
     margin: 0 auto;
     display: block;
     background-color: $white;
-    border: 1px solid $form-border-color;
+    border: 2px solid $color-main-blue;
+    border-bottom: none;
+    border-top: none;
     padding: 16px 0px;
     box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px;
 
@@ -107,7 +110,9 @@
     transform: scaleY(.5);
     opacity: 0;
     display: none;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 2px solid $color-main-blue;
+    border-top: 2px solid $color-main-blue;
+
 
     &_closed_false{
       display: block;
