@@ -4,9 +4,33 @@ import SectionCounter from '../common/SectionCounter/index.js'
 //import InfoColumns from '../common/InfoColumns'
 import './styles.scss'
 import {cssClassName} from 'utils'
-import A_Image from "../../../../widgets/A_Image/index";
+import A_Image from "A_Image/index";
+import OwlCarousel from 'react-owl-carousel2';
 
 const cn = cssClassName('SE_Home_Team');
+
+const options = {
+  items: 3,
+  loop: true,
+  nav: false,
+  dots: false,
+  responsive: {
+    0: {
+      items: 1
+    },
+    768: {
+      items: 2
+    },
+    1024: {
+      items: 3
+    }
+  }
+}
+
+// const events = {
+//   onDragged: function(event) {...},
+//   onChanged: function(event) {...}
+// };
 
 class SE_Home_Team extends Component {
 
@@ -35,12 +59,8 @@ class SE_Home_Team extends Component {
       people.map(({imgSrc, name}, i) =>
         <div className={cn('slider-item')} key={keysName + i}>
           <div className={cn('slider-item-image')}>
-            <A_Image
-              src={imgSrc}
-              alt={name}
-              rounded
-            />
-          </div>.
+            <A_Image src={imgSrc} rounded/>
+          </div>
         </div>
       )
     )
@@ -69,15 +89,19 @@ class SE_Home_Team extends Component {
             People behind <br /> Humaniq project
           </A_Title>
 
-          <div className={cn('slider-wrap')}>
-            <div className={cn('slider')} style={{transform: `translateX(-${pctX}px)`}}>
-              {_renderSlides}
-            </div>
-          </div>
-          <div className={cn('nav')}>
-            <div className={cn('nav-prev')} onClick={this.prev} />
-            <div className={cn('nav-next')} onClick={this.next} />
-          </div>
+          {/*<div className={cn('slider-wrap')}>*/}
+            {/*<div className={cn('slider')} style={{transform: `translateX(-${pctX}px)`}}>*/}
+              {/*{_renderSlides}*/}
+            {/*</div>*/}
+          {/*</div>*/}
+          {/*<div className={cn('nav')}>*/}
+            {/*<div className={cn('nav-prev')} onClick={this.prev} />*/}
+            {/*<div className={cn('nav-next')} onClick={this.next} />*/}
+          {/*</div>*/}
+
+          <OwlCarousel ref="car" options={options}  >
+            {_renderSlides}
+          </OwlCarousel>
         </div>
 
         <SectionCounter

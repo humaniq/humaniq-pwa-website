@@ -56,7 +56,7 @@ class SE_Home_UseCases extends Component {
 
     for (let i = 1; i <= 5; i++) {
       dots.push(
-        <div className={cn('dots-item', {active: show === i })} onClick={() => this.setState({show: i})} />
+        <div key={i} className={cn('dots-item', {active: show === i })} onClick={() => this.setState({show: i})} />
       )
     }
 
