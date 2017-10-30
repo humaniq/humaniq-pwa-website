@@ -250,8 +250,7 @@ export default (ComposedComponent, config)  => class FormHoc extends Component {
           values[name] = fields[name].value
         }
       }
-      console.log('ready to send ==>', values);
-      //this.props.handleSubmit(values)
+      this.props.handleSubmit(values)
     }
 
     this.setState(newState)

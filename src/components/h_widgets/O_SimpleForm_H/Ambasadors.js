@@ -1,7 +1,9 @@
 import React , { Component } from 'react';
 import {cssClassName} from 'utils';
-import A_InputText_H from '../A_InputText_H';
-import A_Btn_H from '../A_Btn_H';
+import A_InputText_H from 'A_InputText_H';
+import A_Textarea_H from 'A_Textarea_H';
+import A_Title_H from 'A_Title_H'
+import A_Btn_H from 'A_Btn_H';
 import SimpleForm from 'HOC/SimpleForm';
 import Dropdown from './Dropdown'
 import './styles.scss';
@@ -23,63 +25,75 @@ const HOC_CONFIG = {
 class O_AmbasadorsForm extends Component {
 
   render() {
-    const { mix, formHasErrors, handleSubmit } = this.props;
+    const { mix, formHasErrors, handleSubmit, submited } = this.props;
 
     return (
-      <form className={cn([mix])} onSubmit={handleSubmit}>
+      <div>
+        {
+          submited ?
+            <A_Title_H
+              mix={cn('title')}
+            >
+              Thank you for your application!
+            </A_Title_H>
+            :
+              <form className={cn([mix])} onSubmit={handleSubmit}>
 
-        <A_InputText_H
-          value={this.props.fields['email'].value}
-          onChange
-          placeholder='email'
-          label='email'
-          error={this.props.fields['email'].error}
-          handleChange={
-            text => this.props.onFieldChange('email', text)
-          }
-        />
+                <A_InputText_H
+                  value={this.props.fields['email'].value}
+                  onChange
+                  placeholder='email'
+                  label='email'
+                  error={this.props.fields['email'].error}
+                  handleChange={
+                    text => this.props.onFieldChange('email', text)
+                  }
+                />
 
-        <A_InputText_H
-          value={this.props.fields['name'].value}
-          onChange
-          placeholder='Your name'
-          label='Your name'
-          error={this.props.fields['name'].error}
-          handleChange={
-            text => this.props.onFieldChange('name', text)
-          }
-        />
+                <A_InputText_H
+                  value={this.props.fields['name'].value}
+                  onChange
+                  placeholder='Your name'
+                  label='Your name'
+                  error={this.props.fields['name'].error}
+                  handleChange={
+                    text => this.props.onFieldChange('name', text)
+                  }
+                />
 
-        <Dropdown
-          label="Country"
-          placeholder="Choose country"
-          selected={this.props.fields['country'].value}
-          value={this.props.fields['country'].value}
-          options={countries}
-          onChange={country => this.props.onFieldChange('country', country)}
-          error={this.props.fields['country'].error}
-        />
+                <Dropdown
+                  label="Country"
+                  placeholder="Choose country"
+                  selected={this.props.fields['country'].value}
+                  value={this.props.fields['country'].value}
+                  options={countries}
+                  onChange={country => this.props.onFieldChange('country', country)}
+                  error={this.props.fields['country'].error}
+                />
 
-        <A_InputText_H
-          value={this.props.fields['bio'].value}
-          onChange
-          label='Bio'
-          placeholder='Bio'
-          error={this.props.fields['bio'].error}
-          handleChange={
-            text => this.props.onFieldChange('bio', text)
-          }
-        />
+                <A_Textarea_H
+                  value={this.props.fields['bio'].value}
+                  onChange
+                  label='Bio'
+                  placeholder='Bio'
+                  error={this.props.fields['bio'].error}
+                  handleChange={
+                    text => this.props.onFieldChange('bio', text)
+                  }
+                />
 
-        <A_Btn_H
-          mix={cn('submit-btn')}
-          error={formHasErrors}
-          type='submit'
-        >
-          {formHasErrors ? 'Check errors' : 'Continue'}
-        </A_Btn_H>
+                <A_Btn_H
+                  mix={cn('submit-btn')}
+                  error={formHasErrors}
+                  type='submit'
+                >
+                  {formHasErrors ? 'Check errors' : 'Continue'}
+                </A_Btn_H>
 
-      </form>
+              </form>
+        }
+      </div>
+
     )
   }
 }
