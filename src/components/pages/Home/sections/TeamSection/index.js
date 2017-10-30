@@ -1,13 +1,14 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import A_Title from 'A_Title_H'
 import SectionCounter from '../common/SectionCounter/index.js'
 //import InfoColumns from '../common/InfoColumns'
 import './styles.scss'
 import {cssClassName} from 'utils'
-import A_Image from "A_Image/index";
-import OwlCarousel from 'react-owl-carousel2';
+import A_Image from 'A_Image/index'
+import M_Partners from './Partners'
+import OwlCarousel from 'react-owl-carousel2'
 
-const cn = cssClassName('SE_Home_Team');
+const cn = cssClassName('SE_Home_Team')
 
 const options = {
   items: 3,
@@ -56,11 +57,13 @@ class SE_Home_Team extends Component {
 
     let res = []
     const genSlidesArray = (keysName) => (
-      people.map(({imgSrc, name}, i) =>
-        <div className={cn('slider-item')} key={keysName + i}>
-          <div className={cn('slider-item-image')}>
+      people.map(({imgSrc, name, position}, i) =>
+        <div className={cn('slide')} key={keysName + i}>
+          <div className={cn('slide-image')}>
             <A_Image src={imgSrc} rounded/>
           </div>
+          <p className={cn('slide-title')}>{name}</p>
+          <p className={cn('slide-text')}>{position}</p>
         </div>
       )
     )
@@ -104,6 +107,8 @@ class SE_Home_Team extends Component {
           </OwlCarousel>
         </div>
 
+        <M_Partners mix={cn('partners')}/>
+
         <SectionCounter
           sectionNum={13}
           theme='bright'
@@ -121,7 +126,7 @@ SE_Home_Team.defaultProps = {
 
 export default SE_Home_Team
 
-const imgPath = 'img/team'
+const imgPath = 'img/team_g'
 
 
 const founders = [
@@ -135,13 +140,13 @@ const founders = [
     name: 'Dinis Guarda',
     position: 'CEO and Co-Founder of Humaniq',
     bio: 'Digital age influencer Dinis is the founder of digital communications consultancy Ztudium and manager of websites <a href="https://intelligenthq.com" target="_blank">intelligenthq.com</a>, <a href="https://openbusinesscouncil.org" target="_blank">openbusinesscouncil.org</a>, <a href="https://tradersdna.com" target="_blank">tradersdna.com</a>, and <a href="https://hedgethink.com" target="_blank">hedgethink.com</a>. Dinis also co-founded BlockchainAge, a blockchain research and tech influencer, platform, book and film; led the digital strategy for invstr.com; authored books including The Next Tsunami: Blockchain plus AI and IOT and led a digital master course in London for Group INSEEC. He has been ranked as in the top 100 Blockchain and Fintech influencers.',
-    imgSrc: `${imgPath}/dinis_guarda.jpg`
+    imgSrc: `${imgPath}/dinis_guarda.png`
   },
   {
     name: 'Dmitry Kaminskiy',
     position: 'Executive Chairman and Co-Founder',
     bio: 'An innovative entrepreneur and investor active in Biotech, Fintech, Blockchain and artificial intelligence, Dmitry is co-founder of the Deep Knowledge Ventures investment fund, focused on investments in AI and Deeptech. He adheres to the principle of impact investment in all his business activities, believing that business should make a social impact, and he supports the deployment of Blockchain for Good, which led to his decision to support Humaniq from its inception.',
-    imgSrc: `${imgPath}/dmitry_kaminskiy.jpg`
+    imgSrc: `${imgPath}/dmitry_kaminskiy.png`
   },
 ]
 
@@ -154,22 +159,22 @@ const advisers = [
   {
     name: 'Iggy Bassi',
     bio: 'Is the co-founder and serves as a Director of GADCO, a venture focused on sustainable agriculture and livelihood development in West Africa with LATAM technologies. He has a long track record in building companies in the technology, finance, and impact markets – in both emerged and emerging markets. Over the past 20 years he has advised many global companies (inc. Fortune 500), sovereigns, and entrepreneurs on solving problems in competitiveness, sustainability, scenario planning, and structuring complex transactions. He works at the intersection of technology, sustainability, food security, global security, and innovative thinking around the collaborative economy.',
-    imgSrc: `${imgPath}/iggy_bassi.jpg`
+    imgSrc: `${imgPath}/iggy_bassi.png`
   },
   {
     name: 'Matt McKibbin',
     bio: 'Is a business development guru and a decentralization evangelist. He became interested in Bitcoin and the blockchain technology in 2012. Technologically savvy, he is an extroverted connector driven by a desire to see transformative and decentralized technologies positively affect the 7 billion people on the planet. He is based in the Washington DC metro area.',
-    imgSrc: `${imgPath}/matt_mckibbin.jpg`
+    imgSrc: `${imgPath}/matt_mckibbin.png`
   },
   {
     name: 'Alex Bausch',
     bio: 'Is an entrepreneur with broad experience in all aspects of international business development and the creation of global technology companies. He strongly believes in partner ecosystems which aim to inspire and spawn new innovations. His specialties include: SaaS services, mobile identity security, the IoT, enterprise managed mobility, decentralised ledger technology, marketing, and product development.',
-    imgSrc: `${imgPath}/alex_bausch.jpg`
+    imgSrc: `${imgPath}/alex_bausch.png`
   },
   {
     name: 'Nick Ayton',
     bio: 'Is a writer, speaker and educator of all things Blockchain and Cryptocurrency. He is a Fintech 100 Influencer and Number 21 Rise Blockchain Top 100. He has had eight startups and held many senior roles in major IT and tech companies. He now chairs various Blockchain events and advises a range of clients on Blockchain technology, bitcoin and Ethereum. One of his latest projects is to raise funds using cryptoeconomics and create a new film finance model to make a mini- series for TV about the Bitcoin Revolution, an asset backed Token, and a new Media and Film Production business on Ethereum.',
-    imgSrc: `${imgPath}/nick_ayton.jpeg`
+    imgSrc: `${imgPath}/nick_ayton.png`
   },
   {
     name: 'Ron Morris',
@@ -179,23 +184,23 @@ const advisers = [
   {
     name: 'Tim Campbell',
     bio: 'In previous roles Tim has been a key government advisor on Diversity, Small Business Social Enterprise and Entrepreneurship. Tim was also Boris Johnson\'s Training and Enterprise ambassador for the City of London whilst Mr Johnson was Mayor of London.<br />In February 2012 Tim was awarded the MBE for his efforts supporting enterprise and he currently sits on the City of London\'s Education Board. Tim is a keen runner and martial arts enthusiast and is happily married with two children. ',
-    imgSrc: `${imgPath}/tim_campbell.jpg`
+    imgSrc: `${imgPath}/tim_campbell.png`
   },
   {
     name: 'Michael Terpin',
     bio: 'Michael Terpin co-founded BitAngels (www.bitangels.co), the world\'s first angel network for digital currency startups, in May 2013, and now serves as its chairman. The distributed angel network currently has more than 600 members, and it has made more than 25 investments in bitcoin and cryptocurrency companies with two exits and several follow-on rounds. Terpin is also co-founder and managing partner of bCommerce Labs (www.bcommercelabs.com), the first technology incubator fund focused on e-commerce companies for bitcoin and the blockchain, and a partner at Flight VC.',
-    imgSrc: `${imgPath}/michael_terpin.jpg`
+    imgSrc: `${imgPath}/michael_terpin.png`
   },
 
   {
     name: 'Chami Akmeemana',
-    imgSrc: `${imgPath}/chami_akmeemana.jpg`
+    imgSrc: `${imgPath}/chami_akmeemana.png`
   },
 
   {
     name: 'Paolo Tasca',
     bio: 'Paolo Tasca is a FinTech economist specialising in P2P Financial System. An advisor for different international organisations including the EU Parliament on blockchain technologies, Paolo recently joined the University College London as Director of the Centre for Blockchain Technologies (UCL CBT).  Prior to that, he has been a senior research economist at Deutsche Bundesbank working on digital currencies and P2P lending. Paolo is the co-author of the bestseller "FINTECH Book" and the co-editor of the book "Banking Beyond Banks and Money.',
-    imgSrc: `${imgPath}/paolo_tasca.jpeg`
+    imgSrc: `${imgPath}/paolo_tasca.png`
   },
 ]
 
@@ -204,13 +209,13 @@ const team = [
     name: 'Zeeshan Mallick',
     position: 'CMO',
     bio: 'With a background in digital marketing, Zeeshan is passionate about people, family and friends. He is a life coach and supporting people to achieve their goals is what he loves. He joined Humaniq to help individuals move on to a more stable and comfortable life. ',
-    imgSrc: `${imgPath}/zeeshan_mallick.jpg`
+    imgSrc: `${imgPath}/zeeshan_mallick.png`
   },
   {
     name: 'Derin Cag',
     position: 'CDO',
     bio: 'Derin has experience of digital marketing, guerilla marketing and PR, and is passionate about deep tech, space and driving, as well as family and friends. He was inspired to get involved with Humaniq by Dinis Guarda.',
-    imgSrc: `${imgPath}/derin_cag.jpg`
+    imgSrc: `${imgPath}/derin_cag.png`
   },
   {
     name: 'Serafima Semkina',
@@ -222,19 +227,19 @@ const team = [
     name: 'Javed Khattak',
     position: 'CFO',
     bio: 'Javed has a background as an actuary and of finance, consulting and startups. He loves technology, especially gadgets, AI and virtual reality, and believes in Blockchain for Good. He is working with Humaniq to bring greater opportunities and fairness to the world.',
-    imgSrc: `${imgPath}/javed_khattak.jpg`
+    imgSrc: `${imgPath}/javed_khattak.png`
   },
   {
     name: 'Anton Mozgovoy',
     position: 'Product Manager',
     bio: 'Anton was motivated to work with Humaniq to use his experience in both computer science and finance to help to bring happiness for all across the world. He is passionate about freedriving and wakeboarding, and, of course, staying late to finish work.',
-    imgSrc: `${imgPath}/anton_mozgovoy.jpg`
+    imgSrc: `${imgPath}/anton_mozgovoy.png`
   },
   {
     name: 'Kareem Hepburn',
     position: 'Developer',
     bio: 'With a background in Fintech and medicine, and a passion for new technology, nature, travelling, and music, Kareem got involved with Humaniq to give the global unbanked an equal footing in the modern economy.',
-    imgSrc: `${imgPath}/kareem_hepburn.jpg`
+    imgSrc: `${imgPath}/kareem_hepburn.png`
   },
   {
     name: 'Georgii Oleinikov',
@@ -252,19 +257,19 @@ const team = [
     name: 'Dickson Nsofor',
     position: ' Head of Global Institution',
     bio: 'Dickson has experience of information engineering and international economics, and the Blockchain is his passion. He was motivated to work with Humaniq because of the potential to solve major problems around the world.',
-    imgSrc: `${imgPath}/dickson_nsofor.jpg`
+    imgSrc: `${imgPath}/dickson_nsofor.png`
   },
   {
     name: 'Peyman Irani',
     position: 'SMM, CSS',
     bio: 'Peyman’s background is in sales and marketing, entrepreneurship, and social media and he is passionate about his family, innovation and humanitarian capitalism. Fairness means a lot to him and he believes we can do something great for humanity at Humaniq.',
-    imgSrc: `${imgPath}/peyman_irani.jpg`
+    imgSrc: `${imgPath}/peyman_irani.png`
   },
   {
     name: 'Rayane Hochine',
     position: 'SMM, PR, CSS, Operations',
     bio: 'Rayane brings experience of business and corporate strategy and digital marketing, business and innovation. He is passionate about the Blockchain, cryptocurrency, new technologies and travelling and sees the potential to help a large number of people with Humaniq.',
-    imgSrc: `${imgPath}/rayane_hochine.jpg`
+    imgSrc: `${imgPath}/rayane_hochine.png`
   },
   {
     name: 'Segrey Blinov',
@@ -276,7 +281,7 @@ const team = [
     name: 'Danny Kass',
     position: 'SMM, CSS',
     bio: 'Danny’s background is in social media, B2B sales and customer service support. He loves cryptoeconomy and technology and at Humaniq is motivated to disrupt the financial industry with an ecosystem for entrepreneurs to make changes from the bottom up.',
-    imgSrc: `${imgPath}/danny_kass.jpg`
+    imgSrc: `${imgPath}/danny_kass.png`
   },
   {
     name: 'Andriy Schechenko',
@@ -294,7 +299,7 @@ const team = [
     name: 'Olga Derbio',
     position: 'Graphic Designer',
     bio: 'Olga has a background in architecture, interior design and graphic design, and is passionate about inspiring others, building sites, spontaneity, and the universe. She is at Humaniq so she can be creative for social good - and to become a crypto geek!',
-    imgSrc: `${imgPath}/olga_derbio.jpg`
+    imgSrc: `${imgPath}/olga_derbio.png`
   },
 ]
 
