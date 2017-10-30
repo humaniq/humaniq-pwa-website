@@ -2,9 +2,9 @@ import React, {Component} from 'react';
 import * as T from "prop-types";
 import './styles.scss';
 import {cssClassName} from 'utils'
-const cn = cssClassName('A_InputText_H')
+const cn = cssClassName('A_Textarea_H')
 
-class A_InputText_H extends Component {
+class A_Textarea_H extends Component {
 
   render(){
     const {value, handleChange, placeholder, onFocus, error} = this.props
@@ -12,11 +12,10 @@ class A_InputText_H extends Component {
     const hasError = !!error
     return (
       <fieldset className={cn({hasError})}>
-        <input
+        <textarea
           ref = {node => this.input = node}
-          className={cn('input')}
+          className={cn('textarea')}
           placeholder={placeholder}
-          type="text"
           value={value}
           onFocus={onFocus}
           onChange={e => handleChange(e.target.value)}
@@ -26,13 +25,13 @@ class A_InputText_H extends Component {
   }
 }
 
-A_InputText_H.propTypes = {
+A_Textarea_H.propTypes = {
   handleChange: T.func.isRequired,
   value: T.string.isRequired,
   placeHolder: T.string
 };
 
-A_InputText_H.defaultProps = {
+A_Textarea_H.defaultProps = {
 };
 
-export default A_InputText_H
+export default A_Textarea_H

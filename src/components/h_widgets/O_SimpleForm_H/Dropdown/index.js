@@ -4,7 +4,7 @@ import './styles.scss';
 import {cssClassName} from 'utils'
 const cn = cssClassName('M_Dropdown_H')
 import onClickOutside from 'react-onclickoutside'
-import A_InputText from 'A_InputText'
+import A_InputText_H from 'A_InputText_H'
 
 class M_Dropdown extends Component {
   state = {
@@ -71,12 +71,13 @@ class M_Dropdown extends Component {
     const filteredOptions = this.getOptions(options, inputValue)
     const listOptions = this.getListOptions(filteredOptions, isOpened, selected)
     return (
-      <span className={cn('root')} onClick={this.handleClick}>
+      <div className={cn('root')} onClick={this.handleClick}>
         <div className={cn('select', {isOpened})}>
           <div className={cn('inner')}>
-            <A_InputText
+            <A_InputText_H
+              error={error}
               setFocus = {isOpened}
-              label="Your country"
+              placeholder='Your country'
               value = {inputValue}
               onFocus = {() => this.setState({inputValue: ''})}
               handleChange={value => this.setState({inputValue: value})}
@@ -86,9 +87,7 @@ class M_Dropdown extends Component {
 
         </div>
         {listOptions}
-        <div className={cn('error')}>{error}</div>
-
-      </span>
+      </div>
 
     )
   }
