@@ -99,16 +99,20 @@ class SE_Home_Team extends Component {
 
           {__CLIENT__ &&
             <div>
-              <OwlCarousel ref="team" options={teamOptions}  >
-                {_renderSlides}
-              </OwlCarousel>
-              <div className={cn('nav')}>
-                <div className={cn('nav-prev')} onClick={() => this.refs.team.prev()} />
-                <div className={cn('nav-next')} onClick={() => this.refs.team.next()} />
+              <div className={cn('team-slider')}>
+                <OwlCarousel ref="team" options={teamOptions}  >
+                  {_renderSlides}
+                </OwlCarousel>
               </div>
+
+              <div className={cn('nav-prev')} onClick={() => this.refs.team.prev()} />
+              <div className={cn('nav-next')} onClick={() => this.refs.team.next()} />
+
+              <div className={cn('partners-slider')}>
               <OwlCarousel ref="mobPartners" options={mobPartnersOptions}  >
                 {_renderMobPartners}
               </OwlCarousel>
+              </div>
             </div>
           }
 

@@ -5,13 +5,23 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
+  @include media($desktop-xl) {
+    align-items: flex-end;
+  }
   &__content {
-    width: 1200px;
+    width: 1100px;
+    margin-left: 140px;
+    padding: 0 30px;
     position: relative;
     font-family: $font-ProximaNova;
     @include media($desktop-xxl) {
       width: 745px;
+      margin-left: 190px;
+    }
+    @include media($desktop-xl) {
+      width: 820px;
+      margin-left: 0;
+      margin-right: 30px;
     }
     @include media($tablet) {
       width: auto;
@@ -26,6 +36,18 @@
     }
   }
 
+  &__team-slider {
+    @include media($desktop-xl) {
+      margin-bottom: 60px;
+    }
+  }
+
+  &__partners-slider {
+    display: none;
+    @include media($desktop-xl) {
+      display: block;
+    }
+  }
 
   &__slide {
     font-family: $font-ProximaNova;
@@ -37,7 +59,6 @@
       width: 265px;
       height: 265px;
       margin: 0 auto 60px auto;
-      background-color: #f2f2f2;
       &:hover::before {
         background-color: transparent;
       }
@@ -51,7 +72,7 @@
         height: 100%;
         background-color: transparentize($color-main-blue, .1);
         mix-blend-mode: multiply;
-        border-radius: 50%;
+        border-radius: 100%;
         transition: background-color .3s;
       }
       @include media($desktop-xxl) {
@@ -85,53 +106,41 @@
     position: absolute;
     bottom: 150px;
     left: 190px;
+    @include media($desktop-xxl) {
+      left: 160px;
+    }
+    @include media($desktop-xl) {
+      display: none;
+    }
   }
 
-  &__nav{
+  &__nav-prev, &__nav-next {
+    display: block;
     position: absolute;
-    left: 60%;
-    transform: translate3d(-60%, 0, 0);
     top: 50%;
-    width: 120%;
-    display: flex;
-    justify-content: space-between;
-    @include media ($tablet) {
-      margin-top: 3rem;
-      position: relative;
-      width: 40%;
-      left: 50%;
-      transform: translate3d(-50%, 0, 0);
-
-    }
-    @include media ($mobile) {
-      display: none;
-
-    }
-    &-prev{
+    margin-top: -10px;
+    cursor: pointer;
+    &:after{
+      content: '';
       display: block;
-      margin-right: 6rem;
-
-      &:after{
-        content: '';
-        display: block;
-        height: 20px;
-        width: 20px;
-        transform: rotate(-135deg);
-        border-top: 3px solid $color-main-blue;
-        border-right: 3px solid $color-main-blue;
-      }
+      height: 20px;
+      width: 20px;
+      border-top: 3px solid $color-main-blue;
+      border-right: 3px solid $color-main-blue;
     }
-    &-next{
-      display: block;
-      &:after{
-        content: '';
-        display: block;
-        height: 20px;
-        width: 20px;
-        transform: rotate(45deg);
-        border-top: 3px solid $color-main-blue;;
-        border-right: 3px solid $color-main-blue;;
-      }
+  }
+
+  &__nav-prev {
+    left: -20px;
+    &:after{
+      transform: rotate(-135deg);
+    }
+  }
+
+  &__nav-next {
+    right: -20px;
+    &:after{
+      transform: rotate(45deg);
     }
   }
 }
