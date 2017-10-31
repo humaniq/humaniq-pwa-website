@@ -103,7 +103,7 @@ class Home extends Component {
     if(!slowScroll && Math.abs(deltaY) < 500) return;
 
     const showIndex = deltaY > 0 ? oldIndex + 1: oldIndex - 1
-    setTimeout(() => this.setState({scroll: true}), 1000);
+    setTimeout(() => this.setState({scroll: true}), 600);
     setTimeout(() => this.setState({slowScroll: true}), 2000);
 
     if(showIndex >= 0 && showIndex < sectionsNames.length){
