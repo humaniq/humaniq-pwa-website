@@ -11,7 +11,7 @@ import O_Footer_H from 'O_Footer_H'
 class SE_MainLayout_H extends Component {
 
   state = {
-    headerLinks: ['Humaniq Wiki', 'HMQ Explorer', 'Challenge', 'Ambassadors' ],
+    headerLinks: ['Humaniq Wiki', 'HMQ Explorer', 'Challenge', 'Ambassadors'],
     sidebarLinks: ['Open source', 'Contact us', 'Subscribe'],
     mobileMenuIsActive: false
   }

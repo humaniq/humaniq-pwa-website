@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import * as T from "prop-types";
 import './styles.scss'
 import {cssClassName} from 'utils'
+import {Link} from 'react-router'
 
 const cn = cssClassName('SE_MainLayoutSidebar')
 
