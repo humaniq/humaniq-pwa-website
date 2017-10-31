@@ -2,6 +2,31 @@
 @import "common/utils";
 
 .se-ambassadors{
+  &__section-wrapper {
+    background-image: url('/img/design-v2/sections/common/waves-extra-platform.png');
+    background-repeat: no-repeat;
+    background-position: 0 100%;
+    background-size: contain;
+  }
+
+  &__decoration {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    opacity: .5;
+    top: -76px;
+    right: 0;
+    background-image: url('/img/design-v2/sections/common/head.svg');
+    background-size: 70%;
+    background-position: bottom right;
+    background-repeat: no-repeat;
+    @include media($tablet) {
+      display: none;
+      background-position: center;
+    }
+  }
+
+
   &__list{
     display: flex;
     flex-flow: wrap;

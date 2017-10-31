@@ -4,8 +4,8 @@ import './styles.scss';
 import {cssClassName} from 'utils'
 const cn = cssClassName('A_Container')
 
-const A_Container = ({children, type}) =>(
-  <div className={cn({type})}>{children}</div>
+const A_Container = ({mix, children, type}) =>(
+  <div className={cn({type}, [mix])}>{children}</div>
 )
 
 A_Container.propTypes = {
