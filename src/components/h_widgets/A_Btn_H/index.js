@@ -2,10 +2,10 @@ import React from 'react'
 import * as T from "prop-types"
 import './styles.scss'
 import {cssClassName} from 'utils'
-
+import {Link} from 'react-router'
 const cn = cssClassName('A_Btn_H');
 
-const A_Btn_H = ({mix, children, type, formHasErrors}) => {
+const A_Btn_H = ({mix, children, type, formHasErrors, to}) => {
   switch(type) {
     case 'submit':
       return (
@@ -18,9 +18,9 @@ const A_Btn_H = ({mix, children, type, formHasErrors}) => {
       )
     default:
       return (
-        <div className={cn([mix])}>
+        <a className={cn([mix])} href={to} target='_blank' style={{display: 'inline-block'}}>
           {children}
-        </div>
+        </a>
       )
   }
 

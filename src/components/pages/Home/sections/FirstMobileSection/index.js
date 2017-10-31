@@ -26,12 +26,13 @@ const SE_Home_FirstMobile = ({mix}) => (
           columns={infoColumns}
           type='narrow'
         />
-
-        <A_Btn_H
-          mix={cn('button')}
-        >
-          Project details
-        </A_Btn_H>
+        <div className={cn('button')}>
+          <A_Btn_H
+            to='/pdf/humaniq-whitepaper-05.09.pdf'
+          >
+            Project details
+          </A_Btn_H>
+        </div>
       </div>
 
     </div>

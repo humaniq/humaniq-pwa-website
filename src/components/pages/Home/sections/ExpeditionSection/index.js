@@ -25,11 +25,14 @@ const SE_Home_Expedition = ({mix}) => (
         type='narrow'
       />
 
-      <A_Btn_H
-        mix={cn('button')}
-      >
-        About expedition
-      </A_Btn_H>
+      <div className={cn('button')}>
+        <A_Btn_H
+          to='http://humaniqchallenge.com'
+        >
+          About expedition
+        </A_Btn_H>
+      </div>
+
     </div>
     <SectionCounter
       sectionNum={11}
