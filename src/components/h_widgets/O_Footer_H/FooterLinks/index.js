@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import * as T from "prop-types";
 import './styles.scss';
 import {cssClassName} from 'utils'
+import {Link} from 'react-router'
 
 const cn = cssClassName('M_FooterLinks')
 
@@ -23,20 +24,11 @@ class M_FooterLinks extends Component {
             className={cn('list-item')}
           >
             { popupLink ? (
-              <a
-                href='#'
-                onClick={() => this.props.openPopup(formType)}
-              >
-                {name}
-              </a>
-            ) : (
-              <a
-                href={url}
-                target={externalLink ? ('_blank') : ('_self')}
-              >
-                {name}
-              </a>
-            )}
+                <span className={cn('list-item-pop-up')} onClick={() => this.props.openPopup(formType)}>
+                  {name}
+                </span>
+              ) : ( externalLink ?  <a href={url} target='_blank'>{name}</a> : <Link to={url}>{name}</Link>)
+            }
           </li>
         ))
       case 'Contacts':
@@ -48,7 +40,7 @@ class M_FooterLinks extends Component {
               className={cn('list-item')}
             >
               <span>{name}</span>
-              <a href={mailTo}>{url}</a>
+              <a href={mailTo} target='_blank'>{url}</a>
             </li>
           )
         })
@@ -90,7 +82,7 @@ const footerLinks = [
   {
     section: 'Info',
     links: [
-      {name: 'Project details', popupLink: true, formType: 'ambasadors'},
+      {name: 'Project details', url: '/pdf/humaniq-whitepaper-05.09.pdf', externalLink: true},
       {name: 'Subscribe to newsletter', popupLink: true, formType: 'subscribe'},
       {name: 'HMQ Explorer', url: '/hmq-explorer'},
       {name: 'Humaniq blog', url: '/hmq-explorer'}]

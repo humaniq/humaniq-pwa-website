@@ -7,7 +7,7 @@ import MobileMenu from './MobileMenu'
 import O_Popup from './../../h_widgets/O_Popup_H'
 import {cssClassName} from 'utils'
 const cn = cssClassName('SE_MainLayout_H')
-
+import O_Footer_H from 'O_Footer_H'
 class SE_MainLayout_H extends Component {
 
   state = {
@@ -22,8 +22,10 @@ class SE_MainLayout_H extends Component {
 
   render() {
     const { headerLinks, sidebarLinks, mobileMenuIsActive } = this.state
-    const { children, popupType, theme, isPopupOpened, closePopup} = this.props
+    const { children, popupType, theme, isPopupOpened, closePopup, openRoute} = this.props
 
+    console.log('openRoute.length', openRoute.length)
+    const homePage = openRoute.length === 0 //home page
     const mobileMenuLinks = [...headerLinks, ...sidebarLinks]
 
     return (
@@ -35,16 +37,19 @@ class SE_MainLayout_H extends Component {
         />
 
         <Header
-          mix = {cn('header')}
+          mix = {cn('header', {sticky: homePage})}
           menuLinks = {headerLinks}
           mobileMenuIsActive = {mobileMenuIsActive}
           toggleMobileMenu = {this.toggleMobileMenu}
           theme = {theme}
+          sticky = {homePage}
         />
+
 
         <div className = {cn('body')}>
           {children}
         </div>
+        {homePage || <O_Footer_H mix='home__section home__section_type_half-height' openPopup = {this.props.openPopup}/>}
 
         <Sidebar
           mix = {cn('sidebar')}

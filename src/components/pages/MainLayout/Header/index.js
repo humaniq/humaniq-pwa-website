@@ -4,6 +4,7 @@ import './styles.scss'
 import A_Logo_H from 'A_Logo_H'
 import A_BurgerBtn_H from './BurgerBtn'
 import {cssClassName} from 'utils'
+import {Link} from 'react-router'
 
 const cn = cssClassName('SE_MainLayoutHeader_H')
 
@@ -18,18 +19,18 @@ const _getMenuLinks= (links) => (
   ))
 )
 
-const SE_MainLayoutHeader_H = ({mix, theme, menuLinks, mobileMenuIsActive, toggleMobileMenu}) => (
+const SE_MainLayoutHeader_H = ({mix, theme, menuLinks, mobileMenuIsActive, toggleMobileMenu, sticky}) => (
   <header
     className={cn([mix], {'mob-menu-open': mobileMenuIsActive})}
   >
-    <a
+    <Link
       className={cn('logo')}
-      href="#"
+      to="/"
     >
       <A_Logo_H theme={theme}/>
-    </a>
+    </Link>
 
-    <ul className={cn('menu')}>
+    <ul className={cn('menu', {sticky})}>
       {_getMenuLinks(menuLinks)}
     </ul>
 

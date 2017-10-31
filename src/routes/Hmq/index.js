@@ -18,6 +18,7 @@ const Hmq = (store) => (
   <Route
     path="hmq-explorer"
     component={HmqLayout}
+    prepareData={HmqLayout.prepareData}
   >
     <IndexRoute
       component={HmqHome}

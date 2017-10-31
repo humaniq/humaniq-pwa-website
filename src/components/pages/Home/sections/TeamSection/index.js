@@ -6,7 +6,7 @@ import './styles.scss'
 import {cssClassName} from 'utils'
 import A_Image from 'A_Image/index'
 import M_Partners from './Partners'
-import OwlCarousel from 'react-owl-carousel2'
+const OwlCarousel = __CLIENT__ ? require('react-owl-carousel2') : {}
 
 const cn = cssClassName('SE_Home_Team')
 
@@ -101,10 +101,12 @@ class SE_Home_Team extends Component {
             {/*<div className={cn('nav-prev')} onClick={this.prev} />*/}
             {/*<div className={cn('nav-next')} onClick={this.next} />*/}
           {/*</div>*/}
+          {__CLIENT__ &&
+            <OwlCarousel ref="car" options={options}  >
+              {_renderSlides}
+            </OwlCarousel>
+          }
 
-          <OwlCarousel ref="car" options={options}  >
-            {_renderSlides}
-          </OwlCarousel>
         </div>
 
         <M_Partners mix={cn('partners')}/>
