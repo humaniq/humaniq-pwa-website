@@ -6,7 +6,8 @@
   justify-content: center;
   align-items: center;
   @include media($desktop-xl) {
-    align-items: flex-end;
+    display: block;
+    width: 100%;
   }
   &__content {
     width: 1100px;
@@ -20,8 +21,8 @@
     }
     @include media($desktop-xl) {
       width: 820px;
-      margin-left: 0;
-      margin-right: 30px;
+      margin: 0 auto;
+      padding-top: 60px;
     }
     @include media($tablet) {
       width: auto;
