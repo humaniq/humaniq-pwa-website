@@ -4,7 +4,7 @@
 .m-partners-h {
   $this: &;
   box-sizing: content-box;
-  border: 1px dotted black;
+  //border: 1px dotted black;
   width: 100px;
   &::before {
     content: 'contributing organizations';
