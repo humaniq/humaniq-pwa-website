@@ -13,12 +13,12 @@
   }
 
   &__sidebar {
-    right: -215px;
+    right: -235px;
     top: 443px;
     transform: rotate(-90deg);
     @include media($desktop-xxl) {
       top: 325px;
-      right: -150px;
+      right: -170px;
     }
   }
 

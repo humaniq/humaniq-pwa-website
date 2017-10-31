@@ -5,7 +5,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 12% 0 65px;
+  padding: 0 23% 0 65px;
+  @include media($desktop-xxl) {
+    padding-right: 20%;
+  }
   @include media($desktop-xl) {
     padding: 15px 65px;
     background-color: white;
