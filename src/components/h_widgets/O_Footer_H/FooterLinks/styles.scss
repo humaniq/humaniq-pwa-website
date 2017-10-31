@@ -87,5 +87,13 @@
         text-decoration: underline;
       }
     }
+    &-pop-up{
+      font-weight: 400 !important;
+      text-decoration: none;
+      cursor: default;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
   }
 }

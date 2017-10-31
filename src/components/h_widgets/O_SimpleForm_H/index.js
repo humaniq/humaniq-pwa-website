@@ -39,10 +39,13 @@ O_SimpleForm_H.propTypes = {
 };
 
 
+function mapStateToProps(){
+  return {}
+}
 
 function mapDispatchToProps(dispatch) {
   const actions = bindActionCreators({ submit}, dispatch)
   return {...actions};
 }
 
-export default connect(()=>{}, mapDispatchToProps)(O_SimpleForm_H);
+export default connect(mapStateToProps, mapDispatchToProps)(O_SimpleForm_H);

@@ -28,6 +28,9 @@ const getRoutes = (store) => {
           component={Home}
           prepareData={Home.prepareData}
         />
+        {legal}
+        {HmqExplorer(store)}
+
       </Route>
 
       <Route
@@ -44,8 +47,6 @@ const getRoutes = (store) => {
                component={Partners}
         />
         {Form}
-        {legal}
-        {HmqExplorer(store)}
         {Wiki(store)}
 
         <Route path="open-source"
