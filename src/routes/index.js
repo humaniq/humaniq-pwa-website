@@ -30,7 +30,29 @@ const getRoutes = (store) => {
         />
         {legal}
         {HmqExplorer(store)}
+        <Route path="open-source"
+               prepareData={OpenSource.prepareData}
+               component={OpenSource}
+        />
+        <Route path="ambassadors"
+               prepareData={Ambassadors.prepareData}
+               component={Ambassadors}
+        />
+        <Route path="contact-us"
+               component={ContactUs}
+               prepareData={ContactUs.prepareData}
 
+        />
+        <Route
+          path="/error/:err"
+          prepareData={Error.prepareData}
+          component={Error}
+        />
+        <Route
+          path="*"
+          prepareData={Error.prepareData}
+          component={Error}
+        />
       </Route>
 
       <Route
@@ -39,9 +61,7 @@ const getRoutes = (store) => {
         <Route path="use-cases"
                component={Cases}
         />
-        <Route path="contact-us"
-               component={ContactUs}
-        />
+
         <Route path="partners"
                prepareData={Partners.prepareData}
                component={Partners}
@@ -49,24 +69,10 @@ const getRoutes = (store) => {
         {Form}
         {Wiki(store)}
 
-        <Route path="open-source"
-               component={OpenSource}
-        />
-        <Route path="ambassadors"
-               prepareData={Ambassadors.prepareData}
-               component={Ambassadors}
-        />
         <Route path="about"
                component={About}
         />
-        <Route
-          path="/error/:err"
-          component={Error}
-        />
-        <Route
-          path="*"
-          component={Error}
-        />
+
       </Route>
 
     </Route >
