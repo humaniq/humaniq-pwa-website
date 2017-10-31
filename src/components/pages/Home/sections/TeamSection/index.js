@@ -307,70 +307,70 @@ const partnersImgPath = `/img/design-v2/sections/team/partners`
 const partnersList = [
   {
     name: 'bitaps',
-    img: `${imgPath}/bitaps_2x.jpg`
+    img: `${partnersImgPath}/bitaps_2x.jpg`
   },
   {
     name: 'blockchainage',
-    img: `${imgPath}/blockchainage_2x.jpg`
+    img: `${partnersImgPath}/blockchainage_2x.jpg`
   },
   {
     name: 'blockchaincommunity',
-    img: `${imgPath}/blockchaincommunity_2x.jpg`
+    img: `${partnersImgPath}/blockchaincommunity_2x.jpg`
   },
   {
     name: 'deepknowledgeventures',
-    img: `${imgPath}/deepknowledgeventures_2x.jpg`
+    img: `${partnersImgPath}/deepknowledgeventures_2x.jpg`
   },
   {
     name: 'deloitte',
-    img: `${imgPath}/deloitte_2x.jpg`
+    img: `${partnersImgPath}/deloitte_2x.jpg`
   },
   {
     name: 'futurefintech',
-    img: `${imgPath}/futurefintech_2x.jpg`
+    img: `${partnersImgPath}/futurefintech_2x.jpg`
   },
   {
     name: 'gemz',
-    img: `${imgPath}/gemz2.png`
+    img: `${partnersImgPath}/gemz2.png`
   },
   {
     name: 'hedgethink',
-    img: `${imgPath}/hedgethink_2x.jpg`
+    img: `${partnersImgPath}/hedgethink_2x.jpg`
   },
   {
     name: 'intelligenthq',
-    img: `${imgPath}/intelligenthq_2x.jpg`
+    img: `${partnersImgPath}/intelligenthq_2x.jpg`
   },
   {
     name: 'L39',
-    img: `${imgPath}/l39_2x.jpg`
+    img: `${partnersImgPath}/l39_2x.jpg`
   },
   {
     name: 'ntechlab',
-    img: `${imgPath}/ntechlab_2x.jpg`
+    img: `${partnersImgPath}/ntechlab_2x.jpg`
   },
   {
     name: 'openbusinesscouncil',
-    img: `${imgPath}/openbusinesscouncil_2x.jpg`
+    img: `${partnersImgPath}/openbusinesscouncil_2x.jpg`
   },
   {
     name: 'richtopia',
-    img: `${imgPath}/richtopia_2x.jpg`
+    img: `${partnersImgPath}/richtopia_2x.jpg`
   },
   {
     name: 'theinvaders',
-    img: `${imgPath}/theinvaders_2x.jpg`
+    img: `${partnersImgPath}/theinvaders_2x.jpg`
   },
   {
     name: 'thinkrise',
-    img: `${imgPath}/thinkrise_2x.jpg`
+    img: `${partnersImgPath}/thinkrise_2x.jpg`
   },
   {
     name: 'tradersdna',
-    img: `${imgPath}/tradersdna_2x.jpg`
+    img: `${partnersImgPath}/tradersdna_2x.jpg`
   },
   {
     name: 'vexor',
-    img: `${imgPath}/vexor_2x.jpg`
+    img: `${partnersImgPath}/vexor_2x.jpg`
   }
 ]
