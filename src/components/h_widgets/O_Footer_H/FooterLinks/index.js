@@ -85,7 +85,8 @@ const footerLinks = [
       {name: 'Project details', url: '/pdf/humaniq-whitepaper-05.09.pdf', externalLink: true},
       {name: 'Subscribe to newsletter', popupLink: true, formType: 'subscribe'},
       {name: 'HMQ Explorer', url: '/hmq-explorer'},
-      {name: 'Humaniq blog', url: '/hmq-explorer'}]
+      {name: 'Humaniq blog', url: 'https://forum.humaniq.co', externalLink: true}
+    ]
   },
   {
     section: 'Contacts',

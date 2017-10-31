@@ -7,6 +7,9 @@
     display: none;
   }
 
+  &__list-item-pop-up{
+    cursor: pointer;
+  }
   &__angle {
     position: absolute;
     right: -16%;

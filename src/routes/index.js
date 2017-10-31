@@ -48,11 +48,6 @@ const getRoutes = (store) => {
           prepareData={Error.prepareData}
           component={Error}
         />
-        <Route
-          path="*"
-          prepareData={Error.prepareData}
-          component={Error}
-        />
       </Route>
 
       <Route
@@ -73,6 +68,16 @@ const getRoutes = (store) => {
                component={About}
         />
 
+      </Route>
+
+      <Route
+        component={App}
+      >
+        <Route
+          path="*"
+          prepareData={Error.prepareData}
+          component={Error}
+        />
       </Route>
 
     </Route >

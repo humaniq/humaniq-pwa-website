@@ -2,24 +2,30 @@ import React from 'react'
 import * as T from "prop-types";
 import './styles.scss'
 import {cssClassName} from 'utils'
-
+import {Link} from 'react-router'
 const cn = cssClassName('SE_MainLayout_MobileMenu');
 
-const _getMenuLinks = (links) => (
-  links.map(link => (
-    <li
-      className={cn('links-link')}
-      key={`${link}-mobile-menu-link`}
-    >
-      {link}
-    </li>
-  ))
-)
-
-const SE_MainLayout_MobileMenu = ({mix, menuLinks, mobileMenuIsActive}) => (
+const SE_MainLayout_MobileMenu = ({mix,  mobileMenuIsActive}) => (
   <nav className={cn([mix], {isActive: mobileMenuIsActive})}>
     <ul className={cn('links')}>
-      {_getMenuLinks(menuLinks)}
+      <li className={cn('links-link')}>
+        <Link to='/hmq-explorer'>HMQ Explorer</Link>
+      </li>
+      <li className={cn('links-link')}>
+        <Link to='/ambassadors'>Ambassadors</Link>
+      </li>
+      <li className={cn('links-link')}>
+        <a href='http://humaniqchallenge.com' target='_blank'>humaniqchallenge</a>
+      </li>
+      <li className={cn('links-link')}>
+        <Link to='/wiki'>wiki</Link>
+      </li>
+      <li className={cn('links-link')}>
+        <Link to='/open-source'>Open source</Link>
+      </li>
+      <li className={cn('links-link')}>
+        <Link to='/contact-us'>Contact us</Link>
+      </li>
     </ul>
   </nav>
 )
