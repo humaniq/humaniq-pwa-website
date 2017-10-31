@@ -24,7 +24,7 @@ class SE_Error extends Component {
     }
 
     return (
-      <div>
+      <div className={cn('section-wrapper')}>
         <A_Container type='equal'>
           <div className={cn('error')}>
 

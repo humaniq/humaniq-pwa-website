@@ -29,7 +29,7 @@ const SE_OpenSource = () => {
 
   renderedLinks.push(<div className={cn('item-empty')} key = {'key_empty' } />)
   return (
-    <div>
+    <div className={cn('section-wrapper')}>
       <A_Container type='section-clean'>
         <div className={cn('header')}>
           <div className={cn('header-image')}>
