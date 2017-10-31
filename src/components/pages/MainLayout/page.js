@@ -13,7 +13,6 @@ class SE_MainLayout_H extends Component {
   state = {
     headerLinks: ['Humaniq Wiki', 'HMQ Explorer', 'Challenge', 'Ambassadors'],
     sidebarLinks: ['Open source', 'Contact us', 'Subscribe'],
-    mobileMenuIsActive: false
   }
 
   toggleMobileMenu = () => {
@@ -22,9 +21,7 @@ class SE_MainLayout_H extends Component {
 
   render() {
     const { headerLinks, sidebarLinks, mobileMenuIsActive } = this.state
-    const { children, popupType, theme, isPopupOpened, closePopup, openRoute} = this.props
-
-    console.log('openRoute.length', openRoute.length)
+    const { children, popupType, theme, isPopupOpened, closePopup, openRoute, openPopup, isMenuOpened, toggleMenu} = this.props
     const homePage = openRoute.length === 0 //home page
     const mobileMenuLinks = [...headerLinks, ...sidebarLinks]
 
@@ -33,16 +30,17 @@ class SE_MainLayout_H extends Component {
         <MobileMenu
           mix = {cn('mobile-menu')}
           menuLinks = {mobileMenuLinks}
-          mobileMenuIsActive = {mobileMenuIsActive}
+          toggleMenu = {toggleMenu}
+          mobileMenuIsActive = {isMenuOpened}
         />
 
         <Header
           mix = {cn('header', {sticky: homePage})}
-          menuLinks = {headerLinks}
-          mobileMenuIsActive = {mobileMenuIsActive}
-          toggleMobileMenu = {this.toggleMobileMenu}
+          mobileMenuIsActive = {isMenuOpened}
+          toggleMobileMenu = {toggleMenu}
           theme = {theme}
           sticky = {homePage}
+          openRoute = {openRoute}
         />
 
 
@@ -55,6 +53,7 @@ class SE_MainLayout_H extends Component {
           mix = {cn('sidebar')}
           menuLinks = {sidebarLinks}
           theme = {theme}
+          openPopup={openPopup}
         />
 
         <O_Popup

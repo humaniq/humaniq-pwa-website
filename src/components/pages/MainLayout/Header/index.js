@@ -8,18 +8,9 @@ import {Link} from 'react-router'
 
 const cn = cssClassName('SE_MainLayoutHeader_H')
 
-const _getMenuLinks= (links) => (
-  links.map(link => (
-    <li
-      className={cn('menu-link')}
-      key={`${link}-menu-link`}
-    >
-      {link}
-    </li>
-  ))
-)
 
-const SE_MainLayoutHeader_H = ({mix, theme, menuLinks, mobileMenuIsActive, toggleMobileMenu, sticky}) => (
+
+const SE_MainLayoutHeader_H = ({mix, theme, mobileMenuIsActive, toggleMobileMenu, sticky}) => (
   <header
     className={cn([mix], {'mob-menu-open': mobileMenuIsActive})}
   >
@@ -31,7 +22,20 @@ const SE_MainLayoutHeader_H = ({mix, theme, menuLinks, mobileMenuIsActive, toggl
     </Link>
 
     <ul className={cn('menu', {sticky})}>
-      {_getMenuLinks(menuLinks)}
+
+      <li className={cn('menu-link')}>
+        <Link to='/hmq-explorer'>HMQ Explorer</Link>
+      </li>
+      <li className={cn('menu-link')}>
+        <Link to='/ambassadors'>Ambassadors</Link>
+      </li>
+      <li className={cn('menu-link')}>
+        <a href='http://humaniqchallenge.com' target='_blank'>humaniqchallenge</a>
+      </li>
+      <li className={cn('menu-link')}>
+        <Link to='/wiki'>wiki</Link>
+      </li>
+
     </ul>
 
     <A_BurgerBtn_H

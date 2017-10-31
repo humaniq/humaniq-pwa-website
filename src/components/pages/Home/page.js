@@ -38,12 +38,15 @@ const dark = [
 
 const showingWidth = 1120
 
+let a = 0
+let b = false;
+
 class Home extends Component {
 
   state = {
     showIndex: this.props.showIndex || 0,
     scroll: true,
-    slowScroll: true,
+    fastScroll: true,
     widthBig: __CLIENT__ && window.innerWidth >= showingWidth
   }
 
@@ -99,18 +102,43 @@ class Home extends Component {
   }
 
   handleWeel = ({deltaY}) => {
-    const {showIndex: oldIndex, slowScroll} = this.state
-    if(!slowScroll && Math.abs(deltaY) < 500) return;
+    const touchBar = deltaY - Math.round(deltaY) === 0
 
-    const showIndex = deltaY > 0 ? oldIndex + 1: oldIndex - 1
-    setTimeout(() => this.setState({scroll: true}), 600);
-    setTimeout(() => this.setState({slowScroll: true}), 2000);
+    if(touchBar){
+      this.handleTouchBar({deltaY})
+    }else{
+      this.handleMouseWeel({deltaY})
 
-    if(showIndex >= 0 && showIndex < sectionsNames.length){
-      this.handleSideMenu({showIndex, scroll:false, slowScroll: false})
     }
 
   }
+
+  handleTouchBar({deltaY}){
+
+    console.log(deltaY)
+    const {showIndex: oldIndex, fastScroll} = this.state
+    if(!fastScroll && Math.abs(deltaY) < 200) return;
+    const showIndex = deltaY > 0 ? oldIndex + 1: oldIndex - 1
+    setTimeout(() => this.setState({scroll: true}), 400);
+    setTimeout(() => this.setState({fastScroll: true}), 2000);
+
+    if(showIndex >= 0 && showIndex < sectionsNames.length){
+      this.handleSideMenu({showIndex, scroll:false, fastScroll: false})
+    }
+  }
+
+  handleMouseWeel({deltaY}){
+    const {showIndex: oldIndex, fastScroll} = this.state
+    if(!fastScroll && Math.abs(deltaY) < 900) return;
+    const showIndex = deltaY > 0 ? oldIndex + 1: oldIndex - 1
+    setTimeout(() => this.setState({scroll: true}), 200);
+    setTimeout(() => this.setState({fastScroll: true}), 500);
+
+    if(showIndex >= 0 && showIndex < sectionsNames.length){
+      this.handleSideMenu({showIndex, scroll:false, fastScroll: false})
+    }
+  }
+
   componentDidMount(){
     window.addEventListener("resize", this.getWidth);
   }
