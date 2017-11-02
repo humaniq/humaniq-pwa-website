@@ -21,13 +21,11 @@ const links = [
   {
     section: 'company',
     links: [
-      {name: 'About', url: '/about'},
-      {name: 'Blog', url: 'https://blog.humaniq.co', externalLink: true},
-      {name: 'Forum', url: 'https://forum.humaniq.co', externalLink: true},
-      // {name: 'News', url: '#'},
-      {name: 'Use Cases', url: '/use-cases'},
-      {name: 'Partners', url: '/partners'},
       {name: 'Ambassadors', url: '/ambassadors'},
+      {name: 'Challenge', url: 'https://challenge.humaniq.com/', externalLink: true},
+      {name: 'Forum', url: 'https://forum.humaniq.co', externalLink: true},
+      {name: 'Blog', url: 'https://blog.humaniq.co', externalLink: true},
+      // {name: 'News', url: '#'},
       // {name: 'Events', url: '#'}
     ]
   },
@@ -134,7 +132,7 @@ class O_Footer extends Component {
                       className={cn('aux-title')}
                     >Humaniq</div>
                     <p className={cn('about')}>
-                      Humaniq is a simple and secure mobile app, delivering financial inclusion solutions to the 2.5 billion unbanked / 1 billion underbanked globally.
+                      <a href="http://humaniqapp.com/" target="_blank">Humaniq is a simple and secure mobile app, delivering financial inclusion solutions to the 2.5 billion unbanked / 1 billion underbanked globally.</a>
                     </p>
                     <div className={cn('soc')}>
                       {renderedSocialList}

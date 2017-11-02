@@ -30,7 +30,7 @@ const SE_MainLayoutHeader_H = ({mix, theme, mobileMenuIsActive, toggleMobileMenu
         <Link to='/ambassadors'>Ambassadors</Link>
       </li>
       <li className={cn('menu-link')}>
-        <a href='http://humaniqchallenge.com' target='_blank'>humaniqchallenge</a>
+        <a href='http://humaniqchallenge.com' target='_blank'>Challenge</a>
       </li>
       <li className={cn('menu-link')}>
         <Link to='/wiki'>wiki</Link>
@@ -50,6 +50,5 @@ export default SE_MainLayoutHeader_H
 
 SE_MainLayoutHeader_H.propTypes = {
   mix: T.string, //BEM mixin from parent block
-  menuLinks: T.array.isRequired, //links for header menu
   toggleMobileMenu: T.func.isRequired, //
 };

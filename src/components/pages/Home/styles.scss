@@ -51,7 +51,8 @@
 
 
   &__inner{
-    transition: 0.4s;
+    will-change: transform, scroll-position;
+    transition: transform .4s ease-out;
   }
 
   &__side-menu{
@@ -69,6 +70,7 @@
       border: 1px solid $h-black-1;
       width: 1.2rem;
       display: block;
+      transition: background-color .3s linear;
       &_selected_true{
         background-color: $h-black-1;
       }
@@ -80,6 +82,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      cursor: pointer;
       &:hover {
         & #{$c}__dot {
           background-color: $h-black-1;

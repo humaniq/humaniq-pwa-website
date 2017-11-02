@@ -108,7 +108,7 @@
     &-prev{
       display: block;
       margin-right: 6rem;
-
+      cursor: pointer;
       &:after{
         content: '';
         display: block;
@@ -121,6 +121,7 @@
     }
     &-next{
       display: block;
+      cursor: pointer;
       &:after{
         content: '';
         display: block;

@@ -91,7 +91,7 @@ class SE_Ambassadors  extends Component {
   }
 
   render() {
-    const {countries, entities} = this.props
+    const {countries, entities, openPopup} = this.props
     const options = ['All', ...countries]
 
     const {filter} = this.state
@@ -99,7 +99,6 @@ class SE_Ambassadors  extends Component {
       <div className={cn('section-wrapper')}>
         <Meta />
         <A_Container type="equal">
-          <div className={cn('decoration')} />
           <O_Hero img={{src: "/img/illustrations/ambassadors.svg", alt: "ambassadors"}}>
             <A_H type="hero">Our Global Team</A_H>
             <A_P type="hero">At Humaniq, everything we do is motivated by our wish to provide the most widespread access to banking possible.</A_P>
@@ -115,8 +114,8 @@ class SE_Ambassadors  extends Component {
               />
             </div>
             <A_Btn
-              type="material-r-link"
-              to='/form/ambassadors'
+              type='popup-link'
+              onClick = {() => openPopup('ambasadors')}
             >Join Ambassadors Program</A_Btn>
           </div>
           <div className={cn('list-wrapper')}>

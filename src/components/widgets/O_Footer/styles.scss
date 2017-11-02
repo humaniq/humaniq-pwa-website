@@ -109,7 +109,12 @@
     font-size: 1.4rem;
     line-height: 2rem;
     @include media($mobile) { display: none }
-
+    a {
+      color: #333333;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
   }
 
   &__soc {

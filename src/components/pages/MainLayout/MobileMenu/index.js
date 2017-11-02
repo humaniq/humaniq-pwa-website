@@ -15,7 +15,7 @@ const SE_MainLayout_MobileMenu = ({mix,  mobileMenuIsActive}) => (
         <Link to='/ambassadors'>Ambassadors</Link>
       </li>
       <li className={cn('links-link')}>
-        <a href='http://humaniqchallenge.com' target='_blank'>humaniqchallenge</a>
+        <a href='http://humaniqchallenge.com' target='_blank'>Challenge</a>
       </li>
       <li className={cn('links-link')}>
         <Link to='/wiki'>wiki</Link>
