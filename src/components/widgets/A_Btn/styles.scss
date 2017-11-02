@@ -107,6 +107,7 @@ $form-btn-border-radius: 30px;
     }
     &_type{
       &_material-r-link, &_popup-link {
+        -webkit-appearance: none !important;
         border-radius: .2rem;
         line-height: 1.4rem;
         box-sizing: border-box;
