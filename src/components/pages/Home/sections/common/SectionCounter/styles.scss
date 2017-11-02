@@ -9,6 +9,7 @@
   font-weight: 700;
   font-size: 36px;
   transform: rotate(-90deg);
+  pointer-events: none;
   &_theme {
     &_dark {
       color: $color-black;

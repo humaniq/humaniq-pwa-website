@@ -53,7 +53,7 @@ $form-btn-border-radius: 30px;
         padding-right: 3.1rem;
         background: url('/img/arow_right.svg') right 13px center / .9rem no-repeat;
       }
-      &_standart-form{
+      &_standart-form {
         text-transform: uppercase;
         user-select: none;
         //border-radius: $form-radius;
@@ -106,7 +106,7 @@ $form-btn-border-radius: 30px;
       margin: 0 auto;
     }
     &_type{
-      &_material-r-link{
+      &_material-r-link, &_popup-link {
         border-radius: .2rem;
         line-height: 1.4rem;
         box-sizing: border-box;

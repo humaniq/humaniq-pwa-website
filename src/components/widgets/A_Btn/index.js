@@ -46,6 +46,14 @@ const A_Btn = ({type, children, disabled, btnType, to, onClick, ...props}) =>{
           </Link>
         </M_Ripple>
       )
+    case 'popup-link':
+      return (
+        <M_Ripple {...{onClick}} className={cn('ripple', {type})}>
+          <div className={cn('link', {type}, [disabled])} type={btnType} {...props}>
+            {children}
+          </div>
+        </M_Ripple>
+      )
     default:
       return (
         <button className={cn('button', {type}, [disabled])} type={btnType} {...{onClick,...props}}>
@@ -60,6 +68,7 @@ A_Btn.propTypes = {
     'material-r-link-window', // material-r-link used on simple form pages
     'material-r-link', // link that looks like material raised button
     'personal-nav-btn', // 170x82 white ripple link style button 100%/100%, padding: 0 1.3rem
+    'popup-link', // popup link
     'nav-btn', // 82 white ripple link style button 100%/100%, padding: 0 1.3rem
     'link-subscribe', //big blue button used on home page
     'standart-form', // normal blue button with white text

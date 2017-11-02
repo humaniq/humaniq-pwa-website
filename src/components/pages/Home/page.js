@@ -114,13 +114,12 @@ class Home extends Component {
   }
 
   handleTouchBar({deltaY}){
-
     console.log(deltaY)
     const {showIndex: oldIndex, fastScroll} = this.state
-    if(!fastScroll && Math.abs(deltaY) < 200) return;
+    if(!fastScroll && Math.abs(deltaY) < 100) return;
     const showIndex = deltaY > 0 ? oldIndex + 1: oldIndex - 1
     setTimeout(() => this.setState({scroll: true}), 400);
-    setTimeout(() => this.setState({fastScroll: true}), 2000);
+    setTimeout(() => this.setState({fastScroll: true}), 1000);
 
     if(showIndex >= 0 && showIndex < sectionsNames.length){
       this.handleSideMenu({showIndex, scroll:false, fastScroll: false})
@@ -134,7 +133,7 @@ class Home extends Component {
     setTimeout(() => this.setState({scroll: true}), 200);
     setTimeout(() => this.setState({fastScroll: true}), 500);
 
-    if(showIndex >= 0 && showIndex < sectionsNames.length){
+    if(showIndex >= 0 && showIndex < sectionsNames.length) {
       this.handleSideMenu({showIndex, scroll:false, fastScroll: false})
     }
   }
