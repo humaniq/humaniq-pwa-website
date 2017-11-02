@@ -29,6 +29,9 @@
       }
     }
     &_section {
+      @include media($desktop-13) {
+        font-size: 40px;
+      }
       @include media($tablet) {
         font-size: 30px;
       }

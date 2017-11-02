@@ -39,6 +39,9 @@
       margin-bottom: 50px;
       font-size: 22px;
     }
+    @include media($desktop-13) {
+      font-size: 20px;
+    }
     @include media($tablet) {
       font-size: 18px;
       br {

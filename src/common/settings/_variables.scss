@@ -143,6 +143,7 @@ $gray-8: #c5c5c5;
 // DIMENSIONS
 
 $w-desktop-xxl: 1600px;
+$w-desktop-13: 1280px;
 $w-desktop-xl: 1120px;
 $w-desktop-wide: $w-desktop-xl;
 $w-desktop: 980px;
@@ -163,6 +164,7 @@ $p-desktop: 2rem;
 $desktop: "min-width: #{$w-desktop}";
 
 $desktop-xxl: "max-width: #{$w-desktop-xxl}"; //
+$desktop-13: "max-width: #{$w-desktop-13}"; //
 $desktop-xl: "max-width: #{$w-desktop-xl}"; //настоящий таблет.
 $tablet: "max-width: #{$w-desktop - 1px}";
 $mobile: "max-width: #{$w-tablet - 1px}";
