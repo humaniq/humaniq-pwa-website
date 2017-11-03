@@ -28,7 +28,7 @@ const _handleWheel = (e) => {
 
 const M_Partners_H = ({mix}) => (
   <div
-    onWheel = {(e) => _handleWheel(e)}
+    onWheel = {_handleWheel}
     className={cn([mix])}
   >
     <nav className={cn('partners-container')}>
