@@ -222,13 +222,6 @@ const team = [
     bio: 'Humaniq founder and Fintech entrepreneur Alex is one of the most important members of the international Blockchain community, who has worked with the UN to lead the deployment of Blockchain technology to improve the efficiency of UN resources and remittances. He has also spearheaded the harnessing of blockchains in Russia, organising a conference for 500 participants on the Ethereum Blockchain; authoring Bitcoin. More than Just Money; and founding the Fintech accelerator for startups in Russia, Future Fintech. He started Humaniq to help lift the global banked out of poverty.',
     imgSrc: `${imgPath}/alex_fork.png`
   },
-
-  {
-    name: 'Zeeshan Mallick',
-    position: 'CMO',
-    bio: 'With a background in digital marketing, Zeeshan is passionate about people, family and friends. He is a life coach and supporting people to achieve their goals is what he loves. He joined Humaniq to help individuals move on to a more stable and comfortable life. ',
-    imgSrc: `${imgPath}/zeeshan_mallick.png`
-  },
   {
     name: 'Serafima Semkina',
     position: 'CAO',
@@ -246,12 +239,6 @@ const team = [
     position: 'Product Manager',
     bio: 'Anton was motivated to work with Humaniq to use his experience in both computer science and finance to help to bring happiness for all across the world. He is passionate about freedriving and wakeboarding, and, of course, staying late to finish work.',
     imgSrc: `${imgPath}/anton_mozgovoy.png`
-  },
-  {
-    name: 'Kareem Hepburn',
-    position: 'Developer',
-    bio: 'With a background in Fintech and medicine, and a passion for new technology, nature, travelling, and music, Kareem got involved with Humaniq to give the global unbanked an equal footing in the modern economy.',
-    imgSrc: `${imgPath}/kareem_hepburn.png`
   },
   {
     name: 'Georgii Oleinikov',
