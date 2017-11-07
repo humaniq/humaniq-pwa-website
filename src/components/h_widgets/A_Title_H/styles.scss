@@ -21,8 +21,11 @@
 
     &_hero {
       text-transform: uppercase;
-      @include media($mobile) {
+      @include media($desktop-13) {
         font-size: 45px;
+      }
+      @include media($mobile) {
+        font-size: 40px;
       }
       @include media($mobile-xs) {
         font-size: 37px;
