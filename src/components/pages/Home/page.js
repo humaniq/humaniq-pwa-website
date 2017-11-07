@@ -21,8 +21,8 @@ import TimelineSection from './sections/TimelineSection'
 import WorldTalkingSection from './sections/WorldTalkingSection'
 import TeamSection from './sections/TeamSection'
 
-const serverNames = ['empowering', 'mobile', 'situation', 'changes', 'platform', 'simplicity', 'opportunities', 'use cases', 'challenge', 'expedition', 'timeline', 'press', 'contacts']
-const clientNames = ['empowering', 'mobile', 'situation', 'changes', 'platform', 'simplicity', 'opportunities', 'use cases', 'challenge', 'expedition', 'timeline', 'team', 'press', 'contacts']
+const serverNames = ['empowering', 'mobile', 'situation', 'changes', 'platform', 'simplicity', 'opportunities', 'userbase', 'use cases', 'challenge', 'expedition', 'timeline', 'press', 'contacts']
+const clientNames = ['empowering', 'mobile', 'situation', 'changes', 'platform', 'simplicity', 'opportunities', 'userbase', 'use cases', 'challenge', 'expedition', 'timeline', 'team', 'press', 'contacts']
 
 const sectionsNames = __CLIENT__ ? clientNames : serverNames
 

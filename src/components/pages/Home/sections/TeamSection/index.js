@@ -153,6 +153,12 @@ const advisers = [
     imgSrc: `${imgPath}/dmitry_kaminskiy.png`
   },
   {
+    name: 'Hazem Danny Al-Nakib',
+    position: 'Adviser',
+    bio: '',
+    imgSrc: `${imgPath}/hazem_danny.jpg`
+  },
+  {
     name: 'David Applefield',
     position: 'Adviser',
     bio: 'Is an American writer and media specialist living in Paris. He has as spent his career developing creative and innovative solutions for business leaders, heads of state, ministries, NGOs, and other not-for- profit foundations. He is the Financial Times representative for Africa, the Middle East and emerging markets.',
@@ -223,16 +229,10 @@ const team = [
     imgSrc: `${imgPath}/alex_fork.png`
   },
   {
-    name: 'Serafima Semkina',
-    position: 'CAO',
+    name: 'Kirill Goryunov',
+    position: 'CPO',
     bio: 'Bringing experience of management and economics, Serafima’s passions include art, music and Russian literature and the crypto-economy. She cannot stand inequality and is happy to have the opportunity to tackle it with Humaniq.',
-    imgSrc: `${imgPath}/serafima_semkina.png`
-  },
-  {
-    name: 'Javed Khattak',
-    position: 'CFO',
-    bio: 'Javed has a background as an actuary and of finance, consulting and startups. He loves technology, especially gadgets, AI and virtual reality, and believes in Blockchain for Good. He is working with Humaniq to bring greater opportunities and fairness to the world.',
-    imgSrc: `${imgPath}/javed_khattak.png`
+    imgSrc: `${imgPath}/kirill_goryunov.jpg`
   },
   {
     name: 'Anton Mozgovoy',
@@ -241,10 +241,28 @@ const team = [
     imgSrc: `${imgPath}/anton_mozgovoy.png`
   },
   {
-    name: 'Georgii Oleinikov',
-    position: 'Developer',
-    bio: 'Bringing experience of mathematics and computer science, Georgii loves things that have an impact and people that make these things happen. He believes there is big room for improvement in the financial sector, with many not served.',
-    imgSrc: `${imgPath}/georgii_oleinikov.png`
+    name: 'Javed Khattak',
+    position: 'CFO',
+    bio: 'Javed has a background as an actuary and of finance, consulting and startups. He loves technology, especially gadgets, AI and virtual reality, and believes in Blockchain for Good. He is working with Humaniq to bring greater opportunities and fairness to the world.',
+    imgSrc: `${imgPath}/javed_khattak.png`
+  },
+  {
+    name: 'Serafima Semkina',
+    position: 'CAO',
+    bio: 'Bringing experience of management and economics, Serafima’s passions include art, music and Russian literature and the crypto-economy. She cannot stand inequality and is happy to have the opportunity to tackle it with Humaniq.',
+    imgSrc: `${imgPath}/serafima_semkina.png`
+  },
+  {
+    name: 'Harry Bright',
+    position: 'CBDO',
+    bio: 'Bringing experience of management and economics, Serafima’s passions include art, music and Russian literature and the crypto-economy. She cannot stand inequality and is happy to have the opportunity to tackle it with Humaniq.',
+    imgSrc: `${imgPath}/harry_bright.jpg`
+  },
+  {
+    name: 'Pavel Kiselyov',
+    position: 'Lead Backend Developer',
+    bio: '',
+    imgSrc: `${imgPath}/pavel_kiselyov.jpg`
   },
   {
     name: 'Kherel Kechil',
@@ -252,6 +270,13 @@ const team = [
     bio: 'Kherel is a digital nomad. He joined Humaniq to experience and participate in the financial evolution, and observe changes to the better in the country where he currently resides - China.',
     imgSrc: `${imgPath}/kherel_kechil.png`
   },
+  {
+    name: 'Georgii Oleinikov',
+    position: 'Developer',
+    bio: 'Bringing experience of mathematics and computer science, Georgii loves things that have an impact and people that make these things happen. He believes there is big room for improvement in the financial sector, with many not served.',
+    imgSrc: `${imgPath}/georgii_oleinikov.png`
+  },
+
   {
     name: 'Peyman Irani',
     position: 'SMM, CSS',
