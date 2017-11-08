@@ -11,7 +11,7 @@
     transition: transform .4s ease-out;
     will-change: transform;
     @include media($tablet) {
-      height: 700px;
+      height: 650px;
     }
   }
   &__slide {

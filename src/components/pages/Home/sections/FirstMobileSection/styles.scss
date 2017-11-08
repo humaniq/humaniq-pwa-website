@@ -9,6 +9,9 @@
   background-image: url('/img/design-v2/sections/first-mobile/waves-platform.png');
   background-repeat: no-repeat;
   background-position: 100% 0;
+  @include media($tablet) {
+    padding-bottom: 0;
+  }
 
   &__content {
     position: relative;

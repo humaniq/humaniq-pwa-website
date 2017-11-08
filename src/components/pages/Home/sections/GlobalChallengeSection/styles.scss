@@ -10,14 +10,14 @@
   background-size: cover;
   background-position: 50%;
   @include media($tablet) {
-    padding: 180px 30px 90px;
+    padding: 150px 30px 90px;
   }
   @include media($mobile) {
     background-image: none;
     background-color: $color-main-blue;
   }
   @include media($mobile-xs) {
-    padding: 200px 15px 60px;
+    padding: 160px 15px 60px;
   }
 
   &__content {
