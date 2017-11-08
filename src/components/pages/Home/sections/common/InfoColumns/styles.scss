@@ -36,6 +36,26 @@
     }
   }
 
+  &_layout {
+    &_global-challenge {
+      #{$this}__column {
+        margin-right: 260px;
+        @include media($desktop-xxl) {
+          margin-right: 270px;
+        }
+        @include media($desktop-xl) {
+          margin-right: 60px;
+        }
+        @include media($tablet) {
+          margin-right: 160px;
+        }
+        @include media($mobile) {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+
   &__column {
     width: 500px;
     margin-right: 106px;
