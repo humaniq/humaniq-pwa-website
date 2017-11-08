@@ -93,14 +93,18 @@ const footerLinks = [
     links: [
       {name: 'General: ', url: 'info@humaniq.com'},
       {name: 'For investors: ', url: 'invest@humaniq.com'},
-      {name: 'Careers: ', url: 'work@humaniq.com'}
+      {name: 'Careers: ', url: 'work@humaniq.com'},
+      {name: 'Support: ', url: 'appsupport@humaniq.com'}
+
     ]
   },
   {section: 'Legal',
     links: [
       {name: 'Privacy', url: '/legal/general-privacy-policy'},
       {name: 'Security', url: '/legal/data-privacy-policy'},
-      {name: 'Policies', url: '/legal/user-terms-of-service'}
+      {name: 'Policies', url: '/legal/user-terms-of-service'},
+      {name: 'SEC Howey Test', url: '/a-securities-law-framework-for-hmq.xlsx', externalLink: true}
+
     ]
   },
   {
