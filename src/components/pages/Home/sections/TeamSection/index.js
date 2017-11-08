@@ -224,7 +224,7 @@ const advisers = [
 const team = [
   {
     name: 'Alex Fork',
-    position: 'Head of Humaniq',
+    position: 'Founder, CEO',
     bio: 'Humaniq founder and Fintech entrepreneur Alex is one of the most important members of the international Blockchain community, who has worked with the UN to lead the deployment of Blockchain technology to improve the efficiency of UN resources and remittances. He has also spearheaded the harnessing of blockchains in Russia, organising a conference for 500 participants on the Ethereum Blockchain; authoring Bitcoin. More than Just Money; and founding the Fintech accelerator for startups in Russia, Future Fintech. He started Humaniq to help lift the global banked out of poverty.',
     imgSrc: `${imgPath}/alex_fork.png`
   },
