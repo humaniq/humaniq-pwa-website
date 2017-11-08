@@ -23,10 +23,10 @@
     @include media($tablet) {
       display: block;
       height: auto;
-      padding: 180px 30px 90px;
+      padding: 150px 30px 90px;
     }
     @include media($mobile-xs) {
-      padding: 200px 15px 60px;
+      padding: 160px 15px 60px;
     }
     &_type {
       &_slider {

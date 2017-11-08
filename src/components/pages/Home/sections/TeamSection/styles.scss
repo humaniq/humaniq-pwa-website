@@ -26,6 +26,7 @@
     }
     @include media($tablet) {
       width: auto;
+      padding: 0;
       margin: 0;
     }
   }
@@ -34,6 +35,9 @@
     margin-bottom: 90px;
     @include media($desktop-xxl) {
       margin-bottom: 80px;
+    }
+    @include media($tablet) {
+      margin-bottom: 60px;
     }
   }
 
@@ -136,12 +140,18 @@
     &:after{
       transform: rotate(-135deg);
     }
+    @include media($tablet) {
+      left: 0;
+    }
   }
 
   &__nav-next {
     right: -20px;
     &:after{
       transform: rotate(45deg);
+    }
+    @include media($tablet) {
+      right: 0;
     }
   }
 }
