@@ -23,6 +23,7 @@ const SE_Home_GlobalChallenge = ({mix}) => (
         mix={cn('info-columns')}
         columns={infoColumns}
         type='narrow'
+        layout='global-challenge'
       />
 
       <M_SocialLinks_H

@@ -32,8 +32,8 @@ const _createInfoColumns = (columns) => (
   ))
 )
 
-const M_InfoColumns = ({mix, columns, type}) => (
-  <div className={cn([mix], {type})}>
+const M_InfoColumns = ({mix, columns, type, layout}) => (
+  <div className={cn([mix], {type, layout})}>
     {_createInfoColumns(columns)}
   </div>
 )
@@ -46,5 +46,8 @@ M_InfoColumns.propTypes = {
   type: T.oneOf([
     'narrow', //400px column width
     'slider', //50% initial width for sliders
-  ])
+  ]),
+  layout:T.oneOf([
+    'global-challenge' //for global challenge sect
+  ]),
 }
