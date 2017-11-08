@@ -4,15 +4,6 @@
 
 .se-error{
   &__section-wrapper {
-    background-image: url('/img/design-v2/sections/common/africa.png'), url('/img/design-v2/sections/common/waves-extra-platform.png');
-    background-repeat: no-repeat;
-    background-position: 50% 50%, 0 70%;
-    background-size: contain, 40%;
-    @include media($tablet) {
-      background-image: url('/img/design-v2/sections/common/africa.png');
-      background-position: 50% 50%;
-      background-size: contain;
-    }
   }
   &__error{
 
