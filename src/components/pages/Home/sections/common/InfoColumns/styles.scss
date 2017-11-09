@@ -39,10 +39,7 @@
   &_layout {
     &_global-challenge {
       #{$this}__column {
-        margin-right: 260px;
-        @include media($desktop-xxl) {
-          margin-right: 270px;
-        }
+        margin-right: 270px;
         @include media($desktop-xl) {
           margin-right: 60px;
         }
