@@ -99,7 +99,9 @@ class SE_Ambassadors  extends Component {
       <div className={cn('section-wrapper')}>
         <Meta />
         <A_Container type="equal">
-          <O_Hero img={{src: "/img/illustrations/ambassadors.svg", alt: "ambassadors"}}>
+          <O_Hero
+            img={{src: "/img/illustrations/ambassadors.svg", alt: "ambassadors"}}
+          >
             <A_H type="hero">Our Global Team</A_H>
             <A_P type="hero">At Humaniq, everything we do is motivated by our wish to provide the most widespread access to banking possible.</A_P>
           </O_Hero>

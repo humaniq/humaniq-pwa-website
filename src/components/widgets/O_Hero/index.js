@@ -7,9 +7,9 @@ import A_Image from 'A_Image'
 
 const O_Hero = ({img, children}) => (
   <div className={cn('root')}>
-    <div className={cn('image')}>
-      <A_Image {...img} />
-    </div>
+    {/*<div className={cn('image')}>*/}
+      {/*<A_Image {...img} />*/}
+    {/*</div>*/}
 
     <div className={cn('text')}>
       {children}
