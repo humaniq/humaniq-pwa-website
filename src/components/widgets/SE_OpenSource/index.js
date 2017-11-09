@@ -8,6 +8,7 @@ import A_H from 'A_H';
 import A_P from 'A_P';
 import A_Link from 'A_Link';
 import O_TextUsHere from 'O_TextUsHere'
+import O_Hero from 'O_Hero'
 
 const SE_OpenSource = () => {
 
@@ -31,16 +32,23 @@ const SE_OpenSource = () => {
   return (
     <div className={cn('section-wrapper')}>
       <A_Container type='section-clean'>
-        <div className={cn('header')}>
-          <div className={cn('header-image')}>
-            <img src="/img/opensource/open-source-image.svg" alt='Humaniq OpenSource'/>
-          </div>
-          <div className={cn('header-description')}>
-            <A_H type='hero'>Open Source</A_H>
-            <A_P type='hero'>Humaniq relies on open-source software and likes to give back to the community. Check out
-              the libraries we have built.</A_P>
-          </div>
-        </div>
+        <O_Hero
+        >
+          <A_H type='hero'>Open Source</A_H>
+          <A_P type='hero'>Humaniq relies on open-source software and likes to give back to the community. Check out the libraries we have built.</A_P>
+        </O_Hero>
+
+        {/*<div className={cn('header')}>*/}
+          {/*<div className={cn('header-image')}>*/}
+            {/*<img src="/img/opensource/open-source-image.svg" alt='Humaniq OpenSource'/>*/}
+          {/*</div>*/}
+
+          {/*<div className={cn('header-description')}>*/}
+            {/*<A_H type='hero'>Open Source</A_H>*/}
+            {/*<A_P type='hero'>Humaniq relies on open-source software and likes to give back to the community. Check out*/}
+              {/*the libraries we have built.</A_P>*/}
+          {/*</div>*/}
+        {/*</div>*/}
         <A_H type='section'>Released Libraries</A_H>
 
         <div className={cn('list')}>

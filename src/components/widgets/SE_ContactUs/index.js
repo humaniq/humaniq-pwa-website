@@ -6,26 +6,31 @@ const cn = cssClassName('SE_ContactUs');
 import A_H from 'A_H';
 import A_P from 'A_P';
 import A_Link from 'A_Link';
-
+import O_Hero from 'O_Hero'
 class SE_ContactUs extends Component {
 
   render() {
     return (
       <div className={cn('section-wrapper')}>
         <A_Container type='equal'>
+          <O_Hero
+          >
+            <A_H type='hero'>Contact Humaniq</A_H>
+            <A_P type='hero'>Humaniq is proud of its wide partnership network which includes everybody from fintech companies and Blockchain communities to publishing media and app developers.</A_P>
+          </O_Hero>
           <div className={cn('contactus')}>
 
-            <A_Container type='section-hmq'>
-              <div className={cn('contactus-header')}>
-                <div className={cn('contactus-header-image')}>
-                  <img src="/img/contactus/contact-us-160-px.svg" />
-                </div>
-                <div className={cn('contactus-header-description')}>
-                  <A_H type='hero'>Contact Humaniq</A_H>
-                  <A_P type='hero'>Humaniq is proud of its wide partnership network which includes everybody from fintech companies and Blockchain communities to publishing media and app developers.</A_P>
-                </div>
-              </div>
-            </A_Container>
+            {/*<A_Container type='section-hmq'>*/}
+              {/*<div className={cn('contactus-header')}>*/}
+                {/*<div className={cn('contactus-header-image')}>*/}
+                  {/*<img src="/img/contactus/contact-us-160-px.svg" />*/}
+                {/*</div>*/}
+                {/*<div className={cn('contactus-header-description')}>*/}
+                  {/*<A_H type='hero'>Contact Humaniq</A_H>*/}
+                  {/*<A_P type='hero'>Humaniq is proud of its wide partnership network which includes everybody from fintech companies and Blockchain communities to publishing media and app developers.</A_P>*/}
+                {/*</div>*/}
+              {/*</div>*/}
+            {/*</A_Container>*/}
 
             <section className={cn('support')}>
               <A_H type='section'>Customer Support</A_H>
