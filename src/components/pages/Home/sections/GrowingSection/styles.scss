@@ -1,0 +1,97 @@
+@import "common/settings/variables";
+@import "common/utils";
+
+.se-home-growing {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url('https://lp.humaniq.com/img/userbase-bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0;
+
+  &__content {
+    width: 1200px;
+    position: relative;
+    margin: 60px 0 0 60px;
+    font-family: $font-ProximaNova;
+    @include media($desktop-xxl) {
+      width: 745px;
+      margin: 60px 0 0 106px;
+    }
+    @include media($tablet) {
+      width: auto;
+      margin: 0;
+    }
+  }
+
+  &__title {
+    margin-bottom: 60px;
+    @include media($tablet) {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__columns-wrapper {
+    display: flex;
+    @include media($mobile) {
+      flex-direction: column;
+    }
+  }
+
+  &__text-column {
+    flex-shrink: 0;
+    margin-right: 118px;
+    @include media($desktop-xxl) {
+      margin-right: 60px;
+    }
+    @include media($mobile) {
+      margin-right: 0;
+      margin-bottom: 40px;
+    }
+    &-top {
+      display: flex;
+      align-items: center;
+      margin-bottom: 37px;
+      font-size: 150px;
+      font-family: Celdum,sans-serif;
+      font-weight: 700;
+      color: $color-white;
+      line-height: 1;
+      @include media($desktop-xxl) {
+        font-size: 95px;
+      }
+      @include media($mobile) {
+        margin-bottom: 30px;
+        font-size: 60px;
+      }
+      span {
+        display: inline-block;
+        margin-left: -15px;
+        font-size: 45px;
+        transform: rotate(-90deg);
+        @include media($desktop-xxl) {
+          font-size: 30px;
+        }
+        @include media($mobile) {
+          font-size: 25px;
+        }
+      }
+    }
+    &-bottom {
+      font-weight: 700;
+      font-size: 31px;
+      line-height: 1.2;
+      color: $color-black;
+      @include media($desktop-xxl) {
+        font-size: 22px;
+      }
+      @include media($mobile) {
+        font-size: 16px;
+        br {
+          display: none;
+        }
+      }
+    }
+  }
+}

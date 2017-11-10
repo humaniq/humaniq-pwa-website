@@ -1,6 +1,6 @@
 import {BACKEND_CALL} from 'middleware/humaniqBackendApi'
 import {ENDPOINT_HMQ_SEARCH, ENDPOINT_PERSONAL_HEADERS} from 'constants/api'
-import {HMQ_SEARCH, CLEAN} from 'constants'
+import {HMQ_SEARCH, CLEAN} from 'store/constants'
 import {typesArray} from 'utils/actionHelpers'
 
 export function hmqSearch({searchTerm}) {

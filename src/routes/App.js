@@ -1,12 +1,11 @@
 import React, {Component} from 'react';
 import * as T from "prop-types";
-import MainLayoutContainer from 'containers/MainLayoutContainer'
+import MainLayoutContainer from 'MainLayout/container.js'
 import initialLoad from 'utils/initialLoad'
 import {setRoute} from 'store/entities/navigation/actions'
 import {fetchWiki} from 'store/entities/wikiArticles/actions';
 import {fetchAmbassadors} from 'store/entities/ambassadors/actions'
 import {fetchPartners} from 'store/entities/partners/actions'
-// import {fetchHmqStatistics} from 'store/entities/hmqStatistic/actions'
 
 
 class AppRoute extends Component {

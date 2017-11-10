@@ -1,4 +1,4 @@
-import {START, SUCCESS, REQUEST, FAIL, BLOCKCHAIN_TRANSACTIONS, BLOCKCHAIN_MARKETS} from 'constants'
+import {START, SUCCESS, REQUEST, FAIL, BLOCKCHAIN_TRANSACTIONS, BLOCKCHAIN_MARKETS} from 'store/constants'
 
 const transactionsInit = {
   loading: false,

@@ -4,9 +4,7 @@ import UseCasesContainer from 'containers/UseCasesContainer'
 class CasesRoute extends Component {
   render() {
     return (
-      <div>
-        <UseCasesContainer />
-      </div>
+      <UseCasesContainer />
     )
   }
 }

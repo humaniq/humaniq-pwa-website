@@ -1,4 +1,4 @@
-import {SUCCESS, FETCH, PARTNERS} from 'constants'
+import {SUCCESS, FETCH, PARTNERS} from 'store/constants'
 import {ENDPOINT_PARTNERS} from 'constants/api'
 
 const initPartners = {

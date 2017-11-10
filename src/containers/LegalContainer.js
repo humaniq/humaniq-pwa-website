@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import SE_Legal from 'components/SE_Legal';
+import SE_Legal from 'SE_Legal';
 import { convert } from 'utils'
 
 function mapStateToProps(state, ownProps) {

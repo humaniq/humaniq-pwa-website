@@ -1,3 +1,10 @@
+// new colors v.2
+
+$h-blue-1: #58a1fc;
+$h-black-1: #000;
+
+$h-bg: $h-blue-1;
+
 // COLORS
 
 $white: #fff;
@@ -135,9 +142,14 @@ $gray-8: #c5c5c5;
 
 // DIMENSIONS
 
+$w-desktop-xxl: 1600px;
+$w-desktop-13: 1500px;
+$w-desktop-xl: 1120px;
+$w-desktop-wide: $w-desktop-xl;
 $w-desktop: 980px;
-$w-desktop-wide: 1120px;
 $w-tablet: 768px;
+$w-mobile-xs: 432px;
+
 $w-mobile: 288px;
 
 $identation: 2rem;
@@ -149,8 +161,29 @@ $p-tablet: 2rem;
 $p-desktop: 2rem;
 
 // MEDIA QUERIES
-
 $desktop: "min-width: #{$w-desktop}";
+
+$desktop-xxl: "max-width: #{$w-desktop-xxl}"; //
+$desktop-13: "max-width: #{$w-desktop-13}"; //
+$desktop-xl: "max-width: #{$w-desktop-xl}"; //настоящий таблет.
 $tablet: "max-width: #{$w-desktop - 1px}";
 $mobile: "max-width: #{$w-tablet - 1px}";
+$mobile-xs: "max-width: #{$w-mobile-xs}"; //!
+
 $mobile-up: "min-width: #{$w-tablet}";
+
+//NEW MAIN PAGE VARIABLES
+//NEW COLORS
+$color-white: #ffffff;
+$color-black: #000000;
+
+$color-main-deep-blue: #0070d6;
+$color-main-blue: #58a1fc;
+$color-main-light-blue: #71affc;
+$color-main-red-error: #f26d7d;
+
+$color-text-gray: #a9aeb2;
+
+//NEW FONT STACKS
+$font-ProximaNova: ProximaNova, sans-serif;
+$font-Celdum: Celdum, sans-serif;

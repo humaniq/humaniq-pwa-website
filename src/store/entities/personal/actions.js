@@ -1,7 +1,7 @@
 import { createPostActions, /* createFetchActions */} from 'helpers'
 import { BACKEND_CALL } from 'middleware/humaniqBackendApi'
 import { ENDPOINT_PERSONAL_REFERRER, /* ENDPOINT_PERSONAL_DATA, */ ENDPOINT_PERSONAL_HEADERS } from 'constants/api'
-import { SUCCESS, FETCH, BY_REFERENCE } from 'constants'
+import { SUCCESS, FETCH, BY_REFERENCE } from 'store/constants'
 
 export function subscribeByReference (code, phone_number) {
   return ({
