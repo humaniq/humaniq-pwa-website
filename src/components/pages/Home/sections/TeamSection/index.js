@@ -5,7 +5,7 @@ import SectionCounter from '../common/SectionCounter/index.js'
 import './styles.scss'
 import {cssClassName} from 'utils'
 import A_Image from 'A_Image/index'
-import M_Partners from './Partners'
+// import M_Partners from './Partners'
 const OwlCarousel = __CLIENT__ ? require('react-owl-carousel2') : {}
 
 const cn = cssClassName('SE_Home_Team')
@@ -78,7 +78,7 @@ class SE_Home_Team extends Component {
   render() {
     const {mix} = this.props
     const _renderSlides = this.getTeamSlides()
-    const _renderMobPartners = this.getMobPartners()
+    // const _renderMobPartners = this.getMobPartners()
 
     return (
       <section className={cn([mix])}>
@@ -108,17 +108,17 @@ class SE_Home_Team extends Component {
               <div className={cn('nav-prev')} onClick={() => this.refs.team.prev()} />
               <div className={cn('nav-next')} onClick={() => this.refs.team.next()} />
 
-              <div className={cn('partners-slider')}>
-              <OwlCarousel ref="mobPartners" options={mobPartnersOptions}  >
-                {_renderMobPartners}
-              </OwlCarousel>
-              </div>
+              {/*<div className={cn('partners-slider')}>*/}
+                {/*<OwlCarousel ref="mobPartners" options={mobPartnersOptions}  >*/}
+                  {/*{_renderMobPartners}*/}
+                {/*</OwlCarousel>*/}
+              {/*</div>*/}
             </div>
           }
 
         </div>
 
-        <M_Partners mix={cn('partners')}/>
+        {/*<M_Partners mix={cn('partners')}/>*/}
 
         <SectionCounter
           sectionNum={13}
@@ -151,12 +151,6 @@ const advisers = [
     position: 'Adviser',
     bio: 'An innovative entrepreneur and investor active in Biotech, Fintech, Blockchain and artificial intelligence, Dmitry is co-founder of the Deep Knowledge Ventures investment fund, focused on investments in AI and Deeptech. He adheres to the principle of impact investment in all his business activities, believing that business should make a social impact, and he supports the deployment of Blockchain for Good, which led to his decision to support Humaniq from its inception.',
     imgSrc: `${imgPath}/dmitry_kaminskiy.png`
-  },
-  {
-    name: 'Hazem Danny Al-Nakib',
-    position: 'Adviser',
-    bio: '',
-    imgSrc: `${imgPath}/hazem_danny.jpg`
   },
   {
     name: 'David Applefield',
@@ -229,22 +223,40 @@ const team = [
     imgSrc: `${imgPath}/alex_fork.png`
   },
   {
+    name: 'Javed Khattak',
+    position: 'CFO',
+    bio: 'Javed has a background as an actuary and of finance, consulting and startups. He loves technology, especially gadgets, AI and virtual reality, and believes in Blockchain for Good. He is working with Humaniq to bring greater opportunities and fairness to the world.',
+    imgSrc: `${imgPath}/javed_khattak.png`
+  },
+  {
+    name: 'Hazem Danny Al-Nakib',
+    position: 'Vice President',
+    bio: '',
+    imgSrc: `${imgPath}/hazem_danny.jpg`
+  },
+  {
+    name: 'Anton Mozgovoy',
+    position: 'Team Lead',
+    bio: 'Anton was motivated to work with Humaniq to use his experience in both computer science and finance to help to bring happiness for all across the world. He is passionate about freedriving and wakeboarding, and, of course, staying late to finish work.',
+    imgSrc: `${imgPath}/anton_mozgovoy.png`
+  },
+  {
+    name: 'Peyman Irani',
+    position: 'SMM, CSS',
+    bio: 'Peyman’s background is in sales and marketing, entrepreneurship, and social media and he is passionate about his family, innovation and humanitarian capitalism. Fairness means a lot to him and he believes we can do something great for humanity at Humaniq.',
+    imgSrc: `${imgPath}/peyman_irani.png`
+  },
+  {
     name: 'Kirill Goryunov',
     position: 'CPO',
     bio: 'Bringing experience of management and economics, Serafima’s passions include art, music and Russian literature and the crypto-economy. She cannot stand inequality and is happy to have the opportunity to tackle it with Humaniq.',
     imgSrc: `${imgPath}/kirill_goryunov.jpg`
   },
   {
-    name: 'Anton Mozgovoy',
-    position: 'Product Manager',
-    bio: 'Anton was motivated to work with Humaniq to use his experience in both computer science and finance to help to bring happiness for all across the world. He is passionate about freedriving and wakeboarding, and, of course, staying late to finish work.',
-    imgSrc: `${imgPath}/anton_mozgovoy.png`
-  },
-  {
-    name: 'Javed Khattak',
-    position: 'CFO',
-    bio: 'Javed has a background as an actuary and of finance, consulting and startups. He loves technology, especially gadgets, AI and virtual reality, and believes in Blockchain for Good. He is working with Humaniq to bring greater opportunities and fairness to the world.',
-    imgSrc: `${imgPath}/javed_khattak.png`
+    name: 'Kherel Kechil',
+    position: 'Lead Frontend Developer',
+    bio: 'Kherel is a digital nomad. He joined Humaniq to experience and participate in the financial evolution, and observe changes to the better in the country where he currently resides - China.',
+    imgSrc: `${imgPath}/kherel_kechil.png`
   },
   {
     name: 'Serafima Semkina',
@@ -258,30 +270,17 @@ const team = [
     bio: 'Bringing experience of management and economics, Serafima’s passions include art, music and Russian literature and the crypto-economy. She cannot stand inequality and is happy to have the opportunity to tackle it with Humaniq.',
     imgSrc: `${imgPath}/harry_bright.jpg`
   },
-  {
-    name: 'Pavel Kiselyov',
-    position: 'Lead Backend Developer',
-    bio: '',
-    imgSrc: `${imgPath}/pavel_kiselyov.jpg`
-  },
-  {
-    name: 'Kherel Kechil',
-    position: 'Lead Frontend Developer',
-    bio: 'Kherel is a digital nomad. He joined Humaniq to experience and participate in the financial evolution, and observe changes to the better in the country where he currently resides - China.',
-    imgSrc: `${imgPath}/kherel_kechil.png`
-  },
+  // {
+  //   name: 'Pavel Kiselyov',
+  //   position: 'Lead Backend Developer',
+  //   bio: '',
+  //   imgSrc: `${imgPath}/pavel_kiselyov.jpg`
+  // },
   {
     name: 'Georgii Oleinikov',
     position: 'Developer',
     bio: 'Bringing experience of mathematics and computer science, Georgii loves things that have an impact and people that make these things happen. He believes there is big room for improvement in the financial sector, with many not served.',
     imgSrc: `${imgPath}/georgii_oleinikov.png`
-  },
-
-  {
-    name: 'Peyman Irani',
-    position: 'SMM, CSS',
-    bio: 'Peyman’s background is in sales and marketing, entrepreneurship, and social media and he is passionate about his family, innovation and humanitarian capitalism. Fairness means a lot to him and he believes we can do something great for humanity at Humaniq.',
-    imgSrc: `${imgPath}/peyman_irani.png`
   },
   {
     name: 'Segrey Blinov',
