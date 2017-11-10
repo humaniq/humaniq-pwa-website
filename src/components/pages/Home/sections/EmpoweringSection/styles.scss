@@ -1,0 +1,261 @@
+@import "common/settings/variables";
+@import "common/utils";
+
+.se-home-empowering {
+  @include media($tablet) {
+    background: $color-main-light-blue;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+
+  &__left-side {
+    flex: 0 0 50%;
+    background: $color-main-light-blue;
+    overflow: hidden;
+    @include media($tablet) {
+      position: absolute;
+      width: 100%;
+      top: 0;
+      right: 0;
+    }
+  }
+
+  &__right-side {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: $color-main-blue;
+    flex: 1 1 auto;
+    @include media($tablet) {
+      display: block;
+      margin-bottom: 50px;
+      background-color: transparent;
+    }
+  }
+
+  &__map {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    &-img{
+
+      &_type_mobile{
+        display: none;
+        width: 980px;
+
+        @include media ($tablet) {
+          display: block;
+          float: right;
+        }
+      }
+      &_type_desktop{
+        display: block;
+        width: 800px;
+        @include media ($tablet) {
+          display: none;
+
+        }
+      }
+    }
+  }
+
+  &__text {
+    position: relative;
+    margin-bottom: 70px;
+    margin-right: 80px;
+    font-family: $font-ProximaNova;
+    color: $color-white;
+    @include media($desktop-xxl) {
+      margin-right: 60px;
+    }
+    @include media($desktop-xl) {
+      margin-right: 0;
+    }
+    @include media($tablet) {
+      margin-bottom: 0;
+    }
+    &-title {
+      margin-bottom: 50px;
+    }
+    &-subtitle {
+      font-size: 42px;
+      line-height: 1.4;
+      @include media($desktop-xxl) {
+        font-size: 30px;
+      }
+      @include media($mobile) {
+        font-size: 25px;
+      }
+      @include media($mobile-xs) {
+        font-size: 22px;
+      }
+    }
+  }
+
+
+  &__hmq-description {
+    position: absolute;
+    bottom: 233px;
+    left: -81px;
+    font-family: $font-ProximaNova;
+    font-size: 21px;
+    color: $color-black;
+    line-height: 1.3;
+    font-weight: 400;
+    letter-spacing: .02em;
+    transform: rotate(-90deg);
+    @include media($desktop-xxl) {
+      left: -60px;
+      bottom: 170px;
+      font-size: 15px;
+    }
+    @include media($tablet) {
+      position: relative;
+      left: 0;
+      bottom: 0;
+      margin-bottom: 60px;
+      font-size: 18px;
+      transform: rotate(0);
+    }
+    @include media($mobile-xs) {
+      font-size: 16px;
+    }
+  }
+
+  &__members {
+    position: absolute;
+    bottom: 65px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 15px;
+    text-align: center;
+    font-weight: 700;
+    color: $color-white;
+    @include media($tablet) {
+      position: relative;
+      bottom: 0;
+      left: 0;
+      transform: translateX(0);
+    }
+    &-number {
+      margin-bottom: 15px;
+      font-family: $font-Celdum;
+      font-size: 72px;
+      line-height: 1;
+      @include media($desktop-xxl) {
+        margin-bottom: 10px;
+        font-size: 51px;
+      }
+    }
+    &-text {
+      font-family: $font-ProximaNova;
+      font-size: 17px;
+      text-transform: uppercase;
+      letter-spacing: .3em;
+      @include media($desktop-xxl) {
+        font-size: 12px;
+      }
+    }
+  }
+
+  &__point {
+
+    @include media ($tablet) {
+      transform: scale(0.5);
+      left: auto !important;
+    }
+
+    &_number_1{
+      top: 38rem;
+      left: 18rem;
+      @include media ($tablet) {
+        top: 12rem;
+        right: 20rem;
+      }
+    }
+    &_number_2{
+      top: 28rem;
+      left: 30rem;
+      @include media ($tablet) {
+        top: 17rem;
+        right: 48rem;
+      }
+    }
+    &_number_3{
+      top: 30rem;
+      left: 45rem;
+      @include media ($tablet) {
+        top: 54rem;
+        right: 15rem;
+      }
+    }
+    &_number_4{
+      top: 49rem;
+      left: 28rem;
+      @include media ($tablet) {
+        top: 32rem;
+        right: 40rem;
+      }
+    }
+    &_number_5 {
+      top: 53rem;
+      left: 43rem;
+      @include media ($tablet) {
+        top: 30rem;
+        right: 50rem;
+      }
+    }
+
+    position: absolute;
+    border-radius: 50%;
+    background: #fff;
+    height: 15px;
+    width: 15px;
+    box-sizing: border-box;
+    span {
+      display: block;
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      border-radius: 50%;
+      width: 15px;
+      height: 15px;
+      transform: translate(-50%, -50%) translateZ(0);
+      backface-visibility: hidden;
+      border: 6px solid #fff;
+      box-sizing: border-box;
+      opacity: 0;
+      animation-name: pulse;
+      animation-duration: 6s;
+      animation-iteration-count: infinite;
+      animation-fill-mode: both;
+
+    }
+    span:nth-child(2) {
+      animation-delay: 1.5s;
+    }
+    span:nth-child(3) {
+      animation-delay: 3s;
+    }
+    span:nth-child(4) {
+      animation-delay: 4.5s;
+    }
+
+  }
+  @keyframes pulse {
+    from {
+      height: 15px;
+      width: 15px;
+      border-width: 5px;
+      opacity: 1;
+    }
+    to {
+      border-width: 0;
+      height: 140px;
+      width: 140px;
+      opacity: 0;
+    }
+  }
+}

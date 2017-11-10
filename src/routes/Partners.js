@@ -12,9 +12,7 @@ class PartnersRoute extends Component {
 
   render() {
     return (
-      <div>
-        <PartnersContainer />
-      </div>
+      <PartnersContainer />
     )
   }
 }

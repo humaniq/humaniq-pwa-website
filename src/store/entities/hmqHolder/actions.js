@@ -1,5 +1,5 @@
 import {createRequestActions} from 'helpers'
-import {HMQ_HOLDER, HMQ_HOLDER_T, CLEAN} from 'constants'
+import {HMQ_HOLDER, HMQ_HOLDER_T, CLEAN} from 'store/constants'
 import {BACKEND_CALL} from 'middleware/humaniqBackendApi'
 import {ENDPOINT_HMQ_HOLDERS} from 'constants/api'
 import {COUNT} from './reducer'

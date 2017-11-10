@@ -1,6 +1,6 @@
 import { BACKEND_CALL } from 'middleware/humaniqBackendApi'
 import { ENDPOINT_WIKI_SEARCH } from 'constants/api'
-import { WIKI_SEARCH, START, SUCCESS, FAIL, CLEAN } from 'constants'
+import { WIKI_SEARCH, START, SUCCESS, FAIL, CLEAN } from 'store/constants'
 
 export function wikiSearch ({searchTerm}) {
   return ({

@@ -1,0 +1,19 @@
+@import "common/settings/variables";
+@import "common/utils";
+
+.a-logo-h {
+  display: block;
+  width: 100%;
+  height: 100%;
+  &_theme {
+    &_dark {
+      fill: $color-black;
+    }
+    &_bright {
+      fill: $color-white;
+      @include media ($desktop-xl) {
+        fill: $color-black;
+      }
+    }
+  }
+}

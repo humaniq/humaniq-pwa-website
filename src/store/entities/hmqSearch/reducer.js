@@ -1,4 +1,4 @@
-import {HMQ_SEARCH, START, SUCCESS, FAIL, CLEAN} from 'constants'
+import {HMQ_SEARCH, START, SUCCESS, FAIL, CLEAN} from 'store/constants'
 import mapper from './mapper'
 
 const hmqSearchInit = {

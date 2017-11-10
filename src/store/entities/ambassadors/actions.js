@@ -1,7 +1,7 @@
 import { createFetchActions } from 'helpers'
 import { BACKEND_CALL } from 'middleware/humaniqBackendApi'
 import { ENPOINT_AMBASSADORS_LIST } from 'constants/api'
-import { AMBASSADORS } from 'constants'
+import { AMBASSADORS } from 'store/constants'
 
 export function fetchAmbassadors () {
   return ({

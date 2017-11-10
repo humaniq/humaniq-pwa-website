@@ -1,4 +1,4 @@
-import {START, SUCCESS, REQUEST, FAIL, HMQ_GRAPH} from 'constants'
+import {START, SUCCESS, REQUEST, FAIL, HMQ_GRAPH} from 'store/constants'
 import mapper from './mapper'
 
 const hmqGraphInit = {

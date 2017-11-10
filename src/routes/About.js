@@ -6,9 +6,7 @@ class PartnersRoute extends Component {
 
   render() {
     return (
-      <div>
-        <AboutContainer />
-      </div>
+      <AboutContainer />
     )
   }
 }

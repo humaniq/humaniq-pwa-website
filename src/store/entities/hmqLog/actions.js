@@ -1,5 +1,5 @@
 import { createRequestActions } from 'helpers'
-import { HMQ_LOG } from 'constants'
+import { HMQ_LOG } from 'store/constants'
 import { BACKEND_CALL } from 'middleware/humaniqBackendApi'
 import { ENDPOINT_HMQ_LOG } from 'constants/api'
 import {apiDateFormat} from 'utils'

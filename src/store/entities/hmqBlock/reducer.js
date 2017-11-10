@@ -1,4 +1,4 @@
-import {START, SUCCESS, REQUEST, FAIL, HMQ_BLOCK} from 'constants'
+import {START, SUCCESS, REQUEST, FAIL, HMQ_BLOCK} from 'store/constants'
 import mapper from './mapper'
 
 const hmqBlockInit = {

@@ -1,0 +1,148 @@
+@import "common/settings/variables";
+@import "common/utils";
+
+.se-home-quotes {
+  &__slider {
+    position: relative;
+    width: 400%;
+    height: 100%;
+    display: flex;
+    overflow: hidden;
+    transition: transform .4s ease-out;
+    will-change: transform;
+    @include media($tablet) {
+      height: 650px;
+    }
+  }
+  &__slide {
+    flex-grow: 0;
+    flex-shrink: 0;
+    height: 100%;
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: $color-main-blue;
+    background-position: 18%,100% 100%;
+    background-size: 420px,cover;
+    background-repeat: no-repeat;
+    @include media($tablet) {
+      align-items: flex-start;
+    }
+    @include media($mobile) {
+      background-image: url('https://lp.humaniq.com/img/quotes.png')!important;
+    }
+
+    &-content {
+      width: 700px;
+      margin-right: 215px;
+      font-family: $font-ProximaNova;
+      color: $color-white;
+      @include media($desktop-xxl) {
+        width: 490px;
+      }
+      @include media($tablet) {
+        width: auto;
+        padding: 100px 30px 60px;
+        margin-right: 0;
+      }
+      @include media($mobile-xs) {
+        padding: 100px 15px 60px;
+      }
+    }
+    &-title {
+      margin-bottom: 55px;
+      @include media($mobile) {
+        margin-bottom: 25px;
+      }
+    }
+    &-text {
+      margin-bottom: 68px;
+      font-size: 33px;
+      line-height: 1.6;
+      @include media($desktop-xxl) {
+        font-size: 21px;
+      }
+      @include media($mobile) {
+        margin-bottom: 55px;
+        font-size: 18px;
+      }
+      &_type {
+        &_small {
+          font-size: 25px;
+          @include media($desktop-xxl) {
+            font-size: 21px;
+          }
+          @include media($mobile) {
+            margin-bottom: 20px;
+            font-size: 15px;
+            line-height: 1.4;
+          }
+        }
+      }
+    }
+    &-author {
+      font-size: 21px;
+      @include media($desktop-xxl) {
+        font-size: 18px;
+      }
+      @include media($mobile-xs) {
+        font-size: 16px;
+      }
+    }
+  }
+  &__nav{
+    position: absolute;
+    left: 50%;
+    transform: translate3d(-70%, 0, 0);
+    bottom: 4rem;
+    width: 700px;
+    margin-right: 215px;
+
+    @include media($desktop-xxl) {
+      width: 490px;
+    }
+    @include media($tablet) {
+      transform: translate3d(-50%, 0, 0);
+      width: 80%;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &-prev{
+      display: inline-block;
+      margin-right: 6rem;
+      cursor: pointer;
+      &:after{
+        content: '';
+        display: block;
+        height: 20px;
+        width: 20px;
+        transform: rotate(-135deg);
+        border-top: 3px solid #fff;
+        border-right: 3px solid #fff;
+      }
+
+      @include media($tablet) {
+        display: block;
+      }
+    }
+    &-next{
+      display: inline-block;
+      cursor: pointer;
+      &:after{
+        content: '';
+        display: block;
+        height: 20px;
+        width: 20px;
+        transform: rotate(45deg);
+        border-top: 3px solid #fff;
+        border-right: 3px solid #fff;
+      }
+      @include media($tablet) {
+        display: block;
+      }
+    }
+  }
+}
