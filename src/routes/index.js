@@ -4,16 +4,17 @@ import App from './App'
 import AppOld from './App_old'
 import Home from './Home'
 import Error from './Error'
-import Partners from './Partners'
-import Cases from './Cases'
 import ContactUs from './ContactUs'
 import legal from './Legal'
 import OpenSource from './OpenSource'
 import Ambassadors from './Ambassadors'
-import About from './About'
 import HmqExplorer from './Hmq'
 import Wiki from './Wiki'
-import Form from './Form'
+
+// import Form from './Form'
+// import Partners from './Partners'
+// import Cases from './Cases'
+// import About from './About'
 
 const getRoutes = (store) => {
   return (
@@ -53,20 +54,20 @@ const getRoutes = (store) => {
       <Route
         component={AppOld}
       >
-        <Route path="use-cases"
-               component={Cases}
-        />
+        {/*<Route path="use-cases"*/}
+               {/*component={Cases}*/}
+        {/*/>*/}
 
-        <Route path="partners"
-               prepareData={Partners.prepareData}
-               component={Partners}
-        />
-        {Form}
+        {/*<Route path="partners"*/}
+               {/*prepareData={Partners.prepareData}*/}
+               {/*component={Partners}*/}
+        {/*/>*/}
+        {/*{Form}*/}
         {Wiki(store)}
 
-        <Route path="about"
-               component={About}
-        />
+        {/*<Route path="about"*/}
+               {/*component={About}*/}
+        {/*/>*/}
 
       </Route>
 
