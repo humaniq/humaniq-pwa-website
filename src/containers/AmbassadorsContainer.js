@@ -1,5 +1,7 @@
 import {connect} from 'react-redux';
 import SE_Ambassadors from 'SE_Ambassadors'
+import {bindActionCreators} from 'redux'
+import {openPopup} from 'store/entities/navigation/actions'
 
 function mapStateToProps(state) {
   const {entities} = state.ambassadors
@@ -11,4 +13,9 @@ function mapStateToProps(state) {
   return {entities, countries};
 }
 
-export default connect(mapStateToProps)(SE_Ambassadors);
+function mapDispatchToProps(dispatch) {
+  const actions = bindActionCreators({openPopup}, dispatch)
+  return {...actions};
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(SE_Ambassadors);

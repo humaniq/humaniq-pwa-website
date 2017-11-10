@@ -5,9 +5,14 @@ import {fetchHmqHolderT} from 'store/entities/hmqHolder/actions'
 import {cleanHmqHolderT} from 'store/entities/hmqHolder/actions'
 
 function mapStateToProps( state ) {
-  const {totalTransactions, loaded, loading, balance, address, transactions:{offset, clean, ...transactions}} = state.hmqHolder
+  const {
+    totalTransactions, loaded, loading, balance, address,
+    transactions:{offset, clean, ...transactions}} = state.hmqHolder;
 
-  return {totalTransactions, balance, loaded, loading, address, offset, clean, transactions};
+  return {
+    holder: {totalTransactions, balance, loaded, loading, address, offset, clean},
+    transactions
+  };
 }
 
 function mapDispatchToProps(dispatch) {
@@ -15,19 +20,18 @@ function mapDispatchToProps(dispatch) {
   return {...actions};
 }
 
-function mergeProps({loaded, offset, clean, ...stateProps}, {fetchHmqHolderT, cleanHmqHolderT}, ownProps){
+function mergeProps({holder, ...stateProps}, {fetchHmqHolderT, cleanHmqHolderT}, ownProps){
 
   let loadMore;
 
-  if(clean) cleanHmqHolderT()
+  if(holder.clean) cleanHmqHolderT();
 
-  if(!loaded && !stateProps.loading){
+  if(!holder.loaded && !holder.loading){
     loadMore = () => {}
   } else {
-    loadMore = () => fetchHmqHolderT(stateProps.address, offset)
+    loadMore = () => fetchHmqHolderT(holder.address, holder.offset)
   }
-
-  return {...stateProps, loadMore, ...ownProps}
+  return {holder, ...stateProps, loadMore, ...ownProps}
 }
 
 export default connect(mapStateToProps, mapDispatchToProps, mergeProps)(SE_HmqHolder);
