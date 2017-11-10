@@ -1,0 +1,32 @@
+@import "common/settings/variables";
+@import "common/utils";
+
+.a-btn-h {
+  padding: 15px 22px;
+  line-height: 1;
+  color: $color-main-blue;
+  border: 2px solid $color-main-blue;
+  font-family: $font-ProximaNova;
+  font-weight: 700;
+  font-size: 16.5px;
+  letter-spacing: .3em;
+  text-transform: uppercase;
+  pointer-events: auto;
+  transition: background-color, color, border, .3s linear;
+  cursor: pointer;
+  &_form-has-errors {
+    &_true {
+      color: $color-text-gray;
+      border: 2px solid $color-text-gray;
+      pointer-events: none;
+    }
+  }
+  &:hover {
+    background-color: $color-main-blue;
+    color: $color-white;
+  }
+  @include media($desktop-xxl) {
+    padding: 9px 15px;
+    font-size: 12px;
+  }
+}

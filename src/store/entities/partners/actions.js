@@ -1,7 +1,7 @@
 import { createFetchActions } from 'helpers'
 import {BACKEND_CALL} from 'middleware/humaniqBackendApi'
 import { ENDPOINT_PARTNERS_LIST } from 'constants/api'
-import { PARTNERS } from 'constants'
+import { PARTNERS } from 'store/constants'
 
 export function fetchPartners() {
   return ({

@@ -1,0 +1,44 @@
+@import "common/settings/variables";
+@import "common/utils";
+
+.se-home-what-makes {
+  overflow: hidden;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: $color-white;
+
+  &__background {
+    position: absolute;
+    max-width: 635px;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    right: -8%;
+
+    @include media($desktop-xxl) {
+      max-width: 440px;
+    }
+    @include media($tablet) {
+      top: 30px;
+      transform: translateY(0);
+      max-width: 330px;
+    }
+  }
+
+  &__content {
+    position: relative;
+    margin: 60px 0 0 60px;
+    font-family: $font-ProximaNova;
+    @include media($tablet) {
+      margin: 0;
+    }
+  }
+
+  &__title {
+    margin-bottom: 60px;
+    @include media($desktop-xxl) {
+      margin-bottom: 30px;
+    }
+  }
+}

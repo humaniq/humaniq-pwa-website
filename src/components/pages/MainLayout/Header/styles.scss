@@ -1,0 +1,62 @@
+@import "common/settings/variables";
+@import "common/utils";
+
+.se-main-layout-header-h {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 23% 0 65px;
+  @include media($desktop-xxl) {
+    padding-right: 20%;
+  }
+  @include media($desktop-xl) {
+    padding: 15px 65px;
+    background-color: white;
+    &_mob-menu-open_true{
+      background-color: $color-main-blue;
+    }
+  }
+  @include media($tablet) {
+    padding: 15px 20px;
+  }
+
+  &__logo {
+    width: 150px;
+    height: 35px;
+    @include media($desktop-xxl) {
+      width: 105px;
+      height: 25px;
+    }
+  }
+
+  &__menu-btn {
+    display: none;
+    @include media($desktop-xl) {
+      display: block;
+    }
+  }
+
+  &__menu {
+    display: flex;
+    &-link {
+      padding: 37px 32px;
+      font-family: $font-ProximaNova;
+      color: $color-black;
+      font-size: 17px;
+      font-weight: 700;
+      letter-spacing: .3em;
+      text-transform: uppercase;
+      transition: transform .2s;
+      &:hover {
+        transform: scale(1.1);
+      }
+      @include media($desktop-xxl) {
+        padding: 20px 23px;
+        font-size: 12px;
+      }
+    }
+    @include media($desktop-xl) {
+      display: none;
+    }
+  }
+}

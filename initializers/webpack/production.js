@@ -97,19 +97,6 @@ export default {
     }),
     new webpack.optimize.UglifyJsPlugin({
       sourceMap: 'source-map'
-    }),
-    new BundleAnalyzerPlugin({
-      analyzerMode: 'static'
-    }),
-    new OfflinePlugin({
-      publicPath: '/assets/',
-      caches: 'all',
-      ServiceWorker: {
-        events: true
-      },
-      AppCache: {
-        events: true
-      }
     })
   ]
 };
