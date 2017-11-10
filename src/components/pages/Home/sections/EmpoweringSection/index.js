@@ -51,7 +51,7 @@ const SE_Home_Empowering = ({mix}) => (
     </p>
 
     <div className={cn('members')}>
-      <div className={cn('members-number')}>1 206 759</div>
+      <div className={cn('members-number')}>12 341</div>
       <p className={cn('members-text')}>people have already joined Humaniq</p>
     </div>
 
