@@ -88,9 +88,11 @@
     }
 
     &-title {
-      margin-bottom: 30px;
       font-size: 31px;
       font-weight: 700;
+      height: 50px;
+      margin: 0 auto 30px;
+      max-width: 160px;
       @include media($desktop-xxl) {
         font-size: 22px;
         margin-bottom: 20px;
