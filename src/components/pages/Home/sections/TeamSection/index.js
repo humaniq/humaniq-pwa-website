@@ -43,6 +43,7 @@ const mobPartnersOptions = {
 
 class SE_Home_Team extends Component {
 
+  _getHazemName = () => <span>Hazem Danny <br/>Al-Nakib</span>
 
   getTeamSlides(){
     return (
@@ -51,7 +52,9 @@ class SE_Home_Team extends Component {
           <div className={cn('slide-image')}>
             <A_Image src={imgSrc} rounded/>
           </div>
-          <p className={cn('slide-title')}>{name}</p>
+          <p className={cn('slide-title')}>
+            {name.search('Al-Nakib') === -1 ? (name) : (this._getHazemName())}
+          </p>
           <p className={cn('slide-text')}>{position}</p>
         </div>
       )
