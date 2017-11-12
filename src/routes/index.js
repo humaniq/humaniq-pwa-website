@@ -1,4 +1,4 @@
-import {Route, IndexRoute} from 'react-router'
+import {Route, IndexRoute, Redirect} from 'react-router'
 import React from 'react'
 import App from './App'
 import AppOld from './App_old'
@@ -49,6 +49,9 @@ const getRoutes = (store) => {
           prepareData={Error.prepareData}
           component={Error}
         />
+
+        <Redirect from='about' to='/' />
+
       </Route>
 
       <Route
@@ -68,6 +71,7 @@ const getRoutes = (store) => {
         {/*<Route path="about"*/}
                {/*component={About}*/}
         {/*/>*/}
+
 
       </Route>
 
