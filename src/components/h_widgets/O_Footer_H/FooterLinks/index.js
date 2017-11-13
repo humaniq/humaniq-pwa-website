@@ -83,7 +83,7 @@ const footerLinks = [
     section: 'Info',
     links: [
       {name: 'Project details', url: '/pdf/humaniq-whitepaper-05.09.pdf', externalLink: true},
-      {name: 'Subscribe to newsletter', popupLink: true, formType: 'subscribe'},
+      {name: 'Wiki', url: '/wiki'},
       {name: 'HMQ Explorer', url: '/hmq-explorer'},
       {name: 'Humaniq blog', url: 'https://forum.humaniq.co', externalLink: true}
     ]

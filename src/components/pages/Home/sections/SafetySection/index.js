@@ -38,7 +38,7 @@ export default SE_Home_Safety
 const infoColumns = [
   {
     imageSrc: '/img/design-v2/icons/sections/card.svg',
-    title: 'Biometric identification',
+    title: 'Biometric authentification',
     text: 'Users are verified by their face and voice, eliminating the need for formal documentation '
   } ,
   {

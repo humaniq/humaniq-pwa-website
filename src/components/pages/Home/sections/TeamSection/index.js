@@ -233,7 +233,7 @@ const team = [
   },
   {
     name: 'Hazem Danny Al-Nakib',
-    position: 'Vice President',
+    position: 'CIO',
     bio: '',
     imgSrc: `${imgPath}/hazem_danny.jpg`
   },

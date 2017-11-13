@@ -33,7 +33,7 @@ const SE_MainLayoutHeader_H = ({mix, theme, mobileMenuIsActive, toggleMobileMenu
         <a href='http://humaniqchallenge.com' target='_blank'>Challenge</a>
       </li>
       <li className={cn('menu-link')}>
-        <Link to='/wiki'>wiki</Link>
+        <a href='https://blog.humaniq.co/' target='_blank'>Blog</a>
       </li>
 
     </ul>
