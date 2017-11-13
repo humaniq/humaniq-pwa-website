@@ -1,5 +1,5 @@
-@import "common/settings/variables";
-@import "common/utils";
+@import 'common/settings/variables';
+@import 'common/utils';
 
 .se-home-quotes {
   &__slider {
@@ -8,7 +8,7 @@
     height: 100%;
     display: flex;
     overflow: hidden;
-    transition: transform .4s ease-out;
+    transition: transform 0.4s ease-out;
     will-change: transform;
     @include media($tablet) {
       height: 650px;
@@ -24,14 +24,14 @@
     justify-content: center;
     align-items: center;
     background-color: $color-main-blue;
-    background-position: 18%,100% 100%;
-    background-size: 420px,cover;
+    background-position: 18%, 100% 100%;
+    background-size: 420px, cover;
     background-repeat: no-repeat;
     @include media($tablet) {
       align-items: flex-start;
     }
     @include media($mobile) {
-      background-image: url('https://lp.humaniq.com/img/quotes.png')!important;
+      background-image: url('https://lp.humaniq.com/img/quotes.png') !important;
     }
 
     &-content {
@@ -92,7 +92,7 @@
       }
     }
   }
-  &__nav{
+  &__nav {
     position: absolute;
     left: 50%;
     transform: translate3d(-70%, 0, 0);
@@ -110,11 +110,11 @@
       justify-content: space-between;
     }
 
-    &-prev{
+    &-prev {
       display: inline-block;
       margin-right: 6rem;
       cursor: pointer;
-      &:after{
+      &:after {
         content: '';
         display: block;
         height: 20px;
@@ -128,10 +128,10 @@
         display: block;
       }
     }
-    &-next{
+    &-next {
       display: inline-block;
       cursor: pointer;
-      &:after{
+      &:after {
         content: '';
         display: block;
         height: 20px;

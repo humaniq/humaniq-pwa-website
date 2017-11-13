@@ -1,5 +1,5 @@
-@import "common/settings/variables";
-@import "common/utils";
+@import 'common/settings/variables';
+@import 'common/utils';
 
 .se-home-use-cases {
   flex-direction: column;
@@ -31,11 +31,11 @@
     }
   }
 
-  &__slider{
+  &__slider {
     display: flex;
     position: relative;
     flex-direction: row;
-    transition: transform .5s ease-in-out;
+    transition: transform 0.5s ease-in-out;
     &-item {
       flex-shrink: 0;
       width: 50%;
@@ -45,13 +45,12 @@
         width: 100%;
       }
     }
-    &-wrap{
+    &-wrap {
       width: 100%;
       overflow: hidden;
-
     }
   }
-  &__dots{
+  &__dots {
     text-align: center;
     width: 30%;
     justify-items: center;
@@ -61,31 +60,31 @@
     @include media ($mobile) {
       display: flex;
     }
-    &-item{
+    &-item {
       height: 3.5rem;
       width: 3.5rem;
       vertical-align: middle;
 
-      &:after{
+      &:after {
         content: '';
-        height: .8rem;
-        width: .8rem;
+        height: 0.8rem;
+        width: 0.8rem;
         border: 1px solid $color-main-blue;
         margin-right: 1rem;
         border-radius: 50%;
         display: inline-block;
         vertical-align: middle;
-
       }
-      &:hover, &_active_true{
-        &:after{
+      &:hover,
+      &_active_true {
+        &:after {
           height: 1.5rem;
           width: 1.5rem;
         }
       }
     }
   }
-  &__nav{
+  &__nav {
     position: absolute;
     left: 60%;
     transform: translate3d(-60%, 0, 0);
@@ -99,17 +98,15 @@
       width: 40%;
       left: 50%;
       transform: translate3d(-50%, 0, 0);
-
     }
     @include media ($mobile) {
       display: none;
-
     }
-    &-prev{
+    &-prev {
       display: block;
       margin-right: 6rem;
       cursor: pointer;
-      &:after{
+      &:after {
         content: '';
         display: block;
         height: 20px;
@@ -119,19 +116,18 @@
         border-right: 3px solid $color-main-blue;
       }
     }
-    &-next{
+    &-next {
       display: block;
       cursor: pointer;
-      &:after{
+      &:after {
         content: '';
         display: block;
         height: 20px;
         width: 20px;
         transform: rotate(45deg);
-        border-top: 3px solid $color-main-blue;;
-        border-right: 3px solid $color-main-blue;;
+        border-top: 3px solid $color-main-blue;
+        border-right: 3px solid $color-main-blue;
       }
     }
   }
-
 }
