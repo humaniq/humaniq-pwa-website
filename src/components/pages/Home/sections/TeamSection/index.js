@@ -233,16 +233,16 @@ const team = [
   },
   {
     name: 'Hazem Danny Al-Nakib',
-    position: 'Vice President',
+    position: 'CIO',
     bio: '',
     imgSrc: `${imgPath}/hazem_danny.jpg`
   },
-  {
-    name: 'Anton Mozgovoy',
-    position: 'Team Lead',
-    bio: 'Anton was motivated to work with Humaniq to use his experience in both computer science and finance to help to bring happiness for all across the world. He is passionate about freedriving and wakeboarding, and, of course, staying late to finish work.',
-    imgSrc: `${imgPath}/anton_mozgovoy.png`
-  },
+  // {
+  //   name: 'Anton Mozgovoy',
+  //   position: 'Team Lead',
+  //   bio: 'Anton was motivated to work with Humaniq to use his experience in both computer science and finance to help to bring happiness for all across the world. He is passionate about freedriving and wakeboarding, and, of course, staying late to finish work.',
+  //   imgSrc: `${imgPath}/anton_mozgovoy.png`
+  // },
   {
     name: 'Peyman Irani',
     position: 'SMM, CSS',
@@ -279,12 +279,12 @@ const team = [
   //   bio: '',
   //   imgSrc: `${imgPath}/pavel_kiselyov.jpg`
   // },
-  {
-    name: 'Georgii Oleinikov',
-    position: 'Developer',
-    bio: 'Bringing experience of mathematics and computer science, Georgii loves things that have an impact and people that make these things happen. He believes there is big room for improvement in the financial sector, with many not served.',
-    imgSrc: `${imgPath}/georgii_oleinikov.png`
-  },
+  // {
+  //   name: 'Georgii Oleinikov',
+  //   position: 'Developer',
+  //   bio: 'Bringing experience of mathematics and computer science, Georgii loves things that have an impact and people that make these things happen. He believes there is big room for improvement in the financial sector, with many not served.',
+  //   imgSrc: `${imgPath}/georgii_oleinikov.png`
+  // },
   {
     name: 'Segrey Blinov',
     position: 'SMM, CSS',

@@ -48,6 +48,6 @@ const infoColumns = [
   {
     imageSrc: '/img/design-v2/icons/sections/user-base-expo.svg',
     title: 'User base exponential growth',
-    text: 'According to Metcalfe\'s law, the value of a network is proportional to the square of the number of its users. For Humaniq, this means that the more unbanked people who have already joined the system, the greater the motivation will be for other people to join.'
+    text: 'According to Metcalfe\'s law, the value of a network is proportional to the square of the number of its users. For Humaniq, this means that the more unbanked people who join the system, the greater the motivation will be for other people to join.'
   }
 ]

@@ -38,13 +38,13 @@ export default SE_Home_Opportunities
 const infoColumns = [
   {
     imageSrc: '/img/design-v2/icons/sections/etherium.svg',
-    title: 'Based on Etherium blockchain protocol',
+    title: 'Based on Ethereum blockchain protocol',
     text: 'Guaranteed security against hacking, corruption and loss of information thanks to complete decentralisation'
   },
   {
     imageSrc: '/img/design-v2/icons/sections/accelerator.svg',
     title: 'Independent fund and accelerator',
-    text: 'Outside projects and promising ideas can receive expert support and investment for a launch into the Humaniq system'
+    text: 'External projects and promising ideas can receive expert support and investment for a launch into the Humaniq system'
   },
   {
     imageSrc: '/img/design-v2/icons/sections/api.svg',
