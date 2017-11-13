@@ -113,7 +113,7 @@ const infoColumns = [
   },
   {
     title: 'Remote work',
-    text: 'Companies can utilise Humaniq\'s ever growing user base to carry out tasks involving the processing of information. Users can decode and translate texts, identify photographs, locate geotags and so on, in return for renumeration.'
+    text: 'Companies can utilise Humaniq\'s ever-growing user base to carry out tasks involving the processing of information. Users can decode and translate texts, identify photographs, locate geotags and so on, in return for renumeration.'
   },
   {
     title: 'Charity without corruption',
