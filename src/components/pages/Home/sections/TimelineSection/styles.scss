@@ -1,5 +1,5 @@
-@import "common/settings/variables";
-@import "common/utils";
+@import 'common/settings/variables';
+@import 'common/utils';
 
 .se-home-timeline {
   display: flex;
@@ -9,7 +9,7 @@
   padding: 0 120px 0 80px;
   background-color: $color-main-blue;
   @include media($desktop-xxl) {
-    padding: 0 80px 0 ;
+    padding: 0 80px 0;
   }
   @include media($tablet) {
     display: block;
@@ -67,7 +67,7 @@
       border: none;
     }
     &::before {
-      content: "";
+      content: '';
       display: block;
       box-sizing: border-box;
       position: absolute;
