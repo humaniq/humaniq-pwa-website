@@ -261,12 +261,12 @@ const team = [
     bio: 'Kherel is a digital nomad. He joined Humaniq to experience and participate in the financial evolution, and observe changes to the better in the country where he currently resides - China.',
     imgSrc: `${imgPath}/kherel_kechil.png`
   },
-  {
-    name: 'Serafima Semkina',
-    position: 'CAO',
-    bio: 'Bringing experience of management and economics, Serafima’s passions include art, music and Russian literature and the crypto-economy. She cannot stand inequality and is happy to have the opportunity to tackle it with Humaniq.',
-    imgSrc: `${imgPath}/serafima_semkina.png`
-  },
+  // {
+  //   name: 'Serafima Semkina',
+  //   position: 'CAO',
+  //   bio: 'Bringing experience of management and economics, Serafima’s passions include art, music and Russian literature and the crypto-economy. She cannot stand inequality and is happy to have the opportunity to tackle it with Humaniq.',
+  //   imgSrc: `${imgPath}/serafima_semkina.png`
+  // },
   {
     name: 'Harry Bright',
     position: 'CBDO',
