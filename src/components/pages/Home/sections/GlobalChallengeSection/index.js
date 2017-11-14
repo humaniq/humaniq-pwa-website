@@ -4,53 +4,43 @@ import M_SocialLinks_H from 'M_SocialLinks_H'
 import SectionCounter from '../common/SectionCounter/index.js'
 import InfoColumns from '../common/InfoColumns'
 import './styles.scss'
-import {cssClassName} from 'utils'
+import { cssClassName } from 'utils'
 
-const cn = cssClassName('SE_Home_GlobalChallenge');
+const cn = cssClassName('SE_Home_GlobalChallenge')
 
-const SE_Home_GlobalChallenge = ({mix}) => (
+const SE_Home_GlobalChallenge = ({ mix }) => (
   <section className={cn([mix])}>
     <div className={cn('content')}>
-      <A_Title_H
-        mix={cn('title')}
-        type='section'
-        theme='bright'
-      >
-        Humaniq global<br/> challenge
+      <A_Title_H mix={cn('title')} type="section" theme="bright">
+        Humaniq global<br /> challenge
       </A_Title_H>
 
       <InfoColumns
         mix={cn('info-columns')}
         columns={infoColumns}
-        type='narrow'
-        layout='global-challenge'
+        type="narrow"
+        layout="global-challenge"
       />
 
-      <M_SocialLinks_H
-        mix={cn('social-links')}
-        type='section'
-      >
-        You know how to enhance Humaniq?<br/> Join the global Humaniq community
+      <M_SocialLinks_H mix={cn('social-links')} type="section">
+        You know how to enhance Humaniq?<br /> Join the global Humaniq community
       </M_SocialLinks_H>
-
     </div>
-    <SectionCounter
-      sectionNum={10}
-      theme='dark'
-    />
+    <SectionCounter sectionNum={10} theme="dark" />
   </section>
 )
 
 export default SE_Home_GlobalChallenge
 
-
 const infoColumns = [
   {
     title: 'Life-changing technology',
-    text: 'Humaniq grew out of the idea that advanced technologies should benefit real people. Now, we want to inspire developers from all over the world to come and join our movement.'
+    text:
+      'Humaniq grew out of the idea that advanced technologies should benefit real people. Now, we want to inspire developers from all over the world to come and join our movement.',
   },
   {
     title: 'Big humanitarian impact',
-    text: 'Humaniq is not just a commercial project. It is a worldwide mission, aiming to give people in developing nations more power to change their lives.'
-  }
+    text:
+      'Humaniq is not just a commercial project. It is a worldwide mission, aiming to give people in developing nations more power to change their lives.',
+  },
 ]

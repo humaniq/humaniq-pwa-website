@@ -1,5 +1,5 @@
-@import "common/settings/variables";
-@import "common/utils";
+@import 'common/settings/variables';
+@import 'common/utils';
 
 .se-home-first-mobile {
   flex-direction: column;
@@ -30,7 +30,6 @@
     @include media($desktop-xxl) {
       margin-bottom: 30px;
     }
-
   }
   &__subtitle {
     margin-bottom: 80px;

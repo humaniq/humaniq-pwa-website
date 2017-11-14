@@ -1,5 +1,5 @@
-@import "common/settings/variables";
-@import "common/utils";
+@import 'common/settings/variables';
+@import 'common/utils';
 
 .se-home-team {
   flex-direction: column;
@@ -67,7 +67,7 @@
       &:hover::before {
         background-color: transparent;
       }
-      &:before{
+      &:before {
         content: '';
         position: absolute;
         display: block;
@@ -75,10 +75,10 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: transparentize($color-main-blue, .1);
+        background-color: transparentize($color-main-blue, 0.1);
         mix-blend-mode: multiply;
         border-radius: 100%;
-        transition: background-color .3s;
+        transition: background-color 0.3s;
       }
       @include media($desktop-xxl) {
         width: 190px;
@@ -109,7 +109,6 @@
     }
   }
 
-
   &__partners {
     position: absolute;
     bottom: 150px;
@@ -122,13 +121,14 @@
     }
   }
 
-  &__nav-prev, &__nav-next {
+  &__nav-prev,
+  &__nav-next {
     display: block;
     position: absolute;
     top: 50%;
     margin-top: -10px;
     cursor: pointer;
-    &:after{
+    &:after {
       content: '';
       display: block;
       height: 20px;
@@ -140,7 +140,7 @@
 
   &__nav-prev {
     left: -20px;
-    &:after{
+    &:after {
       transform: rotate(-135deg);
     }
     @include media($tablet) {
@@ -150,7 +150,7 @@
 
   &__nav-next {
     right: -20px;
-    &:after{
+    &:after {
       transform: rotate(45deg);
     }
     @include media($tablet) {
