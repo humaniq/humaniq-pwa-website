@@ -1,5 +1,5 @@
-@import "common/settings/variables";
-@import "common/utils";
+@import 'common/settings/variables';
+@import 'common/utils';
 
 .se-home-empowering {
   @include media($tablet) {
@@ -38,9 +38,8 @@
     width: 100%;
     height: 100%;
     overflow: hidden;
-    &-img{
-
-      &_type_mobile{
+    &-img {
+      &_type_mobile {
         display: none;
         width: 980px;
 
@@ -49,12 +48,11 @@
           float: right;
         }
       }
-      &_type_desktop{
+      &_type_desktop {
         display: block;
         width: 800px;
         @include media ($tablet) {
           display: none;
-
         }
       }
     }
@@ -93,7 +91,6 @@
     }
   }
 
-
   &__hmq-description {
     position: absolute;
     bottom: 233px;
@@ -103,7 +100,7 @@
     color: $color-black;
     line-height: 1.3;
     font-weight: 400;
-    letter-spacing: .02em;
+    letter-spacing: 0.02em;
     transform: rotate(-90deg);
     @include media($desktop-xxl) {
       left: -60px;
@@ -152,7 +149,7 @@
       font-family: $font-ProximaNova;
       font-size: 17px;
       text-transform: uppercase;
-      letter-spacing: .3em;
+      letter-spacing: 0.3em;
       @include media($desktop-xxl) {
         font-size: 12px;
       }
@@ -160,13 +157,12 @@
   }
 
   &__point {
-
     @include media ($tablet) {
       transform: scale(0.5);
       left: auto !important;
     }
 
-    &_number_1{
+    &_number_1 {
       top: 38rem;
       left: 18rem;
       @include media ($tablet) {
@@ -174,7 +170,7 @@
         right: 20rem;
       }
     }
-    &_number_2{
+    &_number_2 {
       top: 28rem;
       left: 30rem;
       @include media ($tablet) {
@@ -182,7 +178,7 @@
         right: 48rem;
       }
     }
-    &_number_3{
+    &_number_3 {
       top: 30rem;
       left: 45rem;
       @include media ($tablet) {
@@ -190,7 +186,7 @@
         right: 15rem;
       }
     }
-    &_number_4{
+    &_number_4 {
       top: 49rem;
       left: 28rem;
       @include media ($tablet) {
@@ -215,7 +211,7 @@
     box-sizing: border-box;
     span {
       display: block;
-      content: "";
+      content: '';
       position: absolute;
       top: 50%;
       left: 50%;
@@ -231,7 +227,6 @@
       animation-duration: 6s;
       animation-iteration-count: infinite;
       animation-fill-mode: both;
-
     }
     span:nth-child(2) {
       animation-delay: 1.5s;
@@ -242,7 +237,6 @@
     span:nth-child(4) {
       animation-delay: 4.5s;
     }
-
   }
   @keyframes pulse {
     from {
