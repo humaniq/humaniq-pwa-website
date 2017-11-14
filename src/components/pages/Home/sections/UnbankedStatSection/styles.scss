@@ -1,8 +1,7 @@
-@import "common/settings/variables";
-@import "common/utils";
+@import 'common/settings/variables';
+@import 'common/utils';
 
 .se-home-unbanked-stat {
-
   &__left-side {
     flex: 0 0 53%;
   }
@@ -54,7 +53,7 @@
     width: 412px;
     height: 412px;
     padding: 95px 0;
-    border: 5px solid rgba(113,175,252,.3);
+    border: 5px solid rgba(113, 175, 252, 0.3);
     border-radius: 50%;
     text-align: center;
     color: $color-main-deep-blue;
@@ -104,5 +103,4 @@
       display: block;
     }
   }
-
 }

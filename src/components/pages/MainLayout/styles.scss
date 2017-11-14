@@ -1,13 +1,16 @@
-@import "common/settings/variables";
-@import "common/utils";
+@import 'common/settings/variables';
+@import 'common/utils';
 
 .se-main-layout-h {
-  &__header_sticky_true,  &__sidebar, &__mobile-menu {
+  &__header_sticky_true,
+  &__sidebar,
+  &__mobile-menu {
     position: fixed;
     z-index: 100;
   }
 
-  &__header, &__mobile-menu {
+  &__header,
+  &__mobile-menu {
     top: 0;
     left: 0;
   }
@@ -21,5 +24,4 @@
       right: -170px;
     }
   }
-
 }

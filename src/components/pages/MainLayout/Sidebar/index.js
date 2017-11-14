@@ -1,8 +1,8 @@
-import React, {Component} from 'react'
-import * as T from "prop-types";
+import React, { Component } from 'react'
+import * as T from 'prop-types'
 import './styles.scss'
-import {cssClassName} from 'utils'
-import {Link} from 'react-router'
+import { cssClassName } from 'utils'
+import { Link } from 'react-router'
 
 const cn = cssClassName('SE_MainLayoutSidebar')
 
@@ -31,33 +31,25 @@ const cn = cssClassName('SE_MainLayoutSidebar')
 
 // sidebarLinks: ['Open source', 'Contact us', 'Subscribe'],
 
-
 class SE_MainLayoutSidebar extends Component {
-
-  _getMenuLinks = (links) => (
+  _getMenuLinks = links =>
     links.map(link => (
-      <li
-        className={cn('menu-link')}
-        key={`${link}-menu-link`}
-      >
+      <li className={cn('menu-link')} key={`${link}-menu-link`}>
         {link}
       </li>
     ))
-  )
 
   render() {
-    const {mix, theme, openPopup} = this.props
+    const { mix, theme, openPopup } = this.props
     return (
-      <nav
-        className={cn([mix])}
-      >
-        <div className={cn('angle',{theme})} />
+      <nav className={cn([mix])}>
+        <div className={cn('angle', { theme })} />
         <ul className={cn('menu')}>
           <li className={cn('menu-link')}>
-            <Link to='/open-source'>Open source</Link>
+            <Link to="/open-source">Open source</Link>
           </li>
           <li className={cn('menu-link')}>
-            <Link to='/contact-us'>Contact us</Link>
+            <Link to="/contact-us">Contact us</Link>
           </li>
           <li className={cn('menu-link')}>
             <span className={cn('list-item-pop-up')} onClick={() => openPopup('subscribe')}>
@@ -78,9 +70,9 @@ SE_MainLayoutSidebar.propTypes = {
   theme: T.oneOf([
     'dark', // black angle
     'bright', // white angle
-  ])
-};
+  ]),
+}
 
 SE_MainLayoutSidebar.defaultProps = {
   theme: 'bright',
-};
+}
