@@ -11,12 +11,9 @@ const _getQuotesSlides = quotes => {
   let res = []
   const genSlidesArray = keysName =>
     quotes.map((quote, index) => {
-      const slideStyle = {
-        // backgroundImage: `url('/img/design-v2/sections/quotes/quotes.png'), url(${quote.img})`,
-      }
 
       return (
-        <div key={`quote-${keysName + (index + 1)}`} className={cn('slide')} style={slideStyle}>
+        <div key={`quote-${keysName + (index + 1)}`} className={cn('slide')}>
           <div className={cn('slide-content')}>
             <A_Title mix={cn('slide-title')} type="section" theme="bright">
               {quote.title}
@@ -69,13 +66,10 @@ class SE_Home_Quotes extends Component {
         <div className={cn('slider')} style={{ transform: `translateX(-${pctX}%)` }}>
           {_getQuotesSlides(quotes)}
         </div>
+        <div className={cn('slider-nav', {type: 'prev'})} onClick={this.prev} />
+        <div className={cn('slider-nav', {type: 'next'})} onClick={this.next} />
 
         <SectionCounter mix={cn('counter')} sectionNum={4} theme="dark" />
-
-        <div className={cn('nav')}>
-          <div className={cn('nav-prev')} onClick={this.prev} />
-          <div className={cn('nav-next')} onClick={this.next} />
-        </div>
       </section>
     )
   }
