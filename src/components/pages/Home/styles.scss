@@ -1,11 +1,11 @@
-@import "common/settings/variables";
-@import "common/utils";
+@import 'common/settings/variables';
+@import 'common/utils';
 
 .home {
   $c: &;
   overflow: hidden;
   height: 100vh;
-  &_scroll_true{
+  &_scroll_true {
     height: auto;
     overflow-x: hidden;
     overflow-y: auto;
@@ -48,14 +48,12 @@
     }
   }
 
-
-
-  &__inner{
+  &__inner {
     will-change: transform, scroll-position;
-    transition: transform .4s ease-out;
+    transition: transform 0.4s ease-out;
   }
 
-  &__side-menu{
+  &__side-menu {
     position: fixed;
     left: 2rem;
     top: 50%;
@@ -64,19 +62,19 @@
     @include media ($desktop-xl) {
       display: none;
     }
-    @at-root #{$c}__dot{
+    @at-root #{$c}__dot {
       height: 1.2rem;
       border-radius: 50%;
       border: 1px solid $h-black-1;
       width: 1.2rem;
       display: block;
-      transition: background-color .3s linear;
-      &_selected_true{
+      transition: background-color 0.3s linear;
+      &_selected_true {
         background-color: $h-black-1;
       }
     }
 
-    &-item{
+    &-item {
       height: 2.8rem;
       width: 2.8rem;
       display: flex;
