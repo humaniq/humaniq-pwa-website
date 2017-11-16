@@ -14,7 +14,7 @@ import Wiki from './Wiki'
 // import Form from './Form'
 // import Partners from './Partners'
 // import Cases from './Cases'
-// import About from './About'
+import About from './About'
 
 const getRoutes = (store) => {
   return (
@@ -50,7 +50,10 @@ const getRoutes = (store) => {
           component={Error}
         />
 
-        <Redirect from='about' to='/' />
+        <Route
+          path="/about"
+          component={About}
+        />
 
       </Route>
 
