@@ -20,8 +20,8 @@ class O_TransactionHolder extends Component {
             {address && <A_Link to={`/hmq-explorer/token-holders/${address}`} type='hmq-card'>{address}</A_Link>}
           </div>
           <div className={cn('row')}>
-            {rank && <div className={cn('label', {'type':'wide'})}>Rank:</div>}
-            {rank && <div className={cn('value')}>{rank}</div>}
+            {rank && <div className={cn('label', {'type':'wide'})}>{rank !== 1 ? 'Rank:' : 'Bittrex'} </div>}
+            {rank && rank !== 1 && <div className={cn('value')}>{rank}</div>}
           </div>
         </div>
 
