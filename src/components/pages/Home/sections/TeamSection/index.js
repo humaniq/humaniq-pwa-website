@@ -248,8 +248,7 @@ const team = [
   {
     name: 'Kirill Goryunov',
     position: 'CPO',
-    bio:
-      'Bringing experience of management and economics, Serafima’s passions include art, music and Russian literature and the crypto-economy. She cannot stand inequality and is happy to have the opportunity to tackle it with Humaniq.',
+    bio: '',
     imgSrc: `${imgPath}/kirill_goryunov.jpg`,
   },
   {
