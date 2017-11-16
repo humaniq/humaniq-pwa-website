@@ -85,6 +85,7 @@
     z-index: 100;
     transform: scaleY(.5);
     opacity: 0;
+    pointer-events: none;
 
     &_closed_false{
       transition-property: transform, opacity;
@@ -93,7 +94,7 @@
       transition-delay: 0ms, 0ms;
       transform-origin: left top 0px;
       opacity: 1;
-
+      pointer-events: auto;
       transform: scaleY(1);
     }
 

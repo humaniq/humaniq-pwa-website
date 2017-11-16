@@ -61,9 +61,6 @@ const dark = ['mobile', 'situation', 'platform', 'opportunities', 'use cases', '
 
 const showingWidth = 1120
 
-let a = 0
-let b = false
-
 class Home extends Component {
   state = {
     showIndex: this.props.showIndex || 0,

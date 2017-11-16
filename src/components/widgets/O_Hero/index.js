@@ -3,9 +3,8 @@ import * as T from "prop-types";
 import './styles.scss';
 import {cssClassName} from 'utils'
 const cn = cssClassName('O_Hero')
-import A_Image from 'A_Image'
 
-const O_Hero = ({img, children}) => (
+const O_Hero = ({children}) => (
   <div className={cn('root')}>
     {/*<div className={cn('image')}>*/}
       {/*<A_Image {...img} />*/}
