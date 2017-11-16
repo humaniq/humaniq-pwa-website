@@ -39,7 +39,7 @@ const infoColumns = [
       '10 Finalists will receive expert advice from top consultants in their field, as well as the chance to gain investment and to enter the Humaniq accelerator.',
   },
   {
-    title: 'Trip to Kenia',
+    title: 'Trip to Kenya',
     text:
       'The three best teams will go on a trip to Kenya to learn more about the lives of the unbanked and put the finishing touches to their projects ahead of an ICO, which will be supported by Humaniq.',
   },
