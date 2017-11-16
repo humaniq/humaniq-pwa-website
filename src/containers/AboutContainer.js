@@ -135,12 +135,12 @@ const team = [
     bio: '',
     imgSrc: `${imgPath}/hazem_danny.jpg`,
   },
-  // {
-  //   name: 'Anton Mozgovoy',
-  //   position: 'Team Lead',
-  //   bio: 'Anton was motivated to work with Humaniq to use his experience in both computer science and finance to help to bring happiness for all across the world. He is passionate about freedriving and wakeboarding, and, of course, staying late to finish work.',
-  //   imgSrc: `${imgPath}/anton_mozgovoy.png`
-  // },
+  {
+    name: 'Anton Mozgovoy',
+    position: 'Team Lead',
+    bio: 'Anton was motivated to work with Humaniq to use his experience in both computer science and finance to help to bring happiness for all across the world. He is passionate about freedriving and wakeboarding, and, of course, staying late to finish work.',
+    imgSrc: `${imgPath}/anton_mozgovoy.png`
+  },
   {
     name: 'Peyman Irani',
     position: 'SMM, CSS',
