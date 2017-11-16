@@ -103,20 +103,22 @@ class SE_About extends Component {
           key={kebabName}
           ref={ node => this.nodes[kebabName] = node}
         >
-          <A_Image
-            src={imgSrc}
-            alt={name}
-            rounded
-          />
-          <span className={cn('tooltip', {type: tooltipPlace})}>
-            <M_Tooltip type={tooltipPlace} size="wide">
-              <A_H type='tooltip'>{name}</A_H>
-              {position &&
+          <div className={cn('team-member-img')}>
+            <A_Image
+              src={imgSrc}
+              alt={name}
+              rounded
+            />
+            <span className={cn('tooltip', {type: tooltipPlace})}>
+              <M_Tooltip type={tooltipPlace} size="wide">
+                <A_H type='tooltip'>{name}</A_H>
+                {position &&
                 <A_H type='tooltip-sub'>{position}</A_H>
-              }
-              <span dangerouslySetInnerHTML={{__html: bio}}/>
-            </M_Tooltip>
-          </span>
+                }
+                <span dangerouslySetInnerHTML={{__html: bio}}/>
+              </M_Tooltip>
+            </span>
+          </div>
         </div>
       )
     })
@@ -178,7 +180,7 @@ class SE_About extends Component {
 }
 
 SE_About.propTypes = {
-  founders: T.array.isRequired,
+  //founders: T.array.isRequired,
   advisers: T.array.isRequired,
   team: T.array.isRequired
 };
