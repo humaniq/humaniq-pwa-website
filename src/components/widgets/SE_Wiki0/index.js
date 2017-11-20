@@ -30,7 +30,7 @@ class SE_Wiki0 extends Component {
               <A_Link type='block' to="/wiki/technical-mecca">
                 <A_Image src='/img/illustrations/wiki-technical-mecca.svg' alt='Technical Mecca '/>
                 <div className={cn('hero-item-text')}>
-                  Technical Mecca
+                  Technical Hub
                 </div>
               </A_Link>
             </div>
