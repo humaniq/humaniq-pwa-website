@@ -36,10 +36,10 @@ const infoColumns = [
   {
     title: 'Life-changing technology',
     text:
-      'Humaniq grew out of the idea that advanced technologies should benefit real people. Now, we want to inspire developers from all over the world to come and join our movement.',
+      'Humaniq grew out of the idea that advanced technologies should benefit everybody. Now, we want to inspire developers from all over the world to come and join our movement.',
   },
   {
-    title: 'Big humanitarian impact',
+    title: 'Humanitarian impact',
     text:
       'Humaniq is not just a commercial project. It is a worldwide mission, aiming to give people in developing nations more power to change their lives.',
   },

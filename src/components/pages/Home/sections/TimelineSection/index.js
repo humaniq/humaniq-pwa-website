@@ -43,7 +43,7 @@ const timelineEvents = [
     event: 'Launch of the Humaniq accelerator',
   },
   {
-    date: 'October 2017',
+    date: 'November 2017',
     event: 'Humaniq Expedition',
   },
   {
