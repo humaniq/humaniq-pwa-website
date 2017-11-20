@@ -54,7 +54,7 @@ const hmqMentions = [
     title: 'Cointelegraph.com:',
     url:
       'https://cointelegraph.com/news/ethereum-based-humaniq-to-deliver-banking-40-to-2-bln-unbanked',
-    urlText: 'Ethereum-Based Humaniq To Deliver Banking 4.0 to 2 Bln Unbanked',
+    urlText: 'Ethereum-Based Humaniq To Deliver Banking 4.0 to 2 Bin Unbanked',
   },
   {
     title: 'Finance.yahoo.com:',
