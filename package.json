@@ -8,10 +8,6 @@
     "node": "6.11.0"
   },
   "scripts": {
-    "personal-build": "NODE_ENV=production node ./personalinitializers/webpack/build.js",
-    "personal-dev": "NODE_ENV=development nodemon --watch ./personalinitializers --watch personalwebpack.config.js ./personalinitializers/server/index.js",
-    "personal-start": "NODE_ENV=production node ./personalinitializers/server/index.js",
-    "personal-dev2": "NODE_ENV=development NO_SSR=true nodemon --watch ./personalinitializers --watch personalwebpack.config.js ./personalinitializers/server/index.js",
     "api": "cd simple-api && nodemon server.js",
     "build": "NODE_ENV=production node ./initializers/webpack/build.js",
     "start": "NODE_ENV=production node ./initializers/server/index.js",
