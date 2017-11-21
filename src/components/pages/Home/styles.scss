@@ -16,6 +16,25 @@
     overflow-y: auto;
   }
 
+  &__scroll-up {
+    z-index: 999;
+    position: fixed;
+    top: 33px;
+    left: 65px;
+    width: 150px;
+    height: 35px;
+    cursor: pointer;
+    @include media($desktop-xxl) {
+      top: 22px;
+      width: 105px;
+      height: 25px;
+    }
+    @include media($desktop-xl) {
+      top: 19px;
+    }
+
+  }
+
   &__section {
     position: relative;
     display: flex;
