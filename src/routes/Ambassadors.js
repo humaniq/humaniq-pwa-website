@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import AmbassadorsContainer from 'containers/AmbassadorsContainer'
+import AmbassadorsContainer from 'components/pages/Ambassadors/container'
 import {fetchAmbassadors} from 'store/entities/ambassadors/actions'
 import {setTheme} from 'store/entities/navigation/actions'
 import initialLoad from 'utils/initialLoad'

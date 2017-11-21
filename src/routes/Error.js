@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import T from "prop-types";
-import SE_Error from 'SE_Error'
+import Page from 'components/pages/Error/page'
 import {setTheme} from 'store/entities/navigation/actions'
 import initialLoad from 'utils/initialLoad'
 
@@ -12,7 +12,7 @@ class ErrorRoute extends Component {
   render() {
     const {params:{err}, location:{query:{url, error}}} = this.props
     return (
-      <SE_Error {...{err, url, error}}/>
+      <Page {...{err, url, error}}/>
     )
   }
 }

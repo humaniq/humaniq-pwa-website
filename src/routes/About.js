@@ -1,8 +1,15 @@
-import React, {Component} from 'react';
-import AboutContainer from 'containers/AboutContainer'
+import React, {Component} from 'react'
+import AboutContainer from 'components/pages/About/container'
+import {setTheme} from 'store/entities/navigation/actions'
+import initialLoad from 'utils/initialLoad'
 
 
-class PartnersRoute extends Component {
+class AboutRoute extends Component {
+
+  static prepareData({dispatch}) {
+    if(initialLoad()) return;
+    dispatch(setTheme('dark'))
+  }
 
   render() {
     return (
@@ -11,4 +18,4 @@ class PartnersRoute extends Component {
   }
 }
 
-export default PartnersRoute;
+export default AboutRoute

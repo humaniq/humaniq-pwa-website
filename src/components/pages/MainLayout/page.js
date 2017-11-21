@@ -4,22 +4,19 @@ import './styles.scss'
 import Header from './Header'
 import Sidebar from './Sidebar'
 import MobileMenu from './MobileMenu'
-import O_Popup from './../../h_widgets/O_Popup_H'
+import O_Popup from 'O_Popup_H'
 import { cssClassName } from 'utils'
 const cn = cssClassName('SE_MainLayout_H')
 import O_Footer_H from 'O_Footer_H'
 class SE_MainLayout_H extends Component {
+
   state = {
     headerLinks: ['Humaniq Wiki', 'HMQ Explorer', 'Challenge', 'Ambassadors'],
     sidebarLinks: ['Open source', 'Contact us', 'Subscribe'],
   }
 
-  toggleMobileMenu = () => {
-    this.setState({ mobileMenuIsActive: !this.state.mobileMenuIsActive })
-  }
-
   render() {
-    const { headerLinks, sidebarLinks, mobileMenuIsActive } = this.state
+    const { headerLinks, sidebarLinks } = this.state
     const {
       children,
       popupType,

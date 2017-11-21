@@ -61,9 +61,6 @@ const dark = ['mobile', 'situation', 'platform', 'opportunities', 'use cases', '
 
 const showingWidth = 1120
 
-let a = 0
-let b = false
-
 class Home extends Component {
   state = {
     showIndex: this.props.showIndex || 0,
@@ -154,6 +151,10 @@ class Home extends Component {
     }
   }
 
+  handleScrollUp = () => {
+    this.setState({ showIndex: 0 })
+  }
+
   componentDidMount() {
     window.addEventListener('resize', this.getWidth)
   }
@@ -194,7 +195,8 @@ class Home extends Component {
         <div className={cn('inner')} style={{ transform: `translate3d(0, ${-positionY}vh, 0px` }}>
           {sectionsNames.map(name => this.sectionsObj[name])}
         </div>
-        {isMobile.any || sideMenu}
+        { isMobile.any || sideMenu }
+        {showIndex > 0 && (<div className={cn('scroll-up')} onClick={this.handleScrollUp}/>)}
       </div>
     )
   }
