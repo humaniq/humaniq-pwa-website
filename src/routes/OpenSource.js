@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import OpenSourceContainer from 'containers/OpenSourceContainer'
+import OpenSourceContainer from 'components/pages/OpenSource/container'
 import {setTheme} from 'store/entities/navigation/actions'
 import initialLoad from 'utils/initialLoad'
 

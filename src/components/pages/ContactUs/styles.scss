@@ -1,0 +1,41 @@
+@import "common/settings/variables";
+@import "common/utils";
+
+
+.contact-us{
+  &__section-wrapper {
+  }
+  &__contactus{
+
+    &-header{
+      display: flex;
+
+      &-image{
+        margin-right: 5.5rem;
+        //left: -.8rem;
+        //top: -.5rem;
+        @include media($mobile) {
+          display: none;
+        }
+      }
+    }
+  }
+  &__support {
+    padding-top: 2rem;
+  }
+  &__policy {
+    padding-top: 4rem;
+  }
+  &__partnerships {
+    @extend .contact-us__policy;
+  }
+  &__program {
+    @extend .contact-us__policy;
+  }
+  &__office {
+    @extend .contact-us__policy;
+  }
+  &__address {
+    padding-top: 5px;
+  }
+}

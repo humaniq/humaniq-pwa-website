@@ -1,0 +1,34 @@
+@import "common/settings/variables";
+@import "common/utils";
+
+
+.error{
+  &__section-wrapper {
+  }
+  &__error{
+
+    &-main{
+      display: flex;
+      justify-content: center;
+      margin: 13rem 0;
+      @include media($mobile) {
+        display: block;
+        margin: 5rem 0 5rem 0;
+      }
+
+      &-image{
+        margin-right: 2.5rem;
+      }
+      &-message{
+        width: 36rem;
+        @include media($tablet) {
+          width: auto;
+        }
+      }
+    }
+  }
+  &__message {
+    display: inline-block;
+    padding-bottom: 2rem;
+  }
+}
