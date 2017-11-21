@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import ContactUsContainer from 'containers/ContactUsContainer'
+import ContactUsContainer from 'components/pages/ContactUs/container'
 import {setTheme} from 'store/entities/navigation/actions'
 import initialLoad from 'utils/initialLoad'
 
