@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
-import LegalContainer from 'containers/LegalContainer'
+import LegalContainer from 'components/pages/Legal/container'
 import {setTheme} from 'store/entities/navigation/actions'
 import initialLoad from 'utils/initialLoad'
 
 class LegalRoute extends Component {
 
-  static prepareData({dispatch, getState}, query, params, location) {
+  static prepareData({dispatch}) {
     if(initialLoad()) return;
     dispatch(setTheme('dark'))
   }

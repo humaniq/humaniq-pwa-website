@@ -1,8 +1,8 @@
-import React, {Component} from 'react';
-import AboutContainer from 'containers/AboutContainer'
+import React, {Component} from 'react'
+import AboutContainer from 'components/pages/About/container'
 
 
-class PartnersRoute extends Component {
+class AboutRoute extends Component {
 
   render() {
     return (
@@ -11,4 +11,4 @@ class PartnersRoute extends Component {
   }
 }
 
-export default PartnersRoute;
+export default AboutRoute

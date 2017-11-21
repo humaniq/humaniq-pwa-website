@@ -28,13 +28,13 @@ const teamOptions = {
   },
 }
 
-const mobPartnersOptions = {
-  items: 3,
-  loop: true,
-  nav: false,
-  dots: false,
-  center: true,
-}
+// const mobPartnersOptions = {
+//   items: 3,
+//   loop: true,
+//   nav: false,
+//   dots: false,
+//   center: true,
+// }
 
 // const events = {
 //   onDragged: function(event) {...},
