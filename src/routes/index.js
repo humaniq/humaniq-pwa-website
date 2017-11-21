@@ -43,6 +43,7 @@ const getRoutes = (store) => {
         <Route
           path="/about"
           component={About}
+          prepareData={About.prepareData}
         />
         <Route
           path="/error/:err"
