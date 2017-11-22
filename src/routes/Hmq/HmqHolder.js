@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {fetchHmqHolder, fetchHmqHolderT} from 'store/entities/hmqHolder/actions'
 import initialLoad from 'utils/initialLoad'
-import HmqHolderContainer from 'containers/HmqHolderContainer'
+import HmqHolderContainer from 'components/pages/HmqHolder/container'
 
 class HmqHolder extends Component {
 

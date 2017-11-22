@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import HmqSearchContainer from 'containers/HmqSearchContainer'
+import HmqSearchContainer from 'components/pages/HmqSearch/container'
 import {parse} from 'qs'
 import {hmqSearch} from 'store/entities/hmqSearch/actions'
 import initialLoad from 'utils/initialLoad'
