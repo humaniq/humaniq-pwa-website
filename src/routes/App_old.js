@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import * as T from "prop-types";
-import MainLayoutContainer from 'containers/MainLayoutContainer.js'
+import MainLayoutContainer from 'components/pages/MainLayout_old/container'
 import initialLoad from 'utils/initialLoad'
 import {setRoute} from 'store/entities/navigation/actions'
 import {fetchWiki} from 'store/entities/wikiArticles/actions';

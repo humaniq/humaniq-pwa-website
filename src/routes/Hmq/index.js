@@ -1,8 +1,7 @@
 import React from 'react';
 import {Route, IndexRoute} from 'react-router'
 import HmqLayout from './HmqLayout'
-import HmqTest from './HmqTest'
-import HmqLog from './HmqLog'
+import HmqTransactions from './HmqTransactions'
 import HmqHash from './HmqHash'
 import HmqMarkets from './HmqMarkets'
 import HmqHolders from './HmqHolders'
@@ -26,8 +25,8 @@ const Hmq = (store) => (
     />
     <Route path="transaction-log" >
       <IndexRoute
-        component={HmqLog}
-        prepareData={HmqLog.prepareData}
+        component={HmqTransactions}
+        prepareData={HmqTransactions.prepareData}
       />
       <Route path=":hash" component={HmqHash} prepareData={HmqHash.prepareData}/>
     </Route>
@@ -50,7 +49,6 @@ const Hmq = (store) => (
            component={HmqMarkets}
            prepareData={HmqMarkets.prepareData}
     />
-    <Route path="test" component={HmqTest}/>
     <Route path="block/:block" component={HmqBlock} prepareData={HmqBlock.prepareData}/>
     <Route
       path="search"
