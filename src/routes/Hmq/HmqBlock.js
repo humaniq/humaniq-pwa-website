@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import HmqBlockContainer from 'containers/HmqBlockContainer'
+import HmqBlockContainer from 'components/pages/HmqBlock/container'
 import {fetchHmqBlock} from 'store/entities/hmqBlock/actions'
 import initialLoad from 'utils/initialLoad'
 

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Wiki0Container from 'containers/Wiki0Container'
+import Wiki0Container from 'components/pages/Wiki0/container'
 
 
 class Wiki0Route extends Component {

@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {fetchHmqHash} from 'store/entities/hmqHash/actions'
-import HmqHashContainer from 'containers/HmqHashContainer'
+import HmqHashContainer from 'components/pages/HmqHash/container'
 
 
 class HmqTxHash extends Component {

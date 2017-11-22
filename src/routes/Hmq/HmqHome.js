@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import HmqHomeContainer from 'containers/HmqHomeContainer'
+import HmqHomeContainer from 'components/pages/HmqHome/container'
 
 import {fetchHmqStatistics} from 'store/entities/hmqStatistic/actions'
 import {fetchGraphData} from 'store/entities/hmqGraph/actions'
