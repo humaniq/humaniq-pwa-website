@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {fetchHmqMarkets} from 'store/entities/hmqMarkets/actions'
 import initialLoad from 'utils/initialLoad'
-import HmqMarketsContainer from 'containers/HmqMarketsContainer'
+import HmqMarketsContainer from 'components/pages/HmqMarkets/container'
 
 class HmqMarkets extends Component {
 

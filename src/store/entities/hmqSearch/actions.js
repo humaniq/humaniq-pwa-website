@@ -1,5 +1,5 @@
 import {BACKEND_CALL} from 'middleware/humaniqBackendApi'
-import {ENDPOINT_HMQ_SEARCH, ENDPOINT_PERSONAL_HEADERS} from 'constants/api'
+import {ENDPOINT_HMQ_SEARCH, AUTH_HEADERS} from 'constants/api'
 import {HMQ_SEARCH, CLEAN} from 'store/constants'
 import {typesArray} from 'utils/actionHelpers'
 
@@ -8,7 +8,7 @@ export function hmqSearch({searchTerm}) {
     [BACKEND_CALL]: {
       endpoint: ENDPOINT_HMQ_SEARCH,
       method: 'POST',
-      headers: ENDPOINT_PERSONAL_HEADERS,
+      headers: AUTH_HEADERS,
       payload: {searchTerm},
       types: typesArray(HMQ_SEARCH),
       data: searchTerm

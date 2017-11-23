@@ -6,7 +6,6 @@ import wikiSearch from 'store/entities/wikiSearch/reducer'
 import hmqGraph from 'store/entities/hmqGraph/reducer'
 // import transactions from 'store/entities/transactions/reducer'
 import ambassadors from 'store/entities/ambassadors/reducer'
-import personal from 'store/entities/personal/reducer'
 import hmqStatistic from 'store/entities/hmqStatistic/reducer'
 import hmqMarkets from 'store/entities/hmqMarkets/reducer'
 import hmqHolders from 'store/entities/hmqHolders/reducer'
@@ -33,5 +32,4 @@ export default combineReducers({
   hmqHash,
   hmqSearch,
   // transactions,
-  personal
 })
