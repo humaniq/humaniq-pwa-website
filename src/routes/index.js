@@ -11,6 +11,7 @@ import OpenSource from './OpenSource'
 import Ambassadors from './Ambassadors'
 import HmqExplorer from './Hmq'
 import Wiki from './Wiki'
+import KnowledgeBase from './KnowledgeBase'
 
 const getRoutes = (store) => {
   return (
@@ -51,6 +52,10 @@ const getRoutes = (store) => {
           component={Error}
         />
 
+        <Route path="kb"
+           prepareData={KnowledgeBase.prepareData}
+           component={KnowledgeBase}
+        />
       </Route>
 
       <Route
