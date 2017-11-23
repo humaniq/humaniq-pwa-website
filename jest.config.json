@@ -4,9 +4,7 @@
   "modulePaths": [
     "./",
     "<rootDir>/src",
-    "<rootDir>/src/components",
-    "<rootDir>/personalsrc",
-    "<rootDir>/personalsrc/components"
+    "<rootDir>/src/components"
   ],
   "unmockedModulePathPatterns": [
     "<rootDir>/node_modules/"
