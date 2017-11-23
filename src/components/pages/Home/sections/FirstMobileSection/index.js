@@ -15,8 +15,7 @@ const SE_Home_FirstMobile = ({ mix }) => (
         The first mobile service with<br />the capacity to change the world
       </A_Title_H>
       <p className={cn('subtitle')}>
-        Humaniq is a fourth generation mobile bank with its own<br />cryptocurrency, which is
-        bringing millions of unbanked<br />people into one financial network
+        Humaniq is a new generation financial services<br/> with its own cryptocurrency, which is aimed at<br/> eradicating poverty amongst millions of people<br/> living in the emerging economies
       </p>
       <div className={cn('columns-wrapper')}>
         <InfoColumns mix={cn('info-columns')} columns={infoColumns} type="narrow" />
