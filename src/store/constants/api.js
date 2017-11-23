@@ -24,11 +24,7 @@ export const ENPOINT_AMBASSADORS_LIST = `${ENPOINT_AMBASSADORS}/ambassadors.json
 
 export const ENDPOINT_WIKI_SEARCH = 'https://f03pn9k2v8.execute-api.eu-west-1.amazonaws.com/dev/articles/search'
 
-export const ENDPOINT_PERSONAL = 'https://api.humaniq.com/hmqref/api/v1'
-export const ENDPOINT_PERSONAL_HEADERS = {Authorization: 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJkOGE5ZjhhNTk3YzU0ZjkxOWVlZDRmMWRmOTU2NjQwMiIsImlhdCI6MTUwMjI2NzM3NSwiZXhwIjpudWxsLCJhdWQiOiJodHRwOi8vaHVtYW5pcS5jb20iLCJzdWIiOiIifQ.VtxsTEM9pQTdQ1Acr1BL_v-4wk2Hgl3Wwjdfjy5iBmI'}
-
-export const ENDPOINT_PERSONAL_DATA = `${ENDPOINT_PERSONAL}/user/`
-export const ENDPOINT_PERSONAL_REFERRER = `${ENDPOINT_PERSONAL}/referrers/`
+export const AUTH_HEADERS = {Authorization: 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJkOGE5ZjhhNTk3YzU0ZjkxOWVlZDRmMWRmOTU2NjQwMiIsImlhdCI6MTUwMjI2NzM3NSwiZXhwIjpudWxsLCJhdWQiOiJodHRwOi8vaHVtYW5pcS5jb20iLCJzdWIiOiIifQ.VtxsTEM9pQTdQ1Acr1BL_v-4wk2Hgl3Wwjdfjy5iBmI'}
 
 
 export const ENDPOINT_HMQ_STATISTICS = `${HUMANIQ_BACKEND_API_URL}/dev/blockchain/stats?extended=true`

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import WikiLayoutContainer from 'containers/WikiLayoutContainer'
+import WikiLayoutContainer from 'components/pages/WikiLayout/container'
 import {fetchWiki} from "entities/wikiArticles/actions";
 
 
