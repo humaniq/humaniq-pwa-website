@@ -1,0 +1,26 @@
+@import 'common/settings/variables';
+@import 'common/utils';
+
+.menu-kb {
+  padding: 15px 0;
+  &__article-links {
+    margin-bottom: 15px;
+    &:nth-last-child(1) {
+      margin-bottom: 0;
+    }
+  }
+
+  &__article-link {
+    font-weight: bold;
+    font-size: 20px;
+  }
+
+  &__section-links {
+    padding-left: 15px;
+  }
+
+  &__section-link {
+    display: block;
+    font-size: 16px;
+  }
+}

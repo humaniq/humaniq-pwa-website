@@ -29,6 +29,7 @@
     "progress-bar-webpack-plugin": "^1.9.3",
     "react": "^15.3.1",
     "react-background-video-player": "^0.3.0",
+    "react-code-prettify": "0.0.1",
     "react-dom": "^15.3.1",
     "react-helmet": "^5.0.3",
     "react-redux": "^5.0.4",
