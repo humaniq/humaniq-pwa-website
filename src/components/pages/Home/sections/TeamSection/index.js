@@ -298,7 +298,7 @@ const team = [
     imgSrc: `${imgPath}/danny_kass.png`,
   },
   {
-    name: 'Andriy Schechenko',
+    name: 'Andrey Shevchenko',
     position: 'SMM, CSS',
     bio:
       'Andriy has experience in computer science, security research, online community building and entrepreneurship and is passionate about both improving the world and space exploration. At Humaniq he wants to contribute to something good for humanity and boost financial independence.',
