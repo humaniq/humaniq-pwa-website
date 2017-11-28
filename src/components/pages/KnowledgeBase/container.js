@@ -2,14 +2,29 @@ import {connect} from 'react-redux';
 import page from './page'
 
 function mapStateToProps() {
-  return {kbArticles};
+
+  const articles = kbArticles.map((article, articleNum) => {
+    const articleId = `article-${articleNum + 1}`
+    return {
+      ...article,
+      id: articleId,
+      sections: article.sections.map((section, sectionNum) => {
+        const sectionId = `${articleId}-section-${sectionNum + 1}`
+        return {
+          ...section,
+          id: sectionId
+        }
+      })
+    }
+  })
+
+  return {articles};
 }
 
 export default connect(mapStateToProps)(page);
 
 const kbArticles = [
   {
-    id: 'article-1',
     title: 'Smart Contracts',
     sections: [
       {
@@ -60,7 +75,6 @@ const kbArticles = [
     ]
   },
   {
-    id: 'article-2',
     title: 'Article 2',
     sections: [
       {
@@ -108,7 +122,6 @@ const kbArticles = [
     ]
   },
   {
-    id: 'article-3',
     title: 'Article 3',
     sections: [
       {

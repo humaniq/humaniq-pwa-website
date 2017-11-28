@@ -5,12 +5,13 @@ import './styles.scss'
 import {cssClassName} from 'utils'
 const cn = cssClassName('kb-article-section')
 
-const Section = ({mix, sectionId, sectionData: {title: sectionTitle, content, sampleCode}}) => (
+const Section = ({mix, anchorRef, sectionData: {id, title, content, sampleCode}}) => (
   <section
-    id={sectionId}
+    ref={anchorRef}
+    id={id}
     className={cn([mix])}
   >
-    <h4 className={cn('title')}>{sectionTitle}</h4>
+    <h4 className={cn('title')}>{title}</h4>
     <p
       className={cn('content')}
       dangerouslySetInnerHTML={{__html: content}}

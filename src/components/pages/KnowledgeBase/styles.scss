@@ -8,20 +8,23 @@
   height: 100%;
   display: flex;
   //background-color: transparentize(green, .5);
-  &__menu, &__articles {
-    overflow-y: scroll;
-  }
+
   &__menu {
-    width: 20%;
+    width: 200px;
     flex-shrink: 0;
     padding: 15px 10px;
     //background-color: transparentize(red, .5);
   }
   &__articles {
     flex-grow: 1;
-    padding: 0 20px;
-    overflow-y: scroll;
     //background-color: transparentize(yellow, .5);
+    .custom-scrollbar {
+
+    }
+    .inner-handle {
+      border-radius: 0;
+      background-color: $color-main-light-blue;
+    }
   }
 
   &__article {
@@ -32,10 +35,11 @@
   }
 
   &__sections {
-    padding-left: 20px;
+
   }
 
   &__section {
+    padding-left: 20px;
     margin-bottom: 30px;
     &:nth-last-child(1) {
       margin-bottom: 0;

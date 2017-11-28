@@ -5,13 +5,14 @@ import {cssClassName} from 'utils'
 const cn = cssClassName('kb-article')
 
 
-const Article = ({mix, children, articleData: {id: articleId, title: articleTitle}}) => (
+const Article = ({mix, children, anchorRef, articleData: {id, title}}) => (
   <article
-    id={articleId}
+    ref={anchorRef}
+    id={id}
     className={cn([mix])}
   >
     <h3 className={cn('title')}>
-      {articleTitle}
+      {title}
     </h3>
     {children}
   </article>
@@ -19,7 +20,7 @@ const Article = ({mix, children, articleData: {id: articleId, title: articleTitl
 
 Article.propTypes = {
   mix: T.string, //BEM mixin from parent block
-  articleData: T.object.isRequired, //BEM mixin from parent block
+  articleData: T.object.isRequired, //article data
 };
 
 export default Article

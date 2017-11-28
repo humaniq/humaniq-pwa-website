@@ -4,7 +4,7 @@
 .a-code {
   display: block;
   padding: 10px 15px 10px 35px;
-  background: #1d1f21;
+  background-color: darken($color-main-deep-blue, 35%);
   font-family: monospace;
 
   .pln {
@@ -23,7 +23,6 @@
   li.L7,
   li.L8,
   li.L9 {
-    background-color: #1d1f21;
     list-style-type: decimal;
   }
   @media screen {

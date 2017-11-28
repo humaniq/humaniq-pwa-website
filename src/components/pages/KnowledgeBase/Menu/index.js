@@ -4,35 +4,35 @@ import './styles.scss';
 import {cssClassName} from 'utils'
 const cn = cssClassName('kb-menu')
 
-const _createArticleLinks = (articleId, articleTitle, sections) => (
+const _createArticleLinks = (articleId, articleTitle, sections, setScrollTo) => (
   <li
     key={`${articleId}-links`}
     className={cn('article-links')}
   >
-    <a
-      href={`#${articleId}`}
+    <div
+      onClick={() => setScrollTo(articleId)}
       className={cn('article-link')}
     >
       {articleTitle}
-    </a>
+    </div>
     <nav className={cn('section-links')}>
       {sections.map(({title: sectionTitle}, index) => (
-        <a
+        <div
+          onClick={() => setScrollTo(`${articleId}-section-${index + 1}`)}
           key={`${articleId}-section-link-${index + 1}`}
-          href={`#${articleId}-section-${index + 1}`}
           className={cn('section-link')}
         >
           {sectionTitle}
-        </a>
+        </div>
       ))}
     </nav>
   </li>
 )
 
-const Menu = ({mix, articles}) => (
+const Menu = ({mix, articles, setScrollTo}) => (
   <ul className={cn([mix])}>
     {articles.map(({id: articleId, title: articleTitle, sections}) => (
-      _createArticleLinks(articleId, articleTitle, sections)
+      _createArticleLinks(articleId, articleTitle, sections, setScrollTo)
     ))}
   </ul>
 )
