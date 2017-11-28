@@ -1,10 +1,11 @@
 @import 'common/settings/variables';
 @import 'common/utils';
 
-.menu-kb {
-  padding: 15px 0;
+.kb-menu {
+  box-sizing: border-box;
+  border-right: 1px solid $color-main-light-blue;
   &__article-links {
-    margin-bottom: 15px;
+    margin-bottom: 30px;
     &:nth-last-child(1) {
       margin-bottom: 0;
     }
@@ -12,15 +13,22 @@
 
   &__article-link {
     font-weight: bold;
-    font-size: 20px;
+    font-size: 17px;
+    text-transform: uppercase;
   }
 
   &__section-links {
-    padding-left: 15px;
+
   }
 
   &__section-link {
     display: block;
-    font-size: 16px;
+    padding-left: 15px;
+    font-size: 15px;
+    transition: background-color .3s, color .1s linear;
+    &:hover {
+      background-color: $color-main-light-blue;
+      color: $color-white;
+    }
   }
 }

@@ -14,11 +14,31 @@
   &__menu {
     width: 20%;
     flex-shrink: 0;
+    padding: 15px 10px;
     //background-color: transparentize(red, .5);
   }
   &__articles {
     flex-grow: 1;
+    padding: 0 20px;
     overflow-y: scroll;
     //background-color: transparentize(yellow, .5);
+  }
+
+  &__article {
+    margin-bottom: 45px;
+    &:nth-last-child(1) {
+      margin-bottom: 0;
+    }
+  }
+
+  &__sections {
+    padding-left: 20px;
+  }
+
+  &__section {
+    margin-bottom: 30px;
+    &:nth-last-child(1) {
+      margin-bottom: 0;
+    }
   }
 }

@@ -1,0 +1,10 @@
+@import 'common/settings/variables';
+@import 'common/utils';
+
+.kb-article {
+  &__title {
+    padding: 15px 0;
+    font-weight: bold;
+    font-size: 30px;
+  }
+}

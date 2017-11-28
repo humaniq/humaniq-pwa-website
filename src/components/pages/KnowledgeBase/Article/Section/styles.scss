@@ -1,0 +1,53 @@
+@import 'common/settings/variables';
+@import 'common/utils';
+
+.kb-article-section {
+
+  &__title {
+    padding: 15px 0;
+    font-size: 30px;
+  }
+
+  &__content {
+    margin-bottom: 15px;
+    ul {
+      li {
+        font-size: 16px;
+        position: relative;
+        padding-left: 15px;
+        &::before {
+          content: '';
+          position: absolute;
+          top: 11px;
+          left: 0;
+          width: 6px;
+          height: 6px;
+          background-color: $color-main-deep-blue;
+        }
+      }
+    }
+    p {
+      margin-bottom: 15px;
+    }
+    h5 {
+      font-weight: bold;
+      font-size: 15px;
+    }
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+    code {
+      display: inline-block;
+      padding: 0 5px;
+      background: #1d1f21;
+      color: $color-main-light-blue;
+      font-family: monospace;
+    }
+  }
+
+  &__code-snippet {
+
+  }
+}

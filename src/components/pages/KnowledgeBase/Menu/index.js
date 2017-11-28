@@ -2,7 +2,7 @@ import React from 'react';
 import * as T from "prop-types";
 import './styles.scss';
 import {cssClassName} from 'utils'
-const cn = cssClassName('menu-kb')
+const cn = cssClassName('kb-menu')
 
 const _createArticleLinks = (articleId, articleTitle, sections) => (
   <li
