@@ -2,10 +2,10 @@
 @import 'common/utils';
 
 .kb-article {
-  padding: 0 20px;
   &__title {
-    padding: 15px 0;
+    margin-bottom: 10px;
     font-weight: bold;
     font-size: 30px;
+    line-height: 1.2;
   }
 }

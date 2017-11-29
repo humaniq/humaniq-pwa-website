@@ -4,35 +4,42 @@ import './styles.scss';
 import {cssClassName} from 'utils'
 const cn = cssClassName('kb-menu')
 
-const _createArticleLinks = (articleId, articleTitle, sections, setScrollTo) => (
-  <li
-    key={`${articleId}-links`}
-    className={cn('article-links')}
-  >
-    <div
-      onClick={() => setScrollTo(articleId)}
-      className={cn('article-link')}
-    >
-      {articleTitle}
-    </div>
-    <nav className={cn('section-links')}>
-      {sections.map(({title: sectionTitle}, index) => (
-        <div
-          onClick={() => setScrollTo(`${articleId}-section-${index + 1}`)}
-          key={`${articleId}-section-link-${index + 1}`}
-          className={cn('section-link')}
-        >
-          {sectionTitle}
-        </div>
-      ))}
-    </nav>
-  </li>
-)
+const _createArticleLinks = (articleId, articleTitle, sections, currentAnchorId, setScrollTo) => {
+  const activeArticle = currentAnchorId.includes(articleId)
 
-const Menu = ({mix, articles, setScrollTo}) => (
+  return (
+    <li
+      key={`${articleId}-links`}
+      className={cn('article-links')}
+    >
+      <div
+        onClick={() => setScrollTo(articleId)}
+        className={cn('article-link', {active: activeArticle})}
+      >
+        {articleTitle}
+      </div>
+      <nav className={cn('section-links')}>
+        {sections.map(({title: sectionTitle, id: sectionId}, index) => {
+          const activeSection = currentAnchorId.includes(sectionId)
+          return (
+            <div
+              onClick={() => setScrollTo(`${articleId}-section-${index + 1}`)}
+              key={`${articleId}-section-link-${index + 1}`}
+              className={cn('section-link', {active: activeSection})}
+            >
+              {sectionTitle}
+            </div>
+          )
+        })}
+      </nav>
+    </li>
+  )
+}
+
+const Menu = ({mix, articles, currentAnchorId, setScrollTo}) => (
   <ul className={cn([mix])}>
-    {articles.map(({id: articleId, title: articleTitle, sections}) => (
-      _createArticleLinks(articleId, articleTitle, sections, setScrollTo)
+    {articles.map(({id: articleId, title, sections}) => (
+      _createArticleLinks(articleId, title, sections, currentAnchorId, setScrollTo)
     ))}
   </ul>
 )

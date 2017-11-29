@@ -3,7 +3,7 @@
 
 .kb-menu {
   box-sizing: border-box;
-  border-right: 1px solid $color-main-light-blue;
+  border-right: 2px solid $color-main-light-blue;
   &__article-links {
     display: flex;
     flex-direction: column;
@@ -14,9 +14,35 @@
   }
 
   &__article-link {
+    position: relative;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
     font-weight: bold;
     font-size: 17px;
     text-transform: uppercase;
+    cursor: default;
+    &::before, &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      height: 2px;
+      width: 100%;
+    }
+    &::before {
+      background-color: transparentize($color-text-gray, .7);
+    }
+    &::after {
+      transform: scale(0);
+      transform-origin: right;
+      transition: transform .3s linear;
+      background-color: $color-main-light-blue;
+    }
+    &_active_true {
+      &::after {
+        transform: scale(1);
+      }
+    }
   }
 
   &__section-links {
@@ -28,7 +54,8 @@
     padding-left: 15px;
     font-size: 15px;
     transition: background-color .3s, color .1s linear;
-    &:hover {
+    cursor: default;
+    &:hover, &_active_true {
       background-color: $color-main-light-blue;
       color: $color-white;
     }

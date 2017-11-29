@@ -16,16 +16,18 @@ class KnowledgeBase extends Component {
   state = {
     scrollPosition: 0,
     scrollTo: 0,
+    currentAnchorId: [],
     anchorCoords: {}
   }
 
-  _getAnchorCoords = (anchorBlocks, offset) => {
+  _getAnchorCoords = (anchorBlocks, headerOffset) => {
     let anchorCoords = {}
     Object.entries(anchorBlocks).forEach((achorBlock) => {
-      const [id, block] = achorBlock;
-      anchorCoords = {...anchorCoords, [id]: block.getBoundingClientRect().top - offset + pageYOffset + this.state.scrollPosition}
+      const [id, block] = achorBlock
+      const topCoord = Math.round(block.getBoundingClientRect().top - headerOffset + pageYOffset + this.state.scrollPosition)
+      const bottomCoord = Math.round(block.getBoundingClientRect().bottom - headerOffset + pageYOffset + this.state.scrollPosition)
+      anchorCoords = {...anchorCoords, [id]: {top: topCoord, bottom: bottomCoord}}
     });
-    console.log('anchorCoords', anchorCoords)
     return anchorCoords
   }
 
@@ -37,12 +39,34 @@ class KnowledgeBase extends Component {
   }
 
   _handleScroll = (e) => {
-    this.setState({scrollPosition: e.target.scrollTop})
+    const { scrollTo } = this.state
+    const scrollPosition = e.target.scrollTop
+    this.setState({scrollPosition})
+    this._setcurrentAnchorId(scrollPosition)
+    console.log('scrollPosition',scrollPosition)
+    console.log('scrollTo',scrollTo)
+    if(scrollPosition !== scrollTo) this.setState({scrollTo: undefined})
+  }
+
+  _setcurrentAnchorId = (scrollPosition) => {
+    const { anchorCoords } = this.state
+
+    let currentAnchorId = []
+    for (let anchorId in anchorCoords) {
+      if(anchorCoords.hasOwnProperty(anchorId)) {
+        const anchor = anchorCoords[anchorId]
+        if (scrollPosition >= anchor.top && scrollPosition < anchor.bottom) {
+          console.log(anchorId)
+          currentAnchorId = [...currentAnchorId, anchorId]
+        }
+      }
+    }
+
+    this.setState({ currentAnchorId })
   }
 
   setScrollTo = (anchorBlockId) => {
-    const scrollTo = this.state.anchorCoords[anchorBlockId]
-    console.log('scrolling to', scrollTo)
+    const scrollTo = this.state.anchorCoords[anchorBlockId].top
     this.setState({scrollTo})
   }
 
@@ -54,12 +78,17 @@ class KnowledgeBase extends Component {
     }
     setTimeout(() => {
       this.setState({anchorCoords: this._getAnchorCoords(this.anchorBlocks, headerOffset)})
-    }, 1000)
+    }, 2000)
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("resize", this._handleResize)
   }
 
   render() {
+    console.log('render')
     const {articles} = this.props
-    const {scrollTo} = this.state
+    const {scrollTo, currentAnchorId} = this.state
     return (
       <A_Container mix={cn()}>
 
@@ -67,6 +96,7 @@ class KnowledgeBase extends Component {
           mix={cn('menu')}
           articles={articles}
           setScrollTo={this.setScrollTo}
+          currentAnchorId={currentAnchorId}
         />
 
         <div className={cn('articles')}>

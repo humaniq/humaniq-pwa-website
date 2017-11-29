@@ -25,7 +25,7 @@ export default connect(mapStateToProps)(page);
 
 const kbArticles = [
   {
-    title: 'Smart Contracts',
+    title: 'Relayer Strategies',
     sections: [
       {
         title: 'Contract Descriptions',
@@ -42,7 +42,7 @@ const kbArticles = [
         'f();  // 6'
       },
       {
-        title: 'Section 2',
+        title: 'Verifying Custom Tokens',
         content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem doloribus hic quasi soluta. Aliquam asperiores at deleniti dicta eligendi omnis unde vitae. Alias animi eum mollitia quaerat quidem ratione repellat vitae! Accusamus ad cum distinctio dolore eum ipsum itaque mollitia, nam nobis quas, quisquam rem reprehenderit, vel? Animi aperiam deleniti error illo iste temporibus voluptas. Ad autem dignissimos distinctio eaque eos est, exercitationem facere fugit id, in inventore magnam minima mollitia necessitatibus nihil nobis odit pariatur perspiciatis quis quo rem sed vero voluptas voluptate voluptatum. Ad aperiam architecto atque consectetur consequatur corporis cupiditate eveniet ex harum illum impedit, labore maiores molestias mollitia natus nisi optio quasi repudiandae sapiente sequi sit tempore, veritatis vero. Incidunt molestias nemo possimus quas reiciendis sed!',
         sampleCode: '// Parenthesize the body to return an object literal expression: params => ({foo: bar}) // Rest parameters and default parameters are supported\n' +
         '(param1, param2, ...rest) => { statements }\n' +
@@ -53,7 +53,7 @@ const kbArticles = [
         'f();  // 6'
       },
       {
-        title: 'Section 3',
+        title: 'Matching',
         content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem doloribus hic quasi soluta. Aliquam asperiores at deleniti dicta eligendi omnis unde vitae. Alias animi eum mollitia quaerat quidem ratione repellat vitae! Accusamus ad cum distinctio dolore eum ipsum itaque mollitia, nam nobis quas, quisquam rem reprehenderit, vel? Animi aperiam deleniti error illo iste temporibus voluptas. Ad autem dignissimos distinctio eaque eos est, exercitationem facere fugit id, in inventore magnam minima mollitia necessitatibus nihil nobis odit pariatur perspiciatis quis quo rem sed vero voluptas voluptate voluptatum. Ad aperiam architecto atque consectetur consequatur corporis cupiditate eveniet ex harum illum impedit, labore maiores molestias mollitia natus nisi optio quasi repudiandae sapiente sequi sit tempore, veritatis vero. Incidunt molestias nemo possimus quas reiciendis sed!',
         sampleCode: '// Parenthesize the body to return an object literal expression:\n' +
         'params => ({foo: bar})\n' +
@@ -75,10 +75,10 @@ const kbArticles = [
     ]
   },
   {
-    title: 'Article 2',
+    title: 'Protocol',
     sections: [
       {
-        title: 'Section 1',
+        title: 'Open Orderbook',
         content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem doloribus hic quasi soluta. Aliquam asperiores at deleniti dicta eligendi omnis unde vitae. Alias animi eum mollitia quaerat quidem ratione repellat vitae! Accusamus ad cum distinctio dolore eum ipsum itaque mollitia, nam nobis quas, quisquam rem reprehenderit, vel? Animi aperiam deleniti error illo iste temporibus voluptas. Ad autem dignissimos distinctio eaque eos est, exercitationem facere fugit id, in inventore magnam minima mollitia necessitatibus nihil nobis odit pariatur perspiciatis quis quo rem sed vero voluptas voluptate voluptatum. Ad aperiam architecto atque consectetur consequatur corporis cupiditate eveniet ex harum illum impedit, labore maiores molestias mollitia natus nisi optio quasi repudiandae sapiente sequi sit tempore, veritatis vero. Incidunt molestias nemo possimus quas reiciendis sed!',
         sampleCode: '// Parenthesize the body to return an object literal expression:\n' +
         'params => ({foo: bar})\n' +
@@ -92,7 +92,7 @@ const kbArticles = [
         'f();  // 6'
       },
       {
-        title: 'Section 2',
+        title: 'Reserve Manager',
         content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem doloribus hic quasi soluta. Aliquam asperiores at deleniti dicta eligendi omnis unde vitae. Alias animi eum mollitia quaerat quidem ratione repellat vitae! Accusamus ad cum distinctio dolore eum ipsum itaque mollitia, nam nobis quas, quisquam rem reprehenderit, vel? Animi aperiam deleniti error illo iste temporibus voluptas. Ad autem dignissimos distinctio eaque eos est, exercitationem facere fugit id, in inventore magnam minima mollitia necessitatibus nihil nobis odit pariatur perspiciatis quis quo rem sed vero voluptas voluptate voluptatum. Ad aperiam architecto atque consectetur consequatur corporis cupiditate eveniet ex harum illum impedit, labore maiores molestias mollitia natus nisi optio quasi repudiandae sapiente sequi sit tempore, veritatis vero. Incidunt molestias nemo possimus quas reiciendis sed!',
         sampleCode: '// Parenthesize the body to return an object literal expression:\n' +
         'params => ({foo: bar})\n' +
@@ -106,7 +106,7 @@ const kbArticles = [
         'f();  // 6'
       },
       {
-        title: 'Section 3',
+        title: 'Contract Interactions',
         content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem doloribus hic quasi soluta. Aliquam asperiores at deleniti dicta eligendi omnis unde vitae. Alias animi eum mollitia quaerat quidem ratione repellat vitae! Accusamus ad cum distinctio dolore eum ipsum itaque mollitia, nam nobis quas, quisquam rem reprehenderit, vel? Animi aperiam deleniti error illo iste temporibus voluptas. Ad autem dignissimos distinctio eaque eos est, exercitationem facere fugit id, in inventore magnam minima mollitia necessitatibus nihil nobis odit pariatur perspiciatis quis quo rem sed vero voluptas voluptate voluptatum. Ad aperiam architecto atque consectetur consequatur corporis cupiditate eveniet ex harum illum impedit, labore maiores molestias mollitia natus nisi optio quasi repudiandae sapiente sequi sit tempore, veritatis vero. Incidunt molestias nemo possimus quas reiciendis sed!',
         sampleCode: '// Parenthesize the body to return an object literal expression:\n' +
         'params => ({foo: bar})\n' +
@@ -122,10 +122,10 @@ const kbArticles = [
     ]
   },
   {
-    title: 'Article 3',
+    title: 'Smart Contracts',
     sections: [
       {
-        title: 'Section 1',
+        title: 'List Of Projects Using 0x Protocol',
         content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem doloribus hic quasi soluta. Aliquam asperiores at deleniti dicta eligendi omnis unde vitae. Alias animi eum mollitia quaerat quidem ratione repellat vitae! Accusamus ad cum distinctio dolore eum ipsum itaque mollitia, nam nobis quas, quisquam rem reprehenderit, vel? Animi aperiam deleniti error illo iste temporibus voluptas. Ad autem dignissimos distinctio eaque eos est, exercitationem facere fugit id, in inventore magnam minima mollitia necessitatibus nihil nobis odit pariatur perspiciatis quis quo rem sed vero voluptas voluptate voluptatum. Ad aperiam architecto atque consectetur consequatur corporis cupiditate eveniet ex harum illum impedit, labore maiores molestias mollitia natus nisi optio quasi repudiandae sapiente sequi sit tempore, veritatis vero. Incidunt molestias nemo possimus quas reiciendis sed!',
         sampleCode: '// Parenthesize the body to return an object literal expression:\n' +
         'params => ({foo: bar})\n' +
@@ -139,7 +139,7 @@ const kbArticles = [
         'f();  // 6'
       },
       {
-        title: 'Section 2',
+        title: 'Order Book Pruning',
         content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem doloribus hic quasi soluta. Aliquam asperiores at deleniti dicta eligendi omnis unde vitae. Alias animi eum mollitia quaerat quidem ratione repellat vitae! Accusamus ad cum distinctio dolore eum ipsum itaque mollitia, nam nobis quas, quisquam rem reprehenderit, vel? Animi aperiam deleniti error illo iste temporibus voluptas. Ad autem dignissimos distinctio eaque eos est, exercitationem facere fugit id, in inventore magnam minima mollitia necessitatibus nihil nobis odit pariatur perspiciatis quis quo rem sed vero voluptas voluptate voluptatum. Ad aperiam architecto atque consectetur consequatur corporis cupiditate eveniet ex harum illum impedit, labore maiores molestias mollitia natus nisi optio quasi repudiandae sapiente sequi sit tempore, veritatis vero. Incidunt molestias nemo possimus quas reiciendis sed!',
         sampleCode: '// Parenthesize the body to return an object literal expression:\n' +
         'params => ({foo: bar})\n' +

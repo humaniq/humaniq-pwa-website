@@ -7,12 +7,12 @@
   overflow: hidden;
   height: 100%;
   display: flex;
+  margin-bottom: 60px;
   //background-color: transparentize(green, .5);
 
   &__menu {
     width: 200px;
     flex-shrink: 0;
-    padding: 15px 10px;
     //background-color: transparentize(red, .5);
   }
   &__articles {
@@ -28,9 +28,12 @@
   }
 
   &__article {
-    margin-bottom: 45px;
+    padding: 30px 20px;
+    &:nth-child(1) {
+      padding-top: 0;
+    }
     &:nth-last-child(1) {
-      margin-bottom: 0;
+      padding-bottom: 400px;
     }
   }
 
@@ -39,10 +42,9 @@
   }
 
   &__section {
-    padding-left: 20px;
-    margin-bottom: 30px;
+    padding: 20px 0 20px 20px;
     &:nth-last-child(1) {
-      margin-bottom: 0;
+      padding-bottom: 0;
     }
   }
 }
