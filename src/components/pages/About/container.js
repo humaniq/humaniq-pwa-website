@@ -81,19 +81,19 @@ const advisers = [
       'Is a writer, speaker and educator of all things Blockchain and Cryptocurrency. He is a Fintech 100 Influencer and Number 21 Rise Blockchain Top 100. He has had eight startups and held many senior roles in major IT and tech companies. He now chairs various Blockchain events and advises a range of clients on Blockchain technology, bitcoin and Ethereum. One of his latest projects is to raise funds using cryptoeconomics and create a new film finance model to make a mini- series for TV about the Bitcoin Revolution, an asset backed Token, and a new Media and Film Production business on Ethereum.',
     imgSrc: `${imgPath}/nick_ayton.png`,
   },
-  {
-    name: 'Ron Morris',
-    position: 'Adviser',
-    bio:
-      'Has been designing and delivering educational programs in multiple countries for over a decade. After several years working for Groupe INSEEC, France’s largest higher education group, he went on to direct their London campus, bringing in top-tier thought leaders, practitioners, and companies to contribute to programs and events. He has now opened a new campus for Groupe INSEEC in San Francisco, delivering immersive, challenge-based programs focused on innovation and entrepreneurship, bringing together a wide range of startups, accelerators, institutes, and thought leaders.',
-    imgSrc: `${imgPath}/ron_morris.png`,
-  },
-  {
-    name: 'Tim Campbell',
-    position: 'Adviser',
-    bio: "In previous roles Tim has been a key government advisor on Diversity, Small Business Social Enterprise and Entrepreneurship. Tim was also Boris Johnson's Training and Enterprise ambassador for the City of London whilst Mr Johnson was Mayor of London.<br />In February 2012 Tim was awarded the MBE for his efforts supporting enterprise and he currently sits on the City of London's Education Board. Tim is a keen runner and martial arts enthusiast and is happily married with two children. ",
-    imgSrc: `${imgPath}/tim_campbell.png`,
-  },
+  // {
+  //   name: 'Ron Morris',
+  //   position: 'Adviser',
+  //   bio:
+  //     'Has been designing and delivering educational programs in multiple countries for over a decade. After several years working for Groupe INSEEC, France’s largest higher education group, he went on to direct their London campus, bringing in top-tier thought leaders, practitioners, and companies to contribute to programs and events. He has now opened a new campus for Groupe INSEEC in San Francisco, delivering immersive, challenge-based programs focused on innovation and entrepreneurship, bringing together a wide range of startups, accelerators, institutes, and thought leaders.',
+  //   imgSrc: `${imgPath}/ron_morris.png`,
+  // },
+  // {
+  //   name: 'Tim Campbell',
+  //   position: 'Adviser',
+  //   bio: "In previous roles Tim has been a key government advisor on Diversity, Small Business Social Enterprise and Entrepreneurship. Tim was also Boris Johnson's Training and Enterprise ambassador for the City of London whilst Mr Johnson was Mayor of London.<br />In February 2012 Tim was awarded the MBE for his efforts supporting enterprise and he currently sits on the City of London's Education Board. Tim is a keen runner and martial arts enthusiast and is happily married with two children. ",
+  //   imgSrc: `${imgPath}/tim_campbell.png`,
+  // },
   {
     name: 'Michael Terpin',
     position: 'Adviser',
@@ -102,11 +102,11 @@ const advisers = [
     imgSrc: `${imgPath}/michael_terpin.png`,
   },
 
-  {
-    name: 'Chami Akmeemana',
-    position: 'Adviser',
-    imgSrc: `${imgPath}/chami_akmeemana.png`,
-  },
+  // {
+  //   name: 'Chami Akmeemana',
+  //   position: 'Adviser',
+  //   imgSrc: `${imgPath}/chami_akmeemana.png`,
+  // },
 
   {
     name: 'Paolo Tasca',
