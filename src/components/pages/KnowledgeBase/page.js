@@ -1,6 +1,8 @@
 import React, {Component} from 'react'
 import CustomScroll from 'react-custom-scroll'
 import 'react-custom-scroll/dist/customScroll.css'
+import { Motion, spring } from 'react-motion'
+import ScrollHandler from './ScrollHandler'
 import A_Container from 'A_Container'
 import Menu from './Menu'
 import Article from './Article'
@@ -17,15 +19,22 @@ class KnowledgeBase extends Component {
     scrollPosition: 0,
     scrollTo: 0,
     currentAnchorId: [],
-    anchorCoords: {}
+    anchorCoords: {},
+    scrollMotionActive: false
   }
 
   _getAnchorCoords = (anchorBlocks, headerOffset) => {
+    const scrollPosition = this.refs.customScroll.refs.innerContainer.scrollTop
+    console.log('scrollPosition',scrollPosition)
+
     let anchorCoords = {}
-    Object.entries(anchorBlocks).forEach((achorBlock) => {
-      const [id, block] = achorBlock
-      const topCoord = Math.round(block.getBoundingClientRect().top - headerOffset + pageYOffset + this.state.scrollPosition)
-      const bottomCoord = Math.round(block.getBoundingClientRect().bottom - headerOffset + pageYOffset + this.state.scrollPosition)
+    Object.entries(anchorBlocks).forEach((anchorBlock) => {
+      const
+        [id, block] = anchorBlock,
+        offset = headerOffset + pageYOffset - scrollPosition,
+        topCoord = Math.round(block.getBoundingClientRect().top - offset),
+        bottomCoord = Math.round(block.getBoundingClientRect().bottom - offset)
+
       anchorCoords = {...anchorCoords, [id]: {top: topCoord, bottom: bottomCoord}}
     });
     return anchorCoords
@@ -33,19 +42,15 @@ class KnowledgeBase extends Component {
 
   _handleResize = () => {
     if(window.innerWidth < 1025) {
-      headerOffset = 66
       this.setState({anchorCoords: this._getAnchorCoords(this.anchorBlocks, headerOffset)})
     }
   }
 
   _handleScroll = (e) => {
-    const { scrollTo } = this.state
     const scrollPosition = e.target.scrollTop
+
     this.setState({scrollPosition})
     this._setcurrentAnchorId(scrollPosition)
-    console.log('scrollPosition',scrollPosition)
-    console.log('scrollTo',scrollTo)
-    if(scrollPosition !== scrollTo) this.setState({scrollTo: undefined})
   }
 
   _setcurrentAnchorId = (scrollPosition) => {
@@ -56,7 +61,6 @@ class KnowledgeBase extends Component {
       if(anchorCoords.hasOwnProperty(anchorId)) {
         const anchor = anchorCoords[anchorId]
         if (scrollPosition >= anchor.top && scrollPosition < anchor.bottom) {
-          console.log(anchorId)
           currentAnchorId = [...currentAnchorId, anchorId]
         }
       }
@@ -66,19 +70,31 @@ class KnowledgeBase extends Component {
   }
 
   setScrollTo = (anchorBlockId) => {
-    const scrollTo = this.state.anchorCoords[anchorBlockId].top
-    this.setState({scrollTo})
+    const { anchorCoords } = this.state
+
+    const scrollTo = anchorCoords[anchorBlockId].top
+
+    this.setState({scrollTo, scrollMotionActive: true})
+  }
+
+  finishScrollMotion = () => {
+    this.setState({scrollMotionActive: false})
   }
 
 
   componentDidMount() {
     window.addEventListener("resize", this._handleResize)
+
     if(window.innerWidth < 1601 ) {
       headerOffset = 66
     }
+
     setTimeout(() => {
       this.setState({anchorCoords: this._getAnchorCoords(this.anchorBlocks, headerOffset)})
     }, 2000)
+
+    console.log(this)
+    window.testRef = this.refs.customScroll.refs.innerContainer
   }
 
   componentWillUnmount() {
@@ -88,7 +104,7 @@ class KnowledgeBase extends Component {
   render() {
     console.log('render')
     const {articles} = this.props
-    const {scrollTo, currentAnchorId} = this.state
+    const {scrollTo, scrollPosition, currentAnchorId, scrollMotionActive} = this.state
     return (
       <A_Container mix={cn()}>
 
@@ -101,8 +117,8 @@ class KnowledgeBase extends Component {
 
         <div className={cn('articles')}>
           <CustomScroll
+            ref="customScroll"
             heightRelativeToParent='100%'
-            scrollTo={scrollTo}
             onScroll={this._handleScroll}
           >
             {articles.map((article) => (
@@ -129,6 +145,29 @@ class KnowledgeBase extends Component {
             ))}
           </CustomScroll>
         </div>
+
+        {scrollMotionActive ? (
+          <Motion
+            defaultStyle={{
+              scrollMotionProgress: scrollPosition //from
+            }}
+            style={{
+              scrollMotionProgress: spring(scrollTo, {stiffness: 260, damping: 26}) //to
+            }}
+          >
+            {({scrollMotionProgress}) => {
+              return(
+                <ScrollHandler
+                  scrollContainer={this.refs.customScroll.refs.innerContainer}
+                  scrollTo={scrollTo}
+                  scrollMotionProgress={scrollMotionProgress}
+                  finishScrollMotion={this.finishScrollMotion}
+                />
+              )
+
+            }}
+
+          </Motion>) : (null)}
 
       </A_Container>
     )
