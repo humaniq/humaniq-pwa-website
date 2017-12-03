@@ -32,20 +32,13 @@ const imgPath = 'img/team_g'
 // ]
 
 const advisers = [
-  {
-    name: 'Dinis Guarda',
-    position: 'Adviser',
-    bio:
-      'Digital age influencer Dinis is the founder of digital communications consultancy Ztudium and manager of websites <a href="https://intelligenthq.com" target="_blank">intelligenthq.com</a>, <a href="https://openbusinesscouncil.org" target="_blank">openbusinesscouncil.org</a>, <a href="https://tradersdna.com" target="_blank">tradersdna.com</a>, and <a href="https://hedgethink.com" target="_blank">hedgethink.com</a>. Dinis also co-founded BlockchainAge, a blockchain research and tech influencer, platform, book and film; led the digital strategy for invstr.com; authored books including The Next Tsunami: Blockchain plus AI and IOT and led a digital master course in London for Group INSEEC. He has been ranked as in the top 100 Blockchain and Fintech influencers.',
-    imgSrc: `${imgPath}/dinis_guarda.png`,
-  },
-  {
-    name: 'Dmitry Kaminskiy',
-    position: 'Adviser',
-    bio:
-      'An innovative entrepreneur and investor active in Biotech, Fintech, Blockchain and artificial intelligence, Dmitry is co-founder of the Deep Knowledge Ventures investment fund, focused on investments in AI and Deeptech. He adheres to the principle of impact investment in all his business activities, believing that business should make a social impact, and he supports the deployment of Blockchain for Good, which led to his decision to support Humaniq from its inception.',
-    imgSrc: `${imgPath}/dmitry_kaminskiy.png`,
-  },
+  // {
+  //   name: 'Dinis Guarda',
+  //   position: 'Adviser',
+  //   bio:
+  //     'Digital age influencer Dinis is the founder of digital communications consultancy Ztudium and manager of websites <a href="https://intelligenthq.com" target="_blank">intelligenthq.com</a>, <a href="https://openbusinesscouncil.org" target="_blank">openbusinesscouncil.org</a>, <a href="https://tradersdna.com" target="_blank">tradersdna.com</a>, and <a href="https://hedgethink.com" target="_blank">hedgethink.com</a>. Dinis also co-founded BlockchainAge, a blockchain research and tech influencer, platform, book and film; led the digital strategy for invstr.com; authored books including The Next Tsunami: Blockchain plus AI and IOT and led a digital master course in London for Group INSEEC. He has been ranked as in the top 100 Blockchain and Fintech influencers.',
+  //   imgSrc: `${imgPath}/dinis_guarda.png`,
+  // },
   {
     name: 'David Applefield',
     position: 'Adviser',
@@ -53,13 +46,13 @@ const advisers = [
       'Is an American writer and media specialist living in Paris. He has as spent his career developing creative and innovative solutions for business leaders, heads of state, ministries, NGOs, and other not-for- profit foundations. He is the Financial Times representative for Africa, the Middle East and emerging markets.',
     imgSrc: `${imgPath}/david_applefield.png`,
   },
-  {
-    name: 'Iggy Bassi',
-    position: 'Adviser',
-    bio:
-      'Is the co-founder and serves as a Director of GADCO, a venture focused on sustainable agriculture and livelihood development in West Africa with LATAM technologies. He has a long track record in building companies in the technology, finance, and impact markets – in both emerged and emerging markets. Over the past 20 years he has advised many global companies (inc. Fortune 500), sovereigns, and entrepreneurs on solving problems in competitiveness, sustainability, scenario planning, and structuring complex transactions. He works at the intersection of technology, sustainability, food security, global security, and innovative thinking around the collaborative economy.',
-    imgSrc: `${imgPath}/iggy_bassi.png`,
-  },
+  // {
+  //   name: 'Iggy Bassi',
+  //   position: 'Adviser',
+  //   bio:
+  //     'Is the co-founder and serves as a Director of GADCO, a venture focused on sustainable agriculture and livelihood development in West Africa with LATAM technologies. He has a long track record in building companies in the technology, finance, and impact markets – in both emerged and emerging markets. Over the past 20 years he has advised many global companies (inc. Fortune 500), sovereigns, and entrepreneurs on solving problems in competitiveness, sustainability, scenario planning, and structuring complex transactions. He works at the intersection of technology, sustainability, food security, global security, and innovative thinking around the collaborative economy.',
+  //   imgSrc: `${imgPath}/iggy_bassi.png`,
+  // },
   {
     name: 'Matt McKibbin',
     position: 'Adviser',
@@ -101,13 +94,18 @@ const advisers = [
       "Michael Terpin co-founded BitAngels (www.bitangels.co), the world's first angel network for digital currency startups, in May 2013, and now serves as its chairman. The distributed angel network currently has more than 600 members, and it has made more than 25 investments in bitcoin and cryptocurrency companies with two exits and several follow-on rounds. Terpin is also co-founder and managing partner of bCommerce Labs (www.bcommercelabs.com), the first technology incubator fund focused on e-commerce companies for bitcoin and the blockchain, and a partner at Flight VC.",
     imgSrc: `${imgPath}/michael_terpin.png`,
   },
-
+  {
+    name: 'Dmitry Kaminskiy',
+    position: 'Adviser',
+    bio:
+      'An innovative entrepreneur and investor active in Biotech, Fintech, Blockchain and artificial intelligence, Dmitry is co-founder of the Deep Knowledge Ventures investment fund, focused on investments in AI and Deeptech. He adheres to the principle of impact investment in all his business activities, believing that business should make a social impact, and he supports the deployment of Blockchain for Good, which led to his decision to support Humaniq from its inception.',
+    imgSrc: `${imgPath}/dmitry_kaminskiy.png`,
+  },
   // {
   //   name: 'Chami Akmeemana',
   //   position: 'Adviser',
   //   imgSrc: `${imgPath}/chami_akmeemana.png`,
   // },
-
   {
     name: 'Paolo Tasca',
     position: 'Adviser',
