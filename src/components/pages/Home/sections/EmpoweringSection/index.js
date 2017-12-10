@@ -67,7 +67,7 @@ const SE_Home_Empowering = ({ mix }) => (
     </div>
 
     <p className={cn('hmq-description')}>
-      A project on a global scale, receiving<br /> support from the UN and over 10,000 contributors.
+      A project on a global scale, receiving<br /> support 10,000 contributors.
     </p>
 
     <div className={cn('members')}>
