@@ -251,13 +251,13 @@ const team = [
     bio: '',
     imgSrc: `${imgPath}/kirill_goryunov.jpg`,
   },
-  {
-    name: 'Kherel Kechil',
-    position: 'Lead Frontend Developer',
-    bio:
-      'Kherel is a digital nomad. He joined Humaniq to experience and participate in the financial evolution, and observe changes to the better in the country where he currently resides - China.',
-    imgSrc: `${imgPath}/kherel_kechil.png`,
-  },
+  // {
+  //   name: 'Kherel Kechil',
+  //   position: 'Lead Frontend Developer',
+  //   bio:
+  //     'Kherel is a digital nomad. He joined Humaniq to experience and participate in the financial evolution, and observe changes to the better in the country where he currently resides - China.',
+  //   imgSrc: `${imgPath}/kherel_kechil.png`,
+  // },
   // {
   //   name: 'Serafima Semkina',
   //   position: 'CAO',
