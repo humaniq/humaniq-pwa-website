@@ -25,7 +25,7 @@ const SE_Home_WorldTalking = ({ mix }) => (
 
       <ul className={cn('mentions-list')}>{_getMentions(hmqMentions)}</ul>
     </div>
-    <SectionCounter sectionNum={14} theme="dark" />
+    <SectionCounter sectionNum={13} theme="dark" />
   </section>
 )
 
