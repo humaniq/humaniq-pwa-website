@@ -17,7 +17,7 @@ import GrowingSection from './sections/GrowingSection'
 import UseCasesSection from './sections/UseCasesSection'
 import GlobalChallengeSection from './sections/GlobalChallengeSection'
 import ExpeditionSection from './sections/ExpeditionSection'
-import TimelineSection from './sections/TimelineSection'
+/*import TimelineSection from './sections/TimelineSection'*/
 import WorldTalkingSection from './sections/WorldTalkingSection'
 import TeamSection from './sections/TeamSection'
 
@@ -33,7 +33,7 @@ const serverNames = [
   'use cases',
   'challenge',
   'expedition',
-  'timeline',
+/*  'timeline',*/
   'press',
   'contacts',
 ]
@@ -49,7 +49,7 @@ const clientNames = [
   'use cases',
   'challenge',
   'expedition',
-  'timeline',
+/*  'timeline',*/
   'team',
   'press',
   'contacts',
@@ -81,7 +81,7 @@ class Home extends Component {
     'use cases': <UseCasesSection mix={cn('section')} key="usecases" />,
     challenge: <GlobalChallengeSection mix={cn('section')} key="challenge" />,
     expedition: <ExpeditionSection mix={cn('section')} key="expedition" />,
-    timeline: <TimelineSection mix={cn('section')} key="timeline" />,
+    /*timeline: <TimelineSection mix={cn('section')} key="timeline" />,*/
     team: <TeamSection mix={cn('section')} key="team" />,
     press: <WorldTalkingSection mix={cn('section')} key="press" />,
     contacts: (
