@@ -110,7 +110,7 @@ class SE_Home_Team extends Component {
 
         {/*<M_Partners mix={cn('partners')}/>*/}
 
-        <SectionCounter sectionNum={13} theme="bright" />
+        <SectionCounter sectionNum={12} theme="bright" />
       </section>
     )
   }
