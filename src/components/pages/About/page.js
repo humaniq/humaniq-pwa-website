@@ -9,7 +9,7 @@ import O_Hero from 'O_Hero'
 import A_H from 'A_H'
 import A_P from 'A_P'
 import A_Image from 'A_Image'
-import Timeline from './Timeline'
+/*import Timeline from './Timeline'*/
 import M_Tooltip from 'M_Tooltip'
 
 
@@ -173,7 +173,7 @@ class About extends Component {
             {renderedAdvisers}
           </div>
         </A_Container>
-        <Timeline timeLineData={timeLineData} />
+        {/*<Timeline timeLineData={timeLineData} />*/}
       </div>
     )
   }
