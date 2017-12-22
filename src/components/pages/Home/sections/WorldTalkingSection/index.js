@@ -64,7 +64,7 @@ const hmqMentions = [
       'Humaniq, Blockchain Financial Platform for the Unbanked, Appoints CEO and 20 Members to Global Advisory Board',
   },
   {
-    title: 'Nasqad.com:',
+    title: 'Nasdaq.com:',
     url:
       'http://www.nasdaq.com/article/humaniq-aims-to-tackle-barriers-to-economic-inclusion-with-blockchain-app-cm764760',
     urlText: 'Humaniq Aims to Tackle Barriers to Economic Inclusion With Blockchain App',
