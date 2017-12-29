@@ -139,12 +139,12 @@ const team = [
     bio: 'Anton was motivated to work with Humaniq to use his experience in both computer science and finance to help to bring happiness for all across the world. He is passionate about freedriving and wakeboarding, and, of course, staying late to finish work.',
     imgSrc: `${imgPath}/anton_mozgovoy.png`
   },
-  {
-    name: 'Peyman Irani',
-    position: 'SMM, CSS',
-    bio: 'Peyman’s background is in sales and marketing, entrepreneurship, and social media and he is passionate about his family, innovation and humanitarian capitalism. Fairness means a lot to him and he believes we can do something great for humanity at Humaniq.',
-    imgSrc: `${imgPath}/peyman_irani.png`,
-  },
+  // {
+  //   name: 'Peyman Irani',
+  //   position: 'SMM, CSS',
+  //   bio: 'Peyman’s background is in sales and marketing, entrepreneurship, and social media and he is passionate about his family, innovation and humanitarian capitalism. Fairness means a lot to him and he believes we can do something great for humanity at Humaniq.',
+  //   imgSrc: `${imgPath}/peyman_irani.png`,
+  // },
   {
     name: 'Kirill Goryunov',
     position: 'CPO',
