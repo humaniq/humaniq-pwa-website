@@ -93,7 +93,7 @@ const footerLinks = [
     links: [
       {name: 'General: ', url: 'info@humaniq.com'},
       {name: 'For investors: ', url: 'invest@humaniq.com'},
-      {name: 'Careers: ', url: 'work@humaniq.com'},
+      {name: 'Careers: ', url: 'hr@humaniq.com'},
       {name: 'Support: ', url: 'appsupport@humaniq.com'}
 
     ]
