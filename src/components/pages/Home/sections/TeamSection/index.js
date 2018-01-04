@@ -6,7 +6,6 @@ import { cssClassName } from 'utils'
 import A_Image from 'A_Image/index'
 // import M_Partners from './Partners'
 import Carousel from 'react-slick'
-import 'slick-carousel/slick/slick.css'
 
 const cn = cssClassName('SE_Home_Team')
 
