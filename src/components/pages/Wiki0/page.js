@@ -42,7 +42,7 @@ class SE_Wiki0 extends Component {
             title='Humaniq Roadmap'
             external
             link={{
-              to: 'https://trello.com/b/xax1RSN8/humaniq-roadmap',
+              to: 'https://app.ganttpro.com/shared/token/56d36c7424e5b31d8ebf635d61f814ec6e3e2111752eddf5ceebe58e19df02e8/223936',
               text: 'Find out more about the plans'
             }}
             img={{
