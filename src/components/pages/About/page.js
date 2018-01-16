@@ -139,7 +139,7 @@ class About extends Component {
   }
 
   render() {
-    const {advisers, team, timeLineData} = this.props
+    const {advisers, team, /*timeLineData*/} = this.props
     // const renderedFounders = this.getFounders(founders)
     const renderedAdvisers = this.getTeam(advisers)
     const renderedTeam = this.getTeam(team)

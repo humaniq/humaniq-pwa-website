@@ -1,45 +1,24 @@
 import React, { Component } from 'react'
 import A_Title from 'A_Title_H'
 import SectionCounter from '../common/SectionCounter/index.js'
-//import InfoColumns from '../common/InfoColumns'
 import './styles.scss'
 import { cssClassName } from 'utils'
 import A_Image from 'A_Image/index'
 // import M_Partners from './Partners'
-const OwlCarousel = __CLIENT__ ? require('react-owl-carousel2') : {}
+import Carousel from 'react-slick'
 
 const cn = cssClassName('SE_Home_Team')
 
 const teamOptions = {
-  items: 3,
-  loop: true,
-  nav: false,
-  dots: false,
-  responsive: {
-    0: {
-      items: 1,
-    },
-    768: {
-      items: 2,
-    },
-    1024: {
-      items: 3,
-    },
-  },
+  infinite: true,
+  arrows: false,
+  slidesToShow: 3,
+  slidesToScroll: 3,
+  responsive: [
+    { breakpoint: 768, settings: { slidesToShow: 1, slidesToScroll: 1 } },
+    { breakpoint: 1120, settings: { slidesToShow: 2, slidesToScroll: 2 } },
+  ],
 }
-
-// const mobPartnersOptions = {
-//   items: 3,
-//   loop: true,
-//   nav: false,
-//   dots: false,
-//   center: true,
-// }
-
-// const events = {
-//   onDragged: function(event) {...},
-//   onChanged: function(event) {...}
-// };
 
 class SE_Home_Team extends Component {
   _getHazemName = () => (
@@ -62,13 +41,13 @@ class SE_Home_Team extends Component {
     ))
   }
 
-  getMobPartners() {
+/*  getMobPartners() {
     return partnersList.map(({ name, img }) => (
       <a href="#" key={`partner-${name}`} className={cn('partner-link')}>
         <img src={img} className={cn('partner-logo')} />
       </a>
     ))
-  }
+  }*/
 
   render() {
     const { mix } = this.props
@@ -91,19 +70,13 @@ class SE_Home_Team extends Component {
           {__CLIENT__ && (
             <div>
               <div className={cn('team-slider')}>
-                <OwlCarousel ref="team" options={teamOptions}>
+                <Carousel ref={c => this.team = c} {...teamOptions}>
                   {_renderSlides}
-                </OwlCarousel>
+                </Carousel>
               </div>
 
-              <div className={cn('nav-prev')} onClick={() => this.refs.team.prev()} />
-              <div className={cn('nav-next')} onClick={() => this.refs.team.next()} />
-
-              {/*<div className={cn('partners-slider')}>*/}
-              {/*<OwlCarousel ref="mobPartners" options={mobPartnersOptions}  >*/}
-              {/*{_renderMobPartners}*/}
-              {/*</OwlCarousel>*/}
-              {/*</div>*/}
+              <div className={cn('nav-prev')} onClick={() => this.team.slickPrev()} />
+              <div className={cn('nav-next')} onClick={() => this.team.slickNext()} />
             </div>
           )}
         </div>
@@ -322,7 +295,7 @@ const team = [
 
 const people = [...team, ...advisers]
 
-const partnersImgPath = `/img/design-v2/sections/team/partners`
+/*const partnersImgPath = `/img/design-v2/sections/team/partners`
 
 const partnersList = [
   {
@@ -393,4 +366,4 @@ const partnersList = [
     name: 'vexor',
     img: `${partnersImgPath}/vexor_2x.jpg`,
   },
-]
+]*/
