@@ -205,12 +205,12 @@ const team = [
     bio: '',
     imgSrc: `${imgPath}/hazem_danny.jpg`,
   },
-  // {
-  //   name: 'Anton Mozgovoy',
-  //   position: 'Team Lead',
-  //   bio: 'Anton was motivated to work with Humaniq to use his experience in both computer science and finance to help to bring happiness for all across the world. He is passionate about freedriving and wakeboarding, and, of course, staying late to finish work.',
-  //   imgSrc: `${imgPath}/anton_mozgovoy.png`
-  // },
+  {
+    name: 'Anton Mozgovoy',
+    position: 'Team Lead',
+    bio: 'Anton was motivated to work with Humaniq to use his experience in both computer science and finance to help to bring happiness for all across the world. He is passionate about freedriving and wakeboarding, and, of course, staying late to finish work.',
+    imgSrc: `${imgPath}/anton_mozgovoy.png`
+  },
   // {
   //   name: 'Peyman Irani',
   //   position: 'SMM, CSS',
@@ -224,13 +224,13 @@ const team = [
     bio: '',
     imgSrc: `${imgPath}/kirill_goryunov.jpg`,
   },
-  // {
-  //   name: 'Kherel Kechil',
-  //   position: 'Lead Frontend Developer',
-  //   bio:
-  //     'Kherel is a digital nomad. He joined Humaniq to experience and participate in the financial evolution, and observe changes to the better in the country where he currently resides - China.',
-  //   imgSrc: `${imgPath}/kherel_kechil.png`,
-  // },
+  {
+    name: 'Kherel Kechil',
+    position: 'Lead Frontend Developer',
+    bio:
+      'Kherel is a digital nomad. He joined Humaniq to experience and participate in the financial evolution, and observe changes to the better in the country where he currently resides - China.',
+    imgSrc: `${imgPath}/kherel_kechil.png`,
+  },
   // {
   //   name: 'Serafima Semkina',
   //   position: 'CAO',

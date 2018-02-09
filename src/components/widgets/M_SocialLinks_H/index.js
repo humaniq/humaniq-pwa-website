@@ -76,6 +76,6 @@ const socialLinks = [
   },
   {
     name: 'telegram',
-    url: 'https://t.me/humaniqglobalchallenge'
+    url: 'https://t.me/HMQtrader'
   }
 ]
