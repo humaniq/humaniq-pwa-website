@@ -207,7 +207,7 @@ const team = [
   },
   {
     name: 'Anton Mozgovoy',
-    position: 'Team Lead',
+    position: 'Chief Technical Officer',
     bio: 'Anton was motivated to work with Humaniq to use his experience in both computer science and finance to help to bring happiness for all across the world. He is passionate about freedriving and wakeboarding, and, of course, staying late to finish work.',
     imgSrc: `${imgPath}/anton_mozgovoy.png`
   },
