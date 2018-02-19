@@ -19,25 +19,39 @@
     font-family: $font-ProximaNova;
     @include media($desktop-xxl) {
       //не знаю
-      width: 745px;
-      margin-left: 190px;
+      width: 1004px;
+      margin-left: 0px;
     }
     @include media($desktop-xl) {
       //не знаю
 
-      width: 820px;
-      margin: 0 auto;
+      //width: 820px;
+
+      margin: 0 auto 0 0;
       padding-top: 60px;
     }
+    @include media($desktop-13){
+      width: 70%;
+
+      margin: 0 auto;
+
+    }
     @include media($tablet) {
-      //не знаю
 
       width: auto;
       padding: 0;
       margin: 0;
+      padding-left: 40px;
     }
   }
 
+  &__header{
+    margin-left: 235px;
+    @include media($desktop-xl) {
+      margin: 0;
+
+    }
+  }
   &__title {
     font-size: 40px;
     margin-bottom: 16px;
@@ -45,7 +59,9 @@
       margin-bottom: 16px;
     }
     @include media($tablet) {
-      margin-bottom: 60px;
+      margin: 0 40px 16px 0;
+      font-size: 35px;
+
     }
   }
 
@@ -65,8 +81,9 @@
     display: block;
     cursor: pointer;
     position: absolute;
-    top: 50%;
+    top: 60%;
     margin-top: -10px;
+    z-index: 1;
     &:after {
       content: '';
       display: block;
@@ -78,19 +95,27 @@
   }
 
   &__nav-prev {
-    left: -20px;
+    left: -150px;
     &:after {
       transform: rotate(-135deg);
     }
     @include media($tablet) {
-      left: 0;
+      left: 5px;
+    }
+
+    @include media($desktop-xxl) {
+      left: -5px;
     }
   }
 
   &__nav-next {
-    right: -20px;
+    right: 10px;
+
     &:after {
       transform: rotate(45deg);
+    }
+    @include media($desktop-13) {
+      right: -10px;
     }
     @include media($tablet) {
       right: 0;
@@ -112,6 +137,11 @@
     margin-bottom: 36px;
     &_active_true, &:hover, &:active{
       opacity: 1;
+    }
+
+    @include media($mobile) {
+      font-size: 20px;
+      margin-right: 24px;
     }
 
   }
@@ -140,19 +170,5 @@
 .inner{
   display: flex;
   justify-content: space-between;
-  transition: 0.8s ease;
+  transition: 0.8s ease-out;
 }
-.slide{
-  padding: 30px;
-  border: 1px solid dodgerblue;
-  box-sizing: border-box;
-}
-
-.clone_before{
-  border-color: #F8EFBA
-}
-
-.clone_after{
-  border-color: #9AECDB
-}
-

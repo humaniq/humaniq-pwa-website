@@ -120,20 +120,24 @@ class SE_Home_Team extends Component {
         <div className={cn('content')}>
           <div className={cn('nav-prev')} onClick={() => this.left()} />
           <div className={cn('nav-next')} onClick={() => this.right()} />
-          <A_Title mix={cn('title')} type="section" theme="dark">
-            People behind Humaniq project
-          </A_Title>
-          <div>
-            <span className={cn('slider-nav-groups', {active: active == 'team'})} onClick={() => this.setState({show:0})}>
-              Team
-            </span>
-            <span className={cn('slider-nav-groups', {active: active == 'advisers'})} onClick={() => this.setState({show:6})}>
-              Advisers
-            </span>
-            <span className={cn('slider-nav-groups', {active: active == 'ambassadors'})} onClick={() => this.setState({show:10})}>
-              Ambassadors
-            </span>
+
+          <div className={cn('header')}>
+            <A_Title mix={cn('title')} type="section" theme="dark">
+              People behind Humaniq project
+            </A_Title>
+            <div>
+              <span className={cn('slider-nav-groups', {active: active == 'team'})} onClick={() => this.setState({show:0})}>
+                Team
+              </span>
+                <span className={cn('slider-nav-groups', {active: active == 'advisers'})} onClick={() => this.setState({show:6})}>
+                Advisers
+              </span>
+                <span className={cn('slider-nav-groups', {active: active == 'ambassadors'})} onClick={() => this.setState({show:10})}>
+                Ambassadors
+              </span>
+            </div>
           </div>
+
 
           <div
             className="wrapper1"
