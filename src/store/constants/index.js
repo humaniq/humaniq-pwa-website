@@ -34,6 +34,7 @@ export const CONTENT = 'CONTENT'
 export const STATIC_DATA = 'STATIC_DATA'
 export const WIKI = 'WIKI'
 export const WIKI_SEARCH = 'WIKI_SEARCH'
+export const USERS_NUMBER = 'USERS_NUMBER'
 
 export const JOIN_FORM = 'JOIN_FORM'
 export const SUBSCRIBE_FORM = 'SUBSCRIBE_FORM'

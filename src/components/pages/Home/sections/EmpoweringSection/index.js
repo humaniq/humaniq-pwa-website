@@ -7,7 +7,7 @@ import { cssClassName } from 'utils'
 //import A_Image from 'A_Image'
 const cn = cssClassName('SE_Home_Empowering')
 
-const SE_Home_Empowering = ({ mix }) => (
+const SE_Home_Empowering = ({ mix, users_number }) => (
   <section className={cn([mix])}>
     <div className={cn('left-side')}>
       <div className={cn('map')}>
@@ -69,9 +69,8 @@ const SE_Home_Empowering = ({ mix }) => (
     <p className={cn('hmq-description')}>
       A project on a global scale, receiving<br /> support 10,000 contributors.
     </p>
-
     <div className={cn('members')}>
-      <div className={cn('members-number')}>20 000</div>
+      <div className={cn('members-number')}>{users_number}</div>
       <p className={cn('members-text')}>people have already joined Humaniq</p>
     </div>
 
@@ -84,3 +83,5 @@ export default SE_Home_Empowering
 SE_Home_Empowering.propTypes = {
   mix: T.string, //BEM mixin from parent block
 }
+
+//.replace(/(\d)(?=(\d{3})+$)/g, '$1 ')
