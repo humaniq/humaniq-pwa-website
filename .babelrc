@@ -1,5 +1,6 @@
 {
   "plugins": [
+    "transform-runtime",
     "react-hot-loader/babel",
     ["module-resolver", {"root": ["./src", "./src/components/pages", "./src/components/widgets", "./src/store", ""]}]
   ],

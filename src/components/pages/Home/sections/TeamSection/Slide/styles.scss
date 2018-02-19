@@ -1,0 +1,73 @@
+@import 'common/settings/variables';
+@import 'common/utils';
+
+.team-section-slide{
+  font-family: $font-ProximaNova;
+  line-height: 1.2;
+  text-align: center;
+  font-size: 16px;
+  position: relative;
+  width: 136px;
+  transition: opacity .2s ease-in;
+
+  &_wide_true{
+    width: 172px;
+    padding-left: 36px;
+  }
+  &__group-name{
+    text-transform: uppercase;
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    text-align: right;
+    transform: rotate(-90deg) translate3d(-32px, -152px, 0);
+    transform-origin: top right;
+    opacity: 0.38;
+    font-size: 16px;
+    font-weight: bold;
+    color: #01a2ff;
+  }
+  &__person{
+    margin-top: 32px;
+    &-image {
+      position: relative;
+      display: block;
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 12px auto;
+
+      &:hover::before {
+        background-color: transparent;
+      }
+      &:before {
+        content: '';
+        position: absolute;
+        display: block;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: transparentize($color-main-blue, 0.1);
+        mix-blend-mode: multiply;
+        border-radius: 100%;
+        transition: background-color 0.3s;
+      }
+    }
+
+    &-name {
+      font-weight: 700;
+      max-width: 120px;
+      height: 40px;
+      line-height: 1;
+      text-align: center;
+      margin: 0 auto;
+    }
+    &-title {
+      margin: 0 auto;
+      font-weight: 400;
+      line-height: 1;
+
+    }
+  }
+}

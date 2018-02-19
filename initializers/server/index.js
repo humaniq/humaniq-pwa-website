@@ -5,10 +5,14 @@ const compression = require('compression')
 const mime = require('mime');
 // const serveStatic = require('serve-static')
 // const fs = require('fs.extra');
+require('dotenv').config();
+const cors = require('cors')
 
 require('babel-core/register');
 ['.css', '.less', '.sass', '.ttf', '.woff', '.woff2', '.scss'].forEach((ext) => require.extensions[ext] = () => {
 });
+
+const MixPanelController = require('./controllers/mixpanel').default
 
 const port = process.env.PORT || 8080;
 
@@ -16,6 +20,9 @@ const express = require('express')
 const application = express()
 
 application.use(compression());
+
+application.get('/api/v1/mixpanel', cors(), MixPanelController.show);
+
 
 application.use(express.static('static', {
   setHeaders: function (res, path) {
