@@ -133,7 +133,7 @@
     margin-right: 64px;
     letter-spacing: 1px;
     opacity: 0.38;
-    transition: opacity 0.4s ease-out;
+    transition: opacity 0.3s ease-out;
     margin-bottom: 36px;
     &_active_true, &:hover, &:active{
       opacity: 1;
@@ -147,8 +147,8 @@
   }
 
   &__hidden-slide{
-    transform: translate3d(80px, 0, 0);
-    transition: translate3d 0.3s ease-in-out;
+    transform: translate3d(140px, 0, 0);
+    //transition: 8.8s;
     opacity: 0;
   }
 }
@@ -170,5 +170,5 @@
 .inner{
   display: flex;
   justify-content: space-between;
-  transition: 0.8s ease-out;
+  transition: 0.6s;
 }
