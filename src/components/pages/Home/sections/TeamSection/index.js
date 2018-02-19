@@ -20,8 +20,8 @@ class SE_Home_Team extends Component {
 
   widths = { container: 0 }
 
-  right = () => this.changeShow(2)
-  left = () => this.changeShow(-2)
+  right = () => this.changeShow(1)
+  left = () => this.changeShow(-1)
   changeShow = n => this.setState(oldState => ({ show: oldState.show + n }))
   onSwipeRight = this.left
   onSwipeLeft = this.right
