@@ -48,7 +48,6 @@ export const fetchPostmanApi = async () => {
     unit: 'day'
   }
 
-  console.log(date_utc)
   let res = await request
     .get(MIX_PANEL_END_POINT)
     .query(mix_panel_config)
