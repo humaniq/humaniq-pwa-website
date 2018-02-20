@@ -7,7 +7,7 @@ import A_Image from 'A_Image'
 
 const getHazemName = () => <span>Hazem Danny<br />Al-Nakib</span>
 
-const TeamSectionSlide = ({persons, groupName, mix}) => {
+const TeamSectionSlide = ({persons, groupName, hidden}) => {
   const getSlide = ({imgSrc, position, name}, i) => (
     <div className={cn('person')} key={i}>
       <div className={cn('person-image')}>
@@ -19,7 +19,7 @@ const TeamSectionSlide = ({persons, groupName, mix}) => {
   )
   const renderTitle = groupName && <span className={cn('group-name')}>{groupName}</span>
   const renderSlides = persons.map(getSlide)
-  return (<div className={cn({wide: !!groupName}, [mix])}>{renderTitle}{renderSlides}</div>)
+  return (<div className={cn({wide: !!groupName, hidden})}>{renderTitle}{renderSlides}</div>)
 }
 
 TeamSectionSlide.propTypes = {}
