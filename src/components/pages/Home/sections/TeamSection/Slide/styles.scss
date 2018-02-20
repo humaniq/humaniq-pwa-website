@@ -1,20 +1,38 @@
 @import 'common/settings/variables';
 @import 'common/utils';
 
-.team-section-slide{
+.team-section-slide {
   font-family: $font-ProximaNova;
   line-height: 1.2;
   text-align: center;
   font-size: 16px;
   position: relative;
   width: 136px;
-  transition: opacity .2s ease-in;
+  transition: opacity 1.2s ease;
 
-  &_wide_true{
+
+  &_hidden_true {
+    //transform: translate3d(140px, 0, 0);
+    //transition: 8.8s;
+    //background-color: tomato;
+    transition: opacity 0.4s ease;
+
+    opacity: 0;
+
+
+  }
+  &_hidden_false {
+    //transform: translate3d(140px, 0, 0);
+    //transition: 8.8s;
+    //opacity: 1;
+    //background-color: tomato;
+  }
+
+  &_wide_true {
     width: 172px;
     padding-left: 36px;
   }
-  &__group-name{
+  &__group-name {
     text-transform: uppercase;
     display: inline-block;
     position: absolute;
@@ -28,7 +46,7 @@
     font-weight: bold;
     color: #01a2ff;
   }
-  &__person{
+  &__person {
     margin-top: 32px;
     &-image {
       position: relative;
@@ -67,7 +85,6 @@
       margin: 0 auto;
       font-weight: 400;
       line-height: 1;
-
     }
   }
 }

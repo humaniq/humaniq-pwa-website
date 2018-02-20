@@ -6,7 +6,7 @@ import { cssClassName } from 'utils'
 // import A_Image from 'A_Image/index'
 import SwipeHOC from 'HOC/Swipe'
 const cn = cssClassName('SE_Home_Team')
-import { getDelta, findIndexOfRedundantSlide, indexOfShow, pairSplit } from './helpers'
+import { getDelta, findIndexOfRedundantSlide, indexOfShow, pairSplit, findIndexesOfRedundantSlides } from './helpers'
 import Slide from './Slide'
 import { team, advisers, ambassadors } from './data'
 
@@ -33,7 +33,7 @@ class SE_Home_Team extends Component {
   getStep = (slidesWidths, show) =>
     slidesWidths.length ? getDelta(slidesWidths, show) : WIDE_WIDTH
 
-  getSlides(slideGroups, slidesCount, show) {
+  getSlides(slideGroups, slidesCount, show, indexesOfRedundantSlides) {
     const indexOfRedundantSlide = findIndexOfRedundantSlide(
       slidesCount,
       show,
@@ -48,6 +48,7 @@ class SE_Home_Team extends Component {
       return slideGroups.map(({ title, entities }) => {
         return entities.map((slide, i) => {
           indexTotal += 1
+
           const first = i === 0
           if (keys_name === 'clone_before') {
             this.slidesWidths.push(first ? WIDE_WIDTH : NORMAL_WIDTH)
@@ -56,7 +57,8 @@ class SE_Home_Team extends Component {
             <Slide
               persons={slide}
               groupName={first && title}
-              mix={indexTotal - 1 === indexOfRedundantSlide ? cn('hidden-slide') : ''}
+              hidden = {indexesOfRedundantSlides.arr.includes(indexTotal)}
+              mix={indexesOfRedundantSlides.arr.includes(indexTotal) ? cn('hidden-slide') : cn('showing-slide')}
             />
           )
         })
@@ -101,10 +103,19 @@ class SE_Home_Team extends Component {
 
     const { show } = this.state
     const move = (show / slidesCount) | 0
-    const renderedSlides = this.getSlides(slideGroups, slidesCount, show)
+
+    const showingSlideIndex = indexOfShow(slidesCount, show)
+
+    const indexesOfRedundantSlides = findIndexesOfRedundantSlides(
+      slidesCount,
+      show,
+      this.slidesWidths,
+      this.widths.container.offsetWidth
+    )
+    const {padding} = indexesOfRedundantSlides
+    const renderedSlides = this.getSlides(slideGroups, slidesCount, show, indexesOfRedundantSlides)
     const step = this.getStep(slidesWidths, show)
     let active;
-    const showingSlideIndex = indexOfShow(slidesCount, show)
     if(showingSlideIndex < 0){
       active = 'ambassadors'
     } else if(showingSlideIndex < 6){
@@ -144,14 +155,15 @@ class SE_Home_Team extends Component {
             onTouchStart={this.props.onTouchStart}
             onTouchMove={this.props.onTouchMove}
             ref={node => (this.widths.container = node)}
+            style={{paddingLeft: padding}}
           >
             <div
               className="wrapper2"
-              style={{ transform: `translate3d(${move * (this.widths.inner / 3)}px, 0px, 0px` }}
+              style={{ transform: `translate3d(${move * (this.widths.inner / 3)}px, 0px, 0px)` }}
             >
               <div
                 className="inner"
-                style={{ transform: `translate3d(${step - this.widths.inner / 3}px, 0px, 0px` }}
+                style={{ transform: `translate3d(${step - this.widths.inner / 3}px, 0px, 0px)` }}
                 ref={node => (this.widths.inner = node ? node.offsetWidth : 0)}
               >
                 {renderedSlides}
