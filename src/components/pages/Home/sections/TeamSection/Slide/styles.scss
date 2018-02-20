@@ -9,6 +9,7 @@
   position: relative;
   width: 136px;
   transition: opacity 1.2s ease;
+  transform: translate3d(0,0,0);
 
 
   &_hidden_true {
