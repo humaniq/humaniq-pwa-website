@@ -130,7 +130,11 @@ class SE_Home_Team extends Component {
 
     return (
       <section className={cn([mix])}>
-        <div className={cn('content')}>
+        <div
+          className={cn('content')}
+          // style={{paddingLeft: padding}}
+
+        >
           <div className={cn('nav-prev')} onClick={() => this.left()} />
           <div className={cn('nav-next')} onClick={() => this.right()} />
 
@@ -157,7 +161,7 @@ class SE_Home_Team extends Component {
             onTouchStart={this.props.onTouchStart}
             onTouchMove={this.props.onTouchMove}
             ref={node => (this.widths.container = node)}
-            style={{paddingLeft: padding}}
+            style={{padding}}
           >
             <div
               className="wrapper2"

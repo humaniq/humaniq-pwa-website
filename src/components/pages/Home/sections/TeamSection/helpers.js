@@ -41,10 +41,8 @@ export function findIndexOfRedundantSlide(slidesCount, show, slidesWidths, width
   const first_index_of_slides = indexOfShow(slidesCount, show)
   let i_last = first_index_of_slides
   for (let slidesLengh = 0; slidesLengh < width_container; i_last++) {
-    console.log(slidesLengh)
     slidesLengh += slidesWidths[indexOfShow(slidesCount, i_last)]
   }
-  console.log({slidesWidths})
   return indexOfShow(slidesCount, i_last - 1)
 }
 
@@ -58,7 +56,6 @@ export function findIndexesOfRedundantSlides(slidesCount, show, slidesWidths, wi
     previousLength = slidesLengh
     slidesLengh = previousLength + slidesWidths[indexOfShow(slidesCount, i_last)]
   }
-  console.log({width_container, previousLength, slidesLengh, i_last})
   const padding = width_container ? (width_container - previousLength)/2 : '0'
   return ({
     arr: [
