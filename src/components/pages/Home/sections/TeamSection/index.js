@@ -73,19 +73,21 @@ class SE_Home_Team extends Component {
   }
 
   handleResize = () => {
-    const { slideGroups, slidesWidths, slidesCount } = this
-    const {show} = this.state
+    // const { slideGroups, slidesWidths, slidesCount } = this
+    // const {show} = this.state
+    //
+    // const indexOfRedundantSlide = findIndexOfRedundantSlide(
+    //   slidesCount,
+    //   show,
+    //   this.slidesWidths,
+    //   this.widths.container.offsetWidth
+    // )
+    //
+    // if (this.indexOfRedundantSlide !== indexOfRedundantSlide) {
+    //   this.forceUpdate()
+    // }
+    this.forceUpdate()
 
-    const indexOfRedundantSlide = findIndexOfRedundantSlide(
-      slidesCount,
-      show,
-      this.slidesWidths,
-      this.widths.container.offsetWidth
-    )
-
-    if (this.indexOfRedundantSlide !== indexOfRedundantSlide) {
-      this.forceUpdate()
-    }
   }
 
   componentDidMount() {
