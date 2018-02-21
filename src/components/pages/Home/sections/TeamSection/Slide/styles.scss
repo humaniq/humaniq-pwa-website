@@ -8,23 +8,23 @@
   font-size: 16px;
   position: relative;
   width: 136px;
-  transition: opacity 0.1s ease;
+  //transition: opacity 0.1s ease;
 
 
   &_hidden_true {
     //transform: translate3d(140px, 0, 0);
     //transition: 8.8s;
     //background-color: tomato;
-    transition: opacity 0.4s ease;
-
+    transition: opacity 0.2s ease;
     opacity: 0;
 
 
   }
   &_hidden_false {
+    transform: translate3d(0, 0, 0);
     //transform: translate3d(140px, 0, 0);
     //transition: 8.8s;
-    //opacity: 1;
+    opacity: 1;
     //background-color: tomato;
   }
 
