@@ -1,4 +1,4 @@
-const imgPath = 'img/team_g'
+const imgPath = 'img/team_s'
 const ambassadorsPath = 'https://s3-eu-west-1.amazonaws.com/humaniq-web-backend-public/ambassadors'
 
 export const advisers = [
@@ -7,42 +7,42 @@ export const advisers = [
     position: 'Adviser',
     bio:
       'Is an American writer and media specialist living in Paris. He has as spent his career developing creative and innovative solutions for business leaders, heads of state, ministries, NGOs, and other not-for- profit foundations. He is the Financial Times representative for Africa, the Middle East and emerging markets.',
-    imgSrc: `${imgPath}/david_applefield.png`,
+    imgSrc: `${imgPath}/david_applefield.jpg`,
   },
   {
     name: 'Matt McKibbin',
     position: 'Adviser',
     bio:
       'Is a business development guru and a decentralization evangelist. He became interested in Bitcoin and the blockchain technology in 2012. Technologically savvy, he is an extroverted connector driven by a desire to see transformative and decentralized technologies positively affect the 7 billion people on the planet. He is based in the Washington DC metro area.',
-    imgSrc: `${imgPath}/matt_mckibbin.png`,
+    imgSrc: `${imgPath}/matt_mckibbin.jpg`,
   },
   {
     name: 'Alex Bausch',
     position: 'Adviser',
     bio:
       'Is an entrepreneur with broad experience in all aspects of international business development and the creation of global technology companies. He strongly believes in partner ecosystems which aim to inspire and spawn new innovations. His specialties include: SaaS services, mobile identity security, the IoT, enterprise managed mobility, decentralised ledger technology, marketing, and product development.',
-    imgSrc: `${imgPath}/alex_bausch.png`,
+    imgSrc: `${imgPath}/alex_bausch.jpg`,
   },
   {
     name: 'Nick Ayton',
     position: 'Adviser',
     bio:
       'Is a writer, speaker and educator of all things Blockchain and Cryptocurrency. He is a Fintech 100 Influencer and Number 21 Rise Blockchain Top 100. He has had eight startups and held many senior roles in major IT and tech companies. He now chairs various Blockchain events and advises a range of clients on Blockchain technology, bitcoin and Ethereum. One of his latest projects is to raise funds using cryptoeconomics and create a new film finance model to make a mini- series for TV about the Bitcoin Revolution, an asset backed Token, and a new Media and Film Production business on Ethereum.',
-    imgSrc: `${imgPath}/nick_ayton.png`,
+    imgSrc: `${imgPath}/nick_ayton.jpg`,
   },
   {
     name: 'Michael Terpin',
     position: 'Adviser',
     bio:
       "Michael Terpin co-founded BitAngels (www.bitangels.co), the world's first angel network for digital currency startups, in May 2013, and now serves as its chairman. The distributed angel network currently has more than 600 members, and it has made more than 25 investments in bitcoin and cryptocurrency companies with two exits and several follow-on rounds. Terpin is also co-founder and managing partner of bCommerce Labs (www.bcommercelabs.com), the first technology incubator fund focused on e-commerce companies for bitcoin and the blockchain, and a partner at Flight VC.",
-    imgSrc: `${imgPath}/michael_terpin.png`,
+    imgSrc: `${imgPath}/michael_terpin.jpg`,
   },
   {
     name: 'Dmitry Kaminskiy',
     position: 'Adviser',
     bio:
       'An innovative entrepreneur and investor active in Biotech, Fintech, Blockchain and artificial intelligence, Dmitry is co-founder of the Deep Knowledge Ventures investment fund, focused on investments in AI and Deeptech. He adheres to the principle of impact investment in all his business activities, believing that business should make a social impact, and he supports the deployment of Blockchain for Good, which led to his decision to support Humaniq from its inception.',
-    imgSrc: `${imgPath}/dmitry_kaminskiy.png`,
+    imgSrc: `${imgPath}/dmitry_kaminskiy.jpg`,
   },
 
   {
@@ -50,7 +50,7 @@ export const advisers = [
     position: 'Adviser',
     bio:
       'Paolo Tasca is a FinTech economist specialising in P2P Financial System. An advisor for different international organisations including the EU Parliament on blockchain technologies, Paolo recently joined the University College London as Director of the Centre for Blockchain Technologies (UCL CBT).  Prior to that, he has been a senior research economist at Deutsche Bundesbank working on digital currencies and P2P lending. Paolo is the co-author of the bestseller "FINTECH Book" and the co-editor of the book "Banking Beyond Banks and Money.',
-    imgSrc: `${imgPath}/paolo_tasca.png`,
+    imgSrc: `${imgPath}/paolo_tasca.jpg`,
   },
 ]
 
@@ -60,14 +60,14 @@ export const team = [
     position: 'Founder, CEO',
     bio:
       'Humaniq founder and Fintech entrepreneur Alex is one of the most important members of the international Blockchain community, who has worked with the UN to lead the deployment of Blockchain technology to improve the efficiency of UN resources and remittances. He has also spearheaded the harnessing of blockchains in Russia, organising a conference for 500 participants on the Ethereum Blockchain; authoring Bitcoin. More than Just Money; and founding the Fintech accelerator for startups in Russia, Future Fintech. He started Humaniq to help lift the global banked out of poverty.',
-    imgSrc: `${imgPath}/alex_fork.png`,
+    imgSrc: `${imgPath}/alex_fork.jpg`,
   },
   {
     name: 'Javed Khattak',
     position: 'CFO',
     bio:
       'Javed has a background as an actuary and of finance, consulting and startups. He loves technology, especially gadgets, AI and virtual reality, and believes in Blockchain for Good. He is working with Humaniq to bring greater opportunities and fairness to the world.',
-    imgSrc: `${imgPath}/javed_khattak.png`,
+    imgSrc: `${imgPath}/javed_khattak.jpg`,
   },
   {
     name: 'Hazem Danny Al-Nakib',
@@ -80,7 +80,7 @@ export const team = [
     position: 'Chief Technical Officer',
     bio:
       'Anton was motivated to work with Humaniq to use his experience in both computer science and finance to help to bring happiness for all across the world. He is passionate about freedriving and wakeboarding, and, of course, staying late to finish work.',
-    imgSrc: `${imgPath}/anton_mozgovoy.png`,
+    imgSrc: `${imgPath}/anton_mozgovoy.jpg`,
   },
   {
     name: 'Kirill Goryunov',
@@ -93,7 +93,7 @@ export const team = [
     position: 'Lead Frontend Developer',
     bio:
       'Kherel is a digital nomad. He joined Humaniq to experience and participate in the financial evolution, and observe changes to the better in the country where he currently resides - China.',
-    imgSrc: `${imgPath}/kherel_kechil.png`,
+    imgSrc: `${imgPath}/kherel_kechil.jpg`,
   },
   {
     name: 'Harry Bright',
@@ -107,35 +107,35 @@ export const team = [
     position: 'SMM, CSS',
     bio:
       'Bringing experience of social media and customer service support, Segrey is passionate about Blockchain technology and his family.',
-    imgSrc: `${imgPath}/segrey_blinov.png`,
+    imgSrc: `${imgPath}/segrey_blinov.jpg`,
   },
   {
     name: 'Danny Kass',
     position: 'SMM, CSS',
     bio:
       'Danny’s background is in social media, B2B sales and customer service support. He loves cryptoeconomy and technology and at Humaniq is motivated to disrupt the financial industry with an ecosystem for entrepreneurs to make changes from the bottom up.',
-    imgSrc: `${imgPath}/danny_kass.png`,
+    imgSrc: `${imgPath}/danny_kass.jpg`,
   },
   {
     name: 'Andrey Shevchenko',
     position: 'SMM, CSS',
     bio:
       'Andriy has experience in computer science, security research, online community building and entrepreneurship and is passionate about both improving the world and space exploration. At Humaniq he wants to contribute to something good for humanity and boost financial independence.',
-    imgSrc: `${imgPath}/andriy_schechenko.png`,
+    imgSrc: `${imgPath}/andriy_schechenko.jpg`,
   },
   {
     name: 'Lee Baker',
     position: 'Writer',
     bio:
       'Lee has a background in both communications and community organising and loves story-telling to inspire positive action and to connect with others to change things for the better. He wants to unleash the power of the collaborative economy and help everyone to put their destinies into their own hands.',
-    imgSrc: `${imgPath}/lee_baker.png`,
+    imgSrc: `${imgPath}/lee_baker.jpg`,
   },
   {
     name: 'Olga Deribo',
     position: 'Graphic Designer',
     bio:
       'Olga has a background in architecture, interior design and graphic design, and is passionate about inspiring others, building sites, spontaneity, and the universe. She is at Humaniq so she can be creative for social good - and to become a crypto geek!',
-    imgSrc: `${imgPath}/olga_derbio.png`,
+    imgSrc: `${imgPath}/olga_derbio.jpg`,
   },
 ]
 

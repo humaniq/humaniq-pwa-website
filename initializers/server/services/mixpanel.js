@@ -57,6 +57,7 @@ export const fetchPostmanApi = async () => {
   let total_installations = 0
   Object.values(install).forEach( el => total_installations += el)
 
+  total_installations = total_installations + 20000 // add number of users registered before mixpanel
 
   return {total_installations}
 }
