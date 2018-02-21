@@ -161,7 +161,7 @@ class SE_Home_Team extends Component {
             onTouchStart={this.props.onTouchStart}
             onTouchMove={this.props.onTouchMove}
             ref={node => (this.widths.container = node)}
-            style={{padding}}
+            style={{paddingLeft: padding}}
           >
             <div
               className="wrapper2"
