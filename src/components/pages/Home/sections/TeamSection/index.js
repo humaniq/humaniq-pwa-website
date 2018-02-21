@@ -175,6 +175,9 @@ class SE_Home_Team extends Component {
                 {renderedSlides}
               </div>
             </div>
+            <div className={cn('linner-gradient-left')}></div>
+            <div className={cn('linner-gradient-right')}></div>
+
           </div>
         </div>
 

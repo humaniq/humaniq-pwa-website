@@ -6,17 +6,17 @@ const cn = cssClassName('Home')
 // import Meta from './meta.js'
 import { isMobile } from 'utils/isMobile'
 import O_Footer_H from 'O_Footer_H'
-import EmpoweringSection from './sections/EmpoweringSection'
-import FirstMobileSection from './sections/FirstMobileSection'
-import UnbankedStatSection from './sections/UnbankedStatSection'
-import QuotesSection from './sections/QuotesSection'
-import WhatMakesSection from './sections/WhatMakesSection'
-import SafetySection from './sections/SafetySection'
-import OpportunitiesSection from './sections/OpportunitiesSection'
-import GrowingSection from './sections/GrowingSection'
-import UseCasesSection from './sections/UseCasesSection'
-import GlobalChallengeSection from './sections/GlobalChallengeSection'
-import ExpeditionSection from './sections/ExpeditionSection'
+// import EmpoweringSection from './sections/EmpoweringSection'
+// import FirstMobileSection from './sections/FirstMobileSection'
+// import UnbankedStatSection from './sections/UnbankedStatSection'
+// import QuotesSection from './sections/QuotesSection'
+// import WhatMakesSection from './sections/WhatMakesSection'
+// import SafetySection from './sections/SafetySection'
+// import OpportunitiesSection from './sections/OpportunitiesSection'
+// import GrowingSection from './sections/GrowingSection'
+// import UseCasesSection from './sections/UseCasesSection'
+// import GlobalChallengeSection from './sections/GlobalChallengeSection'
+// import ExpeditionSection from './sections/ExpeditionSection'
 /*import TimelineSection from './sections/TimelineSection'*/
 import WorldTalkingSection from './sections/WorldTalkingSection'
 import TeamSection from './sections/TeamSection'
@@ -70,17 +70,17 @@ class Home extends Component {
   }
 
   sectionsObj = {
-    empowering: <EmpoweringSection mix={cn('section')} key="empowering" users_number={this.props.users_number} />,
-    mobile: <FirstMobileSection mix={cn('section')} key="mobile" />,
-    situation: <UnbankedStatSection mix={cn('section')} key="situation" />,
-    changes: <QuotesSection mix={cn('section', { type: 'slider' })} key="changes" />,
-    platform: <WhatMakesSection mix={cn('section')} key="platform" />,
-    simplicity: <SafetySection mix={cn('section')} key="simplicity" />,
-    opportunities: <OpportunitiesSection mix={cn('section')} key="opportunities" />,
-    userbase: <GrowingSection mix={cn('section')} key="userbase" />,
-    'use cases': <UseCasesSection mix={cn('section')} key="usecases" />,
-    challenge: <GlobalChallengeSection mix={cn('section')} key="challenge" />,
-    expedition: <ExpeditionSection mix={cn('section')} key="expedition" />,
+    // empowering: <EmpoweringSection mix={cn('section')} key="empowering" users_number={this.props.users_number} />,
+    // mobile: <FirstMobileSection mix={cn('section')} key="mobile" />,
+    // situation: <UnbankedStatSection mix={cn('section')} key="situation" />,
+    // changes: <QuotesSection mix={cn('section', { type: 'slider' })} key="changes" />,
+    // platform: <WhatMakesSection mix={cn('section')} key="platform" />,
+    // simplicity: <SafetySection mix={cn('section')} key="simplicity" />,
+    // opportunities: <OpportunitiesSection mix={cn('section')} key="opportunities" />,
+    // userbase: <GrowingSection mix={cn('section')} key="userbase" />,
+    // 'use cases': <UseCasesSection mix={cn('section')} key="usecases" />,
+    // challenge: <GlobalChallengeSection mix={cn('section')} key="challenge" />,
+    // expedition: <ExpeditionSection mix={cn('section')} key="expedition" />,
     /*timeline: <TimelineSection mix={cn('section')} key="timeline" />,*/
     team: <TeamSection mix={cn('section')} key="team" />,
     press: <WorldTalkingSection mix={cn('section')} key="press" />,
