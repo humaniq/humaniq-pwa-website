@@ -54,6 +54,13 @@
         padding: 20px 23px;
         font-size: 12px;
       }
+
+      svg {
+        position: relative;
+        top: 5px;
+        width: 16px;
+        height: 16px;
+      }
     }
     @include media($desktop-xl) {
       display: none;
