@@ -138,6 +138,18 @@ class Home extends Component {
     }
   }
 
+  _handleKeyPress({keyCode}) {
+    const { showIndex: oldIndex} = this.state
+    const
+      nextCodes = [40, 34, 32, 39],
+      prevCodes = [38, 33, 36, 37]
+    if(nextCodes.includes(keyCode) && oldIndex < sectionsNames.length -1) {
+      this.setState({ showIndex: oldIndex + 1})
+    } else if(prevCodes.includes(keyCode) && oldIndex > 0) {
+      this.setState({ showIndex: oldIndex - 1})
+    }
+  }
+
   handleMouseWeel({ deltaY }) {
     const { showIndex: oldIndex, fastScroll } = this.state
     if (!fastScroll && Math.abs(deltaY) < 900) return
@@ -156,6 +168,7 @@ class Home extends Component {
 
   componentDidMount() {
     window.addEventListener('resize', this.getWidth)
+    this.container.focus();
   }
 
   componentWillUnmount() {
@@ -190,7 +203,13 @@ class Home extends Component {
     const onWheel = scroll && controlledScroll ? this.handleWeel : undefined
 
     return (
-      <div className={cn({ scroll: !controlledScroll })} onWheel={onWheel}>
+      <div
+        className={cn({ scroll: !controlledScroll })}
+        onWheel={onWheel}
+        onKeyDown={(e) => this._handleKeyPress(e)}
+        tabIndex='0'
+        ref={el => {this.container = el}}
+      >
         <div className={cn('inner')} style={{ transform: `translate3d(0, ${-positionY}vh, 0px` }}>
           {sectionsNames.map(name => this.sectionsObj[name])}
         </div>
