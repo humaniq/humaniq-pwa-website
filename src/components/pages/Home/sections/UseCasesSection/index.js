@@ -27,6 +27,14 @@ class SE_Home_UseCases extends Component {
     this.setState({ show })
   }
 
+  _handleKeyPress({keyCode}) {
+    if(keyCode === 39) {
+      this.next()
+    } else if(keyCode === 37) {
+      this.prev()
+    }
+  }
+
   getSlides() {
     let res = []
     const genSlidesArray = keysName =>
@@ -72,7 +80,11 @@ class SE_Home_UseCases extends Component {
     const dots = this.getDots()
 
     return (
-      <section className={cn([mix])}>
+      <section
+        className={cn([mix])}
+        tabIndex='0'
+        onKeyDown={(e) => this._handleKeyPress(e)}
+      >
         <div className={cn('content')}>
           <A_Title mix={cn('title')} type="section" theme="dark">
             Humaniq use cases
