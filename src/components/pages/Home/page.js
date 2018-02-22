@@ -142,8 +142,8 @@ class Home extends Component {
   _handleKeyPress({keyCode}) {
     const { showIndex: oldIndex} = this.state
     const
-      nextCodes = [40, 34, 32],
-      prevCodes = [38, 33, 36]
+      nextCodes = [40, 34, 32, 39],
+      prevCodes = [38, 33, 36, 37]
     if(nextCodes.includes(keyCode) && oldIndex < sectionsNames.length -1) {
       this.setState({ showIndex: oldIndex + 1})
     } else if(prevCodes.includes(keyCode) && oldIndex > 0) {

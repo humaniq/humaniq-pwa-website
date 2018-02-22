@@ -57,13 +57,6 @@ class SE_Home_Quotes extends Component {
     this.setState({ show })
   }
 
-  _handleKeyPress({keyCode}) {
-    if(keyCode === 39) {
-      this.next()
-    } else if(keyCode === 37) {
-      this.prev()
-    }
-  }
 
   render() {
     const { mix } = this.props
@@ -72,8 +65,6 @@ class SE_Home_Quotes extends Component {
     return (
       <section
         className={cn([mix])}
-        tabIndex='0'
-        onKeyDown={(e) => this._handleKeyPress(e)}
       >
         <div className={cn('slider')} style={{ transform: `translateX(-${pctX}%)` }}>
           {_getQuotesSlides(quotes)}
