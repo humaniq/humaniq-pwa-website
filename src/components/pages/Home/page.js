@@ -169,6 +169,7 @@ class Home extends Component {
 
   componentDidMount() {
     window.addEventListener('resize', this.getWidth)
+    this.container.focus();
   }
 
   componentWillUnmount() {
@@ -208,6 +209,7 @@ class Home extends Component {
         onWheel={onWheel}
         onKeyDown={(e) => this._handleKeyPress(e)}
         tabIndex='0'
+        ref={el => {this.container = el}}
       >
         <div className={cn('inner')} style={{ transform: `translate3d(0, ${-positionY}vh, 0px` }}>
           {sectionsNames.map(name => this.sectionsObj[name])}
