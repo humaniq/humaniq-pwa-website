@@ -60,8 +60,9 @@ class Ambassadors  extends Component {
         >
 
           <A_Image
-            src={partner.logoLink2x}
+            src={partner.imgSrc}
             alt={partner.name}
+            rounded
           />
           <span className={cn('tooltip', {type: tooltipPlace})}>
             <M_Tooltip type={tooltipPlace}>

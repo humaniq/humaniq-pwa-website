@@ -4,9 +4,9 @@ import './styles.scss';
 import {cssClassName} from 'utils'
 const cn = cssClassName('M_Tooltip')
 
-const M_Tooltip = ({children, type, size}) =>{
+const M_Tooltip = ({children, type, size, mix}) =>{
   return(
-      <div className={cn('wrapper')}>
+      <div className={cn('wrapper', [mix])}>
         <div className={cn('root', {type, size})}>
           {children}
         </div>
