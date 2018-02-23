@@ -12,10 +12,14 @@ import { team, advisers, ambassadors } from './data'
 
 const NORMAL_WIDTH = 136
 const WIDE_WIDTH = NORMAL_WIDTH + 20 + 16
+import M_Tooltip from 'M_Tooltip'
 
 class SE_Home_Team extends Component {
   state = {
-    show: 0
+    show: 0,
+    top: 0,
+    left: 0,
+    tshow: false,
   }
 
   widths = { container: 0 }
@@ -59,6 +63,8 @@ class SE_Home_Team extends Component {
               groupName={first && title}
               hidden = {indexesOfRedundantSlides.arr.includes(indexTotal)}
               mix={indexesOfRedundantSlides.arr.includes(indexTotal) ? cn('hidden-slide') : cn('showing-slide')}
+              mouseSlideEnterHandler = {this.mouseSlideEnterHandler}
+              mouseSlideLeaveHandler = {this.mouseSlideLeaveHandler}
             />
           )
         })
@@ -99,13 +105,15 @@ class SE_Home_Team extends Component {
     window.removeEventListener('resize', this.handleResize)
   }
 
+  mouseSlideEnterHandler = (top, left, tcontent) => this.setState({tshow: true, top, left, tcontent})
+  mouseSlideLeaveHandler = () => this.setState({tshow: false})
+
   render() {
     const { mix } = this.props
     const { slideGroups, slidesWidths, slidesCount } = this
 
-    const { show } = this.state
+    const { show, tshow, top, left, tcontent } = this.state
     const move = (show / slidesCount) | 0
-
     const showingSlideIndex = indexOfShow(slidesCount, show)
 
     const indexesOfRedundantSlides = findIndexesOfRedundantSlides(
@@ -179,8 +187,14 @@ class SE_Home_Team extends Component {
             <div className={cn('linner-gradient-right')}></div>
 
           </div>
-        </div>
+          {
+            tshow && tcontent &&
+              <div className={cn('tooltip')} style={{marginLeft: left -595, marginTop: top - 620}}>
+               <M_Tooltip type={'bottom'}>{tcontent}</M_Tooltip>
+              </div>
+          }
 
+        </div>
         <SectionCounter sectionNum={12} theme="bright" />
       </section>
     )
