@@ -1,32 +1,45 @@
-import React from 'react'
+import React, { Component } from 'react'
 // import * as T from "prop-types";
 import './styles.scss'
 import { cssClassName } from 'utils'
 const cn = cssClassName('TeamSectionSlide')
 import A_Image from 'A_Image'
 import M_Tooltip from 'M_Tooltip'
+import SingleSLide from './slide'
 
-const getHazemName = () => <span>Hazem Danny<br />Al-Nakib</span>
+const getHazemName = () => (
+  <span>
+    Hazem Danny<br />Al-Nakib
+  </span>
+)
 
-const TeamSectionSlide = ({persons, groupName, hidden}) => {
-  const getSlide = ({imgSrc, position, name, bio}, i) => (
-    <div className={cn('person')} key={i}>
-      <div className={cn('person-image')}>
-        <A_Image src={imgSrc} rounded />
+class TeamSectionSlide extends Component {
+  state = {}
+
+  getSlide = ({ imgSrc, position, name, bio }, i) => {
+    name = name.search('Al-Nakib') === -1 ? name : getHazemName()
+    return(
+      <SingleSLide {...{
+        imgSrc, position, name, bio,
+        mouseSlideEnterHandler: this.props.mouseSlideEnterHandler,
+        mouseSlideLeaveHandler: this.props.mouseSlideLeaveHandler
+      }} key={i}/>
+    )
+  }
+
+  render() {
+    const { persons, groupName, hidden } = this.props
+    //   const {} = this.state
+
+    const renderTitle = groupName && <span className={cn('group-name')}>{groupName}</span>
+    const renderSlides = persons.map(this.getSlide)
+    return (
+      <div className={cn({ wide: !!groupName, hidden })}>
+        {renderTitle}
+        {renderSlides}
       </div>
-      <p className={cn('person-name')}>{name.search('Al-Nakib') === -1 ? name : getHazemName()}</p>
-      <p className={cn('person-title')}>{position}</p>
-
-      {bio &&
-        <span className={cn('tooltip')} >
-          <M_Tooltip type={'bottom'}>{bio}</M_Tooltip>
-        </span>
-      }
-    </div>
-  )
-  const renderTitle = groupName && <span className={cn('group-name')}>{groupName}</span>
-  const renderSlides = persons.map(getSlide)
-  return (<div className={cn({wide: !!groupName, hidden})}>{renderTitle}{renderSlides}</div>)
+    )
+  }
 }
 
 TeamSectionSlide.propTypes = {}

@@ -47,6 +47,8 @@
   }
   &__person {
     margin-top: 32px;
+    position: static;
+
     &-image {
       position: relative;
       display: block;
@@ -88,10 +90,8 @@
   }
   &__tooltip{
     position: absolute;
-    display: none;
-    bottom: 0;
-    left: 50%;
-    transform: translate3d(-50%, 100%, 0);
+    //display: none;
+    transform: translate3d(-25%, 0, 0);
     z-index: 9999;
   }
 }
