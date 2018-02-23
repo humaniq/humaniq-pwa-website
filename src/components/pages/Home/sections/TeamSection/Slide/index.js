@@ -5,7 +5,6 @@ import { cssClassName } from 'utils'
 const cn = cssClassName('TeamSectionSlide')
 import A_Image from 'A_Image'
 import M_Tooltip from 'M_Tooltip'
-import SingleSLide from './slide'
 
 const getHazemName = () => (
   <span>
@@ -18,19 +17,19 @@ class TeamSectionSlide extends Component {
 
   getSlide = ({ imgSrc, position, name, bio }, i) => {
     name = name.search('Al-Nakib') === -1 ? name : getHazemName()
-    return(
-      <SingleSLide {...{
-        imgSrc, position, name, bio,
-        mouseSlideEnterHandler: this.props.mouseSlideEnterHandler,
-        mouseSlideLeaveHandler: this.props.mouseSlideLeaveHandler
-      }} key={i}/>
+    return (
+      <div className={cn('person')} key={i}>
+        <div className={cn('person-image')}>
+          <A_Image src={imgSrc} rounded />
+        </div>
+        <p className={cn('person-name')}>{name}</p>
+        <p className={cn('person-title')}>{position}</p>
+      </div>
     )
   }
 
   render() {
     const { persons, groupName, hidden } = this.props
-    //   const {} = this.state
-
     const renderTitle = groupName && <span className={cn('group-name')}>{groupName}</span>
     const renderSlides = persons.map(this.getSlide)
     return (
