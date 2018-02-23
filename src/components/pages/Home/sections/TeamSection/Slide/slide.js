@@ -7,10 +7,6 @@ import A_Image from 'A_Image'
 import M_Tooltip from 'M_Tooltip'
 
 class TeamSectionSlide extends Component {
-  state = {
-    hide: true,
-  }
-
 
   componentDidMount(){
     this.forceUpdate()
@@ -24,7 +20,6 @@ class TeamSectionSlide extends Component {
       mouseSlideEnterHandler,
       mouseSlideLeaveHandler,
     } = this.props
-    const { hide } = this.state
     const { top, left } = (this.node && this.node.getBoundingClientRect()) || {top: 0, left: 0}
     return (
       <div

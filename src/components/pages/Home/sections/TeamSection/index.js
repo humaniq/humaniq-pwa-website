@@ -189,7 +189,7 @@ class SE_Home_Team extends Component {
           </div>
           {
             tshow && tcontent &&
-              <div className={cn('tooltip')} style={{marginLeft: left -595, marginTop: top - 620}}>
+              <div className={cn('tooltip')} style={{left: left, top: top - 50}}>
                <M_Tooltip type={'bottom'}>{tcontent}</M_Tooltip>
               </div>
           }
