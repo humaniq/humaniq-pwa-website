@@ -244,20 +244,20 @@ export const ambassadors = [
   },
   {
     name: "Pius Okedinachi",
-    position: "Bayelsa State Nigeria",
-    "bio": "Pius Okedinachi bio",
+    position: "Nigeria",
+    "bio": "",
     imgSrc:  `${ambassadorsPath}/PiusOkedinachi.png`,
   },
   {
     name: "Kabonire Ruhinda",
     position: "Uganda",
-    "bio": "Kabonire Ruhinda bio",
+    "bio": "",
     imgSrc:  `${ambassadorsPath}/KabonireRuhinda.png`,
   },
   {
     name: "Md.Mofassair Hossain Dhaka",
     position: "Bangladesh",
-    "bio": "Md.Mofassair Hossain Dhaka bio",
+    "bio": "",
     imgSrc:  `${ambassadorsPath}/Md.MofassairHossainDhaka.png`,
   }
 ]

@@ -17,9 +17,9 @@ import M_Tooltip from 'M_Tooltip'
 class SE_Home_Team extends Component {
   state = {
     show: 0,
-    top: 0,
-    left: 0,
+    tplace: 0,
     tshow: false,
+    tcontent: undefined
   }
 
   widths = { container: 0 }
@@ -60,6 +60,7 @@ class SE_Home_Team extends Component {
           return (
             <Slide
               persons={slide}
+              place = {keys_name + i}
               groupName={first && title}
               hidden = {indexesOfRedundantSlides.arr.includes(indexTotal)}
               mix={indexesOfRedundantSlides.arr.includes(indexTotal) ? cn('hidden-slide') : cn('showing-slide')}
@@ -105,14 +106,14 @@ class SE_Home_Team extends Component {
     window.removeEventListener('resize', this.handleResize)
   }
 
-  mouseSlideEnterHandler = (top, left, tcontent) => this.setState({tshow: true, top, left, tcontent})
+  mouseSlideEnterHandler = (tplace, tcontent) => this.setState({tshow: true, tplace, tcontent})
   mouseSlideLeaveHandler = () => this.setState({tshow: false})
 
   render() {
     const { mix } = this.props
     const { slideGroups, slidesWidths, slidesCount } = this
 
-    const { show, tshow, top, left, tcontent } = this.state
+    const { show, tshow, tplace, tcontent } = this.state
     const move = (show / slidesCount) | 0
     const showingSlideIndex = indexOfShow(slidesCount, show)
 
@@ -136,6 +137,8 @@ class SE_Home_Team extends Component {
       active = 'ambassadors'
     }
 
+    console.log('tplace', tplace)
+    const showTooltip = tshow && !!tcontent
     return (
       <section className={cn([mix])}>
         <div
@@ -187,12 +190,12 @@ class SE_Home_Team extends Component {
             <div className={cn('linner-gradient-right')}></div>
 
           </div>
-          {
-            tshow && tcontent &&
-              <div className={cn('tooltip')} style={{left: left, top: top - 50}}>
-               <M_Tooltip type={'bottom'}>{tcontent}</M_Tooltip>
-              </div>
-          }
+          {/*{*/}
+            {/*showTooltip &&*/}
+              {/*<div className={cn('tooltip')} style={{left: left, top: top - 50}}>*/}
+               {/*<M_Tooltip type={'bottom'}>{tcontent}</M_Tooltip>*/}
+              {/*</div>*/}
+          {/*}*/}
 
         </div>
         <SectionCounter sectionNum={12} theme="bright" />
