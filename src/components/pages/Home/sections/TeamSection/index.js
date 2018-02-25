@@ -6,20 +6,17 @@ import { cssClassName } from 'utils'
 // import A_Image from 'A_Image/index'
 import SwipeHOC from 'HOC/Swipe'
 const cn = cssClassName('SE_Home_Team')
-import { getDelta, findIndexOfRedundantSlide, indexOfShow, pairSplit, findIndexesOfRedundantSlides } from './helpers'
+import { getDelta, indexOfShow, pairSplit, findIndexesOfRedundantSlides } from './helpers'
 import Slide from './Slide'
 import { team, advisers, ambassadors } from './data'
 
 const NORMAL_WIDTH = 136
 const WIDE_WIDTH = NORMAL_WIDTH + 20 + 16
-import M_Tooltip from 'M_Tooltip'
+// import M_Tooltip from 'M_Tooltip'
 
 class SE_Home_Team extends Component {
   state = {
-    show: 0,
-    tplace: 0,
-    tshow: false,
-    tcontent: undefined
+    show: 0
   }
 
   widths = { container: 0 }
@@ -38,14 +35,6 @@ class SE_Home_Team extends Component {
     slidesWidths.length ? getDelta(slidesWidths, show) : WIDE_WIDTH
 
   getSlides(slideGroups, slidesCount, show, indexesOfRedundantSlides) {
-    const indexOfRedundantSlide = findIndexOfRedundantSlide(
-      slidesCount,
-      show,
-      this.slidesWidths,
-      this.widths.container.offsetWidth
-    )
-    this.indexOfRedundantSlide !== indexOfRedundantSlide &&
-      (this.indexOfRedundantSlide = indexOfRedundantSlide)
     let res = []
     const genSlidesArray = (slideGroups, keys_name) => {
       let indexTotal = 0
@@ -61,11 +50,13 @@ class SE_Home_Team extends Component {
             <Slide
               persons={slide}
               place = {keys_name + i}
-              groupName={first && title}
+              showGroupName={first}
+              groupName={title}
               hidden = {indexesOfRedundantSlides.arr.includes(indexTotal)}
               mix={indexesOfRedundantSlides.arr.includes(indexTotal) ? cn('hidden-slide') : cn('showing-slide')}
               mouseSlideEnterHandler = {this.mouseSlideEnterHandler}
               mouseSlideLeaveHandler = {this.mouseSlideLeaveHandler}
+              openPeopleModal = {this.props.openPeopleModal}
             />
           )
         })
@@ -80,19 +71,6 @@ class SE_Home_Team extends Component {
   }
 
   handleResize = () => {
-    // const { slideGroups, slidesWidths, slidesCount } = this
-    // const {show} = this.state
-    //
-    // const indexOfRedundantSlide = findIndexOfRedundantSlide(
-    //   slidesCount,
-    //   show,
-    //   this.slidesWidths,
-    //   this.widths.container.offsetWidth
-    // )
-    //
-    // if (this.indexOfRedundantSlide !== indexOfRedundantSlide) {
-    //   this.forceUpdate()
-    // }
     this.forceUpdate()
 
   }
@@ -106,14 +84,12 @@ class SE_Home_Team extends Component {
     window.removeEventListener('resize', this.handleResize)
   }
 
-  mouseSlideEnterHandler = (tplace, tcontent) => this.setState({tshow: true, tplace, tcontent})
-  mouseSlideLeaveHandler = () => this.setState({tshow: false})
 
   render() {
     const { mix } = this.props
     const { slideGroups, slidesWidths, slidesCount } = this
 
-    const { show, tshow, tplace, tcontent } = this.state
+    const { show } = this.state
     const move = (show / slidesCount) | 0
     const showingSlideIndex = indexOfShow(slidesCount, show)
 
@@ -137,14 +113,10 @@ class SE_Home_Team extends Component {
       active = 'ambassadors'
     }
 
-    console.log('tplace', tplace)
-    const showTooltip = tshow && !!tcontent
     return (
       <section className={cn([mix])}>
         <div
           className={cn('content')}
-          // style={{paddingLeft: padding}}
-
         >
           <div className={cn('nav-prev')} onClick={() => this.left()} />
           <div className={cn('nav-next')} onClick={() => this.right()} />
@@ -188,15 +160,7 @@ class SE_Home_Team extends Component {
             </div>
             <div className={cn('linner-gradient-left')}></div>
             <div className={cn('linner-gradient-right')}></div>
-
           </div>
-          {/*{*/}
-            {/*showTooltip &&*/}
-              {/*<div className={cn('tooltip')} style={{left: left, top: top - 50}}>*/}
-               {/*<M_Tooltip type={'bottom'}>{tcontent}</M_Tooltip>*/}
-              {/*</div>*/}
-          {/*}*/}
-
         </div>
         <SectionCounter sectionNum={12} theme="bright" />
       </section>
