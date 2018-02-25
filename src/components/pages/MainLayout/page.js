@@ -8,8 +8,9 @@ import O_Popup from 'O_Popup_H'
 import { cssClassName } from 'utils'
 const cn = cssClassName('SE_MainLayout_H')
 import O_Footer_H from 'O_Footer_H'
-class SE_MainLayout_H extends Component {
+import PeopleModal from './PeopleModal'
 
+class SE_MainLayout_H extends Component {
   state = {
     headerLinks: ['Humaniq Wiki', 'HMQ Explorer', 'Challenge', 'Ambassadors'],
     sidebarLinks: ['Open source', 'Contact us', 'Subscribe'],
@@ -27,6 +28,9 @@ class SE_MainLayout_H extends Component {
       openPopup,
       isMenuOpened,
       toggleMenu,
+      isPeopleModalOpened,
+      closePeopleModal,
+      personData,
     } = this.props
     const homePage = openRoute.length === 0 //home page
     const mobileMenuLinks = [...headerLinks, ...sidebarLinks]
@@ -58,7 +62,7 @@ class SE_MainLayout_H extends Component {
         )}
 
         <Sidebar mix={cn('sidebar')} menuLinks={sidebarLinks} theme={theme} openPopup={openPopup} />
-
+        <PeopleModal isActive={isPeopleModalOpened} closeModal={closePeopleModal} personData={personData}/>
         <O_Popup isActive={isPopupOpened} closePopup={closePopup} popupType={popupType} />
       </div>
     )
