@@ -1,18 +1,50 @@
+@import "common/settings/variables";
+@import "common/utils";
+
+
 .press-releases {
   padding-top: 100px;
+  min-height: 510px;
+  @include media($mobile) {
+    padding-top: 15px;
+  }
+
+  &__background {
+    position: absolute;
+    top: 50%;
+    right: -105px;
+    height: 510px;
+    margin-top: -255px;
+    object-fit: contain;
+    @include media($tablet) {
+      display: none;
+    }
+  }
 
   &__header {
     display: flex;
     align-items: center;
     margin-bottom: 25px;
+    @include media($mobile) {
+      align-items: flex-start;
+      flex-direction: column;
+    }
   }
 
   &__title {
     margin-right: 20px;
+    @include media($mobile) {
+      margin-right: 0;
+      margin-bottom: 27px;
+    }
   }
 
   &__show-all {
     margin-right: 93px;
+    @include media($mobile) {
+      margin-right: 0;
+      margin-bottom: 15px;
+    }
   }
 
   &__subtitle {
@@ -20,13 +52,34 @@
   }
 
   &__previews-container {
+    max-width: 720px;
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
+    @include media($mobile) {
+      justify-content: space-between;
+    }
   }
 
   &__preview {
-    width: 33.333%;
-    padding-right: 60px;
+    max-width: 190px;
+    width: 100%;
     margin-bottom: 25px;
+    margin-right: 74px;
+    &:nth-child(3n) {
+      margin-right: 0;
+    }
+    @include media($mobile) {
+      margin-right: 15px;
+      &:nth-child(3n) {
+        margin-right: 15px;
+      }
+    }
+    @include media($mobile-xs) {
+      margin-right: 0;
+      &:nth-child(3n) {
+        margin-right: 0;
+      }
+    }
   }
 }

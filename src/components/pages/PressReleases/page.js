@@ -22,52 +22,55 @@ class PressReleases extends Component {
     const { showAll } = this.state
 
     return(
-      <A_Container type='section-clean' mix={cn()}>
-        <div className={cn('header')}>
-          <A_Title_H
-            type='section'
-            mix={cn('title')}
-          >
-            Press Releases
-          </A_Title_H>
-          <A_Btn
-            type='material-r-btn-blue'
-            mix={cn('show-all')}
-            onClick={this.toggleView}
-          >
-            All releases
-          </A_Btn>
-          <A_Btn
-            type='material-r-btn-blue'
-            mix={cn('download-presskit')}
-          >
-            Download presskit
-          </A_Btn>
-        </div>
-        {showAll && <SearchPanel />}
-        {!showAll && (
-          <div>
+      <section className={cn()}>
+        <img className={cn('background')} src="/img/design-v2/sections/common/head.svg" />
+        <A_Container>
+          <div className={cn('header')}>
             <A_Title_H
-              type='subtitle'
-              theme='blue'
-              mix={cn('subtitle')}
+              type='section'
+              mix={cn('title')}
             >
-              The most popular
+              Press Releases
             </A_Title_H>
-            <div className={cn('previews-container')}>
-              {news.map(({title, date, text}) => (
-                <PressPreview
-                  mix={cn('preview')}
-                  title={title}
-                  date={date}
-                  text={text}
-                />
-              ))}
-            </div>
+            <A_Btn
+              type='material-r-btn-blue'
+              mix={cn('show-all')}
+              onClick={this.toggleView}
+            >
+              All releases
+            </A_Btn>
+            <A_Btn
+              type='material-r-btn-blue'
+              mix={cn('download-presskit')}
+            >
+              Download presskit
+            </A_Btn>
           </div>
-        )}
+          {showAll && <SearchPanel />}
+          {!showAll && (
+            <div>
+              <A_Title_H
+                type='subtitle'
+                theme='blue'
+                mix={cn('subtitle')}
+              >
+                The most popular
+              </A_Title_H>
+              <div className={cn('previews-container')}>
+                {news.map(({title, date, text}) => (
+                  <PressPreview
+                    mix={cn('preview')}
+                    title={title}
+                    date={date}
+                    text={text}
+                  />
+                ))}
+              </div>
+            </div>
+          )}
 
-      </A_Container>
+        </A_Container>
+      </section>
     )
   }
 }
