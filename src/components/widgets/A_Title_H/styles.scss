@@ -54,6 +54,9 @@
     &_subtitle {
       font-size: 24px;
       font-weight: bold;
+      @include media($mobile) {
+        font-size: 16px;
+      }
     }
   }
 
