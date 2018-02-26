@@ -7,21 +7,21 @@ const cn = cssClassName('A_Btn')
 import M_Ripple from 'M_Ripple'
 import history from 'history'
 
-const A_Btn = ({type, children, disabled, btnType, to, onClick, ...props}) =>{
+const A_Btn = ({type, mix, children, disabled, btnType, to, onClick, ...props}) =>{
 
   disabled = disabled && 'disabled'
 
   switch(type){
     case 'window-link':
       return (
-        <Link className={cn('link', {type}, [disabled])} disabled={disabled} external {...{onClick, to, ...props}}>
+        <Link className={cn('link', {type}, [disabled, mix])} disabled={disabled} external {...{onClick, to, ...props}}>
           {children}
         </Link>
       )
     case 'inline':
 
       return (
-        <Link className={cn('link', {type}, [disabled])} disabled={disabled} {...{onClick, to, ...props}}>
+        <Link className={cn('link', {type}, [disabled, mix])} disabled={disabled} {...{onClick, to, ...props}}>
           {children}
         </Link>
       )
@@ -38,9 +38,10 @@ const A_Btn = ({type, children, disabled, btnType, to, onClick, ...props}) =>{
     case 'link-standart-form':
     case 'link-subscribe':
     case 'material-r-link':
+    case 'material-r-link-h':
     case 'material-r-link-window':
       return (
-        <M_Ripple onClick={()=> history.push(to)} className={cn('ripple', {type})}>
+        <M_Ripple onClick={()=> history.push(to)} className={cn('ripple', {type}, [mix])}>
           <Link className={cn('link', {type}, [disabled])} {...props}>
             {children}
           </Link>
@@ -48,7 +49,7 @@ const A_Btn = ({type, children, disabled, btnType, to, onClick, ...props}) =>{
       )
     case 'popup-link':
       return (
-        <M_Ripple {...{onClick}} className={cn('ripple', {type})}>
+        <M_Ripple {...{onClick}} className={cn('ripple', {type}, [mix])}>
           <div className={cn('link', {type}, [disabled])} type={btnType} {...props}>
             {children}
           </div>
@@ -56,7 +57,7 @@ const A_Btn = ({type, children, disabled, btnType, to, onClick, ...props}) =>{
       )
     default:
       return (
-        <button className={cn('button', {type}, [disabled])} type={btnType} {...{onClick,...props}}>
+        <button className={cn('button', {type}, [disabled, mix])} type={btnType} {...{onClick,...props}}>
           {children}
         </button>
       )
