@@ -105,33 +105,35 @@ $form-btn-border-radius: 30px;
       margin: 0 auto;
     }
     &_type{
-      &_material-r-link, &_popup-link {
+      &_material-r-link, &_popup-link, &_material-r-link-white, &_material-r-btn-blue {
         -webkit-appearance: none !important;
-        border-radius: .2rem;
-        line-height: 1.4rem;
         box-sizing: border-box;
-        padding: 1.1rem 1.6rem;
         font-size: 1.4rem;
         text-transform: uppercase;
-        min-height: 3.6rem;
         font-weight: 600;
+      }
+      &_material-r-link {
+        min-height: 3.6rem;
+        padding: 1.1rem 1.6rem;
+        border-radius: .2rem;
+        line-height: 1.4rem;
         background-color: $interactive;
         color: $white;
         &:hover{
           background-color: $blue-5;
         }
       }
-      &_material-r-link-h {
-        -webkit-appearance: none !important;
-        line-height: 1.4rem;
-        box-sizing: border-box;
-        padding: 1.1rem 1.6rem;
-        font-size: 1.4rem;
-        text-transform: uppercase;
-        min-height: 3.2rem;
-        font-weight: 700;
+      &_material-r-link-white, &_material-r-btn-blue {
+        line-height: 1;
+        padding: 9px 25px;
+      }
+      &_material-r-link-white {
         background-color: $color-white;
         color: #01a2ff;
+      }
+      &_material-r-btn-blue {
+        background-color: #01a2ff;
+        color: $white;
       }
       &_material-r-link-window{
         @extend .a-btn__link_type_material-r-link;

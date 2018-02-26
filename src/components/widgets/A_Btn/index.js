@@ -38,7 +38,7 @@ const A_Btn = ({type, mix, children, disabled, btnType, to, onClick, ...props}) 
     case 'link-standart-form':
     case 'link-subscribe':
     case 'material-r-link':
-    case 'material-r-link-h':
+    case 'material-r-link-white':
     case 'material-r-link-window':
       return (
         <M_Ripple onClick={()=> history.push(to)} className={cn('ripple', {type}, [mix])}>
@@ -48,6 +48,7 @@ const A_Btn = ({type, mix, children, disabled, btnType, to, onClick, ...props}) 
         </M_Ripple>
       )
     case 'popup-link':
+    case 'material-r-btn-blue':
       return (
         <M_Ripple {...{onClick}} className={cn('ripple', {type}, [mix])}>
           <div className={cn('link', {type}, [disabled])} type={btnType} {...props}>
@@ -68,6 +69,8 @@ A_Btn.propTypes = {
   type: T.oneOf([
     'material-r-link-window', // material-r-link used on simple form pages
     'material-r-link', // link that looks like material raised button
+    'material-r-link-white', // link that looks like material raised button
+    'material-r-link-blue', // link that looks like material raised button
     'personal-nav-btn', // 170x82 white ripple link style button 100%/100%, padding: 0 1.3rem
     'popup-link', // popup link
     'nav-btn', // 82 white ripple link style button 100%/100%, padding: 0 1.3rem

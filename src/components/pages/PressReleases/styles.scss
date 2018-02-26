@@ -1,0 +1,14 @@
+.press-releases {
+  padding-top: 100px;
+
+  &__header {
+    display: flex;
+    align-items: center;
+  }
+  &__title {
+    margin-right: 20px;
+  }
+  &__show-all {
+    margin-right: 93px;
+  }
+}

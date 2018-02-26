@@ -24,7 +24,7 @@ const SE_Home_WorldTalking = ({ mix }) => (
         The world is talking
       </A_Title_H>
       <A_Btn
-        type='material-r-link-h'
+        type='material-r-link-white'
         mix={cn('releases-link')}
         to='press-releases'
       >
