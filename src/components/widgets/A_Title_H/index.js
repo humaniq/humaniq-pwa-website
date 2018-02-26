@@ -35,11 +35,13 @@ A_Title.propTypes = {
   type: T.oneOf([
     'hero', //ProximaNova Uppercase bold 72px
     'section', //ProximaNova bold 72px
-    'info-column' //ProximaNova bold 31px
+    'info-column', //ProximaNova bold 31px
+    'subtitle' //ProximaNova bold 24px
   ]),
   theme: T.oneOf([
     'bright', //white ProximaNova bold 72px
     'dark', //black title used for sections
+    'blue' //blue subtitles
   ]),
   children: T.any.isRequired //title text
 }

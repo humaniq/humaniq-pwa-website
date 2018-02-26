@@ -1,0 +1,18 @@
+.press-releases-search {
+  &__title {
+    margin-bottom: 8px;
+  }
+
+  &__form {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__input {
+    margin-right: 10px;
+    input {
+      margin-bottom: 0
+    }
+  }
+}

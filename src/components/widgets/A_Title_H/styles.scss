@@ -51,6 +51,10 @@
         font-size: 22px;
       }
     }
+    &_subtitle {
+      font-size: 24px;
+      font-weight: bold;
+    }
   }
 
   &_theme {
@@ -59,6 +63,9 @@
     }
     &_dark {
       color: $color-black;
+    }
+    &_blue {
+      color: $color-press-release-blue;
     }
   }
 }

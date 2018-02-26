@@ -129,10 +129,10 @@ $form-btn-border-radius: 30px;
       }
       &_material-r-link-white {
         background-color: $color-white;
-        color: #01a2ff;
+        color: $color-press-release-blue;
       }
       &_material-r-btn-blue {
-        background-color: #01a2ff;
+        background-color: $color-press-release-blue;
         color: $white;
       }
       &_material-r-link-window{
