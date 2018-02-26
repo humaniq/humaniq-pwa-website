@@ -6,10 +6,27 @@
     align-items: center;
     margin-bottom: 25px;
   }
+
   &__title {
     margin-right: 20px;
   }
+
   &__show-all {
     margin-right: 93px;
+  }
+
+  &__subtitle {
+    margin-bottom: 25px;
+  }
+
+  &__previews-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__preview {
+    width: 33.333%;
+    padding-right: 60px;
+    margin-bottom: 25px;
   }
 }
