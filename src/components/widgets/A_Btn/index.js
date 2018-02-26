@@ -70,7 +70,7 @@ A_Btn.propTypes = {
     'material-r-link-window', // material-r-link used on simple form pages
     'material-r-link', // link that looks like material raised button
     'material-r-link-white', // link that looks like material raised button
-    'material-r-link-blue', // link that looks like material raised button
+    'material-r-btn-blue', // link that looks like material raised button
     'personal-nav-btn', // 170x82 white ripple link style button 100%/100%, padding: 0 1.3rem
     'popup-link', // popup link
     'nav-btn', // 82 white ripple link style button 100%/100%, padding: 0 1.3rem

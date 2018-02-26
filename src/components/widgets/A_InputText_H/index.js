@@ -7,11 +7,11 @@ const cn = cssClassName('A_InputText_H')
 class A_InputText_H extends Component {
 
   render(){
-    const {value, handleChange, placeholder, onFocus, error} = this.props
+    const {mix, value, handleChange, placeholder, onFocus, error} = this.props
 
     const hasError = !!error
     return (
-      <fieldset className={cn({hasError})}>
+      <fieldset className={cn({hasError}, [mix])}>
         <input
           ref = {node => this.input = node}
           className={cn('input')}
