@@ -36,6 +36,14 @@
     }
   }
 
+  &__title {
+    margin-bottom: 20px;
+  }
+
+  &__releases-link {
+    margin-bottom: 30px;
+  }
+
   &__mentions-list {
     display: flex;
     flex-wrap: wrap;
@@ -44,16 +52,19 @@
   &__mention {
     box-sizing: border-box;
     width: 33%;
-    margin-top: 90px;
+    margin-bottom: 90px;
     padding-right: 90px;
     flex-shrink: 0;
     font-family: $font-ProximaNova;
     color: $color-black;
+    &:nth-child(n+4) {
+      margin-bottom: 0;
+    }
     @include media($desktop-xxl) {
-      margin-top: 55px;
+      margin-bottom: 50px;
     }
     @include media($desktop-xl) {
-      margin-top: 30px;
+      margin-bottom: 30px;
     }
     @include media($tablet) {
       width: 50%;
@@ -61,7 +72,12 @@
     @include media($mobile) {
       width: 100%;
       padding-right: 0;
-      margin-top: 60px;
+      &:nth-child(n+4) {
+        margin-bottom: 30px;
+      }
+      &:nth-last-child(1) {
+        margin-bottom: 0;
+      }
     }
     &-title {
       margin-bottom: 35px;

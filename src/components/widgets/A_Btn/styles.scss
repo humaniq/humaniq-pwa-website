@@ -99,7 +99,6 @@ $form-btn-border-radius: 30px;
     box-sizing: border-box;
     display: table;
     text-align: center;
-    box-sizing: border-box;
     vertical-align: middle;
     @include media($mobile) {
       width: 100%;
@@ -115,13 +114,24 @@ $form-btn-border-radius: 30px;
         font-size: 1.4rem;
         text-transform: uppercase;
         min-height: 3.6rem;
-        min-weight: 8.8rem;
         font-weight: 600;
         background-color: $interactive;
         color: $white;
         &:hover{
           background-color: $blue-5;
         }
+      }
+      &_material-r-link-h {
+        -webkit-appearance: none !important;
+        line-height: 1.4rem;
+        box-sizing: border-box;
+        padding: 1.1rem 1.6rem;
+        font-size: 1.4rem;
+        text-transform: uppercase;
+        min-height: 3.2rem;
+        font-weight: 700;
+        background-color: $color-white;
+        color: #01a2ff;
       }
       &_material-r-link-window{
         @extend .a-btn__link_type_material-r-link;

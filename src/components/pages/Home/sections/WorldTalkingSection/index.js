@@ -1,5 +1,6 @@
 import React from 'react'
 import A_Title_H from 'A_Title_H'
+import A_Btn from 'A_Btn'
 import SectionCounter from '../common/SectionCounter/index.js'
 import './styles.scss'
 import { cssClassName } from 'utils'
@@ -22,7 +23,13 @@ const SE_Home_WorldTalking = ({ mix }) => (
       <A_Title_H mix={cn('title')} type="section" theme="bright">
         The world is talking
       </A_Title_H>
-
+      <A_Btn
+        type='material-r-link-h'
+        mix={cn('releases-link')}
+        to='press-releases'
+      >
+        All releases
+      </A_Btn>
       <ul className={cn('mentions-list')}>{_getMentions(hmqMentions)}</ul>
     </div>
     <SectionCounter sectionNum={13} theme="dark" />
