@@ -67,12 +67,26 @@ $image-quote: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADgAAAAlCAYAAAF
             margin-bottom: 0;
           }
         }
+        @include media($mobile) {
+          width: auto;
+          margin-bottom: 60px;
+          &-preview {
+            margin-right: 5px;
+          }
+        }
       }
 
       #{$this}__right-side {
         width: 455px;
         &-preview {
           margin-bottom: 58px;
+        }
+        @include media($mobile) {
+          width: auto;
+          &-preview {
+            margin-bottom: 25px;
+            margin-right: 5px;
+          }
         }
       }
 
