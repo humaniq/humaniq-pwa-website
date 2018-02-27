@@ -4,7 +4,9 @@
   }
 
   &__form {
+    box-sizing: border-box;
     width: 100%;
+    padding-right: 95px;
     display: flex;
     justify-content: space-between;
   }
