@@ -1,0 +1,30 @@
+@import "common/settings/variables";
+@import "common/utils";
+
+.pr-header {
+  display: flex;
+  align-items: center;
+  @include media($mobile) {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  &__title {
+    margin-right: 20px;
+    span {
+      color: $color-press-release-blue;
+      b {
+        color: $color-black;
+      }
+    }
+    @include media($mobile) {
+      margin-right: 0;
+      margin-bottom: 27px;
+    }
+  }
+
+  &__show-all-btn {
+    position: relative;
+    top: 2px;
+  }
+}

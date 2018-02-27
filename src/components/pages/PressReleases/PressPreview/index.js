@@ -6,7 +6,7 @@ const cn = cssClassName('PressPreview')
 
 const PressPreview = ({mix, title, date, text}) => (
   <div className={cn([mix])}>
-    <p className={cn('title')}>{title}</p>
+    <p className={cn('title')}>{title}:</p>
     <p className={cn('date')}>{date}</p>
     <p className={cn('text')}>{text}</p>
   </div>
