@@ -1,0 +1,33 @@
+@import "common/settings/variables";
+@import "common/utils";
+
+.pa-header {
+
+  &__path {
+    margin-bottom: 25px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    span {
+      color: $color-press-release-blue;
+    }
+    @include media($mobile) {
+      margin-right: 0;
+      margin-bottom: 27px;
+    }
+  }
+
+  &__bottom {}
+
+  &__article-info {}
+
+  &__article-source {
+    margin-bottom: 2px;
+  }
+
+  &__article-date {
+    font-size: 14px;
+    color: #a9a9a9;
+    line-height: 1;
+  }
+}

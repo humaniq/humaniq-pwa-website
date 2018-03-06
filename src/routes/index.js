@@ -10,6 +10,7 @@ import legal from './Legal'
 import OpenSource from './OpenSource'
 import Ambassadors from './Ambassadors'
 import PressReleases from './PressReleases'
+import PressArticle from './PressArticle'
 import HmqExplorer from './Hmq'
 import Wiki from './Wiki'
 
@@ -45,6 +46,11 @@ const getRoutes = (store) => {
           path="press-releases"
           component={PressReleases}
           prepareData={PressReleases.prepareData}
+        />
+        <Route
+          path="press-article"
+          component={PressArticle}
+          prepareData={PressArticle.prepareData}
         />
         <Route
           path="/about"
