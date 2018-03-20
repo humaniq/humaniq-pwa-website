@@ -15,4 +15,4 @@ cache:
 deploy:
   - branch: "master"
     shell:
-      - "DEPLOY_TO=humaniq-static ./scripts/deploy.sh"
+      - "DEPLOY_TO=humaniq-static OVERRIDE_VALUES=values.yaml ./scripts/deploy.sh"
