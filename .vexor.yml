@@ -14,5 +14,5 @@ cache:
 
 deploy:
   - branch: "master"
-  shell:
-    - "DEPLOY_TO=humaniq-static ./scripts/deploy.sh"
+    shell:
+      - "DEPLOY_TO=humaniq-static ./scripts/deploy.sh"
