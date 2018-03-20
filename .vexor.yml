@@ -13,6 +13,6 @@ cache:
   - ./node_modules
 
 deploy:
+  - branch: "master"
   shell:
-    - "./deploy.sh"
-  branch: master
+    - "DEPLOY_TO=humaniq-static ./scripts/deploy.sh"

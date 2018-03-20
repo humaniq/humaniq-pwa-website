@@ -1,0 +1,13 @@
+name: pwa-website
+home: https://humaniq.com
+version: 0.1.0
+description: Main site and landing page for Humaniq
+keywords:
+  - site
+  - landing
+  - nodejs
+sources:
+  - https://github.com/humaniq/buttercms-blog
+maintainers:
+  - name: Alexander Kirillov
+    email: kirillov@evrone.ru
