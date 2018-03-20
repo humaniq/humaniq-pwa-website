@@ -17,8 +17,8 @@ spec:
       containers:
       # Site
       - name: {{ template "name" . }}-site
-        image: "{{ .Values.Image.Repository }}:{{ .Values.Image.Tag }}"
-        imagePullPolicy: {{ default "" .Values.Image.pullPolicy | quote }}
+        image: "{{ .Values.image.repository }}:{{ .Values.image.rag }}"
+        imagePullPolicy: {{ default "Always" .Values.Image.pullPolicy | quote }}
         args: ["start"]
         env:
           - name: APP_HOST
@@ -33,7 +33,7 @@ spec:
 {{- if .Values.UsePersonal -}}
       # Personal
       - name: {{ template "name" . }}-personal
-        image: "{{ .Values.Image.Repository }}:{{ .Values.Image.Tag }}"
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
         imagePullPolicy: {{ default "" .Values.Image.pullPolicy | quote }}
         args: ["personal-start"]
         env:

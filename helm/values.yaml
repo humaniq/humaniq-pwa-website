@@ -1,5 +1,5 @@
-Image:
-  Repository: eu.gcr.io/humaniq-168420/pwa-website
+image:
+  repository: eu.gcr.io/humaniq-168420/pwa-website
 Service:
   Enabled: true
   Port: 8080
