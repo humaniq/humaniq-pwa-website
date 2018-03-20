@@ -1,0 +1,29 @@
+{{- if .Values.Ingress.Enabled -}}
+{{- if .Values.Ingress.Domains -}}
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+{{ toYaml .Values.Ingress.Annotations | indent 4 }}
+  labels:
+    app: {{ template "name" . }}
+    chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
+    heritage: "{{ .Release.Service }}"
+    release: "{{ .Release.Name }}"
+    domain: "humaniq.com"
+  name: {{ template "name" . }}
+spec:
+  rules:
+  - host: humaniq.com
+    http:
+      paths: 
+      - path: /hmqref
+        backend:
+          serviceName: {{ template "name" . }}
+          servicePort: 8090
+      - path: /
+        backend:
+          serviceName: {{ template "name" . }}
+          servicePort: 8080
+{{- end -}}
+{{- end -}}

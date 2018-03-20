@@ -1,0 +1,49 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: {{ template "name" . }}
+  labels:
+    app: {{ template "name" . }}
+    chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
+    release: "{{ .Release.Name }}"
+    heritage: "{{ .Release.Service }}"
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: {{ template "name" . }}
+    spec:
+      containers:
+      # Site
+      - name: {{ template "name" . }}-site
+        image: "{{ .Values.Image.Repository }}:{{ .Values.Image.Tag }}"
+        imagePullPolicy: {{ default "" .Values.Image.pullPolicy | quote }}
+        args: ["start"]
+        env:
+          - name: APP_HOST
+            value: "0.0.0.0"
+          - name: PORT
+            value: "8080"
+          - name: APP_ENV
+            value: production
+        ports:
+        - containerPort: 8080
+          name: app-port
+{{- if .Values.UsePersonal -}}
+      # Personal
+      - name: {{ template "name" . }}-personal
+        image: "{{ .Values.Image.Repository }}:{{ .Values.Image.Tag }}"
+        imagePullPolicy: {{ default "" .Values.Image.pullPolicy | quote }}
+        args: ["personal-start"]
+        env:
+          - name: APP_HOST
+            value: "0.0.0.0"
+          - name: PORT
+            value: "8090"
+          - name: APP_ENV
+            value: production
+        ports:
+        - containerPort: 8090
+          name: personal-port
+{{- end -}}
