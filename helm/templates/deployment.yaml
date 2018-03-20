@@ -18,7 +18,7 @@ spec:
       # Site
       - name: {{ template "name" . }}-site
         image: "{{ .Values.image.repository }}:{{ .Values.image.rag }}"
-        imagePullPolicy: {{ default "" .Values.Image.pullPolicy | quote }}
+        imagePullPolicy: {{ default "" .Values.image.pullPolicy | quote }}
         args: ["start"]
         env:
           - name: APP_HOST
