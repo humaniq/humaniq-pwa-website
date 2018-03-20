@@ -17,7 +17,7 @@ spec:
       containers:
       # Site
       - name: {{ template "name" . }}-site
-        image: "{{ .Values.image.repository }}:{{ .Values.image.rag }}"
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
         imagePullPolicy: {{ default "" .Values.image.pullPolicy | quote }}
         args: ["start"]
         env:
