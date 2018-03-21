@@ -14,11 +14,14 @@ spec:
       labels:
         app: {{ template "name" . }}
     spec:
+      #volumes:
+      #- name: shared-data
+      #  hostPath:
+      #    path: /pwa-site-data
+      #    type: Directory
       volumes:
       - name: shared-data
-        hostPath:
-          path: /pwa-site-data
-          type: Directory
+        emptyDir: {}
       initContainers:
       - name: {{ template "name" . }}-init
         image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
