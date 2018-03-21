@@ -1,0 +1,22 @@
+{{- if .Values.Service.Enabled -}}
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ template "name" . }}
+  labels:
+    app: {{ template "name" . }}
+    chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
+    release: "{{ .Release.Name }}"
+    heritage: "{{ .Release.Service }}"
+  annotations:
+{{ toYaml .Values.Service.Annotations | indent 4 }}
+spec:
+  type: {{ default "ClusterIP" .Values.Service.Type }}
+  ports:
+  - port: 8080
+    name: app-port
+  - port: 8090
+    name: personal-port
+  selector:
+    app: {{ template "name" . }}
+{{- end -}}

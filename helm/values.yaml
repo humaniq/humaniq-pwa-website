@@ -1,0 +1,16 @@
+image:
+  repository: eu.gcr.io/humaniq-168420/pwa-website
+  pullPolicy: Always
+Service:
+  Enabled: true
+  Port: 8080
+  Type: ClusterIP
+Ingress:
+  Enabled: true
+  Hostname: site.humaniq.com
+  PersonalSegment: "/hmqref"
+  Domains:
+    - humaniq.com
+  Annotations:
+    kubernetes.io/ingress.class: traefik
+UsePersonal: false
