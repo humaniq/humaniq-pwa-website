@@ -37,15 +37,6 @@ export function indexOfShow(slidesCount, show){
 }
 
 
-export function findIndexOfRedundantSlide(slidesCount, show, slidesWidths, width_container) {
-  const first_index_of_slides = indexOfShow(slidesCount, show)
-  let i_last = first_index_of_slides
-  for (let slidesLengh = 0; slidesLengh < width_container; i_last++) {
-    slidesLengh += slidesWidths[indexOfShow(slidesCount, i_last)]
-  }
-  return indexOfShow(slidesCount, i_last - 1)
-}
-
 export function findIndexesOfRedundantSlides(slidesCount, show, slidesWidths, width_container = 0) {
   const first_index_of_slides = indexOfShow(slidesCount, show)
   let

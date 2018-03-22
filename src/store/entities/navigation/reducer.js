@@ -1,9 +1,11 @@
-import {SET, MENU, POPUP, OPEN, THEME, CLOSE, TOGGLE, OPEN_ROUTE, HMQ_SECTION} from 'store/constants'
+import {SET, MENU, POPUP, PEOPLE_MODAL, OPEN, THEME, CLOSE, TOGGLE, OPEN_ROUTE, HMQ_SECTION} from 'store/constants'
 
 const initNavigation = {
   openRoute: [],
   isMenuOpened: false,
   isPopupOpened: false,
+  isPeopleModalOpened: false,
+  personData:{},
   popupType: null,
   hmqSection: '',
   theme: 'bright'
@@ -29,6 +31,10 @@ export default (navigation = initNavigation, {type, data}) => {
       return {...navigation, isPopupOpened:true, popupType: data}
     case CLOSE + POPUP:
       return {...navigation, isPopupOpened:false, popupType: null}
+    case OPEN + PEOPLE_MODAL:
+      return {...navigation, isPeopleModalOpened:true, personData: data}
+    case CLOSE + PEOPLE_MODAL:
+      return {...navigation, isPeopleModalOpened:false, popupType: null}
   }
   return navigation;
 };
