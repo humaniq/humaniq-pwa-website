@@ -16,9 +16,9 @@ const SE_MainLayoutHeader_H = ({ mix, theme, mobileMenuIsActive, toggleMobileMen
     </Link>
 
     <ul className={cn('menu', { sticky })}>
-      <li className={cn('menu-link')}>
-        <Link to="/hmq-explorer">HMQ Explorer</Link>
-      </li>
+      {/*<li className={cn('menu-link')}>*/}
+        {/*<Link to="/hmq-explorer">HMQ Explorer</Link>*/}
+      {/*</li>*/}
       <li className={cn('menu-link')}>
         <Link to="/ambassadors">Ambassadors</Link>
       </li>

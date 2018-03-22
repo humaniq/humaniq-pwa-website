@@ -9,9 +9,9 @@ const socialIcons = `/img/design-v2/icons/social/sprite.svg`
 const SE_MainLayout_MobileMenu = ({ mix, mobileMenuIsActive }) => (
   <nav className={cn([mix], { isActive: mobileMenuIsActive })}>
     <ul className={cn('links')}>
-      <li className={cn('links-link')}>
-        <Link to="/hmq-explorer">HMQ Explorer</Link>
-      </li>
+      {/*<li className={cn('links-link')}>*/}
+        {/*<Link to="/hmq-explorer">HMQ Explorer</Link>*/}
+      {/*</li>*/}
       <li className={cn('links-link')}>
         <Link to="/ambassadors">Ambassadors</Link>
       </li>
