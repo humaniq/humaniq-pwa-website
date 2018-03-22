@@ -4,7 +4,6 @@ import './styles.scss'
 import { cssClassName } from 'utils'
 const cn = cssClassName('TeamSectionSlide')
 import A_Image from 'A_Image'
-import M_Tooltip from 'M_Tooltip'
 
 const getHazemName = () => (
   <span>
@@ -15,10 +14,10 @@ const getHazemName = () => (
 class TeamSectionSlide extends Component {
   state = {}
 
-  getSlide = ({ imgSrc, position, name, bio }, i) => {
+  getSlide = ({ first, imgSrc, position, name, bio }, groupName, i) => {
     name = name.search('Al-Nakib') === -1 ? name : getHazemName()
     return (
-      <div className={cn('person')} key={i}>
+      <div className={cn('person')} key={i} onClick={() => this.props.openPeopleModal({imgSrc, position, name, bio, groupName})}>
         <div className={cn('person-image')}>
           <A_Image src={imgSrc} rounded />
         </div>
@@ -29,11 +28,11 @@ class TeamSectionSlide extends Component {
   }
 
   render() {
-    const { persons, groupName, hidden } = this.props
-    const renderTitle = groupName && <span className={cn('group-name')}>{groupName}</span>
-    const renderSlides = persons.map(this.getSlide)
+    const { persons, showGroupName, groupName, hidden } = this.props
+    const renderTitle = showGroupName && groupName && <span className={cn('group-name')}>{groupName}</span>
+    const renderSlides = persons.map((el, i) => this.getSlide(el, groupName, i))
     return (
-      <div className={cn({ wide: !!groupName, hidden })}>
+      <div className={cn({ wide: showGroupName, hidden })}>
         {renderTitle}
         {renderSlides}
       </div>

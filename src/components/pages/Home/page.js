@@ -82,7 +82,7 @@ class Home extends Component {
     challenge: <GlobalChallengeSection mix={cn('section')} key="challenge" />,
     expedition: <ExpeditionSection mix={cn('section')} key="expedition" />,
     /*timeline: <TimelineSection mix={cn('section')} key="timeline" />,*/
-    team: <TeamSection mix={cn('section')} key="team" />,
+    team: <TeamSection mix={cn('section')} key="team" openPeopleModal={this.props.openPeopleModal}/>,
     press: <WorldTalkingSection mix={cn('section')} key="press" />,
     contacts: (
       <O_Footer_H
