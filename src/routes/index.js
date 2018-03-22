@@ -9,7 +9,7 @@ import ContactUs from './ContactUs'
 import legal from './Legal'
 import OpenSource from './OpenSource'
 import Ambassadors from './Ambassadors'
-import HmqExplorer from './Hmq'
+// import HmqExplorer from './Hmq'
 import Wiki from './Wiki'
 
 const getRoutes = (store) => {

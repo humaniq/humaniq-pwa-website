@@ -16,8 +16,9 @@ class TeamSectionSlide extends Component {
 
   getSlide = ({ first, imgSrc, position, name, bio }, groupName, i) => {
     name = name.search('Al-Nakib') === -1 ? name : getHazemName()
+    const handleClick = bio ? () => this.props.openPeopleModal({imgSrc, position, name, bio, groupName}) : undefined
     return (
-      <div className={cn('person')} key={i} onClick={() => this.props.openPeopleModal({imgSrc, position, name, bio, groupName})}>
+      <div className={cn('person')} key={i} onClick={handleClick}>
         <div className={cn('person-image')}>
           <A_Image src={imgSrc} rounded />
         </div>
