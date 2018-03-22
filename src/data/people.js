@@ -44,7 +44,6 @@ export const advisers = [
       'An innovative entrepreneur and investor active in Biotech, Fintech, Blockchain and artificial intelligence, Dmitry is co-founder of the Deep Knowledge Ventures investment fund, focused on investments in AI and Deeptech. He adheres to the principle of impact investment in all his business activities, believing that business should make a social impact, and he supports the deployment of Blockchain for Good, which led to his decision to support Humaniq from its inception.',
     imgSrc: `${imgPath}/dmitry_kaminskiy.jpg`,
   },
-
   {
     name: 'Paolo Tasca',
     position: 'Adviser',
@@ -52,6 +51,15 @@ export const advisers = [
       'Paolo Tasca is a FinTech economist specialising in P2P Financial System. An advisor for different international organisations including the EU Parliament on blockchain technologies, Paolo recently joined the University College London as Director of the Centre for Blockchain Technologies (UCL CBT).  Prior to that, he has been a senior research economist at Deutsche Bundesbank working on digital currencies and P2P lending. Paolo is the co-author of the bestseller "FINTECH Book" and the co-editor of the book "Banking Beyond Banks and Money.',
     imgSrc: `${imgPath}/paolo_tasca.jpg`,
   },
+  {
+    name: 'Paul Mears',
+    position: 'Adviser',
+    bio:
+      'Paul started his career with Ernst and Young in London and is a UK qualified CPA. Over the last 30 years he has worked in a wide range of industries including Telecoms, Construction, Software, Hedge Funds in a wide range of CFO to Operational Finance roles.\n' +
+      'Mr. Mears left the UK in 1999 and has since lived and worked in New York, Vancouver, Amsterdam, Hong Kong and is currently a resident of Monaco. Paul has over the last 5 years been an active angel investor in early stage Tech, Apps, Medical Devices and with a passion for Stem Cell Biotech.\n' +
+      'Mr. Mears has a passion for ensuring creative artists are rewarded for their work and is a great believer in the ability of the blockchain to be a key player in that space and to ensure that artists are fairly rewarded for the work they create.',
+    imgSrc: `${imgPath}/paul_mears.jpg`,
+  }
 ]
 
 export const team = [
@@ -83,12 +91,6 @@ export const team = [
     imgSrc: `${imgPath}/anton_mozgovoy.jpg`,
   },
   {
-    name: 'Kirill Goryunov',
-    position: 'CPO',
-    bio: '',
-    imgSrc: `${imgPath}/kirill_goryunov.jpg`,
-  },
-  {
     name: 'Kherel Kechil',
     position: 'Lead Frontend Developer',
     bio:
@@ -98,8 +100,7 @@ export const team = [
   {
     name: 'Harry Bright',
     position: 'CBDO',
-    bio:
-      'Bringing experience of management and economics, Serafima’s passions include art, music and Russian literature and the crypto-economy. She cannot stand inequality and is happy to have the opportunity to tackle it with Humaniq.',
+    bio: '',
     imgSrc: `${imgPath}/harry_bright.jpg`,
   },
   {
@@ -108,13 +109,6 @@ export const team = [
     bio:
       'Bringing experience of social media and customer service support, Segrey is passionate about Blockchain technology and his family.',
     imgSrc: `${imgPath}/segrey_blinov.jpg`,
-  },
-  {
-    name: 'Danny Kass',
-    position: 'SMM, CSS',
-    bio:
-      'Danny’s background is in social media, B2B sales and customer service support. He loves cryptoeconomy and technology and at Humaniq is motivated to disrupt the financial industry with an ecosystem for entrepreneurs to make changes from the bottom up.',
-    imgSrc: `${imgPath}/danny_kass.jpg`,
   },
   {
     name: 'Andrey Shevchenko',
@@ -141,123 +135,111 @@ export const team = [
 
 export const ambassadors = [
   {
-    name: "Achille Agbe Julien",
-    position: "Cote d’Ivoire",
-    "bio": "Achille graduated from the Abidjan University and EDHEC Business School with a final degree in Private Business Law (Master). Has gained an MBA and also runs his own consulting firm (Ismarten Ltd). ${ambassadorsPath}ille acts as the Managing Director of EIC Corporation.",
-    imgSrc: `https://s3-eu-west-1.amazonaws.com/humaniq-web-backend-public/ambassadors/pics/AchilleAgbeJulien.png`,
+    name: "Abdallah Amour",
+    position: "Tanzania",
+    bio: "Abdallah from dar es salaam Tanzania graduated from institute of finance management (IFM) with a final degree in information technology runs his own accompany. Triple A Petroleum & Logistics Ltd as Managing Director. In 2013 introduced in Crypto-currecy and Blockchain technology and joined different professional platform.",
+    imgSrc:  `${ambassadorsPath}/abdallah_amour.jpg`
   },
-  {
-    name: "Adewale Bankolo",
-    position: "Nigeria",
-    "bio": "Adewale Bankolo is a prominent Nigerian Libertarian. Adewale describes himself as \"very passionate about issues pertaining to entrepreneurship, free market, cryptocurrency, and financial inclusion\". He is the Chapter Director (Nigeria) at the Bastiat Society - an international society of principled wealth creators.",
-    imgSrc:  `${ambassadorsPath}/AdewaleBankolo.png`
-  },
+  // {
+  //   name: "Akonam Richards",
+  //   position: "River State",
+  //   bio: "",
+  //   imgSrc:  `${ambassadorsPath}/`
+  // },
   {
     name: "Alakanani Itireleng",
     position: "Botswana",
-    "bio": "Alakanani is a qualified teacher. She has a BA in humanities, Post Graduate Diploma in Education and MBA in international business. Alakanani is an entrepreneur, she runs a blockchain technology hub Satoshicentre. Alakanani is a bitcoin enthusiastic and trainer.",
-    imgSrc:  `${ambassadorsPath}/AlakananiItireleng.png`
+    bio: "Alakanani is a qualified teacher. She has a BA in humanities, Post Graduate Diploma in Education and MBA in international business. Alakanani is an entrepreneur, she runs a blockchain technology hub Satoshicentre. Alakanani is a bitcoin enthusiastic and trainer.",
+    imgSrc:  `${ambassadorsPath}/alakanani_itireleng.jpg`
+  },
+  // {
+  //   name: "Cedric Rwambibi",
+  //   position: "Rwanda",
+  //   bio: "",
+  //   imgSrc:  `${ambassadorsPath}/`
+  // },
+  {
+    name: "Edgar Mtenga",
+    position: "Tanzania",
+    bio: "Edgar Hermen is a workaholic dude who loves challenging himself intellectually and socially. winning and losing does not matter to him but what he gains out of it matters the most to him.",
+    imgSrc:  `${ambassadorsPath}/edgar_mtenga.jpg`
   },
   {
-    name: "Bashir Aminu",
+    name: "Eto Olei",
     position: "Nigeria",
-    "bio": "Founder of Cryptogene, the largest cryptocurrency community in Africa and a hub that aims at the application and use of blockchain tools by producing quality products and end-user services valuable to enthusiastic and engaged individuals.",
-    imgSrc:  `${ambassadorsPath}/BashirAminu.png`
+    bio: "",
+    imgSrc:  `${ambassadorsPath}/olei_eto.jpg`
   },
   {
-    name: "Chernoh Saeed Sow",
-    position: "Sierra Leone",
-    "bio": "CEO and founder of the Sierra Leone Bitcoin Network – SLBNet and also the Africoin Report blog on the Let’s Talk Bitcoin Network website. He is a tech entrepreneur and a bitcoin savvy person who has also been involved in many projects to help spread bitcoin knowledge in Sierra Leone and Africa as a whole.",
-    imgSrc:  `${ambassadorsPath}/ChernohSaeedSow.png`
+    name: "Frank Chiss",
+    position: "Tanzania",
+    bio: "Frank Chiss is a RE/MAX Agent/Enterprenuer and Humaniq Ambassador representing Dar es salaam, Tanzania. Provides education about cryptocurrency in social networks and social platforms.",
+    imgSrc:  `${ambassadorsPath}/frank_chiss.jpg`
   },
   {
-    name: "Donald Madzinga",
-    position: "South Africa",
-    "bio": "Donald was born in Zimbabwe but he currently lives in South Africa. He trades currencies as well as provides consultancy on Blockchain technology to corporates.",
-    imgSrc:  `${ambassadorsPath}/DonaldMadzinga.png`
+    name: "Frednand Fimbo",
+    position: "Tanzania",
+    bio: "",
+    imgSrc:  `${ambassadorsPath}/frednand_fimbo.jpg`
   },
   {
-    name: "Itumeleng Isaac Lejone",
-    position: "Lesotho",
-    "bio": "Itumeleng is a founder and CEO of IIL Capital - an investment company that focuses on venture capitalism for upcoming entrepreneurs. They also partner with other technology companies to build IOT, blockchain, games and other technology products.",
-    imgSrc:  `${ambassadorsPath}/ItumelengIsaacLejone.png`
+    name: "German Kitula",
+    position: "Tanzania",
+    bio: "German Kitula born in july, 1993 and raised in Tanzania. I graduated my form four studies at Rulenge High School in 2012.I joined the University of Dar es salaam Computing Center in 2014 with a diploma in computing and information technology(ICT) together with CCNA. Currently am doing networking and graphic design at Bugsnet company.",
+    imgSrc:  `${ambassadorsPath}/german_kitula.jpg`
   },
   {
-    name: "Karabo Segale",
-    position: "South Africa",
-    "bio": "Karabo was born in South Africa and lives in North West Province in a small town called Rustenburg in Ramoga Village. Is an Ambassador for Humaniq, a businessman, is into trading and mining Bitcoins.",
-    imgSrc:  `${ambassadorsPath}/KaraboSegale.png`
-  },
-  {
-    name: "Kayode Babarinde",
-    position: "Nigeria",
-    "bio": "Kayode is currently working on \"Cryptocurrency and Blockchain Technology\" as his Masters project at the Centre for Entrepreneurship and Innovation, University of Ibadan, Nigeria.",
-    imgSrc:  `${ambassadorsPath}/KayodeBabarinde.png`
-  },
-  {
-    name: "Koketso Pelo",
-    position: "Botswana",
-    "bio": "Koketso is a director at Satoshi centre and is also studying software engineering in the Limkokwing University, with the area of interest in cryptocurrency and blockchain technology.",
-    imgSrc:  `${ambassadorsPath}/KoketsoPelo.png`
-  },
-  {
-    name: "Mogopodi Phiri",
-    position: "South Africa",
-    "bio": "Technician with both scientific and engineering backgrounds. In 2015 he was introduced to Bitcoin and studied crypto-currencies and Blockchain technology and its applications through the internet, networking and joining crypto-currency discussion groups on different social media platforms.",
-    imgSrc:  `${ambassadorsPath}/MogopodiPhiri.png`
-  },
-  {
-    name: "Mohammed Bukar",
-    position: "Nigeria",
-    "bio": "Mohammed is a Humaniq Ambassador representing Abuja, Nigeria. He has a degree in Computer science and Masters in Information systems. Mohammed is also a crypto currency and blockchain enthusiast.",
-    imgSrc:  `${ambassadorsPath}/MohammedBukar.png`
-  },
-  {
-    name: "Noah Roger Justin",
-    position: "Cameroon",
-    "bio": "Noah is a cryptocurrency investor and trader, running bitcoin educational courses.",
-    imgSrc:  `${ambassadorsPath}/NoahRogerJustin_2x.png`
-  },
-  {
-    name: "Oladimeji Shekoni",
-    position: "Nigeria",
-    "bio": "Oladimeji is a counselling Psychotherapist in Philadelphia Specialist Hospital, Lagos. Entrepreneur, Crypto-Enthusiast.",
-    imgSrc:  `${ambassadorsPath}/OladimejiShekoni.png`
-  },
-  {
-    name: "Peter Samson",
-    position: "Botswana",
-    "bio": "IT entrepreneur born in Mwanza region, currently living in Dar es Salaam region Tanzania. Peter has opened a Meetup group about Bitcoin just to bring bitcoiners together to discuss ways on how Bitcoin can be implemented in Tanzania. They prepared the Coinfest as a Bitcoin tradition to celebrate and exchange ideas about Bitcoin.",
-    imgSrc:  `${ambassadorsPath}/PeterSamson.png`
-  },
-  {
-    name: "Philip Agyei Asare",
-    position: "Ghana",
-    "bio": "Philip is the Founder and CEO of Pak Universal Services and the founder of Dream Foundation Ghana, a non-profit created to empower young entrepreneurs, whom he says are the intellectual, social and cultural lifeblood of a country. Philip is also a member of the Conscious Entrepreneurship Foundation.",
-    imgSrc:  `${ambassadorsPath}/PhilipAgyeiAsare.png`
-  },
-  {
-    name: "Roderick P. Clantina",
-    position: "Phillippines",
-    "bio": "Roderick is a private employee as an inventory assistant, but his area of interest is cryptocurrency and financial inclusion.",
-    imgSrc:  `${ambassadorsPath}/RoderickPClantina.png`,
-  },
-  {
-    name: "Pius Okedinachi",
-    position: "Nigeria",
-    "bio": "",
-    imgSrc:  `${ambassadorsPath}/PiusOkedinachi.png`,
+    name: "Grace Ipini",
+    position: "Tanzania",
+    bio: "",
+    imgSrc:  `${ambassadorsPath}/grace_ipini.jpg`
   },
   {
     name: "Kabonire Ruhinda",
     position: "Uganda",
-    "bio": "",
+    bio: "",
     imgSrc:  `${ambassadorsPath}/KabonireRuhinda.png`,
+  },
+  {
+    name: "Karabo Segale",
+    position: "South Africa",
+    bio: "Karabo was born in South Africa and lives in North West Province in a small town called Rustenburg in Ramoga Village. Is an Ambassador for Humaniq, a businessman, is into trading and mining Bitcoins.",
+    imgSrc:  `${ambassadorsPath}/karabo_segale.jpg`,
   },
   {
     name: "Md.Mofassair Hossain Dhaka",
     position: "Bangladesh",
-    "bio": "",
+    bio: "",
     imgSrc:  `${ambassadorsPath}/Md.MofassairHossainDhaka.png`,
-  }
+  },
+  {
+    name: "Oladimeji Shekoni",
+    position: "Nigeria",
+    bio: "",
+    imgSrc:  `${ambassadorsPath}/oladimeji_shekoni.jpg`
+  },
+  // {
+  //   name: "Omenigbo Priscilla",
+  //   position: "Guinea",
+  //   bio: "",
+  //   imgSrc:  `${ambassadorsPath}/omenigbo_priscilla.png`
+  // },
+  {
+    name: "Peter Sampson",
+    position: "Tanzania",
+    bio: "Peter is a tech entrepreneur running his own venture specialized in technology development with high growth potential, holds a Bcs in Information technology with interest in blockchain technology.",
+    imgSrc:  `${ambassadorsPath}/peter_sampson.jpg`
+  },
+  {
+    name: "Pius Okedinachi",
+    position: "Nigeria",
+    bio: "",
+    imgSrc:  `${ambassadorsPath}/PiusOkedinachi.png`,
+  },
+  {
+    name: "Roger Justin Noah",
+    position: "Cameroon",
+    bio: "Noah is a cryptocurrency investor and trader, running bitcoin educational courses.",
+    imgSrc:  `${ambassadorsPath}/NoahRogerJustin_2x.png`
+  },
 ]

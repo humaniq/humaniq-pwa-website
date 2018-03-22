@@ -44,7 +44,6 @@ export const advisers = [
       'An innovative entrepreneur and investor active in Biotech, Fintech, Blockchain and artificial intelligence, Dmitry is co-founder of the Deep Knowledge Ventures investment fund, focused on investments in AI and Deeptech. He adheres to the principle of impact investment in all his business activities, believing that business should make a social impact, and he supports the deployment of Blockchain for Good, which led to his decision to support Humaniq from its inception.',
     imgSrc: `${imgPath}/dmitry_kaminskiy.jpg`,
   },
-
   {
     name: 'Paolo Tasca',
     position: 'Adviser',
@@ -52,6 +51,15 @@ export const advisers = [
       'Paolo Tasca is a FinTech economist specialising in P2P Financial System. An advisor for different international organisations including the EU Parliament on blockchain technologies, Paolo recently joined the University College London as Director of the Centre for Blockchain Technologies (UCL CBT).  Prior to that, he has been a senior research economist at Deutsche Bundesbank working on digital currencies and P2P lending. Paolo is the co-author of the bestseller "FINTECH Book" and the co-editor of the book "Banking Beyond Banks and Money.',
     imgSrc: `${imgPath}/paolo_tasca.jpg`,
   },
+  {
+    name: 'Paul Mears',
+    position: 'Adviser',
+    bio:
+    'Paul started his career with Ernst and Young in London and is a UK qualified CPA. Over the last 30 years he has worked in a wide range of industries including Telecoms, Construction, Software, Hedge Funds in a wide range of CFO to Operational Finance roles.\n' +
+    'Mr. Mears left the UK in 1999 and has since lived and worked in New York, Vancouver, Amsterdam, Hong Kong and is currently a resident of Monaco. Paul has over the last 5 years been an active angel investor in early stage Tech, Apps, Medical Devices and with a passion for Stem Cell Biotech.\n' +
+    'Mr. Mears has a passion for ensuring creative artists are rewarded for their work and is a great believer in the ability of the blockchain to be a key player in that space and to ensure that artists are fairly rewarded for the work they create.',
+    imgSrc: `${imgPath}/paul_mears.jpg`,
+  }
 ]
 
 export const team = [

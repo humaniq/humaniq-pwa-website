@@ -8,7 +8,7 @@ import SwipeHOC from 'HOC/Swipe'
 const cn = cssClassName('SE_Home_Team')
 import { getDelta, indexOfShow, pairSplit, findIndexesOfRedundantSlides } from './helpers'
 import Slide from './Slide'
-import { team, advisers, ambassadors } from './data'
+import { team, advisers, ambassadors } from '/data/people.js'
 
 const NORMAL_WIDTH = 136
 const WIDE_WIDTH = NORMAL_WIDTH + 20 + 16
@@ -105,9 +105,9 @@ class SE_Home_Team extends Component {
     let active;
     if(showingSlideIndex < 0){
       active = 'ambassadors'
-    } else if(showingSlideIndex < 6){
+    } else if(showingSlideIndex < 5){
       active = 'team'
-    } else if(showingSlideIndex < 10){
+    } else if(showingSlideIndex < 9){
       active = 'advisers'
     } else{
       active = 'ambassadors'
@@ -129,10 +129,10 @@ class SE_Home_Team extends Component {
               <span className={cn('slider-nav-groups', {active: active == 'team'})} onClick={() => this.setState({show:0})}>
                 Team
               </span>
-                <span className={cn('slider-nav-groups', {active: active == 'advisers'})} onClick={() => this.setState({show:6})}>
+                <span className={cn('slider-nav-groups', {active: active == 'advisers'})} onClick={() => this.setState({show:5})}>
                 Advisers
               </span>
-                <span className={cn('slider-nav-groups', {active: active == 'ambassadors'})} onClick={() => this.setState({show:10})}>
+                <span className={cn('slider-nav-groups', {active: active == 'ambassadors'})} onClick={() => this.setState({show:9})}>
                 Ambassadors
               </span>
             </div>
