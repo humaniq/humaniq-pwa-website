@@ -23,10 +23,9 @@ const getRoutes = (store) => {
       >
         <IndexRoute
           component={Home}
-          prepareData={Home.prepareData}
         />
         {legal}
-        {HmqExplorer(store)}
+        {/*{HmqExplorer(store)}*/}
         <Route path="open-source"
                prepareData={OpenSource.prepareData}
                component={OpenSource}

@@ -21,7 +21,7 @@ const application = express()
 
 application.use(compression());
 
-application.get('/api/v1/mixpanel', cors(), MixPanelController.show);
+application.get('/v1/mixpanel', MixPanelController.show);
 
 
 application.use(express.static('static', {

@@ -24,8 +24,10 @@ export default () => next => action => {
       next(nextAction(action, {data: {...response, initdata: data}, type: successType}))
     ),
     error => {
-      next(nextAction(action, {type: failureType}))
-      next({type: ERROR, data: error})
+      next({type: ERROR, data: {error, failureType, action}})
+      return (
+        next(nextAction(action, {type: failureType}))
+      )
     }
   )
   return promise;
