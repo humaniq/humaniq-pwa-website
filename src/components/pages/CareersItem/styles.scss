@@ -1,0 +1,52 @@
+@import "common/settings/variables";
+@import "common/utils";
+
+.careers-item{
+
+  &__title{
+    margin-right: 20px;
+    margin-bottom: 50px;
+
+    @include media($mobile) {
+      margin-right: 0;
+      margin-bottom: 27px;
+    }
+  }
+
+  &__body{
+    margin-bottom: 30px;
+    p{
+      color: red;
+    }
+
+  }
+
+  &__root{
+    display: flex;
+    @include media ($desktop-xl) {
+      flex-direction: column;
+    }
+  }
+
+  &__left{
+    flex: 1 0 400px;
+    @include media ($desktop-xl) {
+      flex-basis: auto;
+      margin-bottom: 100px;
+    }
+
+  }
+  &__right{
+    flex: 0 0 310px;
+    @include media ($desktop-xl) {
+      flex-basis: auto;
+    }
+  }
+
+  &__title-contact{
+    font-size: 25px;
+    margin-bottom: 10px;
+
+  }
+
+}

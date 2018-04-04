@@ -17,6 +17,9 @@ const A_Title = ({type, theme, mix, children}) =>{
     case 'info-column':
       tagType = 'h3'
       break;
+    case 'inner-pages':
+      tagType = 'h3'
+      break;
     default:
       tagType = 'p'
   }
