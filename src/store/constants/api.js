@@ -9,6 +9,8 @@ export const BUTTER_CMS_API_ENDPOINTS = {
   wiki: `/content/`
 }
 
+export const ENDPOINT_CAREERS = `http://localhost:4000/v1/vacancies`
+
 export const WEBSITE_DOMAIN_NAME = 'humaniq.com'
 export const HUMANIQ_BACKEND_API_URL = 'https://f03pn9k2v8.execute-api.eu-west-1.amazonaws.com'
 export const ENDPOINT_JOIN_FORM = `${HUMANIQ_BACKEND_API_URL}/dev/subscriptions/partners`
