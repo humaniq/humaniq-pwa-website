@@ -15,6 +15,7 @@ import hmqBlock from 'store/entities/hmqBlock/reducer'
 import hmqHash from 'store/entities/hmqHash/reducer'
 import hmqSearch from 'store/entities/hmqSearch/reducer'
 import home from 'store/entities/home/reducer'
+import careers from 'store/entities/careers/reducer'
 
 
 export default combineReducers({
@@ -33,5 +34,6 @@ export default combineReducers({
   hmqHash,
   hmqSearch,
   home,
+  careers
   // transactions,
 })
