@@ -10,15 +10,15 @@
     padding-right: 20%;
   }
   @include media($desktop-xl) {
-    padding: 15px 65px;
+    padding: 15px 20px;
     background-color: white;
     &_mob-menu-open_true {
       background-color: $color-main-blue;
     }
   }
-  @include media($tablet) {
-    padding: 15px 20px;
-  }
+  //@include media($desktop-xl) {
+  //  padding: 15px 20px;
+  //}
 
   &__logo {
     width: 150px;
