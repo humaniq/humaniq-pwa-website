@@ -15,8 +15,11 @@
 
   &__body{
     margin-bottom: 30px;
-    p{
-      color: red;
+    strong{
+      font-weight: 700;
+    }
+    em{
+      font-style: italic;
     }
 
   }
