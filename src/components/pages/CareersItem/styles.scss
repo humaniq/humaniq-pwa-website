@@ -21,7 +21,10 @@
     em{
       font-style: italic;
     }
-
+    ul li{
+      list-style-type: disc;
+      margin-left: 15px;
+    }
   }
 
   &__root{
@@ -33,6 +36,7 @@
 
   &__left{
     flex: 1 0 400px;
+    margin-right: 100px;
     @include media ($desktop-xl) {
       flex-basis: auto;
       margin-bottom: 100px;
