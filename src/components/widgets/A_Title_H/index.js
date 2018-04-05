@@ -38,7 +38,8 @@ A_Title.propTypes = {
   type: T.oneOf([
     'hero', //ProximaNova Uppercase bold 72px
     'section', //ProximaNova bold 72px
-    'info-column' //ProximaNova bold 31px
+    'info-column', //ProximaNova bold 31px
+    'inner-pages'
   ]),
   theme: T.oneOf([
     'bright', //white ProximaNova bold 72px
