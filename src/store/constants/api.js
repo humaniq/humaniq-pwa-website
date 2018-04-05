@@ -9,7 +9,12 @@ export const BUTTER_CMS_API_ENDPOINTS = {
   wiki: `/content/`
 }
 
-export const ENDPOINT_CAREERS = `http://localhost:4000/v1/vacancies`
+// const DOMAIN_CMS = __DEVELOPMENT__ ? 'http://localhost' : 'http://188.166.170.8'
+const DOMAIN_CMS = 'http://188.166.170.8'
+
+export const PORT = `:4000`
+
+export const ENDPOINT_CAREERS = `${DOMAIN_CMS + PORT}/v1/vacancies`
 
 export const WEBSITE_DOMAIN_NAME = 'humaniq.com'
 export const HUMANIQ_BACKEND_API_URL = 'https://f03pn9k2v8.execute-api.eu-west-1.amazonaws.com'
