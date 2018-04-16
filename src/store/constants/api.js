@@ -10,6 +10,7 @@ export const BUTTER_CMS_API_ENDPOINTS = {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 const CMS_BACKEND = __DEVELOPMENT__ ? 'http://localhost:4000' : process.env.CMS_BACKEND
 
 // const DOMAIN_CMS = 'http://188.166.170.8'
@@ -20,11 +21,21 @@ export const ENDPOINT_CAREERS = `${CMS_BACKEND}/v1/vacancies`
 =======
 // const DOMAIN_CMS = __DEVELOPMENT__ ? 'http://localhost' : 'http://188.166.170.8'
 const DOMAIN_CMS = 'http://188.166.170.8'
+=======
+const CMS_BACKEND = __DEVELOPMENT__ ? 'http://localhost:4000' : process.env.CMS_BACKEND
+>>>>>>> [fix]
 
-export const PORT = `:4000`
+console.log(__DEVELOPMENT__, process.env.CMS_BACKEND)
+// const DOMAIN_CMS = 'http://188.166.170.8'
 
+<<<<<<< HEAD
 export const ENDPOINT_CAREERS = `${DOMAIN_CMS + PORT}/v1/vacancies`
 >>>>>>> [update] css
+=======
+// export const PORT = `:4000`
+
+export const ENDPOINT_CAREERS = `${CMS_BACKEND}/v1/vacancies`
+>>>>>>> [fix]
 
 export const WEBSITE_DOMAIN_NAME = 'humaniq.com'
 export const HUMANIQ_BACKEND_API_URL = 'https://f03pn9k2v8.execute-api.eu-west-1.amazonaws.com'
