@@ -24,7 +24,6 @@ class CareersItem extends Component {
   checkIfExist(){
     const {loading, loaded, entity} = this.props
     if(!loading && loaded && !Object.keys(entity).length){
-      console.log('redirect')
       history.push('/error/404')
     }
   }
