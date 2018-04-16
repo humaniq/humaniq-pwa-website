@@ -8,6 +8,7 @@
   width: 40px;
   padding: 10px;
   cursor: pointer;
+  z-index: 100;
   &_is-active {
     &_true {
       #{$this}__line {

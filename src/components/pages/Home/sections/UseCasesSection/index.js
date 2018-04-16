@@ -72,7 +72,9 @@ class SE_Home_UseCases extends Component {
     const dots = this.getDots()
 
     return (
-      <section className={cn([mix])}>
+      <section
+        className={cn([mix])}
+      >
         <div className={cn('content')}>
           <A_Title mix={cn('title')} type="section" theme="dark">
             Humaniq use cases

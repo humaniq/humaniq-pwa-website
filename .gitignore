@@ -9,3 +9,4 @@ simple-api/node_module
 webpack-manifest.json
 webpack.config-copy.js
 package-lock.json
+.env

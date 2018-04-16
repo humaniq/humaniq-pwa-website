@@ -1,4 +1,4 @@
-import {SET, MENU, POPUP, THEME, OPEN, CLOSE, TOGGLE, OPEN_ROUTE, HMQ_SECTION} from 'store/constants'
+import {SET, MENU, POPUP, THEME, OPEN, CLOSE, TOGGLE, OPEN_ROUTE, PEOPLE_MODAL, HMQ_SECTION} from 'store/constants'
 
 export function setRoute(str) {
   const data = str.split('/').filter(entry => entry.trim() != '')
@@ -50,5 +50,18 @@ export function openPopup(data) {
 export function closePopup() {
   return ({
     type: CLOSE + POPUP
+  })
+}
+
+export function openPeopleModal(data) {
+  return ({
+    type: OPEN + PEOPLE_MODAL,
+    data
+  })
+}
+
+export function closePeopleModal() {
+  return ({
+    type: CLOSE + PEOPLE_MODAL
   })
 }

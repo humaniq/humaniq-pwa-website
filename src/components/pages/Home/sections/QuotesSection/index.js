@@ -57,12 +57,15 @@ class SE_Home_Quotes extends Component {
     this.setState({ show })
   }
 
+
   render() {
     const { mix } = this.props
     const { show } = this.state
     const pctX = show * 25
     return (
-      <section className={cn([mix])}>
+      <section
+        className={cn([mix])}
+      >
         <div className={cn('slider')} style={{ transform: `translateX(-${pctX}%)` }}>
           {_getQuotesSlides(quotes)}
         </div>

@@ -6,6 +6,8 @@ import {setRoute} from 'store/entities/navigation/actions'
 import {fetchWiki} from 'store/entities/wikiArticles/actions';
 import {fetchAmbassadors} from 'store/entities/ambassadors/actions'
 import {fetchPartners} from 'store/entities/partners/actions'
+import {fetchUserNumber} from 'store/entities/home/actions'
+
 
 
 class AppRoute extends Component {
@@ -16,11 +18,15 @@ class AppRoute extends Component {
       state.wikiArticles.loaded || dispatch(fetchWiki())
       state.partners.loaded || dispatch(fetchPartners())
       state.ambassadors.loaded || dispatch(fetchAmbassadors())
-
     }
 
     if(initialLoad()) return;
-    dispatch(setRoute(location.pathname))
+    return(
+      Promise.all([
+        dispatch(setRoute(location.pathname)),
+        dispatch(fetchUserNumber())
+      ])
+    )
   }
 
   render() {
