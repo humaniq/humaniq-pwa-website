@@ -1,0 +1,102 @@
+@import 'common/settings/variables';
+@import 'common/utils';
+
+.team-section-slide {
+  font-family: $font-ProximaNova;
+  line-height: 1.2;
+  text-align: center;
+  font-size: 16px;
+  width: 136px;
+  //transition: opacity 0.1s ease;
+
+
+  &_hidden_true {
+    //transform: translate3d(140px, 0, 0);
+    //transition: 8.8s;
+    //background-color: tomato;
+    transition: opacity 0.2s ease;
+    opacity: 0;
+
+
+  }
+  &_hidden_false {
+    transform: translate3d(0, 0, 0);
+    //transform: translate3d(140px, 0, 0);
+    //transition: 8.8s;
+    opacity: 1;
+    //background-color: tomato;
+  }
+
+  &_wide_true {
+    width: 172px;
+    padding-left: 36px;
+  }
+  &__group-name {
+    text-transform: uppercase;
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    text-align: right;
+    transform: rotate(-90deg) translate3d(-32px, -152px, 0);
+    transform-origin: top right;
+    opacity: 0.38;
+    font-size: 16px;
+    font-weight: bold;
+    color: #01a2ff;
+  }
+  &__person {
+    margin-top: 32px;
+    position: static;
+
+    &-image {
+      position: relative;
+      display: block;
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 12px auto;
+
+      &:hover::before {
+        background-color: transparent;
+      }
+      &:before {
+        content: '';
+        position: absolute;
+        display: block;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: transparentize($color-main-blue, 0.1);
+        mix-blend-mode: multiply;
+        border-radius: 100%;
+        transition: background-color 0.3s;
+      }
+    }
+
+    &-name {
+      font-weight: 700;
+      max-width: 120px;
+      height: 40px;
+      line-height: 1;
+      text-align: center;
+      margin: 0 auto;
+    }
+    &-title {
+      margin: 0 auto;
+      font-weight: 400;
+      line-height: 1;
+      height: 35px
+    }
+  }
+  &__tooltip{
+    position: absolute;
+    //display: none;
+    transform: translate3d(-25%, 0, 0);
+    z-index: 9999;
+  }
+}
+
+.team-section-slide__person:hover > .team-section-slide__tooltip{
+  display: block;
+}

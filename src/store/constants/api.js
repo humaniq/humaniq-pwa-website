@@ -35,3 +35,4 @@ export const ENDPOINT_HMQ_BLOCK = `${HUMANIQ_BACKEND_API_URL}/dev/blockchain/blo
 export const ENDPOINT_HMQ_GRAPH = `${HUMANIQ_BACKEND_API_URL}/dev/exchange/rates`
 export const ENDPOINT_HMQ_HASH = `${HUMANIQ_BACKEND_API_URL}/dev/blockchain/transactions/`
 export const ENDPOINT_HMQ_SEARCH = `${HUMANIQ_BACKEND_API_URL}/dev/blockchain/search`
+export const ENDPOINT_USERS_NUMBER = `${__SERVER__ ? `:${process.env.PORT || 8080}` : ''}/v1/mixpanel`

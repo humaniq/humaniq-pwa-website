@@ -37,7 +37,7 @@ class Ambassadors  extends Component {
     if (filter == 'All') {
       filtered = entities
     } else {
-      filtered = entities.filter(entity => entity.country === filter)
+      filtered = entities.filter(entity => entity.position === filter)
     }
 
     let _renderedAmbassadors = filtered.map((partner, i) => {
@@ -60,14 +60,15 @@ class Ambassadors  extends Component {
         >
 
           <A_Image
-            src={partner.logoLink2x}
+            src={partner.imgSrc}
             alt={partner.name}
+            rounded
           />
           <span className={cn('tooltip', {type: tooltipPlace})}>
             <M_Tooltip type={tooltipPlace}>
               <A_H type='tooltip'>{partner.name}</A_H>
-              <span onClick={() => this.setState({filter: partner.country})} style={{cursor: 'pointer'}}>
-                <A_H type='tooltip-sub'>{partner.country}</A_H>
+              <span onClick={() => this.setState({filter: partner.position})} style={{cursor: 'pointer'}}>
+                <A_H type='tooltip-sub'>{partner.position}</A_H>
               </span>
               {partner.bio}
             </M_Tooltip>

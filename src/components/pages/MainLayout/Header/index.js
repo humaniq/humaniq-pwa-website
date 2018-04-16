@@ -5,6 +5,7 @@ import A_Logo_H from 'A_Logo_H'
 import A_BurgerBtn_H from './BurgerBtn'
 import { cssClassName } from 'utils'
 import { Link } from 'react-router'
+const socialIcons = `/img/design-v2/icons/social/sprite.svg`
 
 const cn = cssClassName('SE_MainLayoutHeader_H')
 
@@ -15,9 +16,9 @@ const SE_MainLayoutHeader_H = ({ mix, theme, mobileMenuIsActive, toggleMobileMen
     </Link>
 
     <ul className={cn('menu', { sticky })}>
-      <li className={cn('menu-link')}>
-        <Link to="/hmq-explorer">HMQ Explorer</Link>
-      </li>
+      {/*<li className={cn('menu-link')}>*/}
+        {/*<Link to="/hmq-explorer">HMQ Explorer</Link>*/}
+      {/*</li>*/}
       <li className={cn('menu-link')}>
         <Link to="/ambassadors">Ambassadors</Link>
       </li>
@@ -29,6 +30,11 @@ const SE_MainLayoutHeader_H = ({ mix, theme, mobileMenuIsActive, toggleMobileMen
       <li className={cn('menu-link')}>
         <a href="https://blog.humaniq.co/" target="_blank">
           Blog
+        </a>
+      </li>
+      <li className={cn('menu-link')}>
+        <a href="https://t.me/HumaniqNews" target="_blank">
+          <svg><use xlinkHref={`${socialIcons}#telegram`} /></svg>
         </a>
       </li>
     </ul>

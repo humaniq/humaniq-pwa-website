@@ -9,7 +9,7 @@ import ContactUs from './ContactUs'
 import legal from './Legal'
 import OpenSource from './OpenSource'
 import Ambassadors from './Ambassadors'
-import HmqExplorer from './Hmq'
+// import HmqExplorer from './Hmq'
 import Wiki from './Wiki'
 
 const getRoutes = (store) => {
@@ -23,10 +23,9 @@ const getRoutes = (store) => {
       >
         <IndexRoute
           component={Home}
-          prepareData={Home.prepareData}
         />
         {legal}
-        {HmqExplorer(store)}
+        {/*{HmqExplorer(store)}*/}
         <Route path="open-source"
                prepareData={OpenSource.prepareData}
                component={OpenSource}

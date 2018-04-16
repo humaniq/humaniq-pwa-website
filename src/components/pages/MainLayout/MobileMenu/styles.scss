@@ -30,6 +30,11 @@
       &:nth-last-child(1) {
         margin-bottom: 0;
       }
+
+      svg {
+        width: 32px;
+        height: 32px;
+      }
     }
   }
 }

@@ -2,15 +2,15 @@ import {connect} from 'react-redux';
 import Page from './page'
 import {bindActionCreators} from 'redux'
 import {openPopup} from 'store/entities/navigation/actions'
+import { ambassadors } from 'data/people'
 
-function mapStateToProps(state) {
-  const {entities} = state.ambassadors
+function mapStateToProps() {
   const countries =
-    entities
-      .map(v => v.country)
+    ambassadors
+      .map(v => v.position)
       .filter((v, i, a) => a.indexOf(v) === i)
 
-  return {entities, countries};
+  return {entities: ambassadors, countries};
 }
 
 function mapDispatchToProps(dispatch) {

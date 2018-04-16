@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-// import * as T from "prop-types";
+import * as T from "prop-types";
 import './styles.scss'
 import { cssClassName } from 'utils'
 const cn = cssClassName('Home')
@@ -70,7 +70,7 @@ class Home extends Component {
   }
 
   sectionsObj = {
-    empowering: <EmpoweringSection mix={cn('section')} key="empowering" />,
+    empowering: <EmpoweringSection mix={cn('section')} key="empowering" users_number={this.props.users_number} />,
     mobile: <FirstMobileSection mix={cn('section')} key="mobile" />,
     situation: <UnbankedStatSection mix={cn('section')} key="situation" />,
     changes: <QuotesSection mix={cn('section', { type: 'slider' })} key="changes" />,
@@ -82,7 +82,7 @@ class Home extends Component {
     challenge: <GlobalChallengeSection mix={cn('section')} key="challenge" />,
     expedition: <ExpeditionSection mix={cn('section')} key="expedition" />,
     /*timeline: <TimelineSection mix={cn('section')} key="timeline" />,*/
-    team: <TeamSection mix={cn('section')} key="team" />,
+    team: <TeamSection mix={cn('section')} key="team" openPeopleModal={this.props.openPeopleModal}/>,
     press: <WorldTalkingSection mix={cn('section')} key="press" />,
     contacts: (
       <O_Footer_H
@@ -127,7 +127,6 @@ class Home extends Component {
   }
 
   handleTouchBar({ deltaY }) {
-    console.log(deltaY)
     const { showIndex: oldIndex, fastScroll } = this.state
     if (!fastScroll && Math.abs(deltaY) < 100) return
     const showIndex = deltaY > 0 ? oldIndex + 1 : oldIndex - 1
@@ -136,6 +135,18 @@ class Home extends Component {
 
     if (showIndex >= 0 && showIndex < sectionsNames.length) {
       this.handleSideMenu({ showIndex, scroll: false, fastScroll: false })
+    }
+  }
+
+  _handleKeyPress({keyCode}) {
+    const { showIndex: oldIndex} = this.state
+    const
+      nextCodes = [40, 34, 32, 39],
+      prevCodes = [38, 33, 36, 37]
+    if(nextCodes.includes(keyCode) && oldIndex < sectionsNames.length -1) {
+      this.setState({ showIndex: oldIndex + 1})
+    } else if(prevCodes.includes(keyCode) && oldIndex > 0) {
+      this.setState({ showIndex: oldIndex - 1})
     }
   }
 
@@ -157,6 +168,7 @@ class Home extends Component {
 
   componentDidMount() {
     window.addEventListener('resize', this.getWidth)
+    this.container.focus();
   }
 
   componentWillUnmount() {
@@ -191,7 +203,13 @@ class Home extends Component {
     const onWheel = scroll && controlledScroll ? this.handleWeel : undefined
 
     return (
-      <div className={cn({ scroll: !controlledScroll })} onWheel={onWheel}>
+      <div
+        className={cn({ scroll: !controlledScroll })}
+        onWheel={onWheel}
+        onKeyDown={(e) => this._handleKeyPress(e)}
+        tabIndex='0'
+        ref={el => {this.container = el}}
+      >
         <div className={cn('inner')} style={{ transform: `translate3d(0, ${-positionY}vh, 0px` }}>
           {sectionsNames.map(name => this.sectionsObj[name])}
         </div>
@@ -202,7 +220,9 @@ class Home extends Component {
   }
 }
 
-Home.propTypes = {}
+Home.propTypes = {
+  total_installations: T.number
+}
 
 Home.defaultProps = {}
 

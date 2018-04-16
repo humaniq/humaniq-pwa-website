@@ -19,7 +19,8 @@ Feel free to email us at [info@humaniq.com](mailto:info@humaniq.com)
 
 ## Installation
 
-	$ npm i - to install node packages
+	$ npm i - to install node package
+	$ npm run parse:mixpanel - to create data/installations.json
 
 ## Main app
 
@@ -27,6 +28,8 @@ Feel free to email us at [info@humaniq.com](mailto:info@humaniq.com)
 
 	$ npm run build - to build project.  
 	$ npm start - to start node.js server
+	$ npm run jobs - to run schedule jobs
+
 
 #### development mode
 
