@@ -6,8 +6,12 @@ schedule.scheduleJob('1 * * * *', async () => { await run() })
 const run = async () => {
   console.log("start", new Date())
 
-  console.log("create json file response mixpanel")
-  await write()
+
+  try {
+    await write()
+  } catch (err) {
+    console.log(err)
+  }
 
   console.log("end", new Date())
 }
