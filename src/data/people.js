@@ -167,7 +167,9 @@ export const ambassadors = [
   {
     name: "Eto Olei",
     position: "Nigeria",
-    bio: "",
+    bio: "Etotaziba Olei has a background in Computer Science and Informatics. He studied Computer science in Rivers State Polytechnic and the Niger Delta University. \n" +
+    "Eto is a fast gear to social promotions and performance strategies specialized in survey project management. \n" +
+    "In his free time, he hangs out with family and friends and also loves spending time in the music studio - making music.",
     imgSrc:  `${ambassadorsPath}/olei_eto.jpg`
   },
   {
@@ -179,7 +181,7 @@ export const ambassadors = [
   {
     name: "Frednand Fimbo",
     position: "Tanzania",
-    bio: "",
+    bio: "Fredinand Fimbo is an Independent Researcher&Entrepreneur,  Ambassador of Humaniq in Dar es Salaam, Tanzania, he has been engaged in project related to the crypto-currency and IT in the crypto-sphere.",
     imgSrc:  `${ambassadorsPath}/frednand_fimbo.jpg`
   },
   {
@@ -197,8 +199,13 @@ export const ambassadors = [
   {
     name: "Kabonire Ruhinda",
     position: "Uganda",
-    bio: "",
-    imgSrc:  `${ambassadorsPath}/KabonireRuhinda.png`,
+    bio: "After earning my bachelor's degree in Computer engineering, I ventured further into the computing world to" +
+    " explore my passion for programming, as well as artificial intelligence as a whole. " +
+    "I currently work as an intern at the artificial intelligence & data science research lag (AIR lab) at the" +
+    " college of computing and information science (CoCIS) at Makerere university, where I'm focused on working" +
+    " various projects, so as to enhance my skills, but also help out to the best way I can, to achieve certain set" +
+    " targets.",
+    imgSrc:  `${ambassadorsPath}/KabonireRuhinda.jpg`,
   },
   {
     name: "Karabo Segale",
@@ -210,12 +217,13 @@ export const ambassadors = [
     name: "Md.Mofassair Hossain Dhaka",
     position: "Bangladesh",
     bio: "",
-    imgSrc:  `${ambassadorsPath}/Md.MofassairHossainDhaka.png`,
+    imgSrc:  `${ambassadorsPath}/Md.MofassairHossainDhaka.jpg`,
   },
   {
     name: "Oladimeji Shekoni",
     position: "Nigeria",
-    bio: "",
+    bio: "Oladimeji Shekoni is an expert in block chain technology. He has facilitated a series of crypto-workshops since 2012 including the first ever Block Chain Conference organised by the Central Bank of Nigeria. He is keen on sharing knowledge to help individuals and coporate entities understand and optimize the benefits of cryptocurrency for wealth creation. \n" +
+    "Shekoni is a Social and Behavioural Investogator, and a graduate of Psychology from the prestigious University of Ibadan.",
     imgSrc:  `${ambassadorsPath}/oladimeji_shekoni.jpg`
   },
   // {
@@ -234,12 +242,22 @@ export const ambassadors = [
     name: "Pius Okedinachi",
     position: "Nigeria",
     bio: "",
-    imgSrc:  `${ambassadorsPath}/PiusOkedinachi.png`,
+    imgSrc:  `${ambassadorsPath}/PiusOkedinachi.jpg`,
   },
   {
     name: "Roger Justin Noah",
     position: "Cameroon",
     bio: "Noah is a cryptocurrency investor and trader, running bitcoin educational courses.",
     imgSrc:  `${ambassadorsPath}/NoahRogerJustin_2x.png`
+  },
+  {
+    name: "Frank Deya ",
+    position: "Kenya",
+    bio: "Business Developer, Entrepreneur. \n" +
+    "Experienced Business Development & Projects\n" +
+    "Manager with a demonstrated history of\n" +
+    "working in ICT, media production, fintech and\n" +
+    "blockchain.",
+    imgSrc:  `${ambassadorsPath}/frank_deya.jpg`
   },
 ]
