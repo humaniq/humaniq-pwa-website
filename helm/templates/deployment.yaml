@@ -14,8 +14,6 @@ spec:
       labels:
         app: {{ template "name" . }}
     spec:
-<<<<<<< HEAD
-=======
       #volumes:
       #- name: shared-data
       #  hostPath:
@@ -38,7 +36,6 @@ spec:
         volumeMounts:
         - mountPath: /usr/src/app/data
           name: shared-data
->>>>>>> production
       containers:
       # Site
       - name: {{ template "name" . }}-site
@@ -52,8 +49,6 @@ spec:
             value: "8080"
           - name: APP_ENV
             value: production
-<<<<<<< HEAD
-=======
         volumeMounts:
         - mountPath: /usr/src/app/data
           name: shared-data
@@ -74,7 +69,6 @@ spec:
         volumeMounts:
         - mountPath: /usr/src/app/data
           name: shared-data
->>>>>>> production
         ports:
         - containerPort: 8080
           name: app-port
