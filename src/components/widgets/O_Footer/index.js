@@ -16,7 +16,8 @@ const links = [
       // {name: 'Features', url: '#'},
       {name: 'Open source', url: '/open-source'},
       {name: 'Humaniq Wiki', url: '/wiki'},
-      {name: 'HMQ Explorer', url: '/hmq-explorer'}]
+      // {name: 'HMQ Explorer', url: '/hmq-explorer'}
+    ]
   },
   {
     section: 'company',
