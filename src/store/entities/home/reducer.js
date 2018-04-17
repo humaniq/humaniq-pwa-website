@@ -1,7 +1,7 @@
 import {START, REQUEST, SUCCESS, FAIL, USERS_NUMBER} from 'store/constants'
 
 const initHome = {
-  users_number: 28000
+  users_number: undefined
 }
 
 export default (home = initHome, {type, data}) => {
