@@ -11,7 +11,6 @@ export const BUTTER_CMS_API_ENDPOINTS = {
 
 const CMS_BACKEND = __DEVELOPMENT__ ? 'http://localhost:4000' : process.env.CMS_BACKEND
 
-console.log(__DEVELOPMENT__, process.env.CMS_BACKEND)
 // const DOMAIN_CMS = 'http://188.166.170.8'
 
 // export const PORT = `:4000`
