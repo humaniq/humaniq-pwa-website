@@ -62,6 +62,7 @@ export default function(req, res){
 
       })
       .catch(error => {
+        console.log(error)
         // return res.status(404).send('Not found');
         // return res.redirect(302, '/error/500?error=' + stringify(error));
 

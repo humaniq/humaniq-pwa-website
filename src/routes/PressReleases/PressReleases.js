@@ -10,7 +10,6 @@ class PressReleasesRoute extends Component {
   static prepareData({dispatch}) {
     dispatch(setTheme('dark'))
 
-    if(initialLoad()) return;
     return(
       dispatch(fetchPressReleases())
     )

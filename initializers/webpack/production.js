@@ -88,7 +88,6 @@ export default {
       __DEVELOPMENT__: false,
       'process.env.NODE_ENV': JSON.stringify('production')
     }),
-    new Dotenv(),
     new ExtractTextPlugin('[name].[chunkhash].css'),
     new webpack.ContextReplacementPlugin(/moment[\\\/]locale$/, /^\.\/(en)$/),
     new webpack.optimize.CommonsChunkPlugin({
@@ -99,6 +98,7 @@ export default {
     }),
     new webpack.optimize.UglifyJsPlugin({
       sourceMap: 'source-map'
-    })
+    }),
+    new Dotenv()
   ]
 };
