@@ -1,0 +1,15 @@
+@import "common/settings/variables";
+@import "common/utils";
+
+.press-releases{
+  padding-top: 30px;
+  &__title{
+      margin-right: 20px;
+      margin-bottom: 50px;
+
+      @include media($mobile) {
+        margin-right: 0;
+        margin-bottom: 27px;
+      }
+  }
+}

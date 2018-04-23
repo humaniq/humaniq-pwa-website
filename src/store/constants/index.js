@@ -30,6 +30,7 @@ export const PARTNERS = 'PARTNERS'
 export const AMBASSADORS = 'AMBASSADORS'
 export const BY_REFERENCE = 'BY_REFERENCE'
 export const CAREERS = 'CAREERS'
+export const PRESS_RELEASES = 'PRESS_RELEASES'
 
 export const CONTENT = 'CONTENT'
 export const STATIC_DATA = 'STATIC_DATA'

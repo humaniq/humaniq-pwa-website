@@ -1,0 +1,19 @@
+@import "common/settings/variables";
+@import "common/utils";
+
+.o-press-releases-list{
+  $this: &;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-between;
+
+  &_type_small{
+    width: 300px;
+  }
+
+  &__item-empty{
+    margin-bottom: 0 !important;
+    height: 0;
+  }
+}

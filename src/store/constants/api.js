@@ -19,12 +19,13 @@ const CMS_BACKEND = __DEVELOPMENT__ ? 'http://localhost:4000' : process.env.CMS_
 export const ENDPOINT_CAREERS = `${CMS_BACKEND}/v1/vacancies`
 // const DOMAIN_CMS = __DEVELOPMENT__ ? 'http://localhost' : 'http://188.166.170.8'
 
+export const ENDPOINT_PRESS_RELEASES = `${CMS_BACKEND}/v1/press-releases`
+
 export const WEBSITE_DOMAIN_NAME = 'humaniq.com'
 export const HUMANIQ_BACKEND_API_URL = 'https://f03pn9k2v8.execute-api.eu-west-1.amazonaws.com'
 export const ENDPOINT_JOIN_FORM = `${HUMANIQ_BACKEND_API_URL}/dev/subscriptions/partners`
 export const ENDPOINT_SUBSCRIBE_FORM = `${HUMANIQ_BACKEND_API_URL}/dev/subscriptions/newsletters`
 export const ENDPOINT_AMBASSADORS_FORM = `${HUMANIQ_BACKEND_API_URL}/dev/subscriptions/ambassadors`
-
 
 export const ENDPOINT_PARTNERS = `https://s3-eu-west-1.amazonaws.com/humaniq-web-backend-public/partners`
 export const ENDPOINT_PARTNERS_LIST = `${ENDPOINT_PARTNERS}/partners.json`

@@ -12,6 +12,7 @@ import Ambassadors from './Ambassadors'
 // import HmqExplorer from './Hmq'
 import Wiki from './Wiki'
 import careers from './Careers'
+import pressReleases from './PressReleases'
 
 const getRoutes = (store) => {
   return (
@@ -28,6 +29,7 @@ const getRoutes = (store) => {
         {legal}
         {/*{HmqExplorer(store)}*/}
         {careers}
+        {pressReleases}
         <Route path="open-source"
                prepareData={OpenSource.prepareData}
                component={OpenSource}

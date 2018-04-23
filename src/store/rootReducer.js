@@ -4,6 +4,8 @@ import partners from 'store/entities/partners/reducer'
 import wikiArticles from 'store/entities/wikiArticles/reducer'
 import wikiSearch from 'store/entities/wikiSearch/reducer'
 import hmqGraph from 'store/entities/hmqGraph/reducer'
+import pressReleases from 'store/entities/pressReleases/reducer'
+
 // import transactions from 'store/entities/transactions/reducer'
 import ambassadors from 'store/entities/ambassadors/reducer'
 import hmqStatistic from 'store/entities/hmqStatistic/reducer'
@@ -34,6 +36,7 @@ export default combineReducers({
   hmqHash,
   hmqSearch,
   home,
-  careers
+  careers,
+  pressReleases
   // transactions,
 })
