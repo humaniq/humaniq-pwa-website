@@ -1,0 +1,13 @@
+@import "common/settings/variables";
+@import "common/utils";
+
+.anniversary{
+  padding-top: 3rem;
+  &_title{
+    padding: 2rem 0 ;
+  }
+  &__text{
+    padding: 2rem 0 3rem;
+
+  }
+}
