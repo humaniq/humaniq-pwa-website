@@ -4,8 +4,8 @@ import './styles.scss';
 import {cssClassName} from 'utils'
 const cn = cssClassName('A_P')
 
-const A_P = ({children, type}) =>(
-  <p className={cn({type})}>{children}</p>
+const A_P = ({children, type, mix}) =>(
+  <p className={cn({type}, [mix])}>{children}</p>
 )
 
 A_P.propTypes = {

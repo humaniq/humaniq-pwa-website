@@ -49,6 +49,7 @@ function historyCb(location) {
 }
 
 history.listen(historyCb)
+// hashLinkScroll()
 
 historyCb(window.location)
 // offlinePluginStart()
