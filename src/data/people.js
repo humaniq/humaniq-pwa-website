@@ -103,13 +103,13 @@ export const team = [
     bio: '',
     imgSrc: `${imgPath}/harry_bright.jpg`,
   },
-  {
-    name: 'Segrey Blinov',
-    position: 'SMM, CSS',
-    bio:
-      'Bringing experience of social media and customer service support, Segrey is passionate about Blockchain technology and his family.',
-    imgSrc: `${imgPath}/segrey_blinov.jpg`,
-  },
+  // {
+  //   name: 'Segrey Blinov',
+  //   position: 'SMM, CSS',
+  //   bio:
+  //     'Bringing experience of social media and customer service support, Segrey is passionate about Blockchain technology and his family.',
+  //   imgSrc: `${imgPath}/segrey_blinov.jpg`,
+  // },
   {
     name: 'Andrey Shevchenko',
     position: 'SMM, CSS',
