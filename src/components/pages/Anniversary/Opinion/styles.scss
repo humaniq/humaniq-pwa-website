@@ -1,0 +1,63 @@
+@import "common/settings/variables";
+@import "common/utils";
+
+.opinion{
+  display: flex;
+  margin: 2rem;
+  border-bottom: 1px solid gray;
+  //align-items: center;
+  padding-bottom: 2rem;
+
+  &__profile{
+    text-align: center;
+    &-image{
+      margin-top: 0.5rem;
+      width: 207px;
+      height: 207px;
+    }
+    &-name{
+      font-size: 14px;
+      font-weight: 700;
+      margin: 0;
+      @include media($mobile) {
+        font-size: 18px;
+
+      }
+    }
+    &-title{
+      margin-top: 0;
+      font-size: 14px;
+      line-height: 16px;
+      @include media($mobile) {
+        font-size: 18px;
+        margin-bottom: 2rem;
+      }
+    }
+    &_right_true{
+      order: 10;
+      @include media($mobile) {
+        order: 0
+      }
+    }
+  }
+  &__opinion{
+    margin: 0 2rem;
+    @include media($mobile) {
+      margin: 0 0 2rem;
+    }
+    &-name{
+      font-size: 18px;
+      font-weight: 700;
+      @include media($mobile) {
+        display: none;
+      }
+    }
+    &-text{
+      margin-top: 0;
+    }
+
+  }
+  @include media($mobile) {
+    flex-direction: column;
+  }
+}
