@@ -8,7 +8,7 @@ import CareersItem from './CareersItem'
 export const careers = (
   <Route
     path="careers"
-    prepareData={Careers.prepareData}
+    // prepareData={Careers.prepareData}
   >
     <IndexRoute
       component={Careers}
