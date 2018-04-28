@@ -56,6 +56,7 @@ if (__DEVELOPMENT__) {
   application.use(webpackHot(compiler))
 }
 
+
 if(process.env.NO_SSR){
   application.use(require('./noSSR').default)
 }else{
