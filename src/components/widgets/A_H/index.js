@@ -4,7 +4,7 @@ import './styles.scss';
 import {cssClassName} from 'utils'
 const cn = cssClassName('A_H')
 
-const A_H = ({type, icon, children, center}) =>{
+const A_H = ({type, icon, children, center , mix}) =>{
 
   let tagType
   switch(type){
@@ -59,7 +59,7 @@ const A_H = ({type, icon, children, center}) =>{
   return (
     React.createElement(
       tagType,
-      {className: cn({type}, [center])},
+      {className: cn({type}, [center, mix])},
       (icon ?
         <span className={cn('iconed', {icon}, [center])}>{children}</span>
         :

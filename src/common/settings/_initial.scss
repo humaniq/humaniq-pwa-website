@@ -41,7 +41,7 @@ p {
   line-height: 1.65em;
 
   &.p_center { text-align: center; }
-  + p { margin-top: 2.5em; }
+  //+ p { margin-top: 2.5em; }
   >  a { color: $blue-1; }
 }
 
