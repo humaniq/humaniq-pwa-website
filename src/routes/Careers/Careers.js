@@ -10,10 +10,10 @@ class CareersRoute extends Component {
   static prepareData({dispatch}) {
     dispatch(setTheme('dark'))
 
-    if(initialLoad()) return;
-    return(
-      dispatch(fetchCareers())
-    )
+    // if(initialLoad()) return;
+    // return(
+    //   dispatch(fetchCareers())
+    // )
   }
 
   render() {
