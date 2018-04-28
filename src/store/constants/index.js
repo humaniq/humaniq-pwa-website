@@ -29,6 +29,7 @@ export const MENU = 'MENU'
 export const PARTNERS = 'PARTNERS'
 export const AMBASSADORS = 'AMBASSADORS'
 export const BY_REFERENCE = 'BY_REFERENCE'
+export const CAREERS = 'CAREERS'
 
 export const CONTENT = 'CONTENT'
 export const STATIC_DATA = 'STATIC_DATA'
