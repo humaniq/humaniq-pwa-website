@@ -8,6 +8,7 @@ import ProgressBarPlugin from 'progress-bar-webpack-plugin'
 import OfflinePlugin from 'offline-plugin'
 const autoprefixer = require('autoprefixer');
 const sourcePath = path.join(__dirname, './src');
+import Dotenv from 'dotenv-webpack'
 
 const root = path.join(process.cwd());
 
@@ -87,6 +88,7 @@ export default {
       __DEVELOPMENT__: false,
       'process.env.NODE_ENV': JSON.stringify('production')
     }),
+    new Dotenv(),
     new ExtractTextPlugin('[name].[chunkhash].css'),
     new webpack.ContextReplacementPlugin(/moment[\\\/]locale$/, /^\.\/(en)$/),
     new webpack.optimize.CommonsChunkPlugin({
