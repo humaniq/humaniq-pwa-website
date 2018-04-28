@@ -32,6 +32,7 @@ const Careers = ({ entities, loaded, loading }) => {
           <br/>
 
           Should you not have found a vacancy of interest on this list, we will in any case be happy to receive a resume from you. As soon as we have an opening that corresponds to your skills, we will be sure to get in touch.
+
         </p>
       ) : (
         <O_CareersList entities={entities} />
