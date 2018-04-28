@@ -16,7 +16,7 @@ const main = [{
 }]
 
 const extra = {
-  url: '/form/subscribe',
+  url: '/',
   name: 'Subscribe'
 }
 
@@ -77,7 +77,8 @@ class SE_MainLayoutHeader extends Component {
                           opacity: x === 0 ? 1 : (x === max ? 0 : 1 / x)
                         }}
                         ref={ node => this.navExtraNode = node}
-                      >{extraNav}
+                      >
+                        {extraNav}
                       </span>
                       <span className={cn('menu-btn')} onClick={() => onClick()}>
                         <MenuBtn {...{x, max, theme}}/>

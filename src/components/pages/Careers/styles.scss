@@ -1,0 +1,23 @@
+@import "common/settings/variables";
+@import "common/utils";
+
+.careers{
+  padding-top: 30px;
+  &__title{
+      margin-right: 20px;
+      margin-bottom: 50px;
+
+      @include media($mobile) {
+        margin-right: 0;
+        margin-bottom: 27px;
+      }
+  }
+
+  &__no-vacancies{
+    margin-bottom: 100px;
+    ul li{
+      list-style-type: disc;
+      margin-left: 15px;
+    }
+  }
+}

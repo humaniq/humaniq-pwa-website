@@ -6,4 +6,5 @@ export default () => next => action => {
   if (type !== ERROR) return next(action)
 
   Console.warn('error middleware notification :', data)
+  return next(action)
 }

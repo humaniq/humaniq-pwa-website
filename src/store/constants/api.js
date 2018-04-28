@@ -9,6 +9,17 @@ export const BUTTER_CMS_API_ENDPOINTS = {
   wiki: `/content/`
 }
 
+const CMS_BACKEND = process.env.CMS_BACKEND
+
+// const CMS_BACKEND = __DEVELOPMENT__ ? 'http://localhost:4000' : process.env.CMS_BACKEND
+
+// const DOMAIN_CMS = 'http://188.166.170.8'
+
+// export const PORT = `:4000`
+
+export const ENDPOINT_CAREERS = `${CMS_BACKEND}/v1/vacancies`
+// const DOMAIN_CMS = __DEVELOPMENT__ ? 'http://localhost' : 'http://188.166.170.8'
+
 export const WEBSITE_DOMAIN_NAME = 'humaniq.com'
 export const HUMANIQ_BACKEND_API_URL = 'https://f03pn9k2v8.execute-api.eu-west-1.amazonaws.com'
 export const ENDPOINT_JOIN_FORM = `${HUMANIQ_BACKEND_API_URL}/dev/subscriptions/partners`
