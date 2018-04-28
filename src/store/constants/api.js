@@ -9,8 +9,9 @@ export const BUTTER_CMS_API_ENDPOINTS = {
   wiki: `/content/`
 }
 
+const CMS_BACKEND = process.env.CMS_BACKEND
 
-const CMS_BACKEND = __DEVELOPMENT__ ? 'http://localhost:4000' : process.env.CMS_BACKEND
+// const CMS_BACKEND = __DEVELOPMENT__ ? 'http://localhost:4000' : process.env.CMS_BACKEND
 
 // const DOMAIN_CMS = 'http://188.166.170.8'
 
