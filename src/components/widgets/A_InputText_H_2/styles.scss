@@ -17,7 +17,13 @@
     }
   }
   &__input {
-	box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: none;
+    background-clip: padding-box;
+
+    box-sizing: border-box;
     display: block;
     width: 100%;
     padding: 24px;
