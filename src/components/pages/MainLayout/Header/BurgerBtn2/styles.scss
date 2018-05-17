@@ -1,0 +1,71 @@
+@import 'common/settings/variables';
+@import 'common/utils';
+
+.a-burger-btn {
+  $this: &;
+  box-sizing: border-box;
+  position: relative;
+  cursor: pointer;
+  z-index: 100;
+
+  font-family: $font-ProximaNova;
+  color: $color-black;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  transition: transform 0.2s;
+  &:hover {
+    //transform: scale(1.1);
+    color: #00A3FF;
+  }
+
+
+  &_is-active {
+    &_true {
+      #{$this}__line {
+        &_position {
+          &_top {
+            top: 5px;
+            transform: rotateZ(45deg);
+            transition: top 0.3s cubic-bezier(0.23, 1, 0.32, 1),
+              transform 0.3s cubic-bezier(0.23, 1, 0.32, 1) 0.3s;
+          }
+          &_middle {
+            opacity: 0;
+            transition: 0.3s opacity;
+          }
+          &_bottom {
+            top: -5px;
+            transform: rotateZ(-45deg);
+            transition: top 0.3s cubic-bezier(0.23, 1, 0.32, 1),
+              transform 0.3s cubic-bezier(0.23, 1, 0.32, 1) 0.3s;
+          }
+        }
+      }
+    }
+  }
+
+  &__line {
+    background: #000;
+    height: 2px;
+    margin-bottom: 3px;
+    position: relative;
+    top: 0;
+    opacity: 1;
+    &:nth-last-child(1) {
+      margin-bottom: 0;
+    }
+    &_position {
+      &_top,
+      &_bottom {
+        transition: top 0.3s cubic-bezier(0.23, 1, 0.32, 1) 0.3s,
+          transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+      }
+      &_middle {
+        opacity: 1;
+        transition: 0.4s opacity;
+      }
+    }
+  }
+}

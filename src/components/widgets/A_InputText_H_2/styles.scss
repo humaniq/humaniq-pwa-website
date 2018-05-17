@@ -1,0 +1,43 @@
+@import "common/settings/variables";
+@import "common/utils";
+
+.a-input-text-h-2{
+  $this: &;
+  padding: 0;
+  width: 100%;
+  display: inline-block;
+  &_has-error {
+    &_true {
+      #{$this}__input {
+        border: 2px solid $color-main-red-error;
+        &::placeholder {
+          color: $color-main-red-error;
+        }
+      }
+    }
+  }
+  &__input {
+	box-sizing: border-box;
+    display: block;
+    width: 100%;
+    padding: 24px;
+    text-align: left;
+    border: 2px solid $color-white;
+    margin-bottom: 20px;
+    font-family: $font-ProximaNova;
+    font-weight: 700;
+    font-size: 20px;
+    color: $color-main-blue;
+    transition: color, border, .3s linear;
+    &:focus {
+      outline: none;
+    }
+    @include media($mobile) {
+      padding: 15px;
+      text-align: center;
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+
+  }
+}
