@@ -43,7 +43,6 @@ class SE_MainLayoutSidebar extends Component {
     const { mix, theme, openPopup } = this.props
     return (
       <nav className={cn([mix])}>
-        <div className={cn('angle', { theme })} />
         <ul className={cn('menu')}>
           <li className={cn('menu-link')}>
             <Link to="/open-source">Open source</Link>
