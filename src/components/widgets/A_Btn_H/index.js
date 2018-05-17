@@ -4,7 +4,9 @@ import './styles.scss'
 import {cssClassName} from 'utils'
 const cn = cssClassName('A_Btn_H');
 
-const A_Btn_H = ({mix, children, type, formHasErrors, to}) => {
+const defClickHandler = (e) => {}
+
+const A_Btn_H = ({mix, children, type, formHasErrors, to, clickHandler}) => {
   switch(type) {
     case 'submit':
       return (
@@ -17,7 +19,7 @@ const A_Btn_H = ({mix, children, type, formHasErrors, to}) => {
       )
     default:
       return (
-        <a className={cn([mix])} href={to} target='_blank' style={{display: 'inline-block'}}>
+        <a className={cn([mix])} href={to} target='_blank' style={{display: 'inline-block'}} onClick={ clickHandler ? clickHandler : defClickHandler }>
           {children}
         </a>
       )
