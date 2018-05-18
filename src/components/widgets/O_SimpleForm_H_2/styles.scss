@@ -1,0 +1,13 @@
+.o-simple-form-h {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  text-align: left;
+  &__title {
+	text-align: center;
+	margin-bottom: 65px;
+  }
+  &__submit-btn {
+	width: 100%;
+  }
+}

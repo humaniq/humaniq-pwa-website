@@ -2,17 +2,22 @@ import React from 'react'
 import * as T from 'prop-types'
 import './styles.scss'
 import A_Logo_H from 'A_Logo_H'
-import A_BurgerBtn_H from './BurgerBtn'
+import A_BurgerBtn_H from './BurgerBtn2'
+import TeleFooter from './TeleFooter'
 import { cssClassName } from 'utils'
 import { Link } from 'react-router'
-const socialIcons = `/img/design-v2/icons/social/sprite.svg`
+const socialIcons = `/img/design-v2/icons/social/telegram.svg`
+
+const toggleTelegramBar = () => {
+  alert("asaas");
+}
 
 const cn = cssClassName('SE_MainLayoutHeader_H')
 
 const SE_MainLayoutHeader_H = ({ mix, theme, mobileMenuIsActive, toggleMobileMenu, sticky }) => (
   <header className={cn([mix], { 'mob-menu-open': mobileMenuIsActive })}>
     <Link className={cn('logo')} to="/">
-      <A_Logo_H theme={theme} />
+      <A_Logo_H  />
     </Link>
 
     <ul className={cn('menu', { sticky })}>
@@ -33,12 +38,13 @@ const SE_MainLayoutHeader_H = ({ mix, theme, mobileMenuIsActive, toggleMobileMen
         </a>
       </li>
       <li className={cn('menu-link')}>
-        <a href="https://t.me/HumaniqNews" target="_blank">
-          <svg><use xlinkHref={`${socialIcons}#telegram`} /></svg>
-        </a>
+          <Link to="/open-source">Open source</Link>
+      </li>
+      <li className={cn('menu-link')}>
+          <Link to="/contact-us">Contact us</Link>
       </li>
     </ul>
-
+    <TeleFooter />
     <A_BurgerBtn_H mix={cn('menu-btn')} onClick={toggleMobileMenu} isActive={mobileMenuIsActive} />
   </header>
 )

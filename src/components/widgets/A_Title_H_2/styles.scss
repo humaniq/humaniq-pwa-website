@@ -1,0 +1,66 @@
+@import "common/settings/variables";
+@import "common/utils";
+
+.a-title {
+  padding: 0;
+  margin: 60px 0 0 0;
+  text-align: left;
+  font-size: 20px;
+  font-family: $font-ProximaNova;
+  font-weight: normal;
+  line-height: 1.2;
+  color: $color-white;
+
+  @include media($mobile) {
+    font-size: 16px;
+  }
+  &_type {
+    &_hero, &_section {
+      font-size: 72px;
+      @include media($desktop-xxl) {
+        font-size: 51px;
+      }
+    }
+
+    &_hero {
+      text-transform: uppercase;
+      @include media($desktop-13) {
+        font-size: 45px;
+      }
+      @include media($mobile) {
+        font-size: 40px;
+      }
+      @include media($mobile-xs) {
+        font-size: 37px;
+      }
+    }
+    &_section {
+      @include media($desktop-13) {
+        font-size: 40px;
+      }
+      @include media($tablet) {
+        font-size: 30px;
+      }
+      @include media($mobile) {
+        font-size: 28px;
+      }
+      @include media($mobile-xs) {
+        font-size: 22px;
+      }
+    }
+    &_info-column {
+      font-size: 31px;
+      @include media($desktop-xxl) {
+        font-size: 22px;
+      }
+    }
+  }
+
+  &_theme {
+    &_bright {
+      color: $color-white;
+    }
+    &_dark {
+    }
+  }
+}

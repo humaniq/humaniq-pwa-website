@@ -1,0 +1,40 @@
+@import "common/settings/variables";
+@import "common/utils";
+
+.se-main-layout-mobile-menu {
+  display: none;
+  $this: &;
+  overflow-y: scroll;
+  width: 100%;
+  height: 100%;
+  background-color: $color-main-blue;
+  padding: 100px 65px 0;
+  transform: translateY(-100%);
+  transition: transform .5s;
+  &_is-active {
+    &_true {
+      transform: translateY(0);
+    }
+  }
+  @include media($desktop-xl) {
+    display: block;
+  }
+
+  &__links {
+    &-link {
+      margin-bottom: 25px;
+      text-transform: uppercase;
+      font-family: $font-ProximaNova;
+      font-size: 15px;
+      color: $color-white;
+      &:nth-last-child(1) {
+        margin-bottom: 0;
+      }
+
+      svg {
+        width: 32px;
+        height: 32px;
+      }
+    }
+  }
+}
