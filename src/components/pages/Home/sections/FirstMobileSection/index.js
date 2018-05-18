@@ -8,6 +8,10 @@ import { cssClassName } from 'utils'
 
 const cn = cssClassName('SE_Home_FirstMobile')
 
+const handleLinkClick = () => {
+  if(window.ga) window.ga('send', 'event', 'other', 'whitepaper-btn-click');
+}
+
 const SE_Home_FirstMobile = ({ mix }) => (
   <section className={cn([mix])}>
     <div className={cn('content')}>
@@ -20,7 +24,7 @@ const SE_Home_FirstMobile = ({ mix }) => (
       <div className={cn('columns-wrapper')}>
         <InfoColumns mix={cn('info-columns')} columns={infoColumns} type="narrow" />
         <div className={cn('button')}>
-          <A_Btn_H to="/pdf/humaniq-whitepaper-05.09.pdf">Project details</A_Btn_H>
+          <A_Btn_H to="/pdf/humaniq-whitepaper-05.09.pdf" clickHandler={handleLinkClick}>Whitepaper</A_Btn_H>
         </div>
       </div>
     </div>

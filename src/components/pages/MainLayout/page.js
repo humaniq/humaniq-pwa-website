@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 import * as T from 'prop-types'
 import './styles.scss'
 import Header from './Header'
-import Sidebar from './Sidebar'
-import MobileMenu from './MobileMenu'
+//import Sidebar from './Sidebar'
+import MobileMenu from './MobileMenu2'
 import O_Popup from 'O_Popup_H'
 import { cssClassName } from 'utils'
 const cn = cssClassName('SE_MainLayout_H')
@@ -61,7 +61,6 @@ class SE_MainLayout_H extends Component {
           />
         )}
 
-        <Sidebar mix={cn('sidebar')} menuLinks={sidebarLinks} theme={theme} openPopup={openPopup} />
         <PeopleModal isActive={isPeopleModalOpened} closeModal={closePeopleModal} personData={personData}/>
         <O_Popup isActive={isPopupOpened} closePopup={closePopup} popupType={popupType} />
       </div>
