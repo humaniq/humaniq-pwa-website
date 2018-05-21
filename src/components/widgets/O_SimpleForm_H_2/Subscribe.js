@@ -3,6 +3,7 @@ import {cssClassName} from 'utils';
 import A_InputText_H from '../A_InputText_H_2';
 import A_Btn_H from '../A_Btn_H_2';
 import SimpleForm from 'HOC/SimpleForm';
+import SocialLinks from '../M_SocialLinks_F';
 import './styles.scss';
 
 
@@ -50,6 +51,8 @@ class O_SubscribeForm extends Component {
           submited ?
             <div className={cn('title')}>
                 Great that we are friends now! Thank you for the confidence you have placed in us. Promise no spam.
+                <div className={cn('subtitle')}>Keep in touch</div>
+                <SocialLinks  mix={cn('social-links')} type="section"/>
             </div>
             : <form className={cn([mix])} onSubmit={handleSubmit}>
 
@@ -62,7 +65,6 @@ class O_SubscribeForm extends Component {
                 >
                   JOIN US
                 </A_Btn_H>
-
               </form>
         }
       </div>
