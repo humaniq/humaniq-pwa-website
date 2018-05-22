@@ -3,7 +3,7 @@ import * as T from "prop-types";
 import './styles.scss';
 import {cssClassName} from 'utils'
 
-const cn = cssClassName('M_SocialLinks_H')
+const cn = cssClassName('M_SocialLinks_F')
 
 const socialIcons = `/img/design-v2/icons/social/sprite.svg`
 

@@ -2,7 +2,9 @@
 @import "common/utils";
 
 .a-btn-h-2 {
+  box-sizing: border-box;
   padding: 25px 90px;
+
   line-height: 1;
   color: $color-white;
   background: #1400FF;
@@ -26,7 +28,8 @@
     }
   }
   &:hover {
-    background-color: $color-main-blue;
+    background-color: #1200E1;
+    border: 2px solid #1200E1;
     color: $color-white;
   }
   @include media($mobile) {
