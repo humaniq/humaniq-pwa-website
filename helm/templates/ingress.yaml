@@ -1,5 +1,4 @@
 {{- if .Values.Ingress.Enabled -}}
-{{- if .Values.Ingress.Domains -}}
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
@@ -10,11 +9,11 @@ metadata:
     chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
     heritage: "{{ .Release.Service }}"
     release: "{{ .Release.Name }}"
-    domain: "humaniq.com"
+    domain: "{{ .Values.Ingress.Hostname }}"
   name: {{ template "name" . }}
 spec:
   rules:
-  - host: humaniq.com
+  - host: {{ .Values.Ingress.Hostname }}
     http:
       paths: 
       - path: /hmqref
@@ -25,5 +24,4 @@ spec:
         backend:
           serviceName: {{ template "name" . }}
           servicePort: 8080
-{{- end -}}
 {{- end -}}
