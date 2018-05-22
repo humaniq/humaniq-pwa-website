@@ -28,7 +28,9 @@
     width: 100%;
     padding: 24px;
     text-align: left;
-    border: 2px solid $color-white;
+    //border: 2px solid $color-white;
+    border:none;
+    border-radius: 0;
     margin-bottom: 20px;
     font-family: $font-ProximaNova;
     font-weight: 700;

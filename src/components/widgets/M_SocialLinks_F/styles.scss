@@ -1,16 +1,23 @@
 @import "common/settings/variables";
 @import "common/utils";
 .m-socials-f{
-  text-align: center;
+//  text-align: center;
+  @include media($mobile) {
+    text-align: center;
+  }
 }
-.m-social-links-h {
+.m-social-links-f {
   $this: &;
   display: inline-block;
   font-family: $font-ProximaNova;
   font-weight: 700;
-  background: #58a1fc;
-  margin: 5px;
-  min-width: 275px;
+  margin: 5px 5px 5px -20px;
+  //min-width: 275px;
+
+
+  @include media($desktop-xl) {
+   // min-width: 240px;
+  }
 
   @include media($mobile) {
     margin: 5px;
@@ -28,7 +35,7 @@
       }
       #{$this}__link {
         svg {
-          fill: $color-white;
+          fill: #68A1F5;
         }
         @include media($tablet) {
           margin-bottom: 0;
@@ -74,8 +81,15 @@
             height: 25px;
           }
         }
+        @include media($w-desktop-xl) {
+          margin-right: 15px;
+          svg {
+            max-width: 25px;
+            height: 25px;
+          }
+        }
         @include media($mobile-xs) {
-         // margin-bottom: 15px;
+          // margin-bottom: 15px;
         }
       }
     }
@@ -107,6 +121,22 @@
     svg {
       max-width: 30px;
       height: 25px;
+    }
+    @include media($desktop-xxl) {
+      margin: 5px;
+      padding: 10px;
+      svg {
+        max-width: 25px;
+        height: 20px;
+      }
+    }
+    @media( max-width:1300px ) {
+      margin: 5px;
+      padding: 10px;
+      svg {
+        max-width: 20px;
+        height: 20px;
+      }
     }
     @include media($mobile) {
       margin: 5px;

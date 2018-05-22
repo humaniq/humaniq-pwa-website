@@ -8,7 +8,7 @@
   text-align: left;
   &__title {
     display: block;
-    padding: 20px;
+    padding: 30px;
 
 	text-align: left;
 	margin-bottom: 65px;
@@ -30,9 +30,9 @@
     font-size: 14px;
     letter-spacing: 0.09em;
     text-transform: uppercase;
-    color: #58a1fc;
+    color: #747474;
     margin: 20px 0 0 0;
-    text-align: center;
+    //text-align: center;
     @include media($mobile) {
       text-align: center;
     }
