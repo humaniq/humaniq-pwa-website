@@ -7,6 +7,9 @@
     justify-content: flex-end;
     align-items: flex-end;
   }
+  @include media($mobile) {
+    min-height:100vh;
+  }
 
   &__left-side {
     flex: 0 0 50%;
@@ -17,6 +20,7 @@
       width: 100%;
       top: 0;
       right: 0;
+      display: none;
     }
   }
 
@@ -31,6 +35,9 @@
       display: block;
       margin-bottom: 50px;
       background-color: transparent;
+      br.d{
+        display: none;
+      }
     }
   }
 
@@ -60,35 +67,57 @@
 
   &__text {
     position: relative;
+    width:80%;
     margin-bottom: 70px;
-    margin-right: 80px;
+    margin-right: 20px;
     font-family: $font-ProximaNova;
     color: $color-white;
     @include media($desktop-xxl) {
-      margin-right: 60px;
+      margin-right: 20px;
     }
     @include media($desktop-xl) {
       margin-right: 0;
     }
     @include media($tablet) {
       margin-bottom: 0;
+      width: 100%;
+      margin-right: 0;
     }
     &-title {
-      margin-bottom: 50px;
-    }
-    &-subtitle {
-      font-size: 42px;
-      line-height: 1.4;
-      @include media($desktop-xxl) {
-        font-size: 30px;
-      }
+      margin-bottom: 25px;
+      line-height: normal;
+      font-size: 40px;
+      letter-spacing: 0.09em;
+
       @include media($mobile) {
-        font-size: 25px;
+        font-size: 24px;
+        margin-bottom: 10px;
       }
       @include media($mobile-xs) {
         font-size: 22px;
       }
     }
+    &-subtitle {
+      font-size: 26px;
+      line-height: 1.4;
+      @include media($desktop-xxl) {
+        font-size: 26px;
+      }
+      @include media($desktop-xl) {
+        font-size: 22px;
+      }
+      @include media($mobile) {
+        font-size: 20px;
+      }
+      @include media($mobile-xs) {
+        font-size: 16px;
+      }
+    }
+  }
+
+  &__subscribe {
+    width: 100%;
+    margin: 20px 20px 0 0;
   }
 
   &__hmq-description {
@@ -115,8 +144,9 @@
       font-size: 18px;
       transform: rotate(0);
     }
-    @include media($mobile-xs) {
+    @include media($mobile) {
       font-size: 16px;
+      display: none;
     }
   }
 
@@ -135,14 +165,16 @@
       left: 0;
       transform: translateX(0);
     }
+    @include media($mobile) {
+      display: none;
+    }
     &-number {
       margin-bottom: 15px;
-      font-family: $font-Celdum;
+      font-family: $font-ProximaNova;
       font-size: 72px;
       line-height: 1;
       @include media($desktop-xxl) {
         margin-bottom: 10px;
-        font-size: 51px;
       }
     }
     &-text {

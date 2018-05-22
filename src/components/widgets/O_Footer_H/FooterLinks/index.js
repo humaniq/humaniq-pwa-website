@@ -112,7 +112,7 @@ const footerLinks = [
   {
     section: 'Humaniq app',
     links: [
-      {name: 'Easy-to-use mobile app and financial infrastructure for billions of unbanked humaniqapp.com', url: 'http://humaniqapp.com/', externalLink: true},
+      {name: 'Easy-to-use mobile app and financial infrastructure for billions of unbanked hmq.im/app', url: 'https://hmq.onelink.me/JU9Z/5679f4a0', externalLink: true},
     ]
   }
 ]

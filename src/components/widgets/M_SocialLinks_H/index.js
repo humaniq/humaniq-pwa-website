@@ -7,6 +7,11 @@ const cn = cssClassName('M_SocialLinks_H')
 
 const socialIcons = `/img/design-v2/icons/social/sprite.svg`
 
+const handleLinkClick = (name) => {
+  if(window.ga) window.ga('send', 'event', 'other', 'social-click-'+name);
+}
+
+
 const _createLinks = (links) => (
   links.map(({name, url}, index) => {
 
@@ -17,6 +22,7 @@ const _createLinks = (links) => (
         href={url}
         title={name}
         target="_blank"
+        onClick={()=>{handleLinkClick(name)}}
       >
         <svg>
           <use xlinkHref={`${socialIcons}#${name}`} />

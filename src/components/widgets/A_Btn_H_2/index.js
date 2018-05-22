@@ -2,11 +2,9 @@ import React from 'react'
 import * as T from "prop-types"
 import './styles.scss'
 import {cssClassName} from 'utils'
-const cn = cssClassName('A_Btn_H');
+const cn = cssClassName('A_Btn_H_2');
 
-const defClickHandler = (e) => {}
-
-const A_Btn_H = ({mix, children, type, formHasErrors, to, clickHandler}) => {
+const A_Btn_H = ({mix, children, type, formHasErrors, to}) => {
   switch(type) {
     case 'submit':
       return (
@@ -19,7 +17,7 @@ const A_Btn_H = ({mix, children, type, formHasErrors, to, clickHandler}) => {
       )
     default:
       return (
-        <a className={cn([mix])} href={to} target='_blank' style={{display: 'inline-block'}} onClick={ clickHandler ? clickHandler : defClickHandler }>
+        <a className={cn([mix])} href={to} target='_blank' style={{display: 'inline-block'}}>
           {children}
         </a>
       )
