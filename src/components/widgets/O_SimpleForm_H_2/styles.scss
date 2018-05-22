@@ -1,0 +1,24 @@
+@import "common/settings/variables";
+@import "common/utils";
+
+.o-simple-form-h {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  text-align: left;
+  &__title {
+	text-align: left;
+	margin-bottom: 65px;
+    margin-top: 30px;
+    font-weight: 700;
+    font-size: 20px;
+    @include media($mobile) {
+      font-size: 14px;
+      line-height: normal;
+    }
+
+  }
+  &__submit-btn {
+	width: 100%;
+  }
+}

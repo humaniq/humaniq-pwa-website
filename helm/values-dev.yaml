@@ -1,6 +1,6 @@
 image:
   repository: eu.gcr.io/humaniq-168420/pwa-website
-  tag: 3351b00
+  tag: 75e082e
   pullPolicy: Always
 Service:
   Enabled: true
@@ -8,8 +8,8 @@ Service:
   Type: ClusterIP
 Ingress:
   Enabled: true
-  Hostname: site.humaniq.com
+  Hostname: hum.kiltum.finlyt.com
   PersonalSegment: "/hmqref"
   Annotations:
-    kubernetes.io/ingress.class: traefik
+    kubernetes.io/ingress.class: traefik-in
 UsePersonal: false

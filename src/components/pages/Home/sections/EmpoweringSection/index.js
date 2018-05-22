@@ -2,10 +2,17 @@ import React from 'react'
 import * as T from 'prop-types'
 import A_Title from 'A_Title_H'
 import SectionCounter from '../common/SectionCounter/index.js'
+import O_SimpleForm_H from '../../../../widgets/O_SimpleForm_H_2';
 import './styles.scss'
 import { cssClassName } from 'utils'
 //import A_Image from 'A_Image'
 const cn = cssClassName('SE_Home_Empowering')
+
+const formatUserNum = (users) => {
+  let usersD = users.toString();
+  usersD = usersD.slice(0,usersD.length-3) + "  " + usersD.slice(usersD.length-3);
+  return usersD
+}
 
 const SE_Home_Empowering = ({ mix, users_number }) => (
   <section className={cn([mix])}>
@@ -57,12 +64,14 @@ const SE_Home_Empowering = ({ mix, users_number }) => (
     <div className={cn('right-side')}>
       <div className={cn('text')}>
         <A_Title type="hero" mix={cn('text-title')} theme="bright">
-          Empowering<br />the unbanked
+          Empowering<br /> the unbanked
         </A_Title>
         <p className={cn('text-subtitle')}>
-          Self-deploying financial<br />infrastructure: true hope for<br />the unbanked, blue ocean<br
-          />for business
+          Self-deploying financial infrastructure:<br /> true hope for the unbanked, blue ocean<br className="d" /> for business
         </p>
+        <div className={cn('subscribe')}>
+            <O_SimpleForm_H formType="subscribe" />
+        </div>
       </div>
     </div>
 
@@ -72,8 +81,8 @@ const SE_Home_Empowering = ({ mix, users_number }) => (
     {
       users_number &&
       <div className={cn('members')}>
-        <div className={cn('members-number')}>{users_number}</div>
-        <p className={cn('members-text')}>people have already joined Humaniq</p>
+        <div className={cn('members-number')}>{formatUserNum(users_number)}</div>
+        <p className={cn('members-text')}>people have already joined HMQ</p>
       </div>
     }
     <SectionCounter sectionNum={1} theme="dark" />
