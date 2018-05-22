@@ -10,6 +10,7 @@ ENV NODE_ENV=production
 
 # Bundle app source
 ADD . /usr/src/app
+RUN npm run build
 ADD docker-entrypoint.sh /usr/src/app/docker-entrypoint.sh
 # RUN NODE_ENV=development npm run personal-build
 
