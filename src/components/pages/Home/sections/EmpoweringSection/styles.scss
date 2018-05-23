@@ -20,7 +20,7 @@
       width: 100%;
       top: 0;
       right: 0;
-      display: none;
+//      display: none;
     }
   }
 
@@ -166,15 +166,19 @@
       transform: translateX(0);
     }
     @include media($mobile) {
-      display: none;
+      //display: none;
     }
     &-number {
       margin-bottom: 15px;
-      font-family: $font-ProximaNova;
+      font-family: $font-Celdum;
       font-size: 72px;
       line-height: 1;
       @include media($desktop-xxl) {
         margin-bottom: 10px;
+      }
+      @include media($mobile) {
+        //display: none;
+        font-size:40px;
       }
     }
     &-text {
@@ -185,6 +189,11 @@
       @include media($desktop-xxl) {
         font-size: 12px;
       }
+      @include media($mobile) {
+        //display: none;
+        font-size:12px;
+      }
+
     }
   }
 
