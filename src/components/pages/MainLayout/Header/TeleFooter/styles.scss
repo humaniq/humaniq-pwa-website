@@ -16,6 +16,8 @@
   font-weight: bold;
   padding: 13px;
 
+  z-index:100;
+
   @include media($mobile-xs){
     font-size: 12px;
     padding-top: 10px;
