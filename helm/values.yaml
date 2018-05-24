@@ -8,7 +8,7 @@ Service:
   Type: ClusterIP
 Ingress:
   Enabled: true
-  Hostname: site.humaniq.com
+  Hostname: humaniq.com
   PersonalSegment: "/hmqref"
   Annotations:
     kubernetes.io/ingress.class: traefik
