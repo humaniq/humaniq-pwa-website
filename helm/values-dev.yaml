@@ -1,6 +1,6 @@
 image:
   repository: eu.gcr.io/humaniq-168420/pwa-website
-  tag: 170520b
+  tag: d0e23a6
   pullPolicy: Always
 Service:
   Enabled: true
