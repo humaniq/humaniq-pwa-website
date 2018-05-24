@@ -2,7 +2,9 @@
 @import "common/utils";
 .m-socials-f{
 //  text-align: center;
+  margin-left: -25px;
   @include media($mobile) {
+    margin-left: 0;
     text-align: center;
   }
 }
@@ -11,9 +13,8 @@
   display: inline-block;
   font-family: $font-ProximaNova;
   font-weight: 700;
-  margin: 5px 5px 5px -20px;
+  margin: 5px 5px 5px 5px;
   //min-width: 275px;
-
 
   @include media($desktop-xl) {
    // min-width: 240px;
@@ -21,7 +22,7 @@
 
   @include media($mobile) {
     margin: 5px;
-    min-width: auto
+    min-width: auto;
   }
 
   &_type {
@@ -139,8 +140,8 @@
       }
     }
     @include media($mobile) {
-      margin: 5px;
-      padding: 10px;
+      margin: 1px;
+      padding: 10px 10px 0px 10px;
       svg {
         max-width: 30px;
         height: 25px;
