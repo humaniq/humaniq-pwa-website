@@ -12,7 +12,11 @@ const A_BurgerBtn = ({ mix, isActive, onClick }) => (
       onClick()
     }}
   >
-      MENU
+      {isActive ?
+          "CLOSE"
+          :
+          "MENU"
+      }
   </div>
 )
 

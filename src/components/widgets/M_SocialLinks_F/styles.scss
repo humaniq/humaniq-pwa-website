@@ -1,0 +1,152 @@
+@import "common/settings/variables";
+@import "common/utils";
+.m-socials-f{
+//  text-align: center;
+  margin-left: -25px;
+  @include media($mobile) {
+    margin-left: 0;
+    text-align: center;
+  }
+}
+.m-social-links-f {
+  $this: &;
+  display: inline-block;
+  font-family: $font-ProximaNova;
+  font-weight: 700;
+  margin: 5px 5px 5px 5px;
+  //min-width: 275px;
+
+  @include media($desktop-xl) {
+   // min-width: 240px;
+  }
+
+  @include media($mobile) {
+    margin: 5px;
+    min-width: auto;
+  }
+
+  &_type {
+    &_section {
+      #{$this}__title {
+        margin-bottom: 30px;
+        color: $color-black;
+      }
+      #{$this}__links-list {
+        flex-wrap: wrap;
+      }
+      #{$this}__link {
+        svg {
+          fill: #68A1F5;
+        }
+        @include media($tablet) {
+          margin-bottom: 0;
+        }
+        &:hover{
+          svg {
+            fill: #ccc;
+          }
+        }
+      }
+    }
+
+
+    &_footer {
+      display: flex;
+      align-items: center;
+      @include media($mobile) {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      #{$this}__title {
+        color: $color-text-gray;
+        margin-right: 80px;
+        @include media($mobile) {
+          margin-right: 0;
+        }
+      }
+
+      #{$this}__links-list {
+        @include media($mobile-xs) {
+            flex-wrap: wrap;
+        }
+      }
+
+      #{$this}__link {
+        svg {
+          fill: $color-main-blue;
+        }
+        @include media($desktop-xxl) {
+          margin-right: 20px;
+          svg {
+            max-width: 25px;
+            height: 25px;
+          }
+        }
+        @include media($w-desktop-xl) {
+          margin-right: 15px;
+          svg {
+            max-width: 25px;
+            height: 25px;
+          }
+        }
+        @include media($mobile-xs) {
+          // margin-bottom: 15px;
+        }
+      }
+    }
+  }
+
+  &__title {
+    text-transform: uppercase;
+    line-height: 2;
+    letter-spacing: .3em;
+    font-size: 16px;
+    @include media($desktop-xxl) {
+      font-size: 14px;
+    }
+    @include media($mobile) {
+      font-size: 13px;
+    }
+  }
+  &__links-list {
+    display: flex;
+  }
+  &__link {
+    flex-shrink: 0;
+    margin: 5px;
+    padding: 15px;
+    text-decoration: none;
+    &:nth-last-child(1) {
+      margin-right: 0;
+    }
+    svg {
+      max-width: 30px;
+      height: 25px;
+    }
+    @include media($desktop-xxl) {
+      margin: 5px;
+      padding: 10px;
+      svg {
+        max-width: 25px;
+        height: 20px;
+      }
+    }
+    @media( max-width:1300px ) {
+      margin: 5px;
+      padding: 10px;
+      svg {
+        max-width: 20px;
+        height: 20px;
+      }
+    }
+    @include media($mobile) {
+      margin: 1px;
+      padding: 10px 10px 0px 10px;
+      svg {
+        max-width: 30px;
+        height: 25px;
+      }
+    }
+
+  }
+}
