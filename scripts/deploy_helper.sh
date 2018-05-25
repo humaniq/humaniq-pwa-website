@@ -78,8 +78,10 @@ google_auth() {
     check_gcloud_zone
 
     gcloud_install
-    # Activat Service Account
-    gcloud auth activate-service-account $GCLOUD_EMAIL --key-file /tmp/gcloud/gcloud-auth.json
+    echo "-= Activate service account  =-"
+    # Grab email from auth json
+    EMAIL=$(cat /tmp/gcloud/gcloud-auth.json|grep client_email|cut -f 2 -d:|sed 's/\"//g'|sed 's/,//g')
+    gcloud auth activate-service-account EMAIL --key-file /tmp/gcloud/gcloud-auth.json
     echo "-= Auth docker for google =-"
     echo y | gcloud auth configure-docker
     echo "-= Prepare kubectl config =-"
