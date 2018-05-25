@@ -66,11 +66,20 @@
 
   &__html{
     margin-bottom: 2.5rem;
+    i{ font-style: italic;
+      font-weight: bold;
+    }
     p{
       font-size: 1.5rem;
       line-height: 2.6rem;
       color: #333333;
       margin-bottom: 3.2rem;
+    }
+    p.d{
+      font-size: 1.5rem;
+      line-height: 2.6rem;
+      color: #333333;
+      margin-bottom: 1.2rem;
     }
     h3{
       font-size: 16px;
@@ -97,6 +106,7 @@
     }
 
     ul li {list-style-type: disc;}
+    ol li {list-style-type: none;}
 
   }
 }
