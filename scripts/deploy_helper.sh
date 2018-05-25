@@ -65,7 +65,7 @@ gcloud_install() {
 
     /tmp/gcloud/google-cloud-sdk/install.sh --quiet
     source /tmp/gcloud/google-cloud-sdk/path.bash.inc
-
+    echo "-= Install kubectl =-"
     # Install components
     gcloud components install docker-credential-gcr kubectl --quiet
 
@@ -80,7 +80,8 @@ google_auth() {
     gcloud_install
     # Activat Service Account
     gcloud auth activate-service-account $GCLOUD_EMAIL --key-file /tmp/gcloud/gcloud-auth.json
-
+    echo "-= Auth docker for google =-"
+    gcloud auth configure-docker
     echo "-= Prepare kubectl config =-"
     gcloud container clusters get-credentials $DEPLOY_TO --zone $GOOGLE_ZONE --project $PROJECT
 }
