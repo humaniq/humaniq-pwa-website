@@ -17,5 +17,6 @@ prepare() {
 deploy() {
     source /tmp/deploy_helpers.sh release
 }
-
+echo "NO NEED TO CALL THIS!"
+exit 0
 prepare && deploy
