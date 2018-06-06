@@ -23,4 +23,4 @@ deploy:
       - "DEPLOY_TO=humaniq-production OVERRIDE_VALUES=values.yaml ZONE=europe-west1-b ./deploy/scripts/deploy.sh"
   - branch: "development"
     shell:
-      - "DEPLOY_TO=develop OVERRIDE_VALUES=values-dev.yaml ZONE=europe-west1-b ./deploy/scripts/deploy.sh"
+      - "DEPLOY_TO=develop OVERRIDE_VALUES=values.develop.yaml ZONE=europe-west1-b ./deploy/scripts/deploy.sh"
