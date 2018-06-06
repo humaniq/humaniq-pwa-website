@@ -44,11 +44,21 @@ override_helm_namespace() {
 }
 
 override_secret() {
-    if [[ "${SECRET_URL}" != "" ]]; then
-        echo "Download secret"
-        SECRET_FILE="/tmp/gcloud/gcloud-auth.json.enc"
-        curl -L ${SECRET_URL} > ${SECRET_FILE}
+    
+    if [[ "${SECRET_URL}" == "" ]]; then
+        echo "Environment variable SECRET_URL not set"
+        exit 1
     fi
+
+    if [[ "${ENC_PASSWORD}" == "" ]]; then
+        echo "Environment variable ENC_PASSWORD not set"
+        exit 1
+    fi    
+
+    echo "Download secret"
+    SECRET_FILE="/tmp/gcloud/gcloud-auth.json.enc"
+    curl -L ${SECRET_URL} > ${SECRET_FILE}
+    
 }
 
 gcloud_install() {
