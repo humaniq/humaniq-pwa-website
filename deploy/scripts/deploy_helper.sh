@@ -6,6 +6,7 @@ DOCKER_BUILD_PATH="eu.gcr.io/${PROJECT}"
 DOCKER_IMAGE="${DOCKER_BUILD_PATH}/${IMAGE_NAME}"
 GOOGLE_ZONE="europe-west1-b"
 KUBE_NAMESPACE="default"
+SECRET_FILE="./scripts/gcloud-auth.json.enc"
 
 check_docker_image_name() {
     if [[ "${IMAGE_NAME}" == "" ]]; then
@@ -28,52 +29,49 @@ check_service_name() {
     fi
 }
 
-
-check_gcloud_zone() {
+override_gcloud_zone() {
     if [[ "${ZONE}" != "" ]]; then
         echo "Override default zone with ${ZONE}"
         GOOGLE_ZONE=$ZONE
     fi
 }
 
-check_helm_namespace() {
+override_helm_namespace() {
     if [[ "${NAMESPACE}" != "" ]]; then
         echo "Override default zone with ${NAMESPACE}"
         KUBE_NAMESPACE=$NAMESPACE
     fi
 }
 
-gcloud_fetch_base() {
-    check_docker_image_name
-    sudo docker pull ${DOCKER_IMAGE}:base
+override_secret() {
+    if [[ "${SECRET_URL}" != "" ]]; then
+        echo "Download secret"
+        SECRET_FILE="/tmp/gcloud/gcloud-auth.json.enc"
+        curl -L ${SECRET_URL} > ${SECRET_FILE}
+    fi
 }
 
 gcloud_install() {
-    echo "-= Google auth =-"
-
-    
-
-    # Download gcloud and install it
+    echo "== Stage: gcloud_install start =="
+    echo "-= Install google cloud sdk =-"
     mkdir -p /tmp/gcloud
     curl -L https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-202.0.0-linux-x86_64.tar.gz | tar xz -C /tmp/gcloud/
-
     /tmp/gcloud/google-cloud-sdk/install.sh --quiet
     source /tmp/gcloud/google-cloud-sdk/path.bash.inc
-    echo "-= Install kubectl =-"
-    # Install components
-    gcloud components install docker-credential-gcr kubectl --quiet
 
-    #decrypt auth json
-    echo "-= Decode =-"
-    echo $ENC_PASSWORD| openssl enc -in ./scripts/gcloud-auth.json.enc -d -aes-256-cbc -pass stdin > /tmp/gcloud/gcloud-auth.json
+    echo "-= Install kubectl =-"
+    gcloud components install docker-credential-gcr kubectl --quiet
+    echo "== Stage: gcloud_install completed =="
 }
 
 google_auth() {
-    
-    check_gcloud_zone
-
-    gcloud_install
+    echo "== Stage: google_auth start =="
     echo "-= Activate service account  =-"
+    override_gcloud_zone
+    gcloud_install
+    echo "-= Get and decode secret =-"
+    override_secret
+    openssl enc -pass env:ENC_PASSWORD -in ${SECRET_FILE} -d -aes-256-cbc > /tmp/gcloud/gcloud-auth.json
     # Grab email from auth json
     EMAIL=$(cat /tmp/gcloud/gcloud-auth.json|grep client_email|cut -f 2 -d:|sed 's/\"//g'|sed 's/,//g')
     gcloud auth activate-service-account $EMAIL --key-file /tmp/gcloud/gcloud-auth.json
@@ -81,6 +79,7 @@ google_auth() {
     echo y | gcloud auth configure-docker
     echo "-= Prepare kubectl config =-"
     gcloud container clusters get-credentials $DEPLOY_TO --zone $GOOGLE_ZONE --project $PROJECT
+    echo "== Stage: google_auth completed =="
 }
 
 build() {
@@ -116,10 +115,10 @@ install_helm() {
     rm -rf $install_helm_path
     curl https://raw.githubusercontent.com/kubernetes/helm/master/scripts/get > $install_helm_path
     chmod 700 $install_helm_path
-    . $install_helm_path
+    source $install_helm_path
 
     helm init -c
-    check_helm_namespace
+    override_helm_namespace
 
     echo "-= Check helm is working =-"
     helm version

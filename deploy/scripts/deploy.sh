@@ -7,9 +7,9 @@ export CHART_PATH=helm
 export APP_VERSION=`git describe --tags --always HEAD | head -n 1`
 
 deploy() {
-    source ./scripts/deploy_help.sh google_auth
+    source ./deploy/scripts/deploy_helper.sh google_auth
     docker pull eu.gcr.io/humaniq-168420/site:base
-    source ./scripts/deploy_help.sh deploy
+    source ./deploy/scripts/deploy_helper.sh deploy
 }
 
 deploy
