@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-set -e
+set -x
 
 PROJECT="humaniq-168420"
 DOCKER_BUILD_PATH="eu.gcr.io/${PROJECT}"

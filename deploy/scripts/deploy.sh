@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-set -e
+set -x
 
 export IMAGE_NAME=pwa-website
 export SERVICE_NAME=$IMAGE_NAME
