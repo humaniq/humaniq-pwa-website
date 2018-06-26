@@ -81,7 +81,7 @@ const SE_Home_Empowering = ({ mix, users_number }) => (
     {
       users_number &&
       <div className={cn('members')}>
-        <div className={cn('members-number')}>{formatUserNum(users_number)}</div>
+        <div className={cn('members-number')}>{formatUserNum(335405)}</div>
         <p className={cn('members-text')}>people have already joined HMQ</p>
       </div>
     }
