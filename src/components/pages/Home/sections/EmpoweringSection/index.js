@@ -78,13 +78,10 @@ const SE_Home_Empowering = ({ mix, users_number }) => (
     <p className={cn('hmq-description')}>
       A project on a global scale, receiving<br /> support 10,000 contributors.
     </p>
-    {
-      users_number &&
-      <div className={cn('members')}>
-        <div className={cn('members-number')}>335 405</div>
-        <p className={cn('members-text')}>people have already joined HMQ</p>
-      </div>
-    }
+    <div className={cn('members')}>
+      <div className={cn('members-number')}>335 405</div>
+      <p className={cn('members-text')}>people have already joined HMQ</p>
+    </div>
     <SectionCounter sectionNum={1} theme="dark" />
   </section>
 )
