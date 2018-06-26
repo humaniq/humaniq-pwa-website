@@ -24,7 +24,7 @@ spec:
         emptyDir: {}
       initContainers:
       - name: {{ template "name" . }}-init
-        image: {{ .Values.image.repository }}{{ .Values.image.tag }}
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
         imagePullPolicy: {{ default "" .Values.image.pullPolicy | quote }}
         args: ["parse:mixpanel"]
         env:

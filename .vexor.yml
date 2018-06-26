@@ -15,4 +15,4 @@ cache:
 deploy:
   - branch: "production"
     shell:
-      - "DEPLOY_TO=humaniq-production OVERRIDE_VALUES=values.yaml ZONE=europe-west1-b ./scripts/deploy.sh"
+      - "DEPLOY_TO=humaniq-production OVERRIDE_VALUES=values.yaml ZONE=europe-west1-b ./deploy/scripts/deploy.sh"
