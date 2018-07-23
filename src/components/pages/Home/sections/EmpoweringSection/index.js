@@ -79,7 +79,7 @@ const SE_Home_Empowering = ({ mix, users_number }) => (
       A project on a global scale, receiving<br /> support 10,000 contributors.
     </p>
     <div className={cn('members')}>
-      <div className={cn('members-number')}>400  719</div>
+      <div className={cn('members-number')}>401  335</div>
       <p className={cn('members-text')}>people have already joined HMQ</p>
     </div>
     <SectionCounter sectionNum={1} theme="dark" />
