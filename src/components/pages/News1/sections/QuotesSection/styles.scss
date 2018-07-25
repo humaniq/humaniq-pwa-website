@@ -1,0 +1,137 @@
+@import 'common/settings/variables';
+@import 'common/utils';
+
+.se-home-quotes {
+
+  &__slider {
+    position: relative;
+    width: 400%;
+    height: 100%;
+    display: flex;
+    overflow: hidden;
+    transition: transform 0.4s ease-out;
+    will-change: transform;
+    @include media($tablet) {
+      height: 650px;
+    }
+    &-nav {
+      position: absolute;
+      height: 20px;
+      width: 20px;
+      top: 50%;
+      margin-top: -10px;
+      border-top: 3px solid #fff;
+      border-right: 3px solid #fff;
+      cursor: pointer;
+      @include media($tablet) {
+        top: auto;
+        bottom: 40px;
+      }
+      &_type {
+        &_prev {
+          left: 300px;
+          transform: rotate(-135deg);
+        }
+        &_next {
+          right: 300px;
+          transform: rotate(45deg);
+        }
+        @include media($desktop-xxl) {
+          &_prev{
+            left: 150px;
+          }
+          &_next{
+            right: 150px;
+          }
+        }
+        @include media($mobile-xs) {
+          &_prev{
+            left: 60px;
+          }
+          &_next{
+            right: 60px;
+          }
+        }
+      }
+    }
+  }
+
+  &__slide {
+    flex-grow: 0;
+    flex-shrink: 0;
+    height: 100%;
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url('/img/design-v2/sections/quotes/quotes.png');
+    background-color: #00a2ff;
+    background-position: 65% 38%;
+    background-size: 400px 270px;
+    background-repeat: no-repeat;
+    @include media($tablet) {
+      align-items: flex-start;
+    }
+    @include media($mobile) {
+      background-size: 300px 200px;
+    }
+
+    &-content {
+      width: 700px;
+      font-family: $font-ProximaNova;
+      color: $color-white;
+      @include media($desktop-xxl) {
+        width: 490px;
+      }
+      @include media($tablet) {
+        width: auto;
+        padding: 100px 30px 60px;
+        margin-right: 0;
+      }
+      @include media($mobile-xs) {
+        padding: 100px 15px 60px;
+      }
+    }
+    &-title {
+      margin-bottom: 55px;
+      @include media($mobile) {
+        margin-bottom: 25px;
+      }
+    }
+    &-text {
+      margin-bottom: 68px;
+      font-size: 33px;
+      line-height: 1.6;
+      @include media($desktop-xxl) {
+        font-size: 21px;
+      }
+      @include media($mobile) {
+        margin-bottom: 55px;
+        font-size: 18px;
+      }
+      &_type {
+        &_small {
+          font-size: 25px;
+          @include media($desktop-xxl) {
+            font-size: 21px;
+          }
+          @include media($mobile) {
+            margin-bottom: 20px;
+            font-size: 15px;
+            line-height: 1.4;
+          }
+        }
+      }
+    }
+    &-author {
+      font-size: 21px;
+      @include media($desktop-xxl) {
+        font-size: 18px;
+      }
+      @include media($mobile-xs) {
+        font-size: 16px;
+      }
+    }
+  }
+}

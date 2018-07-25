@@ -1,0 +1,29 @@
+@import 'common/settings/variables';
+@import 'common/utils';
+
+.a-section-counter {
+  position: absolute;
+  top: 31.2%;
+  left: 7.6%;
+  font-family: $font-Celdum;
+  font-weight: 700;
+  font-size: 36px;
+  transform: rotate(-90deg);
+  pointer-events: none;
+  &_theme {
+    &_dark {
+      color: $color-black;
+    }
+    &_bright {
+      color: $color-main-blue;
+    }
+  }
+  @include media($desktop-xxl) {
+    top: 25%;
+    font-size: 24px;
+  }
+  @include media($tablet) {
+    top: 90px;
+    left: 10px;
+  }
+}

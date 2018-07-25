@@ -13,6 +13,7 @@ import Ambassadors from './Ambassadors'
 import Wiki from './Wiki'
 import Anniversary from './Anniversary'
 import careers from './Careers'
+import News1 from './News-1'
 
 const getRoutes = (store) => {
   return (
@@ -37,11 +38,14 @@ const getRoutes = (store) => {
                prepareData={Ambassadors.prepareData}
                component={Ambassadors}
         />
-        <Route path="contact-us"
-               component={ContactUs}
-               prepareData={ContactUs.prepareData}
+          <Route path="contact-us"
+                 component={ContactUs}
+                 prepareData={ContactUs.prepareData}
 
-        />
+          />
+          <Route path="/news-1"
+                 component={News1}
+          />
         <Route
           path="/anniversary"
           component={Anniversary}

@@ -25,10 +25,10 @@ class TeleFooter extends React.Component {
   }
 
   componentDidMount() {
-    axios.get("http://www.geoplugin.net/json.gp")
+    axios.get("https://json.geoiplookup.io/")
             .then(res => {
               console.log(res.data);
-              if (res.data.geoplugin_continentCode != 'AF') this.setState({isHidden: false});
+              if (res.data.continent_code != 'AF') this.setState({isHidden: false});
             })
             .catch(function (error) {
                 // handle error

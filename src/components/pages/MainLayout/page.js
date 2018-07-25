@@ -32,7 +32,11 @@ class SE_MainLayout_H extends Component {
       closePeopleModal,
       personData,
     } = this.props
-    const homePage = openRoute.length === 0 //home page
+    let homePage = openRoute.length === 0 //home page
+    if( openRoute.length ){
+      if(openRoute[0].search("news-")!==-1) homePage = true;
+    }
+
     const mobileMenuLinks = [...headerLinks, ...sidebarLinks]
 
     return (
