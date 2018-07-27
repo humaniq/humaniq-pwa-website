@@ -6,7 +6,7 @@ function mapStateToProps(state, ownProps) {
   const { page } = ownProps
 
   const _articles = articles.map(a => {
-    return { ...a, slug: convert.toCleanKebab(a.title) }
+    return { ...a, slug: convert.toCleanKebab(a.slugtitle) }
   })
 
   const options = _articles.map(a => {
@@ -26,6 +26,7 @@ export default connect(mapStateToProps)(Page)
 const articles = [
   {
     title: 'General Privacy Policy',
+    slugtitle: 'General Privacy Policy',
     sections: [
       {
         header: 'Effective: July 10 , 2017',
@@ -36,6 +37,7 @@ const articles = [
   },
   {
     title: 'Data Privacy Policy',
+    slugtitle: 'Data Privacy Policy',
     sections: [
       {
         header: 'Humaniq’s approach to security',
@@ -48,6 +50,7 @@ const articles = [
   },
   {
     title: 'Humaniq Terms of Use',
+    slugtitle: 'User Terms of Service',
     sections: [
       {
         header: 'Last updated: 13 July 2018',
