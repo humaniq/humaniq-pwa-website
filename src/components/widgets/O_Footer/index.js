@@ -34,7 +34,7 @@ const links = [
     links: [
     {name: 'Privacy', url: '/legal/general-privacy-policy'},
     {name: 'Security', url: '/legal/data-privacy-policy'},
-    {name: 'Policies', url: '/legal/humaniq-terms-of-use'}
+    {name: 'Policies', url: '/legal/user-terms-of-service'}
     ]
   },
   {
