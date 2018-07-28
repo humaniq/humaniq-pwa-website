@@ -1,0 +1,186 @@
+@import "common/settings/variables";
+@import "common/utils";
+
+.o-simple-form-h-3 {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  text-align: left;
+
+
+
+  &__submitted {
+    display: block;
+    padding: 10px;
+
+    text-align: center;
+    margin: 0;
+
+    font-weight: 700;
+    font-size: 18px;
+
+    background: #fff;
+    color: #000;
+
+    min-height: 76px;
+
+    display: flex;
+    .hf {
+      box-sizing: border-box;
+      flex: 30%;
+      text-align: right;
+      margin-right: 10px;
+      @include media($mobile) {
+        br { display: none}
+      }
+
+      .wrap {
+        position: absolute;
+        top:50%;
+        transform: translateY(-50%);
+
+      }
+
+    }
+    .hf-2 {
+      flex: 70%;
+    }
+
+    .m-social-f {
+
+    }
+
+    .m-social-links-f__link {
+      padding: 5px;
+      height:20px;
+      svg {
+        height: 20px;
+      }
+      @media(max-width: 450px) {
+        padding: 1px;
+        height: 10px;
+      }
+    }
+
+    @include media($mobile) {
+      font-size: 14px;
+      line-height: normal;
+    }
+  }
+
+  &__title {
+    display: block;
+    padding: 30px 30px 20px 30px;
+
+    text-align: left;
+    margin-bottom: 65px;
+    margin-top: 30px;
+
+    font-weight: 700;
+    font-size: 20px;
+
+    background: #fff;
+
+    color: #000;
+
+    @include media($mobile) {
+      font-size: 14px;
+      line-height: normal;
+    }
+  }
+  &__subtitle {
+    font-size: 14px;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: #747474;
+    margin: 20px 0 0 0;
+    //text-align: center;
+    @include media($mobile) {
+      text-align: center;
+    }
+  }
+
+  .a-input-text-h-2 {
+    $ths: &;
+
+    display: inline-block;
+    width: 70%;
+    margin: 0;
+    padding: 0;
+
+    &_has-error {
+      &_true {
+        #{$ths}__input {
+          border: 2px solid #fff;
+          border-bottom: 2px solid $color-main-red-error;
+          &::placeholder {
+            color: $color-main-red-error;
+          }
+        }
+      }
+    }
+
+  }
+  .a-input-text-h-2_has-error_true .a-input-text-h-2__input {
+    border: 2px solid #fff;
+    border-bottom: 2px solid $color-main-red-error;
+    color: $color-main-red-error;
+    &::placeholder {
+      color: $color-main-red-error;
+    }
+  }
+
+  .a-input-text-h-2__input {
+    display: inline-block;
+    width: 100%;
+    margin: 0;
+    &::placeholder {
+      color: #999999;
+    }
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    height:76px;
+    @include media($mobile) {
+      padding: 15px 0px;
+      font-family: 'Roboto', sans-serif;
+      font-size: 16px;
+      letter-spacing: 0;
+      height: 50px;
+    }
+  }
+
+  &__submit-btn {
+    display: inline-block;
+	width: 30% !important;
+    padding: 25px 15px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: 0;
+    background-color: #2661ea;
+    border-color: #2661ea;
+    height: 76px;
+
+    @include media($tablet) {
+      padding: 25px 0px;
+      font-family: 'Roboto', sans-serif;
+      font-weight: 700;
+      font-size: 18px;
+      letter-spacing: 0;
+      height: 76px;
+    }
+    @include media($mobile) {
+      padding: 15px 0px;
+      font-family: 'Roboto', sans-serif;
+      font-weight: 700;
+      font-size: 16px;
+      letter-spacing: 0;
+      height: 50px;
+    }
+  }
+  .a-btn-h-2_form-has-errors_true {
+    color: rgba(255,255,255,0.5);
+  }
+
+}

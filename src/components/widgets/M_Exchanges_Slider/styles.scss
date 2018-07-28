@@ -1,0 +1,42 @@
+@import "common/settings/variables";
+@import "common/utils";
+
+//@import "~slick-carousel/slick/slick.css";
+//@import "~slick-carousel/slick/slick-theme.css";
+
+
+.exchanges-slider {
+  $this: &;
+  margin: 0;
+  width:100%;
+  max-width: 600px;
+
+  &__slide{
+    box-sizing: border-box;
+    display: inline-block;
+    padding: 10px 10px 0 10px;
+    img {
+      max-width: 100%;
+    }
+    .mark {
+      display: block;
+      position: absolute;
+      top:0;
+      right: 0;
+      height:20px;
+      border-radius: 10px;
+      background-color: #2661ea;
+
+      padding:6px 8px;
+      color: #fff;
+      font-size: 10px;
+      line-height: 1em;
+      font-family: 'Roboto', sans-serif;
+      font-weight: 400;
+      text-transform: uppercase;
+      &.pink {
+        background: #ea269c;
+      }
+    }
+  }
+}

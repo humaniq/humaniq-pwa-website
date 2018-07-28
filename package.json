@@ -40,7 +40,7 @@
     "react-dom": "^15.3.1",
     "react-helmet": "^5.0.3",
     "react-redux": "^5.0.4",
-    "react-slick": "^0.16.0",
+    "react-slick": "^0.23.1",
     "react-tap-event-plugin": "^2.0.1",
     "redux": "^3.6.0",
     "serve-static": "^1.12.4",

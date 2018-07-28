@@ -3,11 +3,12 @@ import * as T from "prop-types";
 import './styles.scss'
 import {cssClassName} from 'utils'
 
-const cn = cssClassName('Home')
+const cn = cssClassName('News1')
 // import Meta from './meta.js'
 import {isMobile} from 'utils/isMobile'
 import O_Footer_H from 'O_Footer_H'
 import EmpoweringSection from './sections/EmpoweringSection'
+import NewsSection from './sections/NewsSection'
 import FirstMobileSection from './sections/FirstMobileSection'
 import UnbankedStatSection from './sections/UnbankedStatSection'
 import QuotesSection from './sections/QuotesSection'
@@ -24,6 +25,7 @@ import TeamSection from './sections/TeamSection'
 
 const serverNames = [
   'empowering',
+  'news',
   'mobile',
   'situation',
   'changes',
@@ -40,6 +42,7 @@ const serverNames = [
 ]
 const clientNames = [
   'empowering',
+  'news',
   'mobile',
   'situation',
   'changes',
@@ -72,6 +75,7 @@ class Home extends Component {
 
   sectionsObj = {
     empowering: <EmpoweringSection mix={cn('section')} key="empowering" users_number={this.props.users_number}/>,
+    news: <NewsSection mix={cn('section')} key="news"/>,
     mobile: <FirstMobileSection mix={cn('section')} key="mobile"/>,
     situation: <UnbankedStatSection mix={cn('section')} key="situation"/>,
     changes: <QuotesSection mix={cn('section', {type: 'slider'})} key="changes"/>,
@@ -197,16 +201,17 @@ class Home extends Component {
     const {showIndex, scroll, widthBig} = this.state
 
     const sideMenu = this.getSideMenu(showIndex)
-    const controlledScroll = !isMobile.any && widthBig
+    //const controlledScroll = !isMobile.any && widthBig
+    const controlledScroll = false
     const positionY = controlledScroll ? this.getPositionY(showIndex) : 0
 
         // const onWheel = scroll && controlledScroll ? this.handleWeel : undefined
-    const onWheel = this.handleWeel
-
+    //const onWheel = this.handleWeel
+    //onWheel={onWheel}
     return (
             <div
                 className={cn({scroll: !controlledScroll})}
-                onWheel={onWheel}
+
                 onKeyDown={(e) => this._handleKeyPress(e)}
                 tabIndex='0'
                 ref={el => {
@@ -216,7 +221,7 @@ class Home extends Component {
                 <div className={cn('inner')} style={{transform: `translate3d(0, ${-positionY}vh, 0px`}}>
                     {sectionsNames.map(name => this.sectionsObj[name])}
                 </div>
-                {isMobile.any || sideMenu}
+                {isMobile.any + 1 || sideMenu}
                 {showIndex > 0 && (<div className={cn('scroll-up')} onClick={this.handleScrollUp}/>)}
             </div>
     )
