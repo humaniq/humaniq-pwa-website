@@ -1,50 +1,309 @@
 @import 'common/settings/variables';
 @import 'common/utils';
 
-.se-home-empowering {
+.se-news1-empowering {
+  display: flex;
+  flex-wrap: wrap;
+  height: auto;
   @include media($tablet) {
     background: $color-main-light-blue;
     justify-content: flex-end;
     align-items: flex-end;
+    padding: 0;
+    &__text-title {
+      font-size: 34px;
+    }
   }
+
   @include media($mobile) {
-    min-height:100vh;
+    min-height: 100vh;
+    &__text-title {
+      font-size: 34px;
+    }
+  }
+
+  &__text {
+    position: relative;
+
+    box-sizing: border-box;
+
+    margin: 110px 60px 60px 60px;
+
+    color: $color-white;
+    @include media($desktop-xxl) {
+    }
+    @include media($desktop-xl) {
+    }
+    @include media($tablet) {
+      margin: 110px 30px 60px 30px;
+    }
+    @include media($mobile) {
+      br {
+        display: none;
+      }
+    }
+    &-title {
+      margin-bottom: 8px;
+      font-size: 34px;
+      letter-spacing: 0;
+      font-family: 'Roboto', sans-serif;
+      font-weight: 700;
+      line-height: 1.3em;
+    }
+    &-subtitle {
+      font-size: 20px;
+      line-height: 1.4em;
+      font-family: 'Roboto', sans-serif;
+      font-weight: 400;
+      @include media($desktop-xxl) {
+        font-size: 20px;
+      }
+      @include media($desktop-xl) {
+        font-size: 20px;
+      }
+      @include media($mobile) {
+        font-size: 16px;
+      }
+      @include media($mobile-xs) {
+        font-size: 16px;
+      }
+    }
   }
 
   &__left-side {
-    flex: 0 0 50%;
-    background: $color-main-light-blue;
+    flex: 50%;
+    background: #77abf9;
     overflow: hidden;
     @include media($tablet) {
-      position: absolute;
-      width: 100%;
-      top: 0;
-      right: 0;
-//      display: none;
+      flex: 100%;
+      min-height: 60vh;
+    }
+    @include media($mobile) {
+      min-height: 100vh;
+    }
+    @media(max-width: 350px) {
+      min-height: 100vh;
+    }
+  }
+
+  &__anni {
+    display: block;
+    position: absolute;
+    bottom: 60px;
+    left: 60px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: #fff;
+    .anni-title {
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 30px;
+    }
+    .anni-operate {
+      margin-top: 0px;
+      min-width: 350px;
+      overflow: hidden;
+      .anni-mark {
+        float: left;
+        display: inline-block;
+        width: 54px;
+        height: 54px;
+
+        margin-right: 15px;
+        img {
+          position: absolute;
+          width: 54px;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+
+        }
+      }
+      .anni-slide {
+        display: inline-block;
+        position: absolute;
+        top: 0;
+        left: 70px;
+        opacity: 0;
+
+        animation: radiowaves2 9s infinite;
+        animation-timing-function: linear;
+        &.one {
+         // opacity: 1;
+          animation-delay: 5s;
+        }
+        &.two {
+          animation-delay: 8s;
+        }
+        &.three {
+          animation-delay: 11s;
+        }
+      }
+    }
+
+    @include media($tablet) {
+      left: 30px;
+    }
+
+    @include media($mobile) {
+      left: 30px;
+      position: relative;
+      margin-top: -30px;
+      bottom: auto;
+    }
+
+  }
+
+  @keyframes radiowaves {
+    0% {
+      opacity: 0;
+    }
+    10% {
+      opacity: 1
+    }
+    23% {
+      opacity: 1
+    }
+    33% {
+      opacity: 0
+    }
+    100% {
+      opacity: 0
+    }
+  }
+
+  @keyframes radiowaves2 {
+    0% {
+      opacity: 1;
+      transform: translateY(150%);
+    }
+    10% {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+    33% {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+    43% {
+      opacity: 1;
+      transform: translateY(-150%);
+    }
+    45% {
+      opacity: 0;
+      transform: translateY(-150%);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(150%);
+    }
+  }
+
+  &__pre {
+    width: 100%;
+    padding: 20px 60px;
+    display: flex;
+    flex-direction: row;
+
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: #fff;
+
+    @include media($tablet) {
+      padding: 20px 30px;
+    }
+
+    @include media($mobile) {
+      font-size: 16px;
+    }
+
+  }
+  &__left {
+    flex: 0 0 50%;
+    text-align: left;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  &__right {
+    flex: 50%;
+    text-align: right;
+  }
+  @include media($mobile) {
+    &__left {
+      flex: auto;
+    }
+    &__right {
+      flex: auto;
+    }
+  }
+
+  &__post {
+    width: 100%;
+    padding: 20px 60px 60px 60px;
+
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    color: #fff;
+    line-height: 1.4em;
+    opacity: 0.6;
+
+    @include media($tablet) {
+      text-align: center;
+      br {
+        display: none;
+      }
     }
   }
 
   &__right-side {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: $color-main-blue;
-    flex: 1 1 auto;
+    justify-content: start;
+    //    align-items: center;
+    background-color: #67a2f5;
+
+    flex: 0 0 50%;
+    max-width: 50%;
+
+    min-height: 60vh;
+
+    button {
+      display: none !important;
+    }
+
     @include media($tablet) {
-      display: block;
-      margin-bottom: 50px;
-      background-color: transparent;
-      br.d{
+      flex: 100%;
+      max-width: 100%;
+      min-height: 40vh;
+      br {
         display: none;
       }
+      .se-news1-empowering__text {
+        text-align: center;
+        margin-top: 60px;
+      }
     }
+  }
+  &__subscribe {
+    @include media($tablet) {
+      h3 {
+        text-align: center;
+        br {
+          display: none;
+        }
+      }
+    }
+
   }
 
   &__map {
     width: 100%;
     height: 100%;
     overflow: hidden;
+    position: absolute;
+    opacity: 0.5;
     &-img {
       &_type_mobile {
         display: none;
@@ -65,59 +324,45 @@
     }
   }
 
-  &__text {
-    position: relative;
-    width:80%;
-    margin-bottom: 70px;
-    margin-right: 20px;
-    font-family: $font-ProximaNova;
-    color: $color-white;
-    @include media($desktop-xxl) {
-      margin-right: 20px;
-    }
-    @include media($desktop-xl) {
-      margin-right: 0;
-    }
-    @include media($tablet) {
-      margin-bottom: 0;
-      width: 100%;
-      margin-right: 0;
-    }
-    &-title {
-      margin-bottom: 25px;
-      line-height: normal;
-      font-size: 40px;
-      letter-spacing: 0.09em;
-
-      @include media($mobile) {
-        font-size: 24px;
-        margin-bottom: 10px;
-      }
-      @include media($mobile-xs) {
-        font-size: 22px;
-      }
-    }
-    &-subtitle {
-      font-size: 26px;
-      line-height: 1.4;
-      @include media($desktop-xxl) {
-        font-size: 26px;
-      }
-      @include media($desktop-xl) {
-        font-size: 22px;
-      }
-      @include media($mobile) {
-        font-size: 20px;
-      }
-      @include media($mobile-xs) {
-        font-size: 16px;
-      }
-    }
-  }
-
   &__subscribe {
+    flex: 100%;
     width: 100%;
-    margin: 20px 20px 0 0;
+    padding: 50px 60px;
+    margin: 0;
+    background: #edeff5;
+    display: flex;
+    flex-direction: row;
+    @include media($tablet) {
+      flex-direction: column;
+      padding: 30px;
+    }
+
+    h3 {
+      flex: 50%;
+      font-family: 'Roboto', sans-serif;
+      font-weight: 700;
+      line-height: 1.4em;
+      color: #253151;
+      font-size: 20px;
+      text-transform: uppercase;
+    }
+    .frm {
+      flex: 50%;
+      margin-left: 60px;
+      box-shadow: -0px 0px 30px #ccc;
+      height: 76px;
+
+      //max-width: 600px;
+
+      @include media($tablet) {
+        flex: 100%;
+        margin: 30px 0 0 0;
+      }
+      @include media($mobile) {
+        height: 50px;
+      }
+
+    }
   }
 
   &__hmq-description {
@@ -178,7 +423,7 @@
       }
       @include media($mobile) {
         //display: none;
-        font-size:40px;
+        font-size: 40px;
       }
     }
     &-text {
@@ -191,7 +436,7 @@
       }
       @include media($mobile) {
         //display: none;
-        font-size:12px;
+        font-size: 12px;
       }
 
     }

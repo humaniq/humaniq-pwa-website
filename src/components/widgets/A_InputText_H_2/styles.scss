@@ -5,7 +5,10 @@
   $this: &;
   padding: 0;
   width: 100%;
+  box-sizing: border-box;
   display: inline-block;
+  margin-bottom: 20px;
+
   &_has-error {
     &_true {
       #{$this}__input {
@@ -29,9 +32,8 @@
     padding: 24px;
     text-align: left;
     //border: 2px solid $color-white;
-    border:none;
+    border: 2px solid #fff;
     border-radius: 0;
-    margin-bottom: 20px;
     font-family: $font-ProximaNova;
     font-weight: 700;
     font-size: 20px;

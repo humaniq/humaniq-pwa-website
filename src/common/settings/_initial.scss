@@ -56,12 +56,13 @@ p {
   @include media($mobile) { display: none; }
 }
 
-
+/*
 ::-webkit-scrollbar {
-  width: 0;  /* remove scrollbar space */
-  background: transparent;  /* optional: just make scrollbar invisible */
+  width: 0;
+  background: transparent;
 }
-/* optional: show position indicator in red */
+
 ::-webkit-scrollbar-thumb {
   background: #FF0000;
 }
+*/

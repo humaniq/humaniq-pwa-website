@@ -1,12 +1,14 @@
 import React from 'react'
-import * as T from 'prop-types'
 import A_Title from 'A_Title_H'
-import SectionCounter from '../common/SectionCounter/index.js'
-import O_SimpleForm_H from '../../../../widgets/O_SimpleForm_H_2';
+import O_SimpleForm_H from '../../../../widgets/O_SimpleForm_H_3';
+import M_Exchanges_Slider from "../../../../widgets/M_Exchanges_Slider";
+import axios from "axios/index";
+
 import './styles.scss'
-import { cssClassName } from 'utils'
-//import A_Image from 'A_Image'
-const cn = cssClassName('SE_Home_Empowering')
+import {cssClassName} from 'utils'
+
+
+const cn = cssClassName('SE_News1_Empowering')
 
 const formatUserNum = (users) => {
   let usersD = users.toString();
@@ -14,82 +16,136 @@ const formatUserNum = (users) => {
   return usersD
 }
 
-const SE_Home_Empowering = ({ mix, users_number }) => (
-  <section className={cn([mix])}>
-    <div className={cn('left-side')}>
-      <div className={cn('map')}>
-        <img
-          className={cn('map-img', { type: 'desktop' })}
-          src="/img/v1/home/map-bg.png"
-          alt="EMPOWERING THE UNBANKED"
-        />
-        <img
-          className={cn('map-img', { type: 'mobile' })}
-          src="/img/v1/home/mobile-map.jpg"
-          alt="EMPOWERING THE UNBANKED"
-        />
-        <div className={cn('point', { number: 1 })}>
-          <span />
-          <span />
-          <span />
-          <span />
-        </div>
-        <div className={cn('point', { number: 2 })}>
-          <span />
-          <span />
-          <span />
-          <span />
-        </div>
-        <div className={cn('point', { number: 3 })}>
-          <span />
-          <span />
-          <span />
-          <span />
-        </div>
-        <div className={cn('point', { number: 4 })}>
-          <span />
-          <span />
-          <span />
-          <span />
-        </div>
-        <div className={cn('point', { number: 5 })}>
-          <span />
-          <span />
-          <span />
-          <span />
-        </div>
-      </div>
-    </div>
+class SE_Home_Empowering extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      hmq2usd: ""
+    };
+  }
 
-    <div className={cn('right-side')}>
-      <div className={cn('text')}>
-        <A_Title type="hero" mix={cn('text-title')} theme="bright">
-          Empowering<br /> the unbanked
-        </A_Title>
-        <p className={cn('text-subtitle')}>
-          Self-deploying financial infrastructure:<br /> true hope for the unbanked, blue ocean<br className="d" /> for business
-        </p>
-        <div className={cn('subscribe')}>
-            <O_SimpleForm_H formType="subscribe" />
-        </div>
-      </div>
-    </div>
+  componentDidMount() {
+    axios.get("https://api.coinmarketcap.com/v2/ticker/1669/")
+            .then(res => {
+              console.log(res.data);
+              let ratio = Math.ceil(100*res.data.data.quotes.USD.price)/100;
+              console.log(ratio);
+              this.setState({hmq2usd: "1 HMQ = " + ratio + " USD"});
+            })
+            .catch(function (error) {
+              console.log(error);
+            });
+  }
 
-    <p className={cn('hmq-description')}>
-      A project on a global scale, receiving<br /> support 10,000 contributors.
-    </p>
-    <div className={cn('members')}>
-      <div className={cn('members-number')}>390  265</div>
-      <p className={cn('members-text')}>people have already joined HMQ</p>
-    </div>
-    <SectionCounter sectionNum={1} theme="dark" />
-  </section>
-)
+
+  render() {
+    return (
+            <section className={cn([this.mix])}>
+                <div className={cn('left-side')}>
+                    <div className={cn('map')}>
+                        <img
+                            className={cn('map-img', {type: 'desktop'})}
+                            src="/img/v1/home/map-bg.png"
+                            alt="EMPOWERING THE UNBANKED"
+                        />
+                        <img
+                            className={cn('map-img', {type: 'mobile'})}
+                            src="/img/v1/home/mobile-map.jpg"
+                            alt="EMPOWERING THE UNBANKED"
+                        />
+                        <div className={cn('point', {number: 1})}>
+                            <span/>
+                            <span/>
+                            <span/>
+                            <span/>
+                        </div>
+                        <div className={cn('point', {number: 2})}>
+                            <span/>
+                            <span/>
+                            <span/>
+                            <span/>
+                        </div>
+                        <div className={cn('point', {number: 3})}>
+                            <span/>
+                            <span/>
+                            <span/>
+                            <span/>
+                        </div>
+                        <div className={cn('point', {number: 4})}>
+                            <span/>
+                            <span/>
+                            <span/>
+                            <span/>
+                        </div>
+                        <div className={cn('point', {number: 5})}>
+                            <span/>
+                            <span/>
+                            <span/>
+                            <span/>
+                        </div>
+                    </div>
+                    <div className={cn('text')}>
+                        <A_Title type="hero" mix={cn('text-title')} theme="bright">
+                            P2P financial services <br/>for developing countries
+                        </A_Title>
+                        <p className={cn('text-subtitle')}>
+                            Connecting 1.7 billion people
+                        </p>
+                    </div>
+                    <div className={cn('anni')}>
+                        <div className={'anni-title'}>1 year after tokensale</div>
+                        <div className={'anni-operate'}>
+                            <div className={'anni-mark'}>
+                                <img src="/img/done.svg"/>
+                            </div>
+                            <div className='anni-slide one'>16 countries <br/> operating</div>
+                            <div className='anni-slide two'>{formatUserNum(406635)} <br/>users</div>
+                            <div className='anni-slide three'>Hybrid <br/>blockchain</div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+                <div className={cn('right-side')}>
+                    <div className={cn('text')}>
+                        <A_Title type="hero" mix={cn('text-title')} theme="bright">
+                            HMQ token is a fuel <br/>of the platform
+                        </A_Title>
+                        <p className={cn('text-subtitle')}>
+                            Visit one of the following external services <br/>independent from Humaniq in order <br
+                            className="d"/> to purchase HMQ
+                        </p>
+                    </div>
+                    <div className={cn('slider-wrap')}>
+                        <div className={cn('pre')}>
+                            <div className={cn('left')}>Listed On</div>
+                            <div className={cn('right')}>{this.state.hmq2usd}</div>
+                        </div>
+                        <div className={cn('slider')}>
+                            <M_Exchanges_Slider/>
+                        </div>
+                        <div className={cn('post')}>
+                            You may visit one of the following external services independent <br/> from Humaniq in order
+                            to purchase
+                            HMQ
+                        </div>
+                    </div>
+                </div>
+                <div className={cn('subscribe')}>
+                    <h3>Join now to be the first to get Humaniq <br/> great news and upcoming offers!</h3>
+                    <div className='frm'>
+                        <O_SimpleForm_H formType='subscribe'/>
+                    </div>
+                </div>
+            </section>
+    )
+  }
+}
 
 export default SE_Home_Empowering
 
 SE_Home_Empowering.propTypes = {
-  mix: T.string, //BEM mixin from parent block
+  //mix: T.string,
 }
-
-//.replace(/(\d)(?=(\d{3})+$)/g, '$1 ')
