@@ -127,17 +127,17 @@
         left: 70px;
         opacity: 0;
 
-        animation: radiowaves2 9s infinite;
-        animation-timing-function: linear;
+        animation: radiowaves 9s infinite;
+        animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
         &.one {
          // opacity: 1;
-          animation-delay: 5s;
+          animation-delay: 3s;
         }
         &.two {
-          animation-delay: 8s;
+          animation-delay: 6s;
         }
         &.three {
-          animation-delay: 11s;
+          animation-delay: 9s;
         }
       }
     }
@@ -155,28 +155,44 @@
 
   }
 
+
   @keyframes radiowaves {
     0% {
-      opacity: 0;
+      opacity: 1;
+      transform: translateY(100%);
+      transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
     }
-    10% {
-      opacity: 1
-    }
-    23% {
-      opacity: 1
+    7% {
+      opacity: 1;
+      transform: translateY(0%);
+      transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
     }
     33% {
-      opacity: 0
+      opacity: 1;
+      transform: translateY(0%);
+      transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+    }
+    40% {
+      opacity: 1;
+      transform: translateY(-100%);
+      transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+    }
+    45% {
+      opacity: 0;
+      transform: translateY(-100%);
+      transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
     }
     100% {
-      opacity: 0
+      opacity: 0;
+      transform: translateY(100%);
+      transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
     }
   }
 
   @keyframes radiowaves2 {
     0% {
       opacity: 1;
-      transform: translateY(150%);
+      transform: translateY(100%);
     }
     10% {
       opacity: 1;
@@ -188,15 +204,15 @@
     }
     43% {
       opacity: 1;
-      transform: translateY(-150%);
+      transform: translateY(-100%);
     }
     45% {
       opacity: 0;
-      transform: translateY(-150%);
+      transform: translateY(-100%);
     }
     100% {
       opacity: 0;
-      transform: translateY(150%);
+      transform: translateY(100%);
     }
   }
 
@@ -273,6 +289,8 @@
       display: none !important;
     }
 
+
+
     @include media($tablet) {
       flex: 100%;
       max-width: 100%;
@@ -296,6 +314,10 @@
       }
     }
 
+  }
+
+  &__slider {
+    min-height: 80px;
   }
 
   &__map {
