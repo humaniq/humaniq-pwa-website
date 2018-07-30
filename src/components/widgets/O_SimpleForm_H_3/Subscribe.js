@@ -41,6 +41,7 @@ class O_SubscribeForm extends Component {
     ))
   )
 
+
   render() {
     const { mix, formHasErrors, handleSubmit, submited } = this.props;
 

@@ -9,6 +9,7 @@ const socialIcons = `/img/design-v2/icons/social/sprite.svg`
 
 const handleLinkClick = (name) => {
   if (window.ga) window.ga('send', 'event', 'other', 'social-click-' + name);
+  if (window.fbq) window.fbq('trackCustom', 'socialClick', { name: name });
 }
 
 

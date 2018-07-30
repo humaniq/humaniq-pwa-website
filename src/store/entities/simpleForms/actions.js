@@ -12,7 +12,8 @@ export function submit(formName, data) {
     case 'subscribe':
       endpoint = ENDPOINT_SUBSCRIBE_FORM
       form = SUBSCRIBE_FORM
-      window.ga('send', 'event', 'other', 'subscribe-btn-click');
+      if(window.ga) window.ga('send', 'event', 'other', 'subscribe-btn-click');
+      if(window.fbq) window.fbq('track', 'Lead');
       break;
     case 'ambassadors':
       endpoint = ENDPOINT_AMBASSADORS_FORM

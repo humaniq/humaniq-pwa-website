@@ -158,8 +158,11 @@
         flex: 60%;
       }
       @include media($tablet) {
-        padding: 60px 0 0 0;
-        padding-top: 60px;
+        padding: 40px 0 0 0;
+        text-align: center;
+        .title {
+          max-width: none;
+        }
       }
 
     }
@@ -200,6 +203,13 @@
         padding: 48px 0 0 0;
         text-align: center;
       }
+    }
+    @include media($tablet) {
+      margin-top: 48px;
+      padding-top: 0;
+
+    }
+    @include media($mobile) {
     }
 
   }
