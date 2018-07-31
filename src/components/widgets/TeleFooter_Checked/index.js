@@ -7,7 +7,8 @@ class TeleFooterChecked extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isHidden: true
+      TelegaIsHidden: true,
+      IntercomIsHidden: true
     };
   }
 
@@ -15,11 +16,11 @@ class TeleFooterChecked extends React.Component {
     axios.get("https://json.geoiplookup.io/")
             .then(res => {
               console.log(res.data);
-              if (res.data.continent_code != 'AF') this.setState({isHidden: false});
+              if (res.data.continent_code != 'AF') this.setState({TelegaIsHidden: false,IntercomIsHidden:false});
             })
-            .catch(function (error) {
+            .catch( error => {
                 // handle error
-              this.setState({isHidden: false});
+              this.setState({TelegaIsHidden: true,IntercomIsHidden:false});
               console.log(error);
             });
   }
@@ -27,11 +28,11 @@ class TeleFooterChecked extends React.Component {
   render() {
     return (
         <div>
-        { this.state.isHidden ? ""
+        { this.state.TelegaIsHidden && this.state.IntercomIsHidden ? ""
             :
             <div>
-                <Intercom appID="y9l4iy41" />
-                <TeleFooter/>
+                { this.state.IntercomIsHidden ? "" : <Intercom appID="y9l4iy41" /> }
+                { this.state.TelegaIsHidden ? "" : <TeleFooter/> }
             </div>
         }
         </div>
