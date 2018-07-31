@@ -13,6 +13,6 @@ cache:
   - ./node_modules
 
 deploy:
-  - branch: "humaniq:production"
+  - branch: "production"
     shell:
       - "DEPLOY_TO=humaniq-production OVERRIDE_VALUES=values.yaml ZONE=europe-west1-b ./deploy/scripts/deploy.sh"
