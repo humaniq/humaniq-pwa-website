@@ -33,7 +33,7 @@ const _createLinks = (links) => (
 
 
 const mainTitle = {
-  img: "/img/news/main-1.jpg",
+  img: "/img/news/main-1.png",
   title: "Humaniq Recognised As Leading “Blockchain For Social Good” Use Case At UK Parliament Reception",
   url: "https://ethereumworldnews.com/humaniq-recognised-as-leading-blockchain-for-social-good-use-case-at-uk-parliament-reception/",
   src: "ethereumworldnews.com"
