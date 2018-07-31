@@ -97,11 +97,17 @@ export const team = [
       'Kherel is a digital nomad. He joined Humaniq to experience and participate in the financial evolution, and observe changes to the better in the country where he currently resides - China.',
     imgSrc: `${imgPath}/kherel_kechil.jpg`,
   },
+  //{
+  //  name: 'Harry Bright',
+  //  position: 'CBDO',
+  //  bio: '',
+  //  imgSrc: `${imgPath}/harry_bright.jpg`,
+  //},
   {
-    name: 'Harry Bright',
-    position: 'CBDO',
+    name: 'Andrey Gidaspov',
+    position: 'Chief Global Development Officer',
     bio: '',
-    imgSrc: `${imgPath}/harry_bright.jpg`,
+    imgSrc: `${imgPath}/andrey_gidaspov.jpg`,
   },
   // {
   //   name: 'Segrey Blinov',
