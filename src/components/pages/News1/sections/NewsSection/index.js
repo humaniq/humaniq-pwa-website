@@ -10,6 +10,9 @@ const handleLinkClick = (name) => {
   if (window.ga) window.ga('send', 'event', 'other', 'news-click-' + name);
 }
 
+
+
+
 const _createLinks = (links) => (
     links.map(({title, src, url}, index) => {
       return (
@@ -30,7 +33,7 @@ const _createLinks = (links) => (
 
 
 const mainTitle = {
-  img: "/img/news/main-1.jpg",
+  img: "/img/news/main-1.png",
   title: "Humaniq Recognised As Leading “Blockchain For Social Good” Use Case At UK Parliament Reception",
   url: "https://ethereumworldnews.com/humaniq-recognised-as-leading-blockchain-for-social-good-use-case-at-uk-parliament-reception/",
   src: "ethereumworldnews.com"
@@ -54,38 +57,59 @@ const articleList = [
   }
 ]
 
-const SE_News1_News = ({mix}) => (
-    <section className={cn([mix])}>
-        <A_Title type="hero" mix={cn('text-title')} theme="dark">
-            Latest news
-        </A_Title>
+class SE_News1_News extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      latestactive: false
+    };
+  }
 
-        <div className={cn('last-one')}>
-            <div className='img'>
-                <img src={mainTitle.img}/>
-            </div>
-            <div className='text'>
-                <div className='src'>{mainTitle.src}</div>
-                <div className='title'>{mainTitle.title}</div>
-                <div className='buttons'>
-                    <a className='button read-more' href={mainTitle.url}  target='_blank'>Read more</a>
-                    <a className='link-sec' href="https://www.facebook.com/humaniq.co/"  target='_blank'>
-                        Join our Facebook
-                        <img src="/img/link.svg"/>
-                    </a>
+  onMouseOverHandler = () => {
+    this.setState({latestactive:true})
+  }
+
+  onMouseOutHandler = () => {
+    this.setState({latestactive:false})
+  }
+
+  render() {
+    return (
+            <section className={cn([this.mix])}>
+                <A_Title type="hero" mix={cn('text-title')} theme="dark">
+                    Latest news
+                </A_Title>
+
+                <div className={cn('last-one')}>
+                    <div className='img'>
+                        <img src={mainTitle.img}/>
+                    </div>
+                    <div className='text'>
+                        <div className='src'>{mainTitle.src}</div>
+                        <div className='title' onMouseOut={this.onMouseOutHandler.bind(this)}  onMouseOver={this.onMouseOverHandler.bind(this)}>
+                            <a href={mainTitle.url} className={this.state.latestactive ? 'active' : ''} target='_blank'>{mainTitle.title}</a>
+                        </div>
+                        <div className='buttons'>
+                            <a className={this.state.latestactive ? 'button read-more active' : 'button read-more' } href={mainTitle.url} onMouseOut={this.onMouseOutHandler.bind(this)}  onMouseOver={this.onMouseOverHandler.bind(this)} target='_blank'>Read more</a>
+                            <a className='link-sec' href="https://www.facebook.com/humaniq.co/" target='_blank'>
+                                Join our Facebook
+                                <img src="/img/link.svg"/>
+                            </a>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
 
-        <div className={cn('article-list')}>
-            {_createLinks(articleList)}
-        </div>
+                <div className={cn('article-list')}>
+                    {_createLinks(articleList)}
+                </div>
 
-        <div className={cn('more-news')}>
-            <a className='button' href='https://blog.humaniq.co/' target='_blank'>See All NEWS</a>
-        </div>
-    </section>
-)
+                <div className={cn('more-news')}>
+                    <a className='button' href='https://blog.humaniq.co/' target='_blank'>See All NEWS</a>
+                </div>
+            </section>
+    )
+  }
+}
 
 export default SE_News1_News
 

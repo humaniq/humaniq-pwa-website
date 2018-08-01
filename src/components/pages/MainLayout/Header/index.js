@@ -3,7 +3,7 @@ import * as T from 'prop-types'
 import './styles.scss'
 import A_Logo_H from 'A_Logo_H'
 import A_BurgerBtn_H from './BurgerBtn2'
-import TeleFooter from './TeleFooter'
+import TeleFooter from '../../../widgets/TeleFooter_Checked'
 import { cssClassName } from 'utils'
 import { Link } from 'react-router'
 const socialIcons = `/img/design-v2/icons/social/telegram.svg`

@@ -27,7 +27,7 @@
     background-color: #ffffff;
     box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.1);
     padding: 23px 30px;
-    margin-top: 30px;
+    //margin-top: 30px;
 
     text-align: center;
 
@@ -37,8 +37,10 @@
     line-height: 1em;
     text-transform: uppercase;
 
+    transition: background-color, border, .3s linear;
+
     color: #2661ea;
-    &:hover {
+    &:hover, &.active {
       background: #1400FF;
       color: #fff;
     }
@@ -55,7 +57,7 @@
     height: 64px;
     padding: 23px 30px;
 
-    margin-top: 30px;
+    //margin-top: 30px;
 
     text-align: center;
 
@@ -65,6 +67,12 @@
     line-height: 1em;
     text-transform: uppercase;
     color: #2661ea;
+    transition: .3s linear;
+
+    &:hover {
+      transition: .3s linear;
+      opacity: 0.8;
+    }
 
     img {
       margin-left: 10px;
@@ -102,24 +110,24 @@
     @include media($tablet) {
       flex-direction: column;
     }
-    @media(max-width: 1050px){
+    @media(max-width: 1050px) {
       flex-direction: column;
     }
-
 
     .img {
       flex: 50%;
       img {
         width: 100%;
       }
-      @media(max-width: 1250px){
-        flex:40%;
+      @media(max-width: 1250px) {
+        flex: 40%;
       }
     }
 
     .text {
       flex: 50%;
       padding: 60px 60px 0 60px;
+
       .title {
         font-family: 'Roboto', sans-serif;
         font-size: 24px;
@@ -130,17 +138,31 @@
         margin-top: 10px;
         display: block;
         max-width: 450px;
+
+        a {
+          display: inline-block;
+          padding-bottom: 30px;
+          transition: .3s linear;
+
+          &:hover, &.active {
+            opacity: 0.8;
+            transition: .3s linear;
+          }
+        }
       }
       .buttons {
         //padding-top: 30px;
       }
-      @media(max-width: 1250px){
+      @media(max-width: 1250px) {
         padding-top: 10px;
-        flex:60%;
+        flex: 60%;
       }
       @include media($tablet) {
-        padding: 60px 0 0 0;
-        padding-top: 60px;
+        padding: 40px 0 0 0;
+        text-align: center;
+        .title {
+          max-width: none;
+        }
       }
 
     }
@@ -159,13 +181,18 @@
       padding: 30px 60px 0 0;
       a {
         font-family: 'Roboto', sans-serif;
-        font-size: 24px;
+        font-size: 20px;
         font-weight: bold;
         line-height: 1.41em;
         text-transform: none;
         color: #253151;
         margin-top: 18px;
         display: block;
+        transition: .3s linear;
+        &:hover {
+          opacity:0.8;
+          transition: .3s linear;
+        }
       }
       @include media($tablet) {
         flex: 50%;
@@ -177,20 +204,15 @@
         text-align: center;
       }
     }
+    @include media($tablet) {
+      margin-top: 48px;
+      padding-top: 0;
+
+    }
+    @include media($mobile) {
+    }
 
   }
-
-
-
-
-
-
-
-
-
-
-
-
 
   &__left-side {
     flex: 0 0 53%;

@@ -1,0 +1,79 @@
+@import 'common/settings/variables';
+@import 'common/utils';
+
+.tele-footer {
+  $this: &;
+  position: fixed;
+  bottom: 0;
+  left:0;
+  width: 100%;
+  height: 50px;
+  background: #fff;
+
+  text-align: center;
+  line-height: normal;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 13px;
+
+  z-index:100;
+
+  @include media($mobile-xs){
+    font-size: 12px;
+    padding-top: 10px;
+    text-align: left;
+  }
+
+  &__is-hidden {
+    display:none;
+  }
+
+  a.tele {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    margin: -10px 0 0 5px;
+    transform: translateY(9px);
+
+    border-radius: 15px;
+    background: #00A3FF;
+
+    text-decoration: underline;
+    svg {
+      position: relative;
+      top: 0px;
+      left:-1px;
+      width: 30px;
+      height: 30px;
+    }
+  }
+
+  a.tele.right {
+    @include media($mobile-xs){
+      display: none;
+    }
+  }
+  a.tele.left {
+    display: none;
+    margin: -11px 5px 0 0;
+    transform: translateY(11px);
+
+    @include media($mobile-xs){
+      display: inline-block;
+    }
+  }
+
+  .close {
+    display: inline-block;
+    position: absolute;
+    right:12px;
+    width: 30px;
+    height: 30px;
+    top:15px;
+    cursor: pointer;
+    @include media($mobile-xs){
+      right: 8px;
+    }
+  }
+}
+
