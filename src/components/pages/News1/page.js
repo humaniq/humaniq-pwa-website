@@ -199,30 +199,19 @@ class Home extends Component {
 
   render() {
     const {showIndex, scroll, widthBig} = this.state
-
-    const sideMenu = this.getSideMenu(showIndex)
-    //const controlledScroll = !isMobile.any && widthBig
     const controlledScroll = false
     const positionY = controlledScroll ? this.getPositionY(showIndex) : 0
-
-        // const onWheel = scroll && controlledScroll ? this.handleWeel : undefined
-    //const onWheel = this.handleWeel
-    //onWheel={onWheel}
     return (
             <div
                 className={cn({scroll: !controlledScroll})}
-
-                onKeyDown={(e) => this._handleKeyPress(e)}
                 tabIndex='0'
                 ref={el => {
                   this.container = el
                 }}
             >
-                <div className={cn('inner')} style={{transform: `translate3d(0, ${-positionY}vh, 0px`}}>
+                <div className={cn('inner')}>
                     {sectionsNames.map(name => this.sectionsObj[name])}
                 </div>
-                {isMobile.any + 1 || sideMenu}
-                {showIndex > 0 && (<div className={cn('scroll-up')} onClick={this.handleScrollUp}/>)}
             </div>
     )
   }
