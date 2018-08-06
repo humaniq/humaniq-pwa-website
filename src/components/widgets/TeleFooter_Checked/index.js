@@ -12,29 +12,58 @@ class TeleFooterChecked extends React.Component {
     };
   }
 
+  TelegaIsHidden = true;
+  IntercomIsHidden = true;
+  checkCompleted = false;
+  IntercomIsBooted = false;
+
+  handleScroll = (e) => {
+    if(window.scrollY > 300) {
+      if(this.checkCompleted) {
+        this.setState({TelegaIsHidden: this.TelegaIsHidden,IntercomIsHidden:this.IntercomIsHidden});
+        if(!this.IntercomIsHidden){
+          window.Intercom("boot", { app_id: "y9l4iy41"});
+        }
+        this.checkCompleted = false;
+      }
+    }
+  }
+
+
   componentDidMount() {
-    axios.get("https://json.geoiplookup.io/")
+    axios.get("https://ipapi.co/json/")
             .then(res => {
-              console.log(res.data);
-              if (res.data.continent_code != 'AF') this.setState({TelegaIsHidden: false,IntercomIsHidden:false});
+              console.log(res.data.continent_code);
+              if (res.data.continent_code != 'AF') {
+                //this.setState({TelegaIsHidden: false,IntercomIsHidden:false});
+                this.TelegaIsHidden = false;
+                this.IntercomIsHidden = false;
+                this.checkCompleted = true;
+              }
             })
             .catch( error => {
                 // handle error
-              this.setState({TelegaIsHidden: true,IntercomIsHidden:false});
+              //this.setState({TelegaIsHidden: true,IntercomIsHidden:false});
+              this.TelegaIsHidden = true;
+              this.IntercomIsHidden = false;
+              this.checkCompleted = true;
               console.log(error);
             });
+    window.addEventListener('scroll', this.handleScroll);
   }
+
+  componentWillUnmount(){
+    window.removeEventListener('scroll', this.handleScroll);
+  }
+
+//  window.Intercom("boot", { app_id: "y9l4iy41"});
+
+//<Intercom appID="y9l4iy41" />
 
   render() {
     return (
-        <div>
-        { this.state.TelegaIsHidden && this.state.IntercomIsHidden ? ""
-            :
-            <div>
-                { this.state.IntercomIsHidden ? "" : <Intercom appID="y9l4iy41" /> }
-                { this.state.TelegaIsHidden ? "" : <TeleFooter/> }
-            </div>
-        }
+        <div ref={(ref) => this.wrapper = ref} >
+            { this.state.TelegaIsHidden ? "" : <TeleFooter/> }
         </div>
     );
   }
