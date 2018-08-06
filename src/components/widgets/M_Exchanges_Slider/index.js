@@ -112,6 +112,13 @@ const socialLinks = [
     img: "/img/exchanges/idex.png"
   },
   {
+    name: 'hotbit',
+    url: 'https://www.hotbit.io/exchange?symbol=HMQ_BTC',
+    img: "/img/exchanges/hotbit.png",
+    mark: "FRESHLY LISTED",
+    cls: "blue"
+  },
+  {
     name: 'mercatox',
     url: 'https://mercatox.com/exchange/HMQ/BTC',
     img: "/img/exchanges/mercatox.png"

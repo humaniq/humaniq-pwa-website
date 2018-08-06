@@ -9,12 +9,93 @@ import { cssClassName } from 'utils'
 const cn = cssClassName('SE_MainLayout_H')
 import O_Footer_H from 'O_Footer_H'
 import PeopleModal from './PeopleModal'
+import TeleFooter from '../../widgets/TeleFooterSquare'
+import axios from "axios/index";
 
 class SE_MainLayout_H extends Component {
   state = {
     headerLinks: ['Humaniq Wiki', 'HMQ Explorer', 'Challenge', 'Ambassadors'],
     sidebarLinks: ['Open source', 'Contact us', 'Subscribe'],
+    offsetY: false,
+    TelegaIsHidden: true,
+    IntercomIsHidden: true
+
   }
+
+  TelegaIsHidden = true;
+  IntercomIsHidden = true;
+  checkCompleted = false;
+  switchCompleted = false;
+
+
+  handleScroll = (e) => {
+    if(this.switchCompleted ) return;
+    console.log(window.scrollY );
+    if(window.scrollY > 300) {
+      this.setState({
+        offsetY: true
+      });
+
+      if(this.checkCompleted) {
+        this.switchCompleted = true;
+        this.setState({TelegaIsHidden: this.TelegaIsHidden,IntercomIsHidden:this.IntercomIsHidden});
+        if(!this.IntercomIsHidden){
+          if(window.innerWidth>749){
+            window.Intercom("boot", {app_id: "y9l4iy41"})
+          }
+        }
+        this.checkCompleted = false;
+      }
+
+    }
+  }
+
+  handleWheel = (e) => {
+    if(this.switchCompleted ) return;
+    console.log(e.deltaY , window.scrollY );
+    if(e.deltaY>=100){
+      if(window.scrollY<=0) {
+        this.setState({
+          offsetY: true
+        });
+
+        if (this.checkCompleted) {
+          this.switchCompleted = true;
+          this.setState({TelegaIsHidden: this.TelegaIsHidden, IntercomIsHidden: this.IntercomIsHidden});
+          if (!this.IntercomIsHidden) {
+            if(window.innerWidth>749){
+              window.Intercom("boot", {app_id: "y9l4iy41"})
+            }
+          }
+          this.checkCompleted = false;
+        }
+      }
+    }
+  }
+
+  componentDidMount() {
+    axios.get("https://ipapi.co/json/")
+            .then(res => {
+              console.log(res.data.continent_code);
+              if (res.data.continent_code != 'AF') {
+                    //this.setState({TelegaIsHidden: false,IntercomIsHidden:false});
+                this.TelegaIsHidden = false;
+                this.IntercomIsHidden = false;
+                this.checkCompleted = true;
+              }
+            })
+            .catch( error => {
+                // handle error
+                //this.setState({TelegaIsHidden: true,IntercomIsHidden:false});
+              this.TelegaIsHidden = true;
+              this.IntercomIsHidden = false;
+              this.checkCompleted = true;
+              console.log(error);
+            });
+    window.addEventListener('scroll', this.handleScroll);
+
+  }
+
 
   render() {
     const { headerLinks, sidebarLinks } = this.state
@@ -40,7 +121,7 @@ class SE_MainLayout_H extends Component {
     const mobileMenuLinks = [...headerLinks, ...sidebarLinks]
 
     return (
-      <div className={cn()}>
+      <div className={cn()} onWheel={this.handleWheel}>
         <MobileMenu
           mix={cn('mobile-menu')}
           menuLinks={mobileMenuLinks}
@@ -56,6 +137,7 @@ class SE_MainLayout_H extends Component {
           sticky={homePage}
           openRoute={openRoute}
         />
+        { this.state.TelegaIsHidden ? "" : <TeleFooter/> }
 
         <div className={cn('body')}>{children}</div>
         {homePage || (

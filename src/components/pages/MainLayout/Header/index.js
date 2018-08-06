@@ -6,11 +6,6 @@ import A_BurgerBtn_H from './BurgerBtn2'
 import TeleFooter from '../../../widgets/TeleFooter_Checked'
 import { cssClassName } from 'utils'
 import { Link } from 'react-router'
-const socialIcons = `/img/design-v2/icons/social/telegram.svg`
-
-const toggleTelegramBar = () => {
-  alert("asaas");
-}
 
 const cn = cssClassName('SE_MainLayoutHeader_H')
 
@@ -44,7 +39,7 @@ const SE_MainLayoutHeader_H = ({ mix, theme, mobileMenuIsActive, toggleMobileMen
           <Link to="/contact-us">Contact us</Link>
       </li>
     </ul>
-    <TeleFooter />
+
     <A_BurgerBtn_H mix={cn('menu-btn')} onClick={toggleMobileMenu} isActive={mobileMenuIsActive} />
   </header>
 )

@@ -3,6 +3,7 @@ import A_Title from 'A_Title_H'
 import O_SimpleForm_H from '../../../../widgets/O_SimpleForm_H_3';
 import M_Exchanges_Slider from "../../../../widgets/M_Exchanges_Slider";
 import axios from "axios/index";
+import Delay from "react-delay";
 
 import './styles.scss'
 import {cssClassName} from 'utils'
@@ -45,7 +46,7 @@ class SE_Home_Empowering extends React.Component {
                     <div className={cn('map')}>
                         <img
                             className={cn('map-img', {type: 'desktop'})}
-                            src="/img/v1/home/map-bg.png"
+                            src="/img/v1/home/map-bg-2.png"
                             alt="EMPOWERING THE UNBANKED"
                         />
                         <img
@@ -99,7 +100,7 @@ class SE_Home_Empowering extends React.Component {
                                 <img src="/img/done.svg"/>
                             </div>
                             <div className='anni-slide one'>16 countries <br/> operating</div>
-                            <div className='anni-slide two'>{formatUserNum(406635)} <br/>users</div>
+                            <div className='anni-slide two'>{formatUserNum(412047)} <br/>users</div>
                             <div className='anni-slide three'>Hybrid <br/>blockchain</div>
                         </div>
                     </div>
@@ -124,7 +125,9 @@ class SE_Home_Empowering extends React.Component {
                             <div className={cn('right')}>{this.state.hmq2usd}</div>
                         </div>
                         <div className={cn('slider')}>
-                            <M_Exchanges_Slider/>
+                            <Delay wait={2000}>
+                                <M_Exchanges_Slider/>
+                            </Delay>
                         </div>
                         <div className={cn('post')}>
                             You may visit one of the following external services independent <br/> from Humaniq in order

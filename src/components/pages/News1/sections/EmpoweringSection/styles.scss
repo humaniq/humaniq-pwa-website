@@ -533,8 +533,9 @@
       opacity: 0;
       animation-name: pulse;
       animation-duration: 6s;
-      animation-iteration-count: infinite;
-      animation-timing-function: steps(90);
+      //animation-iteration-count: infinite;
+      animation-iteration-count: 1;
+      animation-timing-function: steps(1);
       animation-fill-mode: both;
     }
     span:nth-child(2) {
