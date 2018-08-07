@@ -6,48 +6,27 @@
   max-width: 100%;
   margin: 0 auto;
   text-align: left;
-
+  box-shadow: -0px 0px 30px #ccc;
 
 
   &__submitted {
     display: block;
-    padding: 10px;
-
-    text-align: center;
+    padding: 0;
     margin: 0;
-
-    font-weight: 700;
-    font-size: 18px;
-
-    background: #fff;
+    font-size: 20px;
+    background: transparent;
     color: #000;
-
     min-height: 76px;
 
-    display: flex;
-    .hf {
-      box-sizing: border-box;
-      flex: 30%;
-      text-align: right;
-      margin-right: 10px;
-      @include media($mobile) {
-        br { display: none}
+    @include media($mobile) {
+      text-align: center;
+      .hf {
+        margin-bottom: 10px;
       }
-
-      .wrap {
-        position: absolute;
-        top:50%;
-        transform: translateY(-50%);
-
-      }
-
-    }
-    .hf-2 {
-      flex: 70%;
     }
 
-    .m-social-f {
-
+    .m-socials-f {
+      margin-left: -20px;
     }
 
     .m-social-links-f__link {

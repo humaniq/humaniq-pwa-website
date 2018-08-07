@@ -51,7 +51,7 @@ class O_SubscribeForm extends Component {
         {
             submited ?
             <div className={cn('submitted')}>
-                <div className='hf'><div className='wrap'>Great that we<br/> are friends now!</div></div>
+                <div className='hf'>Great that we are friends now!</div>
                 <div className='hf-2'><SocialLinks  mix={cn('social-links')} type="section"/></div>
             </div>
             : <form className={cn([mix])} onSubmit={handleSubmit}>
