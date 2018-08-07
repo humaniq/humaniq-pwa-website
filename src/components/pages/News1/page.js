@@ -65,6 +65,7 @@ const dark = ['mobile', 'situation', 'platform', 'opportunities', 'use cases', '
 
 const showingWidth = 1120
 
+
 class Home extends Component {
   state = {
     showIndex: this.props.showIndex || 0,
@@ -72,6 +73,7 @@ class Home extends Component {
     fastScroll: true,
     widthBig: __CLIENT__ && window.innerWidth >= showingWidth,
   }
+
 
   sectionsObj = {
     empowering: <EmpoweringSection mix={cn('section')} key="empowering" users_number={this.props.users_number}/>,
@@ -173,6 +175,7 @@ class Home extends Component {
   componentDidMount() {
     window.addEventListener('resize', this.getWidth)
     this.container.focus();
+
   }
 
   componentWillUnmount() {

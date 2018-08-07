@@ -4,8 +4,8 @@
 .tele-footer {
   $this: &;
   position: fixed;
-  bottom: 60px;
-  right: 60px;
+  bottom: 20px;
+  right: 20px;
   width: 375px;
   //height: 200px;
   border-radius: 10px;
@@ -25,6 +25,7 @@
     right:0;
     bottom: 0;
     width: 100%;
+    border-radius: 0;
   }
 
   &__is-hidden {

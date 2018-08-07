@@ -1,7 +1,6 @@
 import React from 'react'
 import axios from 'axios';
-import Intercom from "react-intercom";
-import TeleFooter from "../TeleFooter";
+import TeleFooter from "../TeleFooterSquare";
 
 class TeleFooterChecked extends React.Component {
   constructor(props) {
@@ -19,6 +18,21 @@ class TeleFooterChecked extends React.Component {
 
   handleScroll = (e) => {
     if(window.scrollY > 300) {
+      console.log("AAAAAAAAAAAAAAAAAAAAAAAA");
+      if(this.checkCompleted) {
+        this.setState({TelegaIsHidden: this.TelegaIsHidden,IntercomIsHidden:this.IntercomIsHidden});
+        if(!this.IntercomIsHidden){
+          window.Intercom("boot", { app_id: "y9l4iy41"});
+        }
+        this.checkCompleted = false;
+      }
+    }
+  }
+
+  handleWheel = (e) => {
+    console.log("AAAAAAAAAAAAAAAAAAAAAAAA");
+    if(e.deltaY > 300) {
+      console.log("AAAAAAAAAAAAAAAAAAAAAAAA");
       if(this.checkCompleted) {
         this.setState({TelegaIsHidden: this.TelegaIsHidden,IntercomIsHidden:this.IntercomIsHidden});
         if(!this.IntercomIsHidden){
@@ -50,10 +64,12 @@ class TeleFooterChecked extends React.Component {
               console.log(error);
             });
     window.addEventListener('scroll', this.handleScroll);
+    window.addEventListener('onwheel', this.handleWheel);
   }
 
   componentWillUnmount(){
     window.removeEventListener('scroll', this.handleScroll);
+    window.removeEventListener('onwheel', this.handleWheel);
   }
 
 //  window.Intercom("boot", { app_id: "y9l4iy41"});
@@ -62,8 +78,9 @@ class TeleFooterChecked extends React.Component {
 
   render() {
     return (
-        <div ref={(ref) => this.wrapper = ref} >
+        <div onWheel={this.handleWheel} ref={(ref) => this.wrapper = ref} >
             { this.state.TelegaIsHidden ? "" : <TeleFooter/> }
+            { this.props.offsetY ? <TeleFooter/> : "" }
         </div>
     );
   }
