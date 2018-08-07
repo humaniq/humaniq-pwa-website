@@ -86,6 +86,21 @@
     }
   }
 
+  .ccw-wrap {
+    min-height: 210px;
+  }
+  .coinmarketcap-currency-widget {
+    background: #fff;
+    border-radius: 10px;
+    margin-top: 20px;
+    color: #000;
+    max-width: 400px;
+    overflow: hidden;
+    @include media($mobile-xs) {
+      margin: 15px -10px 0 -10px;
+    }
+  }
+
   &__anni {
     display: block;
     position: absolute;
@@ -130,7 +145,7 @@
         animation: radiowaves 9s infinite;
         animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
         &.one {
-         // opacity: 1;
+          // opacity: 1;
           animation-delay: 3s;
         }
         &.two {
@@ -154,7 +169,6 @@
     }
 
   }
-
 
   @keyframes radiowaves {
     0% {
@@ -289,8 +303,6 @@
       display: none !important;
     }
 
-
-
     @include media($tablet) {
       flex: 100%;
       max-width: 100%;
@@ -317,7 +329,10 @@
   }
 
   &__slider {
-    min-height: 80px;
+    min-height: 150px;
+    @include media($tablet) {
+      min-height: 130px;
+    }
   }
 
   &__map {
