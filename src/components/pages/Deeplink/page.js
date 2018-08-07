@@ -11,8 +11,8 @@ class Deeplink extends Component {
     if(typeof(location)!=='undefined'&&typeof(location.search)!=='undefined'&&location.search!==''){
       var parsedQuery = queryString.parse(location.search);
 
-      if(typeof(parsedQuery)!=='undefined'&&parsedQuery!==null&&typeof(parsedQuery.redirect)!=='undefined'){
-        redirectURL = parsedQuery.redirect;
+      if(typeof(parsedQuery)!=='undefined'&&parsedQuery!==null&&typeof(parsedQuery.l)!=='undefined'){
+        redirectURL = parsedQuery.l;
       }
     }
 
