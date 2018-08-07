@@ -13,6 +13,13 @@ class TeleFooter extends React.Component {
     };
   }
 
+  setCookie = (cname, cvalue, exdays) => {
+    let d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    const expires = "expires="+ d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+  }
+
   toggleTelegramBar = e => {
     e.preventDefault();
     this.setState({isHidden: !this.state.isHidden});
@@ -28,7 +35,8 @@ class TeleFooter extends React.Component {
     if(window.innerWidth<750){
       window.Intercom("boot", {app_id: "y9l4iy41"})
     }
-  }
+    this.setCookie("telegaHidden", 1, 100);
+  };
 
   render() {
     return (
