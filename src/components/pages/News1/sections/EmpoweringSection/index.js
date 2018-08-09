@@ -92,6 +92,9 @@ class SE_Home_Empowering extends React.Component {
                         <p className={cn('text-subtitle')}>
                             Connecting 1.7 billion people
                         </p>
+                        <div className="ccw-wrap">
+                            <div className="coinmarketcap-currency-widget" data-currencyid="1669" data-base="USD"  data-secondary="BTC"></div>
+                        </div>
                     </div>
                     <div className={cn('anni')}>
                         <div className={'anni-title'}>1 year after tokensale</div>

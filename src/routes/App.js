@@ -10,6 +10,7 @@ import {fetchUserNumber} from 'store/entities/home/actions'
 
 
 
+
 class AppRoute extends Component {
 
   static prepareData({dispatch, getState}, query, params, location) {
