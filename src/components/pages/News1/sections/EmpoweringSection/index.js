@@ -104,7 +104,7 @@ class SE_Home_Empowering extends React.Component {
                                 <img src="/img/done.svg"/>
                             </div>
                             <div className='anni-slide one'>16 countries <br/> operating</div>
-                            <div className='anni-slide two'>{formatUserNum(412047)} <br/>users</div>
+                            <div className='anni-slide two'>{formatUserNum(413168)} <br/>users</div>
                             <div className='anni-slide three'>Hybrid <br/>blockchain</div>
                         </div>
                     </div>
