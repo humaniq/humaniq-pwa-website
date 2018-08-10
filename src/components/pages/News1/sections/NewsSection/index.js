@@ -6,7 +6,7 @@ import Slider from "react-slick";
 import './styles.scss'
 import {cssClassName} from 'utils'
 
-import articleList from "../../../../../../data/news"
+import {articleList} from "/data/news";
 
 const cn = cssClassName('SE_News1_News');
 
