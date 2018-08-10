@@ -104,7 +104,7 @@ const footerLinks = [
     links: [
       {name: 'Privacy', url: '/legal/general-privacy-policy'},
       {name: 'Security', url: '/legal/data-privacy-policy'},
-      {name: 'Policies', url: '/legal/humaniq-terms-of-use'},
+      {name: 'Policies', url: '/legal/user-terms-of-service'},
       {name: 'Howey Test', url: '/a-securities-law-framework-for-hmq.xlsx', externalLink: true}
 
     ]

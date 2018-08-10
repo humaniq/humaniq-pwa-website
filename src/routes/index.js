@@ -14,6 +14,7 @@ import Wiki from './Wiki'
 import Anniversary from './Anniversary'
 import careers from './Careers'
 import News1 from './News-1'
+import Deeplink from './Deeplink'
 
 const getRoutes = (store) => {
   return (
@@ -63,6 +64,9 @@ const getRoutes = (store) => {
         />
 
       </Route>
+          <Route path="/deeplink"
+                 component={Deeplink}
+          />
 
       <Route
         component={AppOld}

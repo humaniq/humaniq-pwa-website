@@ -44,13 +44,13 @@ export const advisers = [
       'An innovative entrepreneur and investor active in Biotech, Fintech, Blockchain and artificial intelligence, Dmitry is co-founder of the Deep Knowledge Ventures investment fund, focused on investments in AI and Deeptech. He adheres to the principle of impact investment in all his business activities, believing that business should make a social impact, and he supports the deployment of Blockchain for Good, which led to his decision to support Humaniq from its inception.',
     imgSrc: `${imgPath}/dmitry_kaminskiy.jpg`,
   },
-  {
-    name: 'Paolo Tasca',
-    position: 'Adviser',
-    bio:
-      'Paolo Tasca is a FinTech economist specialising in P2P Financial System. An advisor for different international organisations including the EU Parliament on blockchain technologies, Paolo recently joined the University College London as Director of the Centre for Blockchain Technologies (UCL CBT).  Prior to that, he has been a senior research economist at Deutsche Bundesbank working on digital currencies and P2P lending. Paolo is the co-author of the bestseller "FINTECH Book" and the co-editor of the book "Banking Beyond Banks and Money.',
-    imgSrc: `${imgPath}/paolo_tasca.jpg`,
-  },
+  //{
+  //  name: 'Paolo Tasca',
+  //  position: 'Adviser',
+  //  bio:
+  //    'Paolo Tasca is a FinTech economist specialising in P2P Financial System. An advisor for different international organisations including the EU Parliament on blockchain technologies, Paolo recently joined the University College London as Director of the Centre for Blockchain Technologies (UCL CBT).  Prior to that, he has been a senior research economist at Deutsche Bundesbank working on digital currencies and P2P lending. Paolo is the co-author of the bestseller "FINTECH Book" and the co-editor of the book "Banking Beyond Banks and Money.',
+  //  imgSrc: `${imgPath}/paolo_tasca.jpg`,
+  //},
   {
     name: 'Paul Mears',
     position: 'Adviser',
@@ -97,11 +97,17 @@ export const team = [
       'Kherel is a digital nomad. He joined Humaniq to experience and participate in the financial evolution, and observe changes to the better in the country where he currently resides - China.',
     imgSrc: `${imgPath}/kherel_kechil.jpg`,
   },
+  //{
+  //  name: 'Harry Bright',
+  //  position: 'CBDO',
+  //  bio: '',
+  //  imgSrc: `${imgPath}/harry_bright.jpg`,
+  //},
   {
-    name: 'Harry Bright',
-    position: 'CBDO',
+    name: 'Andrey Gidaspov',
+    position: 'Chief Global Development Officer',
     bio: '',
-    imgSrc: `${imgPath}/harry_bright.jpg`,
+    imgSrc: `${imgPath}/andrey_gidaspov.jpg`,
   },
   // {
   //   name: 'Segrey Blinov',

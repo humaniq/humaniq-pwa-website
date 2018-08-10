@@ -49,9 +49,9 @@ export default function(req, res){
         const initialState = JSON.stringify(store.getState())
 
         const content = ReactDOMServer.renderToString(
-              <Provider store={store}>
-                <RouterContext {...renderProps} />
-              </Provider>
+          <Provider store={store}>
+            <RouterContext {...renderProps} />
+          </Provider>
         )
 
         const helmet = Helmet.rewind()

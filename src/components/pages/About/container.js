@@ -106,12 +106,12 @@ const advisers = [
   //   position: 'Adviser',
   //   imgSrc: `${imgPath}/chami_akmeemana.png`,
   // },
-  {
-    name: 'Paolo Tasca',
-    position: 'Adviser',
-    bio: 'Paolo Tasca is a FinTech economist specialising in P2P Financial System. An advisor for different international organisations including the EU Parliament on blockchain technologies, Paolo recently joined the University College London as Director of the Centre for Blockchain Technologies (UCL CBT).  Prior to that, he has been a senior research economist at Deutsche Bundesbank working on digital currencies and P2P lending. Paolo is the co-author of the bestseller "FINTECH Book" and the co-editor of the book "Banking Beyond Banks and Money.',
-    imgSrc: `${imgPath}/paolo_tasca.png`,
-  },
+  //{
+  //  name: 'Paolo Tasca',
+  //  position: 'Adviser',
+  //  bio: 'Paolo Tasca is a FinTech economist specialising in P2P Financial System. An advisor for different international organisations including the EU Parliament on blockchain technologies, Paolo recently joined the University College London as Director of the Centre for Blockchain Technologies (UCL CBT).  Prior to that, he has been a senior research economist at Deutsche Bundesbank working on digital currencies and P2P lending. Paolo is the co-author of the bestseller "FINTECH Book" and the co-editor of the book "Banking Beyond Banks and Money.',
+  //  imgSrc: `${imgPath}/paolo_tasca.png`,
+  //},
 ]
 
 const team = [
@@ -163,11 +163,17 @@ const team = [
   //   bio: 'Bringing experience of management and economics, Serafima’s passions include art, music and Russian literature and the crypto-economy. She cannot stand inequality and is happy to have the opportunity to tackle it with Humaniq.',
   //   imgSrc: `${imgPath}/serafima_semkina.png`
   // },
+  //{
+  //  name: 'Harry Bright',
+  //  position: 'CBDO',
+  //  bio: 'Bringing experience of management and economics, Serafima’s passions include art, music and Russian literature and the crypto-economy. She cannot stand inequality and is happy to have the opportunity to tackle it with Humaniq.',
+  //  imgSrc: `${imgPath}/harry_bright.jpg`,
+  //},
   {
-    name: 'Harry Bright',
-    position: 'CBDO',
-    bio: 'Bringing experience of management and economics, Serafima’s passions include art, music and Russian literature and the crypto-economy. She cannot stand inequality and is happy to have the opportunity to tackle it with Humaniq.',
-    imgSrc: `${imgPath}/harry_bright.jpg`,
+    name: 'Andrey Gidaspov',
+    position: 'Chief Global Development Officer',
+    bio: '',
+    imgSrc: `${imgPath}/andrey_gidaspov.jpg`,
   },
   // {
   //   name: 'Pavel Kiselyov',
