@@ -22,7 +22,7 @@ class SE_Home_Empowering extends React.Component {
     super(props);
     this.state = {
       hmq2usd: "",
-      ccwHidden: ""
+      ccwHidden: " hidden"
     };
   }
 
