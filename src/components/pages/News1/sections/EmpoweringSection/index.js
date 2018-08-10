@@ -21,7 +21,8 @@ class SE_Home_Empowering extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      hmq2usd: ""
+      hmq2usd: "",
+      ccwHidden: " hidden"
     };
   }
 
@@ -31,7 +32,7 @@ class SE_Home_Empowering extends React.Component {
               console.log(res.data);
               let ratio = Math.ceil(100*res.data.data.quotes.USD.price)/100;
               console.log(ratio);
-              this.setState({hmq2usd: "1 HMQ = " + ratio + " USD"});
+              this.setState({hmq2usd: "1 HMQ = " + ratio + " USD", ccwHidden: res.data.data.quotes.USD.percent_change_24h>0 ? "" : " hidden" });
             })
             .catch(function (error) {
               console.log(error);
@@ -92,6 +93,9 @@ class SE_Home_Empowering extends React.Component {
                         <p className={cn('text-subtitle')}>
                             Connecting 1.7 billion people
                         </p>
+                        <div className={"ccw-wrap" + this.state.ccwHidden}>
+                            <div className="coinmarketcap-currency-widget" data-currencyid="1669" data-base="USD"  data-secondary="BTC"></div>
+                        </div>
                     </div>
                     <div className={cn('anni')}>
                         <div className={'anni-title'}>1 year after tokensale</div>
@@ -100,7 +104,7 @@ class SE_Home_Empowering extends React.Component {
                                 <img src="/img/done.svg"/>
                             </div>
                             <div className='anni-slide one'>16 countries <br/> operating</div>
-                            <div className='anni-slide two'>{formatUserNum(412047)} <br/>users</div>
+                            <div className='anni-slide two'>{formatUserNum(413168)} <br/>users</div>
                             <div className='anni-slide three'>Hybrid <br/>blockchain</div>
                         </div>
                     </div>

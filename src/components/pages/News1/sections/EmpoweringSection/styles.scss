@@ -88,6 +88,9 @@
 
   .ccw-wrap {
     min-height: 210px;
+    &.hidden {
+      display: none;
+    }
   }
   .coinmarketcap-currency-widget {
     background: #fff;
