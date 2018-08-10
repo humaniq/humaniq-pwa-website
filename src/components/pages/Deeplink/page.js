@@ -15,15 +15,12 @@ class Deeplink extends Component {
         var allowedPattern = /^(profile|request|send|chat|groupchat)[A-z0-9/]*/g;
 
 	if(allowedPattern.test(parsedQuery.l)){
-alert('OK');
           redirectURL = parsedQuery.l;
         }
       }
     }
 
     redirectURL = 'humaniq://humaniq.com/' + redirectURL;
-
-alert(redirectURL);
 
     $('#button-dl').attr({'action':downloadURL}); 
     $('#button-app').attr({'action':redirectURL}); 
