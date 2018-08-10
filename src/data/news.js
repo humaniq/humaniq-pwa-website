@@ -1,6 +1,6 @@
 export const articleList =  [
   {
-    img: "/img/news/hotbit.jpg",
+    img: "/img/news/hotbit-2.jpg",
     title: "HMQ Coin Is Added To A New Secure Cryptocurrency Platform HOTBIT",
     url: "https://www.coinspeaker.com/2018/08/07/hmq-coin-is-added-to-a-new-secure-cryptocurrency-platform-hotbit/",
     src: "Coinspeaker",
