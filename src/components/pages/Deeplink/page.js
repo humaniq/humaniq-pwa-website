@@ -12,11 +12,18 @@ class Deeplink extends Component {
       var parsedQuery = queryString.parse(location.search);
 
       if(typeof(parsedQuery)!=='undefined'&&parsedQuery!==null&&typeof(parsedQuery.l)!=='undefined'&&parsedQuery.l!==''){
-        redirectURL = parsedQuery.l;
+        var allowedPattern = /^(profile|request|send|chat|groupchat)[A-z0-9/]*/g;
+
+	if(allowedPattern.test(parsedQuery.l)){
+alert('OK');
+          redirectURL = parsedQuery.l;
+        }
       }
     }
 
     redirectURL = 'humaniq://humaniq.com/' + redirectURL;
+
+alert(redirectURL);
 
     $('#button-dl').attr({'action':downloadURL}); 
     $('#button-app').attr({'action':redirectURL}); 
