@@ -30,7 +30,7 @@ class SE_Home_Empowering extends React.Component {
     axios.get("https://api.coinmarketcap.com/v2/ticker/1669/")
             .then(res => {
               console.log(res.data);
-              let ratio = Math.ceil(100*res.data.data.quotes.USD.price)/100;
+              let ratio = Math.round(1000*res.data.data.quotes.USD.price)/1000;
               console.log(ratio);
               this.setState({hmq2usd: "1 HMQ = " + ratio + " USD", ccwHidden: res.data.data.quotes.USD.percent_change_24h>0 ? "" : " hidden" });
             })
