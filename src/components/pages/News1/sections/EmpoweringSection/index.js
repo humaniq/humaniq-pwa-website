@@ -2,6 +2,7 @@ import React from 'react'
 import A_Title from 'A_Title_H'
 import O_SimpleForm_H from '../../../../widgets/O_SimpleForm_H_3';
 import M_Exchanges_Slider from "../../../../widgets/M_Exchanges_Slider";
+import M_Countdown from "../../../../widgets/M_Countdown";
 import axios from "axios/index";
 import Delay from "react-delay";
 
@@ -140,6 +141,7 @@ class SE_Home_Empowering extends React.Component {
                         </div>
                     </div>
                 </div>
+                <M_Countdown />
                 <div className={cn('subscribe')}>
                     <h3>Join now to be the first to get Humaniq <br/> great news and upcoming offers!</h3>
                     <div className='frm'>
