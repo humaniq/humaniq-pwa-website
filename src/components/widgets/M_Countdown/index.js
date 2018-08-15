@@ -12,7 +12,7 @@ class M_Countdown extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      countTo: "2018-08-16T16:00:00+01:00",
+      countTo: "2018-08-16T16:00:00+03:00",
       isHidden: false,
       hours: 0,
       hoursS: true,
@@ -83,10 +83,8 @@ class M_Countdown extends React.Component {
     return (
             <div className={"countdown" + (this.state.isHidden ? " hidden":"")}>
                 <div className={"head"}>
-                    <h3>Humaniq started to burn tokens</h3>
-                    <div className={"text"}>We are happy to announce that Humaniq has completed<br/> the Token Burn of
-                        15 million HMQ
-                    </div>
+                    <h3>Humaniq launches a token burn campaign</h3>
+                    <div className={"text"}>Time left until the next Token Burn:</div>
                 </div>
                 <div className={"counter"}>
                     <div className="figures">
@@ -127,7 +125,7 @@ class M_Countdown extends React.Component {
                 </div>
                 <div className={"calendar"}>
                     <a className={"button"} target="_blank"
-                       href="http://www.google.com/calendar/event?action=TEMPLATE&text=Humaniq started to burn tokens&dates=20180816T160000Z/20180817T160000Z&details=We are happy to announce that Humaniq has completed the Token Burn of 15 million HMQ&location=&trp=false&sprop=&sprop=name:">
+                       href="http://www.google.com/calendar/event?action=TEMPLATE&text=Humaniq launches a token burn campaign&dates=20180816T130003Z/20180817T130003Z&details=Time left until the next Token Burn:&location=&trp=false&sprop=&sprop=name:">
                         <img src="/img/calendar.svg"/>
                         Add to calendar
                     </a>
