@@ -17,11 +17,11 @@ class M_Countdown extends React.Component {
       hours: 0,
       hoursS: true,
       days: 0,
-      daysS:true,
+      daysS: true,
       minutes: 0,
-      minutesS:true,
+      minutesS: true,
       seconds: 0,
-      secondsS:true,
+      secondsS: true,
     };
   }
 
@@ -31,16 +31,19 @@ class M_Countdown extends React.Component {
       hours: 0,
       hoursS: true,
       days: 0,
-      daysS:true,
+      daysS: true,
       minutes: 0,
-      minutesS:true,
+      minutesS: true,
       seconds: 0,
-      secondsS:true,
+      secondsS: true,
     };
 
     let seconds = moment.utc(this.state.countTo).diff(moment(), 'seconds');
 
-    if (seconds < 0) this.setState({isHidden:true});
+    if (seconds < 0){
+      this.setState({isHidden: true});
+      counts.isHidden = true;
+    }
 
     counts.days = Math.floor(seconds / (24 * 60 * 60));
     counts.daysS = (counts.days > 1);
@@ -51,25 +54,25 @@ class M_Countdown extends React.Component {
 
     seconds = seconds - 3600 * counts.hours;
     counts.minutes = Math.floor(seconds / 60);
-    counts.minutesS  = (counts.minutes > 1);
+    counts.minutesS = (counts.minutes > 1);
 
     counts.seconds = seconds - 60 * counts.minutes;
-    counts.secondsS  = (counts.seconds > 1);
+    counts.secondsS = (counts.seconds > 1);
 
-    counts.days = ((counts.days<10) ? "0":"") + counts.days;
-    counts.hours = ((counts.hours<10) ? "0":"") + counts.hours;
-    counts.minutes = ((counts.minutes<10) ? "0":"") + counts.minutes;
-    counts.seconds = ((counts.seconds<10) ? "0":"") + counts.seconds;
+    counts.days = ((counts.days < 10) ? "0" : "") + counts.days;
+    counts.hours = ((counts.hours < 10) ? "0" : "") + counts.hours;
+    counts.minutes = ((counts.minutes < 10) ? "0" : "") + counts.minutes;
+    counts.seconds = ((counts.seconds < 10) ? "0" : "") + counts.seconds;
 
-    this.setState( counts );
+    this.setState(counts);
   };
 
 
   componentDidMount() {
     this.timerID = setInterval(
-          () => this.setCountDown(),
-          1000
-      );
+            () => this.setCountDown(),
+            1000
+        );
   }
 
   componentWillUnmount() {
@@ -78,7 +81,7 @@ class M_Countdown extends React.Component {
 
   render() {
     return (
-            <div className={cn([this.mix])}>
+            <div className={"countdown" + (this.state.isHidden ? " hidden":"")}>
                 <div className={"head"}>
                     <h3>Humaniq started to burn tokens</h3>
                     <div className={"text"}>We are happy to announce that Humaniq has completed<br/> the Token Burn of
@@ -89,8 +92,8 @@ class M_Countdown extends React.Component {
                     <div className="figures">
                         <div className="days">{this.state.days}</div>
                         <div className="units day">day
-                            { this.state.daysS &&
-                                <div className="days-s">s</div>
+                            {this.state.daysS &&
+                            <div className="days-s">s</div>
                             }
                         </div>
                     </div>
@@ -98,7 +101,7 @@ class M_Countdown extends React.Component {
                     <div className="figures">
                         <div className="hours">{this.state.hours}</div>
                         <div className="units hour">hour
-                            { this.state.hoursS &&
+                            {this.state.hoursS &&
                             <div className="days-s">s</div>
                             }
                         </div>
@@ -107,7 +110,7 @@ class M_Countdown extends React.Component {
                     <div className="figures">
                         <div className="minutes">{this.state.minutes}</div>
                         <div className="units minute">minute
-                            { this.state.minutesS &&
+                            {this.state.minutesS &&
                             <div className="days-s">s</div>
                             }
                         </div>
@@ -116,19 +119,21 @@ class M_Countdown extends React.Component {
                     <div className="figures">
                         <div className="seconds">{this.state.seconds}</div>
                         <div className="units second">second
-                            { this.state.secondsS &&
+                            {this.state.secondsS &&
                             <div className="days-s">s</div>
                             }
                         </div>
                     </div>
                 </div>
                 <div className={"calendar"}>
-                    <a className={"button"} target="_blank" href="http://www.google.com/calendar/event?action=TEMPLATE&text=Humaniq started to burn tokens&dates=20180816T160000Z/20180817T160000Z&details=We are happy to announce that Humaniq has completed the Token Burn of 15 million HMQ&location=&trp=false&sprop=&sprop=name:">
+                    <a className={"button"} target="_blank"
+                       href="http://www.google.com/calendar/event?action=TEMPLATE&text=Humaniq started to burn tokens&dates=20180816T160000Z/20180817T160000Z&details=We are happy to announce that Humaniq has completed the Token Burn of 15 million HMQ&location=&trp=false&sprop=&sprop=name:">
                         <img src="/img/calendar.svg"/>
                         Add to calendar
                     </a>
                 </div>
-            </div>)
+            </div>
+    )
   }
 }
 
