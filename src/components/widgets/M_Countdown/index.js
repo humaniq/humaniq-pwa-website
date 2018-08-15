@@ -125,7 +125,7 @@ class M_Countdown extends React.Component {
                 </div>
                 <div className={"calendar"}>
                     <a className={"button"} target="_blank"
-                       href="http://www.google.com/calendar/event?action=TEMPLATE&text=Humaniq launches a token burn campaign&dates=20180816T130003Z/20180817T130003Z&details=Time left until the next Token Burn:&location=&trp=false&sprop=&sprop=name:">
+                       href="http://www.google.com/calendar/event?action=TEMPLATE&text=Humaniq Token Burn&dates=20180816T130003Z/20180817T130003Z&details=The next stage of Humaniq Token Burn&location=&trp=false&sprop=&sprop=name:">
                         <img src="/img/calendar.svg"/>
                         Add to calendar
                     </a>
