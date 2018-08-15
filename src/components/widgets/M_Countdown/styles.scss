@@ -12,6 +12,10 @@
   display: flex;
   font-family: Roboto, sans-serif;
 
+  &.hidden {
+    display: none;
+  }
+
   .head {
     flex: 40%;
     h3 {
@@ -110,6 +114,7 @@
   }
   @media(max-width: 700px){
     flex-wrap: wrap;
+    padding: 50px 28px;
     .counter{
       flex: 100%;
       justify-content: center;
@@ -119,6 +124,9 @@
     .calendar {
       flex: 100%;
       text-align: center;
+      .button {
+        display: block;
+      }
     }
   }
 
