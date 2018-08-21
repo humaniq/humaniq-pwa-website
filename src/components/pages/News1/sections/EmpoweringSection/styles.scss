@@ -104,6 +104,11 @@
     }
   }
 
+  .coinswitch-widget {
+    width: 100%;
+    display: none;
+  }
+
   &__anni {
     display: block;
     position: absolute;
@@ -295,12 +300,36 @@
     flex-direction: column;
     justify-content: start;
     //    align-items: center;
-    background-color: #67a2f5;
+    background: #1b58e7 url('/img/img_flame.jpg') bottom left no-repeat;
+    background-size: cover;
 
     flex: 0 0 50%;
     max-width: 50%;
 
     min-height: 60vh;
+
+    .mmark-wrap {
+      display: block;
+      margin: -15px 0 0 0;
+    }
+    .mmark {
+      display: inline-block;
+      margin: 0 0 20px 0;
+
+      height:18px;
+      border-radius: 10px;
+      background-color: #fff;
+
+      padding:5px 12px;
+      color: #2661ea;
+      font-size: 10px;
+      line-height: 1em;
+      font-family: 'Roboto', sans-serif;
+      font-weight: 400;
+      text-transform: uppercase;
+    }
+
+
 
     button {
       display: none !important;

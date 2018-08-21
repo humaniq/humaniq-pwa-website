@@ -7,6 +7,12 @@ import moment from "moment";
 
 const cn = cssClassName('Countdown');
 
+const handleLinkClick = () => {
+  if (window.ga) window.ga('send', 'event', 'other', 'add-to-calendar');
+  if (window.fbq) window.fbq('trackCustom', 'addToCalendar');
+};
+
+
 
 class M_Countdown extends React.Component {
   constructor(props) {
@@ -124,7 +130,7 @@ class M_Countdown extends React.Component {
                     </div>
                 </div>
                 <div className={"calendar"}>
-                    <a className={"button"} target="_blank"
+                    <a className={"button"} target="_blank" onClick={handleLinkClick}
                        href="http://www.google.com/calendar/event?action=TEMPLATE&text=Humaniq Token Burn&dates=20180816T130003Z/20180817T130003Z&details=The next stage of Humaniq Token Burn&location=&trp=false&sprop=&sprop=name:">
                         <img src="/img/calendar.svg"/>
                         Add to calendar
