@@ -15,6 +15,7 @@ import QuotesSection from './sections/QuotesSection'
 import WhatMakesSection from './sections/WhatMakesSection'
 import SafetySection from './sections/SafetySection'
 import OpportunitiesSection from './sections/OpportunitiesSection'
+import Partners from './sections/Partners'
 import GrowingSection from './sections/GrowingSection'
 import UseCasesSection from './sections/UseCasesSection'
 import GlobalChallengeSection from './sections/GlobalChallengeSection'
@@ -32,6 +33,7 @@ const serverNames = [
   'platform',
   'simplicity',
   'opportunities',
+  'partners',
   'userbase',
   'use cases',
   'challenge',
@@ -49,6 +51,7 @@ const clientNames = [
   'platform',
   'simplicity',
   'opportunities',
+  'partners',
   'userbase',
   'use cases',
   'challenge',
@@ -61,7 +64,7 @@ const clientNames = [
 
 const sectionsNames = __CLIENT__ ? clientNames : serverNames
 
-const dark = ['mobile', 'situation', 'platform', 'opportunities', 'use cases', 'expedition', 'team']
+const dark = ['mobile', 'situation', 'platform', 'opportunities', 'partners', 'use cases', 'expedition', 'team']
 
 const showingWidth = 1120
 
@@ -84,6 +87,7 @@ class Home extends Component {
     platform: <WhatMakesSection mix={cn('section')} key="platform"/>,
     simplicity: <SafetySection mix={cn('section')} key="simplicity"/>,
     opportunities: <OpportunitiesSection mix={cn('section')} key="opportunities"/>,
+    partners: <Partners mix={cn('section')} key="partners"/>,
     userbase: <GrowingSection mix={cn('section')} key="userbase"/>,
     'use cases': <UseCasesSection mix={cn('section')} key="usecases"/>,
     challenge: <GlobalChallengeSection mix={cn('section')} key="challenge"/>,

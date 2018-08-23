@@ -44,7 +44,7 @@ class M_Exchanges_Slider extends React.Component {
       autoplay: true,
       autoplaySpeed: 0,
       cssEase: 'linear',
-      slidesToShow: 3,
+      slidesToShow: 6,
       slidesToScroll: 1,
       infinite: true,
       initialSlide: 1,
@@ -65,13 +65,13 @@ class M_Exchanges_Slider extends React.Component {
         {
           breakpoint: 1024,
           settings: {
-            slidesToShow: 3
+            slidesToShow: 4
           }
         },
         {
           breakpoint: 600,
           settings: {
-            slidesToShow: 2
+            slidesToShow: 3
           }
         },
         {

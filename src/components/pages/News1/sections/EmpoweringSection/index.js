@@ -2,9 +2,12 @@ import React from 'react'
 import A_Title from 'A_Title_H'
 import O_SimpleForm_H from '../../../../widgets/O_SimpleForm_H_3';
 import M_Exchanges_Slider from "../../../../widgets/M_Exchanges_Slider";
+import Slider from "react-slick";
 //import M_Countdown from "../../../../widgets/M_Countdown";
 import axios from "axios/index";
 import Delay from "react-delay";
+
+import {mainList} from "/data/news";
 
 import './styles.scss'
 import {cssClassName} from 'utils'
@@ -12,36 +15,116 @@ import {cssClassName} from 'utils'
 
 const cn = cssClassName('SE_News1_Empowering')
 
+const handleLinkClick = (name) => {
+  if (window.ga) window.ga('send', 'event', 'other', 'event-click-' + name);
+};
+
 const formatUserNum = (users) => {
   let usersD = users.toString();
-  usersD = usersD.slice(0,usersD.length-3) + "  " + usersD.slice(usersD.length-3);
+  usersD = usersD.slice(0, usersD.length - 3) + "  " + usersD.slice(usersD.length - 3);
   return usersD
 }
+
+function createMarkup(input) {
+  return {__html: input};
+}
+
+const _createLinks = (links) => (
+    links.map(({title, more, img, button, url, uid }, index) => {
+      var divStyle = {
+        backgroundImage: 'url(' + img + ')',
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'cover'
+      };
+      console.log(divStyle);
+      return (
+                <div className='item' key={`mainEvent-${index + 1}`}>
+                    <div className={'wrap'}  style={divStyle} >
+                        <h1 dangerouslySetInnerHTML={createMarkup(title)}/>
+                        <div className='more'  dangerouslySetInnerHTML={createMarkup(more)}/>
+                        { button &&
+                            <div>
+                                <a href={url} className='button' onClick={() => {handleLinkClick(uid)}} target='_blank'>{button}</a>
+                            </div>
+                        }
+                    </div>
+                </div>)
+
+    }
+    )
+);
+
 
 class SE_Home_Empowering extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       hmq2usd: "",
-      ccwHidden: " hidden"
+      ccwShow: false
     };
   }
 
+  createDots = (list) => {
+    return list.map(({title, more, img}, index) => {
+      return (
+                <i>
+                    {this.state.activeSlide == index && <div className="pie-wrap">
+                        <div className="slice1 slice-wrap"></div>
+                        <div className="slice2 slice-wrap"></div>
+                    </div>
+                    }
+                    {this.state.activeSlide != index && <div className="pie-wrap full">
+                    </div>
+                    }
+                </i>
+      )
+    })
+  }
+
+
   componentDidMount() {
     axios.get("https://api.coinmarketcap.com/v2/ticker/1669/")
-          .then(res => {
-            console.log(res.data);
-            let ratio = Math.round(1000*res.data.data.quotes.USD.price)/1000;
-            console.log(ratio);
-            this.setState({hmq2usd: "1 HMQ = " + ratio + " USD", ccwHidden: res.data.data.quotes.USD.percent_change_24h>0 ? "" : " hidden" });
-          })
-          .catch(function (error) {
-            console.log(error);
-          });
+            .then(res => {
+              console.log(res.data);
+              let ratio = Math.round(1000 * res.data.data.quotes.USD.price) / 1000;
+              console.log(ratio);
+              this.setState({
+                hmq2usd: "1 HMQ = " + ratio + " USD",
+                ccwShow: res.data.data.quotes.USD.percent_change_24h > 0,
+                ccw: res.data.data.quotes.USD.percent_change_24h
+              });
+            })
+            .catch(function (error) {
+              console.log(error);
+            });
   }
 
 
   render() {
+    var settings = {
+      loop: true,
+      speed: 700,
+      autoplay: true,
+      autoplaySpeed: 5350,
+      cssEase: 'ease-in-out',
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      infinite: true,
+      initialSlide: 0,
+      arrows: false,
+          //dots: true,
+      pauseOnFocus: false,
+      pauseOnHover: false,
+      pauseOnDotsHover: false,
+      mobileFirst: true,
+      swipe: true,
+      swipeToSlide: false,
+      touchMove: true,
+      beforeChange: (current, next) => this.setState({ activeSlide: next }),
+    };
+
+
+
     return (
             <section className={cn([this.mix])}>
                 <div className={cn('left-side')}>
@@ -94,9 +177,6 @@ class SE_Home_Empowering extends React.Component {
                         <p className={cn('text-subtitle')}>
                             Connecting 1.7 billion people
                         </p>
-                        <div className={"ccw-wrap" + this.state.ccwHidden}>
-                            <div className="coinmarketcap-currency-widget" data-currencyid="1669" data-base="USD"  data-secondary="BTC"></div>
-                        </div>
                     </div>
                     <div className={cn('anni')}>
                         <div className={'anni-title'}>1 year after tokensale</div>
@@ -115,28 +195,20 @@ class SE_Home_Empowering extends React.Component {
 
 
                 <div className={cn('right-side')}>
-                    <div className={cn('text')}>
-                        <A_Title type="hero" mix={cn('text-title')} theme="bright">
-                            <div className='mmark-wrap'><div className={'mmark'}>New partnership</div></div>
-                            Humaniq and <br/>Jamii Africa Insurance <br/>Company Became <br/>Partners
-                        </A_Title>
-                        <p className={cn('text-subtitle')}>
-                        </p>
-                    </div>
-                    <div className={cn('slider-wrap')}>
-                        <div className={cn('pre')}>
-                            <div className={cn('left')}>Listed On</div>
-                            <div className={cn('right')}>{this.state.hmq2usd}</div>
+                        <Slider {...settings}>
+                            {_createLinks(mainList)}
+                        </Slider>
+
+                    <div className={"overlay"}>
+                        <div className={'pre'}>
+                            <b>TODAY</b><br/>
+                            <i>{this.state.hmq2usd}</i>
+                            {this.state.ccwShow &&
+                            <div className='mmark'><img src="/img/ccw-arrow.svg"/>{this.state.ccw}%</div>
+                            }
                         </div>
-                        <div className={cn('slider')}>
-                            <Delay wait={2000}>
-                                <M_Exchanges_Slider/>
-                            </Delay>
-                        </div>
-                        <div className={cn('post')}>
-                            You may visit one of the following external services independent <br/> from Humaniq in order
-                            to purchase
-                            HMQ
+                        <div className={"dots"}>
+                            {this.createDots(mainList)}
                         </div>
                     </div>
                 </div>
@@ -147,8 +219,20 @@ class SE_Home_Empowering extends React.Component {
                         <O_SimpleForm_H formType='subscribe'/>
                     </div>
                 </div>
-                <div className="coinswitch-widget">
 
+                <div className={cn('slider-wrap')}>
+                    <div className='pre'>
+                        <A_Title type={'hero'} theme={'bright'}>HMQ token is a fuel of the platform</A_Title>
+                        Visit one of the following external services independent from Humaniq in order to purchase HMQ
+                    </div>
+                    <div className={cn('slider')}>
+                        <Delay wait={2000}>
+                            <M_Exchanges_Slider/>
+                        </Delay>
+                    </div>
+                </div>
+
+                <div className="coinswitch-widget">
                 </div>
 
             </section>
@@ -159,5 +243,5 @@ class SE_Home_Empowering extends React.Component {
 export default SE_Home_Empowering
 
 SE_Home_Empowering.propTypes = {
-  //mix: T.string,
+    //mix: T.string,
 }
