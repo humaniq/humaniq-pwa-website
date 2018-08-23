@@ -23,6 +23,7 @@ const _createLinks = (links, startIndex) => (
       if (index>=startIndex) {
         return (
                 <div className='item' key={`newsLink-${index + 1}`}>
+                    {url &&
                     <a className={'link'} href={url} title={title} target="_blank"
                        onClick={() => {
                          handleLinkClick(index)
@@ -31,6 +32,14 @@ const _createLinks = (links, startIndex) => (
                         <div className='src'>{src}</div>
                         {title}
                     </a>
+                    }
+                    {!url &&
+                    <div className={'link'} title={title}>
+                        <img src={img}/>
+                        <div className='src'>{src}</div>
+                        {title}
+                    </div>
+                    }
                     <div className='src'>{date}</div>
                 </div>)
       }
