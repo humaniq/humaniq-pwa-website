@@ -779,6 +779,7 @@
   border: 6px solid #fff;
   &.full {
     background: #fff;
+    cursor: pointer;
   }
 
   .slice-wrap:before {
@@ -793,12 +794,13 @@
     border: 5px solid #fff;
     box-sizing: border-box;
     clip: rect(0px, 15px, 30px, 0px);
+    clip-path: rect(0px, 15px, 30px, 0px);
     background-color: #fff;
-    -webkit-transform: rotate(10deg);
+/*    -webkit-transform: rotate(10deg);
     -moz-transform: rotate(10deg);
     -o-transform: rotate(10deg);
     -ms-transform: rotate(10deg);
-    transform: rotate(10deg);
+    transform: rotate(10deg);*/
   }
   .slice-wrap {
     box-sizing: border-box;
@@ -810,6 +812,7 @@
     margin: 0;
     border-radius: 15px;
     clip: rect(0px, 30px, 30px, 15px);
+    clip-path: rect(0px, 30px, 30px, 15px);
   }
   .slice2.slice-wrap {
     -webkit-transform: rotate(180deg);
@@ -827,11 +830,12 @@
 
   }
   .slice2:before {
-    -webkit-transform: rotate(0.00001deg); /* webkit seems buggy with zero*/
+    //background: #ff0000;
+/*    -webkit-transform: rotate(0.00001deg);
     -moz-transform: rotate(0.00001deg);
     -o-transform: rotate(0.00001deg);
     -ms-transform: rotate(0.00001deg);
-    transform: rotate(0.00001deg);
+    transform: rotate(0.00001deg);*/
     -webkit-animation: 2.5s spin2 linear 2.5s forwards;
     -moz-animation: 2.5s spin2 linear 2.5s forwards;
     -ms-animation: 2.5s spin2 linear 2.5s forwards;

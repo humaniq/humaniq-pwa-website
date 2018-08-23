@@ -36,7 +36,6 @@ const _createLinks = (links) => (
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover'
       };
-      console.log(divStyle);
       return (
                 <div className='item' key={`mainEvent-${index + 1}`}>
                     <div className={'wrap'}  style={divStyle} >
@@ -64,17 +63,24 @@ class SE_Home_Empowering extends React.Component {
     };
   }
 
+  gotoSlide = (index) => {
+    this.slider.slickGoTo(index);
+    console.log(this.slider);
+  }
+
   createDots = (list) => {
     return list.map(({title, more, img}, index) => {
       return (
                 <i>
-                    {this.state.activeSlide == index && <div className="pie-wrap">
-                        <div className="slice1 slice-wrap"></div>
-                        <div className="slice2 slice-wrap"></div>
-                    </div>
+                    {this.state.activeSlide == index &&
+                        <div className="pie-wrap">
+                            <div className="slice1 slice-wrap"></div>
+                            <div className="slice2 slice-wrap"></div>
+                        </div>
                     }
-                    {this.state.activeSlide != index && <div className="pie-wrap full">
-                    </div>
+                    {this.state.activeSlide != index &&
+                        <div className="pie-wrap full"  onClick={ ()=> {this.gotoSlide(index)} }>
+                        </div>
                     }
                 </i>
       )
@@ -177,6 +183,15 @@ class SE_Home_Empowering extends React.Component {
                         <p className={cn('text-subtitle')}>
                             Connecting 1.7 billion people
                         </p>
+                        {this.state.ccwShow &&
+                        <div className='ccw-wrap'>
+                            <script type="text/javascript"
+                                    src="https://files.coinmarketcap.com/static/widget/currency.js"></script>
+                            <div className="coinmarketcap-currency-widget" data-currencyid="1669" data-base="USD"
+                                 data-secondary="" data-ticker="true" data-rank="true" data-marketcap="true"
+                                 data-volume="true" data-stats="USD" data-statsticker="false"></div>
+                        </div>
+                        }
                     </div>
                     <div className={cn('anni')}>
                         <div className={'anni-title'}>1 year after tokensale</div>
@@ -195,7 +210,7 @@ class SE_Home_Empowering extends React.Component {
 
 
                 <div className={cn('right-side')}>
-                        <Slider {...settings}>
+                        <Slider  ref={slider => (this.slider = slider)} {...settings}>
                             {_createLinks(mainList)}
                         </Slider>
 

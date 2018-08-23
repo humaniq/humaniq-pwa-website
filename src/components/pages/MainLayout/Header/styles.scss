@@ -89,10 +89,16 @@
       letter-spacing: 0.2em;
       color: #FFF;
       height: 28px;
-      background: #0D4CDF;
+      background: #2661ea;
       border-radius: 24px;
       padding: 8px 12px;
-      margin-top: 10px;
+      margin: 10px 40px 0 1px;
+      transition: background-color, border, .3s linear;
+
+      &:hover {
+        background: #1400FF;
+        color: #fff;
+      }
     }
 
     @include media($desktop-xl) {

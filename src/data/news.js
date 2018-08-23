@@ -2,8 +2,8 @@ export const articleList =  [
   {
     img: "/img/news/humaniq_jamii.jpg",
     title: "Humaniq and Jamii Africa Insurance Company Became Partners",
-    url: "",
-    src: "Humaniq blog",
+    url: "https://ethereumworldnews.com/humaniq-announces-partnership-with-jamii-africa-insurance-company/",
+    src: "ethereum world news",
     date: "August 23, 2018"
   },
   {
@@ -63,8 +63,9 @@ export const mainList =  [
   {
     img: "/img/news/img_flame.jpg",
     title: "Humaniq Announces <br/>Partnership with <br/>Jamii Africa Insurance <br/>Company",
-    url: "",
-    more2: "<a href='' class='button' target='_blank'>Learn more</a>",
+    url: "https://ethereumworldnews.com/humaniq-announces-partnership-with-jamii-africa-insurance-company/",
+    button: "Learn more",
+    uid: "jamii",
     date: ""
   },
   {
