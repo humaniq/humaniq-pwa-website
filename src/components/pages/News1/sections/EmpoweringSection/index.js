@@ -2,6 +2,7 @@ import React from 'react'
 import A_Title from 'A_Title_H'
 import O_SimpleForm_H from '../../../../widgets/O_SimpleForm_H_3';
 import M_Exchanges_Slider from "../../../../widgets/M_Exchanges_Slider";
+//import M_Countdown from "../../../../widgets/M_Countdown";
 import axios from "axios/index";
 import Delay from "react-delay";
 
@@ -28,15 +29,15 @@ class SE_Home_Empowering extends React.Component {
 
   componentDidMount() {
     axios.get("https://api.coinmarketcap.com/v2/ticker/1669/")
-            .then(res => {
-              console.log(res.data);
-              let ratio = Math.ceil(100*res.data.data.quotes.USD.price)/100;
-              console.log(ratio);
-              this.setState({hmq2usd: "1 HMQ = " + ratio + " USD", ccwHidden: res.data.data.quotes.USD.percent_change_24h>0 ? "" : " hidden" });
-            })
-            .catch(function (error) {
-              console.log(error);
-            });
+          .then(res => {
+            console.log(res.data);
+            let ratio = Math.round(1000*res.data.data.quotes.USD.price)/1000;
+            console.log(ratio);
+            this.setState({hmq2usd: "1 HMQ = " + ratio + " USD", ccwHidden: res.data.data.quotes.USD.percent_change_24h>0 ? "" : " hidden" });
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
   }
 
 
@@ -103,7 +104,7 @@ class SE_Home_Empowering extends React.Component {
                             <div className={'anni-mark'}>
                                 <img src="/img/done.svg"/>
                             </div>
-                            <div className='anni-slide one'>16 countries <br/> operating</div>
+                            <div className='anni-slide one'>21 countries <br/> operating</div>
                             <div className='anni-slide two'>{formatUserNum(413168)} <br/>users</div>
                             <div className='anni-slide three'>Hybrid <br/>blockchain</div>
                         </div>
@@ -116,11 +117,10 @@ class SE_Home_Empowering extends React.Component {
                 <div className={cn('right-side')}>
                     <div className={cn('text')}>
                         <A_Title type="hero" mix={cn('text-title')} theme="bright">
-                            HMQ token is a fuel <br/>of the platform
+                            <div className='mmark-wrap'><div className={'mmark'}>New partnership</div></div>
+                            Humaniq and <br/>Jamii Africa Insurance <br/>Company Became <br/>Partners
                         </A_Title>
                         <p className={cn('text-subtitle')}>
-                            Visit one of the following external services <br/>independent from Humaniq in order <br
-                            className="d"/> to purchase HMQ
                         </p>
                     </div>
                     <div className={cn('slider-wrap')}>
@@ -140,12 +140,17 @@ class SE_Home_Empowering extends React.Component {
                         </div>
                     </div>
                 </div>
+
                 <div className={cn('subscribe')}>
                     <h3>Join now to be the first to get Humaniq <br/> great news and upcoming offers!</h3>
                     <div className='frm'>
                         <O_SimpleForm_H formType='subscribe'/>
                     </div>
                 </div>
+                <div className="coinswitch-widget">
+
+                </div>
+
             </section>
     )
   }

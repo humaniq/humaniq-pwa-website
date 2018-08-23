@@ -8,7 +8,7 @@ const cn = cssClassName('News1')
 import {isMobile} from 'utils/isMobile'
 import O_Footer_H from 'O_Footer_H'
 import EmpoweringSection from './sections/EmpoweringSection'
-import NewsSection from './sections/NewsSection'
+import NewsSection from './sections/NewsSection-2'
 import FirstMobileSection from './sections/FirstMobileSection'
 import UnbankedStatSection from './sections/UnbankedStatSection'
 import QuotesSection from './sections/QuotesSection'
