@@ -37,7 +37,7 @@ const SE_MainLayoutHeader_H = ({ mix, theme, mobileMenuIsActive, toggleMobileMen
         <li className={cn('menu-link')}>
             <Link to="/contact-us">Contact us</Link>
         </li>
-        <Link  className={cn('menu-link')+" jointele"} to="https://t.me/HMQtrader" target={"_blank"}>JOIN OUR TELEGRAM</Link>
+        <Link  className={cn('menu-link')+" jointele"} to="https://t.me/HumaniqNews" target={"_blank"}>JOIN OUR TELEGRAM</Link>
     </ul>
 
     <A_BurgerBtn_H mix={cn('menu-btn')} onClick={toggleMobileMenu} isActive={mobileMenuIsActive} />

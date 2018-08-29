@@ -1,5 +1,29 @@
 export const articleList =  [
   {
+    img: "/img/news/news-7.jpg",
+    title: "New option to buy HMQ tokens is available now!",
+    url: "",
+    src: "Humaniq blog",
+    date: "August 30, 2018"
+  },
+  {
+    img: "/img/news/news-6.jpg",
+    title: "The Research That Drives the Humaniq App",
+    url: "https://blog.humaniq.co/getting-into-african-users-minds-the-research-that-drives-the-humaniq-app-42e53dc56212",
+    src: "Humaniq",
+    date: "August 30, 2018"
+  },
+  {
+    img: "/img/news/news-5.jpg",
+    title: "New Humaniq App Location: Equatorial Guinea",
+    url: "",
+    src: "dka.global",
+    date: "August 30, 2018"
+  },
+
+
+
+  {
     img: "/img/news/humaniq_jamii.jpg",
     title: "Humaniq and Jamii Africa Insurance Company Became Partners",
     url: "https://ethereumworldnews.com/humaniq-announces-partnership-with-jamii-africa-insurance-company/",
@@ -61,27 +85,29 @@ export const articleList =  [
 
 export const mainList =  [
   {
-    img: "/img/news/img_flame.jpg",
-    title: "Humaniq Announces <br/>Partnership with <br/>Jamii Africa Insurance <br/>Company",
-    url: "https://ethereumworldnews.com/humaniq-announces-partnership-with-jamii-africa-insurance-company/",
-    button: "Learn more",
-    uid: "jamii",
+    img: "/img/news/ev-3.jpg",
+    title: "New option to buy HMQ <br/>tokens is available now!",
+    url: "#xchange",
+    more: "Now you can buy HMQ tokens instantly and directly via our new widget provided by Coinswitch paying for them by any of 300 crypto coins supported within the widget.",
+    button: "Buy now",
+    uid: "buynow",
+    isInt: true,
     date: ""
   },
   {
-    img: "/img/news/ev2.png",
-    title: "Humaniq launched Business Chats feature",
-    url: "https://play.google.com/store/apps/details?id=com.humaniq.lite",
-    more: "With Business Chats, users are able to access a new marketplace to buy and sell real life products with HMQ, all done securely with the blockchain-based Humaniq App. All existing offers are available on a single page, providing visibility and making it easy to conduct successful deals.",
-    button: "Download app",
-    uid: "jamii"
+    img: "/img/news/ev-4.jpg",
+    title: "The Research That Drives the Humaniq App",
+    url: "https://blog.humaniq.co/getting-into-african-users-minds-the-research-that-drives-the-humaniq-app-42e53dc56212",
+    more: "Humaniq presented the financial behavior research among individuals with no financial inclusion in Africa, carried out together with International Methodological Association specialists.",
+    button: "Learn more",
+    uid: "research"
   },
   {
-    img: "/img/news/ev1.png",
-    title: "Humaniq named as one of the “Leading Companies” in the “FinTech for Social Good” report",
-    url: "https://www.dka.global/fintech-for-social-good",
-    more: "The report explored the potential practical applications of FinTech in developing regions.",
-    button: "Learn more",
-    uid: "fintech"
+    img: "/img/news/ev-5.jpg",
+    title: "New Humaniq App Location: Equatorial Guinea",
+    url: "",
+    more: "The Humaniq Mobile App with e-wallet, secure chat, and biometrical identification features is now available in 21 African countries.",
+    button2: "Learn more",
+    uid: "guinea"
   }
 ];

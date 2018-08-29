@@ -6,6 +6,7 @@ import Slider from "react-slick";
 //import M_Countdown from "../../../../widgets/M_Countdown";
 import axios from "axios/index";
 import Delay from "react-delay";
+import ScrollableAnchor from 'react-scrollable-anchor'
 
 import {mainList} from "/data/news";
 
@@ -30,12 +31,14 @@ function createMarkup(input) {
 }
 
 const _createLinks = (links) => (
-    links.map(({title, more, img, button, url, uid }, index) => {
+    links.map(({title, more, img, button, url, uid, isInt }, index) => {
       var divStyle = {
         backgroundImage: 'url(' + img + ')',
         backgroundRepeat: 'no-repeat',
+        backgroundPosition: 'top center',
         backgroundSize: 'cover'
       };
+      isInt = isInt ? '':'_blank';
       return (
                 <div className='item' key={`mainEvent-${index + 1}`}>
                     <div className={'wrap'}  style={divStyle} >
@@ -43,7 +46,7 @@ const _createLinks = (links) => (
                         <div className='more'  dangerouslySetInnerHTML={createMarkup(more)}/>
                         { button &&
                             <div>
-                                <a href={url} className='button' onClick={() => {handleLinkClick(uid)}} target='_blank'>{button}</a>
+                                <a href={url} className='button' onClick={() => {handleLinkClick(uid)}} target={isInt}>{button}</a>
                             </div>
                         }
                     </div>
@@ -129,6 +132,7 @@ class SE_Home_Empowering extends React.Component {
       beforeChange: (current, next) => this.setState({ activeSlide: next }),
     };
 
+    const iframeResizerOptions = { checkOrigin: false };
 
 
     return (
@@ -235,19 +239,26 @@ class SE_Home_Empowering extends React.Component {
                     </div>
                 </div>
 
+                <ScrollableAnchor id={'xchange'}>
+                    <div className="coinswitch-widget">
+                        <iframe width="100%" height="400" src="https://coinswitch.co/widget?widget_id=fc72a10e&from=btc&to=hmq&amount=0.01" frameBorder={0} order="0" scrolling="no">Can't load widget</iframe>
+                    </div>
+                </ScrollableAnchor>
+
+
                 <div className={cn('slider-wrap')}>
-                    <div className='pre'>
-                        <A_Title type={'hero'} theme={'bright'}>HMQ token is a fuel of the platform</A_Title>
-                        Visit one of the following external services independent from Humaniq in order to purchase HMQ
+                    <div className='w'>
+                        <div className='pre'>
+                            <A_Title type={'hero'} theme={'bright'}>HMQ token is a fuel of the platform</A_Title>
+                            Visit one of the following external services independent from Humaniq in order to purchase HMQ
+                        </div>
+                        <div className={'b'}><a className='button' href={'https://bittrex.com/Market/Index?MarketName=BTC-HMQ'} target={'_blank'}>Trade now</a></div>
                     </div>
                     <div className={cn('slider')}>
                         <Delay wait={2000}>
                             <M_Exchanges_Slider/>
                         </Delay>
                     </div>
-                </div>
-
-                <div className="coinswitch-widget">
                 </div>
 
             </section>
