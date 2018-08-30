@@ -1,6 +1,6 @@
 import React from 'react'
 import A_Title_H from 'A_Title_H'
-import M_SocialLinks_H from 'M_SocialLinks_H'
+import M_SocialLinks_H from 'M_SocialLinks_G'
 import SectionCounter from '../common/SectionCounter/index.js'
 import InfoColumns from '../common/InfoColumns'
 import './styles.scss'
