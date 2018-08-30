@@ -18,13 +18,13 @@ const handleLinkClick = (name) => {
 };
 
 const _createLinks = (links, startIndex) => (
-    links.map(({title, src, url, date, img}, index) => {
+    links.map(({title, src, url, date, img, target}, index) => {
 
       if (index>=startIndex) {
         return (
                 <div className='item' key={`newsLink-${index + 1}`}>
                     {url &&
-                    <a className={'link'} href={url} title={title} target="_blank"
+                    <a className={'link'} href={url} title={title} target={target}
                        onClick={() => {
                          handleLinkClick(index)
                        }}>
