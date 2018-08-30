@@ -41,7 +41,7 @@ class TeleFooter extends React.Component {
   render() {
     return (
             <div className={cn('tele-footer', this.state.isHidden ? 'is-hidden' : '')}>
-              <div className='tele-title'>Don't miss out, join now<br/>for more updates</div>
+              <div className='tele-title'>Join Our Channel <br/>with Secret News</div>
 
                 <a className="tele-button" href="https://t.me/HMQtrader" target="_blank" onClick={() => { this.handleLinkClick() }}>
                     Join our Telegram

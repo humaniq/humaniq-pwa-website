@@ -106,7 +106,20 @@
 
   .coinswitch-widget {
     width: 100%;
-    display: none;
+   // display: none;
+    iframe {
+      min-height: 450px;
+    }
+    @include media($tablet) {
+      iframe {
+        min-height: 600px;
+      }
+    }
+    @include media($mobile) {
+      iframe {
+        min-height: 750px;
+      }
+    }
   }
 
   &__anni {
@@ -303,20 +316,21 @@
       margin: 0 0 0 20px;
       transform: translateY(-3px);
 
-      height:21px;
-      border-radius: 12px;
+      height:28px;
+      border-radius: 14px;
       background-color: #fff;
 
-      padding:6px 12px;
+      padding: 8px 12px;
       color: #169D74;
-      font-size: 10px;
+      font-size: 14px;
       line-height: 1em;
       font-family: 'Roboto', sans-serif;
-      font-weight: 400;
+      font-weight: 500;
       text-transform: uppercase;
       img {
-        transform: translateY(1px);
+        transform: translateY(2px);
         margin-right: 3px;
+        height: 12px;
       }
     }
 
@@ -347,7 +361,10 @@
 
 
         i {
+          font-size: 24px;
+          font-weight: 700;
           white-space: nowrap;
+          line-height: 2.7em;
         }
 
         flex:60%;
@@ -367,7 +384,7 @@
         flex-wrap: nowrap;
         justify-content: flex-end;
         i {  }
-        transform: matrix(0.62, 0, 0, 0.62, 30, 0);
+        transform: matrix(0.5, 0, 0, 0.5, 30, 0);
         text-align: right;
         flex:40%;
 
@@ -491,13 +508,60 @@
 
     padding-bottom: 60px;
 
+    .button {
+      box-sizing: border-box;
+      display: inline-block;
+      height: 44px;
+      background-color: #ffffff;
+      box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.1);
+      padding: 14px 20px;
+
+      text-align: center;
+
+      font-family: 'Roboto', sans-serif;
+      font-size: 18px;
+      font-weight: bold;
+      line-height: 1em;
+      text-transform: uppercase;
+
+      white-space: nowrap;
+
+      transition: background-color, border, .3s linear;
+      color: #2661ea;
+
+      &:hover, &.active {
+        background: #1400FF;
+        color: #fff;
+      }
+
+      @include media($mobile) {
+        display: block;
+        width: 100%;
+      }
+    }
+    .w {
+      display: flex;
+      padding: 60px 60px 50px 60px;
+      @include media($tablet) {
+        flex-direction: column;
+      }
+    }
+    .b {
+      flex: 1;
+      text-align: right;
+      padding-left: 40px;
+      @include media($tablet) {
+        text-align: center;
+        padding: 20px 0 0 0;
+      }
+    }
+
     .pre {
       font-family: 'Roboto', sans-serif;
       font-size: 20px;
       font-weight: 400;
       color: #fff;
-      padding: 60px 60px 50px 60px;
-
+      //flex:1;
       h1 {
         font-size: 34px;
         letter-spacing: 0;
@@ -771,7 +835,7 @@
   box-sizing: border-box;
   display: inline-block;
   position: relative;
-  margin: 10px;
+  margin: 15px;
   width: 40px;
   height: 40px;
   border-radius: 20px;
