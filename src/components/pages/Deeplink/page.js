@@ -12,7 +12,7 @@ class Deeplink extends Component {
       var parsedQuery = queryString.parse(location.search);
 
       if(typeof(parsedQuery)!=='undefined'&&parsedQuery!==null&&typeof(parsedQuery.l)!=='undefined'&&parsedQuery.l!==''){
-        var allowedPattern = /^(profile|request|send|chat|groupchat)[A-z0-9/]*/g;
+        var allowedPattern = /^(profile|request|send|chat|groupchat/bizchat)[A-z0-9/]*/g;
 
 	if(allowedPattern.test(parsedQuery.l)){
           redirectURL = parsedQuery.l;
