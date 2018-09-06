@@ -27,7 +27,7 @@ class SE_Home_Team extends Component {
   onSwipeRight = this.left
   onSwipeLeft = this.right
   threshold = 100
-  slideGroups = [pairSplit(team, 'team'), pairSplit(advisers, 'advisers'), pairSplit(ambassadors, 'ambassadors')]
+  slideGroups = [pairSplit(advisers, 'advisers'), pairSplit(team, 'team'), pairSplit(ambassadors, 'ambassadors')]
   slidesWidths = []
   slidesCount = this.slideGroups.reduce((sum, el) => sum + el.entities.length, 0)
 
@@ -105,9 +105,9 @@ class SE_Home_Team extends Component {
     let active;
     if(showingSlideIndex < 0){
       active = 'ambassadors'
-    } else if(showingSlideIndex < 5){
+    } else if(showingSlideIndex < 4){
       active = 'advisers'
-    } else if(showingSlideIndex < 9){
+    } else if(showingSlideIndex < 7){
       active = 'team'
     } else{
       active = 'ambassadors'
@@ -129,10 +129,10 @@ class SE_Home_Team extends Component {
                 <span className={cn('slider-nav-groups', {active: active == 'advisers'})} onClick={() => this.setState({show:0})}>
                 Advisers
               </span>
-              <span className={cn('slider-nav-groups', {active: active == 'team'})} onClick={() => this.setState({show:5})}>
+              <span className={cn('slider-nav-groups', {active: active == 'team'})} onClick={() => this.setState({show:4})}>
                 Team
               </span>
-                <span className={cn('slider-nav-groups', {active: active == 'ambassadors'})} onClick={() => this.setState({show:9})}>
+                <span className={cn('slider-nav-groups', {active: active == 'ambassadors'})} onClick={() => this.setState({show:7})}>
                 Ambassadors
               </span>
             </div>
