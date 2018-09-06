@@ -106,9 +106,9 @@ class SE_Home_Team extends Component {
     if(showingSlideIndex < 0){
       active = 'ambassadors'
     } else if(showingSlideIndex < 5){
-      active = 'team'
-    } else if(showingSlideIndex < 9){
       active = 'advisers'
+    } else if(showingSlideIndex < 9){
+      active = 'team'
     } else{
       active = 'ambassadors'
     }
@@ -126,11 +126,11 @@ class SE_Home_Team extends Component {
               People behind Humaniq project
             </A_Title>
             <div>
-              <span className={cn('slider-nav-groups', {active: active == 'team'})} onClick={() => this.setState({show:0})}>
-                Team
-              </span>
-                <span className={cn('slider-nav-groups', {active: active == 'advisers'})} onClick={() => this.setState({show:5})}>
+                <span className={cn('slider-nav-groups', {active: active == 'advisers'})} onClick={() => this.setState({show:0})}>
                 Advisers
+              </span>
+              <span className={cn('slider-nav-groups', {active: active == 'team'})} onClick={() => this.setState({show:5})}>
+                Team
               </span>
                 <span className={cn('slider-nav-groups', {active: active == 'ambassadors'})} onClick={() => this.setState({show:9})}>
                 Ambassadors

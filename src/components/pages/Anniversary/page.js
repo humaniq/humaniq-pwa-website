@@ -46,14 +46,14 @@ const opinionsDate = [
     'Humaniq’s team has always been very consonant and vibrant while creating beautiful synergy. Humaniq is united by the joint desire to make world a better place. Every member of the team is emotionally motivated and it is very inspiring. Therefore the main purpose of Humaniq is to empower equality and kindness all across the globe and beyond <br />' +
     'For me Humaniq is a company that challenges status quo to achieve not only its goals, but reaching out to those in need.'
   },
-  {
-    name: "Javed Khattak",
-    title: 'Chief Financial Officer at Humaniq',
-    img: `${path}javed-khattak.png`,
-    text: "I have been with Humaniq since July 2017. <br />" +
-    "I believe Humaniq and its goal of financial inclusion is absolutely fantastic. It calls out to me at many different levels, in particular as, while it brings alongside many economic opportunities, it is aimed at helping humanity, reducing poverty and improving lives in groups where the need is one of the highest. This sort of positive and humanitarian impact is very close to my heart.<br />" +
-    "I feel that the entire team at Humaniq is great - we all get along and everyone is extremely talented. And we have the positive drive and motivation to keep moving forward with the Humaniq vision because I believe we all share that vision and these values of making the world a better place"
-  },
+  //{
+  //  name: "Javed Khattak",
+  //  title: 'Chief Financial Officer at Humaniq',
+  //  img: `${path}javed-khattak.png`,
+  //  text: "I have been with Humaniq since July 2017. <br />" +
+  //  "I believe Humaniq and its goal of financial inclusion is absolutely fantastic. It calls out to me at many different levels, in particular as, while it brings alongside many economic opportunities, it is aimed at helping humanity, reducing poverty and improving lives in groups where the need is one of the highest. This sort of positive and humanitarian impact is very close to my heart.<br />" +
+  //  "I feel that the entire team at Humaniq is great - we all get along and everyone is extremely talented. And we have the positive drive and motivation to keep moving forward with the Humaniq vision because I believe we all share that vision and these values of making the world a better place"
+  //},
   {
     name: "Anastasia Yugai",
     title: 'Strategy and business development manager',
