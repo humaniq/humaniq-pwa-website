@@ -126,11 +126,11 @@ class SE_Home_Team extends Component {
               People behind Humaniq project
             </A_Title>
             <div>
-              <span className={cn('slider-nav-groups', {active: active == 'team'})} onClick={() => this.setState({show:0})}>
-                Team
-              </span>
                 <span className={cn('slider-nav-groups', {active: active == 'advisers'})} onClick={() => this.setState({show:5})}>
                 Advisers
+              </span>
+              <span className={cn('slider-nav-groups', {active: active == 'team'})} onClick={() => this.setState({show:0})}>
+                Team
               </span>
                 <span className={cn('slider-nav-groups', {active: active == 'ambassadors'})} onClick={() => this.setState({show:9})}>
                 Ambassadors
