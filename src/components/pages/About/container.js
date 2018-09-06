@@ -121,12 +121,12 @@ const team = [
     bio: 'Humaniq founder and Fintech entrepreneur Alex is one of the most important members of the international Blockchain community, who has worked with the UN to lead the deployment of Blockchain technology to improve the efficiency of UN resources and remittances. He has also spearheaded the harnessing of blockchains in Russia, organising a conference for 500 participants on the Ethereum Blockchain; authoring Bitcoin. More than Just Money; and founding the Fintech accelerator for startups in Russia, Future Fintech. He started Humaniq to help lift the global banked out of poverty.',
     imgSrc: `${imgPath}/alex_fork.png`,
   },
-  {
-    name: 'Javed Khattak',
-    position: 'CFO',
-    bio: 'Javed has a background as an actuary and of finance, consulting and startups. He loves technology, especially gadgets, AI and virtual reality, and believes in Blockchain for Good. He is working with Humaniq to bring greater opportunities and fairness to the world.',
-    imgSrc: `${imgPath}/javed_khattak.png`,
-  },
+  //{
+  //  name: 'Javed Khattak',
+  //  position: 'CFO',
+  //  bio: 'Javed has a background as an actuary and of finance, consulting and startups. He loves technology, especially gadgets, AI and virtual reality, and believes in Blockchain for Good. He is working with Humaniq to bring greater opportunities and fairness to the world.',
+  //  imgSrc: `${imgPath}/javed_khattak.png`,
+  //},
   {
     name: 'Hazem Danny Al-Nakib',
     position: 'CIO',
@@ -151,12 +151,12 @@ const team = [
     bio: '',
     imgSrc: `${imgPath}/kirill_goryunov.jpg`,
   },
-  {
-    name: 'Kherel Kechil',
-    position: 'Lead Frontend Developer',
-    bio: 'Kherel is a digital nomad. He joined Humaniq to experience and participate in the financial evolution, and observe changes to the better in the country where he currently resides - China.',
-    imgSrc: `${imgPath}/kherel_kechil.png`,
-  },
+  //{
+  //  name: 'Kherel Kechil',
+  //  position: 'Lead Frontend Developer',
+  //  bio: 'Kherel is a digital nomad. He joined Humaniq to experience and participate in the financial evolution, and observe changes to the better in the country where he currently resides - China.',
+  //  imgSrc: `${imgPath}/kherel_kechil.png`,
+  //},
   // {
   //   name: 'Serafima Semkina',
   //   position: 'CAO',
