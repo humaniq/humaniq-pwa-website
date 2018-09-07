@@ -27,7 +27,7 @@ class SE_Home_Team extends Component {
   onSwipeRight = this.left
   onSwipeLeft = this.right
   threshold = 100
-  slideGroups = [pairSplit(advisers, 'advisers'), pairSplit(team, 'team'), pairSplit(ambassadors, 'ambassadors')]
+  slideGroups = [pairSplit(team, 'team'), pairSplit(advisers, 'advisers'), pairSplit(ambassadors, 'ambassadors')]
   slidesWidths = []
   slidesCount = this.slideGroups.reduce((sum, el) => sum + el.entities.length, 0)
 
@@ -105,10 +105,10 @@ class SE_Home_Team extends Component {
     let active;
     if(showingSlideIndex < 0){
       active = 'ambassadors'
-    } else if(showingSlideIndex < 4){
-      active = 'advisers'
-    } else if(showingSlideIndex < 7){
+    } else if(showingSlideIndex < 3){
       active = 'team'
+    } else if(showingSlideIndex < 7){
+      active = 'advisers'
     } else{
       active = 'ambassadors'
     }
@@ -126,11 +126,11 @@ class SE_Home_Team extends Component {
               People behind Humaniq project
             </A_Title>
             <div>
-                <span className={cn('slider-nav-groups', {active: active == 'advisers'})} onClick={() => this.setState({show:0})}>
-                Advisers
-              </span>
-              <span className={cn('slider-nav-groups', {active: active == 'team'})} onClick={() => this.setState({show:4})}>
+              <span className={cn('slider-nav-groups', {active: active == 'team'})} onClick={() => this.setState({show:0})}>
                 Team
+              </span>
+                <span className={cn('slider-nav-groups', {active: active == 'advisers'})} onClick={() => this.setState({show:3})}>
+                Advisers
               </span>
                 <span className={cn('slider-nav-groups', {active: active == 'ambassadors'})} onClick={() => this.setState({show:7})}>
                 Ambassadors
