@@ -36,15 +36,14 @@ class Deeplink extends Component {
 
     if(redirectURL!==''){
       redirectURL = 'humaniq://humaniq.com/' + redirectURL;
-alert(redirectURL);
 
       $('#button-dl').attr({'action':downloadURL});
       $('#button-app').attr({'action':redirectURL});
-      /*window.location = redirectURL;
+      window.location = redirectURL;
 
       setTimeout(()=>{
         window.location = downloadURL;
-      }, 1000);*/
+      }, 1000);
     }else{
       $('#button-dl').hide();
       $('#button-app').hide();
