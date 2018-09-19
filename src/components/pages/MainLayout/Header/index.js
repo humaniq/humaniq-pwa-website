@@ -31,9 +31,12 @@ const SE_MainLayoutHeader_H = ({ mix, theme, mobileMenuIsActive, toggleMobileMen
           Blog
         </a>
       </li>
-      <li className={cn('menu-link')}>
-          <Link to="/open-source">Open source</Link>
-      </li>
+        <li className={cn('menu-link')}>
+            <Link to="/open-source">Open source</Link>
+        </li>
+        <li className={cn('menu-link')}>
+            <Link to="/exchange">Exchange</Link>
+        </li>
         <li className={cn('menu-link')}>
             <Link to="/contact-us">Contact us</Link>
         </li>

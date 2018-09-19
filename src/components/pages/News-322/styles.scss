@@ -1,0 +1,110 @@
+@import 'common/settings/variables';
+@import 'common/utils';
+
+.news1 {
+  $c: &;
+  overflow: hidden;
+  height: 100vh;
+  &_scroll_true {
+    height: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+  @include media ($desktop-xl) {
+    height: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  &__scroll-up {
+    z-index: 999;
+    position: fixed;
+    top: 33px;
+    left: 65px;
+    width: 150px;
+    height: 35px;
+    cursor: pointer;
+    @include media($desktop-xxl) {
+      top: 22px;
+      width: 105px;
+      height: 25px;
+    }
+    @include media($desktop-xl) {
+      top: 19px;
+    }
+
+  }
+
+  &__section {
+    position: relative;
+    display: flex;
+    height: 100vh;
+    @include media($tablet) {
+      display: block;
+      height: auto;
+      padding: 150px 30px 90px;
+    }
+    @include media($mobile-xs) {
+      padding: 160px 15px 60px;
+    }
+    &_type {
+      &_slider {
+        display: block;
+        @include media($tablet) {
+          padding: 0;
+        }
+      }
+      &_half-height {
+        height: 50vh;
+        @include media($tablet) {
+          height: auto;
+          padding: 100px 30px 90px;
+        }
+        @include media($mobile-xs) {
+          padding: 100px 15px 60px;
+        }
+      }
+    }
+  }
+
+  &__inner {
+    will-change: transform, scroll-position;
+    transition: transform 0.4s ease-out;
+  }
+
+  &__side-menu {
+    position: fixed;
+    left: 2rem;
+    top: 50%;
+    transform: translate3d(0, -50%, 0);
+
+    @include media ($desktop-xl) {
+      display: none;
+    }
+    @at-root #{$c}__dot {
+      height: 1.2rem;
+      border-radius: 50%;
+      border: 1px solid $h-black-1;
+      width: 1.2rem;
+      display: block;
+      transition: background-color 0.3s linear;
+      &_selected_true {
+        background-color: $h-black-1;
+      }
+    }
+
+    &-item {
+      height: 2.8rem;
+      width: 2.8rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      &:hover {
+        & #{$c}__dot {
+          background-color: $h-black-1;
+        }
+      }
+    }
+  }
+}

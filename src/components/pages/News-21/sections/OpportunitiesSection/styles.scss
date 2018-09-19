@@ -1,0 +1,33 @@
+@import 'common/settings/variables';
+@import 'common/utils';
+
+.se-home-opportunities {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url('/img/design-v2/sections/opportunities/waves-extra-platform.png');
+  background-repeat: no-repeat;
+  background-position: 100% 100%;
+
+  &__content {
+    width: 1200px;
+    position: relative;
+    margin: 60px 0 0 60px;
+    font-family: $font-ProximaNova;
+    @include media($desktop-xxl) {
+      width: 745px;
+      margin: 60px 0 0 106px;
+    }
+    @include media($tablet) {
+      width: auto;
+      margin: 0;
+    }
+  }
+
+  &__title {
+    margin-bottom: 60px;
+    @include media($desktop-xxl) {
+      margin-bottom: 30px;
+    }
+  }
+}

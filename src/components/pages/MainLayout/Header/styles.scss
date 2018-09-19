@@ -46,7 +46,8 @@
 
   &__menu-btn {
     display: none;
-    @include media($desktop-xl) {
+    @media (max-width: 1200px) {
+    //@include media($desktop-xl) {
       display: block;
     }
   }
@@ -100,8 +101,8 @@
         color: #fff;
       }
     }
-
-    @include media($desktop-xl) {
+    @media (max-width: 1200px) {
+//    @include media($desktop-xl) {
       display: none;
     }
   }

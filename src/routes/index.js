@@ -14,6 +14,10 @@ import Wiki from './Wiki'
 import Anniversary from './Anniversary'
 import careers from './Careers'
 import News1 from './News-1'
+import News322 from './News-322'
+import News21 from './News-21'
+import News41 from './News-41'
+import InstExchange from './InstExchange'
 import Deeplink from './Deeplink'
 
 const getRoutes = (store) => {
@@ -46,6 +50,18 @@ const getRoutes = (store) => {
           />
           <Route path="/news-1"
                  component={News1}
+          />
+          <Route path="/news-322"
+                 component={News322}
+          />
+          <Route path="/news-41"
+                 component={News41}
+          />
+          <Route path="/news-21"
+                 component={News21}
+          />
+          <Route path="/exchange"
+                 component={InstExchange}
           />
         <Route
           path="/anniversary"

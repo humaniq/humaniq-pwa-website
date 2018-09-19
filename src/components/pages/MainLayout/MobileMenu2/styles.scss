@@ -16,8 +16,9 @@
       transform: translateY(0);
     }
   }
-  @include media($desktop-xl) {
+  @media (max-width: 1200px) {
     display: block;
+
   }
 
   &__links {
