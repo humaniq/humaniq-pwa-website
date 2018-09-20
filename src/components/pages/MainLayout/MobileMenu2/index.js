@@ -25,9 +25,12 @@ const SE_MainLayout_MobileMenu = ({ mix, mobileMenuIsActive }) => (
               Blog
           </a>
       </li>
-      <li className={cn('links-link')}>
-        <Link to="/open-source">Open source</Link>
-      </li>
+        <li className={cn('links-link')}>
+            <Link to="/open-source">Open source</Link>
+        </li>
+        <li className={cn('links-link')}>
+            <Link to="/exchange">Exchange</Link>
+        </li>
       <li className={cn('links-link')}>
         <Link to="/contact-us">Contact us</Link>
       </li>
