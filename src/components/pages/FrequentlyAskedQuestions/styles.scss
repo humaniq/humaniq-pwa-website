@@ -1,0 +1,68 @@
+@import "common/settings/variables";
+@import "common/utils";
+
+
+.frequently-asked-questions{
+  &__section-wrapper {
+  }
+  &__faq{
+
+    &-header{
+      display: flex;
+
+      &-image{
+        margin-right: 5.5rem;
+        @include media($mobile) {
+          display: none;
+        }
+      }
+    }
+
+    p{
+      font-size: 1.5rem;
+      line-height: 2.6rem;
+      color: #333333;
+      margin-bottom: 3.2rem;
+    }
+    p.d{
+      font-size: 1.5rem;
+      line-height: 2.6rem;
+      color: #333333;
+      margin-bottom: 1.2rem;
+    }
+    h3{
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 24.0px;
+      color: #2c2d30;
+    }
+    h2{
+      font-size: 22px;
+      font-weight: 600;
+      line-height: 30px;
+      color: #2c2d30;
+      padding-bottom: 1rem;
+    }
+    a{
+      color: $interactive;
+
+    }
+    ul{
+      list-style: disc;
+      padding-left: 2rem;
+      margin-bottom: 2rem;
+    }
+    ol{
+      list-style: decimal;
+      padding-left: 2rem;
+      margin-bottom: 2rem;
+    }
+
+  }
+  &__firstquestion {
+    padding-top: 2rem;
+  }
+  &__question {
+    padding-top: 3rem;
+  }
+}

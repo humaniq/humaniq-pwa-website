@@ -15,6 +15,7 @@ import Anniversary from './Anniversary'
 import careers from './Careers'
 import News1 from './News-1'
 import Deeplink from './Deeplink'
+import FrequentlyAskedQuestions from './FrequentlyAskedQuestions'
 
 const getRoutes = (store) => {
   return (
@@ -57,6 +58,11 @@ const getRoutes = (store) => {
           component={About}
           prepareData={About.prepareData}
         />
+          <Route path="/faq"
+                 component={FrequentlyAskedQuestions}
+                 prepareData={FrequentlyAskedQuestions.prepareData}
+
+          />
         <Route
           path="/error/:err"
           prepareData={Error.prepareData}

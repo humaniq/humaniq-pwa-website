@@ -87,7 +87,7 @@ const footerLinks = [
       // {name: 'HMQ Explorer', url: '/hmq-explorer'},
       {name: 'Humaniq blog', url: 'https://forum.humaniq.co', externalLink: true},
       {name: 'Careers', url: '/careers'},
-
+      {name: 'F.A.Q.', url: '/faq'},
     ]
   },
   {
