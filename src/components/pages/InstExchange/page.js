@@ -164,7 +164,7 @@ class InstExchange extends React.Component {
             <div className={cn('section-wrapper')}>
                 <A_Container type='equal'>
                     <O_Hero>
-                        <A_H type='hero'>Instant exhange</A_H>
+                        <A_H type='hero'>Instant exchange</A_H>
                     </O_Hero>
                     <div className={cn('contactus')}>
 
