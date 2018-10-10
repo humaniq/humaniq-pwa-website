@@ -105,9 +105,9 @@ class SE_Home_Team extends Component {
     let active;
     if(showingSlideIndex < 0){
       active = 'ambassadors'
-    } else if(showingSlideIndex < 3){
+    } else if(showingSlideIndex < 2){
       active = 'team'
-    } else if(showingSlideIndex < 7){
+    } else if(showingSlideIndex < 6){
       active = 'advisers'
     } else{
       active = 'ambassadors'
@@ -129,10 +129,10 @@ class SE_Home_Team extends Component {
               <span className={cn('slider-nav-groups', {active: active == 'team'})} onClick={() => this.setState({show:0})}>
                 Team
               </span>
-                <span className={cn('slider-nav-groups', {active: active == 'advisers'})} onClick={() => this.setState({show:3})}>
+                <span className={cn('slider-nav-groups', {active: active == 'advisers'})} onClick={() => this.setState({show:2})}>
                 Advisers
               </span>
-                <span className={cn('slider-nav-groups', {active: active == 'ambassadors'})} onClick={() => this.setState({show:7})}>
+                <span className={cn('slider-nav-groups', {active: active == 'ambassadors'})} onClick={() => this.setState({show:6})}>
                 Ambassadors
               </span>
             </div>

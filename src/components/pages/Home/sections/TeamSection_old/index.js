@@ -183,6 +183,13 @@ const advisers = [
   //    'Paolo Tasca is a FinTech economist specialising in P2P Financial System. An advisor for different international organisations including the EU Parliament on blockchain technologies, Paolo recently joined the University College London as Director of the Centre for Blockchain Technologies (UCL CBT).  Prior to that, he has been a senior research economist at Deutsche Bundesbank working on digital currencies and P2P lending. Paolo is the co-author of the bestseller "FINTECH Book" and the co-editor of the book "Banking Beyond Banks and Money.',
   //  imgSrc: `${imgPath}/paolo_tasca.png`,
   //},
+  {
+    name: 'Margaretta Colangelo',
+    position: 'Adviser',
+    bio:
+    'In tech companies, thinking is the primary activity and the core process used to create value. One of the challenges when thinking about technology is keeping up with constant innovation and envisioning what will evolve next. To stay abreast of emerging technologies, I\'ve built this think tank of investors, entrepreneurs, researchers, and engineers around the world who have progressive ideas. Like a natural ecosystem, our ecosystem consists of interlinked resources that complement each other. As the community expands, it\'s value increases exponentially for everyone in it. These are some of the people with whom I collaborate regularly.',
+    imgSrc: `${imgPath}/margaretta_colangelo.jpg`,
+  },
 ]
 
 const team = [
@@ -200,12 +207,12 @@ const team = [
   //    'Javed has a background as an actuary and of finance, consulting and startups. He loves technology, especially gadgets, AI and virtual reality, and believes in Blockchain for Good. He is working with Humaniq to bring greater opportunities and fairness to the world.',
   //  imgSrc: `${imgPath}/javed_khattak.png`,
   //},
-  {
-    name: 'Hazem Danny Al-Nakib',
-    position: 'CIO',
-    bio: '',
-    imgSrc: `${imgPath}/hazem_danny.jpg`,
-  },
+  //{
+  //  name: 'Hazem Danny Al-Nakib',
+  //  position: 'CIO',
+  //  bio: '',
+  //  imgSrc: `${imgPath}/hazem_danny.jpg`,
+  //},
   {
     name: 'Anton Mozgovoy',
     position: 'Chief Technical Officer',
@@ -277,20 +284,20 @@ const team = [
       'Danny’s background is in social media, B2B sales and customer service support. He loves cryptoeconomy and technology and at Humaniq is motivated to disrupt the financial industry with an ecosystem for entrepreneurs to make changes from the bottom up.',
     imgSrc: `${imgPath}/danny_kass.png`,
   },
-  {
-    name: 'Andrey Shevchenko',
-    position: 'SMM, CSS',
-    bio:
-      'Andriy has experience in computer science, security research, online community building and entrepreneurship and is passionate about both improving the world and space exploration. At Humaniq he wants to contribute to something good for humanity and boost financial independence.',
-    imgSrc: `${imgPath}/andriy_schechenko.png`,
-  },
-  {
-    name: 'Lee Baker',
-    position: 'Writer',
-    bio:
-      'Lee has a background in both communications and community organising and loves story-telling to inspire positive action and to connect with others to change things for the better. He wants to unleash the power of the collaborative economy and help everyone to put their destinies into their own hands.',
-    imgSrc: `${imgPath}/lee_baker.png`,
-  },
+  //{
+  //  name: 'Andrey Shevchenko',
+  //  position: 'SMM, CSS',
+  //  bio:
+  //    'Andriy has experience in computer science, security research, online community building and entrepreneurship and is passionate about both improving the world and space exploration. At Humaniq he wants to contribute to something good for humanity and boost financial independence.',
+  //  imgSrc: `${imgPath}/andriy_schechenko.png`,
+  //},
+  //{
+  //  name: 'Lee Baker',
+  //  position: 'Writer',
+  //  bio:
+  //    'Lee has a background in both communications and community organising and loves story-telling to inspire positive action and to connect with others to change things for the better. He wants to unleash the power of the collaborative economy and help everyone to put their destinies into their own hands.',
+  //  imgSrc: `${imgPath}/lee_baker.png`,
+  //},
   {
     name: 'Olga Derbio',
     position: 'Graphic Designer',

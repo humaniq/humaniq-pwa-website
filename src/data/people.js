@@ -59,7 +59,14 @@ export const advisers = [
       'Mr. Mears left the UK in 1999 and has since lived and worked in New York, Vancouver, Amsterdam, Hong Kong and is currently a resident of Monaco. Paul has over the last 5 years been an active angel investor in early stage Tech, Apps, Medical Devices and with a passion for Stem Cell Biotech.\n' +
       'Mr. Mears has a passion for ensuring creative artists are rewarded for their work and is a great believer in the ability of the blockchain to be a key player in that space and to ensure that artists are fairly rewarded for the work they create.',
     imgSrc: `${imgPath}/paul_mears.jpg`,
-  }
+  },
+  {
+    name: 'Margaretta Colangelo',
+    position: 'Adviser',
+    bio:
+    'In tech companies, thinking is the primary activity and the core process used to create value. One of the challenges when thinking about technology is keeping up with constant innovation and envisioning what will evolve next. To stay abreast of emerging technologies, I\'ve built this think tank of investors, entrepreneurs, researchers, and engineers around the world who have progressive ideas. Like a natural ecosystem, our ecosystem consists of interlinked resources that complement each other. As the community expands, it\'s value increases exponentially for everyone in it. These are some of the people with whom I collaborate regularly.',
+    imgSrc: `${imgPath}/margaretta_colangelo.jpg`,
+  },
 ]
 
 export const team = [
@@ -77,12 +84,12 @@ export const team = [
   //    'Javed has a background as an actuary and of finance, consulting and startups. He loves technology, especially gadgets, AI and virtual reality, and believes in Blockchain for Good. He is working with Humaniq to bring greater opportunities and fairness to the world.',
   //  imgSrc: `${imgPath}/javed_khattak.jpg`,
   //},
-  {
-    name: 'Hazem Danny Al-Nakib',
-    position: 'CIO',
-    bio: '',
-    imgSrc: `${imgPath}/hazem_danny.jpg`,
-  },
+  //{
+  //  name: 'Hazem Danny Al-Nakib',
+  //  position: 'CIO',
+  //  bio: '',
+  //  imgSrc: `${imgPath}/hazem_danny.jpg`,
+  //},
   {
     name: 'Anton Mozgovoy',
     position: 'Chief Technical Officer',
@@ -116,20 +123,20 @@ export const team = [
   //     'Bringing experience of social media and customer service support, Segrey is passionate about Blockchain technology and his family.',
   //   imgSrc: `${imgPath}/segrey_blinov.jpg`,
   // },
-  {
-    name: 'Andrey Shevchenko',
-    position: 'SMM, CSS',
-    bio:
-      'Andriy has experience in computer science, security research, online community building and entrepreneurship and is passionate about both improving the world and space exploration. At Humaniq he wants to contribute to something good for humanity and boost financial independence.',
-    imgSrc: `${imgPath}/andriy_schechenko.jpg`,
-  },
-  {
-    name: 'Lee Baker',
-    position: 'Writer',
-    bio:
-      'Lee has a background in both communications and community organising and loves story-telling to inspire positive action and to connect with others to change things for the better. He wants to unleash the power of the collaborative economy and help everyone to put their destinies into their own hands.',
-    imgSrc: `${imgPath}/lee_baker.jpg`,
-  },
+  //{
+  //  name: 'Andrey Shevchenko',
+  //  position: 'SMM, CSS',
+  //  bio:
+  //    'Andriy has experience in computer science, security research, online community building and entrepreneurship and is passionate about both improving the world and space exploration. At Humaniq he wants to contribute to something good for humanity and boost financial independence.',
+  //  imgSrc: `${imgPath}/andriy_schechenko.jpg`,
+  //},
+  //{
+  //  name: 'Lee Baker',
+  //  position: 'Writer',
+  //  bio:
+  //    'Lee has a background in both communications and community organising and loves story-telling to inspire positive action and to connect with others to change things for the better. He wants to unleash the power of the collaborative economy and help everyone to put their destinies into their own hands.',
+  //  imgSrc: `${imgPath}/lee_baker.jpg`,
+  //},
   //{
   //  name: 'Olga Deribo',
   //  position: 'Graphic Designer',
