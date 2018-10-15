@@ -23,23 +23,23 @@ const qaList = [
     qa:[
       {
         title: "What is CoinSwitch?",
-        text: "CoinSwitch is a cryptocurrency exchange providing the best way to invest in cryptocurrencies by aggregating all leading exchanges and comparing cryptocurrency prices in real time. It us our partner."
+        text: "CoinSwitch is a cryptocurrency exchange providing the best way to invest in cryptocurrencies by aggregating all the leading exchanges and comparing cryptocurrency prices in real time. CoinSwitch is our partner."
       },
       {
         title: "Can the rates change during the transaction?",
-        text: "Unlike ordinary money, cryptocurrency prices are highly volatile, so the rate may fluctuate. It may happen that the altcoin exchange rate which you see before the transaction is different (high or low) after transaction gets completed. In that case, the exchanged digital currency quantity which you receive may differ from what you see during the comparison."
+        text: "Unlike ordinary money, cryptocurrency prices are highly volatile, so the rates do fluctuate. It is even possible that an exchange rate of some altcoins observed before the transaction changes (higher or lower) once the transaction is confirmed. In this case, the total quantity of the digital currency received may differ from what you saw before proceeding with the transaction."
       },
       {
         title: "What is our transaction fees?",
-        text: "Charges a fee of <b>0% to 0.75%</b> depending on the exchange you select for your transaction. The conversion rate you see is inclusive of the fees. <br><b>Note:</b> This fees does not include any amount charged by the exchange itself and the network fee."
+        text: "CoinSwitch charges a fee of 0% to 0.75% depending on the exchange you select for your transaction. The conversion rate you see already includes the fees. <br><b>Note:</b> This fee does not include the exchange charges or the network fee.\n"
       },
       {
         title: "What is the minimum/maximum amount?",
-        text: "Exchange doesnʼt have amount restrictions, but minimal amount of exchanging is 30$. If your funds to be exchanged are insufficient, you will see a message."
+        text: "Exchange doesnʼt imply any volume restrictions, but minimal amount for the exchanging is $30. If the funds to be exchanged are insufficient, the corresponding pop-up will appear."
       },
       {
         title: "When should I receive my money?",
-        text: "Transactions take 15-30 minutes to be processed. If a transaction is large (around 1 BTC worth), processing may take longer depending on the size of your transaction and blockchain capacity. You can check the cyrcurrency charts to check the network congession."
+        text: "Transactions normally take 15-30 minutes to be processed. If a transaction is large (1 BTC or more), processing may take more time depending on the transaction volume and blockchain capacity. You can check the currency charts to see if the network is congested."
       },
     ]
   },
@@ -49,15 +49,15 @@ const qaList = [
     qa:[
       {
         title: "Whatʼs the cryptocurrency wallet address?",
-        text: "A cryptocurrency wallet is a digital place for your coins to be stored. Each coin has a certain wallet provider. That could be official GUI-wallets, web wallets and other applications. The wallet address represents a randomly generated combination of digits and letters. CoinSwitch doesnʼt provide wallet addresses and never stores user deposits. To exchange cryptocurrencies, you need to have a cryptocurrency wallet address."
+        text: "A cryptocurrency wallet is a digital storage for your coins. Each coin has a certain wallet provider: those can be the official GUI-wallets, web wallets and other applications. The wallet address represents a randomly generated combination of digits and letters. CoinSwitch doesnʼt provide wallet addresses and never stores user deposits. To exchange cryptocurrencies, you need to have a cryptocurrency wallet address."
       },
       {
         title: "How do I get a cryptocurrency wallet address?",
-        text: "Just figure out, what coin do you want to buy and seek for a stable wallet version. As a rule, each coin has its official wallet client. Note that each wallet has its unique address or a tag with a private key that is required to restore your wallet if lost. We never ask your private keys. Store them in a safe place and never show anyone. Once private keys are stolen, your cryptocurrency wallet with all the coins will be lost forever."
+        text: "Just figure out what coin you are going to buy, and seek for a stable wallet. As a rule, each coin has its official wallet client. Note that each wallet has its unique address or a tag with a private key, which is crucial to restore the wallet if/when lost. We never ask your private keys. Store them in a safe place and never show to anyone. If the private keys are stolen, your cryptocurrency wallet with all the coins is lost forever."
       },
       {
         title: "Why is my cryptocurrency wallet address recognized as invalid?",
-        text: "We support most of the wallets. If your wallet address is recognized as invalid, there is always a reason: You confused Dash (DASH) with Dashcoin DSH). These are two different coins with two different amounts. You confused Factom (FCT) with Fantomcoin (FCN). Different currencies as well. Typo or character missing. Make sure that the address you specify matches the actual address of your wallet."
+        text: "We support most of the wallets. If your wallet address is recognized as invalid, this shall be one among the following reasons:<ul><li> You confused Dash (DASH) with Dashcoin (DSH). These are two different coins with two different tickers; <li>You confused Factom (FCT) with Fantomcoin (FCN). Different currencies as well; <li>Typo or character is missing. Make sure that the corresponding address matches the actual address of your wallet.</li></ul>"
       }
     ]
   },
@@ -67,27 +67,27 @@ const qaList = [
     qa:[
       {
         title: "How do I cancel my transaction?",
-        text: "Blockchain transactions are irreversible. Once the money is sent, it cannot be rolled back. So if you are going to exchange cryptos, think twice and check attentively all the payment details prior to sending money."
+        text: "Blockchain transactions are irreversible. Once the money is sent, it cannot be rolled back. When exchanging cryptos, always think twice and check all the payment details with proper attention prior to sending the money."
       },
       {
         title: "Why does my transaction take so long?",
-        text: "As a rule, our transaction takes 15-30 minutes to be processed. If your transaction takes longer, this might be due to a wide range of factors.<ul> <li>Blockchain overloaded. There are many transactions pending including yours. These issues take place on blockchains. All you have to do is to wait. We doesn't control blockchain delays. <li>DDoS attacks. Any platform may experience such issues. In this case, all you have to do is wait.</li></ul>"
+        text: "As a rule, our transaction takes 15-30 minutes to be processed. If your transaction takes longer, this might be due to a wide range of factors:<ul> <li>Blockchain overloaded. There are many transactions pending, including yours. These issues take place in blockchains. All you have to do is to wait. Regretfully, we don’t influence the blockchain delays.<li>DDoS attacks. Any platform may experience one. In this case, all you have to do is wait.</li></ul>"
       },
       {
-        title: "Why is my transaction still waiting for payment if I've already paid?",
-        text: "This might be due to several reasons.<ul> <li>The transaction hasn't been included to a blockchain. Cryptocurrencies aren't stable, so minor errors might occur. Either can we refund money or push a payment through if you provide the hash (a tx ID) of your transaction. <li>ETC and ETH confusion. The addresses of Ethereum (ETH) and Ethereum Classic (ETH) are of the same structure. If you send ETC or ETH, make sure that you've created an appropriate transaction. For example, if you create an ETH to BTC transaction, make sure that you send ETH, not ETC. Otherwise, your transaction will be stuck. <li>Other internal errors. Even our perfect system may lag or experience internal issues. If you suppose that this is the case, report it to support@coinswitch.co</li></ul>"
+        title: "Why is my transaction still pending unconfirmed - I've already paid?",
+        text: "This might take place due to these particular reasons:<ul><li>The transaction hasn't been included in the blockchain (yet). Cryptocurrencies aren't 100% stable, so minor errors might occur. We either do refund the money or push a payment through if you provide the hash (a tx ID) of the transaction;<li>ETC and ETH confusion. The addresses of Ethereum (ETH) and Ethereum Classic (ETH) are of the same structure. If you send ETC or ETH, please double-check the transaction address. For example, if you create an ETH-to-BTC transaction, make sure you’ve send ETH, not ETC. Otherwise, your transaction will be stuck.<li>Other internal errors. Even our perfect system may lag or experience internal issues. If you suppose this to be the case, please kindly report to support@coinswitch.co</li></ul>"
       },
       {
         title: "What will happen if I close the browser tab?",
-        text: "If you have transferred the amount, then you can surely close the browser tab. Our system will automatically complete the transaction, and the amount will be deposited into your recipient wallet address. Just keep the the order-id with you for any follow ups."
+        text: "If you have submitted the transfer, you can surely close the browser tab. Our system will automatically complete the transaction, and the amount will be deposited into your recipient wallet address. Just keep the the order ID for any follow-ups."
       },
       {
         title: "Why blockchain verification is taking long?",
-        text: "Blockchain is peer to peer network where transactions need to be confirmed by the network. This process can take from few minutes to several hours depending on the cryptocurrency and load on the network. We don't play any role in blockchain confirmations. Please be patient in case of delay. Your fund is safe and the exchange will proceed once our partner receives the deposits."
+        text: "Blockchain is peer-to-peer network, where transactions need to be confirmed. This process can take from few minutes to several hours, depending on the cryptocurrency and load of the network. <br>There is no particular way we can accelerate blockchain confirmations. Please, be patient in case of the delay. Your funds are safe, and the exchange will proceed once our partner receives the deposit."
       },
       {
-        title: "Sent funds to the wrong address. Can I recover my funds?",
-        text: "Unfortunately not. Once funds are sent to a wrong address, there is nothing we can do to recover them. This is why it is extremely important to double check the address you enter while ordering."
+        title: "Funds were accidentally sent to the wrong address. Can I recover my funds?",
+        text: "Unfortunately, no. Once your funds are sent to the wrong address, there is nothing we can do to redeem. This is why it is extremely important to double-check the address you enter while ordering."
       },
     ]
   }
@@ -164,7 +164,7 @@ class InstExchange extends React.Component {
             <div className={cn('section-wrapper')}>
                 <A_Container type='equal'>
                     <O_Hero>
-                        <A_H type='hero'>Instant exhange</A_H>
+                        <A_H type='hero'>Instant exchange</A_H>
                     </O_Hero>
                     <div className={cn('contactus')}>
 
