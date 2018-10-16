@@ -22,10 +22,10 @@ const SE_Home_FirstMobile = ({ mix }) => (
         Humaniq is a new generation financial services<br/> with its own cryptocurrency, which is aimed at<br/> eradicating poverty amongst millions of people<br/> living in the emerging economies
       </p>
       <div className={cn('columns-wrapper')}>
-        <InfoColumns mix={cn('info-columns')} columns={infoColumns} type="narrow" />
-        <div className={cn('button')}>
-          <A_Btn_H to="/pdf/humaniq-whitepaper-05.09.pdf" clickHandler={handleLinkClick}>Whitepaper</A_Btn_H>
-        </div>
+        <InfoColumns mix={cn('info-columns')} columns={infoColumns} type="narrow" />        
+      </div>
+      <div className={cn('button')}>
+        <A_Btn_H to="/pdf/humaniq-whitepaper-05.09.pdf" clickHandler={handleLinkClick}>Whitepaper</A_Btn_H>
       </div>
     </div>
 
