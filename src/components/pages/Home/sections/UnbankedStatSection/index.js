@@ -15,13 +15,13 @@ const SE_Home_UnbankedStat = ({ mix }) => (
     <div className={cn('right-side')}>
       <p className={cn('text')}>
         According to the World Bank's Global<br /> Financial Inclusion Database, there are<br />{' '}
-        currently 2.5 billion people on Earth<br /> who do not have access to official<br />{' '}
+        currently 1.7 billion people on Earth<br /> who do not have access to official<br />{' '}
         financial services
       </p>
       <div className={cn('stat-circle')}>
-        <div className={cn('stat-circle-percentage')}>53%</div>
+        <div className={cn('stat-circle-percentage')}>31%</div>
         <div className={cn('stat-circle-text')}>
-          Total 2,455<br />million adults
+          About 1.7<br />billion adults
         </div>
       </div>
     </div>

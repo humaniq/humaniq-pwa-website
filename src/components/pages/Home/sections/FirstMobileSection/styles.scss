@@ -6,9 +6,12 @@
   justify-content: center;
   align-items: center;
   background-color: $color-white;
-  background-image: url('/img/design-v2/sections/common/head.svg');
+  background-image: url('/img/design-v2/sections/common/head.svg')!important;
   background-repeat: no-repeat;
-  background-position: 100% 0;
+  background-position: center!important;
+  background-size: 33%;
+  background-position-x: 111%!important;
+  
   @include media($tablet) {
     padding-bottom: 0;
   }
@@ -70,6 +73,7 @@
   &__button {
     align-self: flex-end;
     display: inline-block;
+    margin-top: 20px;
     @include media($desktop-xl) {
       margin-top: 30px;
     }
