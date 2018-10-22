@@ -11,9 +11,10 @@
   background-position: center!important;
   background-size: 33%;
   background-position-x: 111%!important;
-  
+
   @include media($tablet) {
     padding-bottom: 0;
+    background: none;
   }
 
   &__content {
