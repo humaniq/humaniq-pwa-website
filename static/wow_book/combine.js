@@ -1720,7 +1720,7 @@ $(function(){
     lightboxColor: "#eee",
     //container: window,
     //containerPadding: "20px",
-    pdf: "http://localhost:8080/humaniq_report_16-18.pdf"
+    pdf: "https://humaniq.com/humaniq_report_16-18.pdf"
   };
   $('#report-book').wowBook(bookOptions);
 });

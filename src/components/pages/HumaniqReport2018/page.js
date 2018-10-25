@@ -20,9 +20,9 @@ class HumaniqReport2018 extends Component {
     return (
       <div className={cn('section-wrapper')}>
 
-        <link rel="stylesheet" type="text/css" href="http://localhost:8080/wow_book/wow_book.css" />
+        <link rel="stylesheet" type="text/css" href="https://humaniq.com/wow_book/wow_book.css" />
         <ScriptLoader
-          url="http://localhost:8080/wow_book/combine.js"
+          url="https://humaniq.com/wow_book/combine.js"
           onLoad={this.handleScriptLoad.bind(this)}
         />
 
@@ -45,7 +45,7 @@ class HumaniqReport2018 extends Component {
   }
 
 handleScriptLoad() {
-  console.log(window.PDFJS);
+  //console.log(window.PDFJS);
 }
 
 }
