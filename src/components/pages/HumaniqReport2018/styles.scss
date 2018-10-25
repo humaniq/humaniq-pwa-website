@@ -1,0 +1,23 @@
+@import "common/settings/variables";
+@import "common/utils";
+
+
+.humaniq-report-2018{
+  &__section-wrapper {
+  }
+  &__humaniqreport2018{
+
+    &-header{
+      display: flex;
+
+      &-image{
+        margin-right: 5.5rem;
+        //left: -.8rem;
+        //top: -.5rem;
+        @include media($mobile) {
+          display: none;
+        }
+      }
+    }
+  }
+}

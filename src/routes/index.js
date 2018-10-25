@@ -20,6 +20,7 @@ import News41 from './News-41'
 import InstExchange from './InstExchange'
 import Deeplink from './Deeplink'
 import FrequentlyAskedQuestions from './FrequentlyAskedQuestions'
+import HumaniqReport2018 from './HumaniqReport2018'
 
 const getRoutes = (store) => {
   return (
@@ -49,6 +50,13 @@ const getRoutes = (store) => {
                  prepareData={ContactUs.prepareData}
 
           />
+          <Route path="report-2018"
+                 component={HumaniqReport2018}
+                 prepareData={HumaniqReport2018.prepareData}
+
+          />
+
+
           <Route path="/news-1"
                  component={News1}
           />

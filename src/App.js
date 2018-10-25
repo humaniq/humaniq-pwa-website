@@ -12,6 +12,12 @@ import {hashLinkScroll} from 'utils/hashLinkScroll'
 import progress from 'utils/progressCalculation'
 const store = createStore(window.__INITIAL_STATE__)
 
+import $ from "jquery";
+
+window.jQuery = $;
+window.$ = $;
+global.jQuery = $;
+
 class App extends PureComponent {
 
   componentDidMount () {

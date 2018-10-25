@@ -41,6 +41,7 @@
     "react-delay": "^0.1.0",
     "react-dom": "^15.3.1",
     "react-helmet": "^5.0.3",
+    "react-load-script": "0.0.6",
     "react-redux": "^5.0.4",
     "react-scrollable-anchor": "^0.6.1",
     "react-slick": "^0.23.1",
