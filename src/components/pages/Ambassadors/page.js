@@ -108,19 +108,7 @@ class Ambassadors  extends Component {
           </O_Hero>
           <A_H type="section">Ever growing network</A_H>
           <A_P type="third">We want to communicate directly with the people we wish to serve: the unbanked. People without access to banking live in very rural areas. This is why we’ve started our Ambassador Program. Our ambassadors live in these developing countries and know the culture well. They are helping to promote cryptocurrencies in the Global South, as well as explaining the Humaniq project and app to the people in their countries.</A_P>
-          <div className={cn('form')}>
-            <div className={cn('form-select')}>
-              <M_Dropdown
-                selected={filter}
-                options={options}
-                onChange={filter => this.setState({filter})}
-              />
-            </div>
-            <A_Btn
-              type='popup-link'
-              onClick = {() => openPopup('ambasadors')}
-            >Join Ambassadors Program</A_Btn>
-          </div>
+
           <div className={cn('list-wrapper')}>
             <div
               className={cn('list')}
@@ -134,6 +122,24 @@ class Ambassadors  extends Component {
     )
   }
 }
+
+/*
+          <div className={cn('form')}>
+            <div className={cn('form-select')}>
+              <M_Dropdown
+                selected={filter}
+                options={options}
+                onChange={filter => this.setState({filter})}
+              />
+            </div>
+            <A_Btn
+              type='popup-link'
+              onClick = {() => openPopup('ambasadors')}
+            >Join Ambassadors Program</A_Btn>
+          </div>
+
+
+*/
 
 Ambassadors.propTypes = {
   entities: T.array.isRequired,
