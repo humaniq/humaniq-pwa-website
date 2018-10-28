@@ -21,10 +21,6 @@ const SE_Home_GlobalChallenge = ({ mix }) => (
         type="narrow"
         layout="global-challenge"
       />
-
-      <M_SocialLinks_H mix={cn('social-links')} type="section">
-        You know how to enhance Humaniq?<br /> Join the global Humaniq community
-      </M_SocialLinks_H>
     </div>
     <SectionCounter sectionNum={10} theme="dark" />
   </section>
