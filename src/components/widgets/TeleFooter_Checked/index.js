@@ -22,7 +22,7 @@ class TeleFooterChecked extends React.Component {
       if(this.checkCompleted) {
         this.setState({TelegaIsHidden: this.TelegaIsHidden,IntercomIsHidden:this.IntercomIsHidden});
         if(!this.IntercomIsHidden){
-          // window.Intercom("boot", { app_id: "y9l4iy41"});
+          window.Intercom("boot", { app_id: "y9l4iy41"});
         }
         this.checkCompleted = false;
       }
@@ -36,7 +36,7 @@ class TeleFooterChecked extends React.Component {
       if(this.checkCompleted) {
         this.setState({TelegaIsHidden: this.TelegaIsHidden,IntercomIsHidden:this.IntercomIsHidden});
         if(!this.IntercomIsHidden){
-          // window.Intercom("boot", { app_id: "y9l4iy41"});
+          window.Intercom("boot", { app_id: "y9l4iy41"});
         }
         this.checkCompleted = false;
       }

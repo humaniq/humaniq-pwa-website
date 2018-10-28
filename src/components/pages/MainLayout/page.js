@@ -49,19 +49,19 @@ class SE_MainLayout_H extends Component {
 
         if(this.getCookie("telegaHidden")) {
           this.TelegaIsHidden = true;
-          // if(!this.IntercomIsHidden) {
-          //   if (window.innerWidth < 750) {
-          //     window.Intercom("boot", {app_id: "y9l4iy41"})
-          //   }
-          // }
+          if(!this.IntercomIsHidden) {
+            if (window.innerWidth < 750) {
+              window.Intercom("boot", {app_id: "y9l4iy41"})
+            }
+          }
         }
 
         this.setState({TelegaIsHidden: this.TelegaIsHidden});
-        // if(!this.IntercomIsHidden){
-        //   if(window.innerWidth>749){
-        //     window.Intercom("boot", {app_id: "y9l4iy41"})
-        //   }
-        // }
+        if(!this.IntercomIsHidden){
+          if(window.innerWidth>749){
+            window.Intercom("boot", {app_id: "y9l4iy41"})
+          }
+        }
         this.checkCompleted = false;
       }
 
@@ -81,7 +81,7 @@ class SE_MainLayout_H extends Component {
             this.TelegaIsHidden = true;
             if(!this.IntercomIsHidden) {
               if (window.innerWidth < 750) {
-                // window.Intercom("boot", {app_id: "y9l4iy41"})
+                window.Intercom("boot", {app_id: "y9l4iy41"})
               }
             }
           }
@@ -89,7 +89,7 @@ class SE_MainLayout_H extends Component {
           this.setState({TelegaIsHidden: this.TelegaIsHidden });
           if (!this.IntercomIsHidden) {
             if(window.innerWidth>749){
-              // window.Intercom("boot", {app_id: "y9l4iy41"})
+              window.Intercom("boot", {app_id: "y9l4iy41"})
             }
           }
           this.checkCompleted = false;
