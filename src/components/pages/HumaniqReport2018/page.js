@@ -30,10 +30,12 @@ class HumaniqReport2018 extends Component {
           <O_Hero>
             <A_H type='hero'>Humaniq Annual Report</A_H>
             <A_P type='hero'>Business Results Since the Token Sale (2016 - Q3 2018)</A_P>
+            <img src="/img/report-2018/Humaniq_AR_edit_261018-1-2.jpg" id="show-book" type="material-r-link-window" style={{"max-width":"100%"}}>
           </O_Hero>
 
-          <div style={{"float":"left"}}>
-            <A_Btn id="show-book" type="material-r-link-window">Show report</A_Btn>
+          <div style={{"float":"left"}}>            
+            <!-- <A_Btn id="show-book" type="material-r-link-window">Show report</A_Btn> -->
+            <A_Btn href="/static/humaniq_report_16-18.pdf" target="_blank">Download PDF</A_Btn>
           </div>
           <div className="clearfix"></div>
           <div id="book-container" className={cn('humaniqreport2018')}>

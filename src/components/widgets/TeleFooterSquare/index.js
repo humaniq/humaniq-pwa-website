@@ -24,7 +24,7 @@ class TeleFooter extends React.Component {
     e.preventDefault();
     this.setState({isHidden: !this.state.isHidden});
     if(window.innerWidth<750){
-      window.Intercom("boot", {app_id: "y9l4iy41"})
+      // window.Intercom("boot", {app_id: "y9l4iy41"})
     }
   };
 
@@ -33,7 +33,7 @@ class TeleFooter extends React.Component {
     if (window.fbq) window.fbq('trackCustom', 'telegramToolBarClick');
     this.setState({isHidden: !this.state.isHidden});
     if(window.innerWidth<750){
-      window.Intercom("boot", {app_id: "y9l4iy41"})
+      // window.Intercom("boot", {app_id: "y9l4iy41"})
     }
     this.setCookie("telegaHidden", 1, 100);
   };
