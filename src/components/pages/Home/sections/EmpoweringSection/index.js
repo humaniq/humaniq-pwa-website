@@ -63,25 +63,27 @@ const SE_Home_Empowering = ({ mix, users_number }) => (
 
     <div className={cn('right-side')}>
       <div className={cn('text')}>
+        <img src="/humaniq_logo.svg" width="235">
         <A_Title type="hero" mix={cn('text-title')} theme="bright">
-          Empowering<br /> the unbanked
+          Innovative financial<br /> services platform
         </A_Title>
         <p className={cn('text-subtitle')}>
-          Self-deploying financial infrastructure:<br /> true hope for the unbanked, blue ocean<br className="d" /> for business
+          True hope for the unbanked, blue ocean<br className="d" /> for business
         </p>
         <div className={cn('subscribe')}>
             <O_SimpleForm_H formType="subscribe" />
         </div>
+      <div className={cn('members')}>
+        <div className={cn('members-number')}>505  528</div>
+        <p className={cn('members-text')}>people have already joined HMQ</p>
+      </div>        
       </div>
     </div>
 
     <p className={cn('hmq-description')}>
-      A project on a global scale, receiving<br /> support 10,000 contributors.
+      <!-- A project on a global scale, receiving<br /> support 10,000 contributors. -->
     </p>
-    <div className={cn('members')}>
-      <div className={cn('members-number')}>505  528</div>
-      <p className={cn('members-text')}>people have already joined HMQ</p>
-    </div>
+    
     <SectionCounter sectionNum={1} theme="dark" />
   </section>
 )

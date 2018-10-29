@@ -13,7 +13,8 @@
 
   &__left-side {
     flex: 0 0 50%;
-    background: $color-main-light-blue;
+//    background: $color-main-light-blue;
+    background: #01a2ff;
     overflow: hidden;
     @include media($tablet) {
       position: absolute;
@@ -29,7 +30,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: $color-main-blue;
+//    background-color: $color-main-blue;
+    background-color: #01a2ff;
     flex: 1 1 auto;
     @include media($tablet) {
       display: block;
@@ -84,10 +86,12 @@
       margin-right: 0;
     }
     &-title {
-      margin-bottom: 25px;
-      line-height: normal;
-      font-size: 40px;
-      letter-spacing: 0.09em;
+      margin-top:120px;
+      margin-bottom: 25px;      
+      font-size: 59px;
+      // letter-spacing: 0.09em;
+      text-transform: none;
+      line-height: 58px;
 
       @include media($mobile) {
         font-size: 24px;
@@ -116,6 +120,7 @@
   }
 
   &__subscribe {
+    display:none;
     width: 100%;
     margin: 20px 20px 0 0;
   }
@@ -151,14 +156,15 @@
   }
 
   &__members {
-    position: absolute;
-    bottom: 65px;
-    left: 50%;
+    //position: absolute;
+    //bottom: 65px;
+    //left: 50%;
     transform: translateX(-50%);
     font-size: 15px;
-    text-align: center;
+    text-align: left;
     font-weight: 700;
     color: $color-white;
+    margin-top:120px;
     @include media($tablet) {
       position: relative;
       bottom: 0;
@@ -275,7 +281,7 @@
     }
     span:nth-child(3) {
       animation-delay: 3s;
-    }
+    } 
     span:nth-child(4) {
       animation-delay: 4.5s;
     }
