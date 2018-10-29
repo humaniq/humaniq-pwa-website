@@ -62,8 +62,7 @@ const SE_Home_Empowering = ({ mix, users_number }) => (
     </div>
 
     <div className={cn('right-side')}>
-      <div className={cn('text')}>
-        <img src="/humaniq_logo.svg" width="235">
+      <div className={cn('text')}>        
         <A_Title type="hero" mix={cn('text-title')} theme="bright">
           Innovative financial<br /> services platform
         </A_Title>
