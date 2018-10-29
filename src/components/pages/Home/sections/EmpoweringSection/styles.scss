@@ -70,7 +70,7 @@
   &__text {
     position: relative;
     width:80%;
-    margin-bottom: 70px;
+    // margin-bottom: 70px;
     margin-right: 20px;
     font-family: $font-ProximaNova;
     color: $color-white;
@@ -86,37 +86,55 @@
       margin-right: 0;
     }
     &-title {
-      margin-top:120px;
-      margin-bottom: 25px;      
-      font-size: 59px;
+      margin-top:37px;
+      margin-bottom: 37px;      
+      font-size: 26px;
       // letter-spacing: 0.09em;
-      text-transform: none;
-      line-height: 58px;
+      text-transform: none;      
 
       @include media($mobile) {
         font-size: 24px;
-        margin-bottom: 10px;
+        margin-bottom: 30px;
       }
       @include media($mobile-xs) {
         font-size: 22px;
       }
     }
     &-subtitle {
-      font-size: 26px;
+      font-size: 24px;
       line-height: 1.4;
       @include media($desktop-xxl) {
         font-size: 26px;
       }
       @include media($desktop-xl) {
-        font-size: 22px;
+        font-size: 24px;
       }
       @include media($mobile) {
-        font-size: 20px;
+        font-size: 22px;
       }
       @include media($mobile-xs) {
-        font-size: 16px;
+        font-size: 20px;
       }
     }
+    &-reportbtn {
+      color: #01a2ff;
+      background:#ffffff;
+      padding: 12px 24px;
+      border-radius: 5px;
+      font-size: 24px;
+      @include media($desktop-xxl) {
+        
+      }
+      @include media($desktop-xl) {
+        
+      }
+      @include media($mobile) {
+        
+      }
+      @include media($mobile-xs) {
+        
+      }
+    }    
   }
 
   &__subscribe {
@@ -156,15 +174,15 @@
   }
 
   &__members {
-    //position: absolute;
-    //bottom: 65px;
-    //left: 50%;
+    position: absolute;
+    bottom: 65px;
+    left: 50%;
     transform: translateX(-50%);
     font-size: 15px;
-    text-align: left;
+    text-align: center;
     font-weight: 700;
     color: $color-white;
-    margin-top:120px;
+    margin-top:90px;
     @include media($tablet) {
       position: relative;
       bottom: 0;
@@ -191,13 +209,13 @@
       font-family: $font-ProximaNova;
       font-size: 17px;
       text-transform: uppercase;
-      letter-spacing: 0.3em;
+      letter-spacing: 0.1em;
       @include media($desktop-xxl) {
-        font-size: 12px;
+        font-size: 14px;
       }
       @include media($mobile) {
         //display: none;
-        font-size:12px;
+        font-size:14px;
       }
 
     }
