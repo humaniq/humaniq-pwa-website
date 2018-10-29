@@ -34,7 +34,7 @@ class HumaniqReport2018 extends Component {
           </O_Hero>
 
           <div style={{"float":"left"}}>            
-            <A_Link to="/humaniq_report_16-18.pdf">Download PDF</A_Link>
+            <A_Link to="https://humaniq.com/humaniq_report_16-18.pdf" download="https://humaniq.com/humaniq_report_16-18.pdf">Download PDF</A_Link>
           </div>
           <div className="clearfix"></div>
           <div id="book-container" className={cn('humaniqreport2018')}>
