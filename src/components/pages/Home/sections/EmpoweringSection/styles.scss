@@ -3,7 +3,8 @@
 
 .se-home-empowering {
   @include media($tablet) {
-    background: $color-main-light-blue;
+    // background: $color-main-light-blue;
+    background: #01a2ff;
     justify-content: flex-end;
     align-items: flex-end;
   }
@@ -72,6 +73,7 @@
     width:80%;
     // margin-bottom: 70px;
     margin-right: 20px;
+    margin-bottom:100px;
     font-family: $font-ProximaNova;
     color: $color-white;
     @include media($desktop-xxl) {
@@ -87,10 +89,11 @@
     }
     &-title {
       margin-top:37px;
-      margin-bottom: 37px;      
+      margin-bottom: 57px;      
       font-size: 26px;
       // letter-spacing: 0.09em;
-      text-transform: none;      
+      text-transform: none;
+      font-weight: normal;
 
       @include media($mobile) {
         font-size: 24px;

@@ -11,12 +11,13 @@ import FirstMobileSection from './sections/FirstMobileSection'
 import UnbankedStatSection from './sections/UnbankedStatSection'
 import QuotesSection from './sections/QuotesSection'
 import WhatMakesSection from './sections/WhatMakesSection'
+import SocialLinksSection from './sections/SocialLinksSection'
 import SafetySection from './sections/SafetySection'
 import OpportunitiesSection from './sections/OpportunitiesSection'
 import GrowingSection from './sections/GrowingSection'
 import UseCasesSection from './sections/UseCasesSection'
 import GlobalChallengeSection from './sections/GlobalChallengeSection'
-import ExpeditionSection from './sections/ExpeditionSection'
+/*import ExpeditionSection from './sections/ExpeditionSection'*/
 /*import TimelineSection from './sections/TimelineSection'*/
 import WorldTalkingSection from './sections/WorldTalkingSection'
 import TeamSection from './sections/TeamSection'
@@ -27,12 +28,13 @@ const serverNames = [
   'situation',
   'changes',
   'platform',
+  'social',
   'simplicity',
   'opportunities',
   'userbase',
   'use cases',
   'challenge',
-  'expedition',
+/*  'expedition', */
 /*  'timeline',*/
   'press',
   'contacts',
@@ -43,12 +45,13 @@ const clientNames = [
   'situation',
   'changes',
   'platform',
+  'social',
   'simplicity',
   'opportunities',
   'userbase',
   'use cases',
   'challenge',
-  'expedition',
+/*  'expedition', */
 /*  'timeline',*/
   'team',
   'press',
@@ -57,7 +60,7 @@ const clientNames = [
 
 const sectionsNames = __CLIENT__ ? clientNames : serverNames
 
-const dark = ['mobile', 'situation', 'platform', 'opportunities', 'use cases', 'expedition', 'team']
+const dark = ['mobile', 'situation', 'platform', 'social', 'opportunities', 'use cases', 'expedition', 'team']
 
 const showingWidth = 1120
 
@@ -73,14 +76,15 @@ class Home extends Component {
     empowering: <EmpoweringSection mix={cn('section')} key="empowering" users_number={this.props.users_number} />,
     mobile: <FirstMobileSection mix={cn('section')} key="mobile" />,
     situation: <UnbankedStatSection mix={cn('section')} key="situation" />,
-    changes: <QuotesSection mix={cn('section', { type: 'slider' })} key="changes" />,
+    userbase: <GrowingSection mix={cn('section')} key="userbase" />,    
     platform: <WhatMakesSection mix={cn('section')} key="platform" />,
+    social: <SocialLinksSection mix={cn('section')} key="social" />,
     simplicity: <SafetySection mix={cn('section')} key="simplicity" />,
     opportunities: <OpportunitiesSection mix={cn('section')} key="opportunities" />,
-    userbase: <GrowingSection mix={cn('section')} key="userbase" />,
+    changes: <QuotesSection mix={cn('section', { type: 'slider' })} key="changes" />,
     'use cases': <UseCasesSection mix={cn('section')} key="usecases" />,
     challenge: <GlobalChallengeSection mix={cn('section')} key="challenge" />,
-    expedition: <ExpeditionSection mix={cn('section')} key="expedition" />,
+    /*expedition: <ExpeditionSection mix={cn('section')} key="expedition" />,*/
     /*timeline: <TimelineSection mix={cn('section')} key="timeline" />,*/
     team: <TeamSection mix={cn('section')} key="team" openPeopleModal={this.props.openPeopleModal}/>,
     press: <WorldTalkingSection mix={cn('section')} key="press" />,

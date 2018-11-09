@@ -19,7 +19,7 @@ const HOC_CONFIG = {
 const FIELDS_CONFIG = [
   {
     fieldName: 'email',
-    placeholder: 'Leave your e-mail'
+    placeholder: 'Your e-mail'
   },
 ]
 

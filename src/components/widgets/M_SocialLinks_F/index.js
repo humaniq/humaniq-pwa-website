@@ -56,6 +56,7 @@ M_SocialLinks_H.propTypes = {
   mix: T.string, //BEM mixin from parent block
   type: T.oneOf([
     'section', // layout for sections
+    'section2', // layout for sections
     'footer', // layour for footer
   ]).isRequired
 };
@@ -72,11 +73,12 @@ const socialLinks = [
   {
     name: 'instagram',
     url: 'https://www.instagram.com/humaniq_com/'
-  },
-  {
+  }
+  /*,
+   {
     name: 'github',
     url: 'https://github.com/humaniq',
-  }
+  }*/
 ]
 
 const socialLinks2 = [
@@ -84,10 +86,12 @@ const socialLinks2 = [
     name: 'youtube',
     url: 'https://www.youtube.com/channel/UCXatRidLHbngYUtF8JXICPA'
   },
+  /*
   {
     name: 'slack',
     url: 'https://humaniq-co.slack.com/'
   },
+  */
   {
     name: 'linkedin',
     url: 'https://www.linkedin.com/company/humaniq'

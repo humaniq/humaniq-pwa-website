@@ -46,6 +46,7 @@ class TeleFooter extends React.Component {
             :
             <div>
                 <Intercom appID="y9l4iy41" />
+                <!--
                 <div className={cn('tele-footer', this.state.isHidden ? 'is-hidden' : '')}>
                     <a className="tele left" href="https://t.me/HMQtrader" target="_blank" onClick={() => { this.handleLinkClick() }}>
                         <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -92,6 +93,7 @@ class TeleFooter extends React.Component {
                         </svg>
                     </div>
                 </div>
+                -->
             </div>
         }
         </div>

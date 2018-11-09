@@ -2,7 +2,6 @@ import React from 'react'
 import * as T from 'prop-types'
 import A_Title from 'A_Title_H'
 import SectionCounter from '../common/SectionCounter/index.js'
-import O_SimpleForm_H from '../../../../widgets/O_SimpleForm_H_2';
 import './styles.scss'
 import { cssClassName } from 'utils'
 //import A_Image from 'A_Image'
@@ -70,9 +69,6 @@ const SE_Home_Empowering = ({ mix, users_number }) => (
         <p className={cn('text-subtitle')}>
           <a className={cn('text-reportbtn')} href="/report-2018">Annual Report 2018</a>
         </p>
-        <div className={cn('subscribe')}>
-            <O_SimpleForm_H formType="subscribe" />
-        </div>        
       </div>
     </div>
     <p className={cn('hmq-description')}>      
