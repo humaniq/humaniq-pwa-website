@@ -72,7 +72,7 @@ class SE_Home_Quotes extends Component {
         <div className={cn('slider-nav', {type: 'prev'})} onClick={this.prev} />
         <div className={cn('slider-nav', {type: 'next'})} onClick={this.next} />
 
-        <SectionCounter mix={cn('counter')} sectionNum={4} theme="dark" />
+        <SectionCounter mix={cn('counter')} sectionNum={9} theme="dark" />
       </section>
     )
   }

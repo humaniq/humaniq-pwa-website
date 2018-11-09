@@ -22,7 +22,7 @@ const SE_Home_GlobalChallenge = ({ mix }) => (
         layout="global-challenge"
       />
     </div>
-    <SectionCounter sectionNum={10} theme="dark" />
+    <SectionCounter sectionNum={11} theme="dark" />
   </section>
 )
 

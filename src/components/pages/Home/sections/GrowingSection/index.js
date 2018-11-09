@@ -38,7 +38,7 @@ const SE_Home_Growing = ({ mix }) => (
         </div>
       </div>
     </div>
-    <SectionCounter sectionNum={8} theme="dark" />
+    <SectionCounter sectionNum={4} theme="dark" />
   </section>
 )
 

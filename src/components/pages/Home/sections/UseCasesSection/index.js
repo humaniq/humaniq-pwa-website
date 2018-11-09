@@ -92,7 +92,7 @@ class SE_Home_UseCases extends Component {
           <div className={cn('dots')}>{dots}</div>
         </div>
 
-        <SectionCounter sectionNum={9} theme="bright" />
+        <SectionCounter sectionNum={10} theme="bright" />
       </section>
     )
   }

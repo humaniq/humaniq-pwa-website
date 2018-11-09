@@ -16,7 +16,7 @@ const SE_Home_Safety = ({ mix }) => (
 
       <InfoColumns mix={cn('info-columns')} columns={infoColumns} type="narrow" />
     </div>
-    <SectionCounter sectionNum={6} theme="dark" />
+    <SectionCounter sectionNum={7} theme="dark" />
   </section>
 )
 

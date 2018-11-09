@@ -16,7 +16,7 @@ const SE_Home_Opportunities = ({ mix }) => (
 
       <InfoColumns mix={cn('info-columns')} columns={infoColumns} type="narrow" />
     </div>
-    <SectionCounter sectionNum={7} theme="bright" />
+    <SectionCounter sectionNum={8} theme="bright" />
   </section>
 )
 

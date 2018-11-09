@@ -24,6 +24,29 @@
       }
     }
 
+    &_section2 {
+      #{$this}__title {
+        margin-bottom: 30px;
+        color: $color-black;
+      }
+      #{$this}__links-list {
+        flex-wrap: wrap;
+      }
+      #{$this}__link {
+        svg {
+          fill: #01a2ff;
+          height:45px;
+        }
+        @include media($tablet) {
+          margin-bottom: 0;
+        }
+        &:hover{
+          svg {
+            fill: #17204e;
+          }
+        }
+      }
+    }
 
     &_footer {
       display: flex;
