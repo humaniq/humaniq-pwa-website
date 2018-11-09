@@ -4,6 +4,7 @@
 .tele-footer {
   $this: &;
   position: fixed;
+  display:none;
   bottom: 20px;
   right: 20px;
   width: 375px;

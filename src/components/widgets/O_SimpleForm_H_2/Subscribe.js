@@ -50,9 +50,7 @@ class O_SubscribeForm extends Component {
         {
           submited ?
             <div className={cn('title')}>
-                Great that we are friends now! Thank you for the confidence you have placed in us. Promise no spam.
-                <div className={cn('subtitle')}>Keep in touch</div>
-                <SocialLinks  mix={cn('social-links')} type="section"/>
+                Great that we are friends now! Thank you for the confidence you have placed in us. Promise no spam.                
             </div>
             : <form className={cn([mix])} onSubmit={handleSubmit}>
 
