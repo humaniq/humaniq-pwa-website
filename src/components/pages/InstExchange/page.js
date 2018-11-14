@@ -23,7 +23,7 @@ const qaList = [
     qa:[
       {
         title: "What is CoinSwitch?",
-        text: "CoinSwitch is a cryptocurrency exchange providing the best way to invest in cryptocurrencies by aggregating all the leading exchanges and comparing cryptocurrency prices in real time. CoinSwitch is our partner."
+        text: "CoinSwitch is a cryptocurrency exchange providing the best way to get cryptocurrencies by aggregating all the leading exchanges and comparing cryptocurrency prices in real time. CoinSwitch is our partner."
       },
       {
         title: "Can the rates change during the transaction?",
