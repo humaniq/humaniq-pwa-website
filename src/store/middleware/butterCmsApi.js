@@ -1,7 +1,7 @@
 import request from 'superagent'
 import {stringify} from 'qs'
 import {BUTTER_CMS_API_URL, BUTTER_CMS_API_AUTH_TOKEN, BUTTER_CMS_API_ENDPOINTS} from 'store/constants/api'
-import {REQUEST, CONTENT, WIKI, POST, START, SUCCESS, FAIL, ERROR} from 'store/constants'
+import {REQUEST, CONTENT, WIKI, WIKI_NEWS, POST, START, SUCCESS, FAIL, ERROR} from 'store/constants'
 
 export const BUTTER_CMS_CALL = 'BUTTER_CMS_CALL'
 
@@ -25,6 +25,7 @@ export default () => next => action => {
 
   switch(butterType) {
     case WIKI:
+    case WIKI_NEWS:
     case CONTENT:
       let
         {collection, slugs} = data,

@@ -3,6 +3,7 @@ import navigation from 'store/entities/navigation/reducer'
 import partners from 'store/entities/partners/reducer'
 import wikiArticles from 'store/entities/wikiArticles/reducer'
 import wikiSearch from 'store/entities/wikiSearch/reducer'
+import wikiNews from 'store/entities/wikiNews/reducer'
 import hmqGraph from 'store/entities/hmqGraph/reducer'
 // import transactions from 'store/entities/transactions/reducer'
 import ambassadors from 'store/entities/ambassadors/reducer'
@@ -24,6 +25,7 @@ export default combineReducers({
   ambassadors,
   wikiArticles,
   wikiSearch,
+  wikiNews,
   hmqGraph,
   hmqStatistic,
   hmqMarkets,

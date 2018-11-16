@@ -6,7 +6,8 @@ export const BUTTER_CMS_API_ENDPOINTS = {
   post: `/posts/`,
   posts: `/posts/`,
   content: `/content/`,
-  wiki: `/content/`
+  wiki: `/content/`,
+  wiki_news: `/content/`
 }
 
 export const ENDPOINT_CAREERS = `http://188.166.170.8/v1/vacancies`

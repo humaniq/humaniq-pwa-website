@@ -34,6 +34,7 @@ export const CAREERS = 'CAREERS'
 export const CONTENT = 'CONTENT'
 export const STATIC_DATA = 'STATIC_DATA'
 export const WIKI = 'WIKI'
+export const WIKI_NEWS = 'WIKI_NEWS'
 export const WIKI_SEARCH = 'WIKI_SEARCH'
 export const USERS_NUMBER = 'USERS_NUMBER'
 

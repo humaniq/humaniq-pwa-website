@@ -8,6 +8,7 @@ import { isMobile } from 'utils/isMobile'
 import O_Footer_H from 'O_Footer_H'
 import EmpoweringSection from './sections/EmpoweringSection'
 import FirstMobileSection from './sections/FirstMobileSection'
+import HumaniqNewsSection from './sections/HumaniqNewsSection'
 import UnbankedStatSection from './sections/UnbankedStatSection'
 import QuotesSection from './sections/QuotesSection'
 import WhatMakesSection from './sections/WhatMakesSection'
@@ -25,6 +26,7 @@ import TeamSection from './sections/TeamSection'
 const serverNames = [
   'empowering',
   'mobile',
+  'news',
   'situation',
   'userbase',  
   'platform',
@@ -42,6 +44,7 @@ const serverNames = [
 const clientNames = [
   'empowering',
   'mobile',
+  'news',
   'situation',
   'userbase',  
   'platform',
@@ -60,7 +63,7 @@ const clientNames = [
 
 const sectionsNames = __CLIENT__ ? clientNames : serverNames
 
-const dark = ['mobile', 'situation', 'platform', 'social', 'opportunities', 'use cases', 'expedition', 'team']
+const dark = ['mobile', 'news', 'situation', 'platform', 'social', 'opportunities', 'use cases', 'expedition', 'team']
 
 const showingWidth = 1120
 
@@ -75,6 +78,7 @@ class Home extends Component {
   sectionsObj = {
     empowering: <EmpoweringSection mix={cn('section')} key="empowering" users_number={this.props.users_number} />,
     mobile: <FirstMobileSection mix={cn('section')} key="mobile" />,
+    news: <HumaniqNewsSection mix={cn('section')} key="news" humaniq_news={this.props.fetchWikiNews} />,
     situation: <UnbankedStatSection mix={cn('section')} key="situation" />,
     userbase: <GrowingSection mix={cn('section')} key="userbase" />,    
     platform: <WhatMakesSection mix={cn('section')} key="platform" />,

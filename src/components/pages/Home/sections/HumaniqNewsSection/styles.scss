@@ -1,0 +1,85 @@
+@import 'common/settings/variables';
+@import 'common/utils';
+
+.se-home-humaniq-news {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: $color-white;
+  background-image: url('/img/design-v2/sections/common/head.svg')!important;
+  background-repeat: no-repeat;
+  background-position: center!important;
+  background-size: 33%;
+  background-position-x: 111%!important;
+
+  @include media($tablet) {
+    padding-bottom: 0;
+    background: none;
+  }
+
+  &__content {
+    position: relative;
+    margin: 30px 0 0 60px;
+    font-family: $font-ProximaNova;
+    @include media($desktop-xxl) {
+      margin: 0 0 0 130px;
+    }
+    @include media($tablet) {
+      margin: 0;
+    }
+  }
+
+  &__title {
+    margin-bottom: 60px;
+    @include media($desktop-xxl) {
+      margin-bottom: 30px;
+    }
+  }
+  &__subtitle {
+    margin-bottom: 80px;
+    color: $color-text-gray;
+    font-size: 40px;
+    line-height: 1.2;
+    @include media($desktop-xxl) {
+      margin-bottom: 50px;
+      font-size: 28px;
+    }
+    @include media($desktop-13) {
+      font-size: 20px;
+    }
+    @include media($tablet) {
+      font-size: 20px;
+    }
+    @include media($mobile) {
+      br {
+        display: none;
+      }
+    }
+  }
+
+  &__columns-wrapper {
+    position: relative;
+    display: flex;
+    @include media($desktop-xl) {
+      flex-wrap: wrap;
+    }
+  }
+
+  &__info-columns {
+    @include media($desktop-xl) {
+      flex-grow: 1;
+    }
+  }
+
+  &__button {
+    align-self: flex-end;
+    display: inline-block;
+    margin-top: 20px;
+    @include media($desktop-xl) {
+      margin-top: 30px;
+    }
+    @include media($mobile-xs) {
+      /* display: none; */
+    }
+  }
+}
