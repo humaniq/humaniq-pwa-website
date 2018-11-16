@@ -1,0 +1,189 @@
+@import "common/settings/variables";
+@import "common/utils";
+
+.inst-exchange2 {
+
+  &__section-wrapper {
+    font-family: 'Roboto', sans-serif;
+
+    .coinswitch-widget {
+      width: 100%;
+      // display: none;
+      background-color: #fff;
+      iframe {
+        min-height: 450px;
+      }
+      @include media($tablet) {
+        iframe {
+          min-height: 600px;
+        }
+      }
+      @include media($mobile) {
+        iframe {
+          min-height: 750px;
+        }
+      }
+    }
+
+
+    .a-h_type_hero {
+      font-size: 34px;
+      font-weight: bold;
+      margin: 40px 0;
+      @include media($mobile) {
+        margin: 40px 0 0 0;
+      }
+    }
+
+    .qa-list {
+      padding-left: 60px;
+      .qa-item {
+        padding: 20px 0;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        .link {
+          cursor: pointer;
+          .title {
+            font-size: 21px !important;
+            font-weight: 400 !important;
+            color: #01a2ff;
+          }
+          background: url(/img/play-button.svg) right 20px center no-repeat;
+          padding-right: 40px;
+
+        }
+        .text {
+          display: none;
+          //height: 1px;
+          //overflow: hidden;
+          transition: ease-in-out 0.5s;
+          font-family: ProximaNova, sans-serif;
+          font-size: 16px;
+          line-height: 1.5em;
+          margin-top: 15px;
+          ul li {
+            list-style-type: disc;
+            margin-left: 20px;
+            margin-top: 10px;
+          }
+          b {
+            font-weight: bold;
+          }
+        }
+
+        &.active {
+          .link {
+            background: url(/img/play-button-u.svg) right 20px center no-repeat;
+          }
+
+          .text {
+            display: block;
+            //height: 150px;
+            //margin-top: 20px;
+          }
+        }
+      }
+    }
+
+
+    .qa-wrapper {
+      display: flex;
+      flex-direction: row;
+      .i {
+        width: 40px;
+        margin: 0 20px 0 0px;
+      }
+      .sections {
+        background: rgba(248, 248, 248, 0.4);
+        padding: 30px;
+        flex: 30%;
+        .categorie {
+          display:flex;
+          flex-direction: row;
+          cursor: pointer;
+          border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+          margin-bottom: 30px;
+          .link {
+            flex: 1;
+            .title {
+              font-size: 20px;
+              font-weight: bold;
+              margin: 10px 0 10px 0;
+              color: #253151;
+            }
+            .text {
+              font-family: ProximaNova, sans-serif;
+              font-size: 16px;
+              line-height: 1.5em;
+              margin: 0 0 30px 0;
+              color: #999999;
+            }
+          }
+          &.active {
+            .link {
+              .title {
+                color: #01a2ff;
+              }
+            }
+          }
+        }
+      }
+      .qa {
+        flex: 65%;
+        padding: 20px 20px 20px 5%;
+
+        .head {
+          display: flex;
+          flex-direction: row;
+          .title {
+            font-size: 20px;
+            font-weight: bold;
+            margin: 10px 0 10px 0;
+            color: #253151;
+          }
+          .subtitle {
+            font-family: ProximaNova, sans-serif;
+            font-size: 16px;
+            line-height: 1.5em;
+            margin: 0 0 30px 0;
+            color: #999999;
+          }
+        }
+
+      }
+
+      @media (min-width: 700px) {
+        margin-bottom: 80px;
+        .sections {
+          .categorie {
+            .qa-list {
+              display: none;
+            }
+          }
+        }
+      }
+
+      @media (max-width: 700px) {
+        flex-wrap: wrap;
+        .qa-list {
+          flex: 100%;
+          padding: 0 20px;
+          margin-top: 10px;
+          //margin-left: 20px;
+          background: #fff;
+        }
+        .sections {
+          flex: 100%;
+          .categorie {
+            flex-wrap: wrap;
+            .link .text {
+              margin: 0;
+            }
+          }
+        }
+        .qa {
+          display: none;
+        }
+      }
+    }
+  }
+}
