@@ -73,13 +73,17 @@ const SE_Home_Empowering = ({ mix, users_number }) => (
     </div>
     <p className={cn('hmq-description')}>      
     </p>
+
+    <SectionCounter sectionNum={1} theme="dark" />
+  </section>
+)
+
+/*
     <div className={cn('members')}>
       <div className={cn('members-number')}>505  528</div>
       <p className={cn('members-text')}>people have already joined HMQ<br /> in 46 countries</p>
     </div>            
-    <SectionCounter sectionNum={1} theme="dark" />
-  </section>
-)
+*/
 
 export default SE_Home_Empowering
 
