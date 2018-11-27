@@ -10,6 +10,12 @@ export const advisers = [
     imgSrc: `${imgPath}/david_applefield.jpg`,
   },
   {
+    name: 'Hazem Danny Al-Nakib',
+    position: 'Adviser',
+    bio: '',
+    imgSrc: `${imgPath}/hazem_danny.jpg`,
+  },
+  {
     name: 'Matt McKibbin',
     position: 'Adviser',
     bio:
@@ -83,12 +89,6 @@ export const team = [
   //  bio:
   //    'Javed has a background as an actuary and of finance, consulting and startups. He loves technology, especially gadgets, AI and virtual reality, and believes in Blockchain for Good. He is working with Humaniq to bring greater opportunities and fairness to the world.',
   //  imgSrc: `${imgPath}/javed_khattak.jpg`,
-  //},
-  //{
-  //  name: 'Hazem Danny Al-Nakib',
-  //  position: 'CIO',
-  //  bio: '',
-  //  imgSrc: `${imgPath}/hazem_danny.jpg`,
   //},
   {
     name: 'Anton Mozgovoy',
