@@ -18,6 +18,7 @@ import News322 from './News-322'
 import News21 from './News-21'
 import News41 from './News-41'
 import InstExchange from './InstExchange'
+import InstExchange2 from './InstExchange2'
 import Deeplink from './Deeplink'
 import FrequentlyAskedQuestions from './FrequentlyAskedQuestions'
 import HumaniqReport2018 from './HumaniqReport2018'
@@ -71,6 +72,9 @@ const getRoutes = (store) => {
           />
           <Route path="/exchange"
                  component={InstExchange}
+          />
+          <Route path="/hmqexchange"
+                 component={InstExchange2}
           />
         <Route
           path="/anniversary"

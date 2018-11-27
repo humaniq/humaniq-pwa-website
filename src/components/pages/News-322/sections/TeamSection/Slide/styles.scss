@@ -30,6 +30,7 @@
   &_wide_true {
     width: 172px;
     padding-left: 36px;
+    padding-left: 0px;    
   }
   &__group-name {
     text-transform: uppercase;
@@ -44,6 +45,7 @@
     font-size: 16px;
     font-weight: bold;
     color: #01a2ff;
+    display:none;
   }
   &__person {
     margin-top: 32px;
