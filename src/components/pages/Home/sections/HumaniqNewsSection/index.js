@@ -13,7 +13,7 @@ class SE_Home_HumaniqNews extends Component {
   }
 
   componentDidMount(){
-    fetch('https://api.buttercms.com/v2/content/?auth_token=b251deef79e07f942e09e2df3fb18755f90522f2&keys=humaniq_news')
+    fetch('https://api.staging.finlyt.com/hmq-admin-api/api/v1/public/humaniq-news/list?type=news&limit=3&offset=0')
     .then(result=>result.json())
     .then(items=>this.setState({items}))
   }
@@ -21,7 +21,7 @@ class SE_Home_HumaniqNews extends Component {
   render(){
     const { mix } = this.props
 
-    if(typeof(this.state.items.data)==='undefined' || typeof(this.state.items.data.humaniq_news)==='undefined' || this.state.items.data.humaniq_news.length<1){
+    if(typeof(this.state.items)==='undefined' || typeof(this.state.items.data)==='undefined' || this.state.items.data.length<1){
       return(
         <section className={cn([mix])}>
           Loading...
@@ -29,9 +29,9 @@ class SE_Home_HumaniqNews extends Component {
       )
     }
 
-    const newsItems = this.state.items.data.humaniq_news.slice(0,1).map((item) =>
-      <div>
-        <div><img src={item.preview_image} /></div>
+    const newsItems = this.state.items.data.map((item) =>
+      <div style={{"padding":"10px", "border":"1px solid #000"}}>
+        <div><img src={item.image_url} style={{"max-width":"300px"}} /></div>
         <div>{item.title}<br />{item.preview}</div>
       </div>
     );
@@ -39,15 +39,10 @@ class SE_Home_HumaniqNews extends Component {
     return (
       <section className={cn([mix])}>
         {newsItems}
+        <div className="clearfix"></div>
       </section>
     )
   }
 }
-
-SE_Home_HumaniqNews.propTypes = {
-  //news: T.array.isRequired
-};
-
-SE_Home_HumaniqNews.defaultProps = {}
 
 export default SE_Home_HumaniqNews
