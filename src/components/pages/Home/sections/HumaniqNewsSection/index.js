@@ -21,7 +21,7 @@ class SE_Home_HumaniqNews extends Component {
   render(){
     const { mix } = this.props
 
-    if(typeof(this.state.items)==='undefined' || typeof(this.state.items.data)==='undefined' || this.state.items.data.length<1){
+    if(typeof(this.state.items)==='undefined' || typeof(this.state.items.data)==='undefined' || this.state.items.data===null || this.state.items.data.length<1){
       return(
         <section className={cn([mix])}>
           Loading...
