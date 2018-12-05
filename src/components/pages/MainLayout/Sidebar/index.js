@@ -50,11 +50,11 @@ class SE_MainLayoutSidebar extends Component {
           <li className={cn('menu-link')}>
             <Link to="/contact-us">Contact us</Link>
           </li>
-          <li className={cn('menu-link')}>
-            <span className={cn('list-item-pop-up')} onClick={() => openPopup('subscribe')}>
-              Subscribe
-            </span>
-          </li>
+          {/*<li className={cn('menu-link')}>*/}
+            {/*<span className={cn('list-item-pop-up')} onClick={() => openPopup('subscribe')}>*/}
+              {/*Subscribe*/}
+            {/*</span>*/}
+          {/*</li>*/}
         </ul>
       </nav>
     )

@@ -99,11 +99,11 @@ const initWikiArticles = {
         article: "<p>All our Humaniq users are our ambassadors, essential to achieving our aim of giving the over two billion unbanked people new opportunities to receiving and earning money, and accessing finance. This includes users with a formal role to spread the word who are on our Humaniq Ambassador Program. These are dozens of Bitcoiners living in developing countries such as Afghanistan, Botswana, Indonesia, Pakistan and Sierra Leone who have started to introduce Humaniq and its possibilities to others - and who earn cryptocurrency in return. In addition, everybody using the app is rewarded by recommending friends through the platform.</p>",
         category: "Community"
       },
-      {
-        title: "Newsletter",
-        article: "<p>If you prefer to receive comprehensive Humaniq updates on a regular basis, you should sign up to our weekly newsletter. All fresh news of Humaniq and its app will be available in one place, in your inbox, saving your time. To subscribe please follow <a title=\"Subscribe Form\" href=\"https://humaniq.com/form/subscribe\">this link</a>.</p>",
-        category: "Community"
-      },
+      //{
+      //  title: "Newsletter",
+      //  article: "<p>If you prefer to receive comprehensive Humaniq updates on a regular basis, you should sign up to our weekly newsletter. All fresh news of Humaniq and its app will be available in one place, in your inbox, saving your time. To subscribe please follow <a title=\"Subscribe Form\" href=\"https://humaniq.com/form/subscribe\">this link</a>.</p>",
+      //  category: "Community"
+      //},
       {
         title: "Podcasts",
         article: "<p>At Humaniq we believe that it is important to share the latest news and achievements with our followers. We enjoy keeping the community updated on the events we are taking part in, meetups we are arranging, new countries we are visiting on our mission, and strategic partnerships we establish.</p>\r\n<p>Currently, as we are developing and launching our app - we are producing two types of weekly reviews on alternate weeks. One is a general overview of the latest Humaniq activities. Another is specific technical review, dedicated to the app development updates.</p>\r\n<p>We share Humaniq news via weekly video round-ups on our youtube channel. From now on we will also keep you posted with our podcasts featuring &nbsp;regular round-ups as well as some more stories, pics and team members opinions.&nbsp;</p>",
