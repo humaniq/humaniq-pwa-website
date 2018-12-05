@@ -18,11 +18,11 @@ const SE_Home_SocialLinks = ({ mix }) => (
       <M_SocialLinks_H mix={cn('social-links')} type="section2">        
       </M_SocialLinks_H>
 
-      
-      <div className={cn('subscribe')}>
-      Subscribe to our mailing list to receive quality content from Humaniq!
-          <O_SimpleForm_H formType="subscribe" />
-      </div>      
+      {/*<div className={cn('subscribe')}>*/}
+      {/*Subscribe to our mailing list to receive quality content from Humaniq!*/}
+          {/*<O_SimpleForm_H formType="subscribe" />*/}
+      {/*</div>*/}
+
     </div>
     <SectionCounter sectionNum={6} theme="bright" />
   </section>

@@ -165,7 +165,7 @@ export const ambassadors = [
     name: "Achille Agbe Julien",
     position: "Cote d’Ivoire",
     "bio": "Achille graduated from the Abidjan University and EDHEC Business School with a final degree in Private Business Law (Master). Has gained an MBA and also runs his own consulting firm (Ismarten Ltd). ${ambassadorsPath}ille acts as the Managing Director of EIC Corporation.",
-    imgSrc: `https://s3-eu-west-1.amazonaws.com/humaniq-web-backend-public/ambassadors/pics/AchilleAgbeJulien.png`,
+    imgSrc: `${ambassadorsPath}/AchilleAgbeJulien.png`,
   },
   {
     name: "Adewale Bankolo",

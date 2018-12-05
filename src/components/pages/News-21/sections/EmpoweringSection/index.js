@@ -232,12 +232,12 @@ class SE_Home_Empowering extends React.Component {
                     </div>
                 </div>
 
-                <div className={cn('subscribe')}>
-                    <h3>Join now to be the first to get Humaniq <br/> great news and upcoming offers!</h3>
-                    <div className='frm'>
-                        <O_SimpleForm_H formType='subscribe'/>
-                    </div>
-                </div>
+                {/*<div className={cn('subscribe')}>*/}
+                    {/*<h3>Join now to be the first to get Humaniq <br/> great news and upcoming offers!</h3>*/}
+                    {/*<div className='frm'>*/}
+                        {/*<O_SimpleForm_H formType='subscribe'/>*/}
+                    {/*</div>*/}
+                {/*</div>*/}
 
                 <ScrollableAnchor id={'xchange'}>
                     <div className="coinswitch-widget">
