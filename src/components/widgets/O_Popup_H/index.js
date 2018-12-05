@@ -31,7 +31,7 @@ O_Popup_H.propTypes = {
   isActive: T.bool.isRequired, //popup is visible or not
   closePopup: T.func.isRequired, //close popup action
   popupType: T.oneOf([
-    'subscribe', //popup with subscribe form inside
+    //'subscribe', //popup with subscribe form inside
     'ambasadors' //popup with ambasadors form inside
   ])
 };

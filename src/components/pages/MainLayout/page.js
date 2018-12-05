@@ -15,7 +15,7 @@ import axios from "axios/index";
 class SE_MainLayout_H extends Component {
   state = {
     headerLinks: ['Humaniq Wiki', 'HMQ Explorer', 'Challenge', 'Ambassadors'],
-    sidebarLinks: ['Open source', 'Contact us', 'Subscribe'],
+    sidebarLinks: ['Open source', 'Contact us'],// 'Subscribe'],
     TelegaIsHidden: true
   };
 
