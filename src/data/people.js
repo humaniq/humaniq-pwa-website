@@ -110,12 +110,12 @@ export const team = [
   //  bio: '',
   //  imgSrc: `${imgPath}/harry_bright.jpg`,
   //},
-  {
-    name: 'Andrey Gidaspov',
-    position: 'Chief Global Development Officer',
-    bio: '',
-    imgSrc: `${imgPath}/andrey_gidaspov.jpg`,
-  },
+  //{
+  //  name: 'Andrey Gidaspov',
+  //  position: 'Chief Global Development Officer',
+  //  bio: '',
+  //  imgSrc: `${imgPath}/andrey_gidaspov.jpg`,
+  //},
   // {
   //   name: 'Segrey Blinov',
   //   position: 'SMM, CSS',
