@@ -16,13 +16,22 @@ class SE_MainLayout_H extends Component {
   state = {
     headerLinks: ['Humaniq Wiki', 'HMQ Explorer', 'Challenge', 'Ambassadors'],
     sidebarLinks: ['Open source', 'Contact us'],// 'Subscribe'],
-    TelegaIsHidden: true
+    TelegaIsHidden: true,
+    HMQCareIsHidden: false
   };
 
   TelegaIsHidden = true;
+  HMQCareIsHidden = false;
   IntercomIsHidden = true;
   checkCompleted = false;
   switchCompleted = false;
+
+  setCookie = (cname, cvalue, exdays) => {
+    let d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    const expires = "expires="+ d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+  }
 
   getCookie = (cname) => {
     const name = cname + "=";
@@ -98,6 +107,12 @@ class SE_MainLayout_H extends Component {
     }
   }
 
+  hmqCareHide = (e) => {
+    this.setCookie('hmqCareHidden', '1', 30);
+    this.HMQCareIsHidden = true;
+    this.setState({HMQCareIsHidden: this.HMQCareIsHidden });
+  }
+
   componentDidMount() {
     axios.get("https://ipapi.co/json/")
             .then(res => {
@@ -117,7 +132,6 @@ class SE_MainLayout_H extends Component {
             });
     window.addEventListener('scroll', this.handleScroll);
   }
-
 
   render() {
     const { headerLinks, sidebarLinks } = this.state
@@ -140,6 +154,12 @@ class SE_MainLayout_H extends Component {
       if(openRoute[0].search("news-")!==-1) homePage = true;
     }
 
+    let hmqCareIsHidden = this.HMQCareIsHidden;
+
+    if(!this.HMQCareIsHidden && this.getCookie("hmqCareHidden")) {
+       hmqCareIsHidden = true;
+    }
+
     const mobileMenuLinks = [...headerLinks, ...sidebarLinks]
 
     return (
@@ -158,6 +178,8 @@ class SE_MainLayout_H extends Component {
           theme={theme}
           sticky={homePage}
           openRoute={openRoute}
+          hmqCareIsHidden={hmqCareIsHidden}
+          hmqCareHide={this.hmqCareHide}
         />
         { this.TelegaIsHidden ? "" : <TeleFooter/> }
 

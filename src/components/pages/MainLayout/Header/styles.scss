@@ -2,34 +2,72 @@
 @import 'common/utils';
 
 .se-main-layout-header-h {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 20px 0 40px;
+  &__header-content {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px 0 40px;
 
-  background: #fff;
-  //box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-
-  @include media($desktop-xxl) {
-    padding-right: 20px;
-    //box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  }
-  @include media($desktop-xl) {
-    padding:12px 20px;
-    background-color: white;
+    background: #fff;
     //box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
-    &_mob-menu-open_true {
-      //background-color: $color-main-blue;
+    @include media($desktop-xxl) {
+      padding-right: 20px;
+      //box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+    @include media($desktop-xl) {
+      padding:12px 20px;
+      background-color: white;
+      //box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+      &_mob-menu-open_true {
+        //background-color: $color-main-blue;
+        box-shadow: none;
+      }
+    }
+    @include media($mobile-xs) {
       box-shadow: none;
     }
+    //@include media($desktop-xl) {
+    //  padding: 15px 20px;
+    //}
   }
-  @include media($mobile-xs) {
-    box-shadow: none;
+
+  &__hcare-bar{
+    flex: 0 0 100%;
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    border-bottom: 1px solid #eee;
+    padding: 15px 45px 15px 15px;
+    font-size: 110%;
+    line-height: 1;
+    background: #fff;
+
+    @include media($mobile-xs){
+      padding-right: 40px;
+    }
+
+    &_is-hidden {
+      &_true {
+        display: none;
+      }
+    }
+
+    .close {
+      display: inline-block;
+      position: absolute;
+      right:15px;
+      width: 20px;
+      height: 20px;
+      top:15px;
+      cursor: pointer;
+      @include media($mobile-xs){
+        right: 8px;
+      }
+    }
   }
-  //@include media($desktop-xl) {
-  //  padding: 15px 20px;
-  //}
 
   &__logo {
     width: 117px;
@@ -121,13 +159,11 @@
     font-weight: bold;
     padding: 13px;
 
-
     @include media($mobile-xs){
       font-size: 12px;
       padding-top: 10px;
       text-align: left;
     }
-
 
     a.tele {
       display: inline-block;
@@ -177,7 +213,5 @@
       }
     }
   }
-
-
 }
 
