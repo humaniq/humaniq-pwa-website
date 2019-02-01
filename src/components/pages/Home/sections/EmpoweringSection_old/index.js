@@ -19,29 +19,55 @@ const SE_Home_Empowering = ({ mix, users_number }) => (
       <div className={cn('map')}>
         <img
           className={cn('map-img', { type: 'desktop' })}
-          src="/img/v1/home/africa-map-desktop.jpg"
+          src="/img/v1/home/map-bg.png"
           alt="EMPOWERING THE UNBANKED"
         />
         <img
           className={cn('map-img', { type: 'mobile' })}
-          src="/img/v1/home/africa-map-mobile.jpg"
+          src="/img/v1/home/mobile-map.jpg"
           alt="EMPOWERING THE UNBANKED"
         />
+        <div className={cn('point', { number: 1 })}>
+          <span />
+          <span />
+          <span />
+          <span />
+        </div>
+        <div className={cn('point', { number: 2 })}>
+          <span />
+          <span />
+          <span />
+          <span />
+        </div>
+        <div className={cn('point', { number: 3 })}>
+          <span />
+          <span />
+          <span />
+          <span />
+        </div>
+        <div className={cn('point', { number: 4 })}>
+          <span />
+          <span />
+          <span />
+          <span />
+        </div>
+        <div className={cn('point', { number: 5 })}>
+          <span />
+          <span />
+          <span />
+          <span />
+        </div>
       </div>
     </div>
 
     <div className={cn('right-side')}>
-      <div className={cn('report-link')}>
-         <a className={cn('report-link-a')} href="/report-2018">Annual Report 2018</a>
-      </div>
-
       <div className={cn('text')}>
         <img src="/humaniq_logo.svg" />
         <A_Title type="hero" mix={cn('text-title')} theme="bright">
-          Humaniq Care is a charity and fundraising platform<br />built around our application and infrastructure
+          Global Fintech company providing <br /> next-generation financial services <br /> in emerging economies
         </A_Title>
         <p className={cn('text-subtitle')}>
-          <a className={cn('text-hmqcarebtn')} href="http://care.humaniq.com" target="_blank">Check it out!</a>
+          <a className={cn('text-reportbtn')} href="/report-2018">Annual Report 2018</a>
         </p>
       </div>
     </div>

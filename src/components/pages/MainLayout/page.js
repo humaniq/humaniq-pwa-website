@@ -156,7 +156,7 @@ class SE_MainLayout_H extends Component {
 
     let hmqCareIsHidden = this.HMQCareIsHidden;
 
-    if(!this.HMQCareIsHidden && this.getCookie("hmqCareHidden")) {
+    if(homePage || (!this.HMQCareIsHidden && this.getCookie("hmqCareHidden"))) {
        hmqCareIsHidden = true;
     }
 

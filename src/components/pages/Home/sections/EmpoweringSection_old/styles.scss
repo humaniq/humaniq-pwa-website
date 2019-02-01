@@ -48,15 +48,14 @@
     width: 100%;
     height: 100%;
     overflow: hidden;
-    margin-top: 50px;
     &-img {
       &_type_mobile {
         display: none;
-        width: 100%;
+        width: 980px;
 
         @include media ($tablet) {
           display: block;
-          float: none;
+          float: right;
         }
       }
       &_type_desktop {
@@ -68,33 +67,6 @@
       }
     }
   }
-
-  &__report-link {
-    position: absolute;
-    float: right;
-    top: 70px;
-    right: 30px;
-
-    @include media ($tablet) {
-      position: relative;
-      padding-bottom: 25px;
-      float: none;
-      top: initial;
-      right: initial;
-    }
-
-    &-a {
-      color: #fff;
-      text-decoration: underline;
-      font-size: 110%;
-
-      @include media ($tablet) {
-        font-size: 18px;
-      }
-    }
-  }
-
-
 
   &__text {
     position: relative;
@@ -125,11 +97,10 @@
 
       @include media($mobile) {
         font-size: 24px;
-        margin-bottom: 40px;
+        margin-bottom: 30px;
       }
       @include media($mobile-xs) {
         font-size: 22px;
-        margin-bottom: 30px;
       }
     }
     &-subtitle {
@@ -148,13 +119,12 @@
         font-size: 20px;
       }
     }
-    &-hmqcarebtn {
+    &-reportbtn {
       color: #01a2ff;
       background:#ffffff;
       padding: 12px 24px;
       border-radius: 5px;
       font-size: 24px;
-      display: inline-block;
       @include media($desktop-xxl) {
         
       }
