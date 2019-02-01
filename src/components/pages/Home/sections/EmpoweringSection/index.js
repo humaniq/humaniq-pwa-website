@@ -17,6 +17,7 @@ const SE_Home_Empowering = ({ mix, users_number }) => (
   <section className={cn([mix])}>
     <div className={cn('left-side')}>
       <div className={cn('map')}>
+        <div className={cn('map-img-div')}>
         <img
           className={cn('map-img', { type: 'desktop' })}
           src="/img/v1/home/africa-map-desktop.jpg"
@@ -27,6 +28,37 @@ const SE_Home_Empowering = ({ mix, users_number }) => (
           src="/img/v1/home/africa-map-mobile.jpg"
           alt="EMPOWERING THE UNBANKED"
         />
+        <div className={cn('point', { number: 1 })}>
+          <span />
+          <span />
+          <span />
+          <span />
+        </div>
+        <div className={cn('point', { number: 2 })}>
+          <span />
+          <span />
+          <span />
+          <span />
+        </div>
+        <div className={cn('point', { number: 3 })}>
+          <span />
+          <span />
+          <span />
+          <span />
+        </div>
+        <div className={cn('point', { number: 4 })}>
+          <span />
+          <span />
+          <span />
+          <span />
+        </div>
+        <div className={cn('point', { number: 5 })}>
+          <span />
+          <span />
+          <span />
+          <span />
+        </div>
+        </div>
       </div>
     </div>
 

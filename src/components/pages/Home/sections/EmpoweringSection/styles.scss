@@ -48,7 +48,16 @@
     width: 100%;
     height: 100%;
     overflow: hidden;
-    margin-top: 50px;
+    &-img-div {
+      margin-top: 50px;
+      width: 800px;
+      position: relative;
+
+      @include media ($tablet) {
+        width: 100%;
+      }
+    }
+
     &-img {
       &_type_mobile {
         display: none;
@@ -257,47 +266,52 @@
   &__point {
     @include media ($tablet) {
       transform: scale(0.5);
-      left: auto !important;
+      //left: auto !important;
     }
 
     &_number_1 {
-      top: 38rem;
-      left: 18rem;
+      top: 43%;
+      left: 32%;
       @include media ($tablet) {
-        top: 12rem;
-        right: 20rem;
+        //top: 12rem;
+        //right: 20rem;
+        left: 39%;
       }
     }
     &_number_2 {
-      top: 28rem;
-      left: 30rem;
+      top: 50%;
+      left: 69%;
       @include media ($tablet) {
-        top: 17rem;
-        right: 48rem;
+        //top: 17rem;
+        //right: 48rem;
+        left: 78%;
       }
     }
     &_number_3 {
-      top: 30rem;
-      left: 45rem;
+      top: 60%;
+      left: 65%;
       @include media ($tablet) {
-        top: 54rem;
-        right: 15rem;
+        //top: 54rem;
+        //right: 15rem;
+        left: 74%;
       }
     }
     &_number_4 {
-      top: 49rem;
-      left: 28rem;
+      top: 73%;
+      left: 40%;
       @include media ($tablet) {
-        top: 32rem;
-        right: 40rem;
+        //top: 32rem;
+        //right: 40rem;
+        left: 46%;
       }
     }
     &_number_5 {
-      top: 53rem;
-      left: 43rem;
+      top: 86%;
+      left: 56%;
       @include media ($tablet) {
-        top: 30rem;
-        right: 50rem;
+        //top: 30rem;
+        //right: 50rem;
+        left: 63%;
       }
     }
 
