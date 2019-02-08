@@ -4,7 +4,7 @@ import Helmet from 'react-helmet'
 const SE_AboutMeta = () => (
   <Helmet>
     <html lang="en" id="about"/>
-    <link rel="canonical" href="https://humaniq.com/about"/>
+    <link rel="canonical" href="https://about.humaniq.com/about"/>
   </Helmet>
 )
 

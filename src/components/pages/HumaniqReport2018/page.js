@@ -20,9 +20,9 @@ class HumaniqReport2018 extends Component {
     return (
       <div className={cn('section-wrapper')}>
 
-        <link rel="stylesheet" type="text/css" href="https://humaniq.com/wow_book/wow_book.css" />
+        <link rel="stylesheet" type="text/css" href="/wow_book/wow_book.css" />
         <ScriptLoader
-          url="https://humaniq.com/wow_book/combine.js"
+          url="/wow_book/combine.js"
           onLoad={this.handleScriptLoad.bind(this)}
         />
 
@@ -31,13 +31,13 @@ class HumaniqReport2018 extends Component {
             <A_H type='hero'>Humaniq Annual Report (2016 - Q3 2018)</A_H>
             <p>It’s difficult to believe that it has already been a full year since Humaniq App was released. We are excited to show a full review of our achievements, starting from the token sale and ending with the App’s anniversary. Inspiring statements, detailed statistics and many interesting insights make this document worthwhile for anyone who cares about the Global Unbanked.</p>
             <A_P type='hero'>              
-              Click the Image below to read the report, or click <a href="https://humaniq.com/humaniq_report_16-18.pdf" download>here to download</a>.
+              Click the Image below to read the report, or click <a href="/humaniq_report_16-18.pdf" download>here to download</a>.
             </A_P>
             <img src="/img/report-2018/Humaniq_AR_edit_261018-1-2.jpg" style={{"max-width":"100%"}} id="show-book" type="material-r-link-window" />
           </O_Hero>
 
           <div style={{"float":"left"}}>            
-            <a href="https://humaniq.com/humaniq_report_16-18.pdf" download>Download PDF</a>
+            <a href="/humaniq_report_16-18.pdf" download>Download PDF</a>
           </div>
           <div className="clearfix"></div>
           <div id="book-container" className={cn('humaniqreport2018')}>

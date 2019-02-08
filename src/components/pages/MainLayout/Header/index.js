@@ -12,7 +12,7 @@ const SE_MainLayoutHeader_H = ({ mix, theme, mobileMenuIsActive, toggleMobileMen
   <header className={cn([mix], { 'mob-menu-open': mobileMenuIsActive })}>
 
     <div className={cn('hcare-bar', { 'is-hidden': hmqCareIsHidden })}>
-      Humaniq Care charity platform is live, <a href="https://care.humaniq.com" target="_blank" style={{'textDecoration':'underline'}}>check it out here!</a>
+      Humaniq Care charity platform is live, <a href="https://humaniq.com" target="_blank" style={{'textDecoration':'underline'}}>check it out here!</a>
 
       <div className="close" onClick={hmqCareHide}>
          <svg width="19" height="20" viewBox="0 0 19 20" fill="none" xmlns="http://www.w3.org/2000/svg">

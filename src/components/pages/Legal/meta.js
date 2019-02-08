@@ -4,7 +4,7 @@ import Helmet from 'react-helmet'
 const SE_LegalMeta = () => (
   <Helmet>
     <html lang="en" id="legal"/>
-    <link rel="canonical" href="https://humaniq.com/legal"/>
+    <link rel="canonical" href="https://about.humaniq.com/legal"/>
   </Helmet>
 )
 

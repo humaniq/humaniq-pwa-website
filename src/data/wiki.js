@@ -51,7 +51,7 @@ export const wiki_about_humaniq = [
   },
   //{
   //  "title": "Newsletter",
-  //  "article": "<p>If you prefer to receive comprehensive Humaniq updates on a regular basis, you should sign up to our weekly newsletter. All fresh news of Humaniq and its app will be available in one place, in your inbox, saving your time. To subscribe please follow <a title=\"Subscribe Form\" href=\"https://humaniq.com/form/subscribe\">this link</a>.</p>",
+  //  "article": "<p>If you prefer to receive comprehensive Humaniq updates on a regular basis, you should sign up to our weekly newsletter. All fresh news of Humaniq and its app will be available in one place, in your inbox, saving your time. To subscribe please follow <a title=\"Subscribe Form\" href=\"https://about.humaniq.com/form/subscribe\">this link</a>.</p>",
   //  "category": "Community"
   //},
   {
