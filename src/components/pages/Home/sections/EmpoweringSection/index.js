@@ -87,6 +87,8 @@ const SE_Home_Empowering = ({ mix, users_number }) => (
     {/*</div>*/}
 
     <SectionCounter sectionNum={1} theme="dark" />
+
+    <div className={cn('arrow')}></div>
   </section>
 )
 

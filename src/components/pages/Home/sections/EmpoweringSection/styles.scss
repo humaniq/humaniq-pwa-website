@@ -365,4 +365,17 @@
       opacity: 0;
     }
   }
+
+  &__arrow {
+    position: absolute;
+    left: 50%;
+    bottom: 25px;
+    margin-left: -17.5px;
+    border-left: 4px solid #fff;
+    border-bottom: 4px solid #fff;
+    width: 25px;
+    height: 25px;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+  }
 }

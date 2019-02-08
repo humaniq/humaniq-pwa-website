@@ -24,7 +24,7 @@ const links = [
     links: [
       {name: 'Ambassadors', url: '/ambassadors'},
       {name: 'Challenge', url: 'https://challenge.humaniq.com/', externalLink: true},
-      {name: 'Forum', url: 'https://forum.humaniq.co', externalLink: true},
+      // {name: 'Forum', url: 'https://forum.humaniq.co', externalLink: true},
       {name: 'Blog', url: 'https://blog.humaniq.co', externalLink: true},
       // {name: 'News', url: '#'},
       // {name: 'Events', url: '#'}
