@@ -73,6 +73,13 @@ export const advisers = [
     'In tech companies, thinking is the primary activity and the core process used to create value. One of the challenges when thinking about technology is keeping up with constant innovation and envisioning what will evolve next. To stay abreast of emerging technologies, I\'ve built this think tank of investors, entrepreneurs, researchers, and engineers around the world who have progressive ideas. Like a natural ecosystem, our ecosystem consists of interlinked resources that complement each other. As the community expands, it\'s value increases exponentially for everyone in it. These are some of the people with whom I collaborate regularly.',
     imgSrc: `${imgPath}/margaretta_colangelo.jpg`,
   },
+  {
+    name: 'Richard Kastelein',
+    position: 'Adviser',
+    bio:
+    'Founder and publisher of industry publication Blockchain News (EST 2015) at www.the-blockchain.com, a partner at ICO services collective Token.Agency ($500m+ and 90+ ICOs), director of education company Blockchain Partners (Oracle Partner) and ICO event organiser at leading industry event CryptoFinancing (Europe\'s first ICO event now branded Tokenomicon) - Vancouver native Richard Kastelein is an award-winning publisher, innovation executive and entrepreneur. He sits on the advisory boards of some two dozen Blockchain startups and has written over 2000 articles on Blockchain technology and startups at Blockchain News and has also published pioneering articles on ICOs in Harvard Business Review and Venturebeat.',
+    imgSrc: `${imgPath}/richard_kastelein.jpg`,
+  },
 ]
 
 export const team = [
