@@ -1,5 +1,31 @@
 export const articleList =  [
   {
+    img: "/img/news/news-11.jpg",
+    title: "Announcing Humaniq Care charity platform",
+    url: "https://blog.humaniq.co/announcing-humaniq-care-charity-platform-bfc00770155b",
+    src: "Humaniq blog",
+    date: "January 22, 2019"
+  },
+  {
+    img: "/img/news/news-10.jpg",
+    title: "Humaniq's second charity pilot is underway: helping deaf children in Sierra Leone",
+    url: "https://blog.humaniq.co/humaniqs-second-charity-pilot-is-underway-helping-deaf-children-in-sierra-leone-54dfe51718b",
+    src: "Humaniq blog",
+    date: "December 26, 2019"
+  },
+  {
+    img: "/img/news/news-9.jpg",
+    title: "Humaniq for Good Platform demonstrates the power of Blockchain",
+    url: "https://blog.humaniq.co/humaniq-for-good-platform-demonstrates-the-power-of-blockchain-a-sierra-leone-charity-raises-200-c8585ce28f02",
+    src: "Humaniq blog",
+    date: "December 17, 2019"
+  },
+
+
+
+
+
+  {
     img: "/img/news/news-7.jpg",
     title: "New option to buy HMQ tokens is available now!",
     url: "#xchange",
