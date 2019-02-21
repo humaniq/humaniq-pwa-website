@@ -176,6 +176,7 @@ class Home extends Component {
     this.setState({showIndex: 0})
   }
 
+
   componentDidMount() {
     window.addEventListener('resize', this.getWidth)
     this.container.focus();

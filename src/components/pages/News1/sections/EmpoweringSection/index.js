@@ -9,6 +9,7 @@ import Delay from "react-delay";
 import ScrollableAnchor from 'react-scrollable-anchor'
 
 import {mainList} from "/data/news";
+import $ from 'jquery'
 
 import './styles.scss'
 import {cssClassName} from 'utils'
@@ -106,6 +107,12 @@ class SE_Home_Empowering extends React.Component {
             .catch(function (error) {
               console.log(error);
             });
+
+    $(document).ready(function(){
+        $('#coinswitch-widget').one('load', function(){
+            $('.coinswitch-label').css({'opacity':'1'});
+        });
+    });
   }
 
 
@@ -241,7 +248,8 @@ class SE_Home_Empowering extends React.Component {
 
                 <ScrollableAnchor id={'xchange'}>
                     <div className="coinswitch-widget">
-                        <iframe width="100%" height="400" src="https://coinswitch.co/widget?widget_id=fc72a10e&from=btc&to=hmq&amount=0.01" frameBorder={0} order="0" scrolling="no">Can't load widget</iframe>
+                        <iframe id="coinswitch-widget" width="100%" height="400" src="https://coinswitch.co/widget?widget_id=fc72a10e&from=btc&to=hmq&amount=0.01" frameBorder={0} order="0" scrolling="no">Can't load widget</iframe>
+                        <div className="coinswitch-label row"><div className="col-xs-12 col-md-8"><span className="label-icon">!</span>HMQ wallet is any ETH (Ethereum) wallet</div></div>
                     </div>
                 </ScrollableAnchor>
 
