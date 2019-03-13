@@ -83,6 +83,6 @@ const socialLinks = [
   },
   {
     name: 'telegram',
-    url: 'https://t.me/humaniq_com'
+    url: 'https://t.me/hmqtalk'
   }
 ]

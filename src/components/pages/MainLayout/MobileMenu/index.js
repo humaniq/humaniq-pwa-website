@@ -30,7 +30,7 @@ const SE_MainLayout_MobileMenu = ({ mix, mobileMenuIsActive }) => (
         <Link to="/contact-us">Contact us</Link>
       </li>
       <li className={cn('links-link')}>
-        <a href="https://t.me/humaniq_com" target="_blank">
+        <a href="https://t.me/hmqtalk" target="_blank">
           <svg><use xlinkHref={`${socialIcons}#telegram`} /></svg>
         </a>
       </li>
