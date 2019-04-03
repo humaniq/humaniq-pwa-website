@@ -24,7 +24,7 @@ class AppRoute extends Component {
     return(
       Promise.all([
         dispatch(setRoute(location.pathname)),
-        dispatch(fetchUserNumber())
+        //dispatch(fetchUserNumber())
       ])
     )
   }

@@ -10,9 +10,9 @@ class AmbassadorsRoute extends Component {
     if(initialLoad()) return;
     dispatch(setTheme('dark'))
 
-    if(__SERVER__) {
-      return dispatch(fetchAmbassadors())
-    }
+    //if(__SERVER__) {
+    //  return dispatch(fetchAmbassadors())
+    //}
   }
 
   render() {

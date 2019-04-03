@@ -21,7 +21,7 @@ export function submit(formName, data) {
   }
 
   return ({
-    [BACKEND_CALL]: {
+    /*[BACKEND_CALL]: {
       endpoint,
       method: 'POST',
       payload: data,
@@ -30,7 +30,7 @@ export function submit(formName, data) {
         POST + form + SUCCESS,
         POST + form + FAIL,
       ]
-    }
+    }*/
   })
 }
 

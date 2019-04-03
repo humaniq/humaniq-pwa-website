@@ -13,9 +13,9 @@ class AppRoute extends Component {
   static prepareData({dispatch, getState}, query, params, location) {
     if(__CLIENT__) {
       const state = getState()
-      state.wikiArticles.loaded || dispatch(fetchWiki())
-      state.partners.loaded || dispatch(fetchPartners())
-      state.ambassadors.loaded || dispatch(fetchAmbassadors())
+      //state.wikiArticles.loaded || dispatch(fetchWiki())
+      //state.partners.loaded || dispatch(fetchPartners())
+      //state.ambassadors.loaded || dispatch(fetchAmbassadors())
 
     }
 
