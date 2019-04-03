@@ -7,7 +7,7 @@ class HmqTxHash extends Component {
 
   static prepareData({dispatch, getState}, query, params) {
     if(!params.hash) return;
-    return dispatch(fetchHmqHash(params.hash))
+    //return dispatch(fetchHmqHash(params.hash))
   }
 
   render() {

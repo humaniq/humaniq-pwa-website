@@ -7,7 +7,7 @@ class HmqMarkets extends Component {
 
   static prepareData({dispatch}) {
     if(initialLoad()) return;
-    return dispatch(fetchHmqMarkets())
+    //return dispatch(fetchHmqMarkets())
   }
 
   render() {

@@ -7,7 +7,7 @@ class HmqBlock extends Component {
 
   static prepareData({dispatch, getState}, query, params) {
     if(initialLoad() || !params.block) return;
-    return dispatch(fetchHmqBlock(params.block))
+    //return dispatch(fetchHmqBlock(params.block))
   }
 
   render() {

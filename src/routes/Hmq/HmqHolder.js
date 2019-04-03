@@ -7,9 +7,9 @@ class HmqHolder extends Component {
 
   static prepareData({dispatch, getState}, query, params) {
     if(initialLoad() || !params.holder) return;
-    dispatch(fetchHmqHolderT(params.holder))
+    //dispatch(fetchHmqHolderT(params.holder))
 
-    return dispatch(fetchHmqHolder(params.holder))
+    //return dispatch(fetchHmqHolder(params.holder))
   }
 
   render() {

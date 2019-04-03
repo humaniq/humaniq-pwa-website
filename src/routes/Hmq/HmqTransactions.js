@@ -7,7 +7,7 @@ class HmqTransactionsRoute extends Component {
 
   static prepareData({dispatch}) {
     if(initialLoad()) return;
-    return dispatch(fetchHmqLog())
+    //return dispatch(fetchHmqLog())
   }
 
   render() {

@@ -9,7 +9,7 @@ class HmqHolders extends Component {
 
     if(!__CLIENT__ || state.hmqHolders.entities.length) return;
 
-    return dispatch(fetchHmqHolders())
+    //return dispatch(fetchHmqHolders())
   }
 
   render() {

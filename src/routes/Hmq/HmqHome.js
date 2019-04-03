@@ -8,11 +8,11 @@ class HmqHomeRoute extends Component {
 
   static prepareData({dispatch, getState}) {
     if(__SERVER__){
-      return dispatch(fetchHmqStatistics())
+      //return dispatch(fetchHmqStatistics())
     }else{
       const state = getState()
-      state.hmqStatistic.loaded || dispatch(fetchHmqStatistics())
-      return dispatch(fetchGraphData('1d'))
+      //state.hmqStatistic.loaded || dispatch(fetchHmqStatistics())
+      //return dispatch(fetchGraphData('1d'))
     }
   }
 
