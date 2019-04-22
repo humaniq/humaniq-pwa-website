@@ -74,13 +74,13 @@ const advisers = [
       'Is an entrepreneur with broad experience in all aspects of international business development and the creation of global technology companies. He strongly believes in partner ecosystems which aim to inspire and spawn new innovations. His specialties include: SaaS services, mobile identity security, the IoT, enterprise managed mobility, decentralised ledger technology, marketing, and product development.',
     imgSrc: `${imgPath}/alex_bausch.png`,
   },
-  {
-    name: 'Nick Ayton',
-    position: 'Adviser',
-    bio:
-      'Is a writer, speaker and educator of all things Blockchain and Cryptocurrency. He is a Fintech 100 Influencer and Number 21 Rise Blockchain Top 100. He has had eight startups and held many senior roles in major IT and tech companies. He now chairs various Blockchain events and advises a range of clients on Blockchain technology, bitcoin and Ethereum. One of his latest projects is to raise funds using cryptoeconomics and create a new film finance model to make a mini- series for TV about the Bitcoin Revolution, an asset backed Token, and a new Media and Film Production business on Ethereum.',
-    imgSrc: `${imgPath}/nick_ayton.png`,
-  },
+  //{
+  //  name: 'Nick Ayton',
+  //  position: 'Adviser',
+  //  bio:
+  //    'Is a writer, speaker and educator of all things Blockchain and Cryptocurrency. He is a Fintech 100 Influencer and Number 21 Rise Blockchain Top 100. He has had eight startups and held many senior roles in major IT and tech companies. He now chairs various Blockchain events and advises a range of clients on Blockchain technology, bitcoin and Ethereum. One of his latest projects is to raise funds using cryptoeconomics and create a new film finance model to make a mini- series for TV about the Bitcoin Revolution, an asset backed Token, and a new Media and Film Production business on Ethereum.',
+  //  imgSrc: `${imgPath}/nick_ayton.png`,
+  //},
   // {
   //   name: 'Ron Morris',
   //   position: 'Adviser',

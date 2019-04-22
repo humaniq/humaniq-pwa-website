@@ -13,15 +13,15 @@ import YouTube from "react-youtube";
 
 const path = '/img/anniversary/'
 const opinionsDate = [
-  {
-    name: "Nick Ayton",
-    title: 'Adviser',
-    img: `${path}nick-ayton.png`,
-    text: 'I have been with the team since the very beginning, when Alex Fork had written the first draft of the Humaniq Whitepaper. I have watched this project grow and flourish and become a force for real change. <br/>' +
-    'Bringing opportunity to unbanked cannot be underestimated, thus Humaniq is a Blockchain pioneer for social good. The benchmark against for future projects will be measured. Blockchain technologies promise so much and Humaniq is literally the first the company funded by the crypto community that IS delivering on its promises. <br/>' +
-    'I support social impact projects and Humaniq is now in a position to make a real difference in emerging markets, principally the African region. <br/>' +
-    'It is a cause for hope, for change and creates the opportunity for prosperity and where communities can unlock their potential and exchange and trade what value they have.'
-  },
+  //{
+  //  name: "Nick Ayton",
+  //  title: 'Adviser',
+  //  img: `${path}nick-ayton.png`,
+  //  text: 'I have been with the team since the very beginning, when Alex Fork had written the first draft of the Humaniq Whitepaper. I have watched this project grow and flourish and become a force for real change. <br/>' +
+  //  'Bringing opportunity to unbanked cannot be underestimated, thus Humaniq is a Blockchain pioneer for social good. The benchmark against for future projects will be measured. Blockchain technologies promise so much and Humaniq is literally the first the company funded by the crypto community that IS delivering on its promises. <br/>' +
+  //  'I support social impact projects and Humaniq is now in a position to make a real difference in emerging markets, principally the African region. <br/>' +
+  //  'It is a cause for hope, for change and creates the opportunity for prosperity and where communities can unlock their potential and exchange and trade what value they have.'
+  //},
   {
     name: "Paul Mears",
     title: 'Adviser',
