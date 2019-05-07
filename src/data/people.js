@@ -258,12 +258,12 @@ export const ambassadors = [
     bio: "Peter is a tech entrepreneur running his own venture specialized in technology development with high growth potential, holds a Bcs in Information technology with interest in blockchain technology.",
     imgSrc:  `${ambassadorsPath}/peter_sampson.jpg`
   },
-  {
-    name: "Pius Okedinachi",
-    position: "Nigeria",
-    bio: "",
-    imgSrc:  `${ambassadorsPath}/PiusOkedinachi.jpg`,
-  },
+  //{
+  //  name: "Pius Okedinachi",
+  //  position: "Nigeria",
+  //  bio: "",
+  //  imgSrc:  `${ambassadorsPath}/PiusOkedinachi.jpg`,
+  //},
   {
     name: "Roger Justin Noah",
     position: "Cameroon",

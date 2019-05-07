@@ -62,14 +62,14 @@ const opinionsDate = [
     "Humaniq is the opportunity. Using our mobile app everyone can create their digital social capital to use it as a springboard for a better life. <br />" +
     "For me, Humaniq is the great team with true values. I am realy glad to be a part of such a wonderful project which tries to make people's lives easier."
   },
-  {
-    name: "Pius Okedinachi",
-    title: 'Ambassador at Humaniq',
-    img: `${path}pius-okedinachi.png`,
-    text: "My first work with the Humaniq team was in August 2017. <br />" +
-    "Humaniq, for me its timely. The objectives and the purpose for which it stands for. There is no better time to the reach the unbanked but now. I’ve always wanted to be a part of the Blockchain move which has Africa at heart, so, when I was introduced to Humaniq, my first question was to know its objectives and drive, and when I got the answer from the Whitepaper I was all in, trying to give my best. <br />" +
-    "Humaniq to me is a FinTech, not just for now but for the future."
-  },
+  //{
+  //  name: "Pius Okedinachi",
+  //  title: 'Ambassador at Humaniq',
+  //  img: `${path}pius-okedinachi.png`,
+  //  text: "My first work with the Humaniq team was in August 2017. <br />" +
+  //  "Humaniq, for me its timely. The objectives and the purpose for which it stands for. There is no better time to the reach the unbanked but now. I’ve always wanted to be a part of the Blockchain move which has Africa at heart, so, when I was introduced to Humaniq, my first question was to know its objectives and drive, and when I got the answer from the Whitepaper I was all in, trying to give my best. <br />" +
+  //  "Humaniq to me is a FinTech, not just for now but for the future."
+  //},
   {
     name: "Oladimeji Shekoni",
     title: 'Ambassador at Humaniq',

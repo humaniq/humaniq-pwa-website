@@ -270,12 +270,12 @@ export const ambassadors = [
     "bio": "Roderick is a private employee as an inventory assistant, but his area of interest is cryptocurrency and financial inclusion.",
     imgSrc:  `${ambassadorsPath}/RoderickPClantina.png`,
   },
-  {
-    name: "Pius Okedinachi",
-    position: "Bayelsa State Nigeria",
-    // "bio": "Pius Okedinachi bio",
-    imgSrc:  `${ambassadorsPath}/PiusOkedinachi.png`,
-  },
+  //{
+  //  name: "Pius Okedinachi",
+  //  position: "Bayelsa State Nigeria",
+  //  bio: "Pius Okedinachi bio",
+  //  imgSrc:  `${ambassadorsPath}/PiusOkedinachi.png`,
+  //},
   {
     name: "Kabonire Ruhinda",
     position: "Uganda",
