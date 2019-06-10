@@ -30,14 +30,14 @@ const opinionsDate = [
     'Humaniq is a company that is looking to utilise innovative technology and the power of cryptocurrency to bring developed world benefits to the emerging markets and less developed world <br/>' +
     ' I am passionate about Humanaiq as it has a purpose to imprive the lives of those who are less fortunate than us in the developed world. I am a strong advocate of enabling people to improve their lives by providing them with tools to take advantage of opportunities and facilitate change and to grow communities'
   },
-  {
-    name: "Anton Mozgovoy",
-    title: 'Chief Technical Officer at Humaniq',
-    img: `${path}anton-mozgovoy.png`,
-    text: "I've been working for Humaniq for 1 year. <br/>" +
-    "If I was to describe Humaniq's mission in one sentence, I'd say that we are here to provide social and financial services for the underserved communities. For those who don't have government IDs - we create digital identities; for those who don't have access to banking system - we create crypto wallets; for those who don't have access to private communication - we provide forever free and secure chats. As to the team, here in Humaniq we've managed to gather best of the best. It is the greatest team I've ever worked in. <br/>" +
-    "Humaniq for me is an opportunity to build a platform for opportunities."
-  },
+  //{
+  //  name: "Anton Mozgovoy",
+  //  title: 'Chief Technical Officer at Humaniq',
+  //  img: `${path}anton-mozgovoy.png`,
+  //  text: "I've been working for Humaniq for 1 year. <br/>" +
+  //  "If I was to describe Humaniq's mission in one sentence, I'd say that we are here to provide social and financial services for the underserved communities. For those who don't have government IDs - we create digital identities; for those who don't have access to banking system - we create crypto wallets; for those who don't have access to private communication - we provide forever free and secure chats. As to the team, here in Humaniq we've managed to gather best of the best. It is the greatest team I've ever worked in. <br/>" +
+  //  "Humaniq for me is an opportunity to build a platform for opportunities."
+  //},
   {
     name: "Serafima Semkina",
     title: 'Chief Administrative Officer at Humaniq',

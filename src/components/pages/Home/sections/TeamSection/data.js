@@ -97,13 +97,13 @@ export const team = [
   //    'Javed has a background as an actuary and of finance, consulting and startups. He loves technology, especially gadgets, AI and virtual reality, and believes in Blockchain for Good. He is working with Humaniq to bring greater opportunities and fairness to the world.',
   //  imgSrc: `${imgPath}/javed_khattak.jpg`,
   //},
-  {
-    name: 'Anton Mozgovoy',
-    position: 'Chief Technical Officer',
-    bio:
-      'Anton was motivated to work with Humaniq to use his experience in both computer science and finance to help to bring happiness for all across the world. He is passionate about freedriving and wakeboarding, and, of course, staying late to finish work.',
-    imgSrc: `${imgPath}/anton_mozgovoy.jpg`,
-  },
+  //{
+  //  name: 'Anton Mozgovoy',
+  //  position: 'Chief Technical Officer',
+  //  bio:
+  //    'Anton was motivated to work with Humaniq to use his experience in both computer science and finance to help to bring happiness for all across the world. He is passionate about freedriving and wakeboarding, and, of course, staying late to finish work.',
+  //  imgSrc: `${imgPath}/anton_mozgovoy.jpg`,
+  //},
   {
     name: 'Kirill Goryunov',
     position: 'CPO',
