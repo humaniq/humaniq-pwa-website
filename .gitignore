@@ -10,3 +10,7 @@ webpack-manifest.json
 webpack.config-copy.js
 package-lock.json
 .env
+
+deploy_prod.sh
+get_helm.sh
+scripts/deploy_local.sh

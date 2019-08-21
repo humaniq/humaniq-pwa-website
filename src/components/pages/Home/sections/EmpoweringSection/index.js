@@ -73,7 +73,7 @@ const SE_Home_Empowering = ({ mix, users_number }) => (
           Humaniq Care is a charity and fundraising platform<br />built around our application and infrastructure
         </A_Title>
         <p className={cn('text-subtitle')}>
-          <a className={cn('text-hmqcarebtn')} href="https://humaniq.com" target="_blank">Check it out!</a>
+          <a className={cn('text-hmqcarebtn')} href="https://care.humaniq.com" target="_blank">Check it out!</a>
         </p>
       </div>
     </div>
